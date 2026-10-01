@@ -20,17 +20,22 @@
 
     <header class="topbar">
       <a class="topbar__meta" href="#top" aria-label="ФОКУС — на главную">
-        ФОТОКОМПАНИЯ<span>/</span>РОССИЯ
+        <span data-i18n="company">ФОТОКОМПАНИЯ</span><span>/</span><span data-i18n="country">РОССИЯ</span>
       </a>
 
       <nav class="nav-panel" aria-label="Основная навигация">
-        <a class="nav-panel__link is-active" href="#about">О КОМПАНИИ</a>
-        <a class="nav-panel__link" href="#services">УСЛУГИ</a>
-        <a class="nav-panel__link" href="#works">ПРИМЕРЫ РАБОТ</a>
-        <a class="nav-panel__link" href="#contacts">КОНТАКТЫ</a>
+        <a class="nav-panel__link is-active" href="#top" data-i18n="home">ГЛАВНАЯ</a>
+        <a class="nav-panel__link" href="#about" data-i18n="about">О КОМПАНИИ</a>
+        <a class="nav-panel__link" href="#services" data-i18n="services">УСЛУГИ</a>
+        <a class="nav-panel__link" href="#works" data-i18n="works">ПРИМЕРЫ РАБОТ</a>
+        <a class="nav-panel__link" href="#contacts" data-i18n="contacts">КОНТАКТЫ</a>
       </nav>
 
-      <div class="topbar__index">01 — 01</div>
+      <div class="language-switch" aria-label="Выбор языка сайта">
+        <button class="language-switch__button is-active" type="button" data-lang="ru">RU</button>
+        <span class="language-switch__divider" aria-hidden="true"></span>
+        <button class="language-switch__button" type="button" data-lang="en">EN</button>
+      </div>
     </header>
 
     <section class="hero__content" id="top">
@@ -38,30 +43,19 @@
         <img class="hero__logo" src="assets/IMG_8642.PNG" alt="ФОКУС — фотокомпания">
       </div>
       <p class="hero__tagline">
-        ВЫДЕЛЯЕМ ГЛАВНОЕ.<br>
-        СОЗДАЁМ ТО, ЧТО ХОЧЕТСЯ РАССМАТРИВАТЬ.
+        <span data-i18n="tagline1">ВЫДЕЛЯЕМ ГЛАВНОЕ.</span><br>
+        <span data-i18n="tagline2">СОЗДАЁМ ТО, ЧТО ХОЧЕТСЯ РАССМАТРИВАТЬ.</span>
       </p>
     </section>
 
-    <div class="hero__scroll" aria-hidden="true">
-      <span class="hero__scroll-line"></span>
-      <span>СКРОЛЛ</span>
-    </div>
-
     <footer class="bottombar">
-      <nav class="bottombar__nav" aria-label="Направления">
-        <a href="#services" class="bottombar__link">СЪЁМКА</a>
-        <a href="#services" class="bottombar__link">ОБРАБОТКА</a>
-        <a href="#services" class="bottombar__link">КОНТЕНТ</a>
-      </nav>
-
       <div class="bottombar__actions">
         <a href="#contacts" class="contact-button">
           <span class="contact-button__dot"></span>
-          <span>ОБСУДИТЬ СЪЁМКУ</span>
+          <span data-i18n="discuss">ОБСУДИТЬ СЪЁМКУ</span>
         </a>
         <a href="#works" class="works-button">
-          <span>СМОТРЕТЬ РАБОТЫ</span>
+          <span data-i18n="worksCta">СМОТРЕТЬ РАБОТЫ</span>
           <span class="works-button__arrow" aria-hidden="true">→</span>
         </a>
       </div>
@@ -69,15 +63,46 @@
 
   </main>
 
-  <section id="about" class="dummy-section"><span>О КОМПАНИИ</span></section>
-  <section id="services" class="dummy-section"><span>УСЛУГИ</span></section>
-  <section id="works" class="dummy-section"><span>ПРИМЕРЫ РАБОТ</span></section>
-  <section id="contacts" class="dummy-section"><span>КОНТАКТЫ</span></section>
+  <section id="about" class="dummy-section"><span data-i18n="about">О КОМПАНИИ</span></section>
+  <section id="services" class="dummy-section"><span data-i18n="services">УСЛУГИ</span></section>
+  <section id="works" class="dummy-section"><span data-i18n="works">ПРИМЕРЫ РАБОТ</span></section>
+  <section id="contacts" class="dummy-section"><span data-i18n="contacts">КОНТАКТЫ</span></section>
 
   <script>
     const hero = document.querySelector('.hero');
-    let raf = 0;
+    const navLinks = [...document.querySelectorAll('.nav-panel__link')];
+    const langButtons = [...document.querySelectorAll('.language-switch__button')];
 
+    const dictionary = {
+      ru: {
+        company: 'ФОТОКОМПАНИЯ',
+        country: 'РОССИЯ',
+        home: 'ГЛАВНАЯ',
+        about: 'О КОМПАНИИ',
+        services: 'УСЛУГИ',
+        works: 'ПРИМЕРЫ РАБОТ',
+        contacts: 'КОНТАКТЫ',
+        tagline1: 'ВЫДЕЛЯЕМ ГЛАВНОЕ.',
+        tagline2: 'СОЗДАЁМ ТО, ЧТО ХОЧЕТСЯ РАССМАТРИВАТЬ.',
+        discuss: 'ОБСУДИТЬ СЪЁМКУ',
+        worksCta: 'СМОТРЕТЬ РАБОТЫ'
+      },
+      en: {
+        company: 'PHOTOGRAPHY COMPANY',
+        country: 'RUSSIA',
+        home: 'HOME',
+        about: 'ABOUT',
+        services: 'SERVICES',
+        works: 'SELECTED WORKS',
+        contacts: 'CONTACTS',
+        tagline1: 'WE HIGHLIGHT WHAT MATTERS.',
+        tagline2: 'WE CREATE IMAGES YOU WANT TO KEEP LOOKING AT.',
+        discuss: 'DISCUSS A SHOOT',
+        worksCta: 'VIEW WORKS'
+      }
+    };
+
+    let raf = 0;
     hero.addEventListener('pointermove', (event) => {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       cancelAnimationFrame(raf);
@@ -94,13 +119,32 @@
       hero.style.setProperty('--pointer-y', '0px');
     });
 
-    const navLinks = [...document.querySelectorAll('.nav-panel__link')];
     navLinks.forEach((link) => {
       link.addEventListener('click', () => {
         navLinks.forEach((item) => item.classList.remove('is-active'));
         link.classList.add('is-active');
       });
     });
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.dataset.i18n;
+        if (dictionary[lang][key]) element.textContent = dictionary[lang][key];
+      });
+      langButtons.forEach((button) => {
+        button.classList.toggle('is-active', button.dataset.lang === lang);
+        button.setAttribute('aria-pressed', button.dataset.lang === lang ? 'true' : 'false');
+      });
+      localStorage.setItem('focus-language', lang);
+    }
+
+    langButtons.forEach((button) => {
+      button.addEventListener('click', () => setLanguage(button.dataset.lang));
+    });
+
+    const savedLanguage = localStorage.getItem('focus-language');
+    setLanguage(savedLanguage === 'en' ? 'en' : 'ru');
   </script>
 </body>
 </html>
