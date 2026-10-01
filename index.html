@@ -81,12 +81,12 @@
         </div>
 
         <h2 class="about-section__title">
-          <span data-i18n="aboutTitle1">МОЛОДАЯ КОМПАНИЯ.</span><br>
-          <span data-i18n="aboutTitle2">БОЛЬШАЯ КОМАНДА.</span>
+          <span class="about-keyword" data-i18n="aboutTitle1Word">МОЛОДАЯ</span> <span data-i18n="aboutTitle1Rest">КОМПАНИЯ.</span><br>
+          <span class="about-keyword" data-i18n="aboutTitle2Word">БОЛЬШАЯ</span> <span data-i18n="aboutTitle2Rest">КОМАНДА.</span>
         </h2>
 
-        <p class="about-section__lead" data-i18n="aboutLead">
-          ФОКУС — молодая российская фотокомпания, основанная в Анапе, Краснодарском крае.
+        <p class="about-section__lead">
+          <span class="about-keyword about-keyword--lead">ФОКУС</span><span data-i18n="aboutLeadRest"> — молодая российская фотокомпания, основанная в Анапе, Краснодарском крае.</span>
         </p>
 
         <p class="about-section__text" data-i18n="aboutText">
@@ -143,12 +143,14 @@
         tagline1: 'ВЫДЕЛЯЕМ ГЛАВНОЕ.',
         tagline2: 'СОЗДАЁМ ТО, ЧТО ХОЧЕТСЯ РАССМАТРИВАТЬ.',
         aboutEyebrow: 'О КОМПАНИИ',
-        aboutTitle1: 'МОЛОДАЯ КОМПАНИЯ.',
-        aboutTitle2: 'БОЛЬШАЯ КОМАНДА.',
+        aboutTitle1Word: 'МОЛОДАЯ',
+        aboutTitle1Rest: 'КОМПАНИЯ.',
+        aboutTitle2Word: 'БОЛЬШАЯ',
+        aboutTitle2Rest: 'КОМАНДА.',
         aboutTitle3: '',
-        aboutLead: 'ФОКУС — молодая российская фотокомпания, основанная в Анапе, Краснодарском крае.',
+        aboutLeadRest: ' — молодая российская фотокомпания, основанная в Анапе, Краснодарском крае.',
         aboutText: 'В команде — управляющие, менеджеры, фотографы, видеографы, программисты, маркетологи и другие специалисты. Работаем в трёх направлениях: интерьерная съёмка, съёмка гостей в отелях и съёмка мероприятий.',
-        aboutStat1: 'ИНТЕРЬЕРЫ',
+        aboutStat1: 'ИНТЕРЬЕРНАЯ СЪЁМКА',
         aboutStat2: 'ГОСТИ ОТЕЛЕЙ',
         aboutStat3: 'МЕРОПРИЯТИЯ',
         aboutMediaNote: 'ВИЗУАЛ, КОТОРЫЙ РАБОТАЕТ НА БРЕНД',
@@ -168,12 +170,14 @@
         discuss: 'DISCUSS A SHOOT',
         worksCta: 'VIEW WORKS',
         aboutEyebrow: 'ABOUT',
-        aboutTitle1: 'YOUNG COMPANY.',
-        aboutTitle2: 'LARGE TEAM.',
+        aboutTitle1Word: 'YOUNG',
+        aboutTitle1Rest: 'COMPANY.',
+        aboutTitle2Word: 'LARGE',
+        aboutTitle2Rest: 'TEAM.',
         aboutTitle3: '',
-        aboutLead: 'FOCUS is a young Russian photography company founded in Anapa, Krasnodar Krai.',
+        aboutLeadRest: ' — a young Russian photography company founded in Anapa, Krasnodar Krai.',
         aboutText: 'The team includes managers, photographers, videographers, developers, marketers and other specialists. We work across three directions: interior photography, hotel guest photography and event photography.',
-        aboutStat1: 'INTERIORS',
+        aboutStat1: 'INTERIOR PHOTOGRAPHY',
         aboutStat2: 'HOTEL GUESTS',
         aboutStat3: 'EVENTS',
         aboutMediaNote: 'VISUALS THAT WORK FOR THE BRAND'
@@ -251,6 +255,7 @@
       button.addEventListener('click', () => setLanguage(button.dataset.lang));
     });
 
+    const aboutSection = document.getElementById('about');
     const aboutReveal = [...document.querySelectorAll('.about-reveal')];
 
     if ('IntersectionObserver' in window) {
@@ -260,10 +265,37 @@
           entry.target.classList.add('is-visible');
           observer.unobserve(entry.target);
         });
-      }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
       aboutReveal.forEach((element) => revealObserver.observe(element));
     }
+
+    let aboutScrollRaf = 0;
+    function updateAboutPhotoStage() {
+      if (!aboutSection) return;
+      const rect = aboutSection.getBoundingClientRect();
+      const viewport = window.innerHeight || document.documentElement.clientHeight;
+      const progress = Math.max(0, Math.min(1, (viewport - rect.top) / (viewport * 0.92)));
+
+      let stage = 0;
+      if (progress > 0.20) stage = 1;
+      if (progress > 0.46) stage = 2;
+      if (progress > 0.73) stage = 3;
+
+      aboutSection.classList.toggle('is-photo-stage-1', stage === 1);
+      aboutSection.classList.toggle('is-photo-stage-2', stage === 2);
+      aboutSection.classList.toggle('is-photo-stage-3', stage === 3);
+    }
+
+    window.addEventListener('scroll', () => {
+      if (aboutScrollRaf) return;
+      aboutScrollRaf = requestAnimationFrame(() => {
+        aboutScrollRaf = 0;
+        updateAboutPhotoStage();
+      });
+    }, { passive: true });
+
+    updateAboutPhotoStage();
 
     const savedLanguage = localStorage.getItem('focus-language');
     setLanguage(savedLanguage === 'en' ? 'en' : 'ru');
