@@ -19,6 +19,10 @@
     <div class="hero__grain" aria-hidden="true"></div>
 
     <header class="topbar">
+      <div class="topbar__left">
+        <span class="topbar__line topbar__line--left" aria-hidden="true"></span>
+      </div>
+
       <nav class="nav-panel" aria-label="Основная навигация">
         <a class="nav-panel__link is-active" href="#top" data-i18n="home">ГЛАВНАЯ</a>
         <a class="nav-panel__link" href="#about" data-i18n="about">О КОМПАНИИ</a>
@@ -26,7 +30,10 @@
         <a class="nav-panel__link" href="#works" data-i18n="works">ПРИМЕРЫ РАБОТ</a>
         <a class="nav-panel__link" href="#contacts" data-i18n="contacts">КОНТАКТЫ</a>
       </nav>
-      <div class="language-switch" aria-label="Выбор языка сайта">
+
+      <div class="topbar__right">
+        <span class="topbar__line topbar__line--right" aria-hidden="true"></span>
+        <div class="language-switch" aria-label="Выбор языка сайта">
           <span class="language-switch__active-pill" aria-hidden="true"></span>
             <button class="language-switch__button is-active" type="button" data-lang="ru" aria-label="Русский" title="Русский">
             <span class="language-switch__flag" aria-hidden="true">
@@ -46,10 +53,10 @@
                 <defs><clipPath id="gbClip"><circle cx="14" cy="14" r="14"/></clipPath></defs>
                 <g clip-path="url(#gbClip)">
                   <rect width="28" height="28" fill="#012169"/>
-                  <path d="M0 0 L11.8 11.8 L28 11.8 L28 16.2 L16.2 16.2 L28 28 L24.5 28 L14 17.5 L3.5 28 L0 28 L11.8 16.2 L0 16.2 Z" fill="#FFFFFF"/>
-                  <path d="M0 0 L12.6 12.6 L12.6 0 Z M28 0 L15.4 12.6 L28 12.6 Z M0 28 L12.6 15.4 L12.6 28 Z M28 28 L15.4 15.4 L28 15.4 Z" fill="#C8102E"/>
-                  <path d="M11.2 0 H16.8 V11.2 H28 V16.8 H16.8 V28 H11.2 V16.8 H0 V11.2 H11.2 Z" fill="#FFFFFF"/>
-                  <path d="M12.2 0 H15.8 V12.2 H28 V15.8 H15.8 V28 H12.2 V15.8 H0 V12.2 H12.2 Z" fill="#C8102E"/>
+                  <path d="M0 3.2 10.8 14 0 24.8V21L7 14 0 7zM28 3.2 17.2 14 28 24.8V21L21 14 28 7z" fill="#FFFFFF"/>
+                  <path d="M0 5.7 8.3 14 0 22.3v-4.4l3.9-3.9L0 9.9zM28 5.7 19.7 14 28 22.3v-4.4L24.1 14 28 9.9z" fill="#C8102E"/>
+                  <path d="M11.2 0h5.6v28h-5.6zM0 11.2h28v5.6H0z" fill="#FFFFFF"/>
+                  <path d="M12.25 0h3.5v28h-3.5zM0 12.25h28v3.5H0z" fill="#C8102E"/>
                 </g>
               </svg>
             </span>
