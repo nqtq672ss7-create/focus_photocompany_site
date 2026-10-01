@@ -92,7 +92,7 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
 }
 
-.topbar__left,
+ .topbar__left,
 .topbar__right {
   min-width: 0;
   display: flex;
@@ -106,33 +106,27 @@ a { color: inherit; text-decoration: none; }
 
 .topbar__line {
   display: block;
-  height: 1px;
-  background: rgba(244,241,233,.34);
-  box-shadow: 0 0 0 1px rgba(0,0,0,.05);
+  width: 100%;
+  height: 2px;
   flex: 1 1 auto;
   min-width: 28px;
+  background: var(--acid);
+  opacity: .86;
+  box-shadow: 0 0 10px rgba(157,255,0,.26);
+  transform: scaleX(0);
+  animation: top-line-in .9s cubic-bezier(.2,.75,.2,1) forwards;
 }
 
 .topbar__line--left {
-  background: linear-gradient(90deg, rgba(244,241,233,.20), rgba(244,241,233,.48));
+  transform-origin: left center;
+  animation-delay: .18s;
 }
 
 .topbar__line--right {
-  background: linear-gradient(90deg, rgba(244,241,233,.48), rgba(244,241,233,.20));
+  transform-origin: right center;
+  animation-delay: .30s;
 }
 
-.topbar__meta {
-  flex: 0 0 auto;
-  font-size: 10px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  font-weight: 800;
-  color: rgba(244, 241, 233, .84);
-  transition: color .25s ease;
-}
-.topbar__meta:hover { color: #fff; }
-.topbar__meta span { color: rgba(244,241,233,.84); }
-.topbar__meta .topbar__slash { color: var(--acid); margin: 0 9px; }
 
 .language-switch {
   position: relative;
@@ -390,6 +384,11 @@ a { color: inherit; text-decoration: none; }
 }
 .dummy-section + .dummy-section { border-top: 1px solid rgba(244,241,233,.06); }
 
+@keyframes top-line-in {
+  from { transform: scaleX(0); opacity: .15; }
+  to { transform: scaleX(1); opacity: .86; }
+}
+
 @keyframes logo-in {
   from { opacity: 0; transform: translateY(18px) scale(.985); filter: blur(7px) drop-shadow(0 15px 30px rgba(0,0,0,.35)); }
   to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0) drop-shadow(0 18px 34px rgba(0,0,0,.34)); }
@@ -422,7 +421,6 @@ a { color: inherit; text-decoration: none; }
   .topbar__line {
     display: none;
   }
-  .topbar__meta { font-size: 8px; letter-spacing: .14em; }
   .nav-panel {
     grid-column: 1 / -1;
     justify-content: center;
