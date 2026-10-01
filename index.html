@@ -32,8 +32,8 @@
       </nav>
 
       <div class="language-switch" aria-label="Выбор языка сайта">
+        <span class="language-switch__active-pill" aria-hidden="true"></span>
         <button class="language-switch__button is-active" type="button" data-lang="ru" aria-label="Русский" title="Русский"><span class="language-switch__flag" aria-hidden="true">🇷🇺</span></button>
-        <span class="language-switch__divider" aria-hidden="true"></span>
         <button class="language-switch__button" type="button" data-lang="en" aria-label="English" title="English"><span class="language-switch__flag" aria-hidden="true">🇬🇧</span></button>
       </div>
     </header>
@@ -136,6 +136,7 @@
         button.classList.toggle('is-active', button.dataset.lang === lang);
         button.setAttribute('aria-pressed', button.dataset.lang === lang ? 'true' : 'false');
       });
+      document.querySelector('.language-switch').classList.toggle('is-en', lang === 'en');
       localStorage.setItem('focus-language', lang);
     }
 
