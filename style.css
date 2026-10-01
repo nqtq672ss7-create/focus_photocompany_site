@@ -537,11 +537,7 @@ a { color: inherit; text-decoration: none; }
 
 .about-section__title-accent {
   display: inline;
-  color: var(--ivory);
-  background: linear-gradient(transparent 67%, var(--acid) 67%, var(--acid) 92%, transparent 92%);
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  padding: 0 .04em;
+  color: var(--acid);
 }
 
 .about-section__lead {
@@ -564,44 +560,26 @@ a { color: inherit; text-decoration: none; }
 }
 
 .about-section__directions {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
   margin-top: clamp(42px, 4.2vw, 66px);
-  max-width: 650px;
-  border-top: 1px solid rgba(244,241,233,.18);
-}
-
-.about-direction {
-  position: relative;
-  min-height: 76px;
-  padding: 18px 22px 0 0;
-  border-right: 1px solid rgba(244,241,233,.11);
-}
-
-.about-direction + .about-direction {
-  padding-left: 22px;
-}
-
-.about-direction:last-child {
-  border-right: 0;
-}
-
-.about-direction__line {
-  display: block;
-  width: 20px;
-  height: 2px;
-  margin-bottom: 16px;
-  background: var(--acid);
-  box-shadow: 0 0 12px rgba(157,255,0,.24);
+  max-width: 700px;
+  color: rgba(244,241,233,.88);
+  font-size: clamp(10px, .82vw, 12px);
+  line-height: 1;
+  letter-spacing: .14em;
+  font-weight: 700;
 }
 
 .about-direction__label {
-  display: block;
-  color: rgba(244,241,233,.92);
-  font-size: clamp(12px, 1vw, 15px);
-  line-height: 1;
-  letter-spacing: .12em;
-  font-weight: 700;
+  display: inline-block;
+}
+
+.about-direction__divider {
+  color: rgba(244,241,233,.28);
+  font-weight: 400;
 }
 
 .about-section__media {
@@ -723,19 +701,7 @@ a { color: inherit; text-decoration: none; }
   }
   .about-section__directions {
     margin-top: 34px;
-  }
-  .about-direction {
-    min-height: 66px;
-    padding-right: 10px;
-  }
-  .about-direction + .about-direction {
-    padding-left: 10px;
-  }
-  .about-direction__line {
-    width: 16px;
-    margin-bottom: 13px;
-  }
-  .about-direction__label {
+    gap: 9px 11px;
     font-size: 8px;
     letter-spacing: .09em;
   }
