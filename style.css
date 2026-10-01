@@ -124,23 +124,34 @@ a { color: inherit; text-decoration: none; }
 .language-switch__button {
   border: 0;
   background: transparent;
-  color: rgba(244, 241, 233, .53);
+  color: rgba(244, 241, 233, .72);
   font: inherit;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: .10em;
-  padding: 7px 5px;
+  padding: 4px;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
   cursor: pointer;
-  border-radius: 999px;
-  transition: color .25s ease, background .25s ease;
+  border-radius: 50%;
+  transition: transform .25s ease, background .25s ease, opacity .25s ease;
 }
-.language-switch__button:hover,
-.language-switch__button.is-active {
-  color: #fff;
+.language-switch__flag {
+  display: block;
+  font-size: 17px;
+  line-height: 1;
+  filter: saturate(.82);
+  transform: translateY(-.5px);
+}
+.language-switch__button:hover {
   background: rgba(244,241,233,.08);
+  transform: scale(1.06);
 }
 .language-switch__button.is-active {
-  color: var(--acid);
+  background: rgba(244,241,233,.11);
+  box-shadow: inset 0 0 0 1px rgba(157,255,0,.34), 0 0 18px rgba(0,0,0,.12);
+}
+.language-switch__button.is-active .language-switch__flag {
+  filter: saturate(1.05);
 }
 .language-switch__divider {
   width: 1px;
