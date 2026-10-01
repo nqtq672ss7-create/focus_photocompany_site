@@ -36,28 +36,24 @@
         <div class="language-switch" aria-label="Выбор языка сайта">
           <span class="language-switch__active-pill" aria-hidden="true"></span>
             <button class="language-switch__button is-active" type="button" data-lang="ru" aria-label="Русский" title="Русский">
-            <span class="language-switch__flag" aria-hidden="true">
-              <svg viewBox="0 0 28 28" role="presentation">
-                <defs><clipPath id="ruClip"><circle cx="14" cy="14" r="14"/></clipPath></defs>
-                <g clip-path="url(#ruClip)">
-                  <rect width="28" height="9.34" y="0" fill="#FFFFFF"/>
-                  <rect width="28" height="9.33" y="9.34" fill="#2457A6"/>
-                  <rect width="28" height="9.33" y="18.67" fill="#D52B1E"/>
-                </g>
+            <span class="language-switch__flag language-switch__flag--ru" aria-hidden="true">
+              <svg viewBox="0 0 28 28" role="presentation" focusable="false">
+                <rect width="28" height="9.34" y="0" fill="#FFFFFF"/>
+                <rect width="28" height="9.33" y="9.34" fill="#2457A6"/>
+                <rect width="28" height="9.33" y="18.67" fill="#D52B1E"/>
               </svg>
             </span>
           </button>
           <button class="language-switch__button" type="button" data-lang="en" aria-label="English" title="English">
-            <span class="language-switch__flag" aria-hidden="true">
-              <svg viewBox="0 0 28 28" role="presentation">
-                <defs><clipPath id="gbClip"><circle cx="14" cy="14" r="14"/></clipPath></defs>
-                <g clip-path="url(#gbClip)">
-                  <rect width="28" height="28" fill="#012169"/>
-                  <path d="M0 3.2 10.8 14 0 24.8V21L7 14 0 7zM28 3.2 17.2 14 28 24.8V21L21 14 28 7z" fill="#FFFFFF"/>
-                  <path d="M0 5.7 8.3 14 0 22.3v-4.4l3.9-3.9L0 9.9zM28 5.7 19.7 14 28 22.3v-4.4L24.1 14 28 9.9z" fill="#C8102E"/>
-                  <path d="M11.2 0h5.6v28h-5.6zM0 11.2h28v5.6H0z" fill="#FFFFFF"/>
-                  <path d="M12.25 0h3.5v28h-3.5zM0 12.25h28v3.5H0z" fill="#C8102E"/>
-                </g>
+            <span class="language-switch__flag language-switch__flag--gb" aria-hidden="true">
+              <svg viewBox="0 0 28 28" role="presentation" focusable="false">
+                <rect width="28" height="28" fill="#012169"/>
+                <path d="M0 0L10.2 10.2M28 0L17.8 10.2M0 28L10.2 17.8M28 28L17.8 17.8" stroke="#FFFFFF" stroke-width="4.2"/>
+                <path d="M0 0L10.2 10.2M28 0L17.8 10.2M0 28L10.2 17.8M28 28L17.8 17.8" stroke="#C8102E" stroke-width="1.9"/>
+                <rect x="11.2" width="5.6" height="28" fill="#FFFFFF"/>
+                <rect y="11.2" width="28" height="5.6" fill="#FFFFFF"/>
+                <rect x="12.25" width="3.5" height="28" fill="#C8102E"/>
+                <rect y="12.25" width="28" height="3.5" fill="#C8102E"/>
               </svg>
             </span>
           </button>
