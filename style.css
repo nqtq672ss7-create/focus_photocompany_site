@@ -1069,13 +1069,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 .about-photo-stack {
-  width: 540px;
+  width: 560px;
   max-width: 100%;
-  height: 520px;
+  height: 540px;
 }
 
 .about-photo-card {
-  width: 350px;
+  width: 380px;
 }
 
 @media (max-width: 980px) {
@@ -1084,8 +1084,8 @@ a { color: inherit; text-decoration: none; }
   }
 
   .about-photo-stack {
-    width: 540px;
-    height: 520px;
+    width: 560px;
+    height: 540px;
   }
 }
 
