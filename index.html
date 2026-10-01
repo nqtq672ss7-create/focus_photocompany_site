@@ -70,7 +70,55 @@
 
   </main>
 
-  <section id="about" class="dummy-section"><span data-i18n="about">О КОМПАНИИ</span></section>
+  <section id="about" class="about-section">
+    <div class="about-section__inner">
+      <div class="about-section__copy about-reveal">
+        <div class="about-section__eyebrow">
+          <span class="about-section__eyebrow-line"></span>
+          <span data-i18n="aboutEyebrow">О КОМПАНИИ</span>
+        </div>
+
+        <h2 class="about-section__title">
+          <span data-i18n="aboutTitle1">МЫ НЕ ПРОСТО</span><br>
+          <span data-i18n="aboutTitle2">СНИМАЕМ.</span><br>
+          <span class="about-section__title-accent" data-i18n="aboutTitle3">МЫ СОЗДАЁМ ВПЕЧАТЛЕНИЕ.</span>
+        </h2>
+
+        <p class="about-section__lead" data-i18n="aboutLead">
+          ФОКУС — фотокомпания, которая превращает пространство, событие и момент в визуальный опыт.
+        </p>
+
+        <p class="about-section__text" data-i18n="aboutText">
+          Работаем с интерьерами, мероприятиями и съёмкой гостей в отелях. Соединяем точную постановку кадра, эстетику и коммерческий результат — чтобы фотографии не просто показывали, а вызывали желание рассматривать.
+        </p>
+
+        <div class="about-section__stats">
+          <div class="about-stat">
+            <span class="about-stat__number">01</span>
+            <span class="about-stat__label" data-i18n="aboutStat1">ИНТЕРЬЕРЫ</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat__number">02</span>
+            <span class="about-stat__label" data-i18n="aboutStat2">МЕРОПРИЯТИЯ</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat__number">03</span>
+            <span class="about-stat__label" data-i18n="aboutStat3">ОТЕЛИ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section__media about-reveal">
+        <div class="about-section__media-frame">
+          <img src="assets/focus-lobby.png" alt="Интерьер современного отеля" loading="lazy">
+          <span class="about-section__media-corner about-section__media-corner--top"></span>
+          <span class="about-section__media-corner about-section__media-corner--bottom"></span>
+          <span class="about-section__media-tag">FOCUS / 01</span>
+        </div>
+        <div class="about-section__media-note" data-i18n="aboutMediaNote">ВИЗУАЛ, КОТОРЫЙ РАБОТАЕТ НА БРЕНД</div>
+      </div>
+    </div>
+  </section>
   <section id="services" class="dummy-section"><span data-i18n="services">УСЛУГИ</span></section>
   <section id="works" class="dummy-section"><span data-i18n="works">ПРИМЕРЫ РАБОТ</span></section>
   <section id="contacts" class="dummy-section"><span data-i18n="contacts">КОНТАКТЫ</span></section>
@@ -89,6 +137,16 @@
         contacts: 'КОНТАКТЫ',
         tagline1: 'ВЫДЕЛЯЕМ ГЛАВНОЕ.',
         tagline2: 'СОЗДАЁМ ТО, ЧТО ХОЧЕТСЯ РАССМАТРИВАТЬ.',
+        aboutEyebrow: 'О КОМПАНИИ',
+        aboutTitle1: 'МЫ НЕ ПРОСТО',
+        aboutTitle2: 'СНИМАЕМ.',
+        aboutTitle3: 'МЫ СОЗДАЁМ ВПЕЧАТЛЕНИЕ.',
+        aboutLead: 'ФОКУС — фотокомпания, которая превращает пространство, событие и момент в визуальный опыт.',
+        aboutText: 'Работаем с интерьерами, мероприятиями и съёмкой гостей в отелях. Соединяем точную постановку кадра, эстетику и коммерческий результат — чтобы фотографии не просто показывали, а вызывали желание рассматривать.',
+        aboutStat1: 'ИНТЕРЬЕРЫ',
+        aboutStat2: 'МЕРОПРИЯТИЯ',
+        aboutStat3: 'ОТЕЛИ',
+        aboutMediaNote: 'ВИЗУАЛ, КОТОРЫЙ РАБОТАЕТ НА БРЕНД',
         discuss: 'ОБСУДИТЬ СЪЁМКУ',
         worksCta: 'СМОТРЕТЬ РАБОТЫ'
       },
@@ -103,7 +161,17 @@
         tagline1: 'WE HIGHLIGHT WHAT MATTERS.',
         tagline2: 'WE CREATE IMAGES YOU WANT TO KEEP LOOKING AT.',
         discuss: 'DISCUSS A SHOOT',
-        worksCta: 'VIEW WORKS'
+        worksCta: 'VIEW WORKS',
+        aboutEyebrow: 'ABOUT',
+        aboutTitle1: 'WE DO NOT JUST',
+        aboutTitle2: 'SHOOT.',
+        aboutTitle3: 'WE CREATE IMPRESSIONS.',
+        aboutLead: 'FOCUS is a photography company turning spaces, events and moments into a visual experience.',
+        aboutText: 'We work across interiors, events and hotel guest photography. Precise framing, aesthetics and commercial thinking come together so the images do more than show — they make people want to keep looking.',
+        aboutStat1: 'INTERIORS',
+        aboutStat2: 'EVENTS',
+        aboutStat3: 'HOTELS',
+        aboutMediaNote: 'VISUALS THAT WORK FOR THE BRAND'
       }
     };
 
@@ -177,6 +245,20 @@
     langButtons.forEach((button) => {
       button.addEventListener('click', () => setLanguage(button.dataset.lang));
     });
+
+    const aboutReveal = [...document.querySelectorAll('.about-reveal')];
+
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+      aboutReveal.forEach((element) => revealObserver.observe(element));
+    }
 
     const savedLanguage = localStorage.getItem('focus-language');
     setLanguage(savedLanguage === 'en' ? 'en' : 'ru');
