@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121212">
+  <meta name="description" content="ФОКУС — современная российская фотокомпания. Интерьеры, мероприятия, съёмка гостей в отелях.">
+  <title>ФОКУС — Фотокомпания</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="hero" aria-label="Главный экран сайта фотокомпании ФОКУС">
+    <div class="hero__image" aria-hidden="true"></div>
+    <div class="hero__blur hero__blur--top" aria-hidden="true"></div>
+    <div class="hero__blur hero__blur--bottom" aria-hidden="true"></div>
+    <div class="hero__blur hero__blur--left" aria-hidden="true"></div>
+    <div class="hero__blur hero__blur--right" aria-hidden="true"></div>
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="hero__grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="topbar__meta" href="#top" aria-label="ФОКУС — на главную">
+        ФОТОКОМПАНИЯ<span>/</span>РОССИЯ
+      </a>
+
+      <nav class="nav-panel" aria-label="Основная навигация">
+        <a class="nav-panel__link is-active" href="#about">О КОМПАНИИ</a>
+        <a class="nav-panel__link" href="#services">УСЛУГИ</a>
+        <a class="nav-panel__link" href="#works">ПРИМЕРЫ РАБОТ</a>
+        <a class="nav-panel__link" href="#contacts">КОНТАКТЫ</a>
+      </nav>
+
+      <div class="topbar__index">01 — 01</div>
+    </header>
+
+    <section class="hero__content" id="top">
+      <div class="hero__logo-wrap">
+        <img class="hero__logo" src="assets/img_8642.png" alt="ФОКУС — фотокомпания">
+      </div>
+      <p class="hero__tagline">
+        ВЫДЕЛЯЕМ ГЛАВНОЕ.<br>
+        СОЗДАЁМ ТО, ЧТО ХОЧЕТСЯ РАССМАТРИВАТЬ.
+      </p>
+    </section>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span class="hero__scroll-line"></span>
+      <span>СКРОЛЛ</span>
+    </div>
+
+    <footer class="bottombar">
+      <nav class="bottombar__nav" aria-label="Направления">
+        <a href="#services" class="bottombar__link">СЪЁМКА</a>
+        <a href="#services" class="bottombar__link">ОБРАБОТКА</a>
+        <a href="#services" class="bottombar__link">КОНТЕНТ</a>
+      </nav>
+
+      <div class="bottombar__actions">
+        <a href="#contacts" class="contact-button">
+          <span class="contact-button__dot"></span>
+          <span>ОБСУДИТЬ СЪЁМКУ</span>
+        </a>
+        <a href="#works" class="works-button">
+          <span>СМОТРЕТЬ РАБОТЫ</span>
+          <span class="works-button__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </footer>
+
+    <div class="focus-marker" aria-hidden="true">
+      <span class="focus-marker__line focus-marker__line--h"></span>
+      <span class="focus-marker__line focus-marker__line--v"></span>
+      <span class="focus-marker__dot"></span>
+    </div>
+  </main>
+
+  <section id="about" class="dummy-section"><span>О КОМПАНИИ</span></section>
+  <section id="services" class="dummy-section"><span>УСЛУГИ</span></section>
+  <section id="works" class="dummy-section"><span>ПРИМЕРЫ РАБОТ</span></section>
+  <section id="contacts" class="dummy-section"><span>КОНТАКТЫ</span></section>
+
+  <script>
+    const hero = document.querySelector('.hero');
+    let raf = 0;
+
+    hero.addEventListener('pointermove', (event) => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const x = event.clientX / window.innerWidth - 0.5;
+        const y = event.clientY / window.innerHeight - 0.5;
+        hero.style.setProperty('--pointer-x', `${x * 8}px`);
+        hero.style.setProperty('--pointer-y', `${y * 6}px`);
+      });
+    });
+
+    hero.addEventListener('pointerleave', () => {
+      hero.style.setProperty('--pointer-x', '0px');
+      hero.style.setProperty('--pointer-y', '0px');
+    });
+
+    const navLinks = [...document.querySelectorAll('.nav-panel__link')];
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.forEach((item) => item.classList.remove('is-active'));
+        link.classList.add('is-active');
+      });
+    });
+  </script>
+</body>
+</html>
