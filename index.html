@@ -19,9 +19,12 @@
     <div class="hero__grain" aria-hidden="true"></div>
 
     <header class="topbar">
-      <a class="topbar__meta" href="#top" aria-label="ФОКУС — на главную">
-        <span data-i18n="company">ФОТОКОМПАНИЯ</span><span class="topbar__slash">/</span><span data-i18n="country">РОССИЯ</span>
-      </a>
+      <div class="topbar__left">
+        <a class="topbar__meta" href="#top" aria-label="ФОКУС — на главную">
+          <span data-i18n="company">ФОТОКОМПАНИЯ</span><span class="topbar__slash">/</span><span data-i18n="country">РОССИЯ</span>
+        </a>
+        <span class="topbar__line topbar__line--left" aria-hidden="true"></span>
+      </div>
 
       <nav class="nav-panel" aria-label="Основная навигация">
         <a class="nav-panel__link is-active" href="#top" data-i18n="home">ГЛАВНАЯ</a>
@@ -31,10 +34,13 @@
         <a class="nav-panel__link" href="#contacts" data-i18n="contacts">КОНТАКТЫ</a>
       </nav>
 
-      <div class="language-switch" aria-label="Выбор языка сайта">
-        <span class="language-switch__active-pill" aria-hidden="true"></span>
-        <button class="language-switch__button is-active" type="button" data-lang="ru" aria-label="Русский" title="Русский"><span class="language-switch__flag" aria-hidden="true">🇷🇺</span></button>
-        <button class="language-switch__button" type="button" data-lang="en" aria-label="English" title="English"><span class="language-switch__flag" aria-hidden="true">🇬🇧</span></button>
+      <div class="topbar__right">
+        <span class="topbar__line topbar__line--right" aria-hidden="true"></span>
+        <div class="language-switch" aria-label="Выбор языка сайта">
+          <span class="language-switch__active-pill" aria-hidden="true"></span>
+          <button class="language-switch__button is-active" type="button" data-lang="ru" aria-label="Русский" title="Русский"><span class="language-switch__flag" aria-hidden="true">🇷🇺</span></button>
+          <button class="language-switch__button" type="button" data-lang="en" aria-label="English" title="English"><span class="language-switch__flag" aria-hidden="true">🇬🇧</span></button>
+        </div>
       </div>
     </header>
 
