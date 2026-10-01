@@ -898,7 +898,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .about-photo-card--back {
-  top: 76px;
+  top: 46px;
   left: 16px;
   transform: translate3d(-105vw, 24px, 0) rotate(-12deg);
   opacity: 0;
@@ -906,7 +906,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .about-photo-card--middle {
-  top: 40px;
+  top: 10px;
   left: 96px;
   transform: translate3d(105vw, 28px, 0) rotate(11deg);
   opacity: 0;
@@ -914,7 +914,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .about-photo-card--front {
-  top: 10px;
+  top: -20px;
   right: 12px;
   transform: translate3d(0, -105vh, 0) rotate(7deg);
   opacity: 0;
