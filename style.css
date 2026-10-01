@@ -378,7 +378,6 @@ a { color: inherit; text-decoration: none; }
   }
   .hero__logo-wrap { width: min(90vw, 540px); }
   .hero__tagline { margin-top: 20px; max-width: 330px; font-size: 8.5px; line-height: 1.55; letter-spacing: .095em; }
-  .focus-marker { width: 74vw; opacity: .28; }
   .hero__scroll { display: none; }
   .bottombar {
     left: 16px;
