@@ -70,27 +70,27 @@
 
   </main>
 
-  <section id="about" class="about-section">
+  <section id="about" class="about-section" aria-labelledby="about-title">
     <div class="about-section__background" aria-hidden="true"></div>
     <div class="about-section__overlay" aria-hidden="true"></div>
     <div class="about-section__inner">
       <div class="about-section__copy about-reveal">
         <div class="about-section__eyebrow">
-          <span class="about-section__eyebrow-line"></span>
+          <span class="about-section__eyebrow-line" aria-hidden="true"></span>
           <span data-i18n="aboutEyebrow">О КОМПАНИИ</span>
         </div>
 
-        <h2 class="about-section__title">
+        <h2 class="about-section__title" id="about-title">
           <span class="about-keyword" data-i18n="aboutTitle1Word">МОЛОДАЯ</span> <span data-i18n="aboutTitle1Rest">КОМПАНИЯ.</span><br>
           <span class="about-keyword" data-i18n="aboutTitle2Word">БОЛЬШАЯ</span> <span data-i18n="aboutTitle2Rest">КОМАНДА.</span>
         </h2>
 
         <p class="about-section__lead">
-          <span class="about-keyword about-keyword--lead">ФОКУС</span><span data-i18n="aboutLeadRest"> — молодая российская фотокомпания, основанная в Анапе, Краснодарском крае.</span>
+          <span class="about-keyword about-keyword--lead">ФОКУС</span><span data-i18n="aboutLeadRest"> — российская фотокомпания из Анапы. Снимаем пространства, людей и события.</span>
         </p>
 
         <p class="about-section__text" data-i18n="aboutText">
-          В команде — управляющие, менеджеры, фотографы, видеографы, программисты, маркетологи и другие специалисты. Работаем в трёх направлениях: интерьерная съёмка, съёмка гостей в отелях и съёмка мероприятий.
+          Фотографы, видеографы, менеджеры, разработчики и маркетологи — объединяем разные навыки и внимание к деталям в одной команде.
         </p>
 
 
@@ -98,25 +98,25 @@
           <div class="about-direction-card">
             <span class="about-direction-card__rail" aria-hidden="true"></span>
             <div class="about-direction-card__copy">
-              <span class="about-direction-card__label" data-i18n="aboutStat1">ИНТЕРЬЕРЫ</span>
+              <span class="about-direction-card__number" aria-hidden="true">01</span><span class="about-direction-card__label" data-i18n="aboutStat1">ИНТЕРЬЕРЫ</span>
+              <span class="about-direction-card__description" data-i18n="aboutDirection1">Архитектура и детали</span>
             </div>
-            <span class="about-direction-card__arrow" aria-hidden="true">↗</span>
           </div>
 
           <div class="about-direction-card">
             <span class="about-direction-card__rail" aria-hidden="true"></span>
             <div class="about-direction-card__copy">
-              <span class="about-direction-card__label" data-i18n="aboutStat2">ОТЕЛИ</span>
+              <span class="about-direction-card__number" aria-hidden="true">02</span><span class="about-direction-card__label" data-i18n="aboutStat2">ОТЕЛИ</span>
+              <span class="about-direction-card__description" data-i18n="aboutDirection2">Съёмка гостей</span>
             </div>
-            <span class="about-direction-card__arrow" aria-hidden="true">↗</span>
           </div>
 
           <div class="about-direction-card">
             <span class="about-direction-card__rail" aria-hidden="true"></span>
             <div class="about-direction-card__copy">
-              <span class="about-direction-card__label" data-i18n="aboutStat3">МЕРОПРИЯТИЯ</span>
+              <span class="about-direction-card__number" aria-hidden="true">03</span><span class="about-direction-card__label" data-i18n="aboutStat3">МЕРОПРИЯТИЯ</span>
+              <span class="about-direction-card__description" data-i18n="aboutDirection3">Живые моменты</span>
             </div>
-            <span class="about-direction-card__arrow" aria-hidden="true">↗</span>
           </div>
         </div>
       </div>
@@ -133,6 +133,7 @@
             <img src="assets/about-card-3.png" alt="Современная гостиная с креслами и мрамором" loading="lazy" onerror="this.src='assets/about-main.png'">
           </figure>
         </div>
+        <p class="about-media-caption"><span class="about-media-caption__mark" aria-hidden="true">↗</span><span data-i18n="aboutMediaNote">ВИЗУАЛ, КОТОРЫЙ РАБОТАЕТ НА БРЕНД</span></p>
       </div>
     </div>
   </section>
@@ -160,8 +161,11 @@
         aboutTitle2Word: 'БОЛЬШАЯ',
         aboutTitle2Rest: 'КОМАНДА.',
         aboutTitle3: '',
-        aboutLeadRest: ' — молодая российская фотокомпания, основанная в Анапе, Краснодарском крае.',
-        aboutText: 'В команде — управляющие, менеджеры, фотографы, видеографы, программисты, маркетологи и другие специалисты. Работаем в трёх направлениях: интерьерная съёмка, съёмка гостей в отелях и съёмка мероприятий.',
+        aboutLeadRest: ' — российская фотокомпания из Анапы. Снимаем пространства, людей и события.',
+        aboutText: 'Фотографы, видеографы, менеджеры, разработчики и маркетологи — объединяем разные навыки и внимание к деталям в одной команде.',
+        aboutDirection1: 'Архитектура и детали',
+        aboutDirection2: 'Съёмка гостей',
+        aboutDirection3: 'Живые моменты',
         aboutStatMeta1: 'ПРОСТРАНСТВО',
         aboutStat1: 'ИНТЕРЬЕРЫ',
         aboutStatMeta2: 'ГОСТИ',
@@ -190,8 +194,11 @@
         aboutTitle2Word: 'LARGE',
         aboutTitle2Rest: 'TEAM.',
         aboutTitle3: '',
-        aboutLeadRest: ' — a young Russian photography company founded in Anapa, Krasnodar Krai.',
-        aboutText: 'The team includes managers, photographers, videographers, developers, marketers and other specialists. We work across three directions: interior photography, hotel guest photography and event photography.',
+        aboutLeadRest: ' — a Russian photography company from Anapa. We photograph spaces, people and events.',
+        aboutText: 'Photographers, videographers, managers, developers and marketers — bringing different skills and an eye for detail together in one team.',
+        aboutDirection1: 'Architecture & details',
+        aboutDirection2: 'Guest photography',
+        aboutDirection3: 'Moments in motion',
         aboutStatMeta1: 'SPACE',
         aboutStat1: 'INTERIORS',
         aboutStatMeta2: 'GUESTS',
@@ -276,7 +283,8 @@
     const aboutSection = document.getElementById('about');
     const aboutReveal = [...document.querySelectorAll('.about-reveal')];
 
-    if ('IntersectionObserver' in window) {
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      aboutReveal.forEach((element) => element.classList.add('is-reveal-ready'));
       const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
@@ -287,33 +295,6 @@
 
       aboutReveal.forEach((element) => revealObserver.observe(element));
     }
-
-    let aboutScrollRaf = 0;
-    function updateAboutPhotoStage() {
-      if (!aboutSection) return;
-      const rect = aboutSection.getBoundingClientRect();
-      const viewport = window.innerHeight || document.documentElement.clientHeight;
-      const progress = Math.max(0, Math.min(1, (viewport - rect.top) / (viewport * 0.92)));
-
-      let stage = 0;
-      if (progress > 0.20) stage = 1;
-      if (progress > 0.46) stage = 2;
-      if (progress > 0.73) stage = 3;
-
-      aboutSection.classList.toggle('is-photo-stage-1', stage === 1);
-      aboutSection.classList.toggle('is-photo-stage-2', stage === 2);
-      aboutSection.classList.toggle('is-photo-stage-3', stage === 3);
-    }
-
-    window.addEventListener('scroll', () => {
-      if (aboutScrollRaf) return;
-      aboutScrollRaf = requestAnimationFrame(() => {
-        aboutScrollRaf = 0;
-        updateAboutPhotoStage();
-      });
-    }, { passive: true });
-
-    updateAboutPhotoStage();
 
     const savedLanguage = localStorage.getItem('focus-language');
     setLanguage(savedLanguage === 'en' ? 'en' : 'ru');
