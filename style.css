@@ -609,31 +609,28 @@ a { color: inherit; text-decoration: none; }
   text-shadow: 0 0 0 rgba(0,0,0,0.5) !important;
 }
 
-/* RIGHT VISUAL — Video */
+/* RIGHT VISUAL — Photographer Photo (bg erased via blend mode) */
 .ac-visual {
   display: flex;
-  align-items: stretch;
+  align-items: flex-end;
   justify-content: center;
   width: 100%;
   position: relative;
-  min-height: 500px;
+  /* White background here is essential for multiply to work */
+  background-color: transparent !important;
+  background-image: var(--white-pixel) !important;
+  background-repeat: repeat !important;
 }
-.ac-video-wrapper {
+.ac-photo {
   width: 100%;
-  border-radius: 32px;
-  overflow: hidden;
-  background: #111;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.12);
-  position: relative;
-}
-.ac-video {
-  width: 100%;
-  height: 100%;
-  min-height: 500px;
-  object-fit: cover;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
   display: block;
-  position: absolute;
-  inset: 0;
+  /* KEY: multiply erases white pixels, leaving only the subjects */
+  mix-blend-mode: multiply;
+  /* Slight contrast boost for clean cutout look */
+  filter: contrast(1.05);
 }
 
 /* Cinematic Animations */
