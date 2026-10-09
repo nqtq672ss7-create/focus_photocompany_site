@@ -619,9 +619,9 @@ a { color: inherit; text-decoration: none; }
 .ac-video {
   position: absolute;
   bottom: -40px; /* Let it overlap the bottom padding slightly */
-  right: -45%;   /* Pull the massive 16:9 frame WAY to the right */
-  height: 650px; /* Force it to be tall enough to match the text column */
-  width: auto;   /* Width scales natively (approx 1150px) */
+  right: -70%;   /* Shifted further right to completely clear text */
+  height: 620px; /* Optimal height for stature */
+  width: auto;   /* Width scales natively */
   max-width: none;
   object-fit: contain;
   display: block;
