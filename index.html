@@ -14,38 +14,38 @@
   <link rel="stylesheet" href="style.css?t=202410091219">
 </head>
 <body>
+  <header class="topbar">
+    <div class="topbar__left">
+      <span class="topbar__line topbar__line--left" aria-hidden="true"></span>
+    </div>
+
+    <nav class="nav-panel" aria-label="Основная навигация">
+      <a class="nav-panel__link is-active" href="#top" data-i18n="home">ГЛАВНАЯ</a>
+      <a class="nav-panel__link" href="#about" data-i18n="about">О КОМПАНИИ</a>
+      <a class="nav-panel__link" href="#services" data-i18n="services">УСЛУГИ</a>
+      <a class="nav-panel__link" href="#works" data-i18n="works">ПРИМЕРЫ РАБОТ</a>
+      <a class="nav-panel__link" href="#contacts" data-i18n="contacts">КОНТАКТЫ</a>
+    </nav>
+
+    <div class="topbar__right">
+      <span class="topbar__line topbar__line--right" aria-hidden="true"></span>
+      <div class="language-switch" aria-label="Выбор языка сайта">
+        <span class="language-switch__active-pill" aria-hidden="true"></span>
+        <button class="language-switch__button is-active" type="button" data-lang="ru" aria-label="Русский" title="Русский">
+          <span class="language-switch__flag language-switch__flag--text" aria-hidden="true">RU</span>
+        </button>
+        <button class="language-switch__button" type="button" data-lang="en" aria-label="English" title="English">
+          <span class="language-switch__flag language-switch__flag--text" aria-hidden="true">EN</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
   <main class="hero" aria-label="Главный экран сайта фотокомпании ФОКУС">
     <div class="hero__image" aria-hidden="true"></div>
     <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline preload="auto" poster="assets/focus-lobby.png"><source src="assets/focus-hero.mp4" type="video/mp4"></video>
     <div class="hero__shade" aria-hidden="true"></div>
     <div class="hero__grain" aria-hidden="true"></div>
-
-    <header class="topbar">
-      <div class="topbar__left">
-        <span class="topbar__line topbar__line--left" aria-hidden="true"></span>
-      </div>
-
-      <nav class="nav-panel" aria-label="Основная навигация">
-        <a class="nav-panel__link is-active" href="#top" data-i18n="home">ГЛАВНАЯ</a>
-        <a class="nav-panel__link" href="#about" data-i18n="about">О КОМПАНИИ</a>
-        <a class="nav-panel__link" href="#services" data-i18n="services">УСЛУГИ</a>
-        <a class="nav-panel__link" href="#works" data-i18n="works">ПРИМЕРЫ РАБОТ</a>
-        <a class="nav-panel__link" href="#contacts" data-i18n="contacts">КОНТАКТЫ</a>
-      </nav>
-
-      <div class="topbar__right">
-        <span class="topbar__line topbar__line--right" aria-hidden="true"></span>
-        <div class="language-switch" aria-label="Выбор языка сайта">
-          <span class="language-switch__active-pill" aria-hidden="true"></span>
-            <button class="language-switch__button is-active" type="button" data-lang="ru" aria-label="Русский" title="Русский">
-            <span class="language-switch__flag language-switch__flag--text" aria-hidden="true">RU</span>
-          </button>
-          <button class="language-switch__button" type="button" data-lang="en" aria-label="English" title="English">
-            <span class="language-switch__flag language-switch__flag--text" aria-hidden="true">EN</span>
-          </button>
-        </div>
-      </div>
-    </header>
 
     <section class="hero__content" id="top">
       <div class="hero__logo-wrap hero__logo-wrap--parallax">
@@ -55,10 +55,7 @@
         <span data-i18n="tagline1">ВЫДЕЛЯЕМ ГЛАВНОЕ.</span><br>
         <span data-i18n="tagline2">СОЗДАЁМ ТО, ЧТО ХОЧЕТСЯ РАССМАТРИВАТЬ.</span>
       </p>
-    </section>
-
-    <footer class="bottombar">
-      <div class="bottombar__actions">
+      <div class="hero__actions">
         <a href="#contacts" class="contact-button">
           <span class="contact-button__dot"></span>
           <span data-i18n="discuss">ОБСУДИТЬ СЪЁМКУ</span>
@@ -68,7 +65,7 @@
           <span class="works-button__arrow" aria-hidden="true">→</span>
         </a>
       </div>
-    </footer>
+    </section>
 
   </main>
 
