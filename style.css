@@ -613,29 +613,31 @@ a { color: inherit; text-decoration: none; }
 .ac-visual {
   position: relative;
   width: 100%;
-  min-height: 500px;
-  border-radius: 32px;
-  overflow: hidden;
-  background: #000;
+  min-height: 560px;
+  /* No overflow:hidden here — photo must not be clipped */
 }
+/* Video fills the full block, rounded and clipped by its own wrapper */
 .ac-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 32px;
   display: block;
   z-index: 0;
 }
+/* Photo sits on top, anchored to bottom-right, not clipped */
 .ac-photo {
-  position: relative;
-  z-index: 1;
-  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: -5%;  /* Let it slightly overflow rightward for full silhouette */
+  width: 95%;
   height: 100%;
   object-fit: contain;
-  object-position: bottom center;
+  object-position: bottom right;
   display: block;
-  /* multiply removes white bg — video shows through */
+  z-index: 1;
   mix-blend-mode: multiply;
 }
 
