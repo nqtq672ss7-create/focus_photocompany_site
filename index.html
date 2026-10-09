@@ -10,7 +10,7 @@
   <title>ФОКУС — Фотокомпания</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?t=202410091219">
 </head>
 <body>
@@ -72,64 +72,51 @@
 
   </main>
 
-  <section id="about" class="editorial-section" aria-labelledby="about-title">
-    <div class="editorial-grid">
+  <section id="about" class="about-clean" aria-labelledby="about-title">
+    <div class="ac-grid">
       
-      <!-- HERO TITLE CELL (Spans 12 columns) -->
-      <div class="ed-cell ed-cell--title bg-cappuccino about-anim">
-        <div class="ed-badge">
-          <span class="ed-badge__dot"></span>
-          <span data-i18n="aboutEyebrow">О компании</span>
-        </div>
-        <h2 class="ed-title" id="about-title">
-          <span class="ed-title__line"><span data-i18n="aboutTitle1Word">Молодая</span> <i class="ed-serif" data-i18n="aboutTitle1Rest">компания.</i></span>
-          <span class="ed-title__line"><span data-i18n="aboutTitle2Word">Большая</span> <i class="ed-serif" data-i18n="aboutTitle2Rest">команда.</i></span>
+      <!-- LEFT COPY -->
+      <div class="ac-copy about-anim">
+        <div class="ac-badge"><span class="ac-badge-dot"></span> <span data-i18n="aboutEyebrow">О компании</span></div>
+        <h2 class="ac-title" id="about-title">
+          <span class="ac-title__line"><span class="ac-title__inner"><span data-i18n="aboutTitle1Word">Молодая</span> <span data-i18n="aboutTitle1Rest">компания.</span></span></span>
+          <span class="ac-title__line"><span class="ac-title__inner" style="transition-delay: 0.1s;"><span data-i18n="aboutTitle2Word">Большая</span> <span data-i18n="aboutTitle2Rest">команда.</span></span></span>
         </h2>
-      </div>
-
-      <!-- IMAGE CELL (Spans 5 columns) -->
-      <div class="ed-cell ed-cell--media bg-image about-anim" data-delay="100">
-        <!-- Background image set in CSS -->
-      </div>
-
-      <!-- TEXT CELL (Spans 7 columns) -->
-      <div class="ed-cell ed-cell--text bg-white about-anim" data-delay="200">
-        <p class="ed-lead">
+        
+        <div class="ac-divider"></div>
+        
+        <p class="ac-lead">
           <strong data-i18n="aboutBrand">Фокус</strong> <span data-i18n="aboutLeadRest">— российская фотокомпания из Анапы. Снимаем пространства, людей и события.</span>
         </p>
-        <p class="ed-desc" data-i18n="aboutText">
-          Фотографы, видеографы, менеджеры, разработчики и маркетологи — объединяем разные навыки и внимание к деталям.
+        <p class="ac-text" data-i18n="aboutText">
+          Фотографы, видеографы, менеджеры, разработчики и маркетологи — объединяем разные навыки и внимание к деталям в одной команде.
         </p>
+        
+        <div class="ac-dirs">
+          <div class="ac-dir"><span class="ac-dir-num">01</span> <span data-i18n="aboutStat1">Интерьеры</span></div>
+          <div class="ac-dir"><span class="ac-dir-num">02</span> <span data-i18n="aboutStat2">Отели</span></div>
+          <div class="ac-dir"><span class="ac-dir-num">03</span> <span data-i18n="aboutStat3">Мероприятия</span></div>
+        </div>
       </div>
 
-      <!-- STATS CELLS (Span 4 columns each) -->
-      <div class="ed-cell ed-cell--stat bg-graphite about-anim" data-delay="300">
-        <div class="ed-stat-val" data-count="3">3</div>
-        <div class="ed-stat-label" data-i18n="aboutStatYears">года опыта</div>
-      </div>
-      <div class="ed-cell ed-cell--stat bg-graphite about-anim" data-delay="400">
-        <div class="ed-stat-val" data-count="120">120</div>
-        <div class="ed-stat-label" data-i18n="aboutStatProjects">проектов</div>
-      </div>
-      <div class="ed-cell ed-cell--stat bg-graphite about-anim" data-delay="500">
-        <div class="ed-stat-val" data-count="12">12</div>
-        <div class="ed-stat-label" data-i18n="aboutStatTeam">специалистов</div>
-      </div>
-
-      <!-- DIRECTIONS (Spans 12 columns) -->
-      <div class="ed-cell ed-cell--directions bg-cappuccino about-anim" data-delay="600">
-        <div class="ed-dir-wrapper">
-          <div class="ed-dir">
-            <h3 data-i18n="aboutStat1">Интерьеры</h3>
-            <p data-i18n="aboutDirection1">Архитектура и детали</p>
+      <!-- RIGHT VISUAL -->
+      <div class="ac-visual about-anim" data-delay="150">
+        <div class="ac-image-wrapper">
+          <img src="assets/about-bg.png" alt="Съемка интерьера" class="ac-image" loading="lazy" onerror="this.src='assets/about-main.png'">
+        </div>
+        
+        <div class="ac-stats">
+          <div class="ac-stat-card about-anim" data-delay="300">
+            <div class="ac-stat-val" data-count="3">3</div>
+            <div class="ac-stat-label" data-i18n="aboutStatYears">года опыта</div>
           </div>
-          <div class="ed-dir">
-            <h3 data-i18n="aboutStat2">Отели</h3>
-            <p data-i18n="aboutDirection2">Съёмка гостей</p>
+          <div class="ac-stat-card about-anim" data-delay="400">
+            <div class="ac-stat-val" data-count="120">120</div>
+            <div class="ac-stat-label" data-i18n="aboutStatProjects">проектов</div>
           </div>
-          <div class="ed-dir">
-            <h3 data-i18n="aboutStat3">Мероприятия</h3>
-            <p data-i18n="aboutDirection3">Живые моменты</p>
+          <div class="ac-stat-card about-anim" data-delay="500">
+            <div class="ac-stat-val" data-count="12">12</div>
+            <div class="ac-stat-label" data-i18n="aboutStatTeam">специалистов</div>
           </div>
         </div>
       </div>
