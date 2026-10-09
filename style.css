@@ -588,7 +588,7 @@ a { color: inherit; text-decoration: none; }
 .ac-video {
   position: absolute;
   bottom: -60px;  /* Firmly pushes the bottom video padding into overflow:hidden */
-  right: -46%;    /* Balanced offset: man is 100% clear of text, girl has ample space on right */
+  right: -40%;    /* Shifted slightly left for breathing room on the right */
   height: 640px;  /* Heads sit high at 580px, perfectly aligned with the top of the card */
   width: auto;    /* Width scales natively */
   max-width: none;
