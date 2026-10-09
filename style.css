@@ -581,15 +581,15 @@ a { color: inherit; text-decoration: none; }
 .ac-visual {
   position: relative;
   width: 100%;
-  height: 530px;
+  height: 570px;
   align-self: end;
   background: transparent !important;
 }
 .ac-video {
   position: absolute;
-  bottom: -60px;  /* Firmly pushes the video down into overflow:hidden, leaving ZERO white strip */
-  right: -32%;    /* Comfortable right positioning leaving space for the girl */
-  height: 590px;  /* Reaches top at 530px cleanly */
+  bottom: -65px;  /* Firmly pushes the video down into overflow:hidden, leaving ZERO white strip */
+  right: -34%;    /* Safe right offset so man doesn't touch left text */
+  height: 635px;  /* Heads rise by 45px, filling the empty space above them */
   width: auto;    /* Width scales natively */
   max-width: none;
   object-fit: contain;
