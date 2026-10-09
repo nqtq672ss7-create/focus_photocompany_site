@@ -609,7 +609,7 @@ a { color: inherit; text-decoration: none; }
   text-shadow: 0 0 0 rgba(0,0,0,0.5) !important;
 }
 
-/* RIGHT VISUAL — Video only (Transparent bg, shifted right) */
+/* RIGHT VISUAL — Video only (Massive, shifted right) */
 .ac-visual {
   position: relative;
   width: 100%;
@@ -618,15 +618,15 @@ a { color: inherit; text-decoration: none; }
 }
 .ac-video {
   position: absolute;
-  bottom: -20px; /* Anchor to bottom */
-  right: -15%;   /* Push video firmly to the right to avoid text overlap */
-  width: 135%;   /* Make it large enough to look good... */
+  bottom: -40px; /* Let it overlap the bottom padding slightly */
+  right: -45%;   /* Pull the massive 16:9 frame WAY to the right */
+  height: 650px; /* Force it to be tall enough to match the text column */
+  width: auto;   /* Width scales natively (approx 1150px) */
   max-width: none;
-  height: auto;
-  object-fit: contain; /* ...but don't aggressively crop the people */
+  object-fit: contain;
   display: block;
-  mix-blend-mode: multiply; /* Erases white background */
-  filter: contrast(1.1) brightness(1.05); /* Kills the faint grey box from AI generation */
+  mix-blend-mode: multiply;
+  filter: contrast(1.15) brightness(1.05); /* Aggressive whiteout of AI grey bg */
   pointer-events: none;
 }
 
