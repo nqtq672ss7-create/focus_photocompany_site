@@ -10,7 +10,7 @@
   <title>ФОКУС — Фотокомпания</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?t=202410091219">
 </head>
 <body>
@@ -72,69 +72,62 @@
 
   </main>
 
-  <section id="about" class="about-section" aria-labelledby="about-title">
-    <div class="bento-container">
+  <section id="about" class="editorial-section" aria-labelledby="about-title">
+    <div class="editorial-grid">
       
-      <!-- Bento Intro (Span 8 cols) -->
-      <div class="bento-card bento-intro about-anim">
-        <div class="bento-card__inner">
-          <div class="bento-badge" data-i18n="aboutEyebrow">О компании</div>
-          <h2 class="bento-intro__title" id="about-title">
-            <span data-i18n="aboutTitle1Word">Молодая</span> <span data-i18n="aboutTitle1Rest">компания.</span><br>
-            <span data-i18n="aboutTitle2Word">Большая</span> <span data-i18n="aboutTitle2Rest">команда.</span>
-          </h2>
-          <p class="bento-intro__lead">
-            <strong data-i18n="aboutBrand">Фокус</strong> <span data-i18n="aboutLeadRest">— российская фотокомпания из Анапы. Снимаем пространства, людей и события.</span>
-          </p>
-          <p class="bento-intro__text" data-i18n="aboutText">
-            Фотографы, видеографы, менеджеры, разработчики и маркетологи — объединяем разные навыки и внимание к деталям.
-          </p>
+      <!-- HERO TITLE CELL (Spans 12 columns) -->
+      <div class="ed-cell ed-cell--title bg-cappuccino about-anim">
+        <div class="ed-badge">
+          <span class="ed-badge__dot"></span>
+          <span data-i18n="aboutEyebrow">О компании</span>
         </div>
+        <h2 class="ed-title" id="about-title">
+          <span class="ed-title__line"><span data-i18n="aboutTitle1Word">Молодая</span> <i class="ed-serif" data-i18n="aboutTitle1Rest">компания.</i></span>
+          <span class="ed-title__line"><span data-i18n="aboutTitle2Word">Большая</span> <i class="ed-serif" data-i18n="aboutTitle2Rest">команда.</i></span>
+        </h2>
       </div>
 
-      <!-- Bento Media (Span 4 cols) -->
-      <div class="bento-card bento-media about-anim" data-delay="100">
-        <div class="bento-card__inner p-0">
-          <img src="assets/about-card-3.png" alt="Съемка интерьера" class="bento-img" loading="lazy" onerror="this.src='assets/about-bg.png'">
-        </div>
+      <!-- IMAGE CELL (Spans 5 columns) -->
+      <div class="ed-cell ed-cell--media bg-image about-anim" data-delay="100">
+        <!-- Background image set in CSS -->
       </div>
 
-      <!-- Bento Stats (Span 4 cols each) -->
-      <div class="bento-card bento-stat about-anim" data-delay="150">
-        <div class="bento-card__inner">
-          <div class="bento-stat__val" data-count="3">3</div>
-          <div class="bento-stat__label" data-i18n="aboutStatYears">года опыта</div>
-        </div>
-      </div>
-      
-      <div class="bento-card bento-stat about-anim" data-delay="200">
-        <div class="bento-card__inner">
-          <div class="bento-stat__val" data-count="120">120</div>
-          <div class="bento-stat__label" data-i18n="aboutStatProjects">проектов</div>
-        </div>
+      <!-- TEXT CELL (Spans 7 columns) -->
+      <div class="ed-cell ed-cell--text bg-white about-anim" data-delay="200">
+        <p class="ed-lead">
+          <strong data-i18n="aboutBrand">Фокус</strong> <span data-i18n="aboutLeadRest">— российская фотокомпания из Анапы. Снимаем пространства, людей и события.</span>
+        </p>
+        <p class="ed-desc" data-i18n="aboutText">
+          Фотографы, видеографы, менеджеры, разработчики и маркетологи — объединяем разные навыки и внимание к деталям.
+        </p>
       </div>
 
-      <div class="bento-card bento-stat about-anim" data-delay="250">
-        <div class="bento-card__inner">
-          <div class="bento-stat__val" data-count="12">12</div>
-          <div class="bento-stat__label" data-i18n="aboutStatTeam">специалистов</div>
-        </div>
+      <!-- STATS CELLS (Span 4 columns each) -->
+      <div class="ed-cell ed-cell--stat bg-graphite about-anim" data-delay="300">
+        <div class="ed-stat-val" data-count="3">3</div>
+        <div class="ed-stat-label" data-i18n="aboutStatYears">года опыта</div>
+      </div>
+      <div class="ed-cell ed-cell--stat bg-graphite about-anim" data-delay="400">
+        <div class="ed-stat-val" data-count="120">120</div>
+        <div class="ed-stat-label" data-i18n="aboutStatProjects">проектов</div>
+      </div>
+      <div class="ed-cell ed-cell--stat bg-graphite about-anim" data-delay="500">
+        <div class="ed-stat-val" data-count="12">12</div>
+        <div class="ed-stat-label" data-i18n="aboutStatTeam">специалистов</div>
       </div>
 
-      <!-- Bento Directions (Span 12 cols - full width) -->
-      <div class="bento-card bento-directions about-anim" data-delay="300">
-        <div class="bento-card__inner flex-row">
-          <div class="bento-dir">
+      <!-- DIRECTIONS (Spans 12 columns) -->
+      <div class="ed-cell ed-cell--directions bg-cappuccino about-anim" data-delay="600">
+        <div class="ed-dir-wrapper">
+          <div class="ed-dir">
             <h3 data-i18n="aboutStat1">Интерьеры</h3>
             <p data-i18n="aboutDirection1">Архитектура и детали</p>
           </div>
-          <div class="bento-dir-divider"></div>
-          <div class="bento-dir">
+          <div class="ed-dir">
             <h3 data-i18n="aboutStat2">Отели</h3>
             <p data-i18n="aboutDirection2">Съёмка гостей</p>
           </div>
-          <div class="bento-dir-divider"></div>
-          <div class="bento-dir">
+          <div class="ed-dir">
             <h3 data-i18n="aboutStat3">Мероприятия</h3>
             <p data-i18n="aboutDirection3">Живые моменты</p>
           </div>
