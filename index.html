@@ -15,9 +15,7 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="topbar__left">
-      <span class="topbar__line topbar__line--left" aria-hidden="true"></span>
-    </div>
+    <div class="topbar__spacer"></div>
 
     <nav class="nav-panel" aria-label="Основная навигация">
       <a class="nav-panel__link is-active" href="#top" data-i18n="home">ГЛАВНАЯ</a>
@@ -28,7 +26,6 @@
     </nav>
 
     <div class="topbar__right">
-      <span class="topbar__line topbar__line--right" aria-hidden="true"></span>
       <div class="language-switch" aria-label="Выбор языка сайта">
         <span class="language-switch__active-pill" aria-hidden="true"></span>
         <button class="language-switch__button is-active" type="button" data-lang="ru" aria-label="Русский" title="Русский">
@@ -46,6 +43,18 @@
     <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline preload="auto" poster="assets/focus-lobby.png"><source src="assets/focus-hero.mp4" type="video/mp4"></video>
     <div class="hero__shade" aria-hidden="true"></div>
     <div class="hero__grain" aria-hidden="true"></div>
+
+    <!-- Green lines anchored to the hero section -->
+    <div class="hero__top-lines" aria-hidden="true">
+      <div class="hero__line-col">
+        <span class="topbar__line topbar__line--left"></span>
+      </div>
+      <div class="hero__nav-placeholder"></div>
+      <div class="hero__line-col hero__line-col--right">
+        <span class="topbar__line topbar__line--right"></span>
+        <div class="hero__lang-placeholder"></div>
+      </div>
+    </div>
 
     <section class="hero__content" id="top">
       <div class="hero__logo-wrap hero__logo-wrap--parallax">
@@ -239,6 +248,18 @@
       }, { threshold: [0.35, 0.6, 0.8] });
 
       observedSections.forEach((section) => sectionObserver.observe(section));
+    }
+
+    const aboutEl = document.getElementById('about');
+    const topbarEl = document.querySelector('.topbar');
+    if (aboutEl && topbarEl) {
+      const updateHeaderLightMode = () => {
+        const rect = aboutEl.getBoundingClientRect();
+        const isOverLight = rect.top <= 65 && rect.bottom >= 70;
+        topbarEl.classList.toggle('is-over-light', isOverLight);
+      };
+      window.addEventListener('scroll', updateHeaderLightMode, { passive: true });
+      updateHeaderLightMode();
     }
 
     function setLanguage(lang) {
