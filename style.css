@@ -609,26 +609,25 @@ a { color: inherit; text-decoration: none; }
   text-shadow: 0 0 0 rgba(0,0,0,0.5) !important;
 }
 
-/* RIGHT VISUAL — Video only (Uncropped, scaled, transparent) */
+/* RIGHT VISUAL — Video only (Transparent bg, shifted right) */
 .ac-visual {
   position: relative;
   width: 100%;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 550px;
   background: transparent !important;
 }
 .ac-video {
-  width: 100%;
+  position: absolute;
+  bottom: -20px; /* Anchor to bottom */
+  right: -15%;   /* Push video firmly to the right to avoid text overlap */
+  width: 135%;   /* Make it large enough to look good... */
+  max-width: none;
   height: auto;
-  /* Scale video up by 60% so the people are large, but edges bleed naturally */
-  transform: scale(1.6);
-  transform-origin: center right;
+  object-fit: contain; /* ...but don't aggressively crop the people */
   display: block;
   mix-blend-mode: multiply; /* Erases white background */
   filter: contrast(1.1) brightness(1.05); /* Kills the faint grey box from AI generation */
-  pointer-events: none; /* Prevent video from blocking clicks on text if it overlaps */
+  pointer-events: none;
 }
 
 /* Cinematic Animations */
