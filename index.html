@@ -15,8 +15,6 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="topbar__spacer"></div>
-
     <nav class="nav-panel" aria-label="Основная навигация">
       <a class="nav-panel__link is-active" href="#top" data-i18n="home">ГЛАВНАЯ</a>
       <a class="nav-panel__link" href="#about" data-i18n="about">О КОМПАНИИ</a>
@@ -43,18 +41,6 @@
     <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline preload="auto" poster="assets/focus-lobby.png"><source src="assets/focus-hero.mp4" type="video/mp4"></video>
     <div class="hero__shade" aria-hidden="true"></div>
     <div class="hero__grain" aria-hidden="true"></div>
-
-    <!-- Green lines anchored to the hero section -->
-    <div class="hero__top-lines" aria-hidden="true">
-      <div class="hero__line-col">
-        <span class="topbar__line topbar__line--left"></span>
-      </div>
-      <div class="hero__nav-placeholder"></div>
-      <div class="hero__line-col hero__line-col--right">
-        <span class="topbar__line topbar__line--right"></span>
-        <div class="hero__lang-placeholder"></div>
-      </div>
-    </div>
 
     <section class="hero__content" id="top">
       <div class="hero__logo-wrap hero__logo-wrap--parallax">
@@ -255,7 +241,7 @@
     if (aboutEl && topbarEl) {
       const updateHeaderLightMode = () => {
         const rect = aboutEl.getBoundingClientRect();
-        const isOverLight = rect.top <= 65 && rect.bottom >= 70;
+        const isOverLight = rect.top <= 80 && rect.bottom >= 50;
         topbarEl.classList.toggle('is-over-light', isOverLight);
       };
       window.addEventListener('scroll', updateHeaderLightMode, { passive: true });
