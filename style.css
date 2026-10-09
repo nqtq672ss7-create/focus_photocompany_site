@@ -447,12 +447,16 @@ a { color: inherit; text-decoration: none; }
 /* ── Clean Cinematic Overlay ── */
 :root {
   color-scheme: light !important;
+  --white-pixel: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=');
+  --black-pixel: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=');
 }
 
 .about-clean {
-  background-color: #ffffff !important;
-  background-image: linear-gradient(#ffffff, #ffffff) !important; /* Force white against browser dark-modes */
+  background-color: transparent !important;
+  background-image: var(--white-pixel) !important;
+  background-repeat: repeat !important;
   color-scheme: light !important;
+  forced-color-adjust: none !important;
   border-radius: 48px 48px 0 0;
   margin-top: -64px; /* Pull up to overlap the hero video */
   position: relative;
@@ -470,6 +474,15 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
+}
+
+/* Force text colors against Vivaldi invert */
+.about-clean h2, .about-clean p, .about-clean span, .about-clean div {
+  -webkit-text-fill-color: initial;
+}
+.ac-title, .ac-lead, .ac-text, .ac-dir, .ac-badge, .ac-stat-label {
+  color: transparent !important;
+  text-shadow: 0 0 0 #000000 !important;
 }
 
 /* LEFT COPY */
@@ -506,7 +519,8 @@ a { color: inherit; text-decoration: none; }
 
 .ac-title-lime {
   background: #9DFF00;
-  color: #000000 !important;
+  color: transparent !important;
+  text-shadow: 0 0 0 #000000 !important;
   padding: 0 16px;
   border-radius: 12px;
   display: inline-block;
@@ -592,8 +606,10 @@ a { color: inherit; text-decoration: none; }
   gap: 12px;
 }
 .ac-stat-card {
-  background-color: #ffffff !important;
-  background-image: linear-gradient(#ffffff, #ffffff) !important; /* Force white */
+  background-color: transparent !important;
+  background-image: var(--white-pixel) !important;
+  background-repeat: repeat !important;
+  forced-color-adjust: none !important;
   color: #000000 !important;
   padding: 24px 32px;
   border-radius: 20px;
@@ -605,7 +621,8 @@ a { color: inherit; text-decoration: none; }
 }
 .ac-stat-val {
   background: #9DFF00; /* Lime Accent Highlight */
-  color: #000000 !important; /* Black text */
+  color: transparent !important; /* Force transparent */
+  text-shadow: 0 0 0 #000000 !important; /* Black text via shadow */
   padding: 4px 12px;
   border-radius: 8px;
   font-size: 40px;
