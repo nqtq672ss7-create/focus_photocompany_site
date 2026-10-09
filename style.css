@@ -618,17 +618,17 @@ a { color: inherit; text-decoration: none; }
 }
 .ac-video {
   position: absolute;
-  bottom: -30px; /* Aligned nicely to bottom */
-  right: -28%;   /* Balanced: girl is fully visible on the right, no text overlap on the left */
-  height: 560px; /* Proportionate height so width fits cleanly */
+  bottom: -15px; /* Raised up slightly so heads fill the top area */
+  right: -33%;   /* Shifted slightly more to the right, keeping breathing room on the right */
+  height: 605px; /* Increased height so photographers are larger and reach closer to the top */
   width: auto;   /* Width scales natively */
   max-width: none;
   object-fit: contain;
   display: block;
   mix-blend-mode: multiply;
   filter: contrast(1.18) brightness(1.08); /* Burns out any subtle grey into pure white */
-  -webkit-mask-image: radial-gradient(ellipse 80% 90% at 50% 70%, #000 55%, transparent 88%);
-  mask-image: radial-gradient(ellipse 80% 90% at 50% 70%, #000 55%, transparent 88%); /* Softly dissolves corners & edges into 100% transparency */
+  -webkit-mask-image: radial-gradient(ellipse 85% 92% at 50% 65%, #000 60%, transparent 92%);
+  mask-image: radial-gradient(ellipse 85% 92% at 50% 65%, #000 60%, transparent 92%); /* Softly dissolves corners & edges */
   pointer-events: none;
 }
 
