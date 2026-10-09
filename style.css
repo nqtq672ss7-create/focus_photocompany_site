@@ -618,15 +618,17 @@ a { color: inherit; text-decoration: none; }
 }
 .ac-video {
   position: absolute;
-  bottom: -40px; /* Let it overlap the bottom padding slightly */
-  right: -70%;   /* Shifted further right to completely clear text */
-  height: 620px; /* Optimal height for stature */
+  bottom: -30px; /* Aligned nicely to bottom */
+  right: -28%;   /* Balanced: girl is fully visible on the right, no text overlap on the left */
+  height: 560px; /* Proportionate height so width fits cleanly */
   width: auto;   /* Width scales natively */
   max-width: none;
   object-fit: contain;
   display: block;
   mix-blend-mode: multiply;
-  filter: contrast(1.15) brightness(1.05); /* Aggressive whiteout of AI grey bg */
+  filter: contrast(1.18) brightness(1.08); /* Burns out any subtle grey into pure white */
+  -webkit-mask-image: radial-gradient(ellipse 80% 90% at 50% 70%, #000 55%, transparent 88%);
+  mask-image: radial-gradient(ellipse 80% 90% at 50% 70%, #000 55%, transparent 88%); /* Softly dissolves corners & edges into 100% transparency */
   pointer-events: none;
 }
 
