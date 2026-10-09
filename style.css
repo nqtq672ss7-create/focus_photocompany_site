@@ -473,7 +473,7 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
-  align-items: center;
+  align-items: end;
 }
 
 /* Force text colors against Vivaldi invert */
@@ -485,8 +485,12 @@ a { color: inherit; text-decoration: none; }
   text-shadow: 0 0 0 #000000 !important;
 }
 
-/* LEFT COPY — neatly constrained so text leaves generous breathing room for the visual */
-.ac-copy { max-width: 490px; }
+/* LEFT COPY — lifted higher up so pills and text have generous breathing room */
+.ac-copy {
+  max-width: 490px;
+  align-self: start;
+  margin-bottom: 50px;
+}
 .ac-badge {
   display: inline-flex;
   align-items: center;
@@ -577,14 +581,15 @@ a { color: inherit; text-decoration: none; }
 .ac-visual {
   position: relative;
   width: 100%;
-  height: 540px;
+  height: 530px;
+  align-self: end;
   background: transparent !important;
 }
 .ac-video {
   position: absolute;
-  bottom: -36px;  /* Pushes the empty white padding in the video below the edge, leaving ZERO white strip */
+  bottom: -60px;  /* Firmly pushes the video down into overflow:hidden, leaving ZERO white strip */
   right: -32%;    /* Comfortable right positioning leaving space for the girl */
-  height: 576px;  /* Extends up to exactly 540px, flush with top of container */
+  height: 590px;  /* Reaches top at 530px cleanly */
   width: auto;    /* Width scales natively */
   max-width: none;
   object-fit: contain;
