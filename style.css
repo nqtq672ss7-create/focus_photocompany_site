@@ -461,7 +461,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 0; /* Clean start right below hero, leaves buttons 100% visible and clickable */
   position: relative;
   z-index: 10;
-  padding: 48px 0 0; /* Tight top padding, heads and content sit high */
+  padding: 40px 0 0; /* Minimal top padding, heads sit right near the top of the card */
   box-shadow: 0 -24px 80px rgba(0,0,0,0.5); /* Strong shadow over the dark hero */
   color: #000000 !important;
   overflow: hidden;
@@ -485,11 +485,11 @@ a { color: inherit; text-decoration: none; }
   text-shadow: 0 0 0 #000000 !important;
 }
 
-/* LEFT COPY — lifted higher up so pills and text have generous breathing room */
+/* LEFT COPY — clean 450px column so text is totally clear of the video */
 .ac-copy {
-  max-width: 490px;
+  max-width: 450px;
   align-self: start;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 .ac-badge {
   display: inline-flex;
@@ -581,15 +581,15 @@ a { color: inherit; text-decoration: none; }
 .ac-visual {
   position: relative;
   width: 100%;
-  height: 620px;
+  height: 580px;
   align-self: end;
   background: transparent !important;
 }
 .ac-video {
   position: absolute;
-  bottom: -80px;  /* Firmly pushes the bottom video padding into overflow:hidden */
-  right: -37%;    /* Comfortable offset so video doesn't touch left text column */
-  height: 700px;  /* Taller stature: heads reach right near the top of the card */
+  bottom: -60px;  /* Firmly pushes the bottom video padding into overflow:hidden */
+  right: -46%;    /* Balanced offset: man is 100% clear of text, girl has ample space on right */
+  height: 640px;  /* Heads sit high at 580px, perfectly aligned with the top of the card */
   width: auto;    /* Width scales natively */
   max-width: none;
   object-fit: contain;
