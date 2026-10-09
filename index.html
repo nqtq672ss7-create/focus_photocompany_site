@@ -73,7 +73,9 @@
   <section id="about" class="about-section" aria-labelledby="about-title">
     <div class="about-section__background" aria-hidden="true"></div>
     <div class="about-section__overlay" aria-hidden="true"></div>
+
     <div class="about-section__inner">
+      <!-- LEFT COPY -->
       <div class="about-section__copy about-reveal">
         <div class="about-section__eyebrow">
           <span class="about-section__eyebrow-line" aria-hidden="true"></span>
@@ -86,41 +88,61 @@
         </h2>
 
         <p class="about-section__lead">
-          <span class="about-keyword about-keyword--lead">ФОКУС</span><span data-i18n="aboutLeadRest"> — российская фотокомпания из Анапы. Снимаем пространства, людей и события.</span>
+          <span class="about-keyword about-keyword--lead" data-i18n="aboutBrand">ФОКУС</span><span data-i18n="aboutLeadRest"> — российская фотокомпания из Анапы. Снимаем пространства, людей и события.</span>
         </p>
 
         <p class="about-section__text" data-i18n="aboutText">
           Фотографы, видеографы, менеджеры, разработчики и маркетологи — объединяем разные навыки и внимание к деталям в одной команде.
         </p>
 
+        <!-- STATS ROW -->
+        <div class="about-stats" aria-label="Показатели компании">
+          <div class="about-stat">
+            <span class="about-stat__value" data-count="3">3</span>
+            <span class="about-stat__label" data-i18n="aboutStatYears">ГОДА</span>
+          </div>
+          <span class="about-stat__divider" aria-hidden="true"></span>
+          <div class="about-stat">
+            <span class="about-stat__value" data-count="120">120</span>
+            <span class="about-stat__label" data-i18n="aboutStatProjects">ПРОЕКТОВ</span>
+          </div>
+          <span class="about-stat__divider" aria-hidden="true"></span>
+          <div class="about-stat">
+            <span class="about-stat__value" data-count="12">12</span>
+            <span class="about-stat__label" data-i18n="aboutStatTeam">СПЕЦИАЛИСТОВ</span>
+          </div>
+        </div>
 
+        <!-- DIRECTION CARDS -->
         <div class="about-section__directions" aria-label="Направления работы">
           <div class="about-direction-card">
             <span class="about-direction-card__rail" aria-hidden="true"></span>
             <div class="about-direction-card__copy">
-              <span class="about-direction-card__number" aria-hidden="true">01</span><span class="about-direction-card__label" data-i18n="aboutStat1">ИНТЕРЬЕРЫ</span>
+              <span class="about-direction-card__number" aria-hidden="true">01</span>
+              <span class="about-direction-card__label" data-i18n="aboutStat1">ИНТЕРЬЕРЫ</span>
               <span class="about-direction-card__description" data-i18n="aboutDirection1">Архитектура и детали</span>
             </div>
           </div>
-
           <div class="about-direction-card">
             <span class="about-direction-card__rail" aria-hidden="true"></span>
             <div class="about-direction-card__copy">
-              <span class="about-direction-card__number" aria-hidden="true">02</span><span class="about-direction-card__label" data-i18n="aboutStat2">ОТЕЛИ</span>
+              <span class="about-direction-card__number" aria-hidden="true">02</span>
+              <span class="about-direction-card__label" data-i18n="aboutStat2">ОТЕЛИ</span>
               <span class="about-direction-card__description" data-i18n="aboutDirection2">Съёмка гостей</span>
             </div>
           </div>
-
           <div class="about-direction-card">
             <span class="about-direction-card__rail" aria-hidden="true"></span>
             <div class="about-direction-card__copy">
-              <span class="about-direction-card__number" aria-hidden="true">03</span><span class="about-direction-card__label" data-i18n="aboutStat3">МЕРОПРИЯТИЯ</span>
+              <span class="about-direction-card__number" aria-hidden="true">03</span>
+              <span class="about-direction-card__label" data-i18n="aboutStat3">МЕРОПРИЯТИЯ</span>
               <span class="about-direction-card__description" data-i18n="aboutDirection3">Живые моменты</span>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- RIGHT MEDIA -->
       <div class="about-section__media about-reveal">
         <div class="about-photo-stack" aria-label="Примеры интерьерной фотографии">
           <figure class="about-photo-card about-photo-card--back">
@@ -133,10 +155,23 @@
             <img src="assets/about-card-3.png" alt="Современная гостиная с креслами и мрамором" loading="lazy" onerror="this.src='assets/about-main.png'">
           </figure>
         </div>
-        <p class="about-media-caption"><span class="about-media-caption__mark" aria-hidden="true">↗</span><span data-i18n="aboutMediaNote">ВИЗУАЛ, КОТОРЫЙ РАБОТАЕТ НА БРЕНД</span></p>
+        <p class="about-media-caption">
+          <span class="about-media-caption__mark" aria-hidden="true">↗</span>
+          <span data-i18n="aboutMediaNote">ВИЗУАЛ, КОТОРЫЙ РАБОТАЕТ НА БРЕНД</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- MISSION STRIP -->
+    <div class="about-mission about-reveal" aria-label="Миссия компании">
+      <div class="about-mission__inner">
+        <span class="about-mission__mark" aria-hidden="true">"</span>
+        <p class="about-mission__text" data-i18n="aboutMission">Мы не просто снимаем — мы создаём визуальный язык, на котором бизнес говорит с клиентом.</p>
+        <span class="about-mission__rule" aria-hidden="true"></span>
       </div>
     </div>
   </section>
+
   <section id="services" class="dummy-section"><span data-i18n="services">УСЛУГИ</span></section>
   <section id="works" class="dummy-section"><span data-i18n="works">ПРИМЕРЫ РАБОТ</span></section>
   <section id="contacts" class="dummy-section"><span data-i18n="contacts">КОНТАКТЫ</span></section>
@@ -161,8 +196,12 @@
         aboutTitle2Word: 'БОЛЬШАЯ',
         aboutTitle2Rest: 'КОМАНДА.',
         aboutTitle3: '',
+        aboutBrand: 'ФОКУС',
         aboutLeadRest: ' — российская фотокомпания из Анапы. Снимаем пространства, людей и события.',
         aboutText: 'Фотографы, видеографы, менеджеры, разработчики и маркетологи — объединяем разные навыки и внимание к деталям в одной команде.',
+        aboutStatYears: 'ГОДА',
+        aboutStatProjects: 'ПРОЕКТОВ',
+        aboutStatTeam: 'СПЕЦИАЛИСТОВ',
         aboutDirection1: 'Архитектура и детали',
         aboutDirection2: 'Съёмка гостей',
         aboutDirection3: 'Живые моменты',
@@ -173,6 +212,7 @@
         aboutStatMeta3: 'СОБЫТИЯ',
         aboutStat3: 'МЕРОПРИЯТИЯ',
         aboutMediaNote: 'ВИЗУАЛ, КОТОРЫЙ РАБОТАЕТ НА БРЕНД',
+        aboutMission: 'Мы не просто снимаем — мы создаём визуальный язык, на котором бизнес говорит с клиентом.',
         discuss: 'ОБСУДИТЬ СЪЁМКУ',
         worksCta: 'СМОТРЕТЬ РАБОТЫ'
       },
@@ -194,8 +234,12 @@
         aboutTitle2Word: 'LARGE',
         aboutTitle2Rest: 'TEAM.',
         aboutTitle3: '',
+        aboutBrand: 'FOCUS',
         aboutLeadRest: ' — a Russian photography company from Anapa. We photograph spaces, people and events.',
         aboutText: 'Photographers, videographers, managers, developers and marketers — bringing different skills and an eye for detail together in one team.',
+        aboutStatYears: 'YEARS',
+        aboutStatProjects: 'PROJECTS',
+        aboutStatTeam: 'SPECIALISTS',
         aboutDirection1: 'Architecture & details',
         aboutDirection2: 'Guest photography',
         aboutDirection3: 'Moments in motion',
@@ -205,7 +249,8 @@
         aboutStat2: 'HOTELS',
         aboutStatMeta3: 'EVENTS',
         aboutStat3: 'EVENTS',
-        aboutMediaNote: 'VISUALS THAT WORK FOR THE BRAND'
+        aboutMediaNote: 'VISUALS THAT WORK FOR THE BRAND',
+        aboutMission: 'We don\'t just shoot — we craft the visual language through which your business speaks to clients.'
       }
     };
 
@@ -294,6 +339,41 @@
       }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
       aboutReveal.forEach((element) => revealObserver.observe(element));
+    }
+
+    // Counter animation for stats
+    const statValues = [...document.querySelectorAll('.about-stat__value')];
+    let countersStarted = false;
+
+    function animateCounter(el, target, duration) {
+      const start = performance.now();
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // easeOutQuart
+        const eased = 1 - Math.pow(1 - progress, 4);
+        el.textContent = Math.round(eased * target);
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(tick);
+    }
+
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting || countersStarted) return;
+          countersStarted = true;
+          statValues.forEach((el) => {
+            const target = parseInt(el.dataset.count, 10);
+            animateCounter(el, target, 1200);
+          });
+          statsObserver.disconnect();
+        });
+      }, { threshold: 0.4 });
+
+      const statsEl = document.querySelector('.about-stats');
+      if (statsEl) statsObserver.observe(statsEl);
     }
 
     const savedLanguage = localStorage.getItem('focus-language');
