@@ -71,20 +71,25 @@
       <div class="ac-copy">
         <div class="ac-badge about-anim"><span class="ac-badge-dot"></span> <span data-i18n="aboutEyebrow">О компании</span></div>
         <h2 class="ac-title" id="about-title" aria-label="Молодая компания. Большая команда.">
-          <span class="ac-title__row ac-title__row--1">
-            <span class="ac-word ac-word--1" data-i18n="aboutTitle1Word">Молодая</span>
-          </span>
-          <span class="ac-title__row ac-title__row--2">
-            <span class="ac-word ac-word--2" data-i18n="aboutTitle1Rest">компания.</span>
-          </span>
-          <span class="ac-title__row ac-title__row--3">
-            <span class="ac-word ac-word--3">
-              <span class="ac-title-lime" data-i18n="aboutTitle2Word">Большая</span>
-            </span>
-          </span>
-          <span class="ac-title__row ac-title__row--4">
-            <span class="ac-word ac-word--4" data-i18n="aboutTitle2Rest">команда.</span>
-          </span>
+          <div class="ac-title__group ac-title__group--1">
+            <div class="ac-title__line ac-title__line--base">
+              <span class="ac-word ac-word--1" data-i18n="aboutTitle1Word">МОЛОДАЯ</span>
+            </div>
+            <div class="ac-title__line ac-title__line--offset">
+              <span class="ac-word ac-word--2" data-i18n="aboutTitle1Rest">КОМПАНИЯ.</span>
+            </div>
+          </div>
+
+          <div class="ac-title__group ac-title__group--2">
+            <div class="ac-title__line ac-title__line--base">
+              <span class="ac-word ac-word--3">
+                <span class="ac-title-lime" data-i18n="aboutTitle2Word">БОЛЬШАЯ</span>
+              </span>
+            </div>
+            <div class="ac-title__line ac-title__line--offset">
+              <span class="ac-word ac-word--4" data-i18n="aboutTitle2Rest">КОМАНДА.</span>
+            </div>
+          </div>
         </h2>
         
         <div class="ac-divider about-anim" data-delay="100"></div>
@@ -297,10 +302,10 @@
         let targetProgress = 0;
         let currentProgress = 0;
 
-        const startX1 = -140;
-        const startX2 = -200;
-        const startX3 = -140;
-        const startX4 = -200;
+        const startX1 = -110;
+        const startX2 = -160;
+        const startX3 = -110;
+        const startX4 = -160;
 
         const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
         const clamp = (val, min, max) => Math.max(min, Math.min(max, val));

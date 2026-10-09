@@ -429,7 +429,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 0; /* Clean start right below hero, leaves buttons 100% visible and clickable */
   position: relative;
   z-index: 10;
-  padding: 40px 0 0; /* Minimal top padding, heads sit right near the top of the card */
+  padding: clamp(75px, 7.5vw, 100px) 0 0; /* Ample breathing room so floating glass nav panel never overlaps content */
   box-shadow: 0 -24px 80px rgba(0,0,0,0.5); /* Strong shadow over the dark hero */
   color: #000000 !important;
   overflow: hidden;
@@ -453,9 +453,9 @@ a { color: inherit; text-decoration: none; }
   text-shadow: 0 0 0 #000000 !important;
 }
 
-/* LEFT COPY — clean 450px column so text is totally clear of the video */
+/* LEFT COPY — clean column clear of the video */
 .ac-copy {
-  max-width: 450px;
+  max-width: 480px;
   align-self: start;
   margin-bottom: 40px;
 }
@@ -468,7 +468,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: rgba(0,0,0,0.6);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 .ac-badge-dot {
   width: 6px;
@@ -478,31 +478,35 @@ a { color: inherit; text-decoration: none; }
 }
 
 .ac-title {
-  font-size: clamp(36px, 4.2vw, 68px);
-  line-height: 1.05;
-  font-weight: 850;
-  letter-spacing: -0.035em;
-  margin: 0;
-  color: #000000 !important;
   display: flex;
   flex-direction: column;
-  gap: clamp(4px, 0.7vw, 10px);
+  gap: clamp(14px, 1.8vw, 24px); /* Distinct rhythm pause between the two duos */
+  font-size: clamp(34px, 4vw, 62px);
+  font-weight: 850;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+  margin: 0;
+  color: #000000 !important;
 }
 
-.ac-title__row {
+.ac-title__group {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, 0.6vw, 8px);
+}
+
+.ac-title__line {
   display: block;
   overflow: visible;
   line-height: 1;
 }
 
-.ac-title__row--1,
-.ac-title__row--3 {
+.ac-title__line--base {
   margin-left: 0;
 }
 
-.ac-title__row--2,
-.ac-title__row--4 {
-  margin-left: clamp(34px, 4.8vw, 68px);
+.ac-title__line--offset {
+  margin-left: clamp(36px, 5vw, 70px); /* Exactly matched rightward offset for second words */
 }
 
 .ac-word {
