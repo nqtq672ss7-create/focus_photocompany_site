@@ -485,8 +485,8 @@ a { color: inherit; text-decoration: none; }
   text-shadow: 0 0 0 #000000 !important;
 }
 
-/* LEFT COPY */
-.ac-copy { max-width: 600px; }
+/* LEFT COPY — neatly constrained so text leaves generous breathing room for the visual */
+.ac-copy { max-width: 490px; }
 .ac-badge {
   display: inline-flex;
   align-items: center;
@@ -618,9 +618,9 @@ a { color: inherit; text-decoration: none; }
 }
 .ac-video {
   position: absolute;
-  bottom: -15px; /* Raised up slightly so heads fill the top area */
-  right: -33%;   /* Shifted slightly more to the right, keeping breathing room on the right */
-  height: 605px; /* Increased height so photographers are larger and reach closer to the top */
+  bottom: 0px;   /* Raised slightly so heads stay high and fill the space */
+  right: -32%;   /* Comfortable right positioning leaving space for the girl */
+  height: 590px; /* Perfectly balanced height */
   width: auto;   /* Width scales natively */
   max-width: none;
   object-fit: contain;
