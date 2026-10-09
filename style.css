@@ -496,7 +496,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: rgba(0,0,0,0.6);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 .ac-badge-dot {
   width: 6px;
@@ -531,7 +531,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: 1px;
   background: rgba(0,0,0,0.1);
-  margin: 40px 0;
+  margin: 28px 0;
 }
 
 .ac-lead {
@@ -546,7 +546,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 16px;
   color: rgba(0,0,0,0.7);
   line-height: 1.6;
-  margin: 0 0 40px;
+  margin: 0 0 24px;
   font-weight: 500;
 }
 
@@ -556,6 +556,7 @@ a { color: inherit; text-decoration: none; }
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 0;
+  margin-bottom: 28px; /* Breathing room below pills */
 }
 .ac-dir {
   display: inline-flex;
@@ -576,15 +577,15 @@ a { color: inherit; text-decoration: none; }
 .ac-visual {
   position: relative;
   width: 100%;
-  height: 580px;
+  height: 540px;
   background: transparent !important;
 }
 .ac-video {
   position: absolute;
-  bottom: 0px;   /* Exactly at the bottom border of the block */
-  right: -32%;   /* Comfortable right positioning leaving space for the girl */
-  height: 580px; /* Flush with bottom boundary */
-  width: auto;   /* Width scales natively */
+  bottom: -36px;  /* Pushes the empty white padding in the video below the edge, leaving ZERO white strip */
+  right: -32%;    /* Comfortable right positioning leaving space for the girl */
+  height: 576px;  /* Extends up to exactly 540px, flush with top of container */
+  width: auto;    /* Width scales natively */
   max-width: none;
   object-fit: contain;
   display: block;
