@@ -73,100 +73,74 @@
   </main>
 
   <section id="about" class="about-section" aria-labelledby="about-title">
-    <div class="about-section__background" aria-hidden="true"></div>
-    <div class="about-section__overlay" aria-hidden="true"></div>
-    <div class="about-section__glow" aria-hidden="true"></div>
-
-    <div class="about-section__inner">
-      <!-- LEFT COPY -->
-      <div class="about-section__copy">
-        <div class="about-section__eyebrow about-anim" data-delay="0">
-          <span class="about-section__eyebrow-line" aria-hidden="true"></span>
-          <span data-i18n="aboutEyebrow">О КОМПАНИИ</span>
+    <div class="bento-container">
+      
+      <!-- Bento Intro (Span 8 cols) -->
+      <div class="bento-card bento-intro about-anim">
+        <div class="bento-card__inner">
+          <div class="bento-badge" data-i18n="aboutEyebrow">О компании</div>
+          <h2 class="bento-intro__title" id="about-title">
+            <span data-i18n="aboutTitle1Word">Молодая</span> <span data-i18n="aboutTitle1Rest">компания.</span><br>
+            <span data-i18n="aboutTitle2Word">Большая</span> <span data-i18n="aboutTitle2Rest">команда.</span>
+          </h2>
+          <p class="bento-intro__lead">
+            <strong data-i18n="aboutBrand">Фокус</strong> <span data-i18n="aboutLeadRest">— российская фотокомпания из Анапы. Снимаем пространства, людей и события.</span>
+          </p>
+          <p class="bento-intro__text" data-i18n="aboutText">
+            Фотографы, видеографы, менеджеры, разработчики и маркетологи — объединяем разные навыки и внимание к деталям.
+          </p>
         </div>
+      </div>
 
-        <h2 class="about-section__title about-anim about-anim--lines" id="about-title" data-delay="100">
-          <span class="about-line">
-            <span class="about-line__inner">
-              <span data-i18n="aboutTitle1Word">МОЛОДАЯ</span> <span data-i18n="aboutTitle1Rest">КОМПАНИЯ.</span>
-            </span>
-          </span>
-          <span class="about-line">
-            <span class="about-line__inner about-line__inner--delay">
-              <span data-i18n="aboutTitle2Word">БОЛЬШАЯ</span> <span data-i18n="aboutTitle2Rest">КОМАНДА.</span>
-            </span>
-          </span>
-        </h2>
-
-        <p class="about-section__lead about-anim" data-delay="300">
-          <span class="about-accent" data-i18n="aboutBrand">ФОКУС</span><span data-i18n="aboutLeadRest"> — российская фотокомпания из Анапы. Снимаем пространства, людей и события.</span>
-        </p>
-
-        <p class="about-section__text about-anim" data-delay="400" data-i18n="aboutText">
-          Фотографы, видеографы, менеджеры, разработчики и маркетологи — объединяем разные навыки и внимание к деталям в одной команде.
-        </p>
-
-        <!-- STATS ROW -->
-        <div class="about-stats about-anim" data-delay="500" aria-label="Показатели компании">
-          <div class="about-stat">
-            <span class="about-stat__value" data-count="3">3</span>
-            <span class="about-stat__label" data-i18n="aboutStatYears">ГОДА</span>
-          </div>
-          <span class="about-stat__divider" aria-hidden="true"></span>
-          <div class="about-stat">
-            <span class="about-stat__value" data-count="120">120</span>
-            <span class="about-stat__label" data-i18n="aboutStatProjects">ПРОЕКТОВ</span>
-          </div>
-          <span class="about-stat__divider" aria-hidden="true"></span>
-          <div class="about-stat">
-            <span class="about-stat__value" data-count="12">12</span>
-            <span class="about-stat__label" data-i18n="aboutStatTeam">СПЕЦИАЛИСТОВ</span>
-          </div>
+      <!-- Bento Media (Span 4 cols) -->
+      <div class="bento-card bento-media about-anim" data-delay="100">
+        <div class="bento-card__inner p-0">
+          <img src="assets/about-card-3.png" alt="Съемка интерьера" class="bento-img" loading="lazy" onerror="this.src='assets/about-bg.png'">
         </div>
+      </div>
 
-        <!-- DIRECTION CARDS -->
-        <div class="about-section__directions about-anim" data-delay="600" aria-label="Направления работы">
-          <div class="about-direction-card">
-            <span class="about-direction-card__rail" aria-hidden="true"></span>
-            <div class="about-direction-card__copy">
-              <span class="about-direction-card__number" aria-hidden="true">01</span>
-              <span class="about-direction-card__label" data-i18n="aboutStat1">ИНТЕРЬЕРЫ</span>
-              <span class="about-direction-card__description" data-i18n="aboutDirection1">Архитектура и детали</span>
-            </div>
+      <!-- Bento Stats (Span 4 cols each) -->
+      <div class="bento-card bento-stat about-anim" data-delay="150">
+        <div class="bento-card__inner">
+          <div class="bento-stat__val" data-count="3">3</div>
+          <div class="bento-stat__label" data-i18n="aboutStatYears">года опыта</div>
+        </div>
+      </div>
+      
+      <div class="bento-card bento-stat about-anim" data-delay="200">
+        <div class="bento-card__inner">
+          <div class="bento-stat__val" data-count="120">120</div>
+          <div class="bento-stat__label" data-i18n="aboutStatProjects">проектов</div>
+        </div>
+      </div>
+
+      <div class="bento-card bento-stat about-anim" data-delay="250">
+        <div class="bento-card__inner">
+          <div class="bento-stat__val" data-count="12">12</div>
+          <div class="bento-stat__label" data-i18n="aboutStatTeam">специалистов</div>
+        </div>
+      </div>
+
+      <!-- Bento Directions (Span 12 cols - full width) -->
+      <div class="bento-card bento-directions about-anim" data-delay="300">
+        <div class="bento-card__inner flex-row">
+          <div class="bento-dir">
+            <h3 data-i18n="aboutStat1">Интерьеры</h3>
+            <p data-i18n="aboutDirection1">Архитектура и детали</p>
           </div>
-          <div class="about-direction-card">
-            <span class="about-direction-card__rail" aria-hidden="true"></span>
-            <div class="about-direction-card__copy">
-              <span class="about-direction-card__number" aria-hidden="true">02</span>
-              <span class="about-direction-card__label" data-i18n="aboutStat2">ОТЕЛИ</span>
-              <span class="about-direction-card__description" data-i18n="aboutDirection2">Съёмка гостей</span>
-            </div>
+          <div class="bento-dir-divider"></div>
+          <div class="bento-dir">
+            <h3 data-i18n="aboutStat2">Отели</h3>
+            <p data-i18n="aboutDirection2">Съёмка гостей</p>
           </div>
-          <div class="about-direction-card">
-            <span class="about-direction-card__rail" aria-hidden="true"></span>
-            <div class="about-direction-card__copy">
-              <span class="about-direction-card__number" aria-hidden="true">03</span>
-              <span class="about-direction-card__label" data-i18n="aboutStat3">МЕРОПРИЯТИЯ</span>
-              <span class="about-direction-card__description" data-i18n="aboutDirection3">Живые моменты</span>
-            </div>
+          <div class="bento-dir-divider"></div>
+          <div class="bento-dir">
+            <h3 data-i18n="aboutStat3">Мероприятия</h3>
+            <p data-i18n="aboutDirection3">Живые моменты</p>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT MEDIA -->
-      <div class="about-section__media about-anim about-anim--scale" data-delay="200">
-        <div class="about-photo-stack" aria-label="Примеры интерьерной фотографии">
-          <figure class="about-photo-card about-photo-card--back">
-            <img src="assets/about-card-1.png" alt="Роскошный интерьер с креслом и текстилем" loading="lazy" onerror="this.src='assets/about-main.png'">
-          </figure>
-          <figure class="about-photo-card about-photo-card--middle">
-            <img src="assets/about-card-2.png" alt="Светлый интерьер с мраморной стойкой" loading="lazy" onerror="this.src='assets/about-main.png'">
-          </figure>
-          <figure class="about-photo-card about-photo-card--front">
-            <img src="assets/about-card-3.png" alt="Современная гостиная с креслами и мрамором" loading="lazy" onerror="this.src='assets/about-main.png'">
-          </figure>
-        </div>
-      </div>
     </div>
   </section>
 
