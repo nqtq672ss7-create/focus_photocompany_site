@@ -68,23 +68,35 @@
     <div class="ac-grid">
       
       <!-- LEFT COPY -->
-      <div class="ac-copy about-anim">
-        <div class="ac-badge"><span class="ac-badge-dot"></span> <span data-i18n="aboutEyebrow">О компании</span></div>
-        <h2 class="ac-title" id="about-title">
-          <span class="ac-title__line"><span class="ac-title__inner"><span data-i18n="aboutTitle1Word">Молодая</span> <span data-i18n="aboutTitle1Rest">компания.</span></span></span>
-          <span class="ac-title__line"><span class="ac-title__inner" style="transition-delay: 0.1s;"><span class="ac-title-lime" data-i18n="aboutTitle2Word">Большая</span> <span data-i18n="aboutTitle2Rest">команда.</span></span></span>
+      <div class="ac-copy">
+        <div class="ac-badge about-anim"><span class="ac-badge-dot"></span> <span data-i18n="aboutEyebrow">О компании</span></div>
+        <h2 class="ac-title" id="about-title" aria-label="Молодая компания. Большая команда.">
+          <span class="ac-title__row ac-title__row--1">
+            <span class="ac-word ac-word--1" data-i18n="aboutTitle1Word">Молодая</span>
+          </span>
+          <span class="ac-title__row ac-title__row--2">
+            <span class="ac-word ac-word--2" data-i18n="aboutTitle1Rest">компания.</span>
+          </span>
+          <span class="ac-title__row ac-title__row--3">
+            <span class="ac-word ac-word--3">
+              <span class="ac-title-lime" data-i18n="aboutTitle2Word">Большая</span>
+            </span>
+          </span>
+          <span class="ac-title__row ac-title__row--4">
+            <span class="ac-word ac-word--4" data-i18n="aboutTitle2Rest">команда.</span>
+          </span>
         </h2>
         
-        <div class="ac-divider"></div>
+        <div class="ac-divider about-anim" data-delay="100"></div>
         
-        <p class="ac-lead">
+        <p class="ac-lead about-anim" data-delay="150">
           <strong data-i18n="aboutBrand">Фокус</strong> <span data-i18n="aboutLeadRest">— российская фотокомпания из Анапы. Снимаем пространства, людей и события.</span>
         </p>
-        <p class="ac-text" data-i18n="aboutText">
+        <p class="ac-text about-anim" data-delay="200" data-i18n="aboutText">
           Фотографы, видеографы, менеджеры, разработчики и маркетологи — объединяем разные навыки и внимание к деталям в одной команде.
         </p>
 
-        <div class="ac-dirs about-anim" data-delay="200">
+        <div class="ac-dirs about-anim" data-delay="250">
           <div class="ac-dir"><span class="ac-dir-num">01</span> <span data-i18n="aboutStat1">Интерьеры</span></div>
           <div class="ac-dir"><span class="ac-dir-num">02</span> <span data-i18n="aboutStat2">Отели</span></div>
           <div class="ac-dir"><span class="ac-dir-num">03</span> <span data-i18n="aboutStat3">Мероприятия</span></div>
@@ -265,6 +277,99 @@
     langButtons.forEach((button) => {
       button.addEventListener('click', () => setLanguage(button.dataset.lang));
     });
+
+    // ── Scroll-driven Headline Words Animation ────────────
+    const aboutSection = document.getElementById('about');
+    const word1 = document.querySelector('.ac-word--1');
+    const word2 = document.querySelector('.ac-word--2');
+    const word3 = document.querySelector('.ac-title-lime');
+    const word4 = document.querySelector('.ac-word--4');
+
+    if (aboutSection && word1 && word2 && word3 && word4) {
+      const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (isReduced) {
+        [word1, word2, word3, word4].forEach((w) => {
+          w.style.transform = 'none';
+          w.style.opacity = '1';
+        });
+      } else {
+        let targetProgress = 0;
+        let currentProgress = 0;
+
+        const startX1 = -140;
+        const startX2 = -200;
+        const startX3 = -150;
+        const startX4 = -250;
+
+        const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+        const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
+
+        const updateTarget = () => {
+          const rect = aboutSection.getBoundingClientRect();
+          const vh = window.innerHeight;
+          const start = vh * 0.92;
+          const end = vh * 0.26;
+          const raw = (start - rect.top) / (start - end);
+          targetProgress = clamp(raw, 0, 1);
+        };
+
+        const renderFrame = () => {
+          currentProgress += (targetProgress - currentProgress) * 0.15;
+          if (Math.abs(targetProgress - currentProgress) < 0.001) {
+            currentProgress = targetProgress;
+          }
+
+          const p = currentProgress;
+
+          // Word 1: МОЛОДАЯ (window: 0.00 -> 0.45)
+          const t1 = clamp((p - 0.00) / 0.45, 0, 1);
+          const e1 = easeOutCubic(t1);
+          const x1 = startX1 * (1 - e1);
+          const op1 = clamp(t1 * 2.5, 0, 1);
+          word1.style.transform = `translate3d(${x1.toFixed(1)}px, 0, 0)`;
+          word1.style.opacity = op1.toFixed(3);
+
+          // Word 2: КОМПАНИЯ. (window: 0.16 -> 0.65)
+          const t2 = clamp((p - 0.16) / 0.49, 0, 1);
+          const e2 = easeOutCubic(t2);
+          const x2 = startX2 * (1 - e2);
+          const op2 = clamp(t2 * 2.5, 0, 1);
+          word2.style.transform = `translate3d(${x2.toFixed(1)}px, 0, 0)`;
+          word2.style.opacity = op2.toFixed(3);
+
+          // Word 3: БОЛЬШАЯ (window: 0.34 -> 0.82)
+          const t3 = clamp((p - 0.34) / 0.48, 0, 1);
+          const e3 = easeOutCubic(t3);
+          const x3 = startX3 * (1 - e3);
+          const op3 = clamp(t3 * 2.5, 0, 1);
+          word3.style.transform = `translate3d(${x3.toFixed(1)}px, 0, 0)`;
+          word3.style.opacity = op3.toFixed(3);
+
+          // Word 4: КОМАНДА. (window: 0.52 -> 1.00)
+          const t4 = clamp((p - 0.52) / 0.48, 0, 1);
+          const e4 = easeOutCubic(t4);
+          const x4 = startX4 * (1 - e4);
+          const op4 = clamp(t4 * 2.5, 0, 1);
+          word4.style.transform = `translate3d(${x4.toFixed(1)}px, 0, 0)`;
+          word4.style.opacity = op4.toFixed(3);
+
+          if (p >= 0.88) {
+            word3.classList.add('is-glint');
+          } else if (p < 0.3) {
+            word3.classList.remove('is-glint');
+          }
+
+          requestAnimationFrame(renderFrame);
+        };
+
+        window.addEventListener('scroll', updateTarget, { passive: true });
+        window.addEventListener('resize', updateTarget, { passive: true });
+        updateTarget();
+        currentProgress = targetProgress;
+        renderFrame();
+      }
+    }
 
     // ── Staggered reveal + counter animation ──────────────
     const aboutAnims = [...document.querySelectorAll('.about-anim')];
