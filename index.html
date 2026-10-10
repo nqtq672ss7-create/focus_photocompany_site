@@ -117,218 +117,183 @@
     <div class="srv-container">
       
       <!-- Section Eyebrow -->
-      <div class="srv-badge srv-anim">
-        <span class="srv-badge__dot"></span>
-        <span data-i18n="servicesEyebrow">НАПРАВЛЕНИЯ РАБОТЫ</span>
+      <div class="srv-eyebrow srv-anim">
+        <span class="srv-eyebrow__dash" aria-hidden="true"></span>
+        <span class="srv-eyebrow__text" data-i18n="servicesEyebrow">УСЛУГИ И ПРОДАКШН</span>
       </div>
 
       <!-- Section Editorial Header -->
       <div class="srv-header srv-anim" data-delay="80">
         <div class="srv-header__left">
           <h2 class="srv-title" id="services-title">
-            <span class="srv-title__row" data-i18n="servicesTitle1">СОЗДАЁМ ВИЗУАЛ,</span>
-            <span class="srv-title__row srv-title__row--lime" data-i18n="servicesTitle2">КОТОРЫЙ ПРОДАЁТ.</span>
+            <span class="srv-title__row" data-i18n="servicesTitle1">СНИМАЕМ ПРОСТРАНСТВА,</span>
+            <span class="srv-title__row srv-title__row--lime" data-i18n="servicesTitle2">В КОТОРЫХ ХОЧЕТСЯ ОКАЗАТЬСЯ.</span>
           </h2>
         </div>
         <div class="srv-header__right">
           <p class="srv-lead" data-i18n="servicesLead">
-            От камерных интерьерных съёмок до масштабных гостиничных комплексов и имиджевого видеопродакшна. Индивидуальный подход к свету, цвету и геометрии каждого кадра.
+            От камерных интерьерных съёмок до масштабных курортных отелей и рекламных видеоисторий. Точная работа со светом, геометрией и фактурами каждого кадра.
           </p>
-          <div class="srv-pills">
-            <span class="srv-pill"><span class="srv-pill__dot"></span><span data-i18n="servicesMetaGear">Оборудование топ-класса</span></span>
-            <span class="srv-pill"><span class="srv-pill__dot"></span><span data-i18n="servicesMetaSpeed">Готовность от 48 часов</span></span>
-            <span class="srv-pill"><span class="srv-pill__dot"></span><span data-i18n="servicesMetaRights">Полные права на контент</span></span>
+          <div class="srv-specs">
+            <div class="srv-spec-item">
+              <span class="srv-spec-label" data-i18n="servicesSpecTeamLabel">КОМАНДА</span>
+              <span class="srv-spec-val" data-i18n="servicesSpecTeam">Профессиональный коллектив</span>
+            </div>
+            <div class="srv-spec-item">
+              <span class="srv-spec-label" data-i18n="servicesSpecGeoLabel">ГЕОГРАФИЯ</span>
+              <span class="srv-spec-val" data-i18n="servicesSpecGeo">Съёмки по всей России</span>
+            </div>
+            <div class="srv-spec-item">
+              <span class="srv-spec-label" data-i18n="servicesSpecRightsLabel">ПРАВА</span>
+              <span class="srv-spec-val" data-i18n="servicesSpecRights">Полные права на контент</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Bento Grid (4 Double-Bezel Cards) -->
+      <!-- Bento Grid (Monolithic Cards - Single Clean Border, Larger Text, Big CTA) -->
       <div class="srv-grid">
         
         <!-- CARD 01: Interiors (Col 7 - Horizontal Split) -->
         <article class="srv-card srv-card--wide srv-anim" data-delay="120">
-          <div class="srv-card__bezel">
-            <div class="srv-card__inner srv-card__inner--split">
-              <div class="srv-card__body">
-                <div>
-                  <div class="srv-card__meta">
-                    <span class="srv-card__index">01</span>
-                    <span class="srv-card__tag" data-i18n="srv1Tag">01 / ИНТЕРЬЕРЫ</span>
-                  </div>
-                  <h3 class="srv-card__title" data-i18n="srv1Title">Интерьеры & Архитектура</h3>
-                  <p class="srv-card__desc" data-i18n="srv1Desc">
-                    Премиальная съёмка для дизайнеров, девелоперов, ресторанов и глянцевых изданий. Идеальная геометрия, естественный свет и внимание к фактурам материалов.
-                  </p>
-                </div>
-                <div class="srv-card__tags">
-                  <span class="srv-tag" data-i18n="srv1Tag1">HDR мультиэкспозиция</span>
-                  <span class="srv-tag" data-i18n="srv1Tag2">Выравнивание вертикалей</span>
-                  <span class="srv-tag" data-i18n="srv1Tag3">Детальный стайлинг</span>
-                  <span class="srv-tag" data-i18n="srv1Tag4">Подготовка для глянца</span>
-                  <span class="srv-tag" data-i18n="srv1Tag5">Лицензия без ограничений</span>
-                </div>
-                <div class="srv-card__footer">
-                  <div class="srv-card__price-badge">
-                    <span class="srv-card__price-label">ТАРИФ</span>
-                    <span class="srv-card__price-val" data-i18n="srv1Price">от 25 000 ₽ • от 48 ч</span>
-                  </div>
-                  <a href="#contacts" class="srv-btn" aria-label="Заказать съёмку интерьеров">
-                    <span class="srv-btn__text" data-i18n="srvOrderCta">Заказать съёмку</span>
-                    <span class="srv-btn__circle" aria-hidden="true">
-                      <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                  </a>
-                </div>
-              </div>
-              <div class="srv-card__media-wrap">
-                <div class="srv-card__media">
-                  <img src="assets/about-card-1.png" alt="Интерьерная съёмка ФОКУС" loading="lazy">
-                  <div class="srv-card__media-badge">
-                    <span class="srv-card__media-dot"></span>
-                    <span>ARCHITECTURAL PRO</span>
-                  </div>
-                </div>
+          <div class="srv-card__body">
+            <div>
+              <h3 class="srv-card__title" data-i18n="srv1Title">Интерьеры & Архитектура</h3>
+              <p class="srv-card__desc" data-i18n="srv1Desc">
+                Премиальная съёмка для дизайнеров, девелоперов, ресторанов и глянцевых изданий. Идеальная геометрия, естественный свет и внимание к фактурам материалов.
+              </p>
+            </div>
+            <div class="srv-card__tags">
+              <span class="srv-tag" data-i18n="srv1Tag1">HDR мультиэкспозиция</span>
+              <span class="srv-tag" data-i18n="srv1Tag2">Выравнивание вертикалей</span>
+              <span class="srv-tag" data-i18n="srv1Tag3">Детальный стайлинг</span>
+              <span class="srv-tag" data-i18n="srv1Tag4">Подготовка для глянца</span>
+              <span class="srv-tag" data-i18n="srv1Tag5">Лицензия без ограничений</span>
+            </div>
+            <div class="srv-card__footer">
+              <span class="srv-card__hint" data-i18n="srvCardHint">Индивидуальная смета под задачу</span>
+              <a href="#contacts" class="srv-btn" aria-label="Заказать съёмку интерьеров">
+                <span class="srv-btn__text" data-i18n="srvOrderCta">Заказать съёмку</span>
+                <span class="srv-btn__circle" aria-hidden="true">
+                  <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="srv-card__media-wrap">
+            <div class="srv-card__media">
+              <img src="assets/about-card-1.png" alt="Интерьерная съёмка ФОКУС" loading="lazy">
+              <div class="srv-card__media-badge">
+                <span class="srv-card__media-dot"></span>
+                <span>ARCHITECTURAL PRO</span>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- CARD 02: Hotels & HoReCa (Col 5 - Vertical) -->
+        <!-- CARD 02: Hotels & HoReCa (Col 5 - Stack) -->
         <article class="srv-card srv-card--stack srv-anim" data-delay="180">
-          <div class="srv-card__bezel">
-            <div class="srv-card__inner">
-              <div class="srv-card__body">
-                <div>
-                  <div class="srv-card__meta">
-                    <span class="srv-card__index">02</span>
-                    <span class="srv-card__tag" data-i18n="srv2Tag">02 / ОТЕЛИ & HORECA</span>
-                  </div>
-                  <h3 class="srv-card__title" data-i18n="srv2Title">Отели, курорты & HoReCa</h3>
-                  <p class="srv-card__desc" data-i18n="srv2Desc">
-                    Комплексный визуальный контент, повышающий средний чек и конверсию бронирований. Номерной фонд всех категорий, лобби, ресторан, SPA и территория.
-                  </p>
-                </div>
-                <div class="srv-card__media-wrap srv-card__media-wrap--inline">
-                  <div class="srv-card__media">
-                    <img src="assets/about-card-2.png" alt="Отели и курорты ФОКУС" loading="lazy">
-                    <div class="srv-card__media-badge">
-                      <span class="srv-card__media-dot"></span>
-                      <span>HOSPITALITY SUITE</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="srv-card__tags">
-                  <span class="srv-tag" data-i18n="srv2Tag1">Номерной фонд всех категорий</span>
-                  <span class="srv-tag" data-i18n="srv2Tag2">Инфраструктура & SPA</span>
-                  <span class="srv-tag" data-i18n="srv2Tag3">Контент для сайтов и OTA</span>
-                  <span class="srv-tag" data-i18n="srv2Tag4">Режимная сумеречная съёмка</span>
-                </div>
-                <div class="srv-card__footer">
-                  <div class="srv-card__price-badge">
-                    <span class="srv-card__price-label">ТАРИФ</span>
-                    <span class="srv-card__price-val" data-i18n="srv2Price">от 45 000 ₽ • проект</span>
-                  </div>
-                  <a href="#contacts" class="srv-btn" aria-label="Заказать съёмку отелей">
-                    <span class="srv-btn__text" data-i18n="srvOrderCta">Заказать съёмку</span>
-                    <span class="srv-btn__circle" aria-hidden="true">
-                      <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                  </a>
+          <div class="srv-card__body">
+            <div>
+              <h3 class="srv-card__title" data-i18n="srv2Title">Отели, курорты & HoReCa</h3>
+              <p class="srv-card__desc" data-i18n="srv2Desc">
+                Комплексный визуальный контент, повышающий средний чек и конверсию бронирований. Номерной фонд всех категорий, лобби, ресторан, SPA и территория.
+              </p>
+            </div>
+            <div class="srv-card__media-wrap srv-card__media-wrap--inline">
+              <div class="srv-card__media">
+                <img src="assets/about-card-2.png" alt="Отели и курорты ФОКУС" loading="lazy">
+                <div class="srv-card__media-badge">
+                  <span class="srv-card__media-dot"></span>
+                  <span>HOSPITALITY SUITE</span>
                 </div>
               </div>
+            </div>
+            <div class="srv-card__tags">
+              <span class="srv-tag" data-i18n="srv2Tag1">Номерной фонд всех категорий</span>
+              <span class="srv-tag" data-i18n="srv2Tag2">Инфраструктура & SPA</span>
+              <span class="srv-tag" data-i18n="srv2Tag3">Контент для сайтов и OTA</span>
+              <span class="srv-tag" data-i18n="srv2Tag4">Режимная сумеречная съёмка</span>
+            </div>
+            <div class="srv-card__footer">
+              <span class="srv-card__hint" data-i18n="srvCardHint">Индивидуальная смета под задачу</span>
+              <a href="#contacts" class="srv-btn" aria-label="Заказать съёмку отелей">
+                <span class="srv-btn__text" data-i18n="srvOrderCta">Заказать съёмку</span>
+                <span class="srv-btn__circle" aria-hidden="true">
+                  <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </a>
             </div>
           </div>
         </article>
 
-        <!-- CARD 03: Video Production (Col 5 - Vertical) -->
+        <!-- CARD 03: Video Production (Col 5 - Stack) -->
         <article class="srv-card srv-card--stack srv-anim" data-delay="120">
-          <div class="srv-card__bezel">
-            <div class="srv-card__inner">
-              <div class="srv-card__body">
-                <div>
-                  <div class="srv-card__meta">
-                    <span class="srv-card__index">03</span>
-                    <span class="srv-card__tag" data-i18n="srv3Tag">03 / ВИДЕОПРОДАКШН</span>
-                  </div>
-                  <h3 class="srv-card__title" data-i18n="srv3Title">Рекламное видео & Reels</h3>
-                  <p class="srv-card__desc" data-i18n="srv3Desc">
-                    Имиджевые промо-ролики в 4K, динамичные трендовые Reels/Shorts и аэросъёмка. Полный цикл: раскадровка, съёмка, авторский монтаж, саунд-дизайн и цветокоррекция.
-                  </p>
-                </div>
-                <div class="srv-card__media-wrap srv-card__media-wrap--inline">
-                  <div class="srv-card__media">
-                    <img src="assets/focus-lobby.png" alt="Видеопродакшн ФОКУС" loading="lazy">
-                    <div class="srv-card__media-badge srv-card__media-badge--video">
-                      <span class="srv-card__media-dot srv-card__media-dot--rec"></span>
-                      <span>4K HDR • CINEMA RIG</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="srv-card__tags">
-                  <span class="srv-tag" data-i18n="srv3Tag1">Формат 4K HDR (16:9 & 9:16)</span>
-                  <span class="srv-tag" data-i18n="srv3Tag2">Динамичные Reels / Shorts</span>
-                  <span class="srv-tag" data-i18n="srv3Tag3">Аэросъёмка 4K (Дрон)</span>
-                  <span class="srv-tag" data-i18n="srv3Tag4">Саунд-дизайн & кино-цвет</span>
-                </div>
-                <div class="srv-card__footer">
-                  <div class="srv-card__price-badge">
-                    <span class="srv-card__price-label">ТАРИФ</span>
-                    <span class="srv-card__price-val" data-i18n="srv3Price">от 35 000 ₽ • ролик</span>
-                  </div>
-                  <a href="#contacts" class="srv-btn" aria-label="Заказать видеопродакшн">
-                    <span class="srv-btn__text" data-i18n="srvOrderCta">Заказать съёмку</span>
-                    <span class="srv-btn__circle" aria-hidden="true">
-                      <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                  </a>
+          <div class="srv-card__body">
+            <div>
+              <h3 class="srv-card__title" data-i18n="srv3Title">Рекламное видео & Reels</h3>
+              <p class="srv-card__desc" data-i18n="srv3Desc">
+                Имиджевые промо-ролики в 4K, динамичные трендовые Reels/Shorts и аэросъёмка. Полный цикл: раскадровка, съёмка, авторский монтаж, саунд-дизайн и цветокоррекция.
+              </p>
+            </div>
+            <div class="srv-card__media-wrap srv-card__media-wrap--inline">
+              <div class="srv-card__media">
+                <img src="assets/focus-lobby.png" alt="Видеопродакшн ФОКУС" loading="lazy">
+                <div class="srv-card__media-badge srv-card__media-badge--video">
+                  <span class="srv-card__media-dot srv-card__media-dot--rec"></span>
+                  <span>4K HDR • CINEMA RIG</span>
                 </div>
               </div>
+            </div>
+            <div class="srv-card__tags">
+              <span class="srv-tag" data-i18n="srv3Tag1">Формат 4K HDR (16:9 & 9:16)</span>
+              <span class="srv-tag" data-i18n="srv3Tag2">Динамичные Reels / Shorts</span>
+              <span class="srv-tag" data-i18n="srv3Tag3">Аэросъёмка 4K (Дрон)</span>
+              <span class="srv-tag" data-i18n="srv3Tag4">Саунд-дизайн & кино-цвет</span>
+            </div>
+            <div class="srv-card__footer">
+              <span class="srv-card__hint" data-i18n="srvCardHint">Индивидуальная смета под задачу</span>
+              <a href="#contacts" class="srv-btn" aria-label="Заказать видеопродакшн">
+                <span class="srv-btn__text" data-i18n="srvOrderCta">Заказать съёмку</span>
+                <span class="srv-btn__circle" aria-hidden="true">
+                  <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </a>
             </div>
           </div>
         </article>
 
         <!-- CARD 04: Events & Corporate (Col 7 - Horizontal Split) -->
         <article class="srv-card srv-card--wide srv-anim" data-delay="180">
-          <div class="srv-card__bezel">
-            <div class="srv-card__inner srv-card__inner--split">
-              <div class="srv-card__body">
-                <div>
-                  <div class="srv-card__meta">
-                    <span class="srv-card__index">04</span>
-                    <span class="srv-card__tag" data-i18n="srv4Tag">04 / РЕПОРТАЖИ</span>
-                  </div>
-                  <h3 class="srv-card__title" data-i18n="srv4Title">Бизнес-события & Мероприятия</h3>
-                  <p class="srv-card__desc" data-i18n="srv4Desc">
-                    Форумы, масштабные конференции, презентации брендов и закрытые вечеринки. Живые эмоции без фальшивых поз и экспресс-выдача первых кадров в день события.
-                  </p>
-                </div>
-                <div class="srv-card__tags">
-                  <span class="srv-tag" data-i18n="srv4Tag1">Экспресс-превью за 3 часа</span>
-                  <span class="srv-tag" data-i18n="srv4Tag2">Брендированная онлайн-галерея</span>
-                  <span class="srv-tag" data-i18n="srv4Tag3">Многокамерная съёмка</span>
-                  <span class="srv-tag" data-i18n="srv4Tag4">Команда из 2–5 специалистов</span>
-                </div>
-                <div class="srv-card__footer">
-                  <div class="srv-card__price-badge">
-                    <span class="srv-card__price-label">ТАРИФ</span>
-                    <span class="srv-card__price-val" data-i18n="srv4Price">от 8 000 ₽ / час</span>
-                  </div>
-                  <a href="#contacts" class="srv-btn" aria-label="Заказать репортажную съёмку">
-                    <span class="srv-btn__text" data-i18n="srvOrderCta">Заказать съёмку</span>
-                    <span class="srv-btn__circle" aria-hidden="true">
-                      <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                  </a>
-                </div>
-              </div>
-              <div class="srv-card__media-wrap">
-                <div class="srv-card__media">
-                  <img src="assets/about-card-3.png" alt="Репортажи и события ФОКУС" loading="lazy">
-                  <div class="srv-card__media-badge">
-                    <span class="srv-card__media-dot"></span>
-                    <span>LIVE COVERAGE</span>
-                  </div>
-                </div>
+          <div class="srv-card__body">
+            <div>
+              <h3 class="srv-card__title" data-i18n="srv4Title">Бизнес-события & Мероприятия</h3>
+              <p class="srv-card__desc" data-i18n="srv4Desc">
+                Форумы, масштабные конференции, презентации брендов и закрытые вечеринки. Живые эмоции без фальшивых поз и экспресс-выдача первых кадров в день события.
+              </p>
+            </div>
+            <div class="srv-card__tags">
+              <span class="srv-tag" data-i18n="srv4Tag1">Экспресс-превью в день съёмки</span>
+              <span class="srv-tag" data-i18n="srv4Tag2">Брендированная веб-галерея</span>
+              <span class="srv-tag" data-i18n="srv4Tag3">Многокамерная съёмка</span>
+              <span class="srv-tag" data-i18n="srv4Tag4">Команда из 2–5 специалистов</span>
+            </div>
+            <div class="srv-card__footer">
+              <span class="srv-card__hint" data-i18n="srvCardHint">Индивидуальная смета под задачу</span>
+              <a href="#contacts" class="srv-btn" aria-label="Заказать репортажную съёмку">
+                <span class="srv-btn__text" data-i18n="srvOrderCta">Заказать съёмку</span>
+                <span class="srv-btn__circle" aria-hidden="true">
+                  <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="srv-card__media-wrap">
+            <div class="srv-card__media">
+              <img src="assets/about-card-3.png" alt="Репортажи и события ФОКУС" loading="lazy">
+              <div class="srv-card__media-badge">
+                <span class="srv-card__media-dot"></span>
+                <span>LIVE COVERAGE</span>
               </div>
             </div>
           </div>
@@ -336,49 +301,39 @@
 
       </div>
 
-      <!-- STANDARDS & WORKFLOW PANEL -->
-      <div class="srv-panel srv-anim" data-delay="100">
-        <div class="srv-panel__bezel">
-          <div class="srv-panel__inner">
-            <div class="srv-panel__header">
-              <span class="srv-panel__badge" data-i18n="srvStandardsBadge">СТАНДАРТЫ КАЧЕСТВА ФОКУС</span>
-              <h3 class="srv-panel__title" data-i18n="srvBannerCtaTitle">Нужен индивидуальный расчёт под ваш объект?</h3>
-              <p class="srv-panel__lead" data-i18n="srvBannerCtaDesc">
-                Расскажите о задаче — мы подберём оптимальный состав съёмочной группы и рассчитаем точную смету за 30 минут.
-              </p>
+      <!-- EDITORIAL CONSULTATION & PROJECT ESTIMATE SECTION -->
+      <div class="srv-consult srv-anim" data-delay="100">
+        <div class="srv-consult__top">
+          <div class="srv-consult__text">
+            <h3 class="srv-consult__title" data-i18n="srvConsultTitle">Каждый проект уникален. Обсудим детали вашей площадки?</h3>
+            <p class="srv-consult__lead" data-i18n="srvConsultLead">
+              Расскажите о вашем объекте или задаче. Мы изучим световые сценарии, подберём подходящую оптику, съёмочную группу и подготовим точный расчёт сметы.
+            </p>
+          </div>
+          <div class="srv-consult__action">
+            <a href="#contacts" class="srv-consult-btn">
+              <span class="srv-consult-btn__text" data-i18n="srvConsultCta">ОБСУДИТЬ СЪЁМКУ</span>
+              <span class="srv-consult-btn__arrow" aria-hidden="true">→</span>
+            </a>
+            <div class="srv-consult__status">
+              <span class="srv-consult__pulse"></span>
+              <span data-i18n="srvConsultNote">Отвечаем в течение 30 минут в рабочее время</span>
             </div>
-            
-            <div class="srv-standards-grid">
-              <div class="srv-std-item">
-                <div class="srv-std-item__num">01</div>
-                <h4 class="srv-std-item__title" data-i18n="srvStd1Title">Флагманская техника</h4>
-                <p class="srv-std-item__desc" data-i18n="srvStd1Desc">Sony Cinema Line, премиальная оптика G-Master и выездной импульсный свет Profoto.</p>
-              </div>
-              <div class="srv-std-item">
-                <div class="srv-std-item__num">02</div>
-                <h4 class="srv-std-item__title" data-i18n="srvStd2Title">Скорость отдачи</h4>
-                <p class="srv-std-item__desc" data-i18n="srvStd2Desc">Первые превью для пресс-релизов за 3–24 часа. Финальная сдача в облако за 3–5 дней.</p>
-              </div>
-              <div class="srv-std-item">
-                <div class="srv-std-item__num">03</div>
-                <h4 class="srv-std-item__title" data-i18n="srvStd3Title">Полные права</h4>
-                <p class="srv-std-item__desc" data-i18n="srvStd3Desc">Бессрочная лицензия на использование фото и видео в любых рекламных каналах.</p>
-              </div>
-              <div class="srv-std-item">
-                <div class="srv-std-item__num">04</div>
-                <h4 class="srv-std-item__title" data-i18n="srvStd4Title">Договор и ЭДО</h4>
-                <p class="srv-std-item__desc" data-i18n="srvStd4Desc">Официальный безналичный расчёт, закрывающие документы и фиксированная смета.</p>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="srv-panel__action">
-              <a href="#contacts" class="srv-panel-btn">
-                <span class="srv-panel-btn__dot"></span>
-                <span data-i18n="srvBannerBtn">ОБСУДИТЬ ПРОЕКТ</span>
-                <span class="srv-panel-btn__arrow" aria-hidden="true">→</span>
-              </a>
-            </div>
-
+        <div class="srv-pillars">
+          <div class="srv-pillar">
+            <h4 class="srv-pillar__title" data-i18n="srvPillar1Title">Скаутинг и подготовка</h4>
+            <p class="srv-pillar__desc" data-i18n="srvPillar1Desc">Анализируем инсоляцию, углы съёмки и световой режим объекта до выезда на площадку.</p>
+          </div>
+          <div class="srv-pillar">
+            <h4 class="srv-pillar__title" data-i18n="srvPillar2Title">Команда под масштаб</h4>
+            <p class="srv-pillar__desc" data-i18n="srvPillar2Desc">От одного интерьерного фотографа со светом до расширенной группы с видеографом и дроном.</p>
+          </div>
+          <div class="srv-pillar">
+            <h4 class="srv-pillar__title" data-i18n="srvPillar3Title">Готовый медиапакет</h4>
+            <p class="srv-pillar__desc" data-i18n="srvPillar3Desc">Цветокоррекция, детальная ретушь и бессрочные коммерческие права без скрытых доплат.</p>
           </div>
         </div>
       </div>
@@ -427,14 +382,16 @@
         aboutMission: 'Мы не просто снимаем — мы создаём визуальный язык, на котором бизнес говорит с клиентом.',
         discuss: 'ОБСУДИТЬ СЪЁМКУ',
         worksCta: 'СМОТРЕТЬ РАБОТЫ',
-        servicesEyebrow: 'НАПРАВЛЕНИЯ РАБОТЫ',
-        servicesTitle1: 'СОЗДАЁМ ВИЗУАЛ,',
-        servicesTitle2: 'КОТОРЫЙ ПРОДАЁТ.',
-        servicesLead: 'От камерных интерьерных съёмок до масштабных гостиничных комплексов и имиджевого видеопродакшна. Индивидуальный подход к свету, цвету и геометрии каждого кадра.',
-        servicesMetaGear: 'Оборудование топ-класса',
-        servicesMetaSpeed: 'Готовность от 48 часов',
-        servicesMetaRights: 'Полные права на контент',
-        srv1Tag: '01 / ИНТЕРЬЕРЫ',
+        servicesEyebrow: 'УСЛУГИ И ПРОДАКШН',
+        servicesTitle1: 'СНИМАЕМ ПРОСТРАНСТВА,',
+        servicesTitle2: 'В КОТОРЫХ ХОЧЕТСЯ ОКАЗАТЬСЯ.',
+        servicesLead: 'От камерных интерьерных съёмок до масштабных курортных отелей и рекламных видеоисторий. Точная работа со светом, геометрией и фактурами каждого кадра.',
+        servicesSpecTeamLabel: 'КОМАНДА',
+        servicesSpecTeam: 'Профессиональный коллектив',
+        servicesSpecGeoLabel: 'ГЕОГРАФИЯ',
+        servicesSpecGeo: 'Съёмки по всей России',
+        servicesSpecRightsLabel: 'ПРАВА',
+        servicesSpecRights: 'Полные права на контент',
         srv1Title: 'Интерьеры & Архитектура',
         srv1Desc: 'Премиальная съёмка для дизайнеров, девелоперов, ресторанов и глянцевых изданий. Идеальная геометрия, естественный свет и внимание к фактурам материалов.',
         srv1Tag1: 'HDR мультиэкспозиция',
@@ -442,44 +399,36 @@
         srv1Tag3: 'Детальный стайлинг',
         srv1Tag4: 'Подготовка для глянца',
         srv1Tag5: 'Лицензия без ограничений',
-        srv1Price: 'от 25 000 ₽ • от 48 ч',
-        srv2Tag: '02 / ОТЕЛИ & HORECA',
         srv2Title: 'Отели, курорты & HoReCa',
         srv2Desc: 'Комплексный визуальный контент, повышающий средний чек и конверсию бронирований. Номерной фонд всех категорий, лобби, ресторан, SPA и территория.',
         srv2Tag1: 'Номерной фонд всех категорий',
         srv2Tag2: 'Инфраструктура & SPA',
         srv2Tag3: 'Контент для сайтов и OTA',
         srv2Tag4: 'Режимная сумеречная съёмка',
-        srv2Price: 'от 45 000 ₽ • проект',
-        srv3Tag: '03 / ВИДЕОПРОДАКШН',
         srv3Title: 'Рекламное видео & Reels',
         srv3Desc: 'Имиджевые промо-ролики в 4K, динамичные трендовые Reels/Shorts и аэросъёмка. Полный цикл: раскадровка, съёмка, авторский монтаж, саунд-дизайн и цветокоррекция.',
         srv3Tag1: 'Формат 4K HDR (16:9 & 9:16)',
         srv3Tag2: 'Динамичные Reels / Shorts',
         srv3Tag3: 'Аэросъёмка 4K (Дрон)',
         srv3Tag4: 'Саунд-дизайн & кино-цвет',
-        srv3Price: 'от 35 000 ₽ • ролик',
-        srv4Tag: '04 / РЕПОРТАЖИ',
         srv4Title: 'Бизнес-события & Мероприятия',
         srv4Desc: 'Форумы, масштабные конференции, презентации брендов и закрытые вечеринки. Живые эмоции без фальшивых поз и экспресс-выдача первых кадров в день события.',
-        srv4Tag1: 'Экспресс-превью за 3 часа',
-        srv4Tag2: 'Брендированная онлайн-галерея',
+        srv4Tag1: 'Экспресс-превью в день съёмки',
+        srv4Tag2: 'Брендированная веб-галерея',
         srv4Tag3: 'Многокамерная съёмка',
         srv4Tag4: 'Команда из 2–5 специалистов',
-        srv4Price: 'от 8 000 ₽ / час',
         srvOrderCta: 'Заказать съёмку',
-        srvStandardsBadge: 'СТАНДАРТЫ КАЧЕСТВА ФОКУС',
-        srvStd1Title: 'Флагманская техника',
-        srvStd1Desc: 'Sony Cinema Line, премиальная оптика G-Master и выездной импульсный свет Profoto.',
-        srvStd2Title: 'Скорость отдачи',
-        srvStd2Desc: 'Первые превью для пресс-релизов за 3–24 часа. Финальная сдача в облако за 3–5 дней.',
-        srvStd3Title: 'Полные права',
-        srvStd3Desc: 'Бессрочная лицензия на использование фото и видео в любых рекламных каналах.',
-        srvStd4Title: 'Договор и ЭДО',
-        srvStd4Desc: 'Официальный безналичный расчёт, закрывающие документы и фиксированная смета.',
-        srvBannerCtaTitle: 'Нужен индивидуальный расчёт под ваш объект?',
-        srvBannerCtaDesc: 'Расскажите о задаче — мы подберём оптимальный состав съёмочной группы и рассчитаем точную смету за 30 минут.',
-        srvBannerBtn: 'ОБСУДИТЬ ПРОЕКТ'
+        srvCardHint: 'Индивидуальная смета под задачу',
+        srvConsultTitle: 'Каждый проект уникален. Обсудим детали вашей площадки?',
+        srvConsultLead: 'Расскажите о вашем объекте или задаче. Мы изучим световые сценарии, подберём подходящую оптику, съёмочную группу и подготовим точный расчёт сметы.',
+        srvPillar1Title: 'Скаутинг и подготовка',
+        srvPillar1Desc: 'Анализируем инсоляцию, углы съёмки и световой режим объекта до выезда на площадку.',
+        srvPillar2Title: 'Команда под масштаб',
+        srvPillar2Desc: 'От одного интерьерного фотографа со светом до расширенной группы с видеографом и дроном.',
+        srvPillar3Title: 'Готовый медиапакет',
+        srvPillar3Desc: 'Цветокоррекция, детальная ретушь и бессрочные коммерческие права без скрытых доплат.',
+        srvConsultCta: 'ОБСУДИТЬ СЪЁМКУ',
+        srvConsultNote: 'Отвечаем в течение 30 минут в рабочее время'
       },
       en: {
         company: 'PHOTOGRAPHY COMPANY',
@@ -516,59 +465,53 @@
         aboutStat3: 'EVENTS',
         aboutMediaNote: 'VISUALS THAT WORK FOR THE BRAND',
         aboutMission: 'We don\'t just shoot — we craft the visual language through which your business speaks to clients.',
-        servicesEyebrow: 'SERVICES & PRODUCTION',
-        servicesTitle1: 'WE CREATE VISUALS',
-        servicesTitle2: 'THAT DRIVE SALES.',
-        servicesLead: 'From intimate interior shoots to massive luxury hotel resorts and commercial video production. Bespoke attention to lighting, geometry, and texture.',
-        servicesMetaGear: 'Top-tier cinema gear',
-        servicesMetaSpeed: 'Ready in 48+ hours',
-        servicesMetaRights: 'Full commercial rights',
-        srv1Tag: '01 / INTERIORS',
+        servicesEyebrow: 'PRODUCTION & SERVICES',
+        servicesTitle1: 'CAPTURING SPACES',
+        servicesTitle2: 'WHERE YOU LONG TO BE.',
+        servicesLead: 'From intimate interior spaces to sprawling luxury resorts and high-end commercial video production. Precision lighting, pristine geometry, and tactile material textures.',
+        servicesSpecTeamLabel: 'CREW',
+        servicesSpecTeam: 'Specialist in-house team',
+        servicesSpecGeoLabel: 'GEOGRAPHY',
+        servicesSpecGeo: 'Nationwide coverage',
+        servicesSpecRightsLabel: 'RIGHTS',
+        servicesSpecRights: 'Full commercial rights',
         srv1Title: 'Interiors & Architecture',
-        srv1Desc: 'Premium photography for designers, developers, restaurants, and editorial magazines. Flawless geometry, natural lighting, and tactile texture details.',
+        srv1Desc: 'Editorial-grade photography for designers, developers, restaurants, and architectural press. Precise verticals, natural lighting, and tactile texture details.',
         srv1Tag1: 'HDR multi-exposure',
         srv1Tag2: 'Perspective correction',
-        srv1Tag3: 'On-site set styling',
-        srv1Tag4: 'Editorial & print ready',
+        srv1Tag3: 'On-site styling',
+        srv1Tag4: 'Print & publication ready',
         srv1Tag5: 'Uncapped commercial license',
-        srv1Price: 'from 25,000 ₽ • 48h',
-        srv2Tag: '02 / HOTELS & HORECA',
         srv2Title: 'Hotels, Resorts & HoReCa',
         srv2Desc: 'Comprehensive visual content designed to elevate average booking rates and direct conversions. Guest rooms, grand lobbies, dining, SPA and grounds.',
         srv2Tag1: 'Full room inventory categories',
         srv2Tag2: 'Lobby, SPA & dining',
         srv2Tag3: 'Optimized for OTAs & Web',
         srv2Tag4: 'Golden hour & blue hour shoots',
-        srv2Price: 'from 45,000 ₽ • project',
-        srv3Tag: '03 / VIDEO PRODUCTION',
         srv3Title: 'Commercial Video & Reels',
         srv3Desc: '4K brand films, high-converting social Reels/Shorts, and aerial drone footage. Full cycle: storyboarding, filming, sound design, and color grading.',
         srv3Tag1: '4K HDR (16:9 & 9:16)',
         srv3Tag2: 'High-tempo Reels / Shorts',
         srv3Tag3: '4K Drone cinematography',
         srv3Tag4: 'Bespoke sound design & color',
-        srv3Price: 'from 35,000 ₽ • video',
-        srv4Tag: '04 / EVENTS',
         srv4Title: 'Business Events & Forums',
         srv4Desc: 'Summits, business conferences, brand presentations, and private galas. Authentic reportage without stiff poses, and fast same-day preview delivery.',
-        srv4Tag1: '3-hour express previews',
+        srv4Tag1: 'Same-day express previews',
         srv4Tag2: 'Branded cloud gallery',
         srv4Tag3: 'Multi-camera coverage',
         srv4Tag4: 'Team of 2–5 specialists',
-        srv4Price: 'from 8,000 ₽ / hour',
         srvOrderCta: 'Book Shoot',
-        srvStandardsBadge: 'FOCUS PRODUCTION STANDARDS',
-        srvStd1Title: 'Flagship Equipment',
-        srvStd1Desc: 'Sony Cinema Line, prime G-Master optics, and portable Profoto lighting.',
-        srvStd2Title: 'Turnaround Speed',
-        srvStd2Desc: 'First previews for social & PR within 3–24 hours. Full delivery in 3–5 business days.',
-        srvStd3Title: 'Full Commercial Rights',
-        srvStd3Desc: 'Perpetual commercial license for all digital, web, and billboard advertising.',
-        srvStd4Title: 'Contract & Invoicing',
-        srvStd4Desc: 'Official commercial contracts, transparent estimates, and electronic invoicing.',
-        srvBannerCtaTitle: 'Need a customized quote for your property?',
-        srvBannerCtaDesc: 'Tell us about your project — we will tailor the production crew and send an estimate within 30 minutes.',
-        srvBannerBtn: 'DISCUSS PROJECT'
+        srvCardHint: 'Custom estimate tailored to your project',
+        srvConsultTitle: 'Every space is unique. Let’s discuss your project.',
+        srvConsultLead: 'Tell us about your property or event. We will study natural light conditions, select prime lenses and crew, and deliver an exact cost estimate.',
+        srvPillar1Title: 'Scouting & Planning',
+        srvPillar1Desc: 'Analyzing insolation, shooting angles, and golden-hour windows before crew arrival.',
+        srvPillar2Title: 'Tailored Production Crew',
+        srvPillar2Desc: 'From a dedicated solo architectural photographer to a full multi-camera cinema unit with drone.',
+        srvPillar3Title: 'Complete Media Deliverables',
+        srvPillar3Desc: 'Commercial color grade, meticulous retouching, and perpetual commercial rights with zero hidden fees.',
+        srvConsultCta: 'DISCUSS A SHOOT',
+        srvConsultNote: 'Response within 30 minutes during business hours'
       }
     };
 
