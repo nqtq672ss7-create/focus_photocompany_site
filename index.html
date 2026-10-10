@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?t=202410091219">
+  <link rel="stylesheet" href="style.css?v=20261010_1545">
 </head>
 <body>
   <header class="topbar">
@@ -134,18 +134,42 @@
           <p class="srv-lead" data-i18n="servicesLead">
             От камерных интерьерных съёмок до масштабных курортных отелей и рекламных видеоисторий. Точная работа со светом, геометрией и фактурами каждого кадра.
           </p>
-          <div class="srv-specs">
-            <div class="srv-spec-item">
-              <span class="srv-spec-label" data-i18n="servicesSpecTeamLabel">КОМАНДА</span>
-              <span class="srv-spec-val" data-i18n="servicesSpecTeam">Профессиональный коллектив</span>
+          <div class="srv-badges">
+            <div class="srv-badge">
+              <span class="srv-badge__icon">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 14a6 6 0 0112 0H2z" stroke="currentColor" stroke-width="1.6"/></svg>
+              </span>
+              <div class="srv-badge__info">
+                <span class="srv-badge__label" data-i18n="servicesSpecTeamLabel">КОМАНДА</span>
+                <strong class="srv-badge__value" data-i18n="servicesSpecTeam">Профессиональный коллектив</strong>
+              </div>
             </div>
-            <div class="srv-spec-item">
-              <span class="srv-spec-label" data-i18n="servicesSpecGeoLabel">ГЕОГРАФИЯ</span>
-              <span class="srv-spec-val" data-i18n="servicesSpecGeo">Съёмки по всей России</span>
+            <div class="srv-badge">
+              <span class="srv-badge__icon">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5c0-2.5-2-4.5-4.5-4.5zM8 8a2 2 0 110-4 2 2 0 010 4z" stroke="currentColor" stroke-width="1.6"/></svg>
+              </span>
+              <div class="srv-badge__info">
+                <span class="srv-badge__label" data-i18n="servicesSpecGeoLabel">ГЕОГРАФИЯ</span>
+                <strong class="srv-badge__value" data-i18n="servicesSpecGeo">Съёмки по всей России</strong>
+              </div>
             </div>
-            <div class="srv-spec-item">
-              <span class="srv-spec-label" data-i18n="servicesSpecRightsLabel">ПРАВА</span>
-              <span class="srv-spec-val" data-i18n="servicesSpecRights">Полные права на контент</span>
+            <div class="srv-badge">
+              <span class="srv-badge__icon">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M13 5l-6 6-3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <div class="srv-badge__info">
+                <span class="srv-badge__label" data-i18n="servicesSpecRightsLabel">ПРАВА</span>
+                <strong class="srv-badge__value" data-i18n="servicesSpecRights">Полные права на контент</strong>
+              </div>
+            </div>
+            <div class="srv-badge">
+              <span class="srv-badge__icon">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M8 4.5V8l2.5 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+              <div class="srv-badge__info">
+                <span class="srv-badge__label" data-i18n="servicesSpecSpeedLabel">СРОКИ</span>
+                <strong class="srv-badge__value" data-i18n="servicesSpecSpeed">Готовность от 48 часов</strong>
+              </div>
             </div>
           </div>
         </div>
@@ -305,9 +329,13 @@
       <div class="srv-consult srv-anim" data-delay="100">
         <div class="srv-consult__top">
           <div class="srv-consult__text">
+            <div class="srv-consult__badge">
+              <span class="srv-consult__pulse" aria-hidden="true"></span>
+              <span class="srv-consult__badge-text" data-i18n="srvConsultEyebrow">ИНДИВИДУАЛЬНЫЙ РАСЧЁТ СМЕТЫ</span>
+            </div>
             <h3 class="srv-consult__title" data-i18n="srvConsultTitle">Каждый проект уникален. Обсудим детали вашей площадки?</h3>
             <p class="srv-consult__lead" data-i18n="srvConsultLead">
-              Расскажите о вашем объекте или задаче. Мы изучим световые сценарии, подберём подходящую оптику, съёмочную группу и подготовим точный расчёт сметы.
+              Расскажите о вашей задаче. Мы изучим световые сценарии, подберём подходящую оптику, съёмочную группу и подготовим точный расчёт сметы.
             </p>
           </div>
           <div class="srv-consult__action">
@@ -316,24 +344,41 @@
               <span class="srv-consult-btn__arrow" aria-hidden="true">→</span>
             </a>
             <div class="srv-consult__status">
-              <span class="srv-consult__pulse"></span>
+              <span class="srv-consult__status-dot"></span>
               <span data-i18n="srvConsultNote">Отвечаем в течение 30 минут в рабочее время</span>
             </div>
           </div>
         </div>
 
         <div class="srv-pillars">
-          <div class="srv-pillar">
-            <h4 class="srv-pillar__title" data-i18n="srvPillar1Title">Скаутинг и подготовка</h4>
-            <p class="srv-pillar__desc" data-i18n="srvPillar1Desc">Анализируем инсоляцию, углы съёмки и световой режим объекта до выезда на площадку.</p>
+          <div class="srv-pillar-card">
+            <div class="srv-pillar-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <div class="srv-pillar-body">
+              <h4 class="srv-pillar__title" data-i18n="srvPillar1Title">Скаутинг и подготовка</h4>
+              <p class="srv-pillar__desc" data-i18n="srvPillar1Desc">Анализируем инсоляцию, углы съёмки и световой режим объекта до выезда на площадку.</p>
+            </div>
           </div>
-          <div class="srv-pillar">
-            <h4 class="srv-pillar__title" data-i18n="srvPillar2Title">Команда под масштаб</h4>
-            <p class="srv-pillar__desc" data-i18n="srvPillar2Desc">От одного интерьерного фотографа со светом до расширенной группы с видеографом и дроном.</p>
+
+          <div class="srv-pillar-card">
+            <div class="srv-pillar-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M10 10a4 4 0 100-8 4 4 0 000 8zM3 18a7 7 0 0114 0H3z" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <div class="srv-pillar-body">
+              <h4 class="srv-pillar__title" data-i18n="srvPillar2Title">Команда под масштаб</h4>
+              <p class="srv-pillar__desc" data-i18n="srvPillar2Desc">От одного интерьерного фотографа со светом до расширенной группы с видеографом и дроном.</p>
+            </div>
           </div>
-          <div class="srv-pillar">
-            <h4 class="srv-pillar__title" data-i18n="srvPillar3Title">Готовый медиапакет</h4>
-            <p class="srv-pillar__desc" data-i18n="srvPillar3Desc">Цветокоррекция, детальная ретушь и бессрочные коммерческие права без скрытых доплат.</p>
+
+          <div class="srv-pillar-card">
+            <div class="srv-pillar-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M4 4h12v12H4zM4 9h12M9 4v12" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <div class="srv-pillar-body">
+              <h4 class="srv-pillar__title" data-i18n="srvPillar3Title">Готовый медиапакет</h4>
+              <p class="srv-pillar__desc" data-i18n="srvPillar3Desc">Цветокоррекция, детальная ретушь и бессрочные коммерческие права без скрытых доплат.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -392,6 +437,8 @@
         servicesSpecGeo: 'Съёмки по всей России',
         servicesSpecRightsLabel: 'ПРАВА',
         servicesSpecRights: 'Полные права на контент',
+        servicesSpecSpeedLabel: 'СРОКИ',
+        servicesSpecSpeed: 'Готовность от 48 часов',
         srv1Title: 'Интерьеры & Архитектура',
         srv1Desc: 'Премиальная съёмка для дизайнеров, девелоперов, ресторанов и глянцевых изданий. Идеальная геометрия, естественный свет и внимание к фактурам материалов.',
         srv1Tag1: 'HDR мультиэкспозиция',
@@ -419,6 +466,7 @@
         srv4Tag4: 'Команда из 2–5 специалистов',
         srvOrderCta: 'Заказать съёмку',
         srvCardHint: 'Индивидуальная смета под задачу',
+        srvConsultEyebrow: 'ИНДИВИДУАЛЬНЫЙ РАСЧЁТ СМЕТЫ',
         srvConsultTitle: 'Каждый проект уникален. Обсудим детали вашей площадки?',
         srvConsultLead: 'Расскажите о вашем объекте или задаче. Мы изучим световые сценарии, подберём подходящую оптику, съёмочную группу и подготовим точный расчёт сметы.',
         srvPillar1Title: 'Скаутинг и подготовка',
@@ -475,6 +523,8 @@
         servicesSpecGeo: 'Nationwide coverage',
         servicesSpecRightsLabel: 'RIGHTS',
         servicesSpecRights: 'Full commercial rights',
+        servicesSpecSpeedLabel: 'TIMELINE',
+        servicesSpecSpeed: 'Delivery from 48h',
         srv1Title: 'Interiors & Architecture',
         srv1Desc: 'Editorial-grade photography for designers, developers, restaurants, and architectural press. Precise verticals, natural lighting, and tactile texture details.',
         srv1Tag1: 'HDR multi-exposure',
@@ -502,6 +552,7 @@
         srv4Tag4: 'Team of 2–5 specialists',
         srvOrderCta: 'Book Shoot',
         srvCardHint: 'Custom estimate tailored to your project',
+        srvConsultEyebrow: 'BESPOKE PROJECT ESTIMATE',
         srvConsultTitle: 'Every space is unique. Let’s discuss your project.',
         srvConsultLead: 'Tell us about your property or event. We will study natural light conditions, select prime lenses and crew, and deliver an exact cost estimate.',
         srvPillar1Title: 'Scouting & Planning',
