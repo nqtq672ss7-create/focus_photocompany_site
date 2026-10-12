@@ -370,312 +370,890 @@
     </div>
   </section>
   <!-- SECTION: WORKS / PORTFOLIO -->
-  <section id="works" class="works-section">
+  <section id="works" class="works-section works-clean" aria-labelledby="works-clean-title">
     <div class="works-shell">
       
-      <!-- WORKS HEADER -->
+      <!-- WORKS HEADER (Kinetic Minimalist on White) -->
       <header class="works-header">
-        <div class="works-header__main">
-          <div class="works-eyebrow">
-            <span class="works-eyebrow__dash" aria-hidden="true">—</span>
-            <span class="works-eyebrow__text" data-i18n="worksEyebrow">ИЗБРАННЫЕ КЕЙСЫ</span>
-          </div>
-          <h2 class="works-title">
-            <span data-i18n="worksTitle1">РЕАЛИЗОВАННЫЕ ПРОЕКТЫ</span>
-            <span class="works-title__row--lime" data-i18n="worksTitle2">ДЛЯ БРЕНДОВ И ПРОСТРАНСТВ.</span>
-          </h2>
+        <div class="works-eyebrow">
+          <span class="works-eyebrow__dash" aria-hidden="true">—</span>
+          <span class="works-eyebrow__text" data-i18n="worksEyebrow">ПРИМЕРЫ РАБОТ</span>
         </div>
-        <div class="works-header__side">
-          <p class="works-lead" data-i18n="worksLead">
-            Архитектурная точность, внимание к естественному свету и кинематографичный цвет. Каждый кадр усиливает статус объекта и работает на конверсию.
-          </p>
-          <div class="works-stats-pill">
-            <span class="works-stats-pill__dot"></span>
-            <span data-i18n="worksStatsPill">150+ проектов в Краснодарском крае и РФ</span>
-          </div>
-        </div>
+        <h2 class="works-clean-title" id="works-clean-title" aria-label="Реализованные проекты.">
+          <span class="works-title__row works-title__row--1">
+            <span class="works-word works-word--1" data-i18n="worksTitle1Word">РЕАЛИЗОВАННЫЕ</span>
+          </span>
+          <span class="works-title__row works-title__row--2">
+            <span class="works-word works-word--2">
+              <span data-i18n="worksTitle2Word">ПРОЕКТЫ</span>
+              <span class="works-title-lime" data-i18n="worksTitleBadge">2024–2026</span>
+            </span>
+          </span>
+        </h2>
       </header>
 
-      <!-- WORKS FILTER TABS -->
+      <!-- WORKS FILTER TABS (Minimalist Segmented Control - NO "ALL") -->
       <div class="works-filters-wrap">
-        <nav class="works-filters" aria-label="Фильтр категорий проектов" role="tablist">
-          <button type="button" class="works-filter is-active" data-filter="all" role="tab" aria-selected="true">
-            <span class="works-filter__label" data-i18n="worksFilterAll">Все проекты</span>
+        <nav class="works-filters" aria-label="Категории проектов" role="tablist">
+          <button type="button" class="works-filter is-active" data-filter="interiors" role="tab" aria-selected="true">
+            <span class="works-filter__num">01</span>
+            <span class="works-filter__label" data-i18n="worksFilterInteriors">Интерьеры</span>
             <span class="works-filter__count">8</span>
           </button>
-          <button type="button" class="works-filter" data-filter="interiors" role="tab" aria-selected="false">
-            <span class="works-filter__label" data-i18n="worksFilterInteriors">Интерьеры</span>
-            <span class="works-filter__count">2</span>
-          </button>
           <button type="button" class="works-filter" data-filter="hotels" role="tab" aria-selected="false">
+            <span class="works-filter__num">02</span>
             <span class="works-filter__label" data-i18n="worksFilterHotels">Отели & HoReCa</span>
-            <span class="works-filter__count">2</span>
+            <span class="works-filter__count">8</span>
           </button>
           <button type="button" class="works-filter" data-filter="video" role="tab" aria-selected="false">
+            <span class="works-filter__num">03</span>
             <span class="works-filter__label" data-i18n="worksFilterVideo">Видео & Reels</span>
-            <span class="works-filter__count">2</span>
+            <span class="works-filter__count">8</span>
           </button>
           <button type="button" class="works-filter" data-filter="events" role="tab" aria-selected="false">
+            <span class="works-filter__num">04</span>
             <span class="works-filter__label" data-i18n="worksFilterEvents">Мероприятия</span>
-            <span class="works-filter__count">2</span>
+            <span class="works-filter__count">8</span>
           </button>
         </nav>
       </div>
 
-      <!-- WORKS GRID -->
+      <!-- WORKS EDITORIAL PHOTO GRID -->
       <div class="works-grid" id="worksGrid">
         
-        <!-- CARD 1: Interiors (Wide 7 cols) -->
-        <article class="works-card works-card--wide works-anim" data-category="interiors" data-delay="60" data-project-id="1">
-          <div class="works-card__inner">
-            <div class="works-card__media-box">
-              <img src="assets/about-card-1.png" alt="Вилла в Красной Поляне — интерьерная съёмка" class="works-card__img" loading="lazy">
-              <div class="works-card__badges">
-                <span class="works-badge" data-i18n="worksCatInteriors">ИНТЕРЬЕРЫ</span>
-                <span class="works-badge works-badge--dim">2024 • СОЧИ</span>
+        <!-- ==========================================
+             CATEGORY 1: INTERIORS (Интерьеры)
+             ========================================== -->
+        <!-- Card 1: Wide 7 cols -->
+        <article class="works-card works-card--wide works-anim" data-category="interiors" data-delay="40" data-project-id="1">
+          <div class="works-card__media-box">
+            <img src="assets/about-card-1.png" alt="Частная резиденция «Polyana Heights»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ИНТЕРЬЕРЫ</span>
+              <span class="works-badge works-badge--dim">СОЧИ • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Частная резиденция «Polyana Heights»</h3>
+                <p class="works-card__caption">38 кадров HDR • Детальный стайлинг • Глянец</p>
               </div>
               <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
-                <span data-i18n="worksViewProject">Смотреть кейс</span>
                 <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
               </button>
             </div>
-            <div class="works-card__meta">
-              <div class="works-card__title-row">
-                <h3 class="works-card__title" data-i18n="p1Title">Частная резиденция «Polyana Heights»</h3>
-                <span class="works-card__year">2024</span>
-              </div>
-              <p class="works-card__desc" data-i18n="p1Desc">
-                Интерьерная съёмка шале премиум-класса для архитектурного портфолио. Естественный горный свет, фактуры массива дерева и камня.
-              </p>
-              <div class="works-card__tags">
-                <span class="works-tag" data-i18n="p1Tag1">38 кадров HDR</span>
-                <span class="works-tag" data-i18n="p1Tag2">Детальный стайлинг</span>
-                <span class="works-tag" data-i18n="p1Tag3">Публикация в глянце</span>
-              </div>
-            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Частная резиденция «Polyana Heights»</span>
+            <span class="data-desc">Интерьерная съёмка шале премиум-класса для архитектурного портфолио. Естественный горный свет, фактуры массива дерева и камня.</span>
+            <span class="data-tags">38 кадров HDR,Детальный стайлинг,Публикация в глянце</span>
           </div>
         </article>
 
-        <!-- CARD 2: Hotels (Compact 5 cols) -->
-        <article class="works-card works-card--compact works-anim" data-category="hotels" data-delay="120" data-project-id="2">
-          <div class="works-card__inner">
-            <div class="works-card__media-box">
-              <img src="assets/hotel-complex.jpg" alt="Курортный комплекс Grand Sapphire — отель и аэросъёмка" class="works-card__img" loading="lazy">
-              <div class="works-card__badges">
-                <span class="works-badge" data-i18n="worksCatHotels">ОТЕЛИ & HORECA</span>
-                <span class="works-badge works-badge--dim">2024 • АНАПА</span>
+        <!-- Card 2: Compact 5 cols -->
+        <article class="works-card works-card--compact works-anim" data-category="interiors" data-delay="80" data-project-id="2">
+          <div class="works-card__media-box">
+            <img src="assets/focus-lobby.png" alt="Лобби и лаунж «Nordic Space»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ИНТЕРЬЕРЫ</span>
+              <span class="works-badge works-badge--dim">НОВОРОССИЙСК • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Лобби и лаунж «Nordic Space»</h3>
+                <p class="works-card__caption">Режимный вечерний свет • Макро-детали • Натуральный дуб</p>
               </div>
               <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
-                <span data-i18n="worksViewProject">Смотреть кейс</span>
                 <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
               </button>
             </div>
-            <div class="works-card__meta">
-              <div class="works-card__title-row">
-                <h3 class="works-card__title" data-i18n="p2Title">Курортный комплекс «Grand Sapphire»</h3>
-                <span class="works-card__year">2024</span>
-              </div>
-              <p class="works-card__desc" data-i18n="p2Desc">
-                Полный визуальный пакет для ребрендинга и систем бронирования: люксы, открытые бассейны, ресторан и аэросъёмка территории.
-              </p>
-              <div class="works-card__tags">
-                <span class="works-tag" data-i18n="p2Tag1">75 фото номеров & SPA</span>
-                <span class="works-tag" data-i18n="p2Tag2">Аэросъёмка 4K</span>
-                <span class="works-tag" data-i18n="p2Tag3">Контент для OTA</span>
-              </div>
-            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Лобби и лаунж «Nordic Space»</span>
+            <span class="data-desc">Сложные световые схемы в условиях вечернего освещения. Точная передача благородных оттенков латуни, кожи и тёмного дерева.</span>
+            <span class="data-tags">Режимный вечерний свет,Макро-детали,Без искажения цвета</span>
           </div>
         </article>
 
-        <!-- CARD 3: Video (Compact 5 cols) -->
-        <article class="works-card works-card--compact works-anim" data-category="video" data-delay="160" data-project-id="3">
-          <div class="works-card__inner">
-            <div class="works-card__media-box">
-              <img src="assets/video-rig.png" alt="Продакшн рекламного видео Space Architecture" class="works-card__img" loading="lazy">
-              <div class="works-card__badges">
-                <span class="works-badge" data-i18n="worksCatVideo">ВИДЕО & REELS</span>
-                <span class="works-badge works-badge--dim">2025 • КРАСНОДАР</span>
+        <!-- Card 3: 4 cols -->
+        <article class="works-card works-card--third works-anim" data-category="interiors" data-delay="60" data-project-id="3">
+          <div class="works-card__media-box">
+            <img src="assets/about-card-3.png" alt="Видовые апартаменты «Skyline Terrace»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ИНТЕРЬЕРЫ</span>
+              <span class="works-badge works-badge--dim">АНАПА • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Видовые апартаменты «Skyline Terrace»</h3>
+                <p class="works-card__caption">Морская панорама • Утренний свет • OTA</p>
               </div>
               <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
-                <span data-i18n="worksViewProject">Смотреть кейс</span>
                 <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
               </button>
             </div>
-            <div class="works-card__meta">
-              <div class="works-card__title-row">
-                <h3 class="works-card__title" data-i18n="p3Title">Имиджевый промо-ролик «Space Architecture»</h3>
-                <span class="works-card__year">2025</span>
-              </div>
-              <p class="works-card__desc" data-i18n="p3Desc">
-                Полноформатный презентационный фильм 4K и адаптации для социальных сетей. Кинематографичный цвет, динамичный темп и саунд-дизайн.
-              </p>
-              <div class="works-card__tags">
-                <span class="works-tag" data-i18n="p3Tag1">4K Cinema (16:9)</span>
-                <span class="works-tag" data-i18n="p3Tag2">6 вертикальных Reels</span>
-                <span class="works-tag" data-i18n="p3Tag3">Саунд-дизайн</span>
-              </div>
-            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Видовые апартаменты «Skyline Terrace»</span>
+            <span class="data-desc">Интерьерная съёмка видовых апартаментов с выходом на открытую террасу. Идеальный баланс экспозиции интерьера и моря за окном.</span>
+            <span class="data-tags">Панорамные окна,Мультиэкспозиция,Контент под аренду</span>
           </div>
         </article>
 
-        <!-- CARD 4: Events (Wide 7 cols) -->
-        <article class="works-card works-card--wide works-anim" data-category="events" data-delay="200" data-project-id="4">
-          <div class="works-card__inner">
-            <div class="works-card__media-box">
-              <img src="assets/business-event.jpg" alt="Бизнес-форум Юг.Технологии" class="works-card__img" loading="lazy">
-              <div class="works-card__badges">
-                <span class="works-badge" data-i18n="worksCatEvents">МЕРОПРИЯТИЯ</span>
-                <span class="works-badge works-badge--dim">2024 • СОЧИ</span>
+        <!-- Card 4: 4 cols -->
+        <article class="works-card works-card--third works-anim" data-category="interiors" data-delay="100" data-project-id="4">
+          <div class="works-card__media-box">
+            <img src="assets/about-card-2.png" alt="Ресторан авторской кухни «Veranda Mare»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ИНТЕРЬЕРЫ</span>
+              <span class="works-badge works-badge--dim">ГЕЛЕНДЖИК • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Ресторан «Veranda Mare»</h3>
+                <p class="works-card__caption">Зал и открытая терраса • Винная галерея</p>
               </div>
               <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
-                <span data-i18n="worksViewProject">Смотреть кейс</span>
                 <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
               </button>
             </div>
-            <div class="works-card__meta">
-              <div class="works-card__title-row">
-                <h3 class="works-card__title" data-i18n="p4Title">Форум инноваций «Юг.Технологии 2024»</h3>
-                <span class="works-card__year">2024</span>
-              </div>
-              <p class="works-card__desc" data-i18n="p4Desc">
-                Многокамерная репортажная съёмка масштабного форума на 1200+ участников. Спикеры на главной сцене, экспо-зона и вечерний нетворкинг.
-              </p>
-              <div class="works-card__tags">
-                <span class="works-tag" data-i18n="p4Tag1">Экспресс-выдача в день съёмки</span>
-                <span class="works-tag" data-i18n="p4Tag2">3 фотографа</span>
-                <span class="works-tag" data-i18n="p4Tag3">Облачная веб-галерея</span>
-              </div>
-            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Ресторан «Veranda Mare»</span>
+            <span class="data-desc">Архитектурная съёмка ресторана высокой кухни: основной зал, открытая кухня, панорамная веранда и приватные зоны.</span>
+            <span class="data-tags">Гастро-интерьеры,Свет по зонам,Публикация в каталогах</span>
           </div>
         </article>
 
-        <!-- CARD 5: Interiors (Balanced 6 cols) -->
-        <article class="works-card works-card--balanced works-anim" data-category="interiors" data-delay="100" data-project-id="5">
-          <div class="works-card__inner">
-            <div class="works-card__media-box">
-              <img src="assets/focus-lobby.png" alt="Бутик-отель Nordic Space — лобби" class="works-card__img" loading="lazy">
-              <div class="works-card__badges">
-                <span class="works-badge" data-i18n="worksCatInteriors">ИНТЕРЬЕРЫ</span>
-                <span class="works-badge works-badge--dim">2024 • НОВОРОССИЙСК</span>
+        <!-- Card 5: 4 cols -->
+        <article class="works-card works-card--third works-anim" data-category="interiors" data-delay="140" data-project-id="5">
+          <div class="works-card__media-box">
+            <img src="assets/hotel-pool.jpg" alt="Архитектурный пентхаус «Monument»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ИНТЕРЬЕРЫ</span>
+              <span class="works-badge works-badge--dim">КРАСНОДАР • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Пентхаус «Monument»</h3>
+                <p class="works-card__caption">Минимализм • Бетон и мрамор • 280 м²</p>
               </div>
               <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
-                <span data-i18n="worksViewProject">Смотреть кейс</span>
                 <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
               </button>
             </div>
-            <div class="works-card__meta">
-              <div class="works-card__title-row">
-                <h3 class="works-card__title" data-i18n="p5Title">Лобби и лаунж «Nordic Boutique Space»</h3>
-                <span class="works-card__year">2024</span>
-              </div>
-              <p class="works-card__desc" data-i18n="p5Desc">
-                Сложные световые схемы в условиях вечернего освещения. Точная передача благородных оттенков латуни, кожи и тёмного дерева.
-              </p>
-              <div class="works-card__tags">
-                <span class="works-tag" data-i18n="p5Tag1">Режимный вечерний свет</span>
-                <span class="works-tag" data-i18n="p5Tag2">Макро-детали</span>
-                <span class="works-tag" data-i18n="p5Tag3">Без искажения цвета</span>
-              </div>
-            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Пентхаус «Monument»</span>
+            <span class="data-desc">Съёмка проекта архитектурного бюро. Строгая геометрия линий, крупноформатный мрамор, теневые профили и скрытый свет.</span>
+            <span class="data-tags">Архитектурный стайлинг,Геометрия вертикалей,AD Russia</span>
           </div>
         </article>
 
-        <!-- CARD 6: Hotels (Balanced 6 cols) -->
-        <article class="works-card works-card--balanced works-anim" data-category="hotels" data-delay="140" data-project-id="6">
-          <div class="works-card__inner">
-            <div class="works-card__media-box">
-              <img src="assets/about-card-3.png" alt="Апарт-отель Azure Coastline — вид на море" class="works-card__img" loading="lazy">
-              <div class="works-card__badges">
-                <span class="works-badge" data-i18n="worksCatHotels">ОТЕЛИ & HORECA</span>
-                <span class="works-badge works-badge--dim">2024 • ГЕЛЕНДЖИК</span>
+        <!-- Card 6: 12 cols panorama -->
+        <article class="works-card works-card--pano works-anim" data-category="interiors" data-delay="80" data-project-id="6">
+          <div class="works-card__media-box">
+            <img src="assets/about-card-1.png" alt="Двухуровневое шале «Alpine Ridge»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ИНТЕРЬЕРЫ</span>
+              <span class="works-badge works-badge--dim">КРАСНАЯ ПОЛЯНА • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Двухуровневое шале «Alpine Ridge»</h3>
+                <p class="works-card__caption">Второй свет • Каминная зона • Панорама Кавказских гор</p>
               </div>
               <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
-                <span data-i18n="worksViewProject">Смотреть кейс</span>
                 <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
               </button>
             </div>
-            <div class="works-card__meta">
-              <div class="works-card__title-row">
-                <h3 class="works-card__title" data-i18n="p6Title">Апарт-отель «Azure Coastline»</h3>
-                <span class="works-card__year">2024</span>
-              </div>
-              <p class="works-card__desc" data-i18n="p6Desc">
-                Съемка видовых апартаментов на первой линии моря в режимное «золотое время». Высокий CTR на сервисах Яндекс.Путешествия и Островок.
-              </p>
-              <div class="works-card__tags">
-                <span class="works-tag" data-i18n="p6Tag1">Golden Hour съёмка</span>
-                <span class="works-tag" data-i18n="p6Tag2">24 категории номеров</span>
-                <span class="works-tag" data-i18n="p6Tag3">+38% к конверсии брони</span>
-              </div>
-            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Двухуровневое шале «Alpine Ridge»</span>
+            <span class="data-desc">Масштабная съёмка шале с высотой потолков 7 метров. Проработка фактур бруса, натурального сланца и теплого вечернего света камина.</span>
+            <span class="data-tags">Свет второго света,HDR панорамы,Премиум аренда</span>
           </div>
         </article>
 
-        <!-- CARD 7: Video (Balanced 6 cols) -->
-        <article class="works-card works-card--balanced works-anim" data-category="video" data-delay="120" data-project-id="7">
-          <div class="works-card__inner">
-            <div class="works-card__media-box">
-              <img src="assets/about-card-2.png" alt="Ресторан Veranda Mare — гастро видеосъемка" class="works-card__img" loading="lazy">
-              <div class="works-card__badges">
-                <span class="works-badge" data-i18n="worksCatVideo">ВИДЕО & REELS</span>
-                <span class="works-badge works-badge--dim">2024 • АНАПА</span>
+        <!-- Card 7: Extra 1 (6 cols) -->
+        <article class="works-card works-card--half is-extra works-anim" data-category="interiors" data-delay="60" data-project-id="7">
+          <div class="works-card__media-box">
+            <img src="assets/focus-lobby.png" alt="Бутик-резиденция «Casa Bianco»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ИНТЕРЬЕРЫ</span>
+              <span class="works-badge works-badge--dim">СОЧИ • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Бутик-резиденция «Casa Bianco»</h3>
+                <p class="works-card__caption">Средиземноморский стиль • Терраса • Латунь</p>
               </div>
               <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
-                <span data-i18n="worksViewProject">Смотреть кейс</span>
                 <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
               </button>
             </div>
-            <div class="works-card__meta">
-              <div class="works-card__title-row">
-                <h3 class="works-card__title" data-i18n="p7Title">Флагманский ресторан «Veranda Mare»</h3>
-                <span class="works-card__year">2024</span>
-              </div>
-              <p class="works-card__desc" data-i18n="p7Desc">
-                Серия атмосферных гастро-рилсов и главное презентационное видео с авторской подачей блюд, открытой кухней и винным погребом.
-              </p>
-              <div class="works-card__tags">
-                <span class="works-tag" data-i18n="p7Tag1">Макро-съёмка подачи блюд</span>
-                <span class="works-tag" data-i18n="p7Tag2">8 трендовых рилс</span>
-                <span class="works-tag" data-i18n="p7Tag3">ASMR саунд-дизайн</span>
-              </div>
-            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Бутик-резиденция «Casa Bianco»</span>
+            <span class="data-desc">Интерьеры частной виллы в белых тонах с акцентами из состаренной латуни и натурального льна.</span>
+            <span class="data-tags">Естественный свет,Стайлинг деталей,Глянец</span>
           </div>
         </article>
 
-        <!-- CARD 8: Events (Balanced 6 cols) -->
-        <article class="works-card works-card--balanced works-anim" data-category="events" data-delay="160" data-project-id="8">
-          <div class="works-card__inner">
-            <div class="works-card__media-box">
-              <img src="assets/photographers.png" alt="Саммит девелоперов юга — конференция и репортаж" class="works-card__img" loading="lazy">
-              <div class="works-card__badges">
-                <span class="works-badge" data-i18n="worksCatEvents">МЕРОПРИЯТИЯ</span>
-                <span class="works-badge works-badge--dim">2024 • КРАСНОДАР</span>
+        <!-- Card 8: Extra 2 (6 cols) -->
+        <article class="works-card works-card--half is-extra works-anim" data-category="interiors" data-delay="100" data-project-id="8">
+          <div class="works-card__media-box">
+            <img src="assets/video-set.png" alt="Минималистичный лофт «Industrial Core»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ИНТЕРЬЕРЫ</span>
+              <span class="works-badge works-badge--dim">КРАСНОДАР • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Лофт «Industrial Core»</h3>
+                <p class="works-card__caption">Кирпичная кладка • Черный металл • Студийный свет</p>
               </div>
               <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
-                <span data-i18n="worksViewProject">Смотреть кейс</span>
                 <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
               </button>
             </div>
-            <div class="works-card__meta">
-              <div class="works-card__title-row">
-                <h3 class="works-card__title" data-i18n="p8Title">Саммит девелоперов юга «Development Day»</h3>
-                <span class="works-card__year">2024</span>
-              </div>
-              <p class="works-card__desc" data-i18n="p8Desc">
-                Полный медиаотчёт закрытого саммита: панельные дискуссии, VIP-гости, нетворкинг и церемония награждения лучших проектов года.
-              </p>
-              <div class="works-card__tags">
-                <span class="works-tag" data-i18n="p8Tag1">Многокамерный репортаж</span>
-                <span class="works-tag" data-i18n="p8Tag2">Пресс-волл фотозона</span>
-                <span class="works-tag" data-i18n="p8Tag3">Отдача за 24 часа</span>
-              </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Лофт «Industrial Core»</span>
+            <span class="data-desc">Съёмка креативного офисного лофта с открытыми коммуникациями и световыми инсталляциями.</span>
+            <span class="data-tags">Лофт пространства,Коммерческий стайлинг,Архитектурный свет</span>
+          </div>
+        </article>
+
+
+        <!-- ==========================================
+             CATEGORY 2: HOTELS & HORECA (Отели & HoReCa)
+             ========================================== -->
+        <!-- Card 9: Wide 7 cols -->
+        <article class="works-card works-card--wide works-anim" data-category="hotels" data-delay="40" data-project-id="9">
+          <div class="works-card__media-box">
+            <img src="assets/hotel-complex.jpg" alt="Курортный комплекс Grand Sapphire Resort 5*" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ОТЕЛИ & HORECA</span>
+              <span class="works-badge works-badge--dim">АНАПА • 2024</span>
             </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Курортный комплекс «Grand Sapphire 5*»</h3>
+                <p class="works-card__caption">Аэросъёмка 4K • Номерной фонд • Территория и бассейны</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Курортный комплекс «Grand Sapphire 5*»</span>
+            <span class="data-desc">Полный визуальный пакет для ребрендинга и систем бронирования: люксы, открытые бассейны, ресторан и аэросъёмка территории.</span>
+            <span class="data-tags">75 фото номеров & SPA,Аэросъёмка 4K,Контент для OTA</span>
+          </div>
+        </article>
+
+        <!-- Card 10: Compact 5 cols -->
+        <article class="works-card works-card--compact works-anim" data-category="hotels" data-delay="80" data-project-id="10">
+          <div class="works-card__media-box">
+            <img src="assets/about-card-3.png" alt="Апарт-отель Azure Coastline" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ОТЕЛИ & HORECA</span>
+              <span class="works-badge works-badge--dim">ГЕЛЕНДЖИК • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Апарт-отель «Azure Coastline»</h3>
+                <p class="works-card__caption">Вид на море • Golden Hour съёмка • +38% к бронированию</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Апарт-отель «Azure Coastline»</span>
+            <span class="data-desc">Съемка видовых апартаментов на первой линии моря в режимное «золотое время». Высокий CTR на сервисах Яндекс.Путешествия и Островок.</span>
+            <span class="data-tags">Golden Hour съёмка,24 категории номеров,+38% к конверсии брони</span>
+          </div>
+        </article>
+
+        <!-- Card 11: 4 cols -->
+        <article class="works-card works-card--third works-anim" data-category="hotels" data-delay="60" data-project-id="11">
+          <div class="works-card__media-box">
+            <img src="assets/hotel-pool.jpg" alt="Премиальный SPA-комплекс «Oasis Thermal»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ОТЕЛИ & HORECA</span>
+              <span class="works-badge works-badge--dim">СОЧИ • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">SPA-комплекс «Oasis Thermal»</h3>
+                <p class="works-card__caption">Термальные чаши • Релакс-зоны • Водные блики</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">SPA-комплекс «Oasis Thermal»</span>
+            <span class="data-desc">Атмосферная съёмка открытых подогреваемых бассейнов и саун с акцентом на фактуры воды, пара и горного заката.</span>
+            <span class="data-tags">Влажные зоны,Сумеречный свет,Буклет отеля</span>
+          </div>
+        </article>
+
+        <!-- Card 12: 4 cols -->
+        <article class="works-card works-card--third works-anim" data-category="hotels" data-delay="100" data-project-id="12">
+          <div class="works-card__media-box">
+            <img src="assets/focus-lobby.png" alt="Бутик-отель Chalet de Montagne" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ОТЕЛИ & HORECA</span>
+              <span class="works-badge works-badge--dim">КРАСНАЯ ПОЛЯНА • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Бутик-отель «Chalet de Montagne»</h3>
+                <p class="works-card__caption">Премиум шале • Каминный холл • Лыжная комната</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Бутик-отель «Chalet de Montagne»</span>
+            <span class="data-desc">Комплексная презентационная съёмка альпийского бутик-отеля в Красной Поляне для сайтов бронирования премиум-сегмента.</span>
+            <span class="data-tags">Премиум HoReCa,Вечерний свет,Индивидуальный гид</span>
+          </div>
+        </article>
+
+        <!-- Card 13: 4 cols -->
+        <article class="works-card works-card--third works-anim" data-category="hotels" data-delay="140" data-project-id="13">
+          <div class="works-card__media-box">
+            <img src="assets/hotel-complex.jpg" alt="Панорамный отель «Cliffside Haven»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ОТЕЛИ & HORECA</span>
+              <span class="works-badge works-badge--dim">КАБАРДИНКА • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Панорамный отель «Cliffside Haven»</h3>
+                <p class="works-card__caption">Обрыв над морем • Закатные террасы • Инфинити-бассейн</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Панорамный отель «Cliffside Haven»</span>
+            <span class="data-desc">Съёмка локации на скалистом берегу Черного моря. Аэросъёмка прибрежной полосы и детальная съёмка видовых площадок отеля.</span>
+            <span class="data-tags">Аэросъёмка,Инфинити-бассейн,OTA-пакет</span>
+          </div>
+        </article>
+
+        <!-- Card 14: 12 cols panorama -->
+        <article class="works-card works-card--pano works-anim" data-category="hotels" data-delay="80" data-project-id="14">
+          <div class="works-card__media-box">
+            <img src="assets/about-card-1.png" alt="Загородный эко-клуб «Forest Echo»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ОТЕЛИ & HORECA</span>
+              <span class="works-badge works-badge--dim">АБРАУ-ДЮРСО • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Загородный эко-клуб «Forest Echo»</h3>
+                <p class="works-card__caption">Реликтовый лес • Глэмпинг-сьюты • Ресторан локальной кухни</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Загородный эко-клуб «Forest Echo»</span>
+            <span class="data-desc">Уникальный загородный комплекс среди можжевеловых рощ. Съёмка эко-домов, приватных террас и спа-зон под открытым небом.</span>
+            <span class="data-tags">Эко-отели,Атмосферный свет,Брендинг</span>
+          </div>
+        </article>
+
+        <!-- Card 15: Extra 1 (6 cols) -->
+        <article class="works-card works-card--half is-extra works-anim" data-category="hotels" data-delay="60" data-project-id="15">
+          <div class="works-card__media-box">
+            <img src="assets/hotel-pool.jpg" alt="Резорт «Black Sea Panorama»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ОТЕЛИ & HORECA</span>
+              <span class="works-badge works-badge--dim">АНАПА • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Резорт «Black Sea Panorama»</h3>
+                <p class="works-card__caption">Первая береговая линия • Семейные сьюты • Аквазона</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Резорт «Black Sea Panorama»</span>
+            <span class="data-desc">Комплексная рекламная съёмка курортного отеля для каталогов и онлайн-сервисов бронирования.</span>
+            <span class="data-tags">Семейные номера,Аквазона,Промо-пакет</span>
+          </div>
+        </article>
+
+        <!-- Card 16: Extra 2 (6 cols) -->
+        <article class="works-card works-card--half is-extra works-anim" data-category="hotels" data-delay="100" data-project-id="16">
+          <div class="works-card__media-box">
+            <img src="assets/focus-lobby.png" alt="Атриум и президентский люкс «Metropol Palace»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ОТЕЛИ & HORECA</span>
+              <span class="works-badge works-badge--dim">СОЧИ • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Гранд-отель «Metropol Palace»</h3>
+                <p class="works-card__caption">Президентский люкс • Атриум 5* • VIP-сервис</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Гранд-отель «Metropol Palace»</span>
+            <span class="data-desc">Интерьерная съёмка люксов высшей категории с акцентом на авторскую мебель, панорамные виды и статус объекта.</span>
+            <span class="data-tags">Президентские сьюты,Люкс HoReCa,Глянец</span>
+          </div>
+        </article>
+
+
+        <!-- ==========================================
+             CATEGORY 3: VIDEO & REELS (Видео & Reels)
+             ========================================== -->
+        <!-- Card 17: Wide 7 cols -->
+        <article class="works-card works-card--wide works-anim" data-category="video" data-delay="40" data-project-id="17">
+          <div class="works-card__media-box">
+            <img src="assets/about-card-2.png" alt="Ресторан Veranda Mare — гастро видеосъемка" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ВИДЕО & REELS</span>
+              <span class="works-badge works-badge--video">▶ 4K REELS</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Флагманский ресторан «Veranda Mare»</h3>
+                <p class="works-card__caption">Гастро-рилсы • Макро-съёмка подачи блюд • ASMR звук</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Флагманский ресторан «Veranda Mare»</span>
+            <span class="data-desc">Серия атмосферных гастро-рилсов и главное презентационное видео с авторской подачей блюд, открытой кухней и винным погребом.</span>
+            <span class="data-tags">Макро-съёмка блюд,8 трендовых рилс,ASMR саунд-дизайн</span>
+          </div>
+        </article>
+
+        <!-- Card 18: Compact 5 cols -->
+        <article class="works-card works-card--compact works-anim" data-category="video" data-delay="80" data-project-id="18">
+          <div class="works-card__media-box">
+            <img src="assets/video-rig.png" alt="Fashion & Lifestyle промо «Aura Jewelry»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ВИДЕО & REELS</span>
+              <span class="works-badge works-badge--video">▶ 4K CINEMA</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Ювелирный дом «Aura Jewelry»</h3>
+                <p class="works-card__caption">Fashion ролик • Кино-оптика • Цветокоррекция DaVinci</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Ювелирный дом «Aura Jewelry»</span>
+            <span class="data-desc">Рекламная кампания премиальной ювелирной коллекции: съёмка на кинокамеру, высокоскоростной рапид и детальный макро-свет.</span>
+            <span class="data-tags">Cinema 4K,Макро свет,Цветокоррекция</span>
+          </div>
+        </article>
+
+        <!-- Card 19: 4 cols -->
+        <article class="works-card works-card--third works-anim" data-category="video" data-delay="60" data-project-id="19">
+          <div class="works-card__media-box">
+            <img src="assets/video-set.png" alt="Имиджевый фильм курорта «Grand Sapphire»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ВИДЕО & REELS</span>
+              <span class="works-badge works-badge--video">▶ АЭРОСЪЁМКА</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Имиджевый фильм «Grand Sapphire»</h3>
+                <p class="works-card__caption">FPV дрон • Рассветное солнце • Промо 16:9 & 9:16</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Имиджевый фильм «Grand Sapphire»</span>
+            <span class="data-desc">Масштабная видеопрезентация 5-звездочного курорта на Черноморском побережье: динамичные пролеты FPV-дрона через лобби и пляж.</span>
+            <span class="data-tags">FPV дрон,Саундтрек,Мастер для ТВ и сайта</span>
+          </div>
+        </article>
+
+        <!-- Card 20: 4 cols -->
+        <article class="works-card works-card--third works-anim" data-category="video" data-delay="100" data-project-id="20">
+          <div class="works-card__media-box">
+            <img src="assets/video-rig.png" alt="Reels-кампейн для спорткара «GT Experience»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ВИДЕО & REELS</span>
+              <span class="works-badge works-badge--video">▶ ВЕРТИКАЛЬ</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Суперкары «GT Experience»</h3>
+                <p class="works-card__caption">Сочи Автодром • Дрифт в рапиде • Вирусные Reels</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Суперкары «GT Experience»</span>
+            <span class="data-desc">Серия захватывающих динамичных роликов с автодрома: съёмка с присосок на кузове, трекинг за автомобилем и объемный рев моторов.</span>
+            <span class="data-tags">Action Cam,Car Rigging,Саунд-дизайн</span>
+          </div>
+        </article>
+
+        <!-- Card 21: 4 cols -->
+        <article class="works-card works-card--third works-anim" data-category="video" data-delay="140" data-project-id="21">
+          <div class="works-card__media-box">
+            <img src="assets/about-card-1.png" alt="Атмосферное промо шале «Alpine Silence»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ВИДЕО & REELS</span>
+              <span class="works-badge works-badge--video">▶ АТМОСФЕРА</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Шале «Alpine Silence»</h3>
+                <p class="works-card__caption">Уют горного утра • Снежная терраса • Кино-темп</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Шале «Alpine Silence»</span>
+            <span class="data-desc">Уютный кинематографичный фильм о проживании в горах: пробуждение, горячий кофе на морозном воздухе, треск огня в камине.</span>
+            <span class="data-tags">Кинематографичный цвет,Storytelling,Короткий метр</span>
+          </div>
+        </article>
+
+        <!-- Card 22: 12 cols panorama -->
+        <article class="works-card works-card--pano works-anim" data-category="video" data-delay="80" data-project-id="22">
+          <div class="works-card__media-box">
+            <img src="assets/portrait-vertical.png" alt="Презентация коллекции дизайнерской мебели «Nordic Form»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ВИДЕО & REELS</span>
+              <span class="works-badge works-badge--video">▶ BRAND FILM</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Дизайнерская мебель «Nordic Form»</h3>
+                <p class="works-card__caption">Производственный фильм • Текстуры дерева • Свет в студии</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Дизайнерская мебель «Nordic Form»</span>
+            <span class="data-desc">Имиджевый фильм о мастерстве создания мебели из массива. Точный свет, подчеркивающий тактильность полированных поверхностей.</span>
+            <span class="data-tags">Brand Cinema,Студийный свет,Интерьерный ролик</span>
+          </div>
+        </article>
+
+        <!-- Card 23: Extra 1 (6 cols) -->
+        <article class="works-card works-card--half is-extra works-anim" data-category="video" data-delay="60" data-project-id="23">
+          <div class="works-card__media-box">
+            <img src="assets/hotel-pool.jpg" alt="Видеопроходка пентхауса для девелопера «Deluxe Realty»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ВИДЕО & REELS</span>
+              <span class="works-badge works-badge--video">▶ ВИДЕО-ТУР</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Видео-тур пентхауса «Deluxe Realty»</h3>
+                <p class="works-card__caption">Плавный стедикам • Закатный Сочи • Продажи премиум</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Видео-тур пентхауса «Deluxe Realty»</span>
+            <span class="data-desc">Презентационная видеопроходка элитного объекта недвижимости с плавными движениями камеры на электронном стабилизаторе.</span>
+            <span class="data-tags">Стедикам,Премиум недвижимость,Reels для продаж</span>
+          </div>
+        </article>
+
+        <!-- Card 24: Extra 2 (6 cols) -->
+        <article class="works-card works-card--half is-extra works-anim" data-category="video" data-delay="100" data-project-id="24">
+          <div class="works-card__media-box">
+            <img src="assets/about-card-2.png" alt="Серия вирусных Reels для винного бара «Terroir»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">ВИДЕО & REELS</span>
+              <span class="works-badge works-badge--video">▶ VIRAL REELS</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Винный бар «Terroir»</h3>
+                <p class="works-card__caption">Атмосфера вечера • Дегустация • Трендовые переходы</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Винный бар «Terroir»</span>
+            <span class="data-desc">Пакет из 10 коротких атмосферных роликов для соцсетей бара: процесс подачи, бокалы против контрового света, эмоции гостей.</span>
+            <span class="data-tags">10 Reels,Контровой свет,Продвижение HoReCa</span>
+          </div>
+        </article>
+
+
+        <!-- ==========================================
+             CATEGORY 4: EVENTS (Мероприятия)
+             ========================================== -->
+        <!-- Card 25: Wide 7 cols -->
+        <article class="works-card works-card--wide works-anim" data-category="events" data-delay="40" data-project-id="25">
+          <div class="works-card__media-box">
+            <img src="assets/business-event.jpg" alt="Всероссийский саммит инноваций «Future Forum»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">МЕРОПРИЯТИЯ</span>
+              <span class="works-badge works-badge--dim">СОЧИ • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Саммит инноваций «Future Forum»</h3>
+                <p class="works-card__caption">Главная сцена • 1500+ участников • Экспресс-выдача</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Саммит инноваций «Future Forum»</span>
+            <span class="data-desc">Многокамерная репортажная съёмка масштабного форума: спикеры на главной сцене, технологичная экспо-зона и вечерний нетворкинг.</span>
+            <span class="data-tags">Многокамерная съёмка,Экспресс-выдача,3 фотографа</span>
+          </div>
+        </article>
+
+        <!-- Card 26: Compact 5 cols -->
+        <article class="works-card works-card--compact works-anim" data-category="events" data-delay="80" data-project-id="26">
+          <div class="works-card__media-box">
+            <img src="assets/photographers.png" alt="Саммит девелоперов юга «Development Day»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">МЕРОПРИЯТИЯ</span>
+              <span class="works-badge works-badge--dim">КРАСНОДАР • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Саммит девелоперов «Development Day»</h3>
+                <p class="works-card__caption">Пресс-волл фотозона • Награждение лидеров • VIP гости</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Саммит девелоперов «Development Day»</span>
+            <span class="data-desc">Полный медиаотчёт закрытого саммита: панельные дискуссии, VIP-гости, нетворкинг и церемония награждения лучших проектов года.</span>
+            <span class="data-tags">Многокамерный репортаж,Пресс-волл фотозона,Отдача за 24 часа</span>
+          </div>
+        </article>
+
+        <!-- Card 27: 4 cols -->
+        <article class="works-card works-card--third works-anim" data-category="events" data-delay="60" data-project-id="27">
+          <div class="works-card__media-box">
+            <img src="assets/event-summit.jpg" alt="Форум предпринимателей «South Invest»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">МЕРОПРИЯТИЯ</span>
+              <span class="works-badge works-badge--dim">АНАПА • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Форум «South Invest 2024»</h3>
+                <p class="works-card__caption">Инвестиционная сессия • Круглые столы • Нетворкинг</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Форум «South Invest 2024»</span>
+            <span class="data-desc">Репортаж ежегодного инвестиционного форума Черноморья: динамичные кадры питчей стартапов, спикеров и бизнес-ланча.</span>
+            <span class="data-tags">Живой репортаж,Облачная галерея,PR-релиз</span>
+          </div>
+        </article>
+
+        <!-- Card 28: 4 cols -->
+        <article class="works-card works-card--third works-anim" data-category="events" data-delay="100" data-project-id="28">
+          <div class="works-card__media-box">
+            <img src="assets/photographers.png" alt="Закрытая премия «Horeca Luxury Awards»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">МЕРОПРИЯТИЯ</span>
+              <span class="works-badge works-badge--dim">ГЕЛЕНДЖИК • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Премия «Horeca Luxury Awards»</h3>
+                <p class="works-card__caption">Black Tie гала-ужин • Красная дорожка • Вручение статуэток</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Премия «Horeca Luxury Awards»</span>
+            <span class="data-desc">Глянцевый репортаж закрытого торжественного вечера: элегантный свет, светские портреты гостей в вечерних нарядах.</span>
+            <span class="data-tags">Светский репортаж,Black Tie,Ретушь портретов</span>
+          </div>
+        </article>
+
+        <!-- Card 29: 4 cols -->
+        <article class="works-card works-card--third works-anim" data-category="events" data-delay="140" data-project-id="29">
+          <div class="works-card__media-box">
+            <img src="assets/business-event.jpg" alt="IT-конференция «Tech Wave Conference»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">МЕРОПРИЯТИЯ</span>
+              <span class="works-badge works-badge--dim">КРАСНАЯ ПОЛЯНА • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Конференция «Tech Wave»</h3>
+                <p class="works-card__caption">Highload разработчики • Хакатон • Afterparty</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Конференция «Tech Wave»</span>
+            <span class="data-desc">Полный фото- и видеоотчет трехдневной IT-конференции в горах: доклады, мастер-классы и интерактивные стенды.</span>
+            <span class="data-tags">3 дня съёмок,Корпоративный архив,SMM контент</span>
+          </div>
+        </article>
+
+        <!-- Card 30: 12 cols panorama -->
+        <article class="works-card works-card--pano works-anim" data-category="events" data-delay="80" data-project-id="30">
+          <div class="works-card__media-box">
+            <img src="assets/event-summit.jpg" alt="Архитектурный биеннале «Design Horizon»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">МЕРОПРИЯТИЯ</span>
+              <span class="works-badge works-badge--dim">КРАСНОДАР • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Биеннале «Design Horizon»</h3>
+                <p class="works-card__caption">Выставка арт-объектов • Архитектурные дискуссии • Пресс-тур</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Биеннале «Design Horizon»</span>
+            <span class="data-desc">Медиасопровождение главного архитектурного смотра региона: макросъемка макетов, фиксация концептуальных инсталляций и лекций.</span>
+            <span class="data-tags">Арт-съёмка,Архитектурное биеннале,Каталог выставки</span>
+          </div>
+        </article>
+
+        <!-- Card 31: Extra 1 (6 cols) -->
+        <article class="works-card works-card--half is-extra works-anim" data-category="events" data-delay="60" data-project-id="31">
+          <div class="works-card__media-box">
+            <img src="assets/video-set.png" alt="Автопремьера нового флагмана «Auto Premiere»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">МЕРОПРИЯТИЯ</span>
+              <span class="works-badge works-badge--dim">СОЧИ • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Автопремьера «Auto Premiere»</h3>
+                <p class="works-card__caption">Световое шоу • Презентация авто • Тест-драйв</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Автопремьера «Auto Premiere»</span>
+            <span class="data-desc">Динамичная съёмка закрытой премьеры автобренда: лучевой световой дизайн, экспозиция в темном зале и первые тест-драйвы.</span>
+            <span class="data-tags">Шоу свет,Авто презентация,Экспресс видео</span>
+          </div>
+        </article>
+
+        <!-- Card 32: Extra 2 (6 cols) -->
+        <article class="works-card works-card--half is-extra works-anim" data-category="events" data-delay="100" data-project-id="32">
+          <div class="works-card__media-box">
+            <img src="assets/photographers.png" alt="Нетворкинг лидеров ритейла «Retail Summit»" class="works-card__img" loading="lazy">
+            <div class="works-card__badges">
+              <span class="works-badge">МЕРОПРИЯТИЯ</span>
+              <span class="works-badge works-badge--dim">АНАПА • 2024</span>
+            </div>
+            <div class="works-card__overlay">
+              <div class="works-card__info">
+                <h3 class="works-card__title">Саммит ритейла «Retail Summit»</h3>
+                <p class="works-card__caption">Круглый стол • Переговоры • Неформальная часть</p>
+              </div>
+              <button type="button" class="works-card__quick-btn" aria-label="Открыть проект">
+                <span class="works-card__quick-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <div class="works-card__data" style="display:none;">
+            <span class="data-title">Саммит ритейла «Retail Summit»</span>
+            <span class="data-desc">Деловая фотосъёмка стратегической сессии руководителей розничных сетей и поставщиков южного региона.</span>
+            <span class="data-tags">Деловой репортаж,Пресс-служба,Корпоративный медиабанк</span>
           </div>
         </article>
 
       </div>
 
-      <!-- WORKS BOTTOM SHOWCASE BANNER -->
+      <!-- WORKS LOAD MORE / CTA EXPANDER BOX -->
+      <div class="works-more-box">
+        <button type="button" class="works-more-btn" id="worksMoreBtn">
+          <span class="works-more-btn__text" data-i18n="worksMoreBtn">ПОКАЗАТЬ ЕЩЁ ПРОЕКТЫ</span>
+          <span class="works-more-btn__count">+2</span>
+          <span class="works-more-btn__icon" aria-hidden="true">↓</span>
+        </button>
+        <a href="#contacts" class="works-more-cta" id="worksMoreCta" style="display: none;">
+          <span class="works-more-cta__text" data-i18n="worksMoreCta">ОБСУДИТЬ СЪЁМКУ В ЭТОЙ КАТЕГОРИИ</span>
+          <span class="works-more-cta__circle" aria-hidden="true">
+            <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <!-- WORKS BOTTOM SHOWCASE BANNER (Clean Editorial on White) -->
       <div class="works-bottom-bar works-anim" data-delay="100">
         <div class="works-bottom-bar__left">
           <div class="works-bottom-bar__badge">
@@ -699,6 +1277,7 @@
 
     </div>
   </section>
+
 
   <!-- WORKS QUICK-VIEW MODAL -->
   <div class="works-modal" id="worksModal" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1">
@@ -828,6 +1407,11 @@
         worksTitle2: 'ДЛЯ БРЕНДОВ И ПРОСТРАНСТВ.',
         worksLead: 'Архитектурная точность, внимание к естественному свету и кинематографичный цвет. Каждый кадр усиливает статус объекта и работает на конверсию.',
         worksStatsPill: '150+ проектов в Краснодарском крае и РФ',
+        worksTitle1Word: 'РЕАЛИЗОВАННЫЕ',
+        worksTitle2Word: 'ПРОЕКТЫ',
+        worksTitleBadge: '2024–2026',
+        worksMoreBtn: 'ПОКАЗАТЬ ЕЩЁ ПРОЕКТЫ',
+        worksMoreCta: 'ОБСУДИТЬ СЪЁМКУ В ЭТОЙ КАТЕГОРИИ',
         worksFilterAll: 'Все проекты',
         worksFilterInteriors: 'Интерьеры',
         worksFilterHotels: 'Отели & HoReCa',
@@ -975,6 +1559,11 @@
         worksTitle2: 'FOR BRANDS & SPACES.',
         worksLead: 'Architectural precision, mastery of natural light, and cinematic color. Every frame elevates property prestige and drives direct conversion.',
         worksStatsPill: '150+ completed shoots across Russia',
+        worksTitle1Word: 'COMPLETED',
+        worksTitle2Word: 'PROJECTS',
+        worksTitleBadge: '2024–2026',
+        worksMoreBtn: 'LOAD MORE WORKS',
+        worksMoreCta: 'DISCUSS A PROJECT IN THIS CATEGORY',
         worksFilterAll: 'All projects',
         worksFilterInteriors: 'Interiors',
         worksFilterHotels: 'Hotels & HoReCa',
@@ -1088,14 +1677,18 @@
     }
 
     const aboutEl = document.getElementById('about');
+    const worksEl = document.getElementById('works');
     const topbarEl = document.querySelector('.topbar');
-    if (aboutEl && topbarEl) {
+    if (topbarEl) {
       const updateHeaderLightMode = () => {
-        const rect = aboutEl.getBoundingClientRect();
-        const isOverLight = rect.top <= 80 && rect.bottom >= 50;
-        topbarEl.classList.toggle('is-over-light', isOverLight);
+        const aboutRect = aboutEl ? aboutEl.getBoundingClientRect() : null;
+        const worksRect = worksEl ? worksEl.getBoundingClientRect() : null;
+        const isOverAbout = aboutRect && aboutRect.top <= 80 && aboutRect.bottom >= 50;
+        const isOverWorks = worksRect && worksRect.top <= 80 && worksRect.bottom >= 50;
+        topbarEl.classList.toggle('is-over-light', Boolean(isOverAbout || isOverWorks));
       };
       window.addEventListener('scroll', updateHeaderLightMode, { passive: true });
+      window.addEventListener('resize', updateHeaderLightMode, { passive: true });
       updateHeaderLightMode();
     }
 
@@ -1117,94 +1710,116 @@
       button.addEventListener('click', () => setLanguage(button.dataset.lang));
     });
 
-    // ── Scroll-driven Headline Words Animation ────────────
+    // ── Scroll-driven Headline Words Animation for #about and #works ────────────
     const aboutSection = document.getElementById('about');
     const word1 = document.querySelector('.ac-word--1');
     const word2 = document.querySelector('.ac-word--2');
     const word3 = document.querySelector('.ac-title-lime');
     const word4 = document.querySelector('.ac-word--4');
 
-    if (aboutSection && word1 && word2 && word3 && word4) {
-      const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const worksSection = document.getElementById('works');
+    const worksWord1 = document.querySelector('.works-word--1');
+    const worksWord2 = document.querySelector('.works-word--2');
 
-      if (isReduced) {
-        [word1, word2, word3, word4].forEach((w) => {
-          w.style.transform = 'none';
-          w.style.opacity = '1';
-        });
-      } else {
-        let targetProgress = 0;
-        let currentProgress = 0;
+    const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        const startX1 = -140;
-        const startX2 = -200;
-        const startX3 = -150;
-        const startX4 = -250;
+    if (isReduced) {
+      [word1, word2, word3, word4, worksWord1, worksWord2].filter(Boolean).forEach((w) => {
+        w.style.transform = 'none';
+        w.style.opacity = '1';
+      });
+    } else {
+      let targetProgress = 0;
+      let currentProgress = 0;
+      let worksTargetProgress = 0;
+      let worksCurrentProgress = 0;
 
-        const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-        const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
+      const startX1 = -140;
+      const startX2 = -200;
+      const startX3 = -150;
+      const startX4 = -250;
 
-        const updateTarget = () => {
+      const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+      const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
+
+      const updateTarget = () => {
+        if (aboutSection) {
           const rect = aboutSection.getBoundingClientRect();
           const vh = window.innerHeight;
           const start = vh * 0.90;
           const end = vh * 0.08;
           const raw = (start - rect.top) / (start - end);
           targetProgress = clamp(raw, 0, 1);
-        };
+        }
+        if (worksSection) {
+          const rect = worksSection.getBoundingClientRect();
+          const vh = window.innerHeight;
+          const start = vh * 0.90;
+          const end = vh * 0.12;
+          const raw = (start - rect.top) / (start - end);
+          worksTargetProgress = clamp(raw, 0, 1);
+        }
+      };
 
-        const renderFrame = () => {
+      const renderFrame = () => {
+        // About words animation
+        if (aboutSection && word1 && word2 && word3 && word4) {
           currentProgress += (targetProgress - currentProgress) * 0.10;
-          if (Math.abs(targetProgress - currentProgress) < 0.001) {
-            currentProgress = targetProgress;
-          }
-
+          if (Math.abs(targetProgress - currentProgress) < 0.001) currentProgress = targetProgress;
           const p = currentProgress;
 
-          // Word 1: МОЛОДАЯ (window: 0.00 -> 0.44)
           const t1 = clamp((p - 0.00) / 0.44, 0, 1);
           const e1 = easeOutCubic(t1);
-          const x1 = startX1 * (1 - e1);
-          const op1 = clamp(t1 * 1.8, 0, 1);
-          word1.style.transform = `translate3d(${x1.toFixed(1)}px, 0, 0)`;
-          word1.style.opacity = op1.toFixed(3);
+          word1.style.transform = `translate3d(${(startX1 * (1 - e1)).toFixed(1)}px, 0, 0)`;
+          word1.style.opacity = clamp(t1 * 1.8, 0, 1).toFixed(3);
 
-          // Word 2: КОМПАНИЯ. (window: 0.18 -> 0.66)
           const t2 = clamp((p - 0.18) / 0.48, 0, 1);
           const e2 = easeOutCubic(t2);
-          const x2 = startX2 * (1 - e2);
-          const op2 = clamp(t2 * 1.8, 0, 1);
-          word2.style.transform = `translate3d(${x2.toFixed(1)}px, 0, 0)`;
-          word2.style.opacity = op2.toFixed(3);
+          word2.style.transform = `translate3d(${(startX2 * (1 - e2)).toFixed(1)}px, 0, 0)`;
+          word2.style.opacity = clamp(t2 * 1.8, 0, 1).toFixed(3);
 
-          // Word 3: БОЛЬШАЯ (window: 0.38 -> 0.84)
           const t3 = clamp((p - 0.38) / 0.46, 0, 1);
           const e3 = easeOutCubic(t3);
-          const x3 = startX3 * (1 - e3);
-          const op3 = clamp(t3 * 1.8, 0, 1);
-          word3.style.transform = `translate3d(${x3.toFixed(1)}px, 0, 0)`;
-          word3.style.opacity = op3.toFixed(3);
+          word3.style.transform = `translate3d(${(startX3 * (1 - e3)).toFixed(1)}px, 0, 0)`;
+          word3.style.opacity = clamp(t3 * 1.8, 0, 1).toFixed(3);
 
-          // Word 4: КОМАНДА. (window: 0.56 -> 1.00)
           const t4 = clamp((p - 0.56) / 0.44, 0, 1);
           const e4 = easeOutCubic(t4);
-          const x4 = startX4 * (1 - e4);
-          const op4 = clamp(t4 * 1.8, 0, 1);
-          word4.style.transform = `translate3d(${x4.toFixed(1)}px, 0, 0)`;
-          word4.style.opacity = op4.toFixed(3);
+          word4.style.transform = `translate3d(${(startX4 * (1 - e4)).toFixed(1)}px, 0, 0)`;
+          word4.style.opacity = clamp(t4 * 1.8, 0, 1).toFixed(3);
+        }
 
-          requestAnimationFrame(renderFrame);
-        };
+        // Works headline words animation
+        if (worksSection && worksWord1 && worksWord2) {
+          worksCurrentProgress += (worksTargetProgress - worksCurrentProgress) * 0.10;
+          if (Math.abs(worksTargetProgress - worksCurrentProgress) < 0.001) worksCurrentProgress = worksTargetProgress;
+          const wp = worksCurrentProgress;
 
-        window.addEventListener('scroll', updateTarget, { passive: true });
-        window.addEventListener('resize', updateTarget, { passive: true });
-        updateTarget();
-        currentProgress = targetProgress;
-        renderFrame();
-      }
+          // Word 1: РЕАЛИЗОВАННЫЕ (0.00 -> 0.50)
+          const wt1 = clamp((wp - 0.00) / 0.50, 0, 1);
+          const we1 = easeOutCubic(wt1);
+          worksWord1.style.transform = `translate3d(${(-160 * (1 - we1)).toFixed(1)}px, 0, 0)`;
+          worksWord1.style.opacity = clamp(wt1 * 1.8, 0, 1).toFixed(3);
+
+          // Word 2: ПРОЕКТЫ [2024-2026] (0.22 -> 0.82)
+          const wt2 = clamp((wp - 0.22) / 0.52, 0, 1);
+          const we2 = easeOutCubic(wt2);
+          worksWord2.style.transform = `translate3d(${(-220 * (1 - we2)).toFixed(1)}px, 0, 0)`;
+          worksWord2.style.opacity = clamp(wt2 * 1.8, 0, 1).toFixed(3);
+        }
+
+        requestAnimationFrame(renderFrame);
+      };
+
+      window.addEventListener('scroll', updateTarget, { passive: true });
+      window.addEventListener('resize', updateTarget, { passive: true });
+      updateTarget();
+      currentProgress = targetProgress;
+      worksCurrentProgress = worksTargetProgress;
+      renderFrame();
     }
 
-    // ── Staggered reveal + counter animation ──────────────
+    // ── Staggered reveal animation ──────────────
     const aboutAnims = [...document.querySelectorAll('.about-anim')];
     const srvAnims = [...document.querySelectorAll('.srv-anim')];
     const worksAnims = [...document.querySelectorAll('.works-anim')];
@@ -1224,9 +1839,7 @@
       requestAnimationFrame(tick);
     }
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if ('IntersectionObserver' in window && !reducedMotion) {
+    if ('IntersectionObserver' in window && !isReduced) {
       aboutAnims.forEach((el) => el.classList.add('is-ready'));
       srvAnims.forEach((el) => el.classList.add('is-ready'));
       worksAnims.forEach((el) => el.classList.add('is-ready'));
@@ -1237,7 +1850,6 @@
           const delay = parseInt(entry.target.dataset.delay || '0', 10);
           setTimeout(() => entry.target.classList.add('is-visible'), delay);
 
-          // Trigger counters when stats row becomes visible
           if (entry.target.classList.contains('about-stats') && !countersStarted) {
             countersStarted = true;
             setTimeout(() => {
@@ -1253,7 +1865,6 @@
       srvAnims.forEach((el) => revealObserver.observe(el));
       worksAnims.forEach((el) => revealObserver.observe(el));
 
-      // Initial check for elements already near viewport
       const vh = window.innerHeight;
       [...aboutAnims, ...srvAnims, ...worksAnims].forEach((el) => {
         const rect = el.getBoundingClientRect();
@@ -1263,38 +1874,88 @@
       });
     }
 
-    // ── Works Section: Category Filtering ──────────────
+    // ── Works Section: Category Filtering & Load More ──────────────
     const filterButtons = [...document.querySelectorAll('.works-filter')];
     const worksCards = [...document.querySelectorAll('.works-card')];
-    const worksGrid = document.getElementById('worksGrid');
+    const worksMoreBtn = document.getElementById('worksMoreBtn');
+    const worksMoreCta = document.getElementById('worksMoreCta');
+    let currentCategory = 'interiors';
 
-    filterButtons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const targetCategory = btn.dataset.filter;
+    function updateWorksVisibility() {
+      let hiddenExtraCount = 0;
 
-        filterButtons.forEach((b) => {
-          b.classList.toggle('is-active', b === btn);
-          b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
-        });
+      worksCards.forEach((card) => {
+        const matches = card.dataset.category === currentCategory;
+        if (!matches) {
+          card.classList.remove('is-active-cat', 'is-visible');
+          card.style.display = 'none';
+        } else {
+          card.classList.add('is-active-cat');
+          const isExtra = card.classList.contains('is-extra');
+          const isRevealed = card.classList.contains('is-extra-revealed');
 
-        if (worksGrid) {
-          worksGrid.classList.toggle('is-filtered', targetCategory !== 'all');
-        }
-
-        worksCards.forEach((card) => {
-          const cardCategory = card.dataset.category;
-          const matches = targetCategory === 'all' || cardCategory === targetCategory;
-          if (matches) {
-            card.classList.remove('is-hidden');
+          if (!isExtra || isRevealed) {
             card.style.display = '';
             requestAnimationFrame(() => card.classList.add('is-visible'));
           } else {
-            card.classList.add('is-hidden');
             card.style.display = 'none';
+            card.classList.remove('is-visible');
+            hiddenExtraCount++;
+          }
+        }
+      });
+
+      if (worksMoreBtn && worksMoreCta) {
+        if (hiddenExtraCount > 0) {
+          worksMoreBtn.style.display = 'inline-flex';
+          worksMoreCta.style.display = 'none';
+          const countSpan = worksMoreBtn.querySelector('.works-more-btn__count');
+          if (countSpan) countSpan.textContent = `+${hiddenExtraCount}`;
+        } else {
+          worksMoreBtn.style.display = 'none';
+          worksMoreCta.style.display = 'inline-flex';
+        }
+      }
+    }
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        currentCategory = btn.dataset.filter;
+
+        filterButtons.forEach((b) => {
+          const isActive = b === btn;
+          b.classList.toggle('is-active', isActive);
+          b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        // Reset extra revealed state in the newly selected category
+        worksCards.forEach((c) => {
+          if (c.dataset.category === currentCategory) {
+            c.classList.remove('is-extra-revealed');
           }
         });
+
+        updateWorksVisibility();
       });
     });
+
+    if (worksMoreBtn) {
+      worksMoreBtn.addEventListener('click', () => {
+        const extraCards = worksCards.filter(
+          (c) => c.dataset.category === currentCategory && c.classList.contains('is-extra')
+        );
+        extraCards.forEach((c, idx) => {
+          c.classList.add('is-extra-revealed');
+          c.style.display = '';
+          setTimeout(() => {
+            c.classList.add('is-visible');
+          }, idx * 60);
+        });
+        updateWorksVisibility();
+      });
+    }
+
+    updateWorksVisibility();
 
     // ── Works Section: Quick-View Lightbox Modal ──────────────
     const worksModal = document.getElementById('worksModal');
@@ -1311,11 +1972,11 @@
     function openWorksModal(card) {
       if (!worksModal) return;
       const img = card.querySelector('.works-card__img');
-      const title = card.querySelector('.works-card__title');
-      const desc = card.querySelector('.works-card__desc');
-      const cat = card.querySelector('.works-badge:not(.works-badge--dim)');
+      const title = card.querySelector('.data-title') || card.querySelector('.works-card__title');
+      const desc = card.querySelector('.data-desc') || card.querySelector('.works-card__caption');
+      const cat = card.querySelector('.works-badge:not(.works-badge--dim):not(.works-badge--video)');
       const loc = card.querySelector('.works-badge--dim');
-      const tags = [...card.querySelectorAll('.works-tag')];
+      const tagsData = card.querySelector('.data-tags');
 
       if (img && modalImg) {
         modalImg.src = img.src;
@@ -1328,12 +1989,14 @@
 
       if (modalTags) {
         modalTags.innerHTML = '';
-        tags.forEach((tag) => {
-          const span = document.createElement('span');
-          span.className = 'works-tag';
-          span.textContent = tag.textContent;
-          modalTags.appendChild(span);
-        });
+        if (tagsData && tagsData.textContent) {
+          tagsData.textContent.split(',').forEach((tagText) => {
+            const span = document.createElement('span');
+            span.className = 'works-tag';
+            span.textContent = tagText.trim();
+            modalTags.appendChild(span);
+          });
+        }
       }
 
       worksModal.classList.add('is-open');
@@ -1350,7 +2013,6 @@
 
     worksCards.forEach((card) => {
       card.addEventListener('click', (e) => {
-        // Prevent click if clicking an external link
         if (e.target.closest('a')) return;
         openWorksModal(card);
       });
@@ -1370,7 +2032,7 @@
       }
     });
 
-    const savedLanguage = localStorage.getItem('focus-language');
+        const savedLanguage = localStorage.getItem('focus-language');
     setLanguage(savedLanguage === 'en' ? 'en' : 'ru');
   </script>
 </body>
