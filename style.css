@@ -516,7 +516,6 @@ a { color: inherit; text-decoration: none; }
   will-change: transform, opacity;
   transform: translate3d(var(--word-x, 0px), 0, 0);
   opacity: var(--word-opacity, 1);
-  transition: transform 0.08s ease-out, opacity 0.08s ease-out;
 }
 
 /* Minimalist rectangular flat lime badge — no glow, no border, pure graphic shape */
@@ -1414,7 +1413,6 @@ a { color: inherit; text-decoration: none; }
   will-change: transform, opacity;
   transform: translate3d(0, 0, 0);
   opacity: 1;
-  transition: transform 0.08s ease-out, opacity 0.08s ease-out;
   color: #000000 !important;
 }
 
@@ -1558,19 +1556,20 @@ a { color: inherit; text-decoration: none; }
   background: #101014;
   border: 1px solid rgba(0, 0, 0, 0.07);
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.45s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  transform: translateZ(0);
+  contain: content;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s ease,
+              border-color 0.28s ease;
 }
 
 .works-clean .works-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.18);
+  transform: translateY(-4px) translateZ(0);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.16);
   border-color: rgba(0, 0, 0, 0.14);
 }
 
@@ -1580,6 +1579,7 @@ a { color: inherit; text-decoration: none; }
   height: clamp(280px, 28vw, 420px);
   overflow: hidden;
   background: #18181c;
+  transform: translateZ(0);
 }
 
 .works-clean .works-card--pano .works-card__media-box {
@@ -1595,14 +1595,15 @@ a { color: inherit; text-decoration: none; }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  transform: translateZ(0);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .works-clean .works-card:hover .works-card__img {
-  transform: scale(1.045);
+  transform: scale(1.035) translateZ(0);
 }
 
-/* Floating Badges */
+/* Floating Badges — High performance (Zero blur shader penalty) */
 .works-clean .works-card__badges {
   position: absolute;
   top: 16px;
@@ -1611,6 +1612,7 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 8px;
   z-index: 2;
+  pointer-events: none;
 }
 
 .works-clean .works-badge {
@@ -1618,10 +1620,9 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   padding: 5px 12px;
   border-radius: 999px;
-  background: rgba(14, 14, 18, 0.72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(12, 12, 16, 0.90);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1630,14 +1631,15 @@ a { color: inherit; text-decoration: none; }
 }
 
 .works-clean .works-badge--dim {
-  color: rgba(255, 255, 255, 0.85);
-  border-color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.10);
+  background: rgba(14, 14, 18, 0.82);
 }
 
 .works-clean .works-badge--video {
-  background: rgba(0, 0, 0, 0.82);
+  background: rgba(6, 6, 8, 0.92);
   color: #9DFF00;
-  border-color: rgba(157, 255, 0, 0.4);
+  border-color: rgba(157, 255, 0, 0.45);
   font-weight: 800;
 }
 
@@ -1681,16 +1683,16 @@ a { color: inherit; text-decoration: none; }
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(24, 24, 30, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.20);
   color: #FFFFFF;
   display: grid;
   place-items: center;
   cursor: pointer;
   flex-shrink: 0;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.24s ease,
+              border-color 0.24s ease;
 }
 
 .works-clean .works-card:hover .works-card__quick-btn {
@@ -1704,7 +1706,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 15px;
   font-weight: 700;
   line-height: 1;
-  transition: transform 0.25s ease;
+  transition: transform 0.22s ease;
 }
 
 .works-clean .works-card:hover .works-card__quick-arrow {
@@ -2045,22 +2047,21 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 16px 40px rgba(157, 255, 0, 0.38);
 }
 
-/* Works Scroll Animation States */
+/* Works Scroll Animation States (Snappy, Hardware Accelerated) */
 .works-anim {
   opacity: 1;
   transform: none;
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .works-anim.is-ready {
-  opacity: 0;
-  transform: translateY(32px);
+  opacity: 0.2;
+  transform: translateY(12px) translateZ(0);
 }
 
 .works-anim.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) translateZ(0);
+  transition: opacity 0.28s ease-out, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Works Responsive Media Queries */
