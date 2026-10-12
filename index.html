@@ -398,7 +398,7 @@
           <button type="button" class="works-filter is-active" data-filter="interiors" role="tab" aria-selected="true">
             <span class="works-filter__num">01</span>
             <span class="works-filter__label" data-i18n="worksFilterInteriors">Интерьеры</span>
-            <span class="works-filter__count">8</span>
+            <span class="works-filter__count">15</span>
           </button>
           <button type="button" class="works-filter" data-filter="hotels" role="tab" aria-selected="false">
             <span class="works-filter__num">02</span>
@@ -420,44 +420,90 @@
 
       <!-- WORKS EDITORIAL PHOTO GRID -->
       <div class="works-grid" id="worksGrid">
-        <article class="works-card works-card--wide works-anim" data-category="interiors">
+        <!-- INTERIORS BATCH 1 (Cards 1 to 5) — Initially Visible -->
+        <!-- Row 1: 2 cards (7 + 5 cols) -->
+        <article class="works-card works-card--wide works-card--portrait works-anim" data-category="interiors" data-batch="1" data-entrance="left" style="--delay: 0s;">
           <div class="works-card__media-box">
-            <img src="assets/interior-city-view.webp" alt="Интерьерная съёмка номера с панорамным видом" class="works-card__img" loading="lazy" decoding="async">
+            <img src="assets/interior-01.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
           </div>
         </article>
-        <article class="works-card works-card--compact works-anim" data-category="interiors">
+        <article class="works-card works-card--compact works-card--portrait works-anim" data-category="interiors" data-batch="1" data-entrance="right" style="--delay: 0.12s;">
           <div class="works-card__media-box">
-            <img src="assets/interior-bedside-arch.webp" alt="Интерьерная деталь и прикроватная зона" class="works-card__img" loading="lazy" decoding="async">
+            <img src="assets/interior-02.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
           </div>
         </article>
-        <article class="works-card works-card--third works-anim" data-category="interiors">
+        <!-- Row 2: 3 cards (4 + 4 + 4 cols) -->
+        <article class="works-card works-card--third works-card--feature works-anim" data-category="interiors" data-batch="1" data-entrance="left" style="--delay: 0.22s;">
           <div class="works-card__media-box">
-            <img src="assets/interior-luxury-bedroom.webp" alt="Интерьерная съёмка люкса с моделью" class="works-card__img" loading="lazy" decoding="async">
+            <img src="assets/interior-03.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
           </div>
         </article>
-        <article class="works-card works-card--third works-anim" data-category="interiors">
+        <article class="works-card works-card--third works-card--portrait works-anim" data-category="interiors" data-batch="1" data-entrance="center" style="--delay: 0.32s;">
           <div class="works-card__media-box">
-            <img src="assets/interior-warm-lights.webp" alt="Интерьер спальни в тёплом свете" class="works-card__img" loading="lazy" decoding="async">
+            <img src="assets/interior-04.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
           </div>
         </article>
-        <article class="works-card works-card--third works-anim" data-category="interiors">
+        <article class="works-card works-card--third works-card--portrait works-anim" data-category="interiors" data-batch="1" data-entrance="right" style="--delay: 0.42s;">
           <div class="works-card__media-box">
-            <img src="assets/focus-lobby.webp" alt="Интерьерная съёмка лобби и лаунжа" class="works-card__img" loading="lazy" decoding="async">
+            <img src="assets/interior-05.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
           </div>
         </article>
-        <article class="works-card works-card--pano works-anim" data-category="interiors">
+
+        <!-- INTERIORS BATCH 2 (Cards 6 to 10) — Revealed on 1st 'Показать ещё' click -->
+        <!-- Row 3: 3 cards (4 + 4 + 4 cols) -->
+        <article class="works-card works-card--third works-card--tall works-anim" data-category="interiors" data-batch="2" data-entrance="left" style="--delay: 0s; display: none;">
           <div class="works-card__media-box">
-            <img src="assets/about-card-1.png" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+            <img src="assets/interior-06.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
           </div>
         </article>
-        <article class="works-card works-card--half is-extra works-anim" data-category="interiors" style="display:none;">
+        <article class="works-card works-card--third works-card--tall works-anim" data-category="interiors" data-batch="2" data-entrance="center" style="--delay: 0.12s; display: none;">
           <div class="works-card__media-box">
-            <img src="assets/focus-lobby.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+            <img src="assets/interior-07.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
           </div>
         </article>
-        <article class="works-card works-card--half is-extra works-anim" data-category="interiors" style="display:none;">
+        <article class="works-card works-card--third works-card--tall works-anim" data-category="interiors" data-batch="2" data-entrance="right" style="--delay: 0.22s; display: none;">
           <div class="works-card__media-box">
-            <img src="assets/video-set.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+            <img src="assets/interior-08.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+          </div>
+        </article>
+        <!-- Row 4: 2 cards (5 + 7 cols) -->
+        <article class="works-card works-card--compact works-card--portrait works-anim" data-category="interiors" data-batch="2" data-entrance="left" style="--delay: 0.32s; display: none;">
+          <div class="works-card__media-box">
+            <img src="assets/interior-09.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+          </div>
+        </article>
+        <article class="works-card works-card--wide works-card--portrait works-anim" data-category="interiors" data-batch="2" data-entrance="right" style="--delay: 0.42s; display: none;">
+          <div class="works-card__media-box">
+            <img src="assets/interior-10.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+          </div>
+        </article>
+
+        <!-- INTERIORS BATCH 3 (Cards 11 to 15) — Revealed on 2nd 'Показать ещё' click -->
+        <!-- Row 5: 2 cards (6 + 6 cols) -->
+        <article class="works-card works-card--half works-card--portrait works-anim" data-category="interiors" data-batch="3" data-entrance="left" style="--delay: 0s; display: none;">
+          <div class="works-card__media-box">
+            <img src="assets/interior-11.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+          </div>
+        </article>
+        <article class="works-card works-card--half works-card--portrait works-anim" data-category="interiors" data-batch="3" data-entrance="right" style="--delay: 0.12s; display: none;">
+          <div class="works-card__media-box">
+            <img src="assets/interior-12.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+          </div>
+        </article>
+        <!-- Row 6: 3 cards (4 + 4 + 4 cols) -->
+        <article class="works-card works-card--third works-card--portrait works-anim" data-category="interiors" data-batch="3" data-entrance="left" style="--delay: 0.22s; display: none;">
+          <div class="works-card__media-box">
+            <img src="assets/interior-13.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+          </div>
+        </article>
+        <article class="works-card works-card--third works-card--tall works-anim" data-category="interiors" data-batch="3" data-entrance="center" style="--delay: 0.32s; display: none;">
+          <div class="works-card__media-box">
+            <img src="assets/interior-14.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+          </div>
+        </article>
+        <article class="works-card works-card--third works-card--tall works-anim" data-category="interiors" data-batch="3" data-entrance="right" style="--delay: 0.42s; display: none;">
+          <div class="works-card__media-box">
+            <img src="assets/interior-15.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
           </div>
         </article>
         <article class="works-card works-card--wide works-anim" data-category="hotels">
@@ -1206,7 +1252,6 @@
     if ('IntersectionObserver' in window && !isReduced) {
       aboutAnims.forEach((el) => el.classList.add('is-ready'));
       srvAnims.forEach((el) => el.classList.add('is-ready'));
-      worksAnims.forEach((el) => el.classList.add('is-visible'));
 
       const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
@@ -1227,46 +1272,79 @@
 
       aboutAnims.forEach((el) => revealObserver.observe(el));
       srvAnims.forEach((el) => revealObserver.observe(el));
-    } else {
-      worksAnims.forEach((el) => el.classList.add('is-visible'));
     }
 
-    // ── Works Section: Category Filtering & Load More ──────────────
+    // ── Works Section: Category Filtering, 5-at-a-time Batching & Kinetic Entrance ──
     const filterButtons = [...document.querySelectorAll('.works-filter')];
     const worksCards = [...document.querySelectorAll('.works-card')];
     const worksMoreBtn = document.getElementById('worksMoreBtn');
     const worksMoreCta = document.getElementById('worksMoreCta');
     let currentCategory = 'interiors';
+    let currentBatch = 1; // 1 -> 2 -> 3
 
-    function updateWorksVisibility() {
-      let hiddenExtraCount = 0;
+    function triggerCardEntrance(card, delayMs = 0) {
+      card.classList.remove('is-visible');
+      card.classList.add('is-ready');
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          card.classList.remove('is-ready');
+          card.classList.add('is-visible');
+        }, delayMs);
+      });
+    }
+
+    function updateWorksVisibility(isSwitchingCategory = false) {
+      let nextBatchCount = 0;
+      let totalRemainingHidden = 0;
 
       worksCards.forEach((card) => {
-        const matches = card.dataset.category === currentCategory;
-        if (!matches) {
+        const matchesCat = card.dataset.category === currentCategory;
+        if (!matchesCat) {
           card.classList.remove('is-active-cat');
           card.style.display = 'none';
-        } else {
-          card.classList.add('is-active-cat');
-          const isExtra = card.classList.contains('is-extra');
-          const isRevealed = card.classList.contains('is-extra-revealed');
+          card.classList.remove('is-visible');
+          return;
+        }
 
-          if (!isExtra || isRevealed) {
-            card.style.display = '';
-            card.classList.add('is-visible');
-          } else {
-            card.style.display = 'none';
-            hiddenExtraCount++;
+        card.classList.add('is-active-cat');
+        const cardBatch = parseInt(card.dataset.batch || '1', 10);
+        const isExtra = card.classList.contains('is-extra');
+
+        let shouldShow = false;
+        if (card.dataset.batch) {
+          shouldShow = cardBatch <= currentBatch;
+          if (cardBatch === currentBatch + 1) nextBatchCount++;
+          if (cardBatch > currentBatch) totalRemainingHidden++;
+        } else {
+          const isRevealed = card.classList.contains('is-extra-revealed');
+          shouldShow = !isExtra || isRevealed;
+          if (isExtra && !isRevealed) {
+            nextBatchCount++;
+            totalRemainingHidden++;
           }
+        }
+
+        if (shouldShow) {
+          const wasHidden = card.style.display === 'none';
+          card.style.display = '';
+          if (wasHidden || isSwitchingCategory) {
+            triggerCardEntrance(card, Math.round(parseFloat(card.style.getPropertyValue('--delay') || '0') * 1000));
+          } else {
+            card.classList.add('is-visible');
+          }
+        } else {
+          card.style.display = 'none';
+          card.classList.remove('is-visible');
+          card.classList.add('is-ready');
         }
       });
 
       if (worksMoreBtn && worksMoreCta) {
-        if (hiddenExtraCount > 0) {
+        if (totalRemainingHidden > 0) {
           worksMoreBtn.style.display = 'inline-flex';
           worksMoreCta.style.display = 'none';
           const countSpan = worksMoreBtn.querySelector('.works-more-btn__count');
-          if (countSpan) countSpan.textContent = `+${hiddenExtraCount}`;
+          if (countSpan) countSpan.textContent = `+${Math.min(nextBatchCount, 5)}`;
         } else {
           worksMoreBtn.style.display = 'none';
           worksMoreCta.style.display = 'inline-flex';
@@ -1277,6 +1355,7 @@
     filterButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
         currentCategory = btn.dataset.filter;
+        currentBatch = 1;
 
         filterButtons.forEach((b) => {
           const isActive = b === btn;
@@ -1284,34 +1363,66 @@
           b.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
 
-        // Reset extra revealed state in the newly selected category
         worksCards.forEach((c) => {
           if (c.dataset.category === currentCategory) {
             c.classList.remove('is-extra-revealed');
           }
         });
 
-        updateWorksVisibility();
+        updateWorksVisibility(true);
       });
     });
 
     if (worksMoreBtn) {
       worksMoreBtn.addEventListener('click', () => {
-        const extraCards = worksCards.filter(
-          (c) => c.dataset.category === currentCategory && c.classList.contains('is-extra')
+        currentBatch++;
+
+        const newCards = worksCards.filter(
+          (c) => c.dataset.category === currentCategory && 
+                 (parseInt(c.dataset.batch || '1', 10) === currentBatch || c.classList.contains('is-extra'))
         );
-        extraCards.forEach((c, idx) => {
+
+        newCards.forEach((c, idx) => {
           c.classList.add('is-extra-revealed');
           c.style.display = '';
-          setTimeout(() => {
-            c.classList.add('is-visible');
-          }, idx * 60);
+          triggerCardEntrance(c, idx * 80);
         });
+
         updateWorksVisibility();
+
+        if (newCards.length > 0) {
+          setTimeout(() => {
+            newCards[0].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 120);
+        }
       });
     }
 
+    // Initial visibility state (first 5 cards of default category)
     updateWorksVisibility();
+
+    // Scroll reveal observer for initial works entrance
+    if (worksSection && 'IntersectionObserver' in window && !isReduced) {
+      worksCards.forEach((c) => c.classList.add('is-ready'));
+      let worksEntered = false;
+
+      const worksSectionObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !worksEntered) {
+            worksEntered = true;
+            const visibleCards = worksCards.filter(
+              (c) => c.dataset.category === currentCategory && c.style.display !== 'none'
+            );
+            visibleCards.forEach((card, idx) => {
+              triggerCardEntrance(card, idx * 80);
+            });
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+      worksSectionObserver.observe(worksSection);
+    }
 
     // ── Works Section: Pure Image Lightbox (No Text, No Clutter) ──────────────
     const worksModal = document.getElementById('worksModal');
