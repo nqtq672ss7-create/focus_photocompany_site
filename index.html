@@ -1187,11 +1187,13 @@
       }
     });
 
-    // WORKS SHOWCASE: PANORAMIC 3-CARD RIBBON DECK CONTROLLER
+    // WORKS SHOWCASE: PINNED SEQUENTIAL SCROLL DECK WITH GSAP SCROLLTRIGGER
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
     let currentCategory = 'interiors';
-    let activeIndex = 0;
-    let maxUnlockedIndex = 4; // initially first 5 items (0..4) are unlocked
-    let isAnimating = false;
+    let worksTimeline = null;
 
     const arenaWrap = document.getElementById('worksScArenaWrap');
     const arena = document.getElementById('worksScArena');
@@ -1201,181 +1203,31 @@
     const hintEl = document.getElementById('worksScHint');
     const moreBtn = document.getElementById('worksScMoreBtn');
     const moreCountEl = document.getElementById('worksScMoreCount');
+    const moreTextSpan = document.getElementById('worksScMoreText');
     const prevBtn = document.getElementById('worksScPrev');
     const nextBtn = document.getElementById('worksScNext');
 
-    function updateUI() {
-      const items = allWorksData[currentCategory] || allWorksData.interiors;
-      const count = items.length;
-      
-      // Update Counter (01 / 15 format)
-      if (currEl) currEl.textContent = activeIndex < 9 ? `0${activeIndex + 1}` : `${activeIndex + 1}`;
-      if (totalEl) totalEl.textContent = count < 10 ? `0${count}` : `${count}`;
-
-      // Update Pills (highlight active card)
-      const pills = pillsWrap ? pillsWrap.querySelectorAll('.works-sc-pill') : [];
-      pills.forEach((p, idx) => {
-        p.classList.toggle('is-active', idx === activeIndex);
-      });
-
-      // Update Arrows
-      if (prevBtn) prevBtn.disabled = activeIndex === 0;
-      if (nextBtn) nextBtn.disabled = activeIndex >= maxUnlockedIndex;
-
-      // Update Load More vs Hint
-      const remaining = count - (maxUnlockedIndex + 1);
-      if (activeIndex === maxUnlockedIndex) {
-        if (remaining > 0) {
-          if (hintEl) hintEl.style.display = 'none';
-          if (moreBtn) {
-            moreBtn.style.display = 'inline-flex';
-            moreBtn.disabled = false;
-            const currentLang = localStorage.getItem('focus-language') || 'ru';
-            const moreText = currentLang === 'en' ? 'LOAD MORE PROJECTS' : 'ПОКАЗАТЬ ЕЩЁ ПРОЕКТЫ';
-            const textSpan = document.getElementById('worksScMoreText');
-            if (textSpan) textSpan.textContent = moreText;
-            if (moreCountEl) moreCountEl.textContent = `+${Math.min(5, remaining)}`;
-          }
-        } else {
-          if (hintEl) hintEl.style.display = 'none';
-          if (moreBtn) {
-            moreBtn.style.display = 'inline-flex';
-            moreBtn.disabled = true;
-            const currentLang = localStorage.getItem('focus-language') || 'ru';
-            const allText = currentLang === 'en' ? 'ALL PROJECTS LOADED' : 'ВСЕ ПРОЕКТЫ ПОКАЗАНЫ';
-            const textSpan = document.getElementById('worksScMoreText');
-            if (textSpan) textSpan.textContent = allText;
-            if (moreCountEl) moreCountEl.textContent = '✓';
-          }
-        }
-      } else {
-        if (hintEl) hintEl.style.display = 'inline-flex';
-        if (moreBtn) moreBtn.style.display = 'none';
-      }
-    }
-
-    function updateCardsLayout(animate = true) {
-      if (!arena) return;
-      const cards = arena.querySelectorAll('.works-sc-card');
-      const isMobile = window.innerWidth <= 768;
-      const xOffset = isMobile ? window.innerWidth * 0.82 : Math.min(430, window.innerWidth * 0.32);
-      const farOffset = isMobile ? window.innerWidth * 1.5 : Math.min(880, window.innerWidth * 0.65);
-      const duration = animate ? 0.52 : 0;
-      const ease = 'power2.out';
-
-      cards.forEach((card, idx) => {
-        const diff = idx - activeIndex;
-        let targetX = 0;
-        let targetScale = 1;
-        let targetOpacity = 1;
-        let targetZ = 10;
-        let pointerEvents = 'none';
-        let filter = 'none';
-
-        if (diff === 0) {
-          // Center / Active card
-          targetX = 0;
-          targetScale = 1;
-          targetOpacity = 1;
-          targetZ = 20;
-          pointerEvents = 'auto';
-          card.classList.add('is-active');
-        } else {
-          card.classList.remove('is-active');
-          if (diff === 1) {
-            // Next card (Right)
-            targetX = xOffset;
-            targetScale = isMobile ? 0.9 : 0.86;
-            targetOpacity = 0.65;
-            targetZ = 14;
-            pointerEvents = 'auto';
-            filter = 'brightness(0.96)';
-          } else if (diff === -1) {
-            // Previous card (Left)
-            targetX = -xOffset;
-            targetScale = isMobile ? 0.9 : 0.86;
-            targetOpacity = 0.65;
-            targetZ = 14;
-            pointerEvents = 'auto';
-            filter = 'brightness(0.96)';
-          } else if (diff > 1) {
-            // Further right
-            targetX = farOffset;
-            targetScale = 0.72;
-            targetOpacity = 0;
-            targetZ = 2;
-          } else if (diff < -1) {
-            // Further left
-            targetX = -farOffset;
-            targetScale = 0.72;
-            targetOpacity = 0;
-            targetZ = 2;
-          }
-        }
-
-        card.style.pointerEvents = pointerEvents;
-        card.style.filter = filter;
-
-        if (animate && typeof gsap !== 'undefined') {
-          gsap.to(card, {
-            x: targetX,
-            scale: targetScale,
-            opacity: targetOpacity,
-            zIndex: targetZ,
-            duration: duration,
-            ease: ease,
-            overwrite: 'auto'
-          });
-        } else {
-          card.style.transform = `translate(-50%, -50%) translate3d(${targetX}px, 0, 0) scale(${targetScale})`;
-          card.style.opacity = targetOpacity;
-          card.style.zIndex = targetZ;
-        }
-      });
-
-      updateUI();
-    }
-
-    function goToIndex(newIndex) {
-      if (isAnimating) return;
-      const target = Math.max(0, Math.min(maxUnlockedIndex, newIndex));
-      if (target === activeIndex) return;
-
-      isAnimating = true;
-      activeIndex = target;
-      updateCardsLayout(true);
-
-      setTimeout(() => {
-        isAnimating = false;
-      }, 450);
-    }
-
-    function rebuildPills() {
-      if (!pillsWrap) return;
-      pillsWrap.innerHTML = '';
-      const items = allWorksData[currentCategory] || allWorksData.interiors;
-      const count = maxUnlockedIndex + 1;
-
-      for (let i = 0; i < count; i++) {
-        const pill = document.createElement('button');
-        pill.type = 'button';
-        pill.className = `works-sc-pill ${i === activeIndex ? 'is-active' : ''}`;
-        pill.setAttribute('data-idx', i);
-        pill.setAttribute('aria-label', `Перейти к проекту ${i + 1}`);
-        pill.addEventListener('click', () => goToIndex(i));
-        pillsWrap.appendChild(pill);
-      }
-    }
-
-    function renderWorksShowcase(cat, initialIndex = 0) {
+    function renderWorksShowcase(cat, scrollIntoPosition = false) {
       currentCategory = cat;
       const items = allWorksData[cat] || allWorksData.interiors;
-      activeIndex = Math.max(0, Math.min(items.length - 1, initialIndex));
-      maxUnlockedIndex = Math.min(items.length - 1, 4); // First 5 projects (0..4)
+      const total = items.length;
 
-      if (!arena) return;
+      if (!arena || !pillsWrap) return;
+
+      // Kill previous timeline and ScrollTrigger
+      if (worksTimeline) {
+        worksTimeline.kill();
+        if (worksTimeline.scrollTrigger) worksTimeline.scrollTrigger.kill();
+        worksTimeline = null;
+      }
+
       arena.innerHTML = '';
+      pillsWrap.innerHTML = '';
 
+      if (totalEl) totalEl.textContent = total < 10 ? `0${total}` : `${total}`;
+      if (currEl) currEl.textContent = '01';
+
+      // Render cards
       items.forEach((item, idx) => {
         const card = document.createElement('div');
         card.className = 'works-sc-card';
@@ -1390,120 +1242,209 @@
           </div>
         `;
 
-        card.addEventListener('click', (e) => {
-          if (idx === activeIndex) {
-            openWorksModal(item.src, item.alt);
-          } else {
-            goToIndex(idx);
-          }
-        });
-
+        card.addEventListener('click', () => openWorksModal(item.src, item.alt));
         card.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            if (idx === activeIndex) {
-              openWorksModal(item.src, item.alt);
-            } else {
-              goToIndex(idx);
-            }
+            openWorksModal(item.src, item.alt);
           }
         });
 
         arena.appendChild(card);
       });
 
-      rebuildPills();
-      updateCardsLayout(false);
-    }
+      // Build 5 interactive progress pills
+      const pillCount = Math.min(5, total);
+      for (let i = 0; i < pillCount; i++) {
+        const pill = document.createElement('button');
+        pill.type = 'button';
+        pill.className = `works-sc-pill ${i === 0 ? 'is-active' : ''}`;
+        pill.setAttribute('data-idx', i);
+        pill.setAttribute('aria-label', `Перейти к кадру ${i + 1}`);
+        pillsWrap.appendChild(pill);
+      }
 
-    // Button Listeners: Arrows
-    if (prevBtn) prevBtn.addEventListener('click', () => goToIndex(activeIndex - 1));
-    if (nextBtn) nextBtn.addEventListener('click', () => goToIndex(activeIndex + 1));
+      const cards = gsap.utils.toArray('.works-sc-card');
+      const pills = gsap.utils.toArray('.works-sc-pill');
+
+      // Set initial 3-card spread positions:
+      // Card 0: in center (x: 0, scale: 1, opacity: 1, zIndex: 20)
+      // Card 1: peeking on the right (x: min(420px, 32vw), scale: 0.86, opacity: 0.65, zIndex: 14)
+      // Other cards: offscreen to right
+      gsap.set(cards[0], { x: 0, scale: 1, opacity: 1, zIndex: 20 });
+      if (cards.length > 1) {
+        gsap.set(cards[1], { x: 'min(420px, 32vw)', scale: 0.86, opacity: 0.65, zIndex: 14 });
+      }
+      for (let i = 2; i < cards.length; i++) {
+        gsap.set(cards[i], { x: 'min(800px, 60vw)', scale: 0.72, opacity: 0, zIndex: 2 });
+      }
+
+      const snapPoints = total > 1 ? Array.from({ length: total }, (_, i) => i / (total - 1)) : [0];
+      const scrollDistance = (total - 1) * 480;
+
+      worksTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#worksShowcaseStage",
+          pin: true,
+          start: "top top",
+          end: `+=${scrollDistance}`,
+          scrub: 0.6,
+          snap: {
+            snapTo: snapPoints,
+            duration: 0.35,
+            ease: "power1.inOut"
+          },
+          onUpdate: (self) => {
+            const step = Math.min(total - 1, Math.round(self.progress * (total - 1)));
+            if (currEl) currEl.textContent = step < 9 ? `0${step + 1}` : `${step + 1}`;
+            
+            // Highlight current pill (modulo 5 for batch progress)
+            pills.forEach((p, i) => {
+              p.classList.toggle('is-active', (step % 5) === i);
+            });
+
+            // Update arrow disabled states
+            if (prevBtn) prevBtn.disabled = step === 0;
+            if (nextBtn) nextBtn.disabled = step === total - 1;
+
+            // Load More button at batch milestones:
+            // At step 4 (card 5 of 15) and step 9 (card 10 of 15):
+            const isMilestone = (step === 4 && total > 5) || (step === 9 && total > 10);
+            const isEnd = step === total - 1;
+
+            if (isMilestone) {
+              if (hintEl) hintEl.style.display = 'none';
+              if (moreBtn) {
+                moreBtn.style.display = 'inline-flex';
+                moreBtn.disabled = false;
+                if (moreCountEl) moreCountEl.textContent = '+5';
+                const currentLang = localStorage.getItem('focus-language') || 'ru';
+                if (moreTextSpan) moreTextSpan.textContent = currentLang === 'en' ? 'NEXT 5 PROJECTS' : 'СЛЕДУЮЩИЕ 5 ПРОЕКТОВ';
+              }
+            } else if (isEnd) {
+              if (hintEl) hintEl.style.display = 'none';
+              if (moreBtn) {
+                moreBtn.style.display = 'inline-flex';
+                moreBtn.disabled = true;
+                if (moreCountEl) moreCountEl.textContent = '✓';
+                const currentLang = localStorage.getItem('focus-language') || 'ru';
+                if (moreTextSpan) moreTextSpan.textContent = currentLang === 'en' ? 'ALL PROJECTS LOADED' : 'ВСЕ ПРОЕКТЫ ПОКАЗАНЫ';
+              }
+            } else {
+              if (hintEl) hintEl.style.display = 'inline-flex';
+              if (moreBtn) moreBtn.style.display = 'none';
+            }
+          }
+        }
+      });
+
+      // Build sequential scroll transitions across all cards:
+      for (let i = 0; i < total - 1; i++) {
+        // Outgoing card glides to the left (peeking on left)
+        worksTimeline.to(cards[i], {
+          x: '-min(420px, 32vw)',
+          scale: 0.86,
+          opacity: 0.65,
+          zIndex: 14,
+          duration: 1,
+          ease: 'power2.inOut'
+        }, i);
+
+        // Active card glides to center
+        worksTimeline.to(cards[i + 1], {
+          x: 0,
+          scale: 1.0,
+          opacity: 1.0,
+          zIndex: 20,
+          duration: 1,
+          ease: 'power2.out'
+        }, i);
+
+        // Incoming card glides into right peeking spot
+        if (i + 2 < total) {
+          worksTimeline.fromTo(cards[i + 2],
+            { x: 'min(800px, 60vw)', scale: 0.72, opacity: 0, zIndex: 2 },
+            { x: 'min(420px, 32vw)', scale: 0.86, opacity: 0.65, zIndex: 14, duration: 1, ease: 'power2.inOut' },
+            i
+          );
+        }
+
+        // Previous card glides offscreen to far left
+        if (i - 1 >= 0) {
+          worksTimeline.to(cards[i - 1], {
+            x: '-min(800px, 60vw)',
+            scale: 0.72,
+            opacity: 0,
+            zIndex: 2,
+            duration: 1,
+            ease: 'power2.in'
+          }, i);
+        }
+      }
+
+      // Pill click navigation
+      pills.forEach((pill, idx) => {
+        pill.addEventListener('click', () => {
+          if (!worksTimeline || !worksTimeline.scrollTrigger) return;
+          const st = worksTimeline.scrollTrigger;
+          const step = Math.min(total - 1, Math.round(st.progress * (total - 1)));
+          const currentBatch = Math.floor(step / 5);
+          const targetIdx = Math.min(total - 1, currentBatch * 5 + idx);
+          const targetY = st.start + (st.end - st.start) * (targetIdx / (total - 1));
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+        });
+      });
+
+      ScrollTrigger.refresh();
+
+      if (scrollIntoPosition && worksTimeline && worksTimeline.scrollTrigger) {
+        const st = worksTimeline.scrollTrigger;
+        window.scrollTo({ top: st.start, behavior: 'instant' });
+      }
+    }
 
     // Button Listener: Load More (+5)
     if (moreBtn) {
       moreBtn.addEventListener('click', () => {
+        if (!worksTimeline || !worksTimeline.scrollTrigger) return;
+        const st = worksTimeline.scrollTrigger;
         const items = allWorksData[currentCategory] || allWorksData.interiors;
-        const remaining = items.length - (maxUnlockedIndex + 1);
-        if (remaining > 0) {
-          maxUnlockedIndex = Math.min(items.length - 1, maxUnlockedIndex + 5);
-          rebuildPills();
-          goToIndex(activeIndex + 1);
-        }
+        const total = items.length;
+        const step = Math.min(total - 1, Math.round(st.progress * (total - 1)));
+        
+        // Advance to next batch of 5:
+        const nextStep = Math.min(total - 1, step + 1); // e.g. from 4 to 5, or from 9 to 10
+        const targetY = st.start + (st.end - st.start) * (nextStep / (total - 1));
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
       });
     }
 
-    // Discrete Mouse Wheel / Trackpad Controller
-    let lastWheelTime = 0;
-    if (arenaWrap) {
-      arenaWrap.addEventListener('wheel', (e) => {
-        if (Math.abs(e.deltaY) < 18) return;
-        const now = Date.now();
-        if (now - lastWheelTime < 420) {
-          if ((e.deltaY > 0 && activeIndex < maxUnlockedIndex) || (e.deltaY < 0 && activeIndex > 0)) {
-            e.preventDefault();
-          }
-          return;
-        }
-
-        if (e.deltaY > 0) {
-          if (activeIndex < maxUnlockedIndex) {
-            e.preventDefault();
-            lastWheelTime = now;
-            goToIndex(activeIndex + 1);
-          }
-          // If at maxUnlockedIndex, we DO NOT preventDefault -> page scrolls naturally to next section!
-        } else if (e.deltaY < 0) {
-          if (activeIndex > 0) {
-            e.preventDefault();
-            lastWheelTime = now;
-            goToIndex(activeIndex - 1);
-          }
-          // If at 0, we DO NOT preventDefault -> page scrolls naturally to previous section!
-        }
-      }, { passive: false });
-
-      // Mobile Touch Gestures (Swipe Left / Right)
-      let touchStartX = 0;
-      let touchStartY = 0;
-      arenaWrap.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-      }, { passive: true });
-
-      arenaWrap.addEventListener('touchend', (e) => {
-        const diffX = e.changedTouches[0].clientX - touchStartX;
-        const diffY = e.changedTouches[0].clientY - touchStartY;
-        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
-          if (diffX < 0 && activeIndex < maxUnlockedIndex) {
-            goToIndex(activeIndex + 1);
-          } else if (diffX > 0 && activeIndex > 0) {
-            goToIndex(activeIndex - 1);
-          }
-        }
-      }, { passive: true });
+    // Arrow Button Listeners: Prev and Next
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        if (!worksTimeline || !worksTimeline.scrollTrigger) return;
+        const st = worksTimeline.scrollTrigger;
+        const items = allWorksData[currentCategory] || allWorksData.interiors;
+        const total = items.length;
+        const step = Math.min(total - 1, Math.round(st.progress * (total - 1)));
+        const prevStep = Math.max(0, step - 1);
+        const targetY = st.start + (st.end - st.start) * (prevStep / (total - 1));
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+      });
     }
 
-    // Keyboard Arrow Navigation
-    window.addEventListener('keydown', (e) => {
-      if (worksModal && worksModal.classList.contains('is-open')) return;
-      if (!arenaWrap) return;
-      const rect = arenaWrap.getBoundingClientRect();
-      const inView = rect.top < window.innerHeight && rect.bottom > 0;
-      if (!inView) return;
-
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        if (activeIndex < maxUnlockedIndex) {
-          e.preventDefault();
-          goToIndex(activeIndex + 1);
-        }
-      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        if (activeIndex > 0) {
-          e.preventDefault();
-          goToIndex(activeIndex - 1);
-        }
-      }
-    });
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        if (!worksTimeline || !worksTimeline.scrollTrigger) return;
+        const st = worksTimeline.scrollTrigger;
+        const items = allWorksData[currentCategory] || allWorksData.interiors;
+        const total = items.length;
+        const step = Math.min(total - 1, Math.round(st.progress * (total - 1)));
+        const nextStep = Math.min(total - 1, step + 1);
+        const targetY = st.start + (st.end - st.start) * (nextStep / (total - 1));
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+      });
+    }
 
     // Category Tabs click listeners
     const categoryTabs = document.querySelectorAll('.works-sc-tab');
@@ -1515,21 +1456,12 @@
           t.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
         const cat = tab.getAttribute('data-cat') || 'interiors';
-        renderWorksShowcase(cat, 0);
+        renderWorksShowcase(cat, true);
       });
     });
 
-    // Window Resize Responsive Recalculation
-    let resizeTimer = null;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        updateCardsLayout(false);
-      }, 150);
-    });
-
     // Initial render
-    renderWorksShowcase('interiors', 0);
+    renderWorksShowcase('interiors', false);
 
         const savedLanguage = localStorage.getItem('focus-language');
     setLanguage(savedLanguage === 'en' ? 'en' : 'ru');
