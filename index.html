@@ -371,301 +371,103 @@
   </section>
   <!-- SECTION: WORKS / PORTFOLIO -->
   <section id="works" class="works-section works-clean" aria-labelledby="works-clean-title">
-    <div class="works-shell">
-      
-      <!-- WORKS HEADER (Kinetic Minimalist on White) -->
-      <header class="works-header">
-        <div class="works-eyebrow">
-          <span class="works-eyebrow__dash" aria-hidden="true">—</span>
-          <span class="works-eyebrow__text" data-i18n="worksEyebrow">ПРИМЕРЫ РАБОТ</span>
-        </div>
-        <h2 class="works-clean-title" id="works-clean-title" aria-label="Реализованные проекты.">
-          <span class="works-title__row works-title__row--1">
-            <span class="works-word works-word--1" data-i18n="worksTitle1Word">РЕАЛИЗОВАННЫЕ</span>
-          </span>
-          <span class="works-title__row works-title__row--2">
-            <span class="works-word works-word--2">
+    <div class="works-showcase-wrapper">
+      <div class="works-showcase-stage" id="worksShowcaseStage">
+        
+        <!-- WORKS HEADER (Kinetic Minimalist on White) -->
+        <header class="works-sc-topbar">
+          <div class="works-sc-title-group">
+            <div class="works-sc-eyebrow">
+              <span class="works-sc-eyebrow__dash" aria-hidden="true">—</span>
+              <span class="works-sc-eyebrow__text" data-i18n="worksEyebrow">ПРИМЕРЫ РАБОТ</span>
+            </div>
+            <h2 class="works-sc-title" id="works-clean-title" aria-label="Реализованные проекты.">
+              <span data-i18n="worksTitle1Word">РЕАЛИЗОВАННЫЕ</span>
               <span data-i18n="worksTitle2Word">ПРОЕКТЫ</span>
               <span class="works-title-lime" data-i18n="worksTitleBadge">2024–2026</span>
-            </span>
-          </span>
-        </h2>
-      </header>
+            </h2>
+          </div>
 
-      <!-- WORKS FILTER TABS (Minimalist Segmented Control - NO "ALL") -->
-      <div class="works-filters-wrap">
-        <nav class="works-filters" aria-label="Категории проектов" role="tablist">
-          <button type="button" class="works-filter is-active" data-filter="interiors" role="tab" aria-selected="true">
-            <span class="works-filter__num">01</span>
-            <span class="works-filter__label" data-i18n="worksFilterInteriors">Интерьеры</span>
-            <span class="works-filter__count">15</span>
-          </button>
-          <button type="button" class="works-filter" data-filter="hotels" role="tab" aria-selected="false">
-            <span class="works-filter__num">02</span>
-            <span class="works-filter__label" data-i18n="worksFilterHotels">Отели & HoReCa</span>
-            <span class="works-filter__count">8</span>
-          </button>
-          <button type="button" class="works-filter" data-filter="video" role="tab" aria-selected="false">
-            <span class="works-filter__num">03</span>
-            <span class="works-filter__label" data-i18n="worksFilterVideo">Видео & Reels</span>
-            <span class="works-filter__count">8</span>
-          </button>
-          <button type="button" class="works-filter" data-filter="events" role="tab" aria-selected="false">
-            <span class="works-filter__num">04</span>
-            <span class="works-filter__label" data-i18n="worksFilterEvents">Мероприятия</span>
-            <span class="works-filter__count">8</span>
-          </button>
-        </nav>
-      </div>
+          <!-- WORKS CATEGORIES (Minimalist Tabs) -->
+          <nav class="works-sc-tabs" aria-label="Категории проектов" role="tablist">
+            <button type="button" class="works-sc-tab is-active" data-cat="interiors" role="tab" aria-selected="true">
+              <span class="works-sc-tab__num">01</span>
+              <span class="works-sc-tab__name" data-i18n="worksFilterInteriors">Интерьеры</span>
+              <span class="works-sc-tab__count">15</span>
+            </button>
+            <button type="button" class="works-sc-tab" data-cat="hotels" role="tab" aria-selected="false">
+              <span class="works-sc-tab__num">02</span>
+              <span class="works-sc-tab__name" data-i18n="worksFilterHotels">Отели & HoReCa</span>
+              <span class="works-sc-tab__count">8</span>
+            </button>
+            <button type="button" class="works-sc-tab" data-cat="video" role="tab" aria-selected="false">
+              <span class="works-sc-tab__num">03</span>
+              <span class="works-sc-tab__name" data-i18n="worksFilterVideo">Видео & Reels</span>
+              <span class="works-sc-tab__count">8</span>
+            </button>
+            <button type="button" class="works-sc-tab" data-cat="events" role="tab" aria-selected="false">
+              <span class="works-sc-tab__num">04</span>
+              <span class="works-sc-tab__name" data-i18n="worksFilterEvents">Мероприятия</span>
+              <span class="works-sc-tab__count">8</span>
+            </button>
+          </nav>
+        </header>
 
-      <!-- WORKS EDITORIAL PHOTO GRID -->
-      <div class="works-grid" id="worksGrid">
-        <!-- INTERIORS BATCH 1 (Cards 1 to 5) — Initially Visible -->
-        <!-- Row 1: Duet Pair (span 6 + span 6, exact 3:4 ratio) -->
-        <article class="works-card works-card--half works-anim" data-category="interiors" data-batch="1" data-entrance="left" style="--aspect: 3 / 4; --delay: 0s;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-01.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+        <!-- WORKS CENTER ARENA (Scroll-Driven Cards) -->
+        <div class="works-sc-arena-wrap">
+          <div class="works-sc-arena" id="worksScArena">
+            <!-- Dynamically populated with uncropped photographic art cards -->
           </div>
-        </article>
-        <article class="works-card works-card--half works-anim" data-category="interiors" data-batch="1" data-entrance="right" style="--aspect: 3 / 4; --delay: 0.12s;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-02.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <!-- Row 2: Trio Set (span 4 + span 4 + span 4) -->
-        <article class="works-card works-card--third works-anim" data-category="interiors" data-batch="1" data-entrance="left" style="--aspect: 9 / 10; --delay: 0s;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-03.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="interiors" data-batch="1" data-entrance="center" style="--aspect: 4 / 5; --delay: 0.12s;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-04.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="interiors" data-batch="1" data-entrance="right" style="--aspect: 4 / 5; --delay: 0.24s;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-05.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
+        </div>
 
-        <!-- INTERIORS BATCH 2 (Cards 6 to 10) — Revealed on 1st 'Показать ещё' click -->
-        <!-- Row 3: Duet Pair (span 6 + span 6, exact 2:3 ratio) -->
-        <article class="works-card works-card--half works-anim" data-category="interiors" data-batch="2" data-entrance="left" style="--aspect: 2 / 3; --delay: 0s; display: none;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-06.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+        <!-- WORKS BOTTOM BAR (Counter + Pills + Actions) -->
+        <footer class="works-sc-bottombar">
+          <div class="works-sc-counter" aria-live="polite">
+            <span class="works-sc-curr" id="worksScCurr">01</span>
+            <span class="works-sc-sep">/</span>
+            <span class="works-sc-total" id="worksScTotal">05</span>
           </div>
-        </article>
-        <article class="works-card works-card--half works-anim" data-category="interiors" data-batch="2" data-entrance="right" style="--aspect: 2 / 3; --delay: 0.12s; display: none;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-09.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+          <div class="works-sc-pills" id="worksScPills" role="tablist" aria-label="Навигация по карточкам">
+            <!-- Pills rendered dynamically -->
           </div>
-        </article>
-        <!-- Row 4: Trio Set (span 4 + span 4 + span 4, tall vertical architectural format) -->
-        <article class="works-card works-card--third works-anim" data-category="interiors" data-batch="2" data-entrance="left" style="--aspect: 9 / 16; --delay: 0s; display: none;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-07.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
+          <div class="works-sc-action-wrap">
+            <div class="works-sc-hint" id="worksScHint">
+              <span data-i18n="worksHintScroll">КРУТИТЕ СКРОЛЛ</span>
+              <span class="works-sc-hint__icon" aria-hidden="true">↓</span>
+            </div>
+            <button type="button" class="works-sc-more-btn" id="worksScMoreBtn" style="display: none;">
+              <span id="worksScMoreText" data-i18n="worksMoreBtn">ПОКАЗАТЬ ЕЩЁ ПРОЕКТЫ</span>
+              <span class="works-sc-more-btn__count" id="worksScMoreCount">+5</span>
+              <span class="works-sc-more-btn__arrow" aria-hidden="true">→</span>
+            </button>
           </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="interiors" data-batch="2" data-entrance="center" style="--aspect: 9 / 16; --delay: 0.12s; display: none;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-08.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="interiors" data-batch="2" data-entrance="right" style="--aspect: 5 / 7; --delay: 0.24s; display: none;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-10.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
+        </footer>
 
-        <!-- INTERIORS BATCH 3 (Cards 11 to 15) — Revealed on 2nd 'Показать ещё' click -->
-        <!-- Row 5: Duet Pair (span 6 + span 6, exact 2:3 ratio) -->
-        <article class="works-card works-card--half works-anim" data-category="interiors" data-batch="3" data-entrance="left" style="--aspect: 2 / 3; --delay: 0s; display: none;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-14.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--half works-anim" data-category="interiors" data-batch="3" data-entrance="right" style="--aspect: 2 / 3; --delay: 0.12s; display: none;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-15.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <!-- Row 6: Trio Set (span 4 + span 4 + span 4) -->
-        <article class="works-card works-card--third works-anim" data-category="interiors" data-batch="3" data-entrance="left" style="--aspect: 4 / 5; --delay: 0s; display: none;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-11.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="interiors" data-batch="3" data-entrance="center" style="--aspect: 2 / 3; --delay: 0.12s; display: none;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-12.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="interiors" data-batch="3" data-entrance="right" style="--aspect: 5 / 7; --delay: 0.24s; display: none;">
-          <div class="works-card__media-box">
-            <img src="assets/interior-13.webp" alt="Интерьерная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--wide works-anim" data-category="hotels">
-          <div class="works-card__media-box">
-            <img src="assets/hotel-complex.webp" alt="Отельная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--compact works-anim" data-category="hotels">
-          <div class="works-card__media-box">
-            <img src="assets/about-card-3.png" alt="Отельная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="hotels">
-          <div class="works-card__media-box">
-            <img src="assets/hotel-pool.webp" alt="Отельная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="hotels">
-          <div class="works-card__media-box">
-            <img src="assets/focus-lobby.webp" alt="Отельная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="hotels">
-          <div class="works-card__media-box">
-            <img src="assets/hotel-complex.webp" alt="Отельная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--pano works-anim" data-category="hotels">
-          <div class="works-card__media-box">
-            <img src="assets/about-card-1.png" alt="Отельная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--half is-extra works-anim" data-category="hotels" style="display:none;">
-          <div class="works-card__media-box">
-            <img src="assets/hotel-pool.webp" alt="Отельная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--half is-extra works-anim" data-category="hotels" style="display:none;">
-          <div class="works-card__media-box">
-            <img src="assets/focus-lobby.webp" alt="Отельная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--wide works-anim" data-category="video">
-          <div class="works-card__media-box">
-            <img src="assets/about-card-2.png" alt="Рекламное видео ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--compact works-anim" data-category="video">
-          <div class="works-card__media-box">
-            <img src="assets/video-rig.webp" alt="Рекламное видео ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="video">
-          <div class="works-card__media-box">
-            <img src="assets/video-set.webp" alt="Рекламное видео ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="video">
-          <div class="works-card__media-box">
-            <img src="assets/video-rig.webp" alt="Рекламное видео ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="video">
-          <div class="works-card__media-box">
-            <img src="assets/about-card-1.png" alt="Рекламное видео ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--pano works-anim" data-category="video">
-          <div class="works-card__media-box">
-            <img src="assets/portrait-vertical.webp" alt="Рекламное видео ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--half is-extra works-anim" data-category="video" style="display:none;">
-          <div class="works-card__media-box">
-            <img src="assets/hotel-pool.webp" alt="Рекламное видео ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--half is-extra works-anim" data-category="video" style="display:none;">
-          <div class="works-card__media-box">
-            <img src="assets/about-card-2.png" alt="Рекламное видео ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--wide works-anim" data-category="events">
-          <div class="works-card__media-box">
-            <img src="assets/business-event.webp" alt="Репортажная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--compact works-anim" data-category="events">
-          <div class="works-card__media-box">
-            <img src="assets/photographers.webp" alt="Репортажная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="events">
-          <div class="works-card__media-box">
-            <img src="assets/event-summit.webp" alt="Репортажная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="events">
-          <div class="works-card__media-box">
-            <img src="assets/photographers.webp" alt="Репортажная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--third works-anim" data-category="events">
-          <div class="works-card__media-box">
-            <img src="assets/business-event.webp" alt="Репортажная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--pano works-anim" data-category="events">
-          <div class="works-card__media-box">
-            <img src="assets/event-summit.webp" alt="Репортажная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--half is-extra works-anim" data-category="events" style="display:none;">
-          <div class="works-card__media-box">
-            <img src="assets/video-set.webp" alt="Репортажная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="works-card works-card--half is-extra works-anim" data-category="events" style="display:none;">
-          <div class="works-card__media-box">
-            <img src="assets/photographers.webp" alt="Репортажная съёмка ФОКУС" class="works-card__img" loading="lazy" decoding="async">
-          </div>
-        </article>
-
-      </div>
-
-      <!-- WORKS LOAD MORE / CTA EXPANDER BOX -->
-      <div class="works-more-box">
-        <button type="button" class="works-more-btn" id="worksMoreBtn">
-          <span class="works-more-btn__text" data-i18n="worksMoreBtn">ПОКАЗАТЬ ЕЩЁ ПРОЕКТЫ</span>
-          <span class="works-more-btn__count">+2</span>
-          <span class="works-more-btn__icon" aria-hidden="true">↓</span>
-        </button>
-        <a href="#contacts" class="works-more-cta" id="worksMoreCta" style="display: none;">
-          <span class="works-more-cta__text" data-i18n="worksMoreCta">ОБСУДИТЬ СЪЁМКУ В ЭТОЙ КАТЕГОРИИ</span>
-          <span class="works-more-cta__circle" aria-hidden="true">
-            <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </a>
       </div>
 
       <!-- WORKS BOTTOM SHOWCASE BANNER (Clean Editorial on White) -->
-      <div class="works-bottom-bar works-anim" data-delay="100">
-        <div class="works-bottom-bar__left">
-          <div class="works-bottom-bar__badge">
-            <span class="works-bottom-bar__dot"></span>
-            <span data-i18n="worksArchiveCount">АРХИВ ИЗ 150+ КЕЙСОВ</span>
+      <div class="works-sc-cta-container">
+        <div class="works-bottom-bar">
+          <div class="works-bottom-bar__left">
+            <div class="works-bottom-bar__badge">
+              <span class="works-bottom-bar__dot"></span>
+              <span data-i18n="worksArchiveCount">АРХИВ ИЗ 150+ КЕЙСОВ</span>
+            </div>
+            <h3 class="works-bottom-bar__title" data-i18n="worksArchiveTitle">Хотите увидеть проекты именно в вашей нише?</h3>
+            <p class="works-bottom-bar__desc" data-i18n="worksArchiveDesc">
+              В нашем портфолио десятки объектов со схожей архитектурой, площадью и задачами. Подготовим персональную выборку и смету за 30 минут.
+            </p>
           </div>
-          <h3 class="works-bottom-bar__title" data-i18n="worksArchiveTitle">Хотите увидеть проекты именно в вашей нише?</h3>
-          <p class="works-bottom-bar__desc" data-i18n="worksArchiveDesc">
-            В нашем портфолио десятки объектов со схожей архитектурой, площадью и задачами. Подготовим персональную выборку и смету за 30 минут.
-          </p>
-        </div>
-        <div class="works-bottom-bar__right">
-          <a href="#contacts" class="works-cta-btn">
-            <span class="works-cta-btn__text" data-i18n="worksArchiveCta">ЗАПРОСИТЬ ПОДБОРКУ ПОД ОБЪЕКТ</span>
-            <span class="works-cta-btn__circle" aria-hidden="true">
-              <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </a>
+          <div class="works-bottom-bar__right">
+            <a href="#contacts" class="works-cta-btn">
+              <span class="works-cta-btn__text" data-i18n="worksArchiveCta">ЗАПРОСИТЬ ПОДБОРКУ ПОД ОБЪЕКТ</span>
+              <span class="works-cta-btn__circle" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -683,6 +485,10 @@
     </div>
   </div>
   <section id="contacts" class="dummy-section"><span data-i18n="contacts">КОНТАКТЫ</span></section>
+
+  <!-- VENDOR LIBRARIES: GSAP + SCROLLTRIGGER -->
+  <script src="assets/gsap.min.js"></script>
+  <script src="assets/ScrollTrigger.min.js"></script>
 
   <script>
     const hero = document.querySelector('.hero');
@@ -837,6 +643,9 @@
         worksArchiveTitle: 'Хотите увидеть проекты именно в вашей нише?',
         worksArchiveDesc: 'В нашем портфолио десятки объектов со схожей архитектурой, площадью и задачами. Подготовим персональную выборку и смету за 30 минут.',
         worksArchiveCta: 'ЗАПРОСИТЬ ПОДБОРКУ ПОД ОБЪЕКТ',
+        worksHintScroll: 'КРУТИТЕ СКРОЛЛ',
+        worksMoreBtn: 'ПОКАЗАТЬ ЕЩЁ ПРОЕКТЫ',
+        worksAllLoaded: 'ВСЕ РАБОТЫ ЗАГРУЖЕНЫ',
         modalScopeTitle: 'Что было сделано:',
         modalCtaText: 'Обсудить похожую съёмку'
       },
@@ -989,6 +798,9 @@
         worksArchiveTitle: 'Looking for projects specific to your exact niche?',
         worksArchiveDesc: 'Our catalog includes dozens of properties with comparable architecture, scale, and requirements. We can send a curated selection and quote within 30 minutes.',
         worksArchiveCta: 'REQUEST CURATED PORTFOLIO',
+        worksHintScroll: 'SCROLL TO EXPLORE',
+        worksMoreBtn: 'LOAD MORE PROJECTS',
+        worksAllLoaded: 'ALL PROJECTS LOADED',
         modalScopeTitle: 'Scope of deliverables:',
         modalCtaText: 'Book a similar shoot'
       }
@@ -1274,164 +1086,74 @@
       srvAnims.forEach((el) => revealObserver.observe(el));
     }
 
-    // ── Works Section: Category Filtering, 5-at-a-time Batching & Sequential Scroll Entrance ──
-    const filterButtons = [...document.querySelectorAll('.works-filter')];
-    const worksCards = [...document.querySelectorAll('.works-card')];
-    const worksMoreBtn = document.getElementById('worksMoreBtn');
-    const worksMoreCta = document.getElementById('worksMoreCta');
+    // ── Works Section: GSAP ScrollTrigger Pinned Sequential Showcase ──
+    const allWorksData = {
+      interiors: [
+        // Batch 1 (Cards 1 to 5)
+        { src: 'assets/interior-01.webp', aspect: '1000 / 1334', alt: 'Интерьерная съёмка ФОКУС 1' },
+        { src: 'assets/interior-02.webp', aspect: '750 / 1000',  alt: 'Интерьерная съёмка ФОКУС 2' },
+        { src: 'assets/interior-03.webp', aspect: '1800 / 2000', alt: 'Интерьерная съёмка ФОКУС 3' },
+        { src: 'assets/interior-04.webp', aspect: '1200 / 1516', alt: 'Интерьерная съёмка ФОКУС 4' },
+        { src: 'assets/interior-05.webp', aspect: '900 / 1154',  alt: 'Интерьерная съёмка ФОКУС 5' },
+        // Batch 2 (Cards 6 to 10)
+        { src: 'assets/interior-06.webp', aspect: '736 / 1104',  alt: 'Интерьерная съёмка ФОКУС 6' },
+        { src: 'assets/interior-07.webp', aspect: '672 / 1195',  alt: 'Интерьерная съёмка ФОКУС 7' },
+        { src: 'assets/interior-08.webp', aspect: '736 / 1288',  alt: 'Интерьерная съёмка ФОКУС 8' },
+        { src: 'assets/interior-09.webp', aspect: '1024 / 1536', alt: 'Интерьерная съёмка ФОКУС 9' },
+        { src: 'assets/interior-10.webp', aspect: '736 / 1030',  alt: 'Интерьерная съёмка ФОКУС 10' },
+        // Batch 3 (Cards 11 to 15)
+        { src: 'assets/interior-11.webp', aspect: '640 / 800',   alt: 'Интерьерная съёмка ФОКУС 11' },
+        { src: 'assets/interior-12.webp', aspect: '736 / 1104',  alt: 'Интерьерная съёмка ФОКУС 12' },
+        { src: 'assets/interior-13.webp', aspect: '696 / 963',   alt: 'Интерьерная съёмка ФОКУС 13' },
+        { src: 'assets/interior-14.webp', aspect: '1200 / 1800', alt: 'Интерьерная съёмка ФОКУС 14' },
+        { src: 'assets/interior-15.webp', aspect: '1200 / 1798', alt: 'Интерьерная съёмка ФОКУС 15' }
+      ],
+      hotels: [
+        { src: 'assets/hotel-complex.webp', aspect: '16 / 10', alt: 'Отельная съёмка ФОКУС 1' },
+        { src: 'assets/about-card-3.png',   aspect: '4 / 3',   alt: 'Отельная съёмка ФОКУС 2' },
+        { src: 'assets/hotel-pool.webp',    aspect: '16 / 9',  alt: 'Отельная съёмка ФОКУС 3' },
+        { src: 'assets/focus-lobby.webp',   aspect: '4 / 3',   alt: 'Отельная съёмка ФОКУС 4' },
+        { src: 'assets/about-card-1.png',   aspect: '16 / 9',  alt: 'Отельная съёмка ФОКУС 5' },
+        { src: 'assets/hotel-pool.webp',    aspect: '16 / 9',  alt: 'Отельная съёмка ФОКУС 6' },
+        { src: 'assets/focus-lobby.webp',   aspect: '4 / 3',   alt: 'Отельная съёмка ФОКУС 7' },
+        { src: 'assets/hotel-complex.webp', aspect: '16 / 9',  alt: 'Отельная съёмка ФОКУС 8' }
+      ],
+      video: [
+        { src: 'assets/about-card-2.png',       aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 1' },
+        { src: 'assets/video-rig.webp',         aspect: '4 / 3',   alt: 'Рекламное видео ФОКУС 2' },
+        { src: 'assets/video-set.webp',         aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 3' },
+        { src: 'assets/portrait-vertical.webp', aspect: '9 / 16',  alt: 'Рекламное видео ФОКУС 4' },
+        { src: 'assets/about-card-1.png',       aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 5' },
+        { src: 'assets/hotel-pool.webp',        aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 6' },
+        { src: 'assets/video-set.webp',         aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 7' },
+        { src: 'assets/about-card-2.png',       aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 8' }
+      ],
+      events: [
+        { src: 'assets/business-event.webp', aspect: '16 / 9',  alt: 'Мероприятия ФОКУС 1' },
+        { src: 'assets/photographers.webp',  aspect: '4 / 3',   alt: 'Мероприятия ФОКУС 2' },
+        { src: 'assets/event-summit.webp',   aspect: '16 / 9',  alt: 'Мероприятия ФОКУС 3' },
+        { src: 'assets/photographers.webp',  aspect: '4 / 3',   alt: 'Мероприятия ФОКУС 4' },
+        { src: 'assets/business-event.webp', aspect: '16 / 9',  alt: 'Мероприятия ФОКУС 5' },
+        { src: 'assets/event-summit.webp',   aspect: '16 / 9',  alt: 'Мероприятия ФОКУС 6' },
+        { src: 'assets/video-set.webp',      aspect: '16 / 9',  alt: 'Мероприятия ФОКУС 7' },
+        { src: 'assets/photographers.webp',  aspect: '4 / 3',   alt: 'Мероприятия ФОКУС 8' }
+      ]
+    };
+
     let currentCategory = 'interiors';
-    let currentBatch = 1; // 1 -> 2 -> 3
+    let currentBatch = 0;
+    let worksTimeline = null;
 
-    // Individual card scroll reveal observer (one by one as you scroll down)
-    let cardRevealObserver = null;
-    if ('IntersectionObserver' in window && !isReduced) {
-      cardRevealObserver = new IntersectionObserver((entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const card = entry.target;
-            card.classList.remove('is-ready');
-            card.classList.add('is-visible');
-            obs.unobserve(card);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    }
-
-    function updateWorksVisibility(isSwitchingCategory = false) {
-      let nextBatchCount = 0;
-      let totalRemainingHidden = 0;
-
-      worksCards.forEach((card) => {
-        const matchesCat = card.dataset.category === currentCategory;
-        if (!matchesCat) {
-          card.classList.remove('is-active-cat');
-          card.style.display = 'none';
-          card.classList.remove('is-visible');
-          card.classList.add('is-ready');
-          if (cardRevealObserver) cardRevealObserver.unobserve(card);
-          return;
-        }
-
-        card.classList.add('is-active-cat');
-        const cardBatch = parseInt(card.dataset.batch || '1', 10);
-        const isExtra = card.classList.contains('is-extra');
-
-        let shouldShow = false;
-        if (card.dataset.batch) {
-          shouldShow = cardBatch <= currentBatch;
-          if (cardBatch === currentBatch + 1) nextBatchCount++;
-          if (cardBatch > currentBatch) totalRemainingHidden++;
-        } else {
-          const isRevealed = card.classList.contains('is-extra-revealed');
-          shouldShow = !isExtra || isRevealed;
-          if (isExtra && !isRevealed) {
-            nextBatchCount++;
-            totalRemainingHidden++;
-          }
-        }
-
-        if (shouldShow) {
-          card.style.display = '';
-          if (isSwitchingCategory) {
-            card.classList.remove('is-visible');
-            card.classList.add('is-ready');
-          }
-          if (cardRevealObserver) {
-            if (!card.classList.contains('is-visible')) {
-              card.classList.add('is-ready');
-              cardRevealObserver.observe(card);
-            }
-          } else {
-            card.classList.add('is-visible');
-          }
-        } else {
-          card.style.display = 'none';
-          card.classList.remove('is-visible');
-          card.classList.add('is-ready');
-          if (cardRevealObserver) cardRevealObserver.unobserve(card);
-        }
-      });
-
-      if (worksMoreBtn && worksMoreCta) {
-        if (totalRemainingHidden > 0) {
-          worksMoreBtn.style.display = 'inline-flex';
-          worksMoreCta.style.display = 'none';
-          const countSpan = worksMoreBtn.querySelector('.works-more-btn__count');
-          if (countSpan) countSpan.textContent = `+${Math.min(nextBatchCount, 5)}`;
-        } else {
-          worksMoreBtn.style.display = 'none';
-          worksMoreCta.style.display = 'inline-flex';
-        }
-      }
-    }
-
-    filterButtons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        currentCategory = btn.dataset.filter;
-        currentBatch = 1;
-
-        filterButtons.forEach((b) => {
-          const isActive = b === btn;
-          b.classList.toggle('is-active', isActive);
-          b.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        });
-
-        worksCards.forEach((c) => {
-          if (c.dataset.category === currentCategory) {
-            c.classList.remove('is-extra-revealed');
-          }
-        });
-
-        updateWorksVisibility(true);
-      });
-    });
-
-    if (worksMoreBtn) {
-      worksMoreBtn.addEventListener('click', () => {
-        currentBatch++;
-
-        const newCards = worksCards.filter(
-          (c) => c.dataset.category === currentCategory && 
-                 (parseInt(c.dataset.batch || '1', 10) === currentBatch || c.classList.contains('is-extra'))
-        );
-
-        newCards.forEach((c) => {
-          c.classList.add('is-extra-revealed');
-          c.style.display = '';
-          c.classList.remove('is-visible');
-          c.classList.add('is-ready');
-          if (cardRevealObserver) {
-            cardRevealObserver.observe(c);
-          } else {
-            c.classList.add('is-visible');
-          }
-        });
-
-        updateWorksVisibility();
-
-        if (newCards.length > 0) {
-          setTimeout(() => {
-            newCards[0].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }, 100);
-        }
-      });
-    }
-
-    // Initialize visibility and observe first batch cards
-    updateWorksVisibility();
-
-    // ── Works Section: Pure Image Lightbox (No Text, No Clutter) ──────────────
     const worksModal = document.getElementById('worksModal');
     const modalBackdrop = document.getElementById('worksModalBackdrop');
     const modalClose = document.getElementById('worksModalClose');
     const modalImg = document.getElementById('modalImg');
 
-    function openWorksModal(card) {
-      if (!worksModal) return;
-      const img = card.querySelector('.works-card__img');
-      if (img && modalImg) {
-        modalImg.src = img.src;
-        modalImg.alt = img.alt || 'ФОКУС Фотосъёмка';
+    function openWorksModal(imgSrc, imgAlt) {
+      if (!worksModal || !imgSrc) return;
+      if (modalImg) {
+        modalImg.src = imgSrc;
+        modalImg.alt = imgAlt || 'ФОКУС Фотосъёмка';
       }
       worksModal.classList.add('is-open');
       worksModal.setAttribute('aria-hidden', 'false');
@@ -1444,13 +1166,6 @@
       worksModal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
-
-    worksCards.forEach((card) => {
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('a')) return;
-        openWorksModal(card);
-      });
-    });
 
     if (modalClose) modalClose.addEventListener('click', closeWorksModal);
     if (modalBackdrop) modalBackdrop.addEventListener('click', closeWorksModal);
@@ -1465,6 +1180,209 @@
         closeWorksModal();
       }
     });
+
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
+    function renderWorksShowcase(cat, batchIdx = 0, scrollIntoPosition = false) {
+      currentCategory = cat;
+      currentBatch = batchIdx;
+
+      const items = allWorksData[cat] || allWorksData.interiors;
+      const startIdx = batchIdx * 5;
+      const batchItems = items.slice(startIdx, startIdx + 5);
+
+      const arena = document.getElementById('worksScArena');
+      const pillsWrap = document.getElementById('worksScPills');
+      const totalEl = document.getElementById('worksScTotal');
+      const currEl = document.getElementById('worksScCurr');
+      const hintEl = document.getElementById('worksScHint');
+      const moreBtn = document.getElementById('worksScMoreBtn');
+      const moreCountEl = document.getElementById('worksScMoreCount');
+
+      if (!arena || !pillsWrap) return;
+
+      arena.innerHTML = '';
+      pillsWrap.innerHTML = '';
+      if (totalEl) totalEl.textContent = `0${batchItems.length}`;
+      if (currEl) currEl.textContent = '01';
+
+      batchItems.forEach((item, idx) => {
+        const card = document.createElement('div');
+        card.className = 'works-sc-card';
+        card.setAttribute('data-idx', idx);
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', `Открыть фотографию ${startIdx + idx + 1}`);
+        card.style.setProperty('--aspect', item.aspect);
+        card.style.zIndex = 10 + idx * 5;
+        card.innerHTML = `
+          <div class="works-sc-card__inner">
+            <img src="${item.src}" alt="${item.alt || ''}" class="works-sc-card__img" loading="eager" decoding="async">
+          </div>
+        `;
+        
+        card.addEventListener('click', () => openWorksModal(item.src, item.alt));
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openWorksModal(item.src, item.alt);
+          }
+        });
+
+        arena.appendChild(card);
+
+        const pill = document.createElement('button');
+        pill.type = 'button';
+        pill.className = `works-sc-pill ${idx === 0 ? 'is-active' : ''}`;
+        pill.setAttribute('data-idx', idx);
+        pill.setAttribute('aria-label', `Перейти к фотографии ${startIdx + idx + 1}`);
+        pillsWrap.appendChild(pill);
+      });
+
+      const remainingAfterBatch = items.length - (startIdx + 5);
+      if (moreBtn) {
+        if (remainingAfterBatch > 0) {
+          moreBtn.style.display = 'none';
+          moreBtn.disabled = false;
+          if (moreCountEl) moreCountEl.textContent = `+${Math.min(5, remainingAfterBatch)}`;
+        } else {
+          moreBtn.disabled = true;
+          if (moreCountEl) moreCountEl.textContent = '✓';
+        }
+      }
+
+      if (worksTimeline) {
+        worksTimeline.kill();
+        if (worksTimeline.scrollTrigger) worksTimeline.scrollTrigger.kill();
+        worksTimeline = null;
+      }
+
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' || isReduced) {
+        const cards = arena.querySelectorAll('.works-sc-card');
+        cards.forEach((c) => {
+          c.style.position = 'relative';
+          c.style.display = 'block';
+        });
+        return;
+      }
+
+      const cards = gsap.utils.toArray('.works-sc-card');
+      const pills = gsap.utils.toArray('.works-sc-pill');
+
+      gsap.set(cards[0], { x: 0, y: 0, scale: 1, opacity: 1, rotation: 0, zIndex: 10 });
+      for (let i = 1; i < cards.length; i++) {
+        gsap.set(cards[i], { x: '100vw', y: 0, scale: 0.95, opacity: 0, rotation: 0, zIndex: 10 + i * 5 });
+      }
+
+      const count = cards.length;
+      const snapPoints = count > 1 ? Array.from({ length: count }, (_, i) => i / (count - 1)) : [0];
+
+      worksTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#worksShowcaseStage",
+          pin: true,
+          start: "top top",
+          end: "+=2600",
+          scrub: 0.6,
+          snap: {
+            snapTo: snapPoints,
+            duration: 0.35,
+            ease: "power1.inOut"
+          },
+          onUpdate: (self) => {
+            const step = Math.min(count - 1, Math.round(self.progress * (count - 1)));
+            if (currEl) currEl.textContent = `0${step + 1}`;
+            pills.forEach((p, i) => p.classList.toggle('is-active', i === step));
+            
+            if (self.progress > 0.88) {
+              if (hintEl) hintEl.style.display = 'none';
+              if (moreBtn && remainingAfterBatch > 0) moreBtn.style.display = 'inline-flex';
+            } else {
+              if (hintEl) hintEl.style.display = 'inline-flex';
+              if (moreBtn) moreBtn.style.display = 'none';
+            }
+          }
+        }
+      });
+
+      for (let i = 0; i < count - 1; i++) {
+        worksTimeline.to(cards[i], {
+          x: '-60px',
+          scale: 0.92,
+          rotation: -2,
+          opacity: 0.35,
+          duration: 1,
+          ease: 'power2.inOut'
+        }, i);
+
+        worksTimeline.to(cards[i + 1], {
+          x: 0,
+          scale: 1,
+          opacity: 1,
+          rotation: 0,
+          duration: 1,
+          ease: 'power2.out'
+        }, i);
+
+        if (i > 0) {
+          worksTimeline.to(cards[i - 1], {
+            x: '-120px',
+            scale: 0.84,
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.in'
+          }, i);
+        }
+      }
+
+      pills.forEach((pill, idx) => {
+        pill.addEventListener('click', () => {
+          if (!worksTimeline || !worksTimeline.scrollTrigger) return;
+          const st = worksTimeline.scrollTrigger;
+          const targetProgress = idx / (count - 1);
+          const targetY = st.start + (st.end - st.start) * targetProgress;
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+        });
+      });
+
+      ScrollTrigger.refresh();
+
+      if (scrollIntoPosition && worksTimeline && worksTimeline.scrollTrigger) {
+        const st = worksTimeline.scrollTrigger;
+        window.scrollTo({ top: st.start, behavior: 'smooth' });
+      }
+    }
+
+    // Category Tabs click listeners
+    const categoryTabs = document.querySelectorAll('.works-sc-tab');
+    categoryTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        categoryTabs.forEach((t) => {
+          const isActive = t === tab;
+          t.classList.toggle('is-active', isActive);
+          t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        const cat = tab.getAttribute('data-cat') || 'interiors';
+        renderWorksShowcase(cat, 0, true);
+      });
+    });
+
+    // Load More button click listener
+    const moreBtnEl = document.getElementById('worksScMoreBtn');
+    if (moreBtnEl) {
+      moreBtnEl.addEventListener('click', () => {
+        const items = allWorksData[currentCategory] || allWorksData.interiors;
+        const nextBatch = currentBatch + 1;
+        if (nextBatch * 5 < items.length) {
+          renderWorksShowcase(currentCategory, nextBatch, true);
+        }
+      });
+    }
+
+    // Initial render
+    renderWorksShowcase('interiors', 0);
 
         const savedLanguage = localStorage.getItem('focus-language');
     setLanguage(savedLanguage === 'en' ? 'en' : 'ru');
