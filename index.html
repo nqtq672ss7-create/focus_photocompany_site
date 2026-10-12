@@ -413,11 +413,19 @@
           </nav>
         </header>
 
-        <!-- WORKS CENTER ARENA (Scroll-Driven Cards) -->
-        <div class="works-sc-arena-wrap">
+        <!-- WORKS CENTER ARENA (Panoramic 3-Card Ribbon Flow) -->
+        <div class="works-sc-arena-wrap" id="worksScArenaWrap">
+          <button type="button" class="works-sc-arrow works-sc-arrow--prev" id="worksScPrev" aria-label="Предыдущий проект" title="Предыдущий проект">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
           <div class="works-sc-arena" id="worksScArena">
-            <!-- Dynamically populated with uncropped photographic art cards -->
+            <!-- Dynamically populated with all uncropped photographic art cards -->
           </div>
+
+          <button type="button" class="works-sc-arrow works-sc-arrow--next" id="worksScNext" aria-label="Следующий проект" title="Следующий проект">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
 
         <!-- WORKS BOTTOM BAR (Counter + Pills + Actions) -->
@@ -425,14 +433,14 @@
           <div class="works-sc-counter" aria-live="polite">
             <span class="works-sc-curr" id="worksScCurr">01</span>
             <span class="works-sc-sep">/</span>
-            <span class="works-sc-total" id="worksScTotal">05</span>
+            <span class="works-sc-total" id="worksScTotal">15</span>
           </div>
           <div class="works-sc-pills" id="worksScPills" role="tablist" aria-label="Навигация по карточкам">
             <!-- Pills rendered dynamically -->
           </div>
           <div class="works-sc-action-wrap">
             <div class="works-sc-hint" id="worksScHint">
-              <span data-i18n="worksHintScroll">КРУТИТЕ СКРОЛЛ</span>
+              <span data-i18n="worksHintScroll">СКРОЛЛ ИЛИ СТРЕЛКИ</span>
               <span class="works-sc-hint__icon" aria-hidden="true">↓</span>
             </div>
             <button type="button" class="works-sc-more-btn" id="worksScMoreBtn" style="display: none;">
@@ -643,7 +651,7 @@
         worksArchiveTitle: 'Хотите увидеть проекты именно в вашей нише?',
         worksArchiveDesc: 'В нашем портфолио десятки объектов со схожей архитектурой, площадью и задачами. Подготовим персональную выборку и смету за 30 минут.',
         worksArchiveCta: 'ЗАПРОСИТЬ ПОДБОРКУ ПОД ОБЪЕКТ',
-        worksHintScroll: 'КРУТИТЕ СКРОЛЛ',
+        worksHintScroll: 'СКРОЛЛ ИЛИ СТРЕЛКИ',
         worksMoreBtn: 'ПОКАЗАТЬ ЕЩЁ ПРОЕКТЫ',
         worksAllLoaded: 'ВСЕ РАБОТЫ ЗАГРУЖЕНЫ',
         modalScopeTitle: 'Что было сделано:',
@@ -798,7 +806,7 @@
         worksArchiveTitle: 'Looking for projects specific to your exact niche?',
         worksArchiveDesc: 'Our catalog includes dozens of properties with comparable architecture, scale, and requirements. We can send a curated selection and quote within 30 minutes.',
         worksArchiveCta: 'REQUEST CURATED PORTFOLIO',
-        worksHintScroll: 'SCROLL TO EXPLORE',
+        worksHintScroll: 'SCROLL OR ARROWS',
         worksMoreBtn: 'LOAD MORE PROJECTS',
         worksAllLoaded: 'ALL PROJECTS LOADED',
         modalScopeTitle: 'Scope of deliverables:',
@@ -1140,9 +1148,7 @@
       ]
     };
 
-    let currentCategory = 'interiors';
-    let currentBatch = 0;
-    let worksTimeline = null;
+
 
     const worksModal = document.getElementById('worksModal');
     const modalBackdrop = document.getElementById('worksModalBackdrop');
@@ -1181,179 +1187,323 @@
       }
     });
 
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
+    // WORKS SHOWCASE: PANORAMIC 3-CARD RIBBON DECK CONTROLLER
+    let currentCategory = 'interiors';
+    let activeIndex = 0;
+    let maxUnlockedIndex = 4; // initially first 5 items (0..4) are unlocked
+    let isAnimating = false;
+
+    const arenaWrap = document.getElementById('worksScArenaWrap');
+    const arena = document.getElementById('worksScArena');
+    const pillsWrap = document.getElementById('worksScPills');
+    const totalEl = document.getElementById('worksScTotal');
+    const currEl = document.getElementById('worksScCurr');
+    const hintEl = document.getElementById('worksScHint');
+    const moreBtn = document.getElementById('worksScMoreBtn');
+    const moreCountEl = document.getElementById('worksScMoreCount');
+    const prevBtn = document.getElementById('worksScPrev');
+    const nextBtn = document.getElementById('worksScNext');
+
+    function updateUI() {
+      const items = allWorksData[currentCategory] || allWorksData.interiors;
+      const count = items.length;
+      
+      // Update Counter (01 / 15 format)
+      if (currEl) currEl.textContent = activeIndex < 9 ? `0${activeIndex + 1}` : `${activeIndex + 1}`;
+      if (totalEl) totalEl.textContent = count < 10 ? `0${count}` : `${count}`;
+
+      // Update Pills (highlight active card)
+      const pills = pillsWrap ? pillsWrap.querySelectorAll('.works-sc-pill') : [];
+      pills.forEach((p, idx) => {
+        p.classList.toggle('is-active', idx === activeIndex);
+      });
+
+      // Update Arrows
+      if (prevBtn) prevBtn.disabled = activeIndex === 0;
+      if (nextBtn) nextBtn.disabled = activeIndex >= maxUnlockedIndex;
+
+      // Update Load More vs Hint
+      const remaining = count - (maxUnlockedIndex + 1);
+      if (activeIndex === maxUnlockedIndex) {
+        if (remaining > 0) {
+          if (hintEl) hintEl.style.display = 'none';
+          if (moreBtn) {
+            moreBtn.style.display = 'inline-flex';
+            moreBtn.disabled = false;
+            const currentLang = localStorage.getItem('focus-language') || 'ru';
+            const moreText = currentLang === 'en' ? 'LOAD MORE PROJECTS' : 'ПОКАЗАТЬ ЕЩЁ ПРОЕКТЫ';
+            const textSpan = document.getElementById('worksScMoreText');
+            if (textSpan) textSpan.textContent = moreText;
+            if (moreCountEl) moreCountEl.textContent = `+${Math.min(5, remaining)}`;
+          }
+        } else {
+          if (hintEl) hintEl.style.display = 'none';
+          if (moreBtn) {
+            moreBtn.style.display = 'inline-flex';
+            moreBtn.disabled = true;
+            const currentLang = localStorage.getItem('focus-language') || 'ru';
+            const allText = currentLang === 'en' ? 'ALL PROJECTS LOADED' : 'ВСЕ ПРОЕКТЫ ПОКАЗАНЫ';
+            const textSpan = document.getElementById('worksScMoreText');
+            if (textSpan) textSpan.textContent = allText;
+            if (moreCountEl) moreCountEl.textContent = '✓';
+          }
+        }
+      } else {
+        if (hintEl) hintEl.style.display = 'inline-flex';
+        if (moreBtn) moreBtn.style.display = 'none';
+      }
     }
 
-    function renderWorksShowcase(cat, batchIdx = 0, scrollIntoPosition = false) {
-      currentCategory = cat;
-      currentBatch = batchIdx;
+    function updateCardsLayout(animate = true) {
+      if (!arena) return;
+      const cards = arena.querySelectorAll('.works-sc-card');
+      const isMobile = window.innerWidth <= 768;
+      const xOffset = isMobile ? window.innerWidth * 0.82 : Math.min(430, window.innerWidth * 0.32);
+      const farOffset = isMobile ? window.innerWidth * 1.5 : Math.min(880, window.innerWidth * 0.65);
+      const duration = animate ? 0.52 : 0;
+      const ease = 'power2.out';
 
-      const items = allWorksData[cat] || allWorksData.interiors;
-      const startIdx = batchIdx * 5;
-      const batchItems = items.slice(startIdx, startIdx + 5);
+      cards.forEach((card, idx) => {
+        const diff = idx - activeIndex;
+        let targetX = 0;
+        let targetScale = 1;
+        let targetOpacity = 1;
+        let targetZ = 10;
+        let pointerEvents = 'none';
+        let filter = 'none';
 
-      const arena = document.getElementById('worksScArena');
-      const pillsWrap = document.getElementById('worksScPills');
-      const totalEl = document.getElementById('worksScTotal');
-      const currEl = document.getElementById('worksScCurr');
-      const hintEl = document.getElementById('worksScHint');
-      const moreBtn = document.getElementById('worksScMoreBtn');
-      const moreCountEl = document.getElementById('worksScMoreCount');
+        if (diff === 0) {
+          // Center / Active card
+          targetX = 0;
+          targetScale = 1;
+          targetOpacity = 1;
+          targetZ = 20;
+          pointerEvents = 'auto';
+          card.classList.add('is-active');
+        } else {
+          card.classList.remove('is-active');
+          if (diff === 1) {
+            // Next card (Right)
+            targetX = xOffset;
+            targetScale = isMobile ? 0.9 : 0.86;
+            targetOpacity = 0.65;
+            targetZ = 14;
+            pointerEvents = 'auto';
+            filter = 'brightness(0.96)';
+          } else if (diff === -1) {
+            // Previous card (Left)
+            targetX = -xOffset;
+            targetScale = isMobile ? 0.9 : 0.86;
+            targetOpacity = 0.65;
+            targetZ = 14;
+            pointerEvents = 'auto';
+            filter = 'brightness(0.96)';
+          } else if (diff > 1) {
+            // Further right
+            targetX = farOffset;
+            targetScale = 0.72;
+            targetOpacity = 0;
+            targetZ = 2;
+          } else if (diff < -1) {
+            // Further left
+            targetX = -farOffset;
+            targetScale = 0.72;
+            targetOpacity = 0;
+            targetZ = 2;
+          }
+        }
 
-      if (!arena || !pillsWrap) return;
+        card.style.pointerEvents = pointerEvents;
+        card.style.filter = filter;
 
-      arena.innerHTML = '';
+        if (animate && typeof gsap !== 'undefined') {
+          gsap.to(card, {
+            x: targetX,
+            scale: targetScale,
+            opacity: targetOpacity,
+            zIndex: targetZ,
+            duration: duration,
+            ease: ease,
+            overwrite: 'auto'
+          });
+        } else {
+          card.style.transform = `translate(-50%, -50%) translate3d(${targetX}px, 0, 0) scale(${targetScale})`;
+          card.style.opacity = targetOpacity;
+          card.style.zIndex = targetZ;
+        }
+      });
+
+      updateUI();
+    }
+
+    function goToIndex(newIndex) {
+      if (isAnimating) return;
+      const target = Math.max(0, Math.min(maxUnlockedIndex, newIndex));
+      if (target === activeIndex) return;
+
+      isAnimating = true;
+      activeIndex = target;
+      updateCardsLayout(true);
+
+      setTimeout(() => {
+        isAnimating = false;
+      }, 450);
+    }
+
+    function rebuildPills() {
+      if (!pillsWrap) return;
       pillsWrap.innerHTML = '';
-      if (totalEl) totalEl.textContent = `0${batchItems.length}`;
-      if (currEl) currEl.textContent = '01';
+      const items = allWorksData[currentCategory] || allWorksData.interiors;
+      const count = maxUnlockedIndex + 1;
 
-      batchItems.forEach((item, idx) => {
+      for (let i = 0; i < count; i++) {
+        const pill = document.createElement('button');
+        pill.type = 'button';
+        pill.className = `works-sc-pill ${i === activeIndex ? 'is-active' : ''}`;
+        pill.setAttribute('data-idx', i);
+        pill.setAttribute('aria-label', `Перейти к проекту ${i + 1}`);
+        pill.addEventListener('click', () => goToIndex(i));
+        pillsWrap.appendChild(pill);
+      }
+    }
+
+    function renderWorksShowcase(cat, initialIndex = 0) {
+      currentCategory = cat;
+      const items = allWorksData[cat] || allWorksData.interiors;
+      activeIndex = Math.max(0, Math.min(items.length - 1, initialIndex));
+      maxUnlockedIndex = Math.min(items.length - 1, 4); // First 5 projects (0..4)
+
+      if (!arena) return;
+      arena.innerHTML = '';
+
+      items.forEach((item, idx) => {
         const card = document.createElement('div');
         card.className = 'works-sc-card';
         card.setAttribute('data-idx', idx);
         card.setAttribute('role', 'button');
         card.setAttribute('tabindex', '0');
-        card.setAttribute('aria-label', `Открыть фотографию ${startIdx + idx + 1}`);
+        card.setAttribute('aria-label', `Открыть фотографию ${idx + 1}`);
         card.style.setProperty('--aspect', item.aspect);
-        card.style.zIndex = 10 + idx * 5;
         card.innerHTML = `
           <div class="works-sc-card__inner">
             <img src="${item.src}" alt="${item.alt || ''}" class="works-sc-card__img" loading="eager" decoding="async">
           </div>
         `;
-        
-        card.addEventListener('click', () => openWorksModal(item.src, item.alt));
+
+        card.addEventListener('click', (e) => {
+          if (idx === activeIndex) {
+            openWorksModal(item.src, item.alt);
+          } else {
+            goToIndex(idx);
+          }
+        });
+
         card.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            openWorksModal(item.src, item.alt);
+            if (idx === activeIndex) {
+              openWorksModal(item.src, item.alt);
+            } else {
+              goToIndex(idx);
+            }
           }
         });
 
         arena.appendChild(card);
-
-        const pill = document.createElement('button');
-        pill.type = 'button';
-        pill.className = `works-sc-pill ${idx === 0 ? 'is-active' : ''}`;
-        pill.setAttribute('data-idx', idx);
-        pill.setAttribute('aria-label', `Перейти к фотографии ${startIdx + idx + 1}`);
-        pillsWrap.appendChild(pill);
       });
 
-      const remainingAfterBatch = items.length - (startIdx + 5);
-      if (moreBtn) {
-        if (remainingAfterBatch > 0) {
-          moreBtn.style.display = 'none';
-          moreBtn.disabled = false;
-          if (moreCountEl) moreCountEl.textContent = `+${Math.min(5, remainingAfterBatch)}`;
-        } else {
-          moreBtn.disabled = true;
-          if (moreCountEl) moreCountEl.textContent = '✓';
+      rebuildPills();
+      updateCardsLayout(false);
+    }
+
+    // Button Listeners: Arrows
+    if (prevBtn) prevBtn.addEventListener('click', () => goToIndex(activeIndex - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goToIndex(activeIndex + 1));
+
+    // Button Listener: Load More (+5)
+    if (moreBtn) {
+      moreBtn.addEventListener('click', () => {
+        const items = allWorksData[currentCategory] || allWorksData.interiors;
+        const remaining = items.length - (maxUnlockedIndex + 1);
+        if (remaining > 0) {
+          maxUnlockedIndex = Math.min(items.length - 1, maxUnlockedIndex + 5);
+          rebuildPills();
+          goToIndex(activeIndex + 1);
         }
-      }
+      });
+    }
 
-      if (worksTimeline) {
-        worksTimeline.kill();
-        if (worksTimeline.scrollTrigger) worksTimeline.scrollTrigger.kill();
-        worksTimeline = null;
-      }
+    // Discrete Mouse Wheel / Trackpad Controller
+    let lastWheelTime = 0;
+    if (arenaWrap) {
+      arenaWrap.addEventListener('wheel', (e) => {
+        if (Math.abs(e.deltaY) < 18) return;
+        const now = Date.now();
+        if (now - lastWheelTime < 420) {
+          if ((e.deltaY > 0 && activeIndex < maxUnlockedIndex) || (e.deltaY < 0 && activeIndex > 0)) {
+            e.preventDefault();
+          }
+          return;
+        }
 
-      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' || isReduced) {
-        const cards = arena.querySelectorAll('.works-sc-card');
-        cards.forEach((c) => {
-          c.style.position = 'relative';
-          c.style.display = 'block';
-        });
-        return;
-      }
+        if (e.deltaY > 0) {
+          if (activeIndex < maxUnlockedIndex) {
+            e.preventDefault();
+            lastWheelTime = now;
+            goToIndex(activeIndex + 1);
+          }
+          // If at maxUnlockedIndex, we DO NOT preventDefault -> page scrolls naturally to next section!
+        } else if (e.deltaY < 0) {
+          if (activeIndex > 0) {
+            e.preventDefault();
+            lastWheelTime = now;
+            goToIndex(activeIndex - 1);
+          }
+          // If at 0, we DO NOT preventDefault -> page scrolls naturally to previous section!
+        }
+      }, { passive: false });
 
-      const cards = gsap.utils.toArray('.works-sc-card');
-      const pills = gsap.utils.toArray('.works-sc-pill');
+      // Mobile Touch Gestures (Swipe Left / Right)
+      let touchStartX = 0;
+      let touchStartY = 0;
+      arenaWrap.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
 
-      gsap.set(cards[0], { x: 0, y: 0, scale: 1, opacity: 1, rotation: 0, zIndex: 10 });
-      for (let i = 1; i < cards.length; i++) {
-        gsap.set(cards[i], { x: '100vw', y: 0, scale: 0.95, opacity: 0, rotation: 0, zIndex: 10 + i * 5 });
-      }
-
-      const count = cards.length;
-      const snapPoints = count > 1 ? Array.from({ length: count }, (_, i) => i / (count - 1)) : [0];
-
-      worksTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#worksShowcaseStage",
-          pin: true,
-          start: "top top",
-          end: "+=2600",
-          scrub: 0.6,
-          snap: {
-            snapTo: snapPoints,
-            duration: 0.35,
-            ease: "power1.inOut"
-          },
-          onUpdate: (self) => {
-            const step = Math.min(count - 1, Math.round(self.progress * (count - 1)));
-            if (currEl) currEl.textContent = `0${step + 1}`;
-            pills.forEach((p, i) => p.classList.toggle('is-active', i === step));
-            
-            if (self.progress > 0.88) {
-              if (hintEl) hintEl.style.display = 'none';
-              if (moreBtn && remainingAfterBatch > 0) moreBtn.style.display = 'inline-flex';
-            } else {
-              if (hintEl) hintEl.style.display = 'inline-flex';
-              if (moreBtn) moreBtn.style.display = 'none';
-            }
+      arenaWrap.addEventListener('touchend', (e) => {
+        const diffX = e.changedTouches[0].clientX - touchStartX;
+        const diffY = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+          if (diffX < 0 && activeIndex < maxUnlockedIndex) {
+            goToIndex(activeIndex + 1);
+          } else if (diffX > 0 && activeIndex > 0) {
+            goToIndex(activeIndex - 1);
           }
         }
-      });
+      }, { passive: true });
+    }
 
-      for (let i = 0; i < count - 1; i++) {
-        worksTimeline.to(cards[i], {
-          x: '-60px',
-          scale: 0.92,
-          rotation: -2,
-          opacity: 0.35,
-          duration: 1,
-          ease: 'power2.inOut'
-        }, i);
+    // Keyboard Arrow Navigation
+    window.addEventListener('keydown', (e) => {
+      if (worksModal && worksModal.classList.contains('is-open')) return;
+      if (!arenaWrap) return;
+      const rect = arenaWrap.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!inView) return;
 
-        worksTimeline.to(cards[i + 1], {
-          x: 0,
-          scale: 1,
-          opacity: 1,
-          rotation: 0,
-          duration: 1,
-          ease: 'power2.out'
-        }, i);
-
-        if (i > 0) {
-          worksTimeline.to(cards[i - 1], {
-            x: '-120px',
-            scale: 0.84,
-            opacity: 0,
-            duration: 1,
-            ease: 'power2.in'
-          }, i);
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        if (activeIndex < maxUnlockedIndex) {
+          e.preventDefault();
+          goToIndex(activeIndex + 1);
+        }
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        if (activeIndex > 0) {
+          e.preventDefault();
+          goToIndex(activeIndex - 1);
         }
       }
-
-      pills.forEach((pill, idx) => {
-        pill.addEventListener('click', () => {
-          if (!worksTimeline || !worksTimeline.scrollTrigger) return;
-          const st = worksTimeline.scrollTrigger;
-          const targetProgress = idx / (count - 1);
-          const targetY = st.start + (st.end - st.start) * targetProgress;
-          window.scrollTo({ top: targetY, behavior: 'smooth' });
-        });
-      });
-
-      ScrollTrigger.refresh();
-
-      if (scrollIntoPosition && worksTimeline && worksTimeline.scrollTrigger) {
-        const st = worksTimeline.scrollTrigger;
-        window.scrollTo({ top: st.start, behavior: 'smooth' });
-      }
-    }
+    });
 
     // Category Tabs click listeners
     const categoryTabs = document.querySelectorAll('.works-sc-tab');
@@ -1365,21 +1515,18 @@
           t.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
         const cat = tab.getAttribute('data-cat') || 'interiors';
-        renderWorksShowcase(cat, 0, true);
+        renderWorksShowcase(cat, 0);
       });
     });
 
-    // Load More button click listener
-    const moreBtnEl = document.getElementById('worksScMoreBtn');
-    if (moreBtnEl) {
-      moreBtnEl.addEventListener('click', () => {
-        const items = allWorksData[currentCategory] || allWorksData.interiors;
-        const nextBatch = currentBatch + 1;
-        if (nextBatch * 5 < items.length) {
-          renderWorksShowcase(currentCategory, nextBatch, true);
-        }
-      });
-    }
+    // Window Resize Responsive Recalculation
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        updateCardsLayout(false);
+      }, 150);
+    });
 
     // Initial render
     renderWorksShowcase('interiors', 0);

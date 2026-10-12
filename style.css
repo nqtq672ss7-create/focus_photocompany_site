@@ -1365,15 +1365,14 @@ a { color: inherit; text-decoration: none; }
 /* Pinned Full-Screen Stage */
 .works-showcase-stage {
   width: 100%;
-  max-width: 1320px;
+  max-width: 1440px;
   margin: 0 auto;
   height: 100vh;
-  min-height: 580px;
-  max-height: 940px;
+  min-height: 640px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 85px clamp(20px, 4vw, 50px) clamp(16px, 2.5vh, 28px);
+  padding: clamp(80px, 9.5vh, 105px) clamp(20px, 3.5vw, 48px) clamp(16px, 2.5vh, 26px);
   box-sizing: border-box;
   position: relative;
   background: #FFFFFF;
@@ -1385,7 +1384,7 @@ a { color: inherit; text-decoration: none; }
   align-items: flex-end;
   justify-content: space-between;
   width: 100%;
-  padding-bottom: 16px;
+  padding-bottom: 14px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   gap: 20px;
 }
@@ -1499,7 +1498,7 @@ a { color: inherit; text-decoration: none; }
   color: #FFFFFF;
 }
 
-/* Center Arena: Cards Flying In */
+/* Center Arena: Panoramic 3-Card Ribbon Flow */
 .works-sc-arena-wrap {
   flex: 1;
   position: relative;
@@ -1508,13 +1507,16 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: center;
   perspective: 1200px;
-  margin: 10px 0;
+  margin: 8px 0;
+  min-height: clamp(430px, 60vh, 610px);
+  overflow: visible;
 }
 
 .works-sc-arena {
   position: relative;
   width: 100%;
   height: 100%;
+  min-height: clamp(430px, 60vh, 610px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1522,9 +1524,12 @@ a { color: inherit; text-decoration: none; }
 
 .works-sc-card {
   position: absolute;
-  height: clamp(380px, 56vh, 540px);
+  top: 50%;
+  left: 50%;
+  height: clamp(430px, 61vh, 590px);
   aspect-ratio: var(--aspect, 3 / 4);
-  border-radius: clamp(16px, 1.8vw, 24px);
+  max-width: min(560px, 86vw);
+  border-radius: clamp(18px, 2vw, 24px);
   background: #FFFFFF;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -1532,11 +1537,19 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   will-change: transform, opacity;
   transform-origin: center center;
-  transition: box-shadow 0.3s ease;
+  transform: translate(-50%, -50%);
+  transition: box-shadow 0.3s ease, filter 0.3s ease;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-.works-sc-card:hover {
-  box-shadow: 0 28px 65px rgba(0, 0, 0, 0.18);
+.works-sc-card.is-active {
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
+  cursor: zoom-in;
+}
+
+.works-sc-card:hover:not(.is-active) {
+  opacity: 0.85 !important;
 }
 
 .works-sc-card__inner {
@@ -1553,6 +1566,61 @@ a { color: inherit; text-decoration: none; }
   display: block;
   user-select: none;
   -webkit-user-drag: none;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.works-sc-card.is-active:hover .works-sc-card__img {
+  transform: scale(1.02);
+}
+
+/* Arena Side Navigation Arrows */
+.works-sc-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  color: #0c0d12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 30;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+}
+
+.works-sc-arrow--prev {
+  left: clamp(2px, 1.2vw, 20px);
+}
+
+.works-sc-arrow--next {
+  right: clamp(2px, 1.2vw, 20px);
+}
+
+.works-sc-arrow:hover:not(:disabled) {
+  background: #0C0D12;
+  color: #FFFFFF;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+}
+
+.works-sc-arrow:disabled {
+  opacity: 0.18;
+  cursor: not-allowed;
+  transform: translateY(-50%) scale(0.94);
+  pointer-events: none;
+}
+
+.works-sc-arrow svg {
+  width: 22px;
+  height: 22px;
 }
 
 /* Bottom Bar: Counter + Pills + Hint / Load More */
@@ -1945,8 +2013,19 @@ a { color: inherit; text-decoration: none; }
     gap: 6px;
   }
   .works-sc-card {
-    height: clamp(320px, 48vh, 420px);
+    height: clamp(380px, 54vh, 460px);
+    max-width: 82vw;
     border-radius: 18px;
+  }
+  .works-sc-arrow {
+    width: 42px;
+    height: 42px;
+  }
+  .works-sc-arrow--prev {
+    left: 4px;
+  }
+  .works-sc-arrow--next {
+    right: 4px;
   }
   .works-sc-bottombar {
     padding-top: 12px;
@@ -1965,8 +2044,6 @@ a { color: inherit; text-decoration: none; }
   }
   .works-cta-btn {
     width: 100%;
-    justify-content: center;
-  }
     justify-content: center;
   }
   .works-modal__dialog {
