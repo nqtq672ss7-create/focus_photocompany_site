@@ -1549,28 +1549,27 @@ a { color: inherit; text-decoration: none; }
   grid-column: span 6;
 }
 
-/* Works Card */
+/* Works Card — Pure Minimalist Photography (Zero shadows, zero text clutter) */
 .works-clean .works-card {
   position: relative;
-  border-radius: 20px;
-  background: #101014;
-  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: clamp(14px, 1.6vw, 22px);
+  background: #f0f0f4;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   overflow: hidden;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  box-shadow: none !important; /* Zero shadows as requested */
   cursor: pointer;
   display: flex;
   flex-direction: column;
   transform: translateZ(0);
   contain: content;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.28s ease,
-              border-color 0.28s ease;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.32s ease;
 }
 
 .works-clean .works-card:hover {
-  transform: translateY(-4px) translateZ(0);
-  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.16);
-  border-color: rgba(0, 0, 0, 0.14);
+  transform: scale(1.02) translateZ(0);
+  border-color: rgba(0, 0, 0, 0.22);
+  box-shadow: none !important; /* Zero shadow on hover */
 }
 
 .works-clean .works-card__media-box {
@@ -1578,7 +1577,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: clamp(280px, 28vw, 420px);
   overflow: hidden;
-  background: #18181c;
+  background: #ebebee;
   transform: translateZ(0);
 }
 
@@ -1596,121 +1595,13 @@ a { color: inherit; text-decoration: none; }
   object-fit: cover;
   object-position: center;
   transform: translateZ(0);
+  box-shadow: none !important;
+  filter: none !important;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .works-clean .works-card:hover .works-card__img {
-  transform: scale(1.035) translateZ(0);
-}
-
-/* Floating Badges — High performance (Zero blur shader penalty) */
-.works-clean .works-card__badges {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.works-clean .works-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: rgba(12, 12, 16, 0.90);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #9DFF00;
-  text-transform: uppercase;
-}
-
-.works-clean .works-badge--dim {
-  color: rgba(255, 255, 255, 0.88);
-  border-color: rgba(255, 255, 255, 0.10);
-  background: rgba(14, 14, 18, 0.82);
-}
-
-.works-clean .works-badge--video {
-  background: rgba(6, 6, 8, 0.92);
-  color: #9DFF00;
-  border-color: rgba(157, 255, 0, 0.45);
-  font-weight: 800;
-}
-
-/* Card Overlay with Title and Action */
-.works-clean .works-card__overlay {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 22px 24px;
-  background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 14, 0.85) 50%, rgba(10, 10, 14, 0.98) 100%);
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 16px;
-  z-index: 2;
-}
-
-.works-clean .works-card__info {
-  max-width: calc(100% - 46px);
-}
-
-.works-clean .works-card__title {
-  margin: 0 0 4px;
-  font-size: clamp(16px, 1.3vw, 20px);
-  font-weight: 700;
-  color: #FFFFFF !important;
-  line-height: 1.25;
-  letter-spacing: -0.015em;
-}
-
-.works-clean .works-card__caption {
-  margin: 0;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7) !important;
-  line-height: 1.4;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.works-clean .works-card__quick-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: rgba(24, 24, 30, 0.82);
-  border: 1px solid rgba(255, 255, 255, 0.20);
-  color: #FFFFFF;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.24s ease,
-              border-color 0.24s ease;
-}
-
-.works-clean .works-card:hover .works-card__quick-btn {
-  background: #9DFF00;
-  color: #0c1404;
-  border-color: #9DFF00;
-  transform: scale(1.08);
-}
-
-.works-clean .works-card__quick-arrow {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1;
-  transition: transform 0.22s ease;
-}
-
-.works-clean .works-card:hover .works-card__quick-arrow {
-  transform: translate(2px, -2px);
+  transform: scale(1.03) translateZ(0);
 }
 
 /* Works Load More Box */
@@ -1897,154 +1788,70 @@ a { color: inherit; text-decoration: none; }
 .works-modal__dialog {
   position: relative;
   z-index: 2;
-  width: min(1040px, calc(100vw - 36px));
-  max-height: calc(100vh - 48px);
-  background: #131318;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.85);
-  transform: scale(0.96) translateY(14px);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  width: auto;
+  max-width: 94vw;
+  max-height: 92vh;
+  background: transparent;
+  border: none;
+  border-radius: 14px;
+  overflow: visible;
+  box-shadow: none;
+  transform: scale(0.96);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .works-modal.is-open .works-modal__dialog {
-  transform: scale(1) translateY(0);
+  transform: scale(1);
 }
 
 .works-modal__close {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: -46px;
+  right: 0;
   z-index: 10;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
   color: #FFFFFF;
   display: grid;
   place-items: center;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .works-modal__close:hover {
-  background: rgba(255, 255, 255, 0.18);
-  transform: scale(1.05);
+  background: #9DFF00;
+  color: #0c1404;
+  border-color: #9DFF00;
+  transform: scale(1.08);
 }
 
 .works-modal__close svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
-.works-modal__body {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  max-height: calc(100vh - 48px);
-  overflow-y: auto;
-}
-
-.works-modal__media-col {
-  background: #08080a;
-  min-height: 420px;
+.works-modal__pure-media {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 94vw;
+  max-height: 90vh;
 }
 
-.works-modal__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.works-modal__info-col {
-  padding: clamp(28px, 3.5vw, 42px);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  overflow-y: auto;
-}
-
-.works-modal__meta-top {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.works-modal__title {
-  margin: 0;
-  font-size: clamp(24px, 2.2vw, 32px);
-  font-weight: 800;
-  color: #FFFFFF;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-.works-modal__desc {
-  margin: 0;
-  font-size: 14.5px;
-  line-height: 1.65;
-  color: rgba(244, 241, 233, 0.7);
-}
-
-.works-modal__scope {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.works-modal__scope-title {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: rgba(244, 241, 233, 0.5);
-  text-transform: uppercase;
-}
-
-.works-modal__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.works-modal__footer {
-  margin-top: auto;
-  padding-top: 16px;
-}
-
-.works-modal__cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 14px 24px;
-  border-radius: 999px;
-  background: var(--acid);
-  color: #0c1404;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  box-shadow: 0 10px 30px rgba(157, 255, 0, 0.25);
-  transition: all 0.25s ease;
-}
-
-.works-modal__cta:hover {
-  background: #b2ff2e;
-  transform: translateY(-2px);
-  box-shadow: 0 16px 40px rgba(157, 255, 0, 0.38);
+.works-modal__pure-img {
+  max-width: 94vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
 }
 
 /* Works Scroll Animation States (Snappy, Hardware Accelerated) */
