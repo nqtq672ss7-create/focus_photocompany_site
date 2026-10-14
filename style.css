@@ -1980,6 +1980,32 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
 }
 
+.works-modal__pure-video {
+  max-width: 94vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
+  background: #000;
+  outline: none;
+}
+
+.works-sc-card__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.works-sc-play-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #9DFF00;
+  font-size: 11px;
+}
+
 /* Works Scroll & Entrance Animation States (Kinetic Side-Entry & Settle) */
 .works-anim {
   opacity: 1;

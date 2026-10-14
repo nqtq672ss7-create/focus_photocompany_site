@@ -485,6 +485,7 @@
       </button>
       <div class="works-modal__pure-media">
         <img src="" alt="ФОКУС Фотосъёмка" class="works-modal__pure-img" id="modalImg">
+        <video src="" class="works-modal__pure-video" id="modalVideo" playsinline controls loop style="display:none;"></video>
       </div>
     </div>
   </div>
@@ -1132,13 +1133,19 @@
         { src: 'assets/hotel-guest-15.webp', aspect: '2000 / 1332', alt: 'Съёмка гостей в отеле ФОКУС 15' }
       ],
       video: [
-        { src: 'assets/about-card-2.png',       aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 1' },
-        { src: 'assets/video-rig.webp',         aspect: '4 / 3',   alt: 'Рекламное видео ФОКУС 2' },
-        { src: 'assets/video-set.webp',         aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 3' },
-        { src: 'assets/portrait-vertical.webp', aspect: '9 / 16',  alt: 'Рекламное видео ФОКУС 4' },
-        { src: 'assets/about-card-1.png',       aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 5' },
-        { src: 'assets/hotel-pool.webp',        aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 6' },
-        { src: 'assets/video-set.webp',         aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 7' },
+        { 
+          type: 'video',
+          src: 'assets/video-reels-pinterest-01-poster.webp',
+          videoSrc: 'assets/video-reels-pinterest-01.mp4',
+          aspect: '720 / 1280', 
+          alt: 'Рекламный ролик / Reels: New Vision Clinic'
+        },
+        { src: 'assets/about-card-2.png',       aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 2' },
+        { src: 'assets/video-rig.webp',         aspect: '4 / 3',   alt: 'Рекламное видео ФОКУС 3' },
+        { src: 'assets/video-set.webp',         aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 4' },
+        { src: 'assets/portrait-vertical.webp', aspect: '9 / 16',  alt: 'Рекламное видео ФОКУС 5' },
+        { src: 'assets/about-card-1.png',       aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 6' },
+        { src: 'assets/hotel-pool.webp',        aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 7' },
         { src: 'assets/about-card-2.png',       aspect: '16 / 9',  alt: 'Рекламное видео ФОКУС 8' }
       ],
       events: [
@@ -1159,12 +1166,32 @@
     const modalBackdrop = document.getElementById('worksModalBackdrop');
     const modalClose = document.getElementById('worksModalClose');
     const modalImg = document.getElementById('modalImg');
+    const modalVideo = document.getElementById('modalVideo');
 
-    function openWorksModal(imgSrc, imgAlt) {
-      if (!worksModal || !imgSrc) return;
-      if (modalImg) {
-        modalImg.src = imgSrc;
-        modalImg.alt = imgAlt || 'ФОКУС Фотосъёмка';
+    function openWorksModal(imgSrc, imgAlt, videoSrc) {
+      if (!worksModal) return;
+      if (videoSrc) {
+        if (modalImg) {
+          modalImg.style.display = 'none';
+          modalImg.removeAttribute('src');
+        }
+        if (modalVideo) {
+          modalVideo.src = videoSrc;
+          modalVideo.style.display = 'block';
+          modalVideo.play().catch(() => {});
+        }
+      } else {
+        if (modalVideo) {
+          modalVideo.pause();
+          modalVideo.removeAttribute('src');
+          modalVideo.load();
+          modalVideo.style.display = 'none';
+        }
+        if (modalImg) {
+          modalImg.src = imgSrc;
+          modalImg.alt = imgAlt || 'ФОКУС Фотосъёмка';
+          modalImg.style.display = 'block';
+        }
       }
       worksModal.classList.add('is-open');
       worksModal.setAttribute('aria-hidden', 'false');
@@ -1176,6 +1203,16 @@
       worksModal.classList.remove('is-open');
       worksModal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      if (modalVideo) {
+        modalVideo.pause();
+        modalVideo.removeAttribute('src');
+        modalVideo.load();
+        modalVideo.style.display = 'none';
+      }
+      if (modalImg) {
+        modalImg.removeAttribute('src');
+        modalImg.style.display = 'block';
+      }
     }
 
     if (modalClose) modalClose.addEventListener('click', closeWorksModal);
@@ -1210,16 +1247,28 @@
     const prevBtn = document.getElementById('worksScPrev');
     const nextBtn = document.getElementById('worksScNext');
 
-    function renderWorksShowcase(cat, scrollIntoPosition = false) {
+    function updateScrollerUI(self) {
+      const total = (allWorksData[currentCategory] || allWorksData.interiors).length;
+      if (progressBar) {
+        progressBar.style.width = `${Math.min(100, Math.round(self.progress * 100))}%`;
+      }
+      const currentIdx = Math.min(total - 1, Math.round(self.progress * (total - 1)));
+      if (currEl) {
+        currEl.textContent = (currentIdx + 1) < 10 ? `0${currentIdx + 1}` : `${currentIdx + 1}`;
+      }
+      if (prevBtn) prevBtn.disabled = self.progress < 0.02;
+      if (nextBtn) nextBtn.disabled = self.progress > 0.98;
+    }
+
+    function renderWorksShowcase(cat) {
       currentCategory = cat;
       const items = allWorksData[cat] || allWorksData.interiors;
       const total = items.length;
 
       if (!arena) return;
 
-      // Kill previous animations & triggers
       if (worksScrollTrigger) {
-        worksScrollTrigger.kill();
+        worksScrollTrigger.kill(true);
         worksScrollTrigger = null;
       }
       if (worksTrackTween) {
@@ -1232,6 +1281,8 @@
       if (totalEl) totalEl.textContent = total < 10 ? `0${total}` : `${total}`;
       if (currEl) currEl.textContent = '01';
       if (progressBar) progressBar.style.width = '0%';
+      if (prevBtn) prevBtn.disabled = true;
+      if (nextBtn) nextBtn.disabled = false;
 
       // Create panoramic track
       const track = document.createElement('div');
@@ -1240,29 +1291,44 @@
 
       // Render cards
       items.forEach((item, idx) => {
+        const isVideo = item.type === 'video' || Boolean(item.videoSrc);
         const card = document.createElement('div');
-        card.className = `works-sc-card ${idx < 5 ? 'is-initial-5' : ''}`;
+        card.className = `works-sc-card ${idx < 5 ? 'is-initial-5' : ''} ${isVideo ? 'works-sc-card--video' : ''}`;
         card.setAttribute('data-idx', idx);
         card.setAttribute('role', 'button');
         card.setAttribute('tabindex', '0');
-        card.setAttribute('aria-label', `Открыть фотографию ${idx + 1}`);
+        card.setAttribute('aria-label', `${isVideo ? 'Смотреть видео' : 'Открыть фотографию'} ${idx + 1}`);
         card.style.setProperty('--aspect', item.aspect);
-        card.innerHTML = `
-          <div class="works-sc-card__inner">
+
+        let mediaHtml = '';
+        if (isVideo) {
+          mediaHtml = `
+            <video src="${item.videoSrc}" poster="${item.src}" class="works-sc-card__img works-sc-card__video" autoplay loop muted playsinline preload="metadata"></video>
+            <div class="works-sc-card__badge">
+              <span class="works-sc-play-icon">▶</span>
+              <span>Reels 9:16</span>
+              <span style="opacity: 0.4;">•</span>
+              <span>Смотреть ↗</span>
+            </div>
+          `;
+        } else {
+          mediaHtml = `
             <img src="${item.src}" alt="${item.alt || ''}" class="works-sc-card__img" loading="${idx < 6 ? 'eager' : 'lazy'}" decoding="async">
             <div class="works-sc-card__badge">
               <span>0${idx + 1}</span>
               <span style="opacity: 0.4;">•</span>
               <span>Увеличить ↗</span>
             </div>
-          </div>
-        `;
+          `;
+        }
 
-        card.addEventListener('click', () => openWorksModal(item.src, item.alt));
+        card.innerHTML = `<div class="works-sc-card__inner">${mediaHtml}</div>`;
+
+        card.addEventListener('click', () => openWorksModal(item.src, item.alt, item.videoSrc));
         card.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            openWorksModal(item.src, item.alt);
+            openWorksModal(item.src, item.alt, item.videoSrc);
           }
         });
 
@@ -1307,17 +1373,16 @@
       );
 
       // 2. Setup Horizontal Scroll via ScrollTrigger
-      // Allow DOM layout to measure track scrollWidth
       requestAnimationFrame(() => {
         setTimeout(() => {
           const trackWidth = track.scrollWidth;
           const viewportWidth = window.innerWidth;
           const maxScrollX = Math.max(0, trackWidth - viewportWidth + 60);
+          const pinDistance = Math.min(2000, Math.max(1200, Math.round(maxScrollX * 0.65)));
+
+          gsap.set(track, { x: 0 });
 
           if (maxScrollX > 0) {
-            // Keep scroll length compact (never exhausting/fatiguing)
-            const pinDistance = Math.min(2000, Math.max(1200, Math.round(maxScrollX * 0.65)));
-
             worksTrackTween = gsap.to(track, {
               x: -maxScrollX,
               ease: 'none'
@@ -1331,29 +1396,13 @@
               scrub: 0.7,
               animation: worksTrackTween,
               invalidateOnRefresh: true,
-              onUpdate: (self) => {
-                // Update progress bar
-                if (progressBar) {
-                  progressBar.style.width = `${Math.min(100, Math.round(self.progress * 100))}%`;
-                }
-
-                // Update current counter based on progress
-                const currentIdx = Math.min(total - 1, Math.round(self.progress * (total - 1)));
-                if (currEl) {
-                  currEl.textContent = (currentIdx + 1) < 10 ? `0${currentIdx + 1}` : `${currentIdx + 1}`;
-                }
-
-                // Update arrow buttons
-                if (prevBtn) prevBtn.disabled = self.progress < 0.02;
-                if (nextBtn) nextBtn.disabled = self.progress > 0.98;
-              }
+              onUpdate: updateScrollerUI
             });
           }
 
           ScrollTrigger.refresh();
-
-          if (scrollIntoPosition && worksScrollTrigger) {
-            window.scrollTo({ top: worksScrollTrigger.start, behavior: 'instant' });
+          if (worksScrollTrigger) {
+            window.scrollTo(0, worksScrollTrigger.start);
           }
         }, 50);
       });
@@ -1364,7 +1413,7 @@
       prevBtn.addEventListener('click', () => {
         if (!worksScrollTrigger) return;
         const st = worksScrollTrigger;
-        const step = 0.22; // step forward by ~2 cards
+        const step = 0.22;
         const targetProgress = Math.max(0, st.progress - step);
         const targetY = st.start + (st.end - st.start) * targetProgress;
         window.scrollTo({ top: targetY, behavior: 'smooth' });
@@ -1375,7 +1424,7 @@
       nextBtn.addEventListener('click', () => {
         if (!worksScrollTrigger) return;
         const st = worksScrollTrigger;
-        const step = 0.22; // step forward by ~2 cards
+        const step = 0.22;
         const targetProgress = Math.min(1, st.progress + step);
         const targetY = st.start + (st.end - st.start) * targetProgress;
         window.scrollTo({ top: targetY, behavior: 'smooth' });
@@ -1392,12 +1441,15 @@
           t.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
         const cat = tab.getAttribute('data-cat') || 'interiors';
-        renderWorksShowcase(cat, true);
+        if (worksScrollTrigger) {
+          window.scrollTo({ top: worksScrollTrigger.start, behavior: 'instant' });
+        }
+        renderWorksShowcase(cat);
       });
     });
 
     // Initial render
-    renderWorksShowcase('interiors', false);
+    renderWorksShowcase('interiors');
 
         const savedLanguage = localStorage.getItem('focus-language');
     setLanguage(savedLanguage === 'en' ? 'en' : 'ru');
