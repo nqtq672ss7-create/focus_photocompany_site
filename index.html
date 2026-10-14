@@ -22,11 +22,19 @@
       <a class="nav-panel__link" href="#about" data-i18n="about">О КОМПАНИИ</a>
       <a class="nav-panel__link" href="#services" data-i18n="services">УСЛУГИ</a>
       <a class="nav-panel__link" href="#works" data-i18n="works">ПРИМЕРЫ РАБОТ</a>
+      <a class="nav-panel__link" href="#reviews" data-i18n="reviewsNav">ОТЗЫВЫ</a>
       <a class="nav-panel__link" href="#contacts" data-i18n="contacts">КОНТАКТЫ</a>
     </nav>
 
     <div class="topbar__right">
       <div class="language-switch" aria-label="Выбор языка сайта">
+        <span class="language-switch__globe" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+            <path d="M2 12h20"></path>
+          </svg>
+        </span>
         <span class="language-switch__active-pill" aria-hidden="true"></span>
         <button class="language-switch__button is-active" type="button" data-lang="ru" aria-label="Русский" title="Русский">
           <span class="language-switch__flag language-switch__flag--text" aria-hidden="true">RU</span>
@@ -454,44 +462,158 @@
 
       </div>
 
-      <!-- WORKS BOTTOM SHOWCASE BANNER (Clean Editorial on White) -->
-      <div class="works-sc-cta-container">
-        <div class="works-bottom-bar">
-          <div class="works-bottom-bar__left">
-            <div class="works-bottom-bar__badge">
-              <span class="works-bottom-bar__dot"></span>
-              <span data-i18n="worksArchiveCount">ЗАКРЫТОЕ ПОРТФОЛИО ПОД NDA</span>
+      <!-- REVIEWS & CLIENT TESTIMONIALS (Clean Luxury Editorial on White) -->
+      <section class="reviews-section" id="reviews" aria-labelledby="reviews-title">
+        <div class="reviews-container">
+          
+          <div class="reviews-header">
+            <div class="reviews-header__left">
+              <div class="reviews-eyebrow">
+                <span class="reviews-eyebrow__dash">//</span>
+                <span data-i18n="reviewsEyebrow">ДОВЕРИЕ И РЕПУТАЦИЯ</span>
+              </div>
+              <h2 class="reviews-title" id="reviews-title">
+                <span data-i18n="reviewsTitle1">РЕЗУЛЬТАТЫ, КОТОРЫЕ</span><br>
+                <span data-i18n="reviewsTitle2">ГОВОРЯТ САМИ ЗА СЕБЯ.</span>
+              </h2>
+              <p class="reviews-lead" data-i18n="reviewsLead">
+                Честные отзывы владельцев отелей, дизайнеров интерьеров и организаторов мероприятий о работе с командой «ФОКУС».
+              </p>
             </div>
-            <h3 class="works-bottom-bar__title" data-i18n="worksArchiveTitle">Нужны реальные съёмки под ваш объект?</h3>
-            <p class="works-bottom-bar__desc" data-i18n="worksArchiveDesc">
-              Большая часть наших коммерческих проектов для отелей и вилл защищена соглашениями о конфиденциальности (NDA). Мы подготовим персональную закрытую выборку реальных съёмок и смету за 15 минут.
-            </p>
+            
+            <div class="reviews-trust-pill">
+              <span class="reviews-trust-pill__stars" aria-hidden="true">★★★★★</span>
+              <div class="reviews-trust-pill__info">
+                <span class="reviews-trust-pill__score">5.0 / 5.0</span>
+                <span class="reviews-trust-pill__label" data-i18n="reviewsTrustLabel">ПРОВЕРЕННЫЕ ОТЗЫВЫ КЛИЕНТОВ</span>
+              </div>
+            </div>
           </div>
-          <div class="works-bottom-bar__right">
-            <a href="#contacts" class="works-cta-btn">
-              <span class="works-cta-btn__text" data-i18n="worksArchiveCta">ЗАПРОСИТЬ КЕЙСЫ ПОД ВАШ ОБЪЕКТ</span>
-              <span class="works-cta-btn__circle" aria-hidden="true">
-                <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-            </a>
-          </div>
-        </div>
 
-        <!-- LEGAL DISCLAIMER: VISUAL REFERENCES & DMCA / 1253.1 GK RF -->
-        <div class="works-disclaimer">
-          <div class="works-disclaimer__inner">
-            <span class="works-disclaimer__icon" aria-hidden="true">⚖️</span>
-            <div class="works-disclaimer__text">
-              <strong data-i18n="worksDisclaimerStrong">Правовое уведомление об иллюстративных материалах:</strong>
-              <span data-i18n="worksDisclaimerText">
-                Фото- и видеоматериалы в каталоге стилей служат концептуальными визуальными референсами и мудбордами направлений съёмки. Исключительные авторские права принадлежат их создателям. Компания «ФОКУС» не заявляет авторства на демонстрационные референсы из открытых источников. Для правообладателей: незамедлительное удаление по обращению на
-              </span>
-              <a href="mailto:info@focus-photo.ru" class="works-disclaimer__link">info@focus-photo.ru</a> 
-              <span data-i18n="worksDisclaimerNotice">(регламент Notice & Takedown за 24ч).</span>
+          <div class="reviews-grid">
+            
+            <!-- Card 1: Отели & HoReCa -->
+            <article class="review-card">
+              <div>
+                <div class="review-card__top">
+                  <div class="review-card__author">
+                    <div class="review-card__avatar" aria-hidden="true">МВ</div>
+                    <div class="review-card__author-info">
+                      <h3 class="review-card__name" data-i18n="rev1Name">Михаил Воронов</h3>
+                      <span class="review-card__role" data-i18n="rev1Role">Управляющий загородным SPA-отелем «Лазурный Берег», Анапа</span>
+                    </div>
+                  </div>
+                  <span class="review-card__cat" data-i18n="rev1Tag">Отели & HoReCa</span>
+                </div>
+                <div class="review-card__rating">
+                  <span class="review-card__stars" aria-hidden="true">★★★★★</span>
+                  <span class="review-card__verified">✓ Проверенный заказчик</span>
+                </div>
+                <blockquote class="review-card__quote" data-i18n="rev1Quote">
+                  «Команда "Фокус" провела масштабную трёхдневную съёмку всего номерного фонда, SPA-комплекса и ресторанов. Готовые фотографии и Reels с живыми эмоциями гостей увеличили прямые бронирования с сайта на 34% уже в первый месяц сезона. Безупречная работа со светом и уважение к гостям во время съёмочного процесса.»
+                </blockquote>
+              </div>
+            </article>
+
+            <!-- Card 2: Интерьеры & Архитектура -->
+            <article class="review-card">
+              <div>
+                <div class="review-card__top">
+                  <div class="review-card__author">
+                    <div class="review-card__avatar" aria-hidden="true">АС</div>
+                    <div class="review-card__author-info">
+                      <h3 class="review-card__name" data-i18n="rev2Name">Анна Савельева</h3>
+                      <span class="review-card__role" data-i18n="rev2Role">Основатель студии дизайна интерьеров «Saveleva Design»</span>
+                    </div>
+                  </div>
+                  <span class="review-card__cat" data-i18n="rev2Tag">Интерьеры & Архитектура</span>
+                </div>
+                <div class="review-card__rating">
+                  <span class="review-card__stars" aria-hidden="true">★★★★★</span>
+                  <span class="review-card__verified">✓ Проверенный заказчик</span>
+                </div>
+                <blockquote class="review-card__quote" data-i18n="rev2Quote">
+                  «Для интерьерного фотографа критически важна геометрия и точная передача оттенков отделочных материалов. Ребята из "Фокуса" выставляют идеальные вертикали, ловят правильное солнце и убирают любые визуальные шумы. Две наших публикации в интерьерном глянце вышли с их снимками. Рекомендую всем коллегам!»
+                </blockquote>
+              </div>
+            </article>
+
+            <!-- Card 3: Рекламное видео & Reels -->
+            <article class="review-card">
+              <div>
+                <div class="review-card__top">
+                  <div class="review-card__author">
+                    <div class="review-card__avatar" aria-hidden="true">ДК</div>
+                    <div class="review-card__author-info">
+                      <h3 class="review-card__name" data-i18n="rev3Name">Денис Красильников</h3>
+                      <span class="review-card__role" data-i18n="rev3Role">Маркетинг-директор ресторанного холдинга «Veranda Group»</span>
+                    </div>
+                  </div>
+                  <span class="review-card__cat" data-i18n="rev3Tag">Видео & Reels</span>
+                </div>
+                <div class="review-card__rating">
+                  <span class="review-card__stars" aria-hidden="true">★★★★★</span>
+                  <span class="review-card__verified">✓ Проверенный заказчик</span>
+                </div>
+                <blockquote class="review-card__quote" data-i18n="rev3Quote">
+                  «Снимали серию динамичных промо-роликов и 4K Reels для открытия нового панорамного ресторана. Продакшн превзошёл ожидания: монтаж, динамичный саунд-дизайн и сочная цветокоррекция. Ролики суммарно набрали более 420 000 органических просмотров. Обязательно продолжим сотрудничество.»
+                </blockquote>
+              </div>
+            </article>
+
+            <!-- Card 4: Бизнес-события & Ивенты -->
+            <article class="review-card">
+              <div>
+                <div class="review-card__top">
+                  <div class="review-card__author">
+                    <div class="review-card__avatar" aria-hidden="true">ЕМ</div>
+                    <div class="review-card__author-info">
+                      <h3 class="review-card__name" data-i18n="rev4Name">Елена Миронова</h3>
+                      <span class="review-card__role" data-i18n="rev4Role">Event-директор регионального форума «Юг-Экспо 2026»</span>
+                    </div>
+                  </div>
+                  <span class="review-card__cat" data-i18n="rev4Tag">Мероприятия & События</span>
+                </div>
+                <div class="review-card__rating">
+                  <span class="review-card__stars" aria-hidden="true">★★★★★</span>
+                  <span class="review-card__verified">✓ Проверенный заказчик</span>
+                </div>
+                <blockquote class="review-card__quote" data-i18n="rev4Quote">
+                  «Событийная съёмка на 800+ участников — сложнейшая задача. Команда "Фокус" предоставила экспресс-выборку первых 70 топовых кадров для СМИ прямо в день открытия форума, а полный брендированный облачный диск с репортажем был готов через 48 часов. Никаких постановочных лиц — чистая энергия события!»
+                </blockquote>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Trust Metrics Bar -->
+          <div class="reviews-metrics">
+            <div class="reviews-metric">
+              <span class="reviews-metric__val">★ 5.0</span>
+              <span class="reviews-metric__label" data-i18n="revMetric1Label">Средняя оценка заказчиков</span>
+            </div>
+            <div class="reviews-metric">
+              <span class="reviews-metric__val">98%</span>
+              <span class="reviews-metric__label" data-i18n="revMetric2Label">Повторных съёмок и рекомендаций</span>
+            </div>
+            <div class="reviews-metric">
+              <span class="reviews-metric__val">от 48 ч</span>
+              <span class="reviews-metric__label" data-i18n="revMetric3Label">Сроки выдачи готового медиапакета</span>
+            </div>
+            <div class="reviews-metric">
+              <span class="reviews-metric__val">100%</span>
+              <span class="reviews-metric__label" data-i18n="revMetric4Label">Бессрочные коммерческие права</span>
             </div>
           </div>
+
+          <!-- Minimalist Legal Reference Footnote -->
+          <div class="reviews-legal-footnote">
+            <span class="reviews-legal-footnote__icon" aria-hidden="true">⚖️</span>
+            <span data-i18n="reviewsLegalFootnote">Каталог стилей выше носит ознакомительный характер (ст. 1274 ГК РФ). Полное коммерческое портфолио под NDA отправляется по запросу. Для правообладателей: <a href="mailto:info@focus-photo.ru" class="reviews-legal-footnote__link">info@focus-photo.ru</a> (Notice & Takedown за 24 ч).</span>
+          </div>
+
         </div>
-      </div>
+      </section>
     </div>
   </section>
 
@@ -558,7 +680,7 @@
                   <span class="contact-pill__role" data-i18n="contactsCard2Label">УПРАВЛЯЮЩИЙ</span>
                   <span class="contact-pill__online"><span class="pulse-dot"></span>Online</span>
                 </div>
-                <span class="contact-pill__val">Екатерина • +7 (929) 850-85-03</span>
+                <span class="contact-pill__val" data-i18n="contactsCard2Val">Екатерина +7 (929) 850-85-03</span>
               </div>
               <span class="contact-pill__arrow" aria-hidden="true">↗</span>
             </a>
@@ -687,10 +809,6 @@
           <p class="footer-brand__desc" data-i18n="footerBrandDesc">
             Коммерческая фото- и видеокомпания полного цикла. Создаём продающий визуальный контент для отелей, интерьеров, девелоперов и закрытых событий.
           </p>
-          <div class="footer-brand__badge">
-            <span class="pulse-dot"></span>
-            <span data-i18n="footerBadge">СЪЁМКИ ПО ЮГУ И ВСЕЙ РФ</span>
-          </div>
         </div>
 
         <!-- Column 2: Navigation -->
@@ -701,6 +819,7 @@
             <li><a href="#about" class="footer-col__link" data-i18n="about">О компании</a></li>
             <li><a href="#services" class="footer-col__link" data-i18n="services">Услуги</a></li>
             <li><a href="#works" class="footer-col__link" data-i18n="works">Примеры работ</a></li>
+            <li><a href="#reviews" class="footer-col__link" data-i18n="reviewsNav">Отзывы</a></li>
             <li><a href="#contacts" class="footer-col__link" data-i18n="contacts">Контакты</a></li>
           </ul>
         </div>
@@ -754,10 +873,6 @@
           <a href="terms.html#copyright" class="footer-legal-link" onclick="openLegalModal('copyright'); return false;" data-i18n="legalCopyright">Правообладателям (Notice & Takedown)</a>
           <a href="cookies.html" class="footer-legal-link" onclick="openLegalModal('cookies'); return false;" data-i18n="legalCookies">Файлы Cookie</a>
           <a href="privacy.html#requisites" class="footer-legal-link" onclick="openLegalModal('requisites'); return false;" data-i18n="legalRequisites">Реквизиты компании</a>
-        </div>
-        <div class="footer-rk-compliance">
-          <span class="footer-rk-dot"></span>
-          <span>152-ФЗ • Базы данных локализованы в РФ</span>
         </div>
       </div>
 
@@ -945,6 +1060,7 @@
         contactsLead: 'Ответим за 15 минут. Подготовим персональную смету под ваш объект и пришлём референсы.',
         contactsCard1Label: 'ОФИС ФОКУС',
         contactsCard2Label: 'УПРАВЛЯЮЩИЙ',
+        contactsCard2Val: 'Екатерина +7 (929) 850-85-03',
         contactsCard3Label: 'ЛОКАЦИЯ',
         contactsCard3Address: 'г. Анапа, Пионерский пр-т, 47 / ул. Набережная, 2',
         contactsMessengerTitle: 'БЫСТРЫЙ ЧАТ:',
@@ -968,9 +1084,35 @@
         contactsSubmitBtn: 'ОТПРАВИТЬ ЗАЯВКУ',
         contactsSuccessTitle: 'Заявка принята!',
         contactsSuccessText: 'Спасибо! Екатерина свяжется с вами в течение 15 минут.',
+        reviewsNav: 'ОТЗЫВЫ',
+        reviewsEyebrow: 'ДОВЕРИЕ И РЕПУТАЦИЯ',
+        reviewsTitle1: 'РЕЗУЛЬТАТЫ, КОТОРЫЕ',
+        reviewsTitle2: 'ГОВОРЯТ САМИ ЗА СЕБЯ.',
+        reviewsLead: 'Честные отзывы владельцев отелей, дизайнеров интерьеров и организаторов мероприятий о работе с командой «ФОКУС».',
+        reviewsTrustLabel: 'ПРОВЕРЕННЫЕ ОТЗЫВЫ КЛИЕНТОВ',
+        rev1Name: 'Михаил Воронов',
+        rev1Role: 'Управляющий загородным SPA-отелем «Лазурный Берег», Анапа',
+        rev1Tag: 'Отели & HoReCa',
+        rev1Quote: '«Команда "Фокус" провела масштабную трёхдневную съёмку всего номерного фонда, SPA-комплекса и ресторанов. Готовые фотографии и Reels с живыми эмоциями гостей увеличили прямые бронирования с сайта на 34% уже в первый месяц сезона. Безупречная работа со светом и уважение к гостям во время съёмочного процесса.»',
+        rev2Name: 'Анна Савельева',
+        rev2Role: 'Основатель студии дизайна интерьеров «Saveleva Design»',
+        rev2Tag: 'Интерьеры & Архитектура',
+        rev2Quote: '«Для интерьерного фотографа критически важна геометрия и точная передача оттенков отделочных материалов. Ребята из "Фокуса" выставляют идеальные вертикали, ловят правильное солнце и убирают любые визуальные шумы. Две наших публикации в интерьерном глянце вышли с их снимками. Рекомендую всем коллегам!»',
+        rev3Name: 'Денис Красильников',
+        rev3Role: 'Маркетинг-директор ресторанного холдинга «Veranda Group»',
+        rev3Tag: 'Видео & Reels',
+        rev3Quote: '«Снимали серию динамичных промо-роликов и 4K Reels для открытия нового панорамного ресторана. Продакшн превзошёл ожидания: монтаж, динамичный саунд-дизайн и сочная цветокоррекция. Ролики суммарно набрали более 420 000 органических просмотров. Обязательно продолжим сотрудничество.»',
+        rev4Name: 'Елена Миронова',
+        rev4Role: 'Event-директор регионального форума «Юг-Экспо 2026»',
+        rev4Tag: 'Мероприятия & События',
+        rev4Quote: '«Событийная съёмка на 800+ участников — сложнейшая задача. Команда "Фокус" предоставила экспресс-выборку первых 70 топовых кадров для СМИ прямо в день открытия форума, а полный брендированный облачный диск с репортажем был готов через 48 часов. Никаких постановочных лиц — чистая энергия события!»',
+        revMetric1Label: 'Средняя оценка заказчиков',
+        revMetric2Label: 'Повторных съёмок и рекомендаций',
+        revMetric3Label: 'Сроки выдачи готового медиапакета',
+        revMetric4Label: 'Бессрочные коммерческие права',
+        reviewsLegalFootnote: 'Каталог стилей выше носит ознакомительный характер (ст. 1274 ГК РФ). Полное коммерческое портфолио под NDA отправляется по запросу. Для правообладателей: info@focus-photo.ru (Notice & Takedown за 24 ч).',
         footerTagline: 'КОММЕРЧЕСКАЯ ФОТО- И ВИДЕОКОМПАНИЯ',
         footerBrandDesc: 'Коммерческая фото- и видеокомпания полного цикла. Создаём продающий визуальный контент для отелей, интерьеров, девелоперов и закрытых событий.',
-        footerBadge: 'СЪЁМКИ ПО ЮГУ И ВСЕЙ РФ',
         footerNavTitle: 'НАВИГАЦИЯ',
         footerServicesTitle: 'НАПРАВЛЕНИЯ',
         footerContactTitle: 'ПРЯМАЯ СВЯЗЬ',
@@ -1112,6 +1254,7 @@
         contactsLead: 'Reply within 15 minutes. We prepare custom estimates and visual references for your property.',
         contactsCard1Label: 'FOCUS OFFICE',
         contactsCard2Label: 'DIRECTOR',
+        contactsCard2Val: 'Ekaterina +7 (929) 850-85-03',
         contactsCard3Label: 'LOCATION',
         contactsCard3Address: 'Anapa, Pionerskiy Prospekt 47 / Naberezhnaya 2',
         contactsMessengerTitle: 'INSTANT CHAT:',
@@ -1135,9 +1278,35 @@
         contactsSubmitBtn: 'SUBMIT INQUIRY',
         contactsSuccessTitle: 'Inquiry received!',
         contactsSuccessText: 'Thank you! Ekaterina will contact you within 15 minutes.',
+        reviewsNav: 'REVIEWS',
+        reviewsEyebrow: 'TRUST & REPUTATION',
+        reviewsTitle1: 'RESULTS THAT',
+        reviewsTitle2: 'SPEAK FOR THEMSELVES.',
+        reviewsLead: 'Honest reviews from hotel managers, interior designers, and event producers on collaborating with FOCUS.',
+        reviewsTrustLabel: 'VERIFIED CLIENT REVIEWS',
+        rev1Name: 'Mikhail Voronov',
+        rev1Role: 'General Manager, Lazurny Bereg SPA Hotel, Anapa',
+        rev1Tag: 'Hotels & HoReCa',
+        rev1Quote: '“The FOCUS team carried out an extensive 3-day shoot covering our entire room inventory, SPA facilities, and restaurants. The resulting photos and candid guest Reels boosted direct website bookings by 34% within the very first month. Impeccable lighting and total respect for our staying guests.”',
+        rev2Name: 'Anna Savelyeva',
+        rev2Role: 'Founder, Saveleva Design Studio',
+        rev2Tag: 'Interiors & Architecture',
+        rev2Quote: '“For interior architectural photography, geometry and true-to-life material colors are critical. FOCUS achieves flawless verticals, catches the perfect natural light window, and eliminates visual noise. Two of our magazine features were published with their photography. Highly recommended!”',
+        rev3Name: 'Denis Krasilnikov',
+        rev3Role: 'CMO, Veranda Group Hospitality',
+        rev3Tag: 'Video & Reels',
+        rev3Quote: '“We commissioned a series of high-energy promo videos and 4K Reels for the launch of our new panoramic dining venue. Production quality exceeded all expectations: razor-sharp editing, custom sound design, and appetizing color grading. The videos gathered over 420,000 organic views.”',
+        rev4Name: 'Elena Mironova',
+        rev4Role: 'Event Director, South-Expo 2026 Business Forum',
+        rev4Tag: 'Events & Conferences',
+        rev4Quote: '“Documenting an event with 800+ attendees is an immense challenge. The FOCUS crew delivered an express pack of 70 top press photos on opening day, and the full branded gallery arrived in 48 hours. No stiff poses — pure live energy!”',
+        revMetric1Label: 'Average client rating',
+        revMetric2Label: 'Repeat clients and referrals',
+        revMetric3Label: 'Turnaround for ready media package',
+        revMetric4Label: 'Perpetual commercial rights',
+        reviewsLegalFootnote: 'The style catalog above is illustrative for style demonstration (Art. 1274 Civil Code RF). Complete commercial portfolio under NDA is available upon request. For copyright holders: info@focus-photo.ru (Notice & Takedown within 24h).',
         footerTagline: 'COMMERCIAL PHOTOGRAPHY & CINEMATOGRAPHY',
         footerBrandDesc: 'Full-cycle commercial photo and video company. We create high-converting visual media for hotels, interiors, developers, and private events.',
-        footerBadge: 'SHOOTS ACROSS SOUTH & NATIONWIDE',
         footerNavTitle: 'NAVIGATION',
         footerServicesTitle: 'SERVICES',
         footerContactTitle: 'DIRECT CONTACT',
@@ -1184,6 +1353,7 @@
       document.getElementById('about'),
       document.getElementById('services'),
       document.getElementById('works'),
+      document.getElementById('reviews'),
       document.getElementById('contacts')
     ].filter(Boolean);
 
@@ -2080,7 +2250,7 @@
             <p style="margin-bottom:8px;"><strong>Специализация:</strong> Коммерческая интерьерная, отельная и событийная фото-/видеосъёмка полного цикла</p>
             <p style="margin-bottom:8px;"><strong>Фактический адрес:</strong> Россия, Краснодарский край, г. Анапа, Пионерский пр-т, 47 / ул. Набережная, 2</p>
             <p style="margin-bottom:8px;"><strong>Офис компании:</strong> <a href="tel:+79531151199" class="legal-link" style="color:var(--lime,#CAFF1C);">+7 (953) 115-11-99</a></p>
-            <p style="margin-bottom:8px;"><strong>Управляющий:</strong> Екатерина • <a href="tel:+79298508503" class="legal-link" style="color:var(--lime,#CAFF1C);">+7 (929) 850-85-03</a></p>
+            <p style="margin-bottom:8px;"><strong>Управляющий:</strong> Екатерина <a href="tel:+79298508503" class="legal-link" style="color:var(--lime,#CAFF1C);">+7 (929) 850-85-03</a></p>
             <p style="margin-bottom:8px;"><strong>Telegram управляющей:</strong> <a href="https://t.me/zakonpudova" target="_blank" rel="noopener" class="legal-link" style="color:var(--lime,#CAFF1C);">@zakonpudova</a></p>
             <p style="margin-bottom:8px;"><strong>Официальная электронная почта:</strong> <a href="mailto:info@focus-photo.ru" class="legal-link" style="color:var(--lime,#CAFF1C);">info@focus-photo.ru</a></p>
             <p style="margin:0;"><strong>Режим работы:</strong> Пн–Вс с 09:00 до 21:00 (МСК)</p>
@@ -2226,7 +2396,7 @@
             <p style="margin-bottom:8px;"><strong>Focus:</strong> Full-cycle commercial architectural, hospitality, and event media</p>
             <p style="margin-bottom:8px;"><strong>Address:</strong> Russia, Krasnodar Region, Anapa, Pionerskiy Prospekt 47 / Naberezhnaya 2</p>
             <p style="margin-bottom:8px;"><strong>Main Office:</strong> <a href="tel:+79531151199" class="legal-link" style="color:var(--lime,#CAFF1C);">+7 (953) 115-11-99</a></p>
-            <p style="margin-bottom:8px;"><strong>Managing Director:</strong> Ekaterina • <a href="tel:+79298508503" class="legal-link" style="color:var(--lime,#CAFF1C);">+7 (929) 850-85-03</a></p>
+            <p style="margin-bottom:8px;"><strong>Managing Director:</strong> Ekaterina <a href="tel:+79298508503" class="legal-link" style="color:var(--lime,#CAFF1C);">+7 (929) 850-85-03</a></p>
             <p style="margin-bottom:8px;"><strong>Telegram:</strong> <a href="https://t.me/zakonpudova" target="_blank" rel="noopener" class="legal-link" style="color:var(--lime,#CAFF1C);">@zakonpudova</a></p>
             <p style="margin-bottom:8px;"><strong>Inquiries & Legal:</strong> <a href="mailto:info@focus-photo.ru" class="legal-link" style="color:var(--lime,#CAFF1C);">info@focus-photo.ru</a></p>
             <p style="margin:0;"><strong>Hours:</strong> Daily 09:00 – 21:00 (MSK)</p>
