@@ -2506,10 +2506,13 @@ a { color: inherit; text-decoration: none; }
   color: #0c0d10;
 }
 
-.msg-capsule--channel:hover {
-  background: #000;
-  border-color: var(--lime, #CAFF1C);
-  color: var(--lime, #CAFF1C);
+.msg-capsule--max:hover {
+  background: #6E3FF3;
+  border-color: #6E3FF3;
+  color: #fff;
+}
+.msg-capsule--max:hover svg {
+  color: #fff;
 }
 
 /* Contacts Form (Right Column: Dark Obsidian Card) */
