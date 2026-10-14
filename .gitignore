@@ -6,3 +6,6 @@ interactive_test.py
 *.pyc
 __pycache__/
 .DS_Store
+
+horizontal_works_*.png
+test_horizontal_works.py

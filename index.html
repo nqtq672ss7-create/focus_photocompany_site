@@ -413,14 +413,14 @@
           </nav>
         </header>
 
-        <!-- WORKS CENTER ARENA (Panoramic 3-Card Ribbon Flow) -->
+        <!-- WORKS CENTER ARENA (Panoramic Horizontal Cinema Ribbon Track) -->
         <div class="works-sc-arena-wrap" id="worksScArenaWrap">
           <button type="button" class="works-sc-arrow works-sc-arrow--prev" id="worksScPrev" aria-label="Предыдущий проект" title="Предыдущий проект">
             <svg viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
 
           <div class="works-sc-arena" id="worksScArena">
-            <!-- Dynamically populated with all uncropped photographic art cards -->
+            <!-- Dynamically populated with horizontal track of photographic art cards -->
           </div>
 
           <button type="button" class="works-sc-arrow works-sc-arrow--next" id="worksScNext" aria-label="Следующий проект" title="Следующий проект">
@@ -428,26 +428,22 @@
           </button>
         </div>
 
-        <!-- WORKS BOTTOM BAR (Counter + Pills + Actions) -->
+        <!-- WORKS BOTTOM BAR (Counter + Progress Bar + Hint & Skip) -->
         <footer class="works-sc-bottombar">
           <div class="works-sc-counter" aria-live="polite">
             <span class="works-sc-curr" id="worksScCurr">01</span>
             <span class="works-sc-sep">/</span>
             <span class="works-sc-total" id="worksScTotal">15</span>
           </div>
-          <div class="works-sc-pills" id="worksScPills" role="tablist" aria-label="Навигация по карточкам">
-            <!-- Pills rendered dynamically -->
+          <div class="works-sc-progress-wrap">
+            <div class="works-sc-progress-bar" id="worksScProgressBar"></div>
           </div>
           <div class="works-sc-action-wrap">
             <div class="works-sc-hint" id="worksScHint">
               <span data-i18n="worksHintScroll">СКРОЛЛ ИЛИ СТРЕЛКИ</span>
-              <span class="works-sc-hint__icon" aria-hidden="true">↓</span>
+              <span class="works-sc-hint__icon" aria-hidden="true">→</span>
             </div>
-            <button type="button" class="works-sc-more-btn" id="worksScMoreBtn" style="display: none;">
-              <span id="worksScMoreText" data-i18n="worksMoreBtn">ПОКАЗАТЬ ЕЩЁ ПРОЕКТЫ</span>
-              <span class="works-sc-more-btn__count" id="worksScMoreCount">+5</span>
-              <span class="works-sc-more-btn__arrow" aria-hidden="true">→</span>
-            </button>
+            <a href="#contacts" class="works-sc-skip-link" data-i18n="worksSkipToContacts">К КОНТАКТАМ ↓</a>
           </div>
         </footer>
 
@@ -652,6 +648,7 @@
         worksArchiveDesc: 'В нашем портфолио десятки объектов со схожей архитектурой, площадью и задачами. Подготовим персональную выборку и смету за 30 минут.',
         worksArchiveCta: 'ЗАПРОСИТЬ ПОДБОРКУ ПОД ОБЪЕКТ',
         worksHintScroll: 'СКРОЛЛ ИЛИ СТРЕЛКИ',
+        worksSkipToContacts: 'К КОНТАКТАМ ↓',
         worksMoreBtn: 'ПОКАЗАТЬ ЕЩЁ ПРОЕКТЫ',
         worksAllLoaded: 'ВСЕ РАБОТЫ ЗАГРУЖЕНЫ',
         modalScopeTitle: 'Что было сделано:',
@@ -807,6 +804,7 @@
         worksArchiveDesc: 'Our catalog includes dozens of properties with comparable architecture, scale, and requirements. We can send a curated selection and quote within 30 minutes.',
         worksArchiveCta: 'REQUEST CURATED PORTFOLIO',
         worksHintScroll: 'SCROLL OR ARROWS',
+        worksSkipToContacts: 'TO CONTACTS ↓',
         worksMoreBtn: 'LOAD MORE PROJECTS',
         worksAllLoaded: 'ALL PROJECTS LOADED',
         modalScopeTitle: 'Scope of deliverables:',
@@ -1193,17 +1191,15 @@
     }
 
     let currentCategory = 'interiors';
-    let worksTimeline = null;
+    let worksScrollTrigger = null;
+    let worksTrackTween = null;
 
     const arenaWrap = document.getElementById('worksScArenaWrap');
     const arena = document.getElementById('worksScArena');
-    const pillsWrap = document.getElementById('worksScPills');
     const totalEl = document.getElementById('worksScTotal');
     const currEl = document.getElementById('worksScCurr');
+    const progressBar = document.getElementById('worksScProgressBar');
     const hintEl = document.getElementById('worksScHint');
-    const moreBtn = document.getElementById('worksScMoreBtn');
-    const moreCountEl = document.getElementById('worksScMoreCount');
-    const moreTextSpan = document.getElementById('worksScMoreText');
     const prevBtn = document.getElementById('worksScPrev');
     const nextBtn = document.getElementById('worksScNext');
 
@@ -1212,25 +1208,33 @@
       const items = allWorksData[cat] || allWorksData.interiors;
       const total = items.length;
 
-      if (!arena || !pillsWrap) return;
+      if (!arena) return;
 
-      // Kill previous timeline and ScrollTrigger
-      if (worksTimeline) {
-        worksTimeline.kill();
-        if (worksTimeline.scrollTrigger) worksTimeline.scrollTrigger.kill();
-        worksTimeline = null;
+      // Kill previous animations & triggers
+      if (worksScrollTrigger) {
+        worksScrollTrigger.kill();
+        worksScrollTrigger = null;
+      }
+      if (worksTrackTween) {
+        worksTrackTween.kill();
+        worksTrackTween = null;
       }
 
       arena.innerHTML = '';
-      pillsWrap.innerHTML = '';
 
       if (totalEl) totalEl.textContent = total < 10 ? `0${total}` : `${total}`;
       if (currEl) currEl.textContent = '01';
+      if (progressBar) progressBar.style.width = '0%';
+
+      // Create panoramic track
+      const track = document.createElement('div');
+      track.className = 'works-sc-track';
+      track.id = 'worksScTrack';
 
       // Render cards
       items.forEach((item, idx) => {
         const card = document.createElement('div');
-        card.className = 'works-sc-card';
+        card.className = `works-sc-card ${idx < 5 ? 'is-initial-5' : ''}`;
         card.setAttribute('data-idx', idx);
         card.setAttribute('role', 'button');
         card.setAttribute('tabindex', '0');
@@ -1238,7 +1242,12 @@
         card.style.setProperty('--aspect', item.aspect);
         card.innerHTML = `
           <div class="works-sc-card__inner">
-            <img src="${item.src}" alt="${item.alt || ''}" class="works-sc-card__img" loading="eager" decoding="async">
+            <img src="${item.src}" alt="${item.alt || ''}" class="works-sc-card__img" loading="${idx < 6 ? 'eager' : 'lazy'}" decoding="async">
+            <div class="works-sc-card__badge">
+              <span>0${idx + 1}</span>
+              <span style="opacity: 0.4;">•</span>
+              <span>Увеличить ↗</span>
+            </div>
           </div>
         `;
 
@@ -1250,198 +1259,118 @@
           }
         });
 
-        arena.appendChild(card);
+        track.appendChild(card);
       });
 
-      // Build 5 interactive progress pills
-      const pillCount = Math.min(5, total);
-      for (let i = 0; i < pillCount; i++) {
-        const pill = document.createElement('button');
-        pill.type = 'button';
-        pill.className = `works-sc-pill ${i === 0 ? 'is-active' : ''}`;
-        pill.setAttribute('data-idx', i);
-        pill.setAttribute('aria-label', `Перейти к кадру ${i + 1}`);
-        pillsWrap.appendChild(pill);
-      }
+      // End card: invite to discuss or request catalog
+      const endCard = document.createElement('div');
+      endCard.className = 'works-sc-card works-sc-card--end';
+      endCard.innerHTML = `
+        <div>
+          <div class="works-end-card__badge">АРХИВ 150+ КЕЙСОВ</div>
+          <div class="works-end-card__title">Нужна подборка под ваш объект?</div>
+          <div class="works-end-card__desc">Соберем персональное портфолио с близкой архитектурой и смету за 30 минут.</div>
+        </div>
+        <a href="#contacts" class="works-end-card__cta">
+          <span>ОБСУДИТЬ СЪЁМКУ</span>
+          <span style="font-weight: 800;">→</span>
+        </a>
+      `;
+      endCard.addEventListener('click', (e) => {
+        const contacts = document.getElementById('contacts');
+        if (contacts) contacts.scrollIntoView({ behavior: 'smooth' });
+      });
+      track.appendChild(endCard);
 
-      const cards = gsap.utils.toArray('.works-sc-card');
-      const pills = gsap.utils.toArray('.works-sc-pill');
+      arena.appendChild(track);
 
-      // Set initial 3-card spread positions:
-      // Card 0: in center (x: 0, scale: 1, opacity: 1, zIndex: 20)
-      // Card 1: peeking on the right (x: min(420px, 32vw), scale: 0.86, opacity: 0.65, zIndex: 14)
-      // Other cards: offscreen to right
-      gsap.set(cards[0], { x: 0, scale: 1, opacity: 1, zIndex: 20 });
-      if (cards.length > 1) {
-        gsap.set(cards[1], { x: 'min(420px, 32vw)', scale: 0.86, opacity: 0.65, zIndex: 14 });
-      }
-      for (let i = 2; i < cards.length; i++) {
-        gsap.set(cards[i], { x: 'min(800px, 60vw)', scale: 0.72, opacity: 0, zIndex: 2 });
-      }
+      // 1. Initial Choreographed Fly-In for the first 5 works
+      const first5Cards = track.querySelectorAll('.is-initial-5');
+      gsap.fromTo(first5Cards, 
+        { y: 75, opacity: 0, scale: 0.94 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          scale: 1, 
+          duration: 0.85, 
+          stagger: 0.08, 
+          ease: 'power3.out',
+          clearProps: 'transform,opacity,scale'
+        }
+      );
 
-      const snapPoints = total > 1 ? Array.from({ length: total }, (_, i) => i / (total - 1)) : [0];
-      const scrollDistance = (total - 1) * 480;
+      // 2. Setup Horizontal Scroll via ScrollTrigger
+      // Allow DOM layout to measure track scrollWidth
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          const trackWidth = track.scrollWidth;
+          const viewportWidth = window.innerWidth;
+          const maxScrollX = Math.max(0, trackWidth - viewportWidth + 60);
 
-      worksTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#worksShowcaseStage",
-          pin: true,
-          start: "top top",
-          end: `+=${scrollDistance}`,
-          scrub: 0.6,
-          snap: {
-            snapTo: snapPoints,
-            duration: 0.35,
-            ease: "power1.inOut"
-          },
-          onUpdate: (self) => {
-            const step = Math.min(total - 1, Math.round(self.progress * (total - 1)));
-            if (currEl) currEl.textContent = step < 9 ? `0${step + 1}` : `${step + 1}`;
-            
-            // Highlight current pill (modulo 5 for batch progress)
-            pills.forEach((p, i) => {
-              p.classList.toggle('is-active', (step % 5) === i);
+          if (maxScrollX > 0) {
+            // Keep scroll length compact (never exhausting/fatiguing)
+            const pinDistance = Math.min(2000, Math.max(1200, Math.round(maxScrollX * 0.65)));
+
+            worksTrackTween = gsap.to(track, {
+              x: -maxScrollX,
+              ease: 'none'
             });
 
-            // Update arrow disabled states
-            if (prevBtn) prevBtn.disabled = step === 0;
-            if (nextBtn) nextBtn.disabled = step === total - 1;
+            worksScrollTrigger = ScrollTrigger.create({
+              trigger: "#worksShowcaseStage",
+              pin: true,
+              start: "top top",
+              end: `+=${pinDistance}`,
+              scrub: 0.7,
+              animation: worksTrackTween,
+              invalidateOnRefresh: true,
+              onUpdate: (self) => {
+                // Update progress bar
+                if (progressBar) {
+                  progressBar.style.width = `${Math.min(100, Math.round(self.progress * 100))}%`;
+                }
 
-            // Load More button at batch milestones:
-            // At step 4 (card 5 of 15) and step 9 (card 10 of 15):
-            const isMilestone = (step === 4 && total > 5) || (step === 9 && total > 10);
-            const isEnd = step === total - 1;
+                // Update current counter based on progress
+                const currentIdx = Math.min(total - 1, Math.round(self.progress * (total - 1)));
+                if (currEl) {
+                  currEl.textContent = (currentIdx + 1) < 10 ? `0${currentIdx + 1}` : `${currentIdx + 1}`;
+                }
 
-            if (isMilestone) {
-              if (hintEl) hintEl.style.display = 'none';
-              if (moreBtn) {
-                moreBtn.style.display = 'inline-flex';
-                moreBtn.disabled = false;
-                if (moreCountEl) moreCountEl.textContent = '+5';
-                const currentLang = localStorage.getItem('focus-language') || 'ru';
-                if (moreTextSpan) moreTextSpan.textContent = currentLang === 'en' ? 'NEXT 5 PROJECTS' : 'СЛЕДУЮЩИЕ 5 ПРОЕКТОВ';
+                // Update arrow buttons
+                if (prevBtn) prevBtn.disabled = self.progress < 0.02;
+                if (nextBtn) nextBtn.disabled = self.progress > 0.98;
               }
-            } else if (isEnd) {
-              if (hintEl) hintEl.style.display = 'none';
-              if (moreBtn) {
-                moreBtn.style.display = 'inline-flex';
-                moreBtn.disabled = true;
-                if (moreCountEl) moreCountEl.textContent = '✓';
-                const currentLang = localStorage.getItem('focus-language') || 'ru';
-                if (moreTextSpan) moreTextSpan.textContent = currentLang === 'en' ? 'ALL PROJECTS LOADED' : 'ВСЕ ПРОЕКТЫ ПОКАЗАНЫ';
-              }
-            } else {
-              if (hintEl) hintEl.style.display = 'inline-flex';
-              if (moreBtn) moreBtn.style.display = 'none';
-            }
+            });
           }
-        }
-      });
 
-      // Build sequential scroll transitions across all cards:
-      for (let i = 0; i < total - 1; i++) {
-        // Outgoing card glides to the left (peeking on left)
-        worksTimeline.to(cards[i], {
-          x: '-min(420px, 32vw)',
-          scale: 0.86,
-          opacity: 0.65,
-          zIndex: 14,
-          duration: 1,
-          ease: 'power2.inOut'
-        }, i);
+          ScrollTrigger.refresh();
 
-        // Active card glides to center
-        worksTimeline.to(cards[i + 1], {
-          x: 0,
-          scale: 1.0,
-          opacity: 1.0,
-          zIndex: 20,
-          duration: 1,
-          ease: 'power2.out'
-        }, i);
-
-        // Incoming card glides into right peeking spot
-        if (i + 2 < total) {
-          worksTimeline.fromTo(cards[i + 2],
-            { x: 'min(800px, 60vw)', scale: 0.72, opacity: 0, zIndex: 2 },
-            { x: 'min(420px, 32vw)', scale: 0.86, opacity: 0.65, zIndex: 14, duration: 1, ease: 'power2.inOut' },
-            i
-          );
-        }
-
-        // Previous card glides offscreen to far left
-        if (i - 1 >= 0) {
-          worksTimeline.to(cards[i - 1], {
-            x: '-min(800px, 60vw)',
-            scale: 0.72,
-            opacity: 0,
-            zIndex: 2,
-            duration: 1,
-            ease: 'power2.in'
-          }, i);
-        }
-      }
-
-      // Pill click navigation
-      pills.forEach((pill, idx) => {
-        pill.addEventListener('click', () => {
-          if (!worksTimeline || !worksTimeline.scrollTrigger) return;
-          const st = worksTimeline.scrollTrigger;
-          const step = Math.min(total - 1, Math.round(st.progress * (total - 1)));
-          const currentBatch = Math.floor(step / 5);
-          const targetIdx = Math.min(total - 1, currentBatch * 5 + idx);
-          const targetY = st.start + (st.end - st.start) * (targetIdx / (total - 1));
-          window.scrollTo({ top: targetY, behavior: 'smooth' });
-        });
-      });
-
-      ScrollTrigger.refresh();
-
-      if (scrollIntoPosition && worksTimeline && worksTimeline.scrollTrigger) {
-        const st = worksTimeline.scrollTrigger;
-        window.scrollTo({ top: st.start, behavior: 'instant' });
-      }
-    }
-
-    // Button Listener: Load More (+5)
-    if (moreBtn) {
-      moreBtn.addEventListener('click', () => {
-        if (!worksTimeline || !worksTimeline.scrollTrigger) return;
-        const st = worksTimeline.scrollTrigger;
-        const items = allWorksData[currentCategory] || allWorksData.interiors;
-        const total = items.length;
-        const step = Math.min(total - 1, Math.round(st.progress * (total - 1)));
-        
-        // Advance to next batch of 5:
-        const nextStep = Math.min(total - 1, step + 1); // e.g. from 4 to 5, or from 9 to 10
-        const targetY = st.start + (st.end - st.start) * (nextStep / (total - 1));
-        window.scrollTo({ top: targetY, behavior: 'smooth' });
+          if (scrollIntoPosition && worksScrollTrigger) {
+            window.scrollTo({ top: worksScrollTrigger.start, behavior: 'instant' });
+          }
+        }, 50);
       });
     }
 
     // Arrow Button Listeners: Prev and Next
     if (prevBtn) {
       prevBtn.addEventListener('click', () => {
-        if (!worksTimeline || !worksTimeline.scrollTrigger) return;
-        const st = worksTimeline.scrollTrigger;
-        const items = allWorksData[currentCategory] || allWorksData.interiors;
-        const total = items.length;
-        const step = Math.min(total - 1, Math.round(st.progress * (total - 1)));
-        const prevStep = Math.max(0, step - 1);
-        const targetY = st.start + (st.end - st.start) * (prevStep / (total - 1));
+        if (!worksScrollTrigger) return;
+        const st = worksScrollTrigger;
+        const step = 0.22; // step forward by ~2 cards
+        const targetProgress = Math.max(0, st.progress - step);
+        const targetY = st.start + (st.end - st.start) * targetProgress;
         window.scrollTo({ top: targetY, behavior: 'smooth' });
       });
     }
 
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
-        if (!worksTimeline || !worksTimeline.scrollTrigger) return;
-        const st = worksTimeline.scrollTrigger;
-        const items = allWorksData[currentCategory] || allWorksData.interiors;
-        const total = items.length;
-        const step = Math.min(total - 1, Math.round(st.progress * (total - 1)));
-        const nextStep = Math.min(total - 1, step + 1);
-        const targetY = st.start + (st.end - st.start) * (nextStep / (total - 1));
+        if (!worksScrollTrigger) return;
+        const st = worksScrollTrigger;
+        const step = 0.22; // step forward by ~2 cards
+        const targetProgress = Math.min(1, st.progress + step);
+        const targetY = st.start + (st.end - st.start) * targetProgress;
         window.scrollTo({ top: targetY, behavior: 'smooth' });
       });
     }
