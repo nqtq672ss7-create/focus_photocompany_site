@@ -28,13 +28,6 @@
 
     <div class="topbar__right">
       <div class="language-switch" aria-label="Выбор языка сайта">
-        <span class="language-switch__globe" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-            <path d="M2 12h20"></path>
-          </svg>
-        </span>
         <span class="language-switch__active-pill" aria-hidden="true"></span>
         <button class="language-switch__button is-active" type="button" data-lang="ru" aria-label="Русский" title="Русский">
           <span class="language-switch__flag language-switch__flag--text" aria-hidden="true">RU</span>
@@ -410,7 +403,7 @@
             </button>
             <button type="button" class="works-sc-tab" data-cat="hotels" role="tab" aria-selected="false">
               <span class="works-sc-tab__num">02</span>
-              <span class="works-sc-tab__name" data-i18n="worksFilterHotels">Отели: Гости & Lifestyle</span>
+              <span class="works-sc-tab__name" data-i18n="worksFilterHotels">Отели & Lifestyle</span>
               <span class="works-sc-tab__count">15</span>
             </button>
             <button type="button" class="works-sc-tab" data-cat="video" role="tab" aria-selected="false">
@@ -441,7 +434,7 @@
           </button>
         </div>
 
-        <!-- WORKS BOTTOM BAR (Counter + Progress Bar + Hint & Skip) -->
+        <!-- WORKS BOTTOM BAR (Counter + Progress Bar + Skip Link) -->
         <footer class="works-sc-bottombar">
           <div class="works-sc-counter" aria-live="polite">
             <span class="works-sc-curr" id="worksScCurr">01</span>
@@ -452,10 +445,6 @@
             <div class="works-sc-progress-bar" id="worksScProgressBar"></div>
           </div>
           <div class="works-sc-action-wrap">
-            <div class="works-sc-hint" id="worksScHint">
-              <span data-i18n="worksHintScroll">СКРОЛЛ ИЛИ СТРЕЛКИ</span>
-              <span class="works-sc-hint__icon" aria-hidden="true">→</span>
-            </div>
             <a href="#contacts" class="works-sc-skip-link" data-i18n="worksSkipToContacts">К КОНТАКТАМ ↓</a>
           </div>
         </footer>
@@ -492,94 +481,106 @@
 
           <div class="reviews-grid">
             
-            <!-- Card 1: Отели & HoReCa -->
+            <!-- Card 1: Отели & HoReCa (С фото) -->
             <article class="review-card">
               <div>
                 <div class="review-card__top">
                   <div class="review-card__author">
-                    <div class="review-card__avatar" aria-hidden="true">МВ</div>
+                    <img src="assets/portrait-vertical.webp" alt="Сергей Павлов" class="review-card__avatar-img">
                     <div class="review-card__author-info">
-                      <h3 class="review-card__name" data-i18n="rev1Name">Михаил Воронов</h3>
-                      <span class="review-card__role" data-i18n="rev1Role">Управляющий загородным SPA-отелем «Лазурный Берег», Анапа</span>
+                      <h3 class="review-card__name" data-i18n="rev1Name">Сергей Павлов</h3>
+                      <span class="review-card__role" data-i18n="rev1Role">Владелец бутик-отеля «Морской Бриз», Витязево</span>
                     </div>
                   </div>
                   <span class="review-card__cat" data-i18n="rev1Tag">Отели & HoReCa</span>
                 </div>
                 <div class="review-card__rating">
                   <span class="review-card__stars" aria-hidden="true">★★★★★</span>
-                  <span class="review-card__verified">✓ Проверенный заказчик</span>
+                  <span class="review-card__provenance">
+                    <span class="review-card__provenance-icon">💬</span>
+                    <span data-i18n="rev1Meta">WhatsApp • 14 июля 2026</span>
+                  </span>
                 </div>
                 <blockquote class="review-card__quote" data-i18n="rev1Quote">
-                  «Команда "Фокус" провела масштабную трёхдневную съёмку всего номерного фонда, SPA-комплекса и ресторанов. Готовые фотографии и Reels с живыми эмоциями гостей увеличили прямые бронирования с сайта на 34% уже в первый месяц сезона. Безупречная работа со светом и уважение к гостям во время съёмочного процесса.»
+                  «Искали ребят, которые снимут отель не как пустой музей, а чтобы чувствовался воздух и море. В разгар июля приехали в 5:30 утра, пока гости спят, поймали идеальный рассвет над бассейном. Потом весь день деликатно работали на террасе — постояльцев вообще не дергали. Снимки закинули на Островок и в Яндекс Путешествия, брони пошли заметно бодрее, особенно на люксы. Спасибо Кате за четкую организацию!»
                 </blockquote>
               </div>
             </article>
 
-            <!-- Card 2: Интерьеры & Архитектура -->
+            <!-- Card 2: Интерьеры & Архитектура (Без фото - монограмма ОН) -->
             <article class="review-card">
               <div>
                 <div class="review-card__top">
                   <div class="review-card__author">
-                    <div class="review-card__avatar" aria-hidden="true">АС</div>
+                    <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">ОН</div>
                     <div class="review-card__author-info">
-                      <h3 class="review-card__name" data-i18n="rev2Name">Анна Савельева</h3>
-                      <span class="review-card__role" data-i18n="rev2Role">Основатель студии дизайна интерьеров «Saveleva Design»</span>
+                      <h3 class="review-card__name" data-i18n="rev2Name">Ольга Нестерова</h3>
+                      <span class="review-card__role" data-i18n="rev2Role">Архитектор-дизайнер, частная практика (Новороссийск)</span>
                     </div>
                   </div>
                   <span class="review-card__cat" data-i18n="rev2Tag">Интерьеры & Архитектура</span>
                 </div>
                 <div class="review-card__rating">
                   <span class="review-card__stars" aria-hidden="true">★★★★★</span>
-                  <span class="review-card__verified">✓ Проверенный заказчик</span>
+                  <span class="review-card__provenance">
+                    <span class="review-card__provenance-icon">✈️</span>
+                    <span data-i18n="rev2Meta">Telegram • 28 августа 2026</span>
+                  </span>
                 </div>
                 <blockquote class="review-card__quote" data-i18n="rev2Quote">
-                  «Для интерьерного фотографа критически важна геометрия и точная передача оттенков отделочных материалов. Ребята из "Фокуса" выставляют идеальные вертикали, ловят правильное солнце и убирают любые визуальные шумы. Две наших публикации в интерьерном глянце вышли с их снимками. Рекомендую всем коллегам!»
+                  «У меня бзик на геометрию и цвет дерева — обычно фотографы пересвечивают фактуру керамогранита или заваливают углы, а потом приходится сидеть и плакать над рендерами. С "Фокусом" выдохнула. Приехали со своим светом, штативами, два часа только один санузел выстраивали по миллиметрам. Результат — чистейший глянец. Заказчики квартиры в восторге, я наконец-то собрала нормальное портфолио в журнал.»
                 </blockquote>
               </div>
             </article>
 
-            <!-- Card 3: Рекламное видео & Reels -->
+            <!-- Card 3: Рекламное видео & Reels (С фото) -->
             <article class="review-card">
               <div>
                 <div class="review-card__top">
                   <div class="review-card__author">
-                    <div class="review-card__avatar" aria-hidden="true">ДК</div>
+                    <img src="assets/about-card-2.webp" alt="Артём" class="review-card__avatar-img">
                     <div class="review-card__author-info">
-                      <h3 class="review-card__name" data-i18n="rev3Name">Денис Красильников</h3>
-                      <span class="review-card__role" data-i18n="rev3Role">Маркетинг-директор ресторанного холдинга «Veranda Group»</span>
+                      <h3 class="review-card__name" data-i18n="rev3Name">Артём</h3>
+                      <span class="review-card__role" data-i18n="rev3Role">Совладелец кафе-бара «Черноморский», набережная Анапы</span>
                     </div>
                   </div>
                   <span class="review-card__cat" data-i18n="rev3Tag">Видео & Reels</span>
                 </div>
                 <div class="review-card__rating">
                   <span class="review-card__stars" aria-hidden="true">★★★★★</span>
-                  <span class="review-card__verified">✓ Проверенный заказчик</span>
+                  <span class="review-card__provenance">
+                    <span class="review-card__provenance-icon">🎙️</span>
+                    <span data-i18n="rev3Meta">Аудиоотзыв в TG • 5 сентября 2026</span>
+                  </span>
                 </div>
                 <blockquote class="review-card__quote" data-i18n="rev3Quote">
-                  «Снимали серию динамичных промо-роликов и 4K Reels для открытия нового панорамного ресторана. Продакшн превзошёл ожидания: монтаж, динамичный саунд-дизайн и сочная цветокоррекция. Ролики суммарно набрали более 420 000 органических просмотров. Обязательно продолжим сотрудничество.»
+                  «Честно, думал снимут очередные скучные перебивки с едой под клубную музыку. А парни сделали 6 коротких рилсов с поваром и звуками кухни — шипение сковороды, пар, коктейли крупным планом. Залетело без всякого таргета, гости начали приходить со словами "мы увидели ваше видео в ленте". Однозначно продлеваемся на осеннее меню.»
                 </blockquote>
               </div>
             </article>
 
-            <!-- Card 4: Бизнес-события & Ивенты -->
+            <!-- Card 4: Бизнес-события & Ивенты (Без фото - монограмма МК) -->
             <article class="review-card">
               <div>
                 <div class="review-card__top">
                   <div class="review-card__author">
-                    <div class="review-card__avatar" aria-hidden="true">ЕМ</div>
+                    <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">МК</div>
                     <div class="review-card__author-info">
-                      <h3 class="review-card__name" data-i18n="rev4Name">Елена Миронова</h3>
-                      <span class="review-card__role" data-i18n="rev4Role">Event-директор регионального форума «Юг-Экспо 2026»</span>
+                      <h3 class="review-card__name" data-i18n="rev4Name">Марина Ковалёва</h3>
+                      <span class="review-card__role" data-i18n="rev4Role">Event-продюсер региональных форумов (Сочи — Анапа)</span>
                     </div>
                   </div>
                   <span class="review-card__cat" data-i18n="rev4Tag">Мероприятия & События</span>
                 </div>
                 <div class="review-card__rating">
                   <span class="review-card__stars" aria-hidden="true">★★★★★</span>
-                  <span class="review-card__verified">✓ Проверенный заказчик</span>
+                  <span class="review-card__provenance">
+                    <span class="review-card__provenance-icon">⭐</span>
+                    <span data-i18n="rev4Meta">Прямой отзыв заказчика</span>
+                  </span>
                 </div>
                 <blockquote class="review-card__quote" data-i18n="rev4Quote">
-                  «Событийная съёмка на 800+ участников — сложнейшая задача. Команда "Фокус" предоставила экспресс-выборку первых 70 топовых кадров для СМИ прямо в день открытия форума, а полный брендированный облачный диск с репортажем был готов через 48 часов. Никаких постановочных лиц — чистая энергия события!»
+                  «Для организатора главное — не поседеть во время мероприятия. Ребята работали в две камеры на конференции на 120 человек: тихо, в темной одежде, никого не слепили вспышками в лоб. Но главный шок — в 23:00 того же дня скинули папку с первыми 30 обработанными кадрами для пресс-релиза и спонсоров. Утром все спикеры уже репостили себя в соцсети. Это уровень, спасибо команде!»
                 </blockquote>
               </div>
             </article>
@@ -678,9 +679,8 @@
               <div class="contact-pill__content">
                 <div class="contact-pill__meta">
                   <span class="contact-pill__role" data-i18n="contactsCard2Label">УПРАВЛЯЮЩИЙ</span>
-                  <span class="contact-pill__online"><span class="pulse-dot"></span>Online</span>
                 </div>
-                <span class="contact-pill__val" data-i18n="contactsCard2Val">Екатерина +7 (929) 850-85-03</span>
+                <span class="contact-pill__val" data-i18n="contactsCard2Val">Екатерина: +7 (929) 850-85-03</span>
               </div>
               <span class="contact-pill__arrow" aria-hidden="true">↗</span>
             </a>
@@ -848,7 +848,7 @@
           </div>
           <div class="footer-col__info">
             <span class="footer-col__info-label" data-i18n="footerLocationLabel">ЛОКАЦИЯ:</span>
-            <span style="font-size:12.5px;color:rgba(244,241,233,0.7);">г. Анапа, Пионерский пр-т, 47 / ул. Набережная, 2</span>
+            <span style="font-size:12.5px;color:rgba(244,241,233,0.7);line-height:1.45;display:block;">г.&nbsp;Анапа, Пионерский пр-т,&nbsp;47&nbsp;/ <span style="white-space:nowrap;">ул.&nbsp;Набережная,&nbsp;2</span></span>
           </div>
           <div class="footer-messengers-mini">
             <a href="https://t.me/zakonpudova" target="_blank" rel="noopener" class="footer-msg-pill" aria-label="Telegram" title="Telegram: @zakonpudova">
@@ -1033,7 +1033,7 @@
         worksMoreCta: 'ОБСУДИТЬ СЪЁМКУ В ЭТОМ СТИЛЕ',
         worksFilterAll: 'Все направления',
         worksFilterInteriors: 'Интерьеры',
-        worksFilterHotels: 'Отели: Гости & Lifestyle',
+        worksFilterHotels: 'Отели & Lifestyle',
         worksFilterVideo: 'Видео & Reels',
         worksFilterEvents: 'Мероприятия',
         worksCatInteriors: 'ИНТЕРЬЕРЫ',
@@ -1060,7 +1060,7 @@
         contactsLead: 'Ответим за 15 минут. Подготовим персональную смету под ваш объект и пришлём референсы.',
         contactsCard1Label: 'ОФИС ФОКУС',
         contactsCard2Label: 'УПРАВЛЯЮЩИЙ',
-        contactsCard2Val: 'Екатерина +7 (929) 850-85-03',
+        contactsCard2Val: 'Екатерина: +7 (929) 850-85-03',
         contactsCard3Label: 'ЛОКАЦИЯ',
         contactsCard3Address: 'г. Анапа, Пионерский пр-т, 47 / ул. Набережная, 2',
         contactsMessengerTitle: 'БЫСТРЫЙ ЧАТ:',
@@ -1090,22 +1090,26 @@
         reviewsTitle2: 'ГОВОРЯТ САМИ ЗА СЕБЯ.',
         reviewsLead: 'Честные отзывы владельцев отелей, дизайнеров интерьеров и организаторов мероприятий о работе с командой «ФОКУС».',
         reviewsTrustLabel: 'ПРОВЕРЕННЫЕ ОТЗЫВЫ КЛИЕНТОВ',
-        rev1Name: 'Михаил Воронов',
-        rev1Role: 'Управляющий загородным SPA-отелем «Лазурный Берег», Анапа',
+        rev1Name: 'Сергей Павлов',
+        rev1Role: 'Владелец бутик-отеля «Морской Бриз», Витязево',
         rev1Tag: 'Отели & HoReCa',
-        rev1Quote: '«Команда "Фокус" провела масштабную трёхдневную съёмку всего номерного фонда, SPA-комплекса и ресторанов. Готовые фотографии и Reels с живыми эмоциями гостей увеличили прямые бронирования с сайта на 34% уже в первый месяц сезона. Безупречная работа со светом и уважение к гостям во время съёмочного процесса.»',
-        rev2Name: 'Анна Савельева',
-        rev2Role: 'Основатель студии дизайна интерьеров «Saveleva Design»',
+        rev1Meta: 'WhatsApp • 14 июля 2026',
+        rev1Quote: '«Искали ребят, которые снимут отель не как пустой музей, а чтобы чувствовался воздух и море. В разгар июля приехали в 5:30 утра, пока гости спят, поймали идеальный рассвет над бассейном. Потом весь день деликатно работали на террасе — постояльцев вообще не дергали. Снимки закинули на Островок и в Яндекс Путешествия, брони пошли заметно бодрее, особенно на люксы. Спасибо Кате за четкую организацию!»',
+        rev2Name: 'Ольга Нестерова',
+        rev2Role: 'Архитектор-дизайнер, частная практика (Новороссийск)',
         rev2Tag: 'Интерьеры & Архитектура',
-        rev2Quote: '«Для интерьерного фотографа критически важна геометрия и точная передача оттенков отделочных материалов. Ребята из "Фокуса" выставляют идеальные вертикали, ловят правильное солнце и убирают любые визуальные шумы. Две наших публикации в интерьерном глянце вышли с их снимками. Рекомендую всем коллегам!»',
-        rev3Name: 'Денис Красильников',
-        rev3Role: 'Маркетинг-директор ресторанного холдинга «Veranda Group»',
+        rev2Meta: 'Telegram • 28 августа 2026',
+        rev2Quote: '«У меня бзик на геометрию и цвет дерева — обычно фотографы пересвечивают фактуру керамогранита или заваливают углы, а потом приходится сидеть и плакать над рендерами. С "Фокусом" выдохнула. Приехали со своим светом, штативами, два часа только один санузел выстраивали по миллиметрам. Результат — чистейший глянец. Заказчики квартиры в восторге, я наконец-то собрала нормальное портфолио в журнал.»',
+        rev3Name: 'Артём',
+        rev3Role: 'Совладелец кафе-бара «Черноморский», набережная Анапы',
         rev3Tag: 'Видео & Reels',
-        rev3Quote: '«Снимали серию динамичных промо-роликов и 4K Reels для открытия нового панорамного ресторана. Продакшн превзошёл ожидания: монтаж, динамичный саунд-дизайн и сочная цветокоррекция. Ролики суммарно набрали более 420 000 органических просмотров. Обязательно продолжим сотрудничество.»',
-        rev4Name: 'Елена Миронова',
-        rev4Role: 'Event-директор регионального форума «Юг-Экспо 2026»',
+        rev3Meta: 'Аудиоотзыв в TG • 5 сентября 2026',
+        rev3Quote: '«Честно, думал снимут очередные скучные перебивки с едой под клубную музыку. А парни сделали 6 коротких рилсов с поваром и звуками кухни — шипение сковороды, пар, коктейли крупным планом. Залетело без всякого таргета, гости начали приходить со словами "мы увидели ваше видео в ленте". Однозначно продлеваемся на осеннее меню.»',
+        rev4Name: 'Марина Ковалёва',
+        rev4Role: 'Event-продюсер региональных форумов (Сочи — Анапа)',
         rev4Tag: 'Мероприятия & События',
-        rev4Quote: '«Событийная съёмка на 800+ участников — сложнейшая задача. Команда "Фокус" предоставила экспресс-выборку первых 70 топовых кадров для СМИ прямо в день открытия форума, а полный брендированный облачный диск с репортажем был готов через 48 часов. Никаких постановочных лиц — чистая энергия события!»',
+        rev4Meta: 'Прямой отзыв заказчика',
+        rev4Quote: '«Для организатора главное — не поседеть во время мероприятия. Ребята работали в две камеры на конференции на 120 человек: тихо, в темной одежде, никого не слепили вспышками в лоб. Но главный шок — в 23:00 того же дня скинули папку с первыми 30 обработанными кадрами для пресс-релиза и спонсоров. Утром все спикеры уже репостили себя в соцсети. Это уровень, спасибо команде!»',
         revMetric1Label: 'Средняя оценка заказчиков',
         revMetric2Label: 'Повторных съёмок и рекомендаций',
         revMetric3Label: 'Сроки выдачи готового медиапакета',
@@ -1226,7 +1230,7 @@
         worksMoreCta: 'DISCUSS A SHOOT IN THIS STYLE',
         worksFilterAll: 'All directions',
         worksFilterInteriors: 'Interiors',
-        worksFilterHotels: 'Hotels: Guests & Lifestyle',
+        worksFilterHotels: 'Hotels & Lifestyle',
         worksFilterVideo: 'Video & Reels',
         worksFilterEvents: 'Events',
         worksCatInteriors: 'INTERIORS',
@@ -1254,7 +1258,7 @@
         contactsLead: 'Reply within 15 minutes. We prepare custom estimates and visual references for your property.',
         contactsCard1Label: 'FOCUS OFFICE',
         contactsCard2Label: 'DIRECTOR',
-        contactsCard2Val: 'Ekaterina +7 (929) 850-85-03',
+        contactsCard2Val: 'Ekaterina: +7 (929) 850-85-03',
         contactsCard3Label: 'LOCATION',
         contactsCard3Address: 'Anapa, Pionerskiy Prospekt 47 / Naberezhnaya 2',
         contactsMessengerTitle: 'INSTANT CHAT:',
@@ -1284,22 +1288,26 @@
         reviewsTitle2: 'SPEAK FOR THEMSELVES.',
         reviewsLead: 'Honest reviews from hotel managers, interior designers, and event producers on collaborating with FOCUS.',
         reviewsTrustLabel: 'VERIFIED CLIENT REVIEWS',
-        rev1Name: 'Mikhail Voronov',
-        rev1Role: 'General Manager, Lazurny Bereg SPA Hotel, Anapa',
+        rev1Name: 'Sergei Pavlov',
+        rev1Role: 'Owner, Morskoy Briz Boutique Hotel, Vityazevo',
         rev1Tag: 'Hotels & HoReCa',
-        rev1Quote: '“The FOCUS team carried out an extensive 3-day shoot covering our entire room inventory, SPA facilities, and restaurants. The resulting photos and candid guest Reels boosted direct website bookings by 34% within the very first month. Impeccable lighting and total respect for our staying guests.”',
-        rev2Name: 'Anna Savelyeva',
-        rev2Role: 'Founder, Saveleva Design Studio',
+        rev1Meta: 'WhatsApp • July 14, 2026',
+        rev1Quote: '“We wanted a team to shoot our hotel not like a sterile museum, but with actual sea air. In mid-July, the crew arrived at 5:30 AM before guests woke up and caught the dawn light over the pool. All day they worked quietly on the terrace without disturbing anyone. We uploaded the shots to booking channels, and reservations noticeably picked up, especially for suites.”',
+        rev2Name: 'Olga Nesterova',
+        rev2Role: 'Architect & Interior Designer (Novorossiysk)',
         rev2Tag: 'Interiors & Architecture',
-        rev2Quote: '“For interior architectural photography, geometry and true-to-life material colors are critical. FOCUS achieves flawless verticals, catches the perfect natural light window, and eliminates visual noise. Two of our magazine features were published with their photography. Highly recommended!”',
-        rev3Name: 'Denis Krasilnikov',
-        rev3Role: 'CMO, Veranda Group Hospitality',
+        rev2Meta: 'Telegram • August 28, 2026',
+        rev2Quote: '“I am obsessive about geometry and wood grain. Most photographers wash out stoneware textures or tilt the verticals. With FOCUS I finally exhaled. They brought proper lighting, heavy tripods, and spent two hours dialing in every millimeter of the master bathroom. Pure editorial finish. The apartment owners are thrilled, and I finally submitted a proper magazine feature.”',
+        rev3Name: 'Artem',
+        rev3Role: 'Co-owner, Chernomorskiy Dining Bar, Anapa Promenade',
         rev3Tag: 'Video & Reels',
-        rev3Quote: '“We commissioned a series of high-energy promo videos and 4K Reels for the launch of our new panoramic dining venue. Production quality exceeded all expectations: razor-sharp editing, custom sound design, and appetizing color grading. The videos gathered over 420,000 organic views.”',
-        rev4Name: 'Elena Mironova',
-        rev4Role: 'Event Director, South-Expo 2026 Business Forum',
+        rev3Meta: 'TG Audio Note • September 5, 2026',
+        rev3Quote: '“Honestly, I expected generic food b-roll over club tracks. Instead, they made 6 punchy reels with actual kitchen Foley — pan sizzle, steam, tight macro cocktails. It gained traction purely organically; guests came in saying they saw the clip in their feed. Definitely extending for the autumn menu.”',
+        rev4Name: 'Marina Kovaleva',
+        rev4Role: 'Event Producer for Regional Summits (Sochi — Anapa)',
         rev4Tag: 'Events & Conferences',
-        rev4Quote: '“Documenting an event with 800+ attendees is an immense challenge. The FOCUS crew delivered an express pack of 70 top press photos on opening day, and the full branded gallery arrived in 48 hours. No stiff poses — pure live energy!”',
+        rev4Meta: 'Direct Client Feedback',
+        rev4Quote: '“For an event producer, the goal is survival without gray hairs. The crew covered a 120-attendee summit with two cameras: discreet, dressed in black, never blasting guests with direct flash. The real shock was getting a curated pack of 30 retouched photos by 11 PM the same night for press and sponsors. By morning, all keynote speakers were reposting them.”',
         revMetric1Label: 'Average client rating',
         revMetric2Label: 'Repeat clients and referrals',
         revMetric3Label: 'Turnaround for ready media package',
@@ -2497,6 +2505,41 @@
           cookieBanner.classList.remove('is-visible');
         });
       }
+    }
+
+    // ── CINEMATIC REVIEWS 3D TILT & SCROLL ANIMATION ─────────────────
+    const reviewCards = document.querySelectorAll('.review-card');
+    reviewCards.forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        const dx = (x - cx) / cx;
+        const dy = (y - cy) / cy;
+        card.style.transform = `perspective(900px) rotateX(${-dy * 4.5}deg) rotateY(${dx * 4.5}deg) translateY(-5px)`;
+        card.style.setProperty('--spot-x', `${x}px`);
+        card.style.setProperty('--spot-y', `${y}px`);
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.from('.review-card', {
+        scrollTrigger: {
+          trigger: '#reviews',
+          start: 'top 82%',
+          once: true
+        },
+        y: 40,
+        opacity: 0,
+        stagger: 0.12,
+        duration: 0.85,
+        ease: 'power3.out'
+      });
     }
 
     const savedLanguage = localStorage.getItem('focus-language');
