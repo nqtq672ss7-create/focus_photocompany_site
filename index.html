@@ -302,7 +302,7 @@
           </div>
           <div class="srv-card__media-wrap">
             <div class="srv-card__media">
-              <img src="assets/business-event.webp" alt="Бизнес-события и мероприятия ФОКУС" loading="lazy">
+              <img src="assets/event-05.webp" alt="Бизнес-события и мероприятия ФОКУС" loading="lazy">
             </div>
           </div>
         </article>
@@ -408,7 +408,7 @@
             <button type="button" class="works-sc-tab" data-cat="events" role="tab" aria-selected="false">
               <span class="works-sc-tab__num">04</span>
               <span class="works-sc-tab__name" data-i18n="worksFilterEvents">Мероприятия</span>
-              <span class="works-sc-tab__count">8</span>
+              <span class="works-sc-tab__count">15</span>
             </button>
           </nav>
         </header>
@@ -1205,14 +1205,21 @@
         }
       ],
       events: [
-        { src: 'assets/business-event.webp', aspect: '16 / 9',  alt: 'Мероприятия ФОКУС 1' },
-        { src: 'assets/photographers.webp',  aspect: '4 / 3',   alt: 'Мероприятия ФОКУС 2' },
-        { src: 'assets/event-summit.webp',   aspect: '16 / 9',  alt: 'Мероприятия ФОКУС 3' },
-        { src: 'assets/photographers.webp',  aspect: '4 / 3',   alt: 'Мероприятия ФОКУС 4' },
-        { src: 'assets/business-event.webp', aspect: '16 / 9',  alt: 'Мероприятия ФОКУС 5' },
-        { src: 'assets/event-summit.webp',   aspect: '16 / 9',  alt: 'Мероприятия ФОКУС 6' },
-        { src: 'assets/video-set.webp',      aspect: '16 / 9',  alt: 'Мероприятия ФОКУС 7' },
-        { src: 'assets/photographers.webp',  aspect: '4 / 3',   alt: 'Мероприятия ФОКУС 8' }
+        { src: 'assets/event-01.webp', aspect: '1200 / 1480', alt: 'Вечерний приём и коктейль: Живые эмоции гостей' },
+        { src: 'assets/event-02.webp', aspect: '1200 / 1500', alt: 'Деловой нетворкинг и общение участников' },
+        { src: 'assets/event-03.webp', aspect: '1200 / 1600', alt: 'Презентация бренда: Летний пресс-бранч' },
+        { src: 'assets/event-04.webp', aspect: '736 / 1104',  alt: 'Репортажная съёмка: Атмосфера мероприятия' },
+        { src: 'assets/event-05.webp', aspect: '1200 / 1527', alt: 'Торжественный гала-ужин: Тост за круглым столом' },
+        { src: 'assets/event-06.webp', aspect: '736 / 981',   alt: 'Фуршет и напитки: Элегантная подача' },
+        { src: 'assets/event-07.webp', aspect: '1200 / 1804', alt: 'Загородное событие: Праздничный тост на природе' },
+        { src: 'assets/event-08.webp', aspect: '682 / 1024',  alt: 'Эмоциональные моменты корпоративного праздника' },
+        { src: 'assets/event-09.webp', aspect: '800 / 1200',  alt: 'Гости и спикеры: Репортажный портрет' },
+        { src: 'assets/event-10.webp', aspect: '736 / 920',   alt: 'Кулуары форума и неформальное общение' },
+        { src: 'assets/event-11.webp', aspect: '1200 / 1500', alt: 'Творческий воркшоп и перформанс' },
+        { src: 'assets/event-12.webp', aspect: '735 / 1103',  alt: 'Вечерняя программа и сцена' },
+        { src: 'assets/event-13.webp', aspect: '1200 / 1800', alt: 'Банкет при свечах: Премиальный сервис' },
+        { src: 'assets/event-14.webp', aspect: '1200 / 1599', alt: 'Закрытая вечеринка и клубная атмосфера' },
+        { src: 'assets/event-15.webp', aspect: '736 / 1308',  alt: 'Финал события: Яркие эмоции участников' }
       ]
     };
 
@@ -1316,7 +1323,7 @@
       if (nextBtn) nextBtn.disabled = self.progress > 0.98;
     }
 
-    function renderWorksShowcase(cat) {
+    function renderWorksShowcase(cat, isTabSwitch = false) {
       currentCategory = cat;
       const items = allWorksData[cat] || allWorksData.interiors;
       const total = items.length;
@@ -1457,7 +1464,7 @@
           }
 
           ScrollTrigger.refresh();
-          if (worksScrollTrigger) {
+          if (isTabSwitch && worksScrollTrigger) {
             window.scrollTo(0, worksScrollTrigger.start);
           }
         }, 50);
@@ -1500,12 +1507,12 @@
         if (worksScrollTrigger) {
           window.scrollTo({ top: worksScrollTrigger.start, behavior: 'instant' });
         }
-        renderWorksShowcase(cat);
+        renderWorksShowcase(cat, true);
       });
     });
 
     // Initial render
-    renderWorksShowcase('interiors');
+    renderWorksShowcase('interiors', false);
 
         const savedLanguage = localStorage.getItem('focus-language');
     setLanguage(savedLanguage === 'en' ? 'en' : 'ru');
