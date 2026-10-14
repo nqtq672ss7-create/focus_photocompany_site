@@ -381,13 +381,16 @@
           <div class="works-sc-title-group">
             <div class="works-sc-eyebrow">
               <span class="works-sc-eyebrow__dash" aria-hidden="true">—</span>
-              <span class="works-sc-eyebrow__text" data-i18n="worksEyebrow">ПРИМЕРЫ РАБОТ</span>
+              <span class="works-sc-eyebrow__text" data-i18n="worksEyebrow">НАПРАВЛЕНИЯ & РЕФЕРЕНСЫ</span>
             </div>
-            <h2 class="works-sc-title" id="works-clean-title" aria-label="Реализованные проекты.">
-              <span data-i18n="worksTitle1Word">РЕАЛИЗОВАННЫЕ</span>
-              <span data-i18n="worksTitle2Word">ПРОЕКТЫ</span>
-              <span class="works-title-lime" data-i18n="worksTitleBadge">2024–2026</span>
+            <h2 class="works-sc-title" id="works-clean-title" aria-label="Примеры стиля и визуальные референсы.">
+              <span class="works-word--1" data-i18n="worksTitle1Word">ПРИМЕРЫ СТИЛЯ</span>
+              <span class="works-word--2" data-i18n="worksTitle2Word">& РЕФЕРЕНСЫ</span>
+              <span class="works-title-lime" data-i18n="worksTitleBadge">МУДБОРД</span>
             </h2>
+            <p class="works-sc-subtitle" data-i18n="worksSubtitle">
+              Стилистические ориентиры, свет и колористика, к которым мы стремимся на съёмках. Реальное портфолио под NDA отправляем по запросу.
+            </p>
           </div>
 
           <!-- WORKS CATEGORIES (Minimalist Tabs) -->
@@ -457,20 +460,35 @@
           <div class="works-bottom-bar__left">
             <div class="works-bottom-bar__badge">
               <span class="works-bottom-bar__dot"></span>
-              <span data-i18n="worksArchiveCount">АРХИВ ИЗ 150+ КЕЙСОВ</span>
+              <span data-i18n="worksArchiveCount">ЗАКРЫТОЕ ПОРТФОЛИО ПОД NDA</span>
             </div>
-            <h3 class="works-bottom-bar__title" data-i18n="worksArchiveTitle">Хотите увидеть проекты именно в вашей нише?</h3>
+            <h3 class="works-bottom-bar__title" data-i18n="worksArchiveTitle">Нужны реальные съёмки под ваш объект?</h3>
             <p class="works-bottom-bar__desc" data-i18n="worksArchiveDesc">
-              В нашем портфолио десятки объектов со схожей архитектурой, площадью и задачами. Подготовим персональную выборку и смету за 30 минут.
+              Большая часть наших коммерческих проектов для отелей и вилл защищена соглашениями о конфиденциальности (NDA). Мы подготовим персональную закрытую выборку реальных съёмок и смету за 15 минут.
             </p>
           </div>
           <div class="works-bottom-bar__right">
             <a href="#contacts" class="works-cta-btn">
-              <span class="works-cta-btn__text" data-i18n="worksArchiveCta">ЗАПРОСИТЬ ПОДБОРКУ ПОД ОБЪЕКТ</span>
+              <span class="works-cta-btn__text" data-i18n="worksArchiveCta">ЗАПРОСИТЬ КЕЙСЫ ПОД ВАШ ОБЪЕКТ</span>
               <span class="works-cta-btn__circle" aria-hidden="true">
                 <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </span>
             </a>
+          </div>
+        </div>
+
+        <!-- LEGAL DISCLAIMER: VISUAL REFERENCES & DMCA / 1253.1 GK RF -->
+        <div class="works-disclaimer">
+          <div class="works-disclaimer__inner">
+            <span class="works-disclaimer__icon" aria-hidden="true">⚖️</span>
+            <div class="works-disclaimer__text">
+              <strong data-i18n="worksDisclaimerStrong">Правовое уведомление об иллюстративных материалах:</strong>
+              <span data-i18n="worksDisclaimerText">
+                Фото- и видеоматериалы в каталоге стилей служат концептуальными визуальными референсами и мудбордами направлений съёмки. Исключительные авторские права принадлежат их создателям. Компания «ФОКУС» не заявляет авторства на демонстрационные референсы из открытых источников. Для правообладателей: незамедлительное удаление по обращению на
+              </span>
+              <a href="mailto:info@focus-photo.ru" class="works-disclaimer__link">info@focus-photo.ru</a> 
+              <span data-i18n="worksDisclaimerNotice">(регламент Notice & Takedown за 24ч).</span>
+            </div>
           </div>
         </div>
       </div>
@@ -733,6 +751,7 @@
         <div class="footer-legal-links">
           <a href="privacy.html" class="footer-legal-link" onclick="openLegalModal('privacy'); return false;" data-i18n="legalPrivacy">Политика конфиденциальности (152-ФЗ)</a>
           <a href="terms.html" class="footer-legal-link" onclick="openLegalModal('terms'); return false;" data-i18n="legalTerms">Пользовательское соглашение</a>
+          <a href="terms.html#copyright" class="footer-legal-link" onclick="openLegalModal('copyright'); return false;" data-i18n="legalCopyright">Правообладателям (Notice & Takedown)</a>
           <a href="cookies.html" class="footer-legal-link" onclick="openLegalModal('cookies'); return false;" data-i18n="legalCookies">Файлы Cookie</a>
           <a href="privacy.html#requisites" class="footer-legal-link" onclick="openLegalModal('requisites'); return false;" data-i18n="legalRequisites">Реквизиты компании</a>
         </div>
@@ -745,7 +764,7 @@
       <!-- Footer Bottom -->
       <div class="footer-bottom">
         <div class="footer-copyright">
-          © 2024–2026 Компания «ФОКУС». <span data-i18n="footerRights">Все права защищены. Все фото- и видеоматериалы защищены авторским правом.</span>
+          © 2024–2026 Компания «ФОКУС». <span data-i18n="footerRights">Все права защищены. Демонстрационные материалы используются в качестве референсов; авторские права принадлежат их создателям.</span>
         </div>
         <div class="footer-actions">
           <button type="button" class="footer-top-btn" id="footerTopBtn" aria-label="Вернуться наверх">
@@ -757,7 +776,7 @@
     </div>
   </footer>
 
-  <!-- INTERACTIVE LUXURY LEGAL MODAL (152-FZ, Terms, Cookies, Requisites) -->
+  <!-- INTERACTIVE LUXURY LEGAL MODAL (152-FZ, Terms, Copyright, Cookies, Requisites) -->
   <div class="legal-modal" id="legalModal" aria-hidden="true" role="dialog" aria-labelledby="legalModalTitle">
     <div class="legal-modal__backdrop" id="legalModalBackdrop"></div>
     <div class="legal-modal__window">
@@ -765,6 +784,7 @@
         <div class="legal-modal__nav" role="tablist">
           <button type="button" class="legal-modal__tab is-active" data-tab="privacy" role="tab">152-ФЗ Конфиденциальность</button>
           <button type="button" class="legal-modal__tab" data-tab="terms" role="tab">Пользовательское соглашение</button>
+          <button type="button" class="legal-modal__tab" data-tab="copyright" role="tab">Правообладателям (Copyright)</button>
           <button type="button" class="legal-modal__tab" data-tab="cookies" role="tab">Файлы Cookie</button>
           <button type="button" class="legal-modal__tab" data-tab="requisites" role="tab">Реквизиты</button>
         </div>
@@ -885,17 +905,18 @@
         srvPillar3Desc: 'Цветокоррекция, детальная ретушь и бессрочные коммерческие права без скрытых доплат.',
         srvConsultCta: 'ОБСУДИТЬ СЪЁМКУ',
         srvConsultNote: 'Отвечаем в течение 30 минут в рабочее время',
-        worksEyebrow: 'ИЗБРАННЫЕ КЕЙСЫ',
-        worksTitle1: 'РЕАЛИЗОВАННЫЕ ПРОЕКТЫ',
-        worksTitle2: 'ДЛЯ БРЕНДОВ И ПРОСТРАНСТВ.',
-        worksLead: 'Архитектурная точность, внимание к естественному свету и кинематографичный цвет. Каждый кадр усиливает статус объекта и работает на конверсию.',
-        worksStatsPill: '150+ проектов в Краснодарском крае и РФ',
-        worksTitle1Word: 'РЕАЛИЗОВАННЫЕ',
-        worksTitle2Word: 'ПРОЕКТЫ',
-        worksTitleBadge: '2024–2026',
-        worksMoreBtn: 'ПОКАЗАТЬ ЕЩЁ ПРОЕКТЫ',
-        worksMoreCta: 'ОБСУДИТЬ СЪЁМКУ В ЭТОЙ КАТЕГОРИИ',
-        worksFilterAll: 'Все проекты',
+        worksEyebrow: 'НАПРАВЛЕНИЯ & РЕФЕРЕНСЫ',
+        worksTitle1: 'ПРИМЕРЫ СТИЛЯ',
+        worksTitle2: '& РЕФЕРЕНСЫ СЪЁМОК.',
+        worksLead: 'Стилистические ориентиры, свет и колористика, к которым мы стремимся на съёмках. Реальное коммерческое портфолио под NDA отправляем по запросу.',
+        worksStatsPill: 'Каталог стилистических ориентиров и концептов',
+        worksTitle1Word: 'ПРИМЕРЫ СТИЛЯ',
+        worksTitle2Word: '& РЕФЕРЕНСЫ',
+        worksTitleBadge: 'МУДБОРД',
+        worksSubtitle: 'Стилистические ориентиры, свет и колористика, к которым мы стремимся на съёмках. Реальное портфолио под NDA отправляем по запросу.',
+        worksMoreBtn: 'ПОКАЗАТЬ ЕЩЁ РЕФЕРЕНСЫ',
+        worksMoreCta: 'ОБСУДИТЬ СЪЁМКУ В ЭТОМ СТИЛЕ',
+        worksFilterAll: 'Все направления',
         worksFilterInteriors: 'Интерьеры',
         worksFilterHotels: 'Отели: Гости & Lifestyle',
         worksFilterVideo: 'Видео & Reels',
@@ -904,55 +925,19 @@
         worksCatHotels: 'ОТЕЛИ: ГОСТИ & LIFESTYLE',
         worksCatVideo: 'ВИДЕО & REELS',
         worksCatEvents: 'МЕРОПРИЯТИЯ',
-        worksViewProject: 'Смотреть кейс',
-        p1Title: 'Частная резиденция «Polyana Heights»',
-        p1Desc: 'Интерьерная съёмка шале премиум-класса для архитектурного портфолио. Естественный горный свет, фактуры массива дерева и камня.',
-        p1Tag1: '38 кадров HDR',
-        p1Tag2: 'Детальный стайлинг',
-        p1Tag3: 'Публикация в глянце',
-        p2Title: 'Курортный комплекс «Grand Sapphire»',
-        p2Desc: 'Полный визуальный пакет для ребрендинга и систем бронирования: люксы, открытые бассейны, ресторан и аэросъёмка территории.',
-        p2Tag1: '75 фото номеров & SPA',
-        p2Tag2: 'Аэросъёмка 4K',
-        p2Tag3: 'Контент для OTA',
-        p3Title: 'Имиджевый промо-ролик «Space Architecture»',
-        p3Desc: 'Полноформатный презентационный фильм 4K и адаптации для социальных сетей. Кинематографичный цвет, динамичный темп и саунд-дизайн.',
-        p3Tag1: '4K Cinema (16:9)',
-        p3Tag2: '6 вертикальных Reels',
-        p3Tag3: 'Саунд-дизайн',
-        p4Title: 'Форум инноваций «Юг.Технологии 2024»',
-        p4Desc: 'Многокамерная репортажная съёмка масштабного форума на 1200+ участников. Спикеры на главной сцене, экспо-зона и вечерний нетворкинг.',
-        p4Tag1: 'Экспресс-выдача в день съёмки',
-        p4Tag2: '3 фотографа',
-        p4Tag3: 'Облачная веб-галерея',
-        p5Title: 'Лобби и лаунж «Nordic Boutique Space»',
-        p5Desc: 'Сложные световые схемы в условиях вечернего освещения. Точная передача благородных оттенков латуни, кожи и тёмного дерева.',
-        p5Tag1: 'Режимный вечерний свет',
-        p5Tag2: 'Макро-детали',
-        p5Tag3: 'Без искажения цвета',
-        p6Title: 'Апарт-отель «Azure Coastline»',
-        p6Desc: 'Съемка видовых апартаментов на первой линии моря в режимное «золотое время». Высокий CTR на сервисах Яндекс.Путешествия и Островок.',
-        p6Tag1: 'Golden Hour съёмка',
-        p6Tag2: '24 категории номеров',
-        p6Tag3: '+38% к конверсии брони',
-        p7Title: 'Флагманский ресторан «Veranda Mare»',
-        p7Desc: 'Серия атмосферных гастро-рилсов и главное презентационное видео с авторской подачей блюд, открытой кухней и винным погребом.',
-        p7Tag1: 'Макро-съёмка подачи блюд',
-        p7Tag2: '8 трендовых рилс',
-        p7Tag3: 'ASMR саунд-дизайн',
-        p8Title: 'Саммит девелоперов юга «Development Day»',
-        p8Desc: 'Полный медиаотчёт закрытого саммита: панельные дискуссии, VIP-гости, нетворкинг и церемония награждения лучших проектов года.',
-        p8Tag1: 'Многокамерный репортаж',
-        p8Tag2: 'Пресс-волл фотозона',
-        p8Tag3: 'Отдача за 24 часа',
-        worksArchiveCount: 'АРХИВ ИЗ 150+ КЕЙСОВ',
-        worksArchiveTitle: 'Хотите увидеть проекты именно в вашей нише?',
-        worksArchiveDesc: 'В нашем портфолио десятки объектов со схожей архитектурой, площадью и задачами. Подготовим персональную выборку и смету за 30 минут.',
-        worksArchiveCta: 'ЗАПРОСИТЬ ПОДБОРКУ ПОД ОБЪЕКТ',
+        worksViewProject: 'Смотреть референс',
+        worksArchiveCount: 'ЗАКРЫТОЕ ПОРТФОЛИО ПОД NDA',
+        worksArchiveTitle: 'Нужны реальные съёмки под ваш объект?',
+        worksArchiveDesc: 'Большая часть наших коммерческих проектов для отелей и вилл защищена соглашениями о конфиденциальности (NDA). Мы подготовим персональную закрытую выборку реальных съёмок и смету за 15 минут.',
+        worksArchiveCta: 'ЗАПРОСИТЬ КЕЙСЫ ПОД ВАШ ОБЪЕКТ',
         worksHintScroll: 'СКРОЛЛ ИЛИ СТРЕЛКИ',
         worksSkipToContacts: 'К КОНТАКТАМ ↓',
-        worksMoreBtn: 'ПОКАЗАТЬ ЕЩЁ ПРОЕКТЫ',
-        worksAllLoaded: 'ВСЕ РАБОТЫ ЗАГРУЖЕНЫ',
+        worksMoreBtn: 'ПОКАЗАТЬ ЕЩЁ РЕФЕРЕНСЫ',
+        worksAllLoaded: 'ВСЕ РЕФЕРЕНСЫ ЗАГРУЖЕНЫ',
+        worksDisclaimerStrong: 'Правовое уведомление об иллюстративных материалах:',
+        worksDisclaimerText: 'Фото- и видеоматериалы в каталоге стилей служат концептуальными визуальными референсами и мудбордами направлений съёмки. Исключительные авторские права принадлежат их создателям. Компания «ФОКУС» не заявляет авторства на демонстрационные референсы из открытых источников. Для правообладателей: незамедлительное удаление по обращению на',
+        worksDisclaimerNotice: '(регламент Notice & Takedown за 24ч).',
+        legalCopyright: 'Правообладателям (Notice & Takedown)',
         modalScopeTitle: 'Что было сделано:',
         contactsEyebrow: 'СВЯЗАТЬСЯ',
         contactsTitle1: 'ДАВАЙТЕ ДЕЛАТЬ',
@@ -996,7 +981,7 @@
         legalTerms: 'Пользовательское соглашение',
         legalCookies: 'Файлы Cookie',
         legalRequisites: 'Реквизиты компании',
-        footerRights: 'Все права защищены. Все фото- и видеоматериалы защищены авторским правом.',
+        footerRights: 'Все права защищены. Демонстрационные материалы используются в качестве референсов; авторские права принадлежат их создателям.',
         footerBackToTop: 'НАВЕРХ ↑',
         cookieAcceptBtn: 'Принять все',
         cookieSettingsBtn: 'Подробнее'
@@ -1086,17 +1071,18 @@
         srvPillar3Desc: 'Commercial color grade, meticulous retouching, and perpetual commercial rights with zero hidden fees.',
         srvConsultCta: 'DISCUSS A SHOOT',
         srvConsultNote: 'Response within 30 minutes during business hours',
-        worksEyebrow: 'SELECTED CASES',
-        worksTitle1: 'COMPLETED PROJECTS',
-        worksTitle2: 'FOR BRANDS & SPACES.',
-        worksLead: 'Architectural precision, mastery of natural light, and cinematic color. Every frame elevates property prestige and drives direct conversion.',
-        worksStatsPill: '150+ completed shoots across Russia',
-        worksTitle1Word: 'COMPLETED',
-        worksTitle2Word: 'PROJECTS',
-        worksTitleBadge: '2024–2026',
-        worksMoreBtn: 'LOAD MORE WORKS',
-        worksMoreCta: 'DISCUSS A PROJECT IN THIS CATEGORY',
-        worksFilterAll: 'All projects',
+        worksEyebrow: 'VISUAL REFERENCES & STYLES',
+        worksTitle1: 'AESTHETIC STYLES',
+        worksTitle2: '& SHOOT REFERENCES.',
+        worksLead: 'Aesthetic benchmarks, lighting scenarios, and styling references for our productions. Proprietary client work under NDA available upon request.',
+        worksStatsPill: 'Catalog of creative directions and benchmarks',
+        worksTitle1Word: 'AESTHETIC STYLES',
+        worksTitle2Word: '& REFERENCES',
+        worksTitleBadge: 'MOODBOARD',
+        worksSubtitle: 'Aesthetic benchmarks, lighting scenarios, and styling references for our productions. Proprietary client work under NDA available upon request.',
+        worksMoreBtn: 'LOAD MORE REFERENCES',
+        worksMoreCta: 'DISCUSS A SHOOT IN THIS STYLE',
+        worksFilterAll: 'All directions',
         worksFilterInteriors: 'Interiors',
         worksFilterHotels: 'Hotels: Guests & Lifestyle',
         worksFilterVideo: 'Video & Reels',
@@ -1105,55 +1091,19 @@
         worksCatHotels: 'HOTELS: GUESTS & LIFESTYLE',
         worksCatVideo: 'VIDEO & REELS',
         worksCatEvents: 'EVENTS',
-        worksViewProject: 'View project',
-        p1Title: 'Private Residence «Polyana Heights»',
-        p1Desc: 'Editorial interior shoot of a luxury alpine chalet for architectural publications. Natural mountain light, tactile wood and stone textures.',
-        p1Tag1: '38 HDR captures',
-        p1Tag2: 'Interior styling',
-        p1Tag3: 'Editorial publication',
-        p2Title: 'Resort Complex «Grand Sapphire»',
-        p2Desc: 'Comprehensive visual package for rebranding and OTA bookings: luxury suites, open-air pools, dining, and aerial grounds footage.',
-        p2Tag1: '75 suite & SPA photos',
-        p2Tag2: '4K Drone cinematography',
-        p2Tag3: 'OTA-ready media',
-        p3Title: 'Brand Cinema Film «Space Architecture»',
-        p3Desc: 'Full-length 4K architectural film and dynamic social media adaptations. Cinema color grade, fast pace, and spatial sound design.',
-        p3Tag1: '4K Cinema (16:9)',
-        p3Tag2: '6 vertical Reels',
-        p3Tag3: 'Sound design',
-        p4Title: 'Innovation Summit «South.Tech 2024»',
-        p4Desc: 'Multi-camera conference reportage with 1,200+ attendees. Keynote stage, exhibition floor, and exclusive VIP networking gala.',
-        p4Tag1: 'Same-day express preview',
-        p4Tag2: '3 photographers',
-        p4Tag3: 'Cloud gallery',
-        p5Title: 'Lobby & Lounge «Nordic Boutique Space»',
-        p5Desc: 'Complex artificial lighting setups in low ambient light. Faithful reproduction of brass, leather, and smoked oak tones.',
-        p5Tag1: 'Ambient evening light',
-        p5Tag2: 'Macro details',
-        p5Tag3: 'Color-accurate grade',
-        p6Title: 'Apart-Hotel «Azure Coastline»',
-        p6Desc: 'Frontline sea-view suite shoot during golden hour. Proven +38% booking conversion lift on travel aggregators.',
-        p6Tag1: 'Golden Hour shoot',
-        p6Tag2: '24 room categories',
-        p6Tag3: '+38% booking conversion',
-        p7Title: 'Flagship Dining «Veranda Mare»',
-        p7Desc: 'Series of sensory dining Reels and main brand film featuring signature dish plating, open kitchen, and cellar.',
-        p7Tag1: 'Gourmet macro plating',
-        p7Tag2: '8 trending Reels',
-        p7Tag3: 'ASMR sound design',
-        p8Title: 'Southern Developer Summit «Development Day»',
-        p8Desc: 'Comprehensive media coverage of an industry summit: panel talks, executive portraits, and evening award ceremony.',
-        p8Tag1: 'Multi-camera reportage',
-        p8Tag2: 'Step & repeat photozone',
-        p8Tag3: '24-hour turnaround',
-        worksArchiveCount: 'ARCHIVE OF 150+ CASES',
-        worksArchiveTitle: 'Looking for projects specific to your exact niche?',
-        worksArchiveDesc: 'Our catalog includes dozens of properties with comparable architecture, scale, and requirements. We can send a curated selection and quote within 30 minutes.',
-        worksArchiveCta: 'REQUEST CURATED PORTFOLIO',
+        worksViewProject: 'View reference',
+        worksArchiveCount: 'COMMERCIAL PORTFOLIO UNDER NDA',
+        worksArchiveTitle: 'Looking for actual shoots tailored to your venue?',
+        worksArchiveDesc: 'Most of our commissioned shoots for resorts and private residences are protected by NDAs. We will prepare a curated private portfolio and cost estimate within 15 minutes.',
+        worksArchiveCta: 'REQUEST PRIVATE CASE STUDIES',
         worksHintScroll: 'SCROLL OR ARROWS',
         worksSkipToContacts: 'TO CONTACTS ↓',
-        worksMoreBtn: 'LOAD MORE PROJECTS',
-        worksAllLoaded: 'ALL PROJECTS LOADED',
+        worksMoreBtn: 'LOAD MORE REFERENCES',
+        worksAllLoaded: 'ALL REFERENCES LOADED',
+        worksDisclaimerStrong: 'Legal notice regarding illustrative media:',
+        worksDisclaimerText: 'Photo and video media in this style catalog serve exclusively as conceptual references and production moodboards. Exclusive copyrights belong to their respective creators. FOCUS Company does not claim proprietary authorship over external references from open sources. For copyright holders: immediate removal upon request to',
+        worksDisclaimerNotice: '(Notice & Takedown within 24h).',
+        legalCopyright: 'Copyright Holders (Notice & Takedown)',
         modalScopeTitle: 'Scope of deliverables:',
         modalCtaText: 'Book a similar shoot',
         contactsEyebrow: 'CONTACT US',
@@ -1198,7 +1148,7 @@
         legalTerms: 'Terms of Service',
         legalCookies: 'Cookie Policy',
         legalRequisites: 'Company Requisites',
-        footerRights: 'All rights reserved. All photo and video assets are protected by copyright.',
+        footerRights: 'All rights reserved. Demonstrative media are used as aesthetic references; copyrights belong to their respective creators.',
         footerBackToTop: 'BACK TO TOP ↑',
         cookieAcceptBtn: 'Accept all',
         cookieSettingsBtn: 'Details'
@@ -1772,7 +1722,7 @@
             <video src="${item.videoSrc}" poster="${item.src}" class="works-sc-card__img works-sc-card__video" autoplay loop muted playsinline preload="metadata"></video>
             <div class="works-sc-card__badge">
               <span class="works-sc-play-icon">▶</span>
-              <span>Reels 9:16</span>
+              <span>Референс Reels</span>
               <span style="opacity: 0.4;">•</span>
               <span>Смотреть ↗</span>
             </div>
@@ -1781,7 +1731,7 @@
           mediaHtml = `
             <img src="${item.src}" alt="${item.alt || ''}" class="works-sc-card__img" loading="${idx < 6 ? 'eager' : 'lazy'}" decoding="async">
             <div class="works-sc-card__badge">
-              <span>0${idx + 1}</span>
+              <span>Референс 0${idx + 1}</span>
               <span style="opacity: 0.4;">•</span>
               <span>Увеличить ↗</span>
             </div>
@@ -1806,9 +1756,9 @@
       endCard.className = 'works-sc-card works-sc-card--end';
       endCard.innerHTML = `
         <div>
-          <div class="works-end-card__badge">АРХИВ 150+ КЕЙСОВ</div>
-          <div class="works-end-card__title">Нужна подборка под ваш объект?</div>
-          <div class="works-end-card__desc">Соберем персональное портфолио с близкой архитектурой и смету за 30 минут.</div>
+          <div class="works-end-card__badge">ПОРТФОЛИО ПОД NDA</div>
+          <div class="works-end-card__title">Нужны реальные съёмки под ваш объект?</div>
+          <div class="works-end-card__desc">Соберем персональное закрытое портфолио с близкой архитектурой и смету за 15 минут.</div>
         </div>
         <a href="#contacts" class="works-end-card__cta">
           <span>ОБСУДИТЬ СЪЁМКУ</span>
@@ -2048,21 +1998,51 @@
       },
       terms: {
         badge: 'ГРАЖДАНСКИЙ КОДЕКС РФ • ЧАСТЬ IV',
-        title: 'Пользовательское соглашение и авторские права',
+        title: 'Пользовательское соглашение и статус материалов',
         html: `
           <p class="legal-meta">Дата редакции: 14 октября 2026 г. • Правообладатель: Компания «ФОКУС»</p>
           <h2>1. Статус материалов и отсутствие публичной оферты</h2>
           <p>Весь контент, размещённый на сайте focus-photo.ru, носит справочно-информационный характер. Информация о форматах и стоимости съёмок не является публичной офертой по смыслу ст. 437 ГК РФ. Финальная стоимость и условия закрепляются в индивидуальном договоре и техническом задании.</p>
 
-          <h2>2. Исключительные авторские права (ст. 1252, 1301 ГК РФ)</h2>
-          <p>Все фотографии, видеоматериалы, Reels, фирменный логотип «ФОКУС», графические элементы и дизайн сайта являются интеллектуальной собственностью Компании «ФОКУС» или её доверителей и охраняются законодательством РФ об авторском праве.</p>
-          <p><strong>Запрещено:</strong> любое копирование, воспроизведение, скачивание, распространение, коммерческое использование или публикация на сторонних ресурсах без письменного согласия правообладателя строго запрещены и преследуются по закону (взыскание компенсации до 5 000 000 рублей по ст. 1301 ГК РФ).</p>
+          <h2>2. Статус демонстрационных референсов (ст. 1274 ГК РФ)</h2>
+          <p>Фото- и видеоматериалы в галерее стилей используются исключительно как концептуальные визуальные ориентиры и мудборды для демонстрации стандартов света, цвета и композиции. Компания не претендует на авторство открытых референсов и не осуществляет их коммерческую перепродажу.</p>
 
-          <h2>3. Правила использования формы обратной связи</h2>
-          <p>Отправляя заявку, пользователь гарантирует достоверность предоставленных контактных данных и подтверждает, что действует от своего имени или уполномочен представлять компанию/объект.</p>
+          <h2>3. Коммерческое портфолио под NDA</h2>
+          <p>Реальные съёмки компании для отелей, вилл и девелоперов защищены соглашениями о конфиденциальности (NDA) и передаются клиентам по индивидуальному запросу в закрытом формате.</p>
+
+          <h2>4. Интеллектуальная собственность Компании</h2>
+          <p>Логотип «ФОКУС», авторские текстовые концепции, элементы дизайна и код сайта охраняются законом. Несанкционированное копирование бренда запрещено.</p>
 
           <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
             <a href="terms.html" target="_blank" class="legal-link" style="color:var(--lime,#CAFF1C);font-weight:700;">Открыть полный текст Пользовательского соглашения (HTML) ↗</a>
+          </div>
+        `
+      },
+      copyright: {
+        badge: 'АВТОРСКОЕ ПРАВО • СТ. 1253.1 & 1274 ГК РФ',
+        title: 'Уведомление для авторов и правообладателей (Notice & Takedown)',
+        html: `
+          <p class="legal-meta">Официальный регламент рассмотрения обращений правообладателей</p>
+          <h2>1. Статус визуальных референсов на Сайте</h2>
+          <p>Ряд фотографических и видеоматериалов (включая вертикальные Reels, подборки интерьеров, отелей и событий), представленных в каталоге стилистики Сайта <strong>focus-photo.ru</strong>, используется исключительно в качестве концептуальных визуальных ориентиров, мудбордов и примеров стилистики съёмки (в информационных и иллюстративных целях в соответствии со ст. 1274 ГК РФ).</p>
+          <p>Компания «ФОКУС» <strong>не заявляет исключительного авторства</strong> на сторонние визуальные референсы, заимствованные из открытых источников (в том числе платформы Pinterest и открытых фотохостингов), и не осуществляет их возмездную продажу как самостоятельных товаров.</p>
+          
+          <h2>2. Порядок добросовестного снятия материалов (Notice & Takedown)</h2>
+          <p>Компания безусловно уважает законные права авторов и создателей контента. Если вы являетесь законным автором или правообладателем любого фото- или видеоматериала, размещённого на Сайте, и возражаете против его присутствия либо хотите указать ссылку на ваше авторство:</p>
+          <ul>
+            <li>Направьте официальное письмо на почту: <a href="mailto:info@focus-photo.ru" class="legal-link" style="color:var(--lime,#CAFF1C);">info@focus-photo.ru</a> с темой: <em>«Обращение правообладателя / Авторское право»</em>;</li>
+            <li>Приложите ссылку на страницу Сайта или скриншот материала;</li>
+            <li>Приложите подтверждение ваших авторских прав (ссылка на оригинал публикации, профиль или исходный файл).</li>
+          </ul>
+
+          <h2>3. Сроки рассмотрения и гарантия досудебного урегулирования</h2>
+          <p>Администрация сайта обязуется рассмотреть обращение и незамедлительно удалить спорный материал из открытого доступа в течение <strong>24 часов</strong> с момента получения письма без необходимости судебных разбирательств (ст. 1253.1 ГК РФ).</p>
+          
+          <h2>4. Коммерческое портфолио под NDA</h2>
+          <p>Реальные коммерческие съёмки Компании «ФОКУС», выполненные для отелей, ресторанов и девелоперов, содержащие коммерческую тайну или защищённые соглашениями о неразглашении (NDA), предоставляются потенциальным клиентам исключительно по индивидуальному запросу в закрытом формате.</p>
+
+          <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
+            <a href="terms.html#copyright" target="_blank" class="legal-link" style="color:var(--lime,#CAFF1C);font-weight:700;">Открыть раздел Пользовательского соглашения для правообладателей (HTML) ↗</a>
           </div>
         `
       },
@@ -2165,21 +2145,51 @@
       },
       terms: {
         badge: 'CIVIL CODE OF THE RUSSIAN FEDERATION • PART IV',
-        title: 'Terms of Service & Copyright Protection',
+        title: 'Terms of Service & Material Status',
         html: `
           <p class="legal-meta">Effective Date: October 14, 2026 • Copyright Holder: FOCUS Company</p>
           <h2>1. Information Status & No Public Offer</h2>
           <p>Information presented on focus-photo.ru is for reference purposes and does not constitute a public offer under Article 437 of the Civil Code of the Russian Federation. Final quotes and deliverables are established in individual service agreements.</p>
 
-          <h2>2. Intellectual Property Rights (Arts. 1252, 1301 Civil Code)</h2>
-          <p>All photographs, video productions, Reels, logos, and UI designs are exclusive intellectual property protected by copyright law.</p>
-          <p><strong>Prohibited:</strong> Any unauthorized reproduction, downloading, distribution, or commercial usage without prior written permission is illegal and subject to statutory damages up to 5,000,000 RUB.</p>
+          <h2>2. Status of Demonstrative References (Art. 1274 Civil Code)</h2>
+          <p>Photos and videos in the style showcase serve exclusively as conceptual references and moodboards illustrating lighting, color grading, and composition standards. FOCUS does not claim authorship over open external references and does not commercialize or resell them.</p>
 
-          <h2>3. Feedback & Inquiries</h2>
-          <p>Users warrant that all submitted contact details are accurate and that they are authorized to represent the respective property or company.</p>
+          <h2>3. Commercial Portfolio Under NDA</h2>
+          <p>Proprietary client work shot for luxury resorts, villas, and developers is strictly protected by non-disclosure agreements (NDAs) and is shared with prospective clients privately upon request.</p>
+
+          <h2>4. Intellectual Property of the Company</h2>
+          <p>The FOCUS logo, textual concepts, interface design, and codebase are legally protected assets. Unauthorized branding duplication is prohibited.</p>
 
           <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
             <a href="terms.html" target="_blank" class="legal-link" style="color:var(--lime,#CAFF1C);font-weight:700;">Open Full Terms of Service (HTML) ↗</a>
+          </div>
+        `
+      },
+      copyright: {
+        badge: 'COPYRIGHT LAW • NOTICE & TAKEDOWN',
+        title: 'Notice for Copyright Holders & Content Creators',
+        html: `
+          <p class="legal-meta">Official Notice & Takedown Protocol</p>
+          <h2>1. Status of Visual References</h2>
+          <p>Certain photographic and video materials presented in the style showcase of <strong>focus-photo.ru</strong> serve exclusively as conceptual visual references, moodboards, and stylistic benchmarks (for informational and illustrative purposes under Article 1274 of the Civil Code of the Russian Federation).</p>
+          <p>FOCUS Company <strong>does not claim proprietary authorship</strong> over external visual references collected from open platforms (including Pinterest) and does not commercialize or resell these third-party works.</p>
+
+          <h2>2. Notice & Takedown Protocol (24h SLA)</h2>
+          <p>We respect intellectual property rights. If you are the legal creator or copyright holder of any media referenced on our site and wish to request attribution or removal:</p>
+          <ul>
+            <li>Email us at: <a href="mailto:info@focus-photo.ru" class="legal-link" style="color:var(--lime,#CAFF1C);">info@focus-photo.ru</a> with subject: <em>"Copyright Notice / Removal Request"</em>;</li>
+            <li>Provide the specific URL or screenshot of the referenced media;</li>
+            <li>Include reasonable verification of your authorship or copyright ownership.</li>
+          </ul>
+
+          <h2>3. Voluntary Pre-Trial Resolution Guarantee</h2>
+          <p>Our legal administration will review and unconditionally remove the referenced media from public display within <strong>24 hours</strong> of notice receipt (in compliance with principles of Art. 1253.1 Civil Code for information intermediaries).</p>
+
+          <h2>4. Proprietary Commercial Works Under NDA</h2>
+          <p>Proprietary commercial productions shot by FOCUS for hotels, restaurants, and developers under non-disclosure agreements are shared privately with prospective clients upon request.</p>
+
+          <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
+            <a href="terms.html#copyright" target="_blank" class="legal-link" style="color:var(--lime,#CAFF1C);font-weight:700;">View Full Terms of Service (HTML) ↗</a>
           </div>
         `
       },
