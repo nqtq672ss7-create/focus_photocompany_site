@@ -616,13 +616,18 @@
               <textarea id="formMessage" name="message" class="form-textarea" rows="2" placeholder="Локация, формат или примерные даты съёмки..." data-i18n-placeholder="contactsFieldMessagePlh"></textarea>
             </div>
 
-            <!-- Consent Checkbox -->
+            <!-- Consent Checkbox (152-FZ Full Compliance) -->
             <label class="form-consent">
               <input type="checkbox" id="formConsent" required checked>
               <span class="form-consent__box" aria-hidden="true">
                 <svg viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </span>
-              <span class="form-consent__text" data-i18n="contactsConsent">Согласие на обработку данных</span>
+              <span class="form-consent__text">
+                <span data-i18n="contactsConsentText">Даю согласие на</span> 
+                <a href="privacy.html" class="form-consent__link" onclick="openLegalModal('consent'); return false;" data-i18n="contactsConsentLink1">обработку данных</a> 
+                <span data-i18n="contactsConsentText2">по</span> 
+                <a href="privacy.html" class="form-consent__link" onclick="openLegalModal('privacy'); return false;" data-i18n="contactsConsentLink2">152-ФЗ</a>
+              </span>
             </label>
 
             <!-- Submit Button (Accent Obsidian or Accent Lime) -->
@@ -646,26 +651,101 @@
     </div>
   </section>
 
-  <!-- LUXURY FOOTER -->
+  <!-- LUXURY FOOTER (4-Column Enterprise Architecture) -->
   <footer class="site-footer">
     <div class="footer-container">
-      <div class="footer-top">
+      
+      <!-- 4-Column Main Grid -->
+      <div class="footer-main">
+
+        <!-- Column 1: Brand, Official Logo & Bio -->
         <div class="footer-brand">
-          <div class="footer-logo">ФОКУС</div>
-          <p class="footer-tagline" data-i18n="footerTagline">КОММЕРЧЕСКАЯ ФОТО- И ВИДЕОКОМПАНИЯ</p>
+          <a href="#hero" class="footer-brand__logo-wrap" aria-label="ФОКУС — на главную">
+            <picture>
+              <source srcset="assets/logo-focus.webp" type="image/webp">
+              <img src="assets/logo-focus.png" alt="ФОКУС фотокомпания" class="footer-brand__logo">
+            </picture>
+          </a>
+          <p class="footer-brand__desc" data-i18n="footerBrandDesc">
+            Коммерческая фото- и видеокомпания полного цикла. Создаём продающий визуальный контент для отелей, интерьеров, девелоперов и закрытых событий.
+          </p>
+          <div class="footer-brand__badge">
+            <span class="pulse-dot"></span>
+            <span data-i18n="footerBadge">СЪЁМКИ ПО ЮГУ И ВСЕЙ РФ</span>
+          </div>
         </div>
-        <nav class="footer-nav" aria-label="Навигация в подвале">
-          <a href="#hero" class="footer-nav__link" data-i18n="home">ГЛАВНАЯ</a>
-          <a href="#about" class="footer-nav__link" data-i18n="about">О КОМПАНИИ</a>
-          <a href="#services" class="footer-nav__link" data-i18n="services">УСЛУГИ</a>
-          <a href="#works" class="footer-nav__link" data-i18n="works">ПРИМЕРЫ РАБОТ</a>
-          <a href="#contacts" class="footer-nav__link" data-i18n="contacts">КОНТАКТЫ</a>
-        </nav>
+
+        <!-- Column 2: Navigation -->
+        <div class="footer-col">
+          <h4 class="footer-col__title" data-i18n="footerNavTitle">НАВИГАЦИЯ</h4>
+          <ul class="footer-col__list">
+            <li><a href="#hero" class="footer-col__link" data-i18n="home">Главная</a></li>
+            <li><a href="#about" class="footer-col__link" data-i18n="about">О компании</a></li>
+            <li><a href="#services" class="footer-col__link" data-i18n="services">Услуги</a></li>
+            <li><a href="#works" class="footer-col__link" data-i18n="works">Примеры работ</a></li>
+            <li><a href="#contacts" class="footer-col__link" data-i18n="contacts">Контакты</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Directions & Works Categories -->
+        <div class="footer-col">
+          <h4 class="footer-col__title" data-i18n="footerServicesTitle">НАПРАВЛЕНИЯ</h4>
+          <ul class="footer-col__list">
+            <li><a href="#works" class="footer-col__link footer-col__link--cat" data-cat="interiors">01 Интерьеры & Архитектура</a></li>
+            <li><a href="#works" class="footer-col__link footer-col__link--cat" data-cat="hotels">02 Отели: Гости & Lifestyle</a></li>
+            <li><a href="#works" class="footer-col__link footer-col__link--cat" data-cat="video">03 Рекламное видео & Reels</a></li>
+            <li><a href="#works" class="footer-col__link footer-col__link--cat" data-cat="events">04 Бизнес-события & Ивенты</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Direct Channels -->
+        <div class="footer-col">
+          <h4 class="footer-col__title" data-i18n="footerContactTitle">ПРЯМАЯ СВЯЗЬ</h4>
+          <div class="footer-col__info">
+            <span class="footer-col__info-label" data-i18n="footerOfficeLabel">ОФИС КОМПАНИИ:</span>
+            <a href="tel:+79531151199" class="footer-col__info-val">+7 (953) 115-11-99</a>
+          </div>
+          <div class="footer-col__info">
+            <span class="footer-col__info-label" data-i18n="footerDirectorLabel">УПРАВЛЯЮЩИЙ (ЕКАТЕРИНА):</span>
+            <a href="tel:+79298508503" class="footer-col__info-val">+7 (929) 850-85-03</a>
+          </div>
+          <div class="footer-col__info">
+            <span class="footer-col__info-label" data-i18n="footerLocationLabel">ЛОКАЦИЯ:</span>
+            <span style="font-size:12.5px;color:rgba(244,241,233,0.7);">г. Анапа, Пионерский пр-т, 47 / ул. Набережная, 2</span>
+          </div>
+          <div class="footer-messengers-mini">
+            <a href="https://t.me/zakonpudova" target="_blank" rel="noopener" class="footer-msg-pill" aria-label="Telegram" title="Telegram: @zakonpudova">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            </a>
+            <a href="https://wa.me/79298508503?text=Здравствуйте!%20Хочу%20обсудить%20съёмку%20в%20компании%20ФОКУС" target="_blank" rel="noopener" class="footer-msg-pill" aria-label="WhatsApp" title="WhatsApp: +7 (929) 850-85-03">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.53 1.37 5.07L2 22l5.17-1.36c1.48.81 3.16 1.25 4.87 1.25 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm.02 18.17c-1.52 0-3.02-.41-4.32-1.18l-.31-.18-3.21.84.86-3.13-.2-.32a8.16 8.16 0 01-1.25-4.29c0-4.52 3.68-8.2 8.22-8.2 2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 012.4 5.8c0 4.53-3.68 8.21-8.22 8.21zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.17.25-.64.8-.79.97-.14.17-.29.19-.53.07-.25-.12-1.04-.38-1.99-1.22-.73-.65-1.23-1.46-1.38-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.41 1.02 2.58.12.17 1.76 2.68 4.26 3.76.6.26 1.06.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.12-.22-.19-.47-.31z"/></svg>
+            </a>
+            <a href="https://max.ru" target="_blank" rel="noopener" class="footer-msg-pill" aria-label="MAX" title="MAX: +7 (929) 850-85-03">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.35 5L2.2 21.8l4.94-1.14C8.56 21.49 10.23 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm3.8 13.5h-1.7l-1.4-4.2h-.05l-1.4 4.2H9.5L7.7 8.5h1.6l1 3.8h.05l1.4-3.8h1.5l1.4 3.8h.05l1-3.8h1.6l-1.8 7z"/></svg>
+            </a>
+          </div>
+        </div>
+
       </div>
 
+      <!-- Legal Strip: 152-FZ, Terms, Cookies & Requisites -->
+      <div class="footer-legal-strip">
+        <div class="footer-legal-links">
+          <a href="privacy.html" class="footer-legal-link" onclick="openLegalModal('privacy'); return false;" data-i18n="legalPrivacy">Политика конфиденциальности (152-ФЗ)</a>
+          <a href="terms.html" class="footer-legal-link" onclick="openLegalModal('terms'); return false;" data-i18n="legalTerms">Пользовательское соглашение</a>
+          <a href="cookies.html" class="footer-legal-link" onclick="openLegalModal('cookies'); return false;" data-i18n="legalCookies">Файлы Cookie</a>
+          <a href="privacy.html#requisites" class="footer-legal-link" onclick="openLegalModal('requisites'); return false;" data-i18n="legalRequisites">Реквизиты компании</a>
+        </div>
+        <div class="footer-rk-compliance">
+          <span class="footer-rk-dot"></span>
+          <span>152-ФЗ • Базы данных локализованы в РФ</span>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
       <div class="footer-bottom">
         <div class="footer-copyright">
-          © 2024–2026 Компания «ФОКУС». <span data-i18n="footerRights">Все права защищены.</span>
+          © 2024–2026 Компания «ФОКУС». <span data-i18n="footerRights">Все права защищены. Все фото- и видеоматериалы защищены авторским правом.</span>
         </div>
         <div class="footer-actions">
           <button type="button" class="footer-top-btn" id="footerTopBtn" aria-label="Вернуться наверх">
@@ -673,8 +753,44 @@
           </button>
         </div>
       </div>
+
     </div>
   </footer>
+
+  <!-- INTERACTIVE LUXURY LEGAL MODAL (152-FZ, Terms, Cookies, Requisites) -->
+  <div class="legal-modal" id="legalModal" aria-hidden="true" role="dialog" aria-labelledby="legalModalTitle">
+    <div class="legal-modal__backdrop" id="legalModalBackdrop"></div>
+    <div class="legal-modal__window">
+      <div class="legal-modal__header">
+        <div class="legal-modal__nav" role="tablist">
+          <button type="button" class="legal-modal__tab is-active" data-tab="privacy" role="tab">152-ФЗ Конфиденциальность</button>
+          <button type="button" class="legal-modal__tab" data-tab="terms" role="tab">Пользовательское соглашение</button>
+          <button type="button" class="legal-modal__tab" data-tab="cookies" role="tab">Файлы Cookie</button>
+          <button type="button" class="legal-modal__tab" data-tab="requisites" role="tab">Реквизиты</button>
+        </div>
+        <button type="button" class="legal-modal__close" id="legalModalClose" aria-label="Закрыть">✕</button>
+      </div>
+      <div class="legal-modal__body" id="legalModalBody"></div>
+    </div>
+  </div>
+
+  <!-- FLOATING LUXURY COOKIE CONSENT BANNER -->
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Уведомление об использовании файлов Cookie">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__content">
+        <div class="cookie-banner__icon">🍪</div>
+        <p class="cookie-banner__text">
+          Мы используем файлы cookie и сервисы веб-аналитики для стабильной работы сайта и персонализации в соответствии с 
+          <a href="cookies.html" class="cookie-banner__link" onclick="openLegalModal('cookies'); return false;">Политикой файлов Cookie</a> и 
+          <a href="privacy.html" class="cookie-banner__link" onclick="openLegalModal('privacy'); return false;">152-ФЗ</a>.
+        </p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button type="button" class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAcceptBtn" data-i18n="cookieAcceptBtn">Принять все</button>
+        <button type="button" class="cookie-banner__btn cookie-banner__btn--settings" id="cookieSettingsBtn" onclick="openLegalModal('cookies');" data-i18n="cookieSettingsBtn">Подробнее</button>
+      </div>
+    </div>
+  </div>
 
   <!-- VENDOR LIBRARIES: GSAP + SCROLLTRIGGER -->
   <script src="assets/gsap.min.js"></script>
@@ -860,12 +976,30 @@
         contactsFieldMessage: 'О проекте (необязательно)',
         contactsFieldMessagePlh: 'Локация, формат или примерные даты съёмки...',
         contactsConsent: 'Согласие на обработку данных',
+        contactsConsentText: 'Даю согласие на',
+        contactsConsentLink1: 'обработку данных',
+        contactsConsentText2: 'по',
+        contactsConsentLink2: '152-ФЗ',
         contactsSubmitBtn: 'ОТПРАВИТЬ ЗАЯВКУ',
         contactsSuccessTitle: 'Заявка принята!',
         contactsSuccessText: 'Спасибо! Екатерина свяжется с вами в течение 15 минут.',
         footerTagline: 'КОММЕРЧЕСКАЯ ФОТО- И ВИДЕОКОМПАНИЯ',
-        footerRights: 'Все права защищены.',
-        footerBackToTop: 'НАВЕРХ ↑'
+        footerBrandDesc: 'Коммерческая фото- и видеокомпания полного цикла. Создаём продающий визуальный контент для отелей, интерьеров, девелоперов и закрытых событий.',
+        footerBadge: 'СЪЁМКИ ПО ЮГУ И ВСЕЙ РФ',
+        footerNavTitle: 'НАВИГАЦИЯ',
+        footerServicesTitle: 'НАПРАВЛЕНИЯ',
+        footerContactTitle: 'ПРЯМАЯ СВЯЗЬ',
+        footerOfficeLabel: 'ОФИС КОМПАНИИ:',
+        footerDirectorLabel: 'УПРАВЛЯЮЩИЙ (ЕКАТЕРИНА):',
+        footerLocationLabel: 'ЛОКАЦИЯ:',
+        legalPrivacy: 'Политика конфиденциальности (152-ФЗ)',
+        legalTerms: 'Пользовательское соглашение',
+        legalCookies: 'Файлы Cookie',
+        legalRequisites: 'Реквизиты компании',
+        footerRights: 'Все права защищены. Все фото- и видеоматериалы защищены авторским правом.',
+        footerBackToTop: 'НАВЕРХ ↑',
+        cookieAcceptBtn: 'Принять все',
+        cookieSettingsBtn: 'Подробнее'
       },
       en: {
         company: 'PHOTOGRAPHY COMPANY',
@@ -1044,12 +1178,30 @@
         contactsFieldMessage: 'About the project (optional)',
         contactsFieldMessagePlh: 'Location, format or shoot dates...',
         contactsConsent: 'Consent to data processing',
+        contactsConsentText: 'I consent to',
+        contactsConsentLink1: 'data processing',
+        contactsConsentText2: 'under',
+        contactsConsentLink2: '152-FZ',
         contactsSubmitBtn: 'SUBMIT INQUIRY',
         contactsSuccessTitle: 'Inquiry received!',
         contactsSuccessText: 'Thank you! Ekaterina will contact you within 15 minutes.',
         footerTagline: 'COMMERCIAL PHOTOGRAPHY & CINEMATOGRAPHY',
-        footerRights: 'All rights reserved.',
-        footerBackToTop: 'BACK TO TOP ↑'
+        footerBrandDesc: 'Full-cycle commercial photo and video company. We create high-converting visual media for hotels, interiors, developers, and private events.',
+        footerBadge: 'SHOOTS ACROSS SOUTH & NATIONWIDE',
+        footerNavTitle: 'NAVIGATION',
+        footerServicesTitle: 'SERVICES',
+        footerContactTitle: 'DIRECT CONTACT',
+        footerOfficeLabel: 'MAIN OFFICE:',
+        footerDirectorLabel: 'MANAGING DIRECTOR (EKATERINA):',
+        footerLocationLabel: 'LOCATION:',
+        legalPrivacy: 'Privacy Policy (152-FZ)',
+        legalTerms: 'Terms of Service',
+        legalCookies: 'Cookie Policy',
+        legalRequisites: 'Company Requisites',
+        footerRights: 'All rights reserved. All photo and video assets are protected by copyright.',
+        footerBackToTop: 'BACK TO TOP ↑',
+        cookieAcceptBtn: 'Accept all',
+        cookieSettingsBtn: 'Details'
       }
     };
 
@@ -1838,6 +1990,333 @@
       footerTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+    }
+
+    // ── FOOTER CATEGORY JUMP TO WORKS SHOWCASE ──────────────────────
+    const footerCatLinks = document.querySelectorAll('.footer-col__link--cat');
+    footerCatLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const cat = link.getAttribute('data-cat') || 'interiors';
+        if (categoryTabs && categoryTabs.length) {
+          categoryTabs.forEach((t) => {
+            const isActive = t.getAttribute('data-cat') === cat;
+            t.classList.toggle('is-active', isActive);
+            t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+        }
+        const worksSec = document.getElementById('works');
+        if (worksSec) {
+          worksSec.scrollIntoView({ behavior: 'smooth' });
+        }
+        renderWorksShowcase(cat, true);
+      });
+    });
+
+    // ── INTERACTIVE LUXURY LEGAL MODAL & 152-FZ DATA ───────────────────
+    const legalModalData = {
+      privacy: {
+        badge: 'ФЕДЕРАЛЬНЫЙ ЗАКОН № 152-ФЗ',
+        title: 'Политика обработки персональных данных',
+        html: `
+          <p class="legal-meta">Дата редакции: 14 октября 2026 г. • Оператор: Компания «ФОКУС»</p>
+          <h2>1. Общие положения и цели обработки</h2>
+          <p>Настоящая Политика определяет порядок сбора, систематизации, хранения и защиты персональных данных пользователей сайта <strong>focus-photo.ru</strong> в строгом соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+          <p>Компания обрабатывает персональные данные исключительно для обработки входящих обращений, индивидуального расчёта смет на коммерческую фото- и видеосъёмку, консультирования клиентов и исполнения договоров.</p>
+          
+          <h2>2. Состав обрабатываемых данных</h2>
+          <ul>
+            <li>Имя контактного лица или представителя компании;</li>
+            <li>Контактный телефон и/или никнейм в мессенджерах (Telegram, WhatsApp, MAX);</li>
+            <li>Параметры объекта съёмки (город, категория, даты);</li>
+            <li>Технические обезличенные данные (cookie, IP-адрес, тип браузера).</li>
+          </ul>
+
+          <h2>3. Локализация баз данных в РФ (ч. 5 ст. 18 152-ФЗ)</h2>
+          <p>Оператор гарантирует, что при сборе персональных данных граждан РФ запись, систематизация, накопление, хранение и извлечение осуществляются исключительно с использованием серверов и баз данных, находящихся на территории Российской Федерации.</p>
+
+          <h2>4. Защита информации и непередача третьим лицам</h2>
+          <p>Передача персональных данных третьим лицам категорически исключена, за исключением случаев, прямо установленных законодательством РФ. Сайт защищён современным SSL/TLS-шифрованием.</p>
+
+          <h2>5. Порядок отзыва согласия</h2>
+          <p>Субъект данных может в любой момент отозвать своё согласие, направив письменное уведомление на официальную электронную почту <a href="mailto:info@focus-photo.ru" class="legal-link" style="color:var(--lime,#CAFF1C);">info@focus-photo.ru</a> с темой «Отзыв согласия на обработку ПДн». Обработка прекращается в течение 10 рабочих дней с безвозвратным удалением данных.</p>
+          
+          <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
+            <a href="privacy.html" target="_blank" class="legal-link" style="color:var(--lime,#CAFF1C);font-weight:700;">Открыть полную официальную редакцию Политики 152-ФЗ (HTML) ↗</a>
+          </div>
+        `
+      },
+      terms: {
+        badge: 'ГРАЖДАНСКИЙ КОДЕКС РФ • ЧАСТЬ IV',
+        title: 'Пользовательское соглашение и авторские права',
+        html: `
+          <p class="legal-meta">Дата редакции: 14 октября 2026 г. • Правообладатель: Компания «ФОКУС»</p>
+          <h2>1. Статус материалов и отсутствие публичной оферты</h2>
+          <p>Весь контент, размещённый на сайте focus-photo.ru, носит справочно-информационный характер. Информация о форматах и стоимости съёмок не является публичной офертой по смыслу ст. 437 ГК РФ. Финальная стоимость и условия закрепляются в индивидуальном договоре и техническом задании.</p>
+
+          <h2>2. Исключительные авторские права (ст. 1252, 1301 ГК РФ)</h2>
+          <p>Все фотографии, видеоматериалы, Reels, фирменный логотип «ФОКУС», графические элементы и дизайн сайта являются интеллектуальной собственностью Компании «ФОКУС» или её доверителей и охраняются законодательством РФ об авторском праве.</p>
+          <p><strong>Запрещено:</strong> любое копирование, воспроизведение, скачивание, распространение, коммерческое использование или публикация на сторонних ресурсах без письменного согласия правообладателя строго запрещены и преследуются по закону (взыскание компенсации до 5 000 000 рублей по ст. 1301 ГК РФ).</p>
+
+          <h2>3. Правила использования формы обратной связи</h2>
+          <p>Отправляя заявку, пользователь гарантирует достоверность предоставленных контактных данных и подтверждает, что действует от своего имени или уполномочен представлять компанию/объект.</p>
+
+          <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
+            <a href="terms.html" target="_blank" class="legal-link" style="color:var(--lime,#CAFF1C);font-weight:700;">Открыть полный текст Пользовательского соглашения (HTML) ↗</a>
+          </div>
+        `
+      },
+      cookies: {
+        badge: 'КОНФИДЕНЦИАЛЬНОСТЬ & КУКИ',
+        title: 'Политика использования файлов Cookie',
+        html: `
+          <p class="legal-meta">Действует с 1 января 2024 г. • Компания «ФОКУС»</p>
+          <h2>1. Что такое Cookie и зачем они сайту</h2>
+          <p>Cookie — это небольшие текстовые файлы, сохраняемые на вашем устройстве для обеспечения быстрой и корректной работы сайта, сохранения языка (RU/EN) и безопасной отправки заявок.</p>
+
+          <h2>2. Категории используемых файлов Cookie</h2>
+          <ul>
+            <li><strong>Технические (строго обязательные):</strong> обеспечивают стабильную навигацию, отправку форм и сохранение факта согласия с cookie. Без них сайт не может функционировать.</li>
+            <li><strong>Функциональные:</strong> сохраняют языковые предпочтения (<code>focus-language</code>) и состояние просмотра портфолио.</li>
+            <li><strong>Аналитические (Яндекс.Метрика):</strong> собирают анонимизированную статистику взаимодействия с сайтом для оптимизации скорости загрузки фотографий и видео.</li>
+          </ul>
+
+          <h2>3. Управление файлами Cookie</h2>
+          <p>Вы можете в любой момент отключить или очистить файлы cookie в настройках своего браузера (Яндекс.Браузер, Google Chrome, Safari, Firefox). Отключение технически необходимых файлов cookie может ограничить доступ к некоторым функциям сайта.</p>
+
+          <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
+            <a href="cookies.html" target="_blank" class="legal-link" style="color:var(--lime,#CAFF1C);font-weight:700;">Открыть подробную страницу Политики Cookie (HTML) ↗</a>
+          </div>
+        `
+      },
+      requisites: {
+        badge: 'ОФИЦИАЛЬНАЯ ИНФОРМАЦИЯ',
+        title: 'Реквизиты компании и контакты оператора',
+        html: `
+          <p class="legal-meta">Актуально на 2026 год</p>
+          <h2>Контакты и каналы связи</h2>
+          <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px;margin-bottom:20px;">
+            <p style="margin-bottom:8px;"><strong>Наименование:</strong> Фотокомпания «ФОКУС»</p>
+            <p style="margin-bottom:8px;"><strong>Специализация:</strong> Коммерческая интерьерная, отельная и событийная фото-/видеосъёмка полного цикла</p>
+            <p style="margin-bottom:8px;"><strong>Фактический адрес:</strong> Россия, Краснодарский край, г. Анапа, Пионерский пр-т, 47 / ул. Набережная, 2</p>
+            <p style="margin-bottom:8px;"><strong>Офис компании:</strong> <a href="tel:+79531151199" class="legal-link" style="color:var(--lime,#CAFF1C);">+7 (953) 115-11-99</a></p>
+            <p style="margin-bottom:8px;"><strong>Управляющий:</strong> Екатерина • <a href="tel:+79298508503" class="legal-link" style="color:var(--lime,#CAFF1C);">+7 (929) 850-85-03</a></p>
+            <p style="margin-bottom:8px;"><strong>Telegram управляющей:</strong> <a href="https://t.me/zakonpudova" target="_blank" rel="noopener" class="legal-link" style="color:var(--lime,#CAFF1C);">@zakonpudova</a></p>
+            <p style="margin-bottom:8px;"><strong>Официальная электронная почта:</strong> <a href="mailto:info@focus-photo.ru" class="legal-link" style="color:var(--lime,#CAFF1C);">info@focus-photo.ru</a></p>
+            <p style="margin:0;"><strong>Режим работы:</strong> Пн–Вс с 09:00 до 21:00 (МСК)</p>
+          </div>
+          <h2>Правовые уведомления</h2>
+          <p>Официальные юридические запросы, обращения правообладателей, а также заявления об отзыве согласия на обработку персональных данных принимаются по адресу электронной почты <a href="mailto:info@focus-photo.ru" class="legal-link">info@focus-photo.ru</a>.</p>
+        `
+      },
+      consent: {
+        badge: 'СОГЛАСИЕ СУБЪЕКТА • 152-ФЗ',
+        title: 'Согласие на обработку персональных данных',
+        html: `
+          <p class="legal-meta">Применяется при отправке любой контактной формы на Сайте</p>
+          <h2>Текст согласия субъекта персональных данных</h2>
+          <p>Проставляя отметку в чекбоксе и нажимая кнопку «ОТПРАВИТЬ ЗАЯВКУ», Пользователь в соответствии с ч. 1 ст. 9 Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» выражает своё добровольное и осознанное согласие Компании «ФОКУС» на обработку своих персональных данных.</p>
+          
+          <h2>Условия обработки:</h2>
+          <ul>
+            <li><strong>Цель:</strong> Рассмотрение заявки, расчёт сметы, предоставление консультаций и организация съёмочного процесса;</li>
+            <li><strong>Перечень данных:</strong> имя, контактный телефон, никнейм мессенджера, описание объекта;</li>
+            <li><strong>Способы обработки:</strong> сбор, запись, систематизация, накопление, хранение на защищённых серверах в РФ, уточнение, использование, уничтожение;</li>
+            <li><strong>Срок действия:</strong> до достижения целей обработки или до момента отзыва согласия. Отзыв согласия осуществляется направлением письма на <a href="mailto:info@focus-photo.ru" class="legal-link" style="color:var(--lime,#CAFF1C);">info@focus-photo.ru</a>.</li>
+          </ul>
+          <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
+            <a href="privacy.html" target="_blank" class="legal-link" style="color:var(--lime,#CAFF1C);font-weight:700;">Открыть полную Политику конфиденциальности (HTML) ↗</a>
+          </div>
+        `
+      }
+    };
+
+    const legalModalDataEn = {
+      privacy: {
+        badge: 'FEDERAL LAW NO. 152-FZ',
+        title: 'Personal Data Processing Policy',
+        html: `
+          <p class="legal-meta">Effective Date: October 14, 2026 • Operator: FOCUS Company</p>
+          <h2>1. General Provisions and Purposes</h2>
+          <p>This Policy defines the procedures for collecting, systematizing, storing, and safeguarding personal data of visitors to <strong>focus-photo.ru</strong> in strict compliance with Russian Federal Law No. 152-FZ "On Personal Data".</p>
+          <p>We process data exclusively for incoming inquiries, bespoke cost calculations, consultations, and production contract agreements.</p>
+          
+          <h2>2. Processed Data Categories</h2>
+          <ul>
+            <li>Name of contact person or company representative;</li>
+            <li>Telephone number and/or messaging handle (Telegram, WhatsApp, MAX);</li>
+            <li>Project and location specifications (city, venue category, tentative dates);</li>
+            <li>Technical telemetry (cookies, IP address, browser type).</li>
+          </ul>
+
+          <h2>3. Server Localization in Russia (Part 5 Art. 18 of 152-FZ)</h2>
+          <p>All data recording, storage, and retrieval are carried out strictly on database infrastructure localized within the territory of the Russian Federation.</p>
+
+          <h2>4. Information Security</h2>
+          <p>Transfer of personal data to third parties is strictly prohibited, except as required by applicable law. The website utilizes SSL/TLS encryption.</p>
+
+          <h2>5. Revocation of Consent</h2>
+          <p>Consent may be revoked at any time by sending written notice to <a href="mailto:info@focus-photo.ru" class="legal-link" style="color:var(--lime,#CAFF1C);">info@focus-photo.ru</a>. Processing ceases within 10 business days.</p>
+          
+          <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
+            <a href="privacy.html" target="_blank" class="legal-link" style="color:var(--lime,#CAFF1C);font-weight:700;">Open Full Privacy Policy (HTML) ↗</a>
+          </div>
+        `
+      },
+      terms: {
+        badge: 'CIVIL CODE OF THE RUSSIAN FEDERATION • PART IV',
+        title: 'Terms of Service & Copyright Protection',
+        html: `
+          <p class="legal-meta">Effective Date: October 14, 2026 • Copyright Holder: FOCUS Company</p>
+          <h2>1. Information Status & No Public Offer</h2>
+          <p>Information presented on focus-photo.ru is for reference purposes and does not constitute a public offer under Article 437 of the Civil Code of the Russian Federation. Final quotes and deliverables are established in individual service agreements.</p>
+
+          <h2>2. Intellectual Property Rights (Arts. 1252, 1301 Civil Code)</h2>
+          <p>All photographs, video productions, Reels, logos, and UI designs are exclusive intellectual property protected by copyright law.</p>
+          <p><strong>Prohibited:</strong> Any unauthorized reproduction, downloading, distribution, or commercial usage without prior written permission is illegal and subject to statutory damages up to 5,000,000 RUB.</p>
+
+          <h2>3. Feedback & Inquiries</h2>
+          <p>Users warrant that all submitted contact details are accurate and that they are authorized to represent the respective property or company.</p>
+
+          <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
+            <a href="terms.html" target="_blank" class="legal-link" style="color:var(--lime,#CAFF1C);font-weight:700;">Open Full Terms of Service (HTML) ↗</a>
+          </div>
+        `
+      },
+      cookies: {
+        badge: 'PRIVACY & COOKIES',
+        title: 'Cookie & Analytics Policy',
+        html: `
+          <p class="legal-meta">Effective Date: January 1, 2024 • FOCUS Company</p>
+          <h2>1. What Are Cookies</h2>
+          <p>Cookies are small text files stored on your device to ensure website stability, remember language preferences (RU/EN), and facilitate inquiries.</p>
+
+          <h2>2. Cookie Categories</h2>
+          <ul>
+            <li><strong>Strictly Necessary:</strong> Core functions, security, and consent management.</li>
+            <li><strong>Functional:</strong> Language selection (<code>focus-language</code>) and gallery preferences.</li>
+            <li><strong>Analytics (Yandex.Metrika):</strong> Anonymous telemetry to optimize site performance and media loading speed.</li>
+          </ul>
+
+          <h2>3. Cookie Management</h2>
+          <p>You can adjust or clear cookies in your browser settings at any time (Chrome, Safari, Edge, Firefox).</p>
+
+          <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);">
+            <a href="cookies.html" target="_blank" class="legal-link" style="color:var(--lime,#CAFF1C);font-weight:700;">Open Detailed Cookie Policy (HTML) ↗</a>
+          </div>
+        `
+      },
+      requisites: {
+        badge: 'COMPANY DETAILS',
+        title: 'Company Requisites & Operator Contacts',
+        html: `
+          <p class="legal-meta">Official details for 2026</p>
+          <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px;margin-bottom:20px;">
+            <p style="margin-bottom:8px;"><strong>Entity:</strong> Photography Company "FOCUS"</p>
+            <p style="margin-bottom:8px;"><strong>Focus:</strong> Full-cycle commercial architectural, hospitality, and event media</p>
+            <p style="margin-bottom:8px;"><strong>Address:</strong> Russia, Krasnodar Region, Anapa, Pionerskiy Prospekt 47 / Naberezhnaya 2</p>
+            <p style="margin-bottom:8px;"><strong>Main Office:</strong> <a href="tel:+79531151199" class="legal-link" style="color:var(--lime,#CAFF1C);">+7 (953) 115-11-99</a></p>
+            <p style="margin-bottom:8px;"><strong>Managing Director:</strong> Ekaterina • <a href="tel:+79298508503" class="legal-link" style="color:var(--lime,#CAFF1C);">+7 (929) 850-85-03</a></p>
+            <p style="margin-bottom:8px;"><strong>Telegram:</strong> <a href="https://t.me/zakonpudova" target="_blank" rel="noopener" class="legal-link" style="color:var(--lime,#CAFF1C);">@zakonpudova</a></p>
+            <p style="margin-bottom:8px;"><strong>Inquiries & Legal:</strong> <a href="mailto:info@focus-photo.ru" class="legal-link" style="color:var(--lime,#CAFF1C);">info@focus-photo.ru</a></p>
+            <p style="margin:0;"><strong>Hours:</strong> Daily 09:00 – 21:00 (MSK)</p>
+          </div>
+        `
+      },
+      consent: {
+        badge: 'DATA CONSENT • 152-FZ',
+        title: 'Personal Data Processing Consent',
+        html: `
+          <p class="legal-meta">Applicable to all online inquiry submissions</p>
+          <h2>Consent Terms</h2>
+          <p>By checking the consent box and clicking "SUBMIT INQUIRY", the User gives voluntary, specific, informed, and conscious consent to FOCUS Company for processing personal data under Federal Law No. 152-FZ.</p>
+          <ul>
+            <li><strong>Purpose:</strong> Inquiry evaluation, cost estimation, and shoot planning;</li>
+            <li><strong>Data Categories:</strong> Name, phone number, messenger handle, project requirements;</li>
+            <li><strong>Processing:</strong> Collection, recording, storage in Russia, usage, and destruction upon purpose completion or revocation;</li>
+            <li><strong>Revocation:</strong> Send written request to <a href="mailto:info@focus-photo.ru" class="legal-link" style="color:var(--lime,#CAFF1C);">info@focus-photo.ru</a>.</li>
+          </ul>
+        `
+      }
+    };
+
+    function openLegalModal(tabName = 'privacy') {
+      const modal = document.getElementById('legalModal');
+      if (!modal) return;
+      
+      const currentLang = document.documentElement.lang || 'ru';
+      const data = (currentLang === 'en' ? legalModalDataEn : legalModalData);
+      const activeTab = data[tabName] ? tabName : 'privacy';
+      
+      const tabs = modal.querySelectorAll('.legal-modal__tab');
+      tabs.forEach((t) => {
+        const isMatch = t.dataset.tab === activeTab || (activeTab === 'consent' && t.dataset.tab === 'privacy');
+        t.classList.toggle('is-active', isMatch);
+      });
+      
+      const body = document.getElementById('legalModalBody');
+      if (body) {
+        const item = data[activeTab] || data.privacy;
+        body.innerHTML = `
+          <div class="legal-badge" style="display:inline-block;margin-bottom:12px;font-size:10px;font-weight:800;letter-spacing:0.12em;padding:4px 10px;border-radius:100px;background:rgba(202,255,28,0.12);color:var(--lime,#CAFF1C);border:1px solid rgba(202,255,28,0.3);">${item.badge}</div>
+          <h1 style="font-size:clamp(22px, 3.5vw, 28px);font-weight:800;color:#fff;margin:0 0 16px;line-height:1.25;">${item.title}</h1>
+          ${item.html}
+        `;
+        body.scrollTop = 0;
+      }
+      
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLegalModal() {
+      const modal = document.getElementById('legalModal');
+      if (!modal) return;
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    // Expose globally for onclick attributes
+    window.openLegalModal = openLegalModal;
+    window.closeLegalModal = closeLegalModal;
+
+    const modalTabs = document.querySelectorAll('.legal-modal__tab');
+    modalTabs.forEach((t) => {
+      t.addEventListener('click', () => {
+        const tabName = t.dataset.tab;
+        openLegalModal(tabName);
+      });
+    });
+
+    const legalModalClose = document.getElementById('legalModalClose');
+    if (legalModalClose) legalModalClose.addEventListener('click', closeLegalModal);
+
+    const legalModalBackdrop = document.getElementById('legalModalBackdrop');
+    if (legalModalBackdrop) legalModalBackdrop.addEventListener('click', closeLegalModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLegalModal();
+    });
+
+    // ── COOKIE BANNER CONSENT LOGIC ──────────────────────────────────
+    const cookieBanner = document.getElementById('cookieBanner');
+    const cookieAcceptBtn = document.getElementById('cookieAcceptBtn');
+
+    if (cookieBanner) {
+      const consent = localStorage.getItem('focus-cookie-consent');
+      if (!consent) {
+        setTimeout(() => {
+          cookieBanner.classList.add('is-visible');
+        }, 1200);
+      }
+      if (cookieAcceptBtn) {
+        cookieAcceptBtn.addEventListener('click', () => {
+          localStorage.setItem('focus-cookie-consent', 'accepted');
+          cookieBanner.classList.remove('is-visible');
+        });
+      }
     }
 
     const savedLanguage = localStorage.getItem('focus-language');
