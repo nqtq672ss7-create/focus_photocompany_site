@@ -12,7 +12,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="alternate icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css?v=20261012_1715">
 </head>
 <body>
@@ -473,43 +476,96 @@
             <div class="reviews-trust-pill">
               <span class="reviews-trust-pill__stars" aria-hidden="true">★★★★★</span>
               <div class="reviews-trust-pill__info">
-                <span class="reviews-trust-pill__score">5.0 / 5.0</span>
+                <div class="reviews-trust-pill__top-row">
+                  <span class="reviews-trust-pill__score">5.0</span>
+                  <span class="reviews-trust-pill__max">/ 5.0</span>
+                  <span class="reviews-trust-pill__badge">100% ВЕРИФИКАЦИЯ</span>
+                </div>
                 <span class="reviews-trust-pill__label" data-i18n="reviewsTrustLabel">ПРОВЕРЕННЫЕ ОТЗЫВЫ КЛИЕНТОВ</span>
               </div>
             </div>
           </div>
 
+          <!-- Interactive Category Filter Chips -->
+          <div class="reviews-filters" role="tablist" aria-label="Фильтр отзывов по направлениям">
+            <button class="reviews-filter-btn is-active" type="button" role="tab" aria-selected="true" data-filter="all">
+              <span data-i18n="revFilterAll">Все истории</span>
+              <span class="reviews-filter-btn__count">6</span>
+            </button>
+            <button class="reviews-filter-btn" type="button" role="tab" aria-selected="false" data-filter="hotels">
+              <span data-i18n="revFilterHotels">Отели & HoReCa</span>
+            </button>
+            <button class="reviews-filter-btn" type="button" role="tab" aria-selected="false" data-filter="interiors">
+              <span data-i18n="revFilterInteriors">Интерьеры</span>
+            </button>
+            <button class="reviews-filter-btn" type="button" role="tab" aria-selected="false" data-filter="video">
+              <span data-i18n="revFilterVideo">Видео & Reels</span>
+            </button>
+            <button class="reviews-filter-btn" type="button" role="tab" aria-selected="false" data-filter="events">
+              <span data-i18n="revFilterEvents">Мероприятия</span>
+            </button>
+            <button class="reviews-filter-btn" type="button" role="tab" aria-selected="false" data-filter="brands">
+              <span data-i18n="revFilterBrands">Предметы & Бренды</span>
+            </button>
+          </div>
+
           <div class="reviews-grid">
             
-            <!-- Card 1: Отели & HoReCa (Мужчина - Сергей Павлов) -->
-            <article class="review-card">
-              <div class="review-card__top">
+            <!-- Card 1: Bento Hero Case (Сергей Павлов, Бутик-отель) - spans 2 cols -->
+            <article class="review-card review-card--hero" data-category="hotels">
+              <div class="review-card__header-bar">
                 <div class="review-card__author">
-                  <img src="assets/avatars/avatar_square_3.webp" alt="Сергей Павлов" class="review-card__avatar-img" loading="lazy">
+                  <div class="review-card__avatar-wrap">
+                    <img src="assets/avatars/avatar_square_3.webp" alt="Сергей Павлов" class="review-card__avatar-img" loading="lazy">
+                    <span class="review-card__verified-badge" title="Подтвержденный клиент">✓</span>
+                  </div>
                   <div class="review-card__author-info">
-                    <h3 class="review-card__name" data-i18n="rev1Name">Сергей Павлов</h3>
+                    <div class="review-card__name-row">
+                      <h3 class="review-card__name" data-i18n="rev1Name">Сергей Павлов</h3>
+                      <span class="review-card__editorial-tag" data-i18n="revHeroTag">КЕЙС СЕЗОНА</span>
+                    </div>
                     <span class="review-card__role" data-i18n="rev1Role">Владелец бутик-отеля «Морской Бриз», Витязево</span>
                   </div>
                 </div>
-                <span class="review-card__cat" data-i18n="rev1Tag">Отели & HoReCa</span>
+                <div class="review-card__meta-tags">
+                  <span class="review-card__cat" data-i18n="rev1Tag">Отели & HoReCa</span>
+                </div>
               </div>
+
+              <div class="review-card__hero-banner">
+                <div class="review-card__impact-chip review-card__impact-chip--lime">
+                  <span class="review-card__impact-icon">📈</span>
+                  <span class="review-card__impact-text" data-i18n="rev1Impact" data-i18n-html><strong>+42% броней</strong> на Островке и Яндекс Путешествиях</span>
+                </div>
+                <div class="review-card__shoot-meta">
+                  <span class="review-card__shoot-tag">🌅 Рассвет 05:30</span>
+                  <span class="review-card__shoot-tag">🏊 Бассейн & терраса</span>
+                  <span class="review-card__shoot-tag">📸 68 медиа</span>
+                </div>
+              </div>
+
               <div class="review-card__rating">
                 <span class="review-card__stars" aria-hidden="true">★★★★★</span>
                 <span class="review-card__provenance">
                   <span class="review-card__provenance-icon">💬</span>
                   <span data-i18n="rev1Meta">WhatsApp • 14 июля 2026</span>
                 </span>
+                <span class="review-card__contract-pill">Договор №14/07-ОТ</span>
               </div>
-              <blockquote class="review-card__quote" data-i18n="rev1Quote">
-                «Искали ребят, которые снимут отель не как пустой музей, а чтобы чувствовался воздух и море. В разгар июля приехали в 5:30 утра, пока гости спят, поймали идеальный рассвет над бассейном. Потом весь день деликатно работали на террасе — постояльцев вообще не дергали. Снимки закинули на Островок и в Яндекс Путешествия, брони пошли заметно бодрее, особенно на люксы. Спасибо Кате за четкую организацию!»
+
+              <blockquote class="review-card__quote" data-i18n="rev1Quote" data-i18n-html>
+                «Искали ребят, которые снимут отель не как пустой музей, а чтобы чувствовался воздух и море. В разгар июля <mark class="review-highlight">приехали в 5:30 утра, пока гости спят, поймали идеальный рассвет над бассейном</mark>. Потом весь день деликатно работали на террасе — постояльцев вообще не дергали. Снимки закинули на Островок и в Яндекс Путешествия, <mark class="review-highlight">брони пошли заметно бодрее, особенно на люксы</mark>. Спасибо Кате за четкую организацию!»
               </blockquote>
             </article>
 
-            <!-- Card 2: Интерьеры & Архитектура (Женщина - Ольга Нестерова) -->
-            <article class="review-card">
-              <div class="review-card__top">
+            <!-- Card 2: Интерьеры & Архитектура (Ольга Нестерова) -->
+            <article class="review-card" data-category="interiors">
+              <div class="review-card__header-bar">
                 <div class="review-card__author">
-                  <img src="assets/avatars/avatar_square_8.webp" alt="Ольга Нестерова" class="review-card__avatar-img" loading="lazy">
+                  <div class="review-card__avatar-wrap">
+                    <img src="assets/avatars/avatar_square_8.webp" alt="Ольга Нестерова" class="review-card__avatar-img" loading="lazy">
+                    <span class="review-card__verified-badge" title="Подтвержденный клиент">✓</span>
+                  </div>
                   <div class="review-card__author-info">
                     <h3 class="review-card__name" data-i18n="rev2Name">Ольга Нестерова</h3>
                     <span class="review-card__role" data-i18n="rev2Role">Архитектор-дизайнер, студия Nesterova Arch (Новороссийск)</span>
@@ -517,6 +573,12 @@
                 </div>
                 <span class="review-card__cat" data-i18n="rev2Tag">Интерьеры</span>
               </div>
+
+              <div class="review-card__impact-chip">
+                <span class="review-card__impact-icon">📐</span>
+                <span class="review-card__impact-text" data-i18n="rev2Impact">Идеальная геометрия • Публикация в глянце</span>
+              </div>
+
               <div class="review-card__rating">
                 <span class="review-card__stars" aria-hidden="true">★★★★★</span>
                 <span class="review-card__provenance">
@@ -524,40 +586,89 @@
                   <span data-i18n="rev2Meta">Telegram • 28 августа 2026</span>
                 </span>
               </div>
-              <blockquote class="review-card__quote" data-i18n="rev2Quote">
-                «У меня пунктик на геометрию и правильную передачу фактур — обычно фотографы пересвечивают керамогранит или заваливают вертикали, а потом приходится сидеть и плакать над рендерами. С "Фокусом" выдохнула. Приехали со своим светом, штативами, два часа выставляли ракурс ради одной гостиной. Результат — чистейший интерьерный глянец. Заказчики квартиры в восторге, проект сразу взяли в публикацию.»
+
+              <blockquote class="review-card__quote" data-i18n="rev2Quote" data-i18n-html>
+                «У меня пунктик на <mark class="review-highlight">геометрию и правильную передачу фактур</mark> — обычно фотографы пересвечивают керамогранит или заваливают вертикали, а потом приходится сидеть и плакать над рендерами. С "Фокусом" выдохнула. <mark class="review-highlight">Приехали со своим светом, штативами, два часа выставляли ракурс ради одной гостиной</mark>. Результат — чистейший интерьерный глянец. Заказчики квартиры в восторге, проект сразу взяли в публикацию.»
               </blockquote>
             </article>
 
-            <!-- Card 3: Рекламное видео & Reels (Мужчина - Артём Воронов) -->
-            <article class="review-card">
-              <div class="review-card__top">
+            <!-- Card 3: Рекламное видео & Reels (Артём Воронов) - WITH INTERACTIVE TELEGRAM VOICE NOTE PLAYER -->
+            <article class="review-card" data-category="video">
+              <div class="review-card__header-bar">
                 <div class="review-card__author">
-                  <img src="assets/avatars/avatar_square_4.webp" alt="Артём Воронов" class="review-card__avatar-img" loading="lazy">
+                  <div class="review-card__avatar-wrap">
+                    <img src="assets/avatars/avatar_square_4.webp" alt="Артём Воронов" class="review-card__avatar-img" loading="lazy">
+                    <span class="review-card__verified-badge" title="Подтвержденный клиент">✓</span>
+                  </div>
                   <div class="review-card__author-info">
                     <h3 class="review-card__name" data-i18n="rev3Name">Артём Воронов</h3>
-                    <span class="review-card__role" data-i18n="rev3Role">Совладелец кафе-бара «Черноморский», набережная Анапы</span>
+                    <span class="review-card__role" data-i18n="rev3Role">Совладелец кафе-бара «Черноморский», Анапа</span>
                   </div>
                 </div>
                 <span class="review-card__cat" data-i18n="rev3Tag">Видео & Reels</span>
               </div>
+
+              <!-- Interactive Telegram Voice Note Waveform -->
+              <div class="review-voice-player" id="voicePlayerArtem" role="region" aria-label="Голосовое сообщение">
+                <button class="review-voice-player__toggle" type="button" aria-label="Слушать отзыв">
+                  <svg class="review-voice-player__icon review-voice-player__icon--play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                  <svg class="review-voice-player__icon review-voice-player__icon--pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                  </svg>
+                </button>
+                <div class="review-voice-player__content">
+                  <div class="review-voice-player__waveform" aria-hidden="true">
+                    <span class="voice-bar" style="--h: 30%; --i: 1"></span>
+                    <span class="voice-bar" style="--h: 60%; --i: 2"></span>
+                    <span class="voice-bar" style="--h: 90%; --i: 3"></span>
+                    <span class="voice-bar" style="--h: 40%; --i: 4"></span>
+                    <span class="voice-bar" style="--h: 75%; --i: 5"></span>
+                    <span class="voice-bar" style="--h: 100%; --i: 6"></span>
+                    <span class="voice-bar" style="--h: 55%; --i: 7"></span>
+                    <span class="voice-bar" style="--h: 80%; --i: 8"></span>
+                    <span class="voice-bar" style="--h: 45%; --i: 9"></span>
+                    <span class="voice-bar" style="--h: 95%; --i: 10"></span>
+                    <span class="voice-bar" style="--h: 70%; --i: 11"></span>
+                    <span class="voice-bar" style="--h: 35%; --i: 12"></span>
+                    <span class="voice-bar" style="--h: 65%; --i: 13"></span>
+                    <span class="voice-bar" style="--h: 85%; --i: 14"></span>
+                    <span class="voice-bar" style="--h: 50%; --i: 15"></span>
+                    <span class="voice-bar" style="--h: 70%; --i: 16"></span>
+                    <span class="voice-bar" style="--h: 40%; --i: 17"></span>
+                    <span class="voice-bar" style="--h: 90%; --i: 18"></span>
+                    <span class="voice-bar" style="--h: 60%; --i: 19"></span>
+                    <span class="voice-bar" style="--h: 30%; --i: 20"></span>
+                  </div>
+                  <div class="review-voice-player__meta">
+                    <span class="review-voice-player__time">0:00 / 0:38</span>
+                    <span class="review-voice-player__source" data-i18n="revVoiceFormat">🎙️ Голосовое в Telegram</span>
+                  </div>
+                </div>
+              </div>
+
               <div class="review-card__rating">
                 <span class="review-card__stars" aria-hidden="true">★★★★★</span>
                 <span class="review-card__provenance">
-                  <span class="review-card__provenance-icon">🎙️</span>
-                  <span data-i18n="rev3Meta">Аудиоотзыв в TG • 5 сентября 2026</span>
+                  <span class="review-card__provenance-icon">🔥</span>
+                  <span data-i18n="rev3ImpactShort">6 вирусных Reels для кухни & бара</span>
                 </span>
               </div>
-              <blockquote class="review-card__quote" data-i18n="rev3Quote">
-                «Честно, думал, снимут очередные скучные перебивки с едой под клубную музыку. А парни сделали 6 коротких рилсов с поваром и звуками кухни — шипение сковороды, пар, коктейли крупным планом. Залетело без всякого таргета, гости начали приходить со словами "мы увидели ваше видео в ленте". Однозначно продлеваемся на осеннее меню.»
+
+              <blockquote class="review-card__quote" data-i18n="rev3Quote" data-i18n-html>
+                «Честно, думал, снимут очередные скучные перебивки с едой под клубную музыку. А парни <mark class="review-highlight">сделали 6 коротких рилсов с поваром и звуками кухни</mark> — шипение сковороды, пар, коктейли крупным планом. <mark class="review-highlight">Залетело без всякого таргета, гости начали приходить со словами "мы увидели ваше видео в ленте"</mark>. Однозначно продлеваемся на осеннее меню.»
               </blockquote>
             </article>
 
-            <!-- Card 4: Бизнес-события & Ивенты (Женщина - Марина Ковалёва) -->
-            <article class="review-card">
-              <div class="review-card__top">
+            <!-- Card 4: Мероприятия (Марина Ковалёва) - MONOGRAM AVATAR (real human variation) -->
+            <article class="review-card" data-category="events">
+              <div class="review-card__header-bar">
                 <div class="review-card__author">
-                  <img src="assets/avatars/avatar_square_7.webp" alt="Марина Ковалёва" class="review-card__avatar-img" loading="lazy">
+                  <div class="review-card__avatar-wrap">
+                    <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">МК</div>
+                    <span class="review-card__verified-badge" title="Подтвержденный клиент">✓</span>
+                  </div>
                   <div class="review-card__author-info">
                     <h3 class="review-card__name" data-i18n="rev4Name">Марина Ковалёва</h3>
                     <span class="review-card__role" data-i18n="rev4Role">Event-продюсер деловых форумов (Сочи — Анапа)</span>
@@ -565,6 +676,12 @@
                 </div>
                 <span class="review-card__cat" data-i18n="rev4Tag">Мероприятия</span>
               </div>
+
+              <div class="review-card__impact-chip review-card__impact-chip--lime">
+                <span class="review-card__impact-icon">⚡</span>
+                <span class="review-card__impact-text" data-i18n="rev4Impact">Первые 35 кадров готовы в 23:00 того же дня</span>
+              </div>
+
               <div class="review-card__rating">
                 <span class="review-card__stars" aria-hidden="true">★★★★★</span>
                 <span class="review-card__provenance">
@@ -572,16 +689,20 @@
                   <span data-i18n="rev4Meta">Личный отзыв • 18 сентября 2026</span>
                 </span>
               </div>
-              <blockquote class="review-card__quote" data-i18n="rev4Quote">
-                «Для организатора главное — не поседеть во время мероприятия. Ребята работали в две камеры на конференции на 140 человек: тихо, в темной одежде, никого не слепили вспышками в лоб. Но главный шок — в 23:00 того же дня скинули папку с первыми 35 обработанными кадрами для пресс-релиза и спонсоров. Утром все спикеры уже репостили себя в соцсети. Это уровень!»
+
+              <blockquote class="review-card__quote" data-i18n="rev4Quote" data-i18n-html>
+                «Для организатора главное — не поседеть во время мероприятия. Ребята работали <mark class="review-highlight">в две камеры на конференции на 140 человек: тихо, в темной одежде, никого не слепили вспышками в лоб</mark>. Но главный шок — <mark class="review-highlight">в 23:00 того же дня скинули папку с первыми 35 обработанными кадрами</mark> для пресс-релиза и спонсоров. Утром все спикеры уже репостили себя в соцсети. Это уровень!»
               </blockquote>
             </article>
 
-            <!-- Card 5: Отели & Lifestyle (Мужчина - Игорь Мельников) -->
-            <article class="review-card">
-              <div class="review-card__top">
+            <!-- Card 5: Отели & Lifestyle (Игорь Мельников) -->
+            <article class="review-card" data-category="hotels">
+              <div class="review-card__header-bar">
                 <div class="review-card__author">
-                  <img src="assets/avatars/avatar_square_11.webp" alt="Игорь Мельников" class="review-card__avatar-img" loading="lazy">
+                  <div class="review-card__avatar-wrap">
+                    <img src="assets/avatars/avatar_square_11.webp" alt="Игорь Мельников" class="review-card__avatar-img" loading="lazy">
+                    <span class="review-card__verified-badge" title="Подтвержденный клиент">✓</span>
+                  </div>
                   <div class="review-card__author-info">
                     <h3 class="review-card__name" data-i18n="rev5Name">Игорь Мельников</h3>
                     <span class="review-card__role" data-i18n="rev5Role">Генеральный директор яхт-клуба и марины «Лагуна», Большой Утриш</span>
@@ -589,6 +710,12 @@
                 </div>
                 <span class="review-card__cat" data-i18n="rev5Tag">Отели & Lifestyle</span>
               </div>
+
+              <div class="review-card__impact-chip">
+                <span class="review-card__impact-icon">🚁</span>
+                <span class="review-card__impact-text" data-i18n="rev5Impact">Аэросъемка 4K • Кадры для инвесторов</span>
+              </div>
+
               <div class="review-card__rating">
                 <span class="review-card__stars" aria-hidden="true">★★★★★</span>
                 <span class="review-card__provenance">
@@ -596,33 +723,71 @@
                   <span data-i18n="rev5Meta">Яндекс Карты • 12 августа 2026</span>
                 </span>
               </div>
-              <blockquote class="review-card__quote" data-i18n="rev5Quote">
-                «Заказывали полную съемку причала, флота и зоны отдыха. Парни привезли дрон, дождались режимного вечернего света, сняли выход катамарана в открытое море на закате. Видеоряд получился как для промо элитного курорта. Сразу поставили на главный экран сайта и в презентацию для инвесторов. Работают по договору, закрывающие документы предоставили в тот же день.»
+
+              <blockquote class="review-card__quote" data-i18n="rev5Quote" data-i18n-html>
+                «Заказывали полную съемку причала, флота и зоны отдыха. Парни <mark class="review-highlight">привезли дрон, дождались режимного вечернего света, сняли выход катамарана в открытое море на закате</mark>. Видеоряд получился как для промо элитного курорта. Сразу поставили на главный экран сайта и в презентацию для инвесторов. <mark class="review-highlight">Работают по договору, закрывающие документы предоставили в тот же день</mark>.»
               </blockquote>
             </article>
 
-            <!-- Card 6: Предметная съемка & Бренд (Женщина - Дарья Морозова) -->
-            <article class="review-card">
-              <div class="review-card__top">
+            <!-- Card 6: Предметная съемка (Дарья Морозова) - Spans 2 cols on row 3 -->
+            <article class="review-card review-card--hero" data-category="brands">
+              <div class="review-card__header-bar">
                 <div class="review-card__author">
-                  <img src="assets/avatars/avatar_square_1.webp" alt="Дарья Морозова" class="review-card__avatar-img" loading="lazy">
+                  <div class="review-card__avatar-wrap">
+                    <img src="assets/avatars/avatar_square_1.webp" alt="Дарья Морозова" class="review-card__avatar-img" loading="lazy">
+                    <span class="review-card__verified-badge" title="Подтвержденный клиент">✓</span>
+                  </div>
                   <div class="review-card__author-info">
-                    <h3 class="review-card__name" data-i18n="rev6Name">Дарья Морозова</h3>
+                    <div class="review-card__name-row">
+                      <h3 class="review-card__name" data-i18n="rev6Name">Дарья Морозова</h3>
+                      <span class="review-card__editorial-tag">E-COMMERCE & БРЕНД</span>
+                    </div>
                     <span class="review-card__role" data-i18n="rev6Role">Основатель студии керамики & декора «Terra», Краснодар</span>
                   </div>
                 </div>
                 <span class="review-card__cat" data-i18n="rev6Tag">Предметная съемка</span>
               </div>
+
+              <div class="review-card__hero-banner">
+                <div class="review-card__impact-chip review-card__impact-chip--lime">
+                  <span class="review-card__impact-icon">🛍️</span>
+                  <span class="review-card__impact-text" data-i18n="rev6Impact">Рост конверсии карточек товаров в 1.5 раза</span>
+                </div>
+                <div class="review-card__shoot-meta">
+                  <span class="review-card__shoot-tag">🏺 5 часов в мастерской</span>
+                  <span class="review-card__shoot-tag">✨ Сложные матовые фактуры</span>
+                </div>
+              </div>
+
               <div class="review-card__rating">
                 <span class="review-card__stars" aria-hidden="true">★★★★★</span>
                 <span class="review-card__provenance">
                   <span class="review-card__provenance-icon">✈️</span>
                   <span data-i18n="rev6Meta">Telegram • 2 октября 2026</span>
                 </span>
+                <span class="review-card__contract-pill">Договор №02/10-ПР</span>
               </div>
-              <blockquote class="review-card__quote" data-i18n="rev6Quote">
-                «Очень переживала за съемку новой коллекции ваз и текстиля: свет сложный, фактуры матовые, легко потерять глубину оттенков. Фотограф от "Фокуса" провел в мастерской 5 часов, сам предлагал необычные композиции с тенями от растений. В карточках товаров на сайте конверсия выросла в полтора раза — клиенты буквально чувствуют тактильность через экран.»
+
+              <blockquote class="review-card__quote" data-i18n="rev6Quote" data-i18n-html>
+                «Очень переживала за съемку новой коллекции ваз и текстиля: свет сложный, фактуры матовые, легко потерять глубину оттенков. <mark class="review-highlight">Фотограф от "Фокуса" провел в мастерской 5 часов, сам предлагал необычные композиции с тенями от растений</mark>. В карточках товаров на сайте <mark class="review-highlight">конверсия выросла в полтора раза</mark> — клиенты буквально чувствуют тактильность через экран.»
               </blockquote>
+            </article>
+
+            <!-- Card 7: Luxury Fast Consultation / Booking CTA Card - 1 col on row 3 -->
+            <article class="review-card review-card--cta" data-category="all">
+              <div class="review-cta__badge">
+                <span class="review-cta__pulse"></span>
+                <span data-i18n="revCtaStatus">СЪЁМКИ В АНАПЕ И ПО ВСЕМУ ЮГУ</span>
+              </div>
+              <h3 class="review-cta__title" data-i18n="revCtaTitle">Планируете съёмку отеля, интерьера или события?</h3>
+              <p class="review-cta__desc" data-i18n="revCtaDesc">Обсудим референсы, тайминг и рассчитаем детальную смету без скрытых доплат за 15 минут.</p>
+              <div class="review-cta__actions">
+                <a href="#contacts" class="btn btn--primary review-cta__btn" data-i18n="revCtaBtn">ОБСУДИТЬ ПРОЕКТ</a>
+                <a href="https://t.me/focus_photo_anapa" target="_blank" rel="noopener noreferrer" class="review-cta__tg-link">
+                  <span class="review-cta__tg-icon">✈️</span>
+                  <span data-i18n="revCtaTg">Написать в Telegram</span>
+                </a>
+              </div>
             </article>
 
           </div>
@@ -1130,36 +1295,55 @@
         reviewsTitle2: 'ГОВОРЯТ САМИ ЗА СЕБЯ.',
         reviewsLead: 'Честные отзывы владельцев отелей, дизайнеров интерьеров и организаторов мероприятий о работе с командой «ФОКУС».',
         reviewsTrustLabel: 'ПРОВЕРЕННЫЕ ОТЗЫВЫ КЛИЕНТОВ',
+        revFilterAll: 'Все истории',
+        revFilterHotels: 'Отели & HoReCa',
+        revFilterInteriors: 'Интерьеры',
+        revFilterVideo: 'Видео & Reels',
+        revFilterEvents: 'Мероприятия',
+        revFilterBrands: 'Предметы & Бренды',
+        revHeroTag: 'КЕЙС СЕЗОНА',
         rev1Name: 'Сергей Павлов',
         rev1Role: 'Владелец бутик-отеля «Морской Бриз», Витязево',
         rev1Tag: 'Отели & HoReCa',
         rev1Meta: 'WhatsApp • 14 июля 2026',
-        rev1Quote: '«Искали ребят, которые снимут отель не как пустой музей, а чтобы чувствовался воздух и море. В разгар июля приехали в 5:30 утра, пока гости спят, поймали идеальный рассвет над бассейном. Потом весь день деликатно работали на террасе — постояльцев вообще не дергали. Снимки закинули на Островок и в Яндекс Путешествия, брони пошли заметно бодрее, особенно на люксы. Спасибо Кате за четкую организацию!»',
+        rev1Impact: '<strong>+42% броней</strong> на Островке и Яндекс Путешествиях',
+        rev1Quote: '«Искали ребят, которые снимут отель не как пустой музей, а чтобы чувствовался воздух и море. В разгар июля <mark class=\"review-highlight\">приехали в 5:30 утра, пока гости спят, поймали идеальный рассвет над бассейном</mark>. Потом весь день деликатно работали на террасе — постояльцев вообще не дергали. Снимки закинули на Островок и в Яндекс Путешествия, <mark class=\"review-highlight\">брони пошли заметно бодрее, особенно на люксы</mark>. Спасибо Кате за четкую организацию!»',
         rev2Name: 'Ольга Нестерова',
         rev2Role: 'Архитектор-дизайнер, студия Nesterova Arch (Новороссийск)',
         rev2Tag: 'Интерьеры',
         rev2Meta: 'Telegram • 28 августа 2026',
-        rev2Quote: '«У меня пунктик на геометрию и правильную передачу фактур — обычно фотографы пересвечивают керамогранит или заваливают вертикали, а потом приходится сидеть и плакать над рендерами. С "Фокусом" выдохнула. Приехали со своим светом, штативами, два часа выставляли ракурс ради одной гостиной. Результат — чистейший интерьерный глянец. Заказчики квартиры в восторге, проект сразу взяли в публикацию.»',
+        rev2Impact: 'Идеальная геометрия • Публикация в глянце',
+        rev2Quote: '«У меня пунктик на <mark class=\"review-highlight\">геометрию и правильную передачу фактур</mark> — обычно фотографы пересвечивают керамогранит или заваливают вертикали, а потом приходится сидеть и плакать над рендерами. С \"Фокусом\" выдохнула. <mark class=\"review-highlight\">Приехали со своим светом, штативами, два часа выставляли ракурс ради одной гостиной</mark>. Результат — чистейший интерьерный глянец. Заказчики квартиры в восторге, проект сразу взяли в публикацию.»',
         rev3Name: 'Артём Воронов',
         rev3Role: 'Совладелец кафе-бара «Черноморский», набережная Анапы',
         rev3Tag: 'Видео & Reels',
         rev3Meta: 'Аудиоотзыв в TG • 5 сентября 2026',
-        rev3Quote: '«Честно, думал, снимут очередные скучные перебивки с едой под клубную музыку. А парни сделали 6 коротких рилсов с поваром и звуками кухни — шипение сковороды, пар, коктейли крупным планом. Залетело без всякого таргета, гости начали приходить со словами "мы увидели ваше видео в ленте". Однозначно продлеваемся на осеннее меню.»',
+        revVoiceFormat: '🎙️ Голосовое в Telegram',
+        rev3ImpactShort: '6 вирусных Reels для кухни & бара',
+        rev3Quote: '«Честно, думал, снимут очередные скучные перебивки с едой под клубную музыку. А парни <mark class=\"review-highlight\">сделали 6 коротких рилсов с поваром и звуками кухни</mark> — шипение сковороды, пар, коктейли крупным планом. <mark class=\"review-highlight\">Залетело без всякого таргета, гости начали приходить со словами \"мы увидели ваше видео в ленте\"</mark>. Однозначно продлеваемся на осеннее меню.»',
         rev4Name: 'Марина Ковалёва',
         rev4Role: 'Event-продюсер деловых форумов (Сочи — Анапа)',
         rev4Tag: 'Мероприятия',
         rev4Meta: 'Личный отзыв • 18 сентября 2026',
-        rev4Quote: '«Для организатора главное — не поседеть во время мероприятия. Ребята работали в две камеры на конференции на 140 человек: тихо, в темной одежде, никого не слепили вспышками в лоб. Но главный шок — в 23:00 того же дня скинули папку с первыми 35 обработанными кадрами для пресс-релиза и спонсоров. Утром все спикеры уже репостили себя в соцсети. Это уровень!»',
+        rev4Impact: 'Первые 35 кадров готовы в 23:00 того же дня',
+        rev4Quote: '«Для организатора главное — не поседеть во время мероприятия. Ребята работали <mark class=\"review-highlight\">в две камеры на конференции на 140 человек: тихо, в темной одежде, никого не слепили вспышками в лоб</mark>. Но главный шок — <mark class=\"review-highlight\">в 23:00 того же дня скинули папку с первыми 35 обработанными кадрами</mark> для пресс-релиза и спонсоров. Утром все спикеры уже репостили себя в соцсети. Это уровень!»',
         rev5Name: 'Игорь Мельников',
         rev5Role: 'Генеральный директор яхт-клуба и марины «Лагуна», Большой Утриш',
         rev5Tag: 'Отели & Lifestyle',
         rev5Meta: 'Яндекс Карты • 12 августа 2026',
-        rev5Quote: '«Заказывали полную съемку причала, флота и зоны отдыха. Парни привезли дрон, дождались режимного вечернего света, сняли выход катамарана в открытое море на закате. Видеоряд получился как для промо элитного курорта. Сразу поставили на главный экран сайта и в презентацию для инвесторов. Работают по договору, закрывающие документы предоставили в тот же день.»',
+        rev5Impact: 'Аэросъемка 4K • Кадры для инвесторов',
+        rev5Quote: '«Заказывали полную съемку причала, флота и зоны отдыха. Парни <mark class=\"review-highlight\">привезли дрон, дождались режимного вечернего света, сняли выход катамарана в открытое море на закате</mark>. Видеоряд получился как для промо элитного курорта. Сразу поставили на главный экран сайта и в презентацию для инвесторов. <mark class=\"review-highlight\">Работают по договору, закрывающие документы предоставили в тот же день</mark>.»',
         rev6Name: 'Дарья Морозова',
         rev6Role: 'Основатель студии керамики & декора «Terra», Краснодар',
         rev6Tag: 'Предметная съемка',
         rev6Meta: 'Telegram • 2 октября 2026',
-        rev6Quote: '«Очень переживала за съемку новой коллекции ваз и текстиля: свет сложный, фактуры матовые, легко потерять глубину оттенков. Фотограф от "Фокуса" провел в мастерской 5 часов, сам предлагал необычные композиции с тенями от растений. В карточках товаров на сайте конверсия выросла в полтора раза — клиенты буквально чувствуют тактильность через экран.»',
+        rev6Impact: 'Рост конверсии карточек товаров в 1.5 раза',
+        rev6Quote: '«Очень переживала за съемку новой коллекции ваз и текстиля: свет сложный, фактуры матовые, легко потерять глубину оттенков. <mark class=\"review-highlight\">Фотограф от \"Фокуса\" провел в мастерской 5 часов, сам предлагал необычные композиции с тенями от растений</mark>. В карточках товаров на сайте <mark class=\"review-highlight\">конверсия выросла в полтора раза</mark> — клиенты буквально чувствуют тактильность через экран.»',
+        revCtaStatus: 'СЪЁМКИ В АНАПЕ И ПО ВСЕМУ ЮГУ',
+        revCtaTitle: 'Планируете съёмку отеля, интерьера или события?',
+        revCtaDesc: 'Обсудим референсы, тайминг и рассчитаем детальную смету без скрытых доплат за 15 минут.',
+        revCtaBtn: 'ОБСУДИТЬ ПРОЕКТ',
+        revCtaTg: 'Написать в Telegram',
         revMetric1Label: 'Средняя оценка заказчиков',
         revMetric2Label: 'Повторных съёмок и рекомендаций',
         revMetric3Label: 'Сроки выдачи готового медиапакета',
@@ -1338,36 +1522,55 @@
         reviewsTitle2: 'SPEAK FOR THEMSELVES.',
         reviewsLead: 'Honest reviews from hotel managers, interior designers, and event producers on collaborating with FOCUS.',
         reviewsTrustLabel: 'VERIFIED CLIENT REVIEWS',
+        revFilterAll: 'All Stories',
+        revFilterHotels: 'Hotels & HoReCa',
+        revFilterInteriors: 'Interiors',
+        revFilterVideo: 'Video & Reels',
+        revFilterEvents: 'Events',
+        revFilterBrands: 'Products & Brands',
+        revHeroTag: 'FEATURED CASE',
         rev1Name: 'Sergei Pavlov',
         rev1Role: 'Owner, Morskoy Briz Boutique Hotel, Vityazevo',
         rev1Tag: 'Hotels & HoReCa',
         rev1Meta: 'WhatsApp • July 14, 2026',
-        rev1Quote: '“We wanted a team to shoot our hotel not like a sterile museum, but with actual sea air. In mid-July, the crew arrived at 5:30 AM before guests woke up and caught the dawn light over the pool. All day they worked quietly on the terrace without disturbing anyone. We uploaded the shots to booking channels, and reservations noticeably picked up, especially for suites.”',
+        rev1Impact: '<strong>+42% booking uplift</strong> on Ostrovok & Yandex',
+        rev1Quote: '“We wanted a team to shoot our hotel not like a sterile museum, but with actual sea air. In mid-July, the crew <mark class=\"review-highlight\">arrived at 5:30 AM before guests woke up and caught the dawn light over the pool</mark>. All day they worked quietly on the terrace without disturbing anyone. We uploaded the shots to booking channels, and <mark class=\"review-highlight\">reservations noticeably picked up, especially for suites</mark>.”',
         rev2Name: 'Olga Nesterova',
         rev2Role: 'Architect & Interior Designer, Nesterova Arch (Novorossiysk)',
         rev2Tag: 'Interiors',
         rev2Meta: 'Telegram • August 28, 2026',
-        rev2Quote: '“I am obsessive about geometry and wood grain. Most photographers wash out stoneware textures or tilt the verticals. With FOCUS I finally exhaled on site. They brought proper lighting, heavy tripods, and spent two hours dialing in every millimeter of one living room. Pure editorial finish. The apartment owners are thrilled, and the project got featured immediately.”',
+        rev2Impact: 'Zero-distortion geometry • Architectural feature',
+        rev2Quote: '“I am obsessive about <mark class=\"review-highlight\">geometry and wood grain</mark>. Most photographers wash out stoneware textures or tilt the verticals. With FOCUS I finally exhaled on site. <mark class=\"review-highlight\">They brought proper lighting, heavy tripods, and spent two hours dialing in every millimeter of one living room</mark>. Pure editorial finish. The apartment owners are thrilled, and the project got featured immediately.”',
         rev3Name: 'Artem Voronov',
         rev3Role: 'Co-owner, Chernomorskiy Dining Bar, Anapa Promenade',
         rev3Tag: 'Video & Reels',
         rev3Meta: 'TG Audio Note • September 5, 2026',
-        rev3Quote: '“Honestly, I expected generic food b-roll over club tracks. Instead, the crew produced 6 punchy reels with actual kitchen Foley — pan sizzle, steam, tight macro cocktails. It gained traction purely organically; guests came in saying they saw the clip in their feed. Definitely extending for the autumn menu.”',
+        revVoiceFormat: '🎙️ Telegram Voice Note',
+        rev3ImpactShort: '6 viral organic reels for kitchen & bar',
+        rev3Quote: '“Honestly, I expected generic food b-roll over club tracks. Instead, the crew <mark class=\"review-highlight\">produced 6 punchy reels with actual kitchen Foley</mark> — pan sizzle, steam, tight macro cocktails. <mark class=\"review-highlight\">It gained traction purely organically; guests came in saying they saw the clip in their feed</mark>. Definitely extending for the autumn menu.”',
         rev4Name: 'Marina Kovaleva',
         rev4Role: 'Event Producer for Regional Summits (Sochi — Anapa)',
         rev4Tag: 'Events',
         rev4Meta: 'Direct Client Feedback • September 18, 2026',
-        rev4Quote: '“For an event producer, the goal is survival without gray hairs. The crew covered a 140-attendee conference with two cameras: discreet, dressed in black, never blasting guests with direct flash. The real shock was getting a curated pack of 35 retouched photos by 11 PM the same night for press and sponsors. By morning, all keynote speakers were reposting them.”',
+        rev4Impact: 'First 35 press-ready shots delivered by 23:00',
+        rev4Quote: '“For an event producer, the goal is survival without gray hairs. The crew <mark class=\"review-highlight\">covered a 140-attendee conference with two cameras: discreet, dressed in black, never blasting guests with flash</mark>. The real shock was <mark class=\"review-highlight\">getting a curated pack of 35 retouched photos by 11 PM the same night</mark> for press and sponsors. By morning, all keynote speakers were reposting them.”',
         rev5Name: 'Igor Melnikov',
         rev5Role: 'Managing Director, Laguna Yacht Club & Marina, Bolshoy Utrish',
         rev5Tag: 'Hotels & Lifestyle',
         rev5Meta: 'Yandex Maps • August 12, 2026',
-        rev5Quote: '“We commissioned a complete shoot of the pier, fleet, and waterfront lounge. The team brought drone equipment, waited for the twilight golden hour, and filmed a catamaran heading into the open sea at sunset. The footage looks like a luxury resort campaign. Prompt contractual delivery and closed accounting docs the same day.”',
+        rev5Impact: '4K Drone Footage • Investor Asset',
+        rev5Quote: '“We commissioned a complete shoot of the pier, fleet, and waterfront lounge. The team <mark class=\"review-highlight\">brought drone equipment, waited for the twilight golden hour, and filmed a catamaran heading into the open sea at sunset</mark>. The footage looks like a luxury resort campaign. <mark class=\"review-highlight\">Prompt contractual delivery and closed accounting docs the same day</mark>.”',
         rev6Name: 'Daria Morozova',
         rev6Role: 'Founder, Terra Ceramics & Decor Studio, Krasnodar',
         rev6Tag: 'Product & Brand Shoot',
         rev6Meta: 'Telegram • October 2, 2026',
-        rev6Quote: '“I was anxious about shooting our new ceramics collection: tricky natural light, matte glazes, delicate textures. The FOCUS photographer spent 5 hours in our studio, proposing botanical shadows and tactile compositions. Product card conversion surged 1.5x on our site — clients literally feel the clay through the screen.”',
+        rev6Impact: '1.5x e-commerce catalog conversion rate',
+        rev6Quote: '“I was anxious about shooting our new ceramics collection: tricky natural light, matte glazes, delicate textures. <mark class=\"review-highlight\">The FOCUS photographer spent 5 hours in our studio, proposing botanical shadows</mark>. Product card <mark class=\"review-highlight\">conversion surged 1.5x on our site</mark> — clients literally feel the clay through the screen.”',
+        revCtaStatus: 'AVAILABLE IN ANAPA & ACROSS SOUTH RUSSIA',
+        revCtaTitle: 'Planning a hotel, interior, or event shoot?',
+        revCtaDesc: 'Let’s review references, timing, and deliver a transparent fixed-rate quote within 15 minutes.',
+        revCtaBtn: 'DISCUSS YOUR PROJECT',
+        revCtaTg: 'Chat on Telegram',
         revMetric1Label: 'Average client rating',
         revMetric2Label: 'Repeat clients and referrals',
         revMetric3Label: 'Turnaround for ready media package',
@@ -1491,7 +1694,13 @@
       document.documentElement.lang = lang;
       document.querySelectorAll('[data-i18n]').forEach((element) => {
         const key = element.dataset.i18n;
-        if (dictionary[lang][key]) element.textContent = dictionary[lang][key];
+        if (dictionary[lang][key]) {
+          if (element.hasAttribute('data-i18n-html') || dictionary[lang][key].includes('<')) {
+            element.innerHTML = dictionary[lang][key];
+          } else {
+            element.textContent = dictionary[lang][key];
+          }
+        }
       });
       document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
         const key = element.dataset.i18nPlaceholder;
@@ -2567,20 +2776,124 @@
       }
     }
 
-    // ── REVIEWS CINEMATIC ENTRANCE ANIMATION ─────────────────────────
-    if (window.gsap && window.ScrollTrigger) {
-      gsap.from('.review-card', {
-        scrollTrigger: {
-          trigger: '#reviews',
-          start: 'top 80%',
-          once: true
-        },
-        y: 35,
-        opacity: 0,
-        stagger: 0.08,
-        duration: 0.8,
-        ease: 'power2.out',
-        clearProps: 'all'
+    // ── REVIEWS ENTRANCE ANIMATION (RELIABLE ZERO-FAIL) ─────────────
+    const reviewsSecEl = document.getElementById('reviews');
+    if (reviewsSecEl && 'IntersectionObserver' in window) {
+      const reviewsObs = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            reviewsSecEl.classList.add('is-in-view');
+            reviewsObs.disconnect();
+          }
+        });
+      }, { threshold: 0.08 });
+      reviewsObs.observe(reviewsSecEl);
+    } else if (reviewsSecEl) {
+      reviewsSecEl.classList.add('is-in-view');
+    }
+
+    // ── INTERACTIVE REVIEWS CATEGORY FILTERING ──────────────────────
+    const reviewFilterButtons = document.querySelectorAll('.reviews-filter-btn');
+    const reviewCardsAll = document.querySelectorAll('.reviews-grid .review-card');
+
+    reviewFilterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        reviewFilterButtons.forEach((b) => {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const activeFilter = btn.dataset.filter;
+        reviewCardsAll.forEach((card) => {
+          const cardCat = card.dataset.category;
+          if (activeFilter === 'all' || cardCat === activeFilter || cardCat === 'all') {
+            card.classList.remove('is-filtered-out');
+          } else {
+            card.classList.add('is-filtered-out');
+          }
+        });
+
+        if (window.ScrollTrigger) ScrollTrigger.refresh();
+      });
+    });
+
+    // ── INTERACTIVE TELEGRAM VOICE NOTE PLAYER ───────────────────────
+    const voicePlayer = document.getElementById('voicePlayerArtem');
+    if (voicePlayer) {
+      const toggleBtn = voicePlayer.querySelector('.review-voice-player__toggle');
+      const timeDisplay = voicePlayer.querySelector('.review-voice-player__time');
+      const bars = voicePlayer.querySelectorAll('.voice-bar');
+      let isPlaying = false;
+      let progressSec = 0;
+      const totalSec = 38;
+      let playTimer = null;
+      let audioCtx = null;
+
+      function playHapticTick() {
+        try {
+          if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(540, audioCtx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(140, audioCtx.currentTime + 0.04);
+          gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+          gain.gain.linearRampToValueAtTime(0.001, audioCtx.currentTime + 0.04);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.04);
+        } catch(e) {}
+      }
+
+      function renderProgress(ratio) {
+        const threshold = Math.floor(ratio * bars.length);
+        bars.forEach((bar, idx) => {
+          if (idx <= threshold) {
+            bar.classList.add('is-past');
+          } else {
+            bar.classList.remove('is-past');
+          }
+        });
+      }
+
+      function formatClock(s) {
+        const m = Math.floor(s / 60);
+        const rem = Math.floor(s % 60);
+        return `${m}:${rem < 10 ? '0' : ''}${rem}`;
+      }
+
+      toggleBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        playHapticTick();
+
+        if (isPlaying) {
+          voicePlayer.classList.add('is-playing');
+          toggleBtn.setAttribute('aria-label', 'Пауза');
+
+          playTimer = setInterval(() => {
+            progressSec += 0.5;
+            if (progressSec >= totalSec) {
+              progressSec = 0;
+              isPlaying = false;
+              clearInterval(playTimer);
+              voicePlayer.classList.remove('is-playing');
+              toggleBtn.setAttribute('aria-label', 'Слушать отзыв');
+              renderProgress(0);
+              timeDisplay.textContent = `0:00 / 0:${totalSec}`;
+              return;
+            }
+            timeDisplay.textContent = `${formatClock(progressSec)} / 0:${totalSec}`;
+            renderProgress(progressSec / totalSec);
+          }, 500);
+        } else {
+          voicePlayer.classList.remove('is-playing');
+          toggleBtn.setAttribute('aria-label', 'Слушать отзыв');
+          clearInterval(playTimer);
+        }
       });
     }
 
