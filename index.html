@@ -1019,7 +1019,7 @@
         rev3Tag: 'Видео & Reels',
         rev3Meta: 'Аудиоотзыв в TG • 5 сентября 2026',
         rev3ImpactShort: 'Вирусные Reels для кухни & бара',
-        rev3Quote: '«Ребят, привет! Слушайте, ну от души вообще... Я, если честно, переживал, что щас снимут обычную банальщину, ну как все делают. <mark class=\"review-highlight\">А вы прям пушку выдали!</mark> Короче, рилсы залетели так, что <mark class=\"review-highlight\">на выходных люди реально подходили и пальцем в телефон тыкали: мол, \\"нам вот это блюдо!\\"</mark>. Мы сто проц с вами дальше работаем, на осеннее меню даже никого другого не ищем.»',
+        rev3Quote: '«Ребят, привет! Слушайте, ну от души вообще... Я, если честно, переживал, что щас снимут обычную банальщину, ну как все делают. <mark class=\"review-highlight\">А вы прям пушку выдали!</mark> Короче, рилсы залетели так, что <mark class=\"review-highlight\">на выходных люди реально подходили и пальцем в телефон тыкали: мол, \\"нам вот это блюдо!\\"</mark>. Мы сто проц с вами дальше работаем, на осеннее меню даже никого другого не ищем, вы реально крутая команда!»',
         rev4Name: 'Марина Ковалёва',
         rev4Role: 'Event-продюсер деловых форумов (Сочи — Анапа)',
         rev4Tag: 'Мероприятия',
@@ -1245,7 +1245,7 @@
         rev3Tag: 'Video & Reels',
         rev3Meta: 'TG Audio Note • September 5, 2026',
         rev3ImpactShort: 'Viral organic reels for kitchen & bar',
-        rev3Quote: '“Hey guys! Honestly, huge thanks... I was worried we’d end up with generic b-roll like everyone else shoots. <mark class=\"review-highlight\">Instead, you delivered absolute fire!</mark> The Reels blew up so hard that over the weekend <mark class=\"review-highlight\">guests were literally pointing at their phones saying: ‘bring us this exact dish!’</mark>. We’re 100% sticking with you guys, not even looking for anyone else for our autumn menu.”',
+        rev3Quote: '“Hey guys! Honestly, huge thanks... I was worried we’d end up with generic b-roll like everyone else shoots. <mark class=\"review-highlight\">Instead, you delivered absolute fire!</mark> The Reels blew up so hard that over the weekend <mark class=\"review-highlight\">guests were literally pointing at their phones saying: ‘bring us this exact dish!’</mark>. We’re 100% sticking with you guys, not even looking for anyone else for our autumn menu — you guys are truly a killer team!”',
         rev4Name: 'Marina Kovaleva',
         rev4Role: 'Event Producer for Regional Summits (Sochi — Anapa)',
         rev4Tag: 'Events',
@@ -2553,7 +2553,7 @@
         avatarSrc: 'assets/avatars/avatar_square_4.webp',
         hasVoice: true,
         voiceAudioSrc: 'assets/audio/artem_review.mp3',
-        voiceDuration: '0:23',
+        voiceDuration: '0:24',
         verified: true,
         impactLime: true,
         impactIcon: '🔥',
@@ -2565,7 +2565,7 @@
           impact: 'Вирусные Reels для кухни & бара',
           platform: 'Telegram Audio • 5 сентября 2026',
           contract: 'Договор №05/09-ВР',
-          quote: '«Ребят, привет! Слушайте, ну от души вообще... Я, если честно, переживал, что щас снимут обычную банальщину, ну как все делают. <mark class="review-highlight">А вы прям пушку выдали!</mark> Короче, рилсы залетели так, что <mark class="review-highlight">на выходных люди реально подходили и пальцем в телефон тыкали: мол, "нам вот это блюдо!"</mark>. Мы сто проц с вами дальше работаем, на осеннее меню даже никого другого не ищем.»'
+          quote: '«Ребят, привет! Слушайте, ну от души вообще... Я, если честно, переживал, что щас снимут обычную банальщину, ну как все делают. <mark class="review-highlight">А вы прям пушку выдали!</mark> Короче, рилсы залетели так, что <mark class="review-highlight">на выходных люди реально подходили и пальцем в телефон тыкали: мол, "нам вот это блюдо!"</mark>. Мы сто проц с вами дальше работаем, на осеннее меню даже никого другого не ищем, вы реально крутая команда!»'
         },
         en: {
           name: 'Artyom Voronov',
@@ -2574,7 +2574,7 @@
           impact: 'Viral Reels for kitchen & cocktail bar',
           platform: 'Telegram Audio • September 5, 2026',
           contract: 'Contract №05/09-VR',
-          quote: '“Hey guys! Honestly, huge thanks... I was worried we’d end up with generic b-roll like everyone else shoots. <mark class="review-highlight">Instead, you delivered absolute fire!</mark> The Reels blew up so hard that over the weekend <mark class="review-highlight">guests were literally pointing at their phones saying: ‘bring us this exact dish!’</mark>. We’re 100% sticking with you guys, not even looking for anyone else for our autumn menu.”'
+          quote: '“Hey guys! Honestly, huge thanks... I was worried we’d end up with generic b-roll like everyone else shoots. <mark class="review-highlight">Instead, you delivered absolute fire!</mark> The Reels blew up so hard that over the weekend <mark class="review-highlight">guests were literally pointing at their phones saying: ‘bring us this exact dish!’</mark>. We’re 100% sticking with you guys, not even looking for anyone else for our autumn menu — you guys are truly a killer team!”'
         }
       },
       {
@@ -3023,7 +3023,7 @@
         if (review.hasVoice) {
           const voiceSourceLabel = lang === 'en' ? '🎙️ Telegram Voice' : '🎙️ Голосовое в Telegram';
           const voiceAriaLabel = lang === 'en' ? 'Listen to audio' : 'Слушать отзыв';
-          const voiceDur = review.voiceDuration || '0:23';
+          const voiceDur = review.voiceDuration || '0:24';
           voicePlayerHtml = `
             <div class="review-voice-player" role="region" aria-label="Audio review" data-audio-src="${review.voiceAudioSrc || 'assets/audio/artem_review.mp3'}">
               <button class="review-voice-player__toggle" type="button" aria-label="${voiceAriaLabel}">
@@ -3100,7 +3100,7 @@
           const cur = globalVoiceAudio.currentTime || 0;
           const dur = (globalVoiceAudio.duration && !isNaN(globalVoiceAudio.duration) && globalVoiceAudio.duration > 0)
             ? globalVoiceAudio.duration
-            : 22.65;
+            : 23.85;
 
           const m = Math.floor(cur / 60);
           const s = Math.floor(cur % 60);
@@ -3132,7 +3132,7 @@
               bars.forEach(b => b.classList.remove('is-past'));
               const timeDisplay = vp.querySelector('.review-voice-player__time');
               if (timeDisplay) {
-                timeDisplay.textContent = '0:00 / 0:23';
+                timeDisplay.textContent = '0:00 / 0:24';
               }
             }
             activeVoiceCard = null;
@@ -3203,7 +3203,7 @@
             const rect = waveform.getBoundingClientRect();
             const clickX = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
             const ratio = clickX / rect.width;
-            const dur = (audio.duration && !isNaN(audio.duration) && audio.duration > 0) ? audio.duration : 22.65;
+            const dur = (audio.duration && !isNaN(audio.duration) && audio.duration > 0) ? audio.duration : 23.85;
             const newTime = ratio * dur;
             audio.currentTime = newTime;
             activeVoiceCard = card;
