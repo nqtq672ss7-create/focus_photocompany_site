@@ -268,18 +268,39 @@
   </div>
 
   <script>
-    function cleanPhone(raw) {
+    function escapeHtml(str) {
+      return String(str || '').replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' })[m]);
+    }
+
+    function getPurePhoneDigits(raw) {
       if (!raw) return '';
-      let clean = raw.replace(/[^\d+]/g, '');
-      if (clean.startsWith('8') && clean.length === 11) {
-        clean = '+7' + clean.slice(1);
+      const digits = String(raw).replace(/\D/g, '');
+      if (digits.length >= 10 && digits.length <= 15) {
+        return digits;
       }
-      return clean;
+      return '';
+    }
+
+    function getSafeTelegramHandle(raw) {
+      if (!raw) return null;
+      const str = String(raw).trim();
+      const match = str.match(/(?:(?:https?:\/\/)?(?:t\.me\/)?@?)([a-zA-Z0-9_]{3,32})$/);
+      return match ? encodeURIComponent(match[1]) : null;
     }
 
     function fetchLeads() {
       fetch('/api/leads')
-        .then(res => res.json())
+        .then(res => {
+          if (res.status === 401) {
+            document.getElementById('leadsTableBody').innerHTML = '<tr><td colspan="5" class="empty-state" style="color: #ff6b6b;">🔒 Доступ закрыт. Требуется авторизация администратора. <br><button onclick="location.reload()" class="btn btn-outline" style="margin-top: 12px;">Войти в систему</button></td></tr>';
+            throw new Error('401 Unauthorized');
+          }
+          if (res.status === 429) {
+            document.getElementById('leadsTableBody').innerHTML = '<tr><td colspan="5" class="empty-state" style="color: #f59e0b;">⏳ Превышено число попыток входа. Защита от подбора пароля активна. Попробуйте через 5 минут.</td></tr>';
+            throw new Error('429 Too Many Requests');
+          }
+          return res.json();
+        })
         .then(data => {
           document.getElementById('lastUpdated').textContent = new Date().toLocaleTimeString('ru-RU');
           if (!data || !data.leads || data.leads.length === 0) {
@@ -301,15 +322,14 @@
             const timeDate = new Date(lead.created_at);
             if (!isNaN(timeDate.getTime()) && timeDate.getTime() > dayAgo) today++;
 
-            const phone = cleanPhone(lead.contact);
-            const isPhone = phone.length >= 10;
-            const isTg = lead.contact && lead.contact.includes('@');
+            const phoneDigits = getPurePhoneDigits(lead.contact);
+            const tgHandle = getSafeTelegramHandle(lead.contact);
 
             html += `
               <tr>
                 <td>
-                  <div class="client-time">${lead.created_at || '—'}</div>
-                  <div style="font-size: 10px; color: var(--text-muted); opacity: 0.6;">${lead.id || ''}</div>
+                  <div class="client-time">${escapeHtml(lead.created_at || '—')}</div>
+                  <div style="font-size: 10px; color: var(--text-muted); opacity: 0.6;">${escapeHtml(lead.id || '')}</div>
                 </td>
                 <td>
                   <div class="client-name">${escapeHtml(lead.name || 'Без имени')}</div>
@@ -323,9 +343,9 @@
                 </td>
                 <td>
                   <div class="quick-actions">
-                    ${isPhone ? `<a href="tel:${phone}" class="call-btn" title="Позвонить">📞 Набрать</a>` : ''}
-                    ${isPhone ? `<a href="https://wa.me/${phone.replace('+', '')}" target="_blank" class="wa-btn" title="Написать в WhatsApp">WhatsApp</a>` : ''}
-                    ${isTg ? `<a href="https://t.me/${lead.contact.replace('@', '')}" target="_blank" class="call-btn" style="background:#2AABEE;color:#fff;">Telegram</a>` : ''}
+                    ${phoneDigits ? `<a href="tel:+${phoneDigits}" class="call-btn" title="Позвонить">📞 Набрать</a>` : ''}
+                    ${phoneDigits ? `<a href="https://wa.me/${phoneDigits}" target="_blank" rel="noopener noreferrer" class="wa-btn" title="Написать в WhatsApp">WhatsApp</a>` : ''}
+                    ${tgHandle ? `<a href="https://t.me/${tgHandle}" target="_blank" rel="noopener noreferrer" class="call-btn" style="background:#2AABEE;color:#fff;">Telegram</a>` : ''}
                   </div>
                 </td>
               </tr>
@@ -336,12 +356,10 @@
           document.getElementById('leadsTableBody').innerHTML = html;
         })
         .catch(err => {
-          console.warn('Dashboard fetch error:', err);
+          if (err.message !== '401 Unauthorized' && err.message !== '429 Too Many Requests') {
+            console.warn('Dashboard fetch error:', err);
+          }
         });
-    }
-
-    function escapeHtml(str) {
-      return String(str || '').replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' })[m]);
     }
 
     fetchLeads();

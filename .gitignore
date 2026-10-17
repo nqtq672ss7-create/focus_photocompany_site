@@ -9,3 +9,25 @@ __pycache__/
 
 horizontal_works_*.png
 test_horizontal_works.py
+
+# Secrets & Environment variables
+.env
+.env.*
+!.env.example
+config.json
+!config.example.json
+
+# Customer PII & Leads Database
+leads.json
+leads.csv
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# TLS / SSL Certificates & Private Keys
+*.pem
+*.key
+*.cert
+*.crt
+

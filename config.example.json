@@ -1,12 +1,16 @@
 {
   "manager_name": "Екатерина",
   "manager_phone": "+79298508503",
-  "sms_ru_api_key": "",
+  "sms_ru_api_key": "YOUR_SMS_RU_API_KEY_HERE",
   "enable_sms": true,
   "enable_flashcall": false,
+  "admin_user": "admin",
+  "admin_password_hash": "",
+  "admin_salt": "",
   "telegram_bot_token": "",
   "telegram_chat_id": "",
   "webhook_url": "",
+  "webhook_secret": "",
   "company_name": "ФОКУС — Фотокомпания",
   "website_url": "https://focusphotocompany.com"
 }
