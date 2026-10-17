@@ -1,0 +1,38 @@
+# ==============================================================================
+# FAIL2BAN CONFIGURATION FOR FOCUS PHOTOCOMPANY
+# Automatically drops DDoS flooders, aggressive scrapers, and malicious scanners
+# ==============================================================================
+
+[DEFAULT]
+bantime  = 1h
+findtime = 10m
+maxretry = 5
+banaction = iptables-multiport
+
+# Ban clients that trigger Nginx rate limiting (HTTP 429) repeatedly
+[nginx-limit-req]
+enabled  = true
+filter   = nginx-limit-req
+logpath  = /var/log/nginx/error.log
+findtime = 60
+maxretry = 10
+bantime  = 24h
+
+# Ban clients scanning for non-existent exploit paths (.php, .env, wp-login, etc.)
+[nginx-botsearch]
+enabled  = true
+port     = http,https
+filter   = nginx-botsearch
+logpath  = /var/log/nginx/error.log
+maxretry = 3
+bantime  = 48h
+
+# Ban clients executing HTTP flood / 4xx error spam
+[nginx-bad-request]
+enabled  = true
+port     = http,https
+filter   = nginx-bad-request
+logpath  = /var/log/nginx/access.log
+findtime = 30
+maxretry = 25
+bantime  = 6h

@@ -45,13 +45,16 @@
 
   <main class="hero" aria-label="Главный экран сайта фотокомпании ФОКУС">
     <div class="hero__image" aria-hidden="true"></div>
-    <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline preload="auto" poster="assets/focus-lobby.png"><source src="assets/focus-hero.mp4" type="video/mp4"></video>
+    <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline preload="metadata" poster="assets/focus-lobby.webp"><source src="assets/focus-hero.mp4" type="video/mp4"></video>
     <div class="hero__shade" aria-hidden="true"></div>
     <div class="hero__grain" aria-hidden="true"></div>
 
     <section class="hero__content" id="top">
       <div class="hero__logo-wrap hero__logo-wrap--parallax">
-        <img class="hero__logo" src="assets/IMG_8642.PNG" alt="ФОКУС — фотокомпания">
+        <picture>
+          <source srcset="assets/IMG_8642.webp" type="image/webp">
+          <img class="hero__logo" src="assets/IMG_8642.PNG" alt="ФОКУС — фотокомпания" width="2400" height="1602" fetchpriority="high">
+        </picture>
       </div>
       <p class="hero__tagline">
         <span data-i18n="tagline1">ВЫДЕЛЯЕМ ГЛАВНОЕ.</span><br>
@@ -112,7 +115,7 @@
 
       <!-- RIGHT VISUAL — Video only -->
       <div class="ac-visual">
-        <video class="ac-video" autoplay muted loop playsinline preload="auto">
+        <video class="ac-video" autoplay muted loop playsinline preload="metadata">
           <source src="assets/bg-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -643,6 +646,8 @@
               <button type="button" class="form-chip" data-val="events" data-i18n="contactsChipEvents">04 Мероприятия</button>
             </div>
             <input type="hidden" name="service" id="formServiceField" value="interiors">
+            <!-- Anti-bot honeypot field (hidden from legitimate users, traps automated spambots) -->
+            <input type="text" name="_hp_company_sec" id="formHoneypot" style="display:none!important;position:absolute;left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
 
             <!-- Name Input -->
             <div class="form-group">
@@ -2038,8 +2043,17 @@
     if (contactsForm) {
       contactsForm.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        // 1. Anti-bot honeypot trap
+        const honeypot = document.getElementById('formHoneypot');
+        if (honeypot && honeypot.value.trim() !== '') {
+          // Automated bot detected: drop silently without executing
+          return;
+        }
+
         const nameInput = document.getElementById('formName');
         const contactInput = document.getElementById('formContact');
+        const consentInput = document.getElementById('formConsent');
         
         if (!nameInput.value.trim()) {
           nameInput.focus();
@@ -2049,6 +2063,21 @@
           contactInput.focus();
           return;
         }
+        if (consentInput && !consentInput.checked) {
+          consentInput.focus();
+          return;
+        }
+
+        // 2. Client-side anti-flood cooldown (20 seconds)
+        const lastSubmit = sessionStorage.getItem('focus_last_submit_ts');
+        const now = Date.now();
+        if (lastSubmit && (now - Number(lastSubmit)) < 20000) {
+          const waitSec = Math.ceil((20000 - (now - Number(lastSubmit))) / 1000);
+          const isEn = (document.documentElement.lang === 'en');
+          alert(isEn ? `Please wait ${waitSec}s before sending another request.` : `Пожалуйста, подождите ${waitSec} сек. перед повторной отправкой заявки.`);
+          return;
+        }
+        sessionStorage.setItem('focus_last_submit_ts', String(now));
 
         if (formSubmitBtn) {
           formSubmitBtn.disabled = true;
@@ -3274,7 +3303,7 @@
           const slot = slots[slotIndex];
           const isCardHovered = slot.matches(':hover');
 
-          if (isCardHovered || isGridHovered || !isSectionInView || activeVoiceCard === slot) {
+          if (isCardHovered || isGridHovered || !isSectionInView || activeVoiceCard === slot || document.hidden) {
             scheduleSlotRotation(slotIndex, 2500);
             return;
           }
@@ -3309,6 +3338,15 @@
         }, { threshold: 0.05 });
         obs.observe(section);
       }
+
+      // Tab visibility awareness: prevent background timer queue accumulation
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && isSectionInView) {
+          slots.forEach((_, idx) => {
+            scheduleSlotRotation(idx, 2000 + idx * 1400);
+          });
+        }
+      }, { passive: true });
 
       // Live re-render on language switch
       window.addEventListener('languageChanged', (e) => {
