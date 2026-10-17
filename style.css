@@ -1,5 +1,9 @@
 :root {
-  --acid: #9DFF00;
+  --acid: #CAFF1C;
+  --lime: #CAFF1C;
+  --lime-bright: #B7F707;
+  --lime-glow: rgba(202, 255, 28, 0.45);
+  --obsidian: #0C0D11;
   --ivory: #F4F1E9;
   --graphite: #121212;
   --line: rgba(244, 241, 233, 0.28);
@@ -496,7 +500,7 @@ a { color: inherit; text-decoration: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #9DFF00;
+  background: var(--lime, #CAFF1C);
   color: #000000 !important;
   text-shadow: 0 0 0 #000000 !important;
   -webkit-text-fill-color: #000000 !important;
@@ -1405,7 +1409,7 @@ a { color: inherit; text-decoration: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #9DFF00;
+  background: var(--lime, #CAFF1C);
   color: #000000 !important;
   text-shadow: 0 0 0 #000000 !important;
   -webkit-text-fill-color: #000000 !important;
@@ -1458,9 +1462,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 .works-sc-tab.is-active {
-  background: #0C0D12;
+  background: #0C0D11;
   color: #FFFFFF !important;
-  border-color: #0C0D12;
+  border-color: rgba(202, 255, 28, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 0 14px rgba(202, 255, 28, 0.12);
 }
 
 .works-sc-tab__num {
@@ -1469,7 +1474,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .works-sc-tab.is-active .works-sc-tab__num {
-  color: #9DFF00;
+  color: var(--lime, #CAFF1C);
   opacity: 1;
 }
 
@@ -1873,37 +1878,44 @@ a { color: inherit; text-decoration: none; }
 .reviews-trust-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
   padding: 8px 18px;
   border-radius: 999px;
-  background: #F4F5F8;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  background: #0C0D11;
+  border: 1px solid rgba(202, 255, 28, 0.35);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16), 0 0 16px rgba(202, 255, 28, 0.1);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: #0C0D11;
+  color: #FFFFFF;
   white-space: nowrap;
   flex-shrink: 0;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reviews-trust-badge:hover {
+  transform: translateY(-2px);
+  border-color: rgba(202, 255, 28, 0.65);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.22), 0 0 24px rgba(202, 255, 28, 0.2);
 }
 
 .reviews-trust-badge__stars {
-  color: #FFB800;
+  color: var(--lime, #CAFF1C);
   font-size: 12px;
   letter-spacing: 1.5px;
 }
 
 .reviews-trust-badge__score {
   font-weight: 850;
-  color: #0C0D11;
+  color: #FFFFFF;
 }
 
 .reviews-trust-badge__sep {
-  color: rgba(0, 0, 0, 0.25);
+  color: rgba(255, 255, 255, 0.28);
 }
 
 .reviews-trust-badge__label {
-  color: rgba(0, 0, 0, 0.62);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 11.5px;
   font-weight: 600;
 }
@@ -1912,8 +1924,8 @@ a { color: inherit; text-decoration: none; }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #10B981;
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  background: var(--lime, #CAFF1C);
+  box-shadow: 0 0 8px var(--lime, #CAFF1C);
   animation: liveDotPulse 2s ease-in-out infinite;
 }
 
@@ -1946,8 +1958,8 @@ a { color: inherit; text-decoration: none; }
 
 .review-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(0, 0, 0, 0.14);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.03);
+  border-color: rgba(202, 255, 28, 0.45);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.07), 0 0 24px rgba(202, 255, 28, 0.12);
 }
 
 .review-card__inner {
@@ -2293,8 +2305,22 @@ a { color: inherit; text-decoration: none; }
   margin-top: 36px;
   padding: clamp(24px, 3.5vw, 32px);
   background: #0C0D11;
-  border-radius: 20px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+  border-radius: 24px;
+  border: 1px solid rgba(202, 255, 28, 0.22);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2), 0 0 35px rgba(202, 255, 28, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-metrics::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(202, 255, 28, 0.5), transparent);
+  pointer-events: none;
 }
 
 .reviews-metric {
