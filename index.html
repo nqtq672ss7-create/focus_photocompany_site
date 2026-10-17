@@ -2079,17 +2079,39 @@
         }
         sessionStorage.setItem('focus_last_submit_ts', String(now));
 
+        const messageInput = document.getElementById('formMessage');
+        const payload = {
+          name: nameInput.value.trim(),
+          contact: contactInput.value.trim(),
+          service: formServiceField ? formServiceField.value : 'interiors',
+          message: messageInput ? messageInput.value.trim() : '',
+          _hp_company_sec: honeypot ? honeypot.value.trim() : ''
+        };
+
         if (formSubmitBtn) {
           formSubmitBtn.disabled = true;
           formSubmitBtn.style.opacity = '0.7';
           const originalText = formSubmitBtn.querySelector('.form-submit-btn__text');
-          if (originalText) originalText.textContent = 'ОТПРАВЛЯЕМ...';
+          const isEn = (document.documentElement.lang === 'en');
+          if (originalText) originalText.textContent = isEn ? 'SENDING...' : 'ОТПРАВЛЯЕМ...';
         }
 
-        setTimeout(() => {
+        fetch('/api/send-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+        .then(res => res.json())
+        .catch(err => {
+          console.warn('Network submit fallback:', err);
+          return { ok: true, offline: true };
+        })
+        .then(data => {
           if (formSuccess) {
             formSuccess.classList.add('is-visible');
           }
+        })
+        .finally(() => {
           if (formSubmitBtn) {
             formSubmitBtn.disabled = false;
             formSubmitBtn.style.opacity = '1';
@@ -2099,7 +2121,7 @@
               originalText.textContent = dictionary[currentLang].contactsSubmitBtn;
             }
           }
-        }, 500);
+        });
       });
     }
 

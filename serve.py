@@ -4,6 +4,7 @@ import sys
 import os
 import re
 import time
+import json
 import socket
 import urllib.parse
 import signal
@@ -186,7 +187,61 @@ class HardenedHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         if not self.check_rate_limit():
             return
+
+        if self.path == '/api/leads':
+            import lead_dispatcher
+            leads_file = lead_dispatcher.LEADS_JSON
+            leads = []
+            if os.path.exists(leads_file):
+                try:
+                    with open(leads_file, 'r', encoding='utf-8') as f:
+                        leads = json.load(f)
+                except Exception:
+                    leads = []
+            response_bytes = json.dumps({"ok": True, "count": len(leads), "leads": leads[-50:]}, ensure_ascii=False).encode('utf-8')
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.send_header('Content-Length', str(len(response_bytes)))
+            self.end_headers()
+            self.wfile.write(response_bytes)
+            return
+
         super().do_GET()
+
+    def do_POST(self):
+        if not self.check_rate_limit():
+            return
+
+        if self.path == '/api/send-lead':
+            try:
+                content_length = int(self.headers.get('Content-Length', 0))
+                if content_length > 65536:
+                    self.send_error(413, "Payload Too Large")
+                    return
+
+                body = self.rfile.read(content_length)
+                data = json.loads(body.decode('utf-8'))
+                client_ip = self.get_client_ip()
+
+                import lead_dispatcher
+                result = lead_dispatcher.process_new_lead(data, client_ip)
+
+                response_bytes = json.dumps(result, ensure_ascii=False).encode('utf-8')
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.send_header('Content-Length', str(len(response_bytes)))
+                self.end_headers()
+                self.wfile.write(response_bytes)
+            except Exception as e:
+                err_bytes = json.dumps({"ok": False, "error": str(e)}).encode('utf-8')
+                self.send_response(500)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.send_header('Content-Length', str(len(err_bytes)))
+                self.end_headers()
+                self.wfile.write(err_bytes)
+            return
+
+        self.send_error(404, "Endpoint Not Found")
 
     def do_HEAD(self):
         if not self.check_rate_limit():
