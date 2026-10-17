@@ -2555,7 +2555,7 @@
         avatarSrc: 'assets/avatars/avatar_square_4.webp',
         hasVoice: true,
         voiceAudioSrc: 'assets/audio/artem_review.mp3',
-        voiceDuration: '0:29',
+        voiceDuration: '0:24',
         verified: true,
         impactLime: true,
         impactIcon: '🔥',
@@ -3025,7 +3025,7 @@
         if (review.hasVoice) {
           const voiceSourceLabel = lang === 'en' ? '🎙️ Telegram Voice' : '🎙️ Голосовое в Telegram';
           const voiceAriaLabel = lang === 'en' ? 'Listen to audio' : 'Слушать отзыв';
-          const voiceDur = review.voiceDuration || '0:29';
+          const voiceDur = review.voiceDuration || '0:24';
           voicePlayerHtml = `
             <div class="review-voice-player" role="region" aria-label="Audio review" data-audio-src="${review.voiceAudioSrc || 'assets/audio/artem_review.mp3'}">
               <button class="review-voice-player__toggle" type="button" aria-label="${voiceAriaLabel}">
@@ -3102,12 +3102,13 @@
           const cur = globalVoiceAudio.currentTime || 0;
           const dur = (globalVoiceAudio.duration && !isNaN(globalVoiceAudio.duration) && globalVoiceAudio.duration > 0)
             ? globalVoiceAudio.duration
-            : 29.04;
+            : 23.82;
 
           const m = Math.floor(cur / 60);
           const s = Math.floor(cur % 60);
-          const dm = Math.floor(dur / 60);
-          const ds = Math.floor(dur % 60);
+          const totalSec = Math.round(dur);
+          const dm = Math.floor(totalSec / 60);
+          const ds = totalSec % 60;
 
           if (timeDisplay) {
             timeDisplay.textContent = `${m}:${s < 10 ? '0' : ''}${s} / ${dm}:${ds < 10 ? '0' : ''}${ds}`;
@@ -3133,7 +3134,7 @@
               bars.forEach(b => b.classList.remove('is-past'));
               const timeDisplay = vp.querySelector('.review-voice-player__time');
               if (timeDisplay) {
-                timeDisplay.textContent = '0:00 / 0:29';
+                timeDisplay.textContent = '0:00 / 0:24';
               }
             }
             activeVoiceCard = null;
@@ -3204,15 +3205,16 @@
             const rect = waveform.getBoundingClientRect();
             const clickX = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
             const ratio = clickX / rect.width;
-            const dur = (audio.duration && !isNaN(audio.duration) && audio.duration > 0) ? audio.duration : 29.04;
+            const dur = (audio.duration && !isNaN(audio.duration) && audio.duration > 0) ? audio.duration : 23.82;
             const newTime = ratio * dur;
             audio.currentTime = newTime;
             activeVoiceCard = card;
 
             const m = Math.floor(newTime / 60);
             const s = Math.floor(newTime % 60);
-            const dm = Math.floor(dur / 60);
-            const ds = Math.floor(dur % 60);
+            const totalSec = Math.round(dur);
+            const dm = Math.floor(totalSec / 60);
+            const ds = totalSec % 60;
             if (timeDisplay) {
               timeDisplay.textContent = `${m}:${s < 10 ? '0' : ''}${s} / ${dm}:${ds < 10 ? '0' : ''}${ds}`;
             }
