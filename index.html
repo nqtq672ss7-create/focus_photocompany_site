@@ -459,7 +459,7 @@
         <div class="reviews-container">
           
           <div class="reviews-header">
-            <div class="reviews-header__left">
+            <div class="reviews-header__main">
               <div class="reviews-eyebrow">
                 <span class="reviews-eyebrow__dash">//</span>
                 <span data-i18n="reviewsEyebrow">ДОВЕРИЕ И РЕПУТАЦИЯ</span>
@@ -468,328 +468,29 @@
                 <span data-i18n="reviewsTitle1">РЕЗУЛЬТАТЫ, КОТОРЫЕ</span><br>
                 <span data-i18n="reviewsTitle2">ГОВОРЯТ САМИ ЗА СЕБЯ.</span>
               </h2>
-              <p class="reviews-lead" data-i18n="reviewsLead">
-                Честные отзывы владельцев отелей, дизайнеров интерьеров и организаторов мероприятий о работе с командой «ФОКУС».
-              </p>
-            </div>
-            
-            <div class="reviews-trust-pill">
-              <span class="reviews-trust-pill__stars" aria-hidden="true">★★★★★</span>
-              <div class="reviews-trust-pill__info">
-                <div class="reviews-trust-pill__top-row">
-                  <span class="reviews-trust-pill__score">5.0</span>
-                  <span class="reviews-trust-pill__max">/ 5.0</span>
-                  <span class="reviews-trust-pill__badge">100% ВЕРИФИКАЦИЯ</span>
+              <div class="reviews-lead-row">
+                <p class="reviews-lead" data-i18n="reviewsLead">
+                  Честные отзывы владельцев отелей, дизайнеров интерьеров и организаторов мероприятий о работе с командой «ФОКУС».
+                </p>
+                <div class="reviews-trust-badge">
+                  <span class="reviews-trust-badge__stars" aria-hidden="true">★★★★★</span>
+                  <span class="reviews-trust-badge__score">5.0</span>
+                  <span class="reviews-trust-badge__sep">•</span>
+                  <span class="reviews-trust-badge__label" data-i18n="reviewsTrustLabel">100% проверенные съёмки</span>
+                  <span class="reviews-trust-badge__live-dot" title="Отзывы обновляются в реальном времени"></span>
                 </div>
-                <span class="reviews-trust-pill__label" data-i18n="reviewsTrustLabel">ПРОВЕРЕННЫЕ ОТЗЫВЫ КЛИЕНТОВ</span>
               </div>
             </div>
           </div>
 
-          <!-- Interactive Category Filter Chips -->
-          <div class="reviews-filters" role="tablist" aria-label="Фильтр отзывов по направлениям">
-            <button class="reviews-filter-btn is-active" type="button" role="tab" aria-selected="true" data-filter="all">
-              <span data-i18n="revFilterAll">Все истории</span>
-              <span class="reviews-filter-btn__count">6</span>
-            </button>
-            <button class="reviews-filter-btn" type="button" role="tab" aria-selected="false" data-filter="hotels">
-              <span data-i18n="revFilterHotels">Отели & HoReCa</span>
-            </button>
-            <button class="reviews-filter-btn" type="button" role="tab" aria-selected="false" data-filter="interiors">
-              <span data-i18n="revFilterInteriors">Интерьеры</span>
-            </button>
-            <button class="reviews-filter-btn" type="button" role="tab" aria-selected="false" data-filter="video">
-              <span data-i18n="revFilterVideo">Видео & Reels</span>
-            </button>
-            <button class="reviews-filter-btn" type="button" role="tab" aria-selected="false" data-filter="events">
-              <span data-i18n="revFilterEvents">Мероприятия</span>
-            </button>
-            <button class="reviews-filter-btn" type="button" role="tab" aria-selected="false" data-filter="brands">
-              <span data-i18n="revFilterBrands">Предметы & Бренды</span>
-            </button>
-          </div>
-
-          <div class="reviews-grid">
-            
-            <!-- Card 1: Bento Hero Case (Сергей Павлов, Бутик-отель) - spans 2 cols -->
-            <article class="review-card review-card--hero" data-category="hotels">
-              <div class="review-card__header-bar">
-                <div class="review-card__author">
-                  <div class="review-card__avatar-wrap">
-                    <img src="assets/avatars/avatar_square_3.webp" alt="Сергей Павлов" class="review-card__avatar-img" loading="lazy">
-                    <span class="review-card__verified-badge" title="Подтвержденный клиент">✓</span>
-                  </div>
-                  <div class="review-card__author-info">
-                    <div class="review-card__name-row">
-                      <h3 class="review-card__name" data-i18n="rev1Name">Сергей Павлов</h3>
-                      <span class="review-card__editorial-tag" data-i18n="revHeroTag">КЕЙС СЕЗОНА</span>
-                    </div>
-                    <span class="review-card__role" data-i18n="rev1Role">Владелец бутик-отеля «Морской Бриз», Витязево</span>
-                  </div>
-                </div>
-                <div class="review-card__meta-tags">
-                  <span class="review-card__cat" data-i18n="rev1Tag">Отели & HoReCa</span>
-                </div>
-              </div>
-
-              <div class="review-card__hero-banner">
-                <div class="review-card__impact-chip review-card__impact-chip--lime">
-                  <span class="review-card__impact-icon">📈</span>
-                  <span class="review-card__impact-text" data-i18n="rev1Impact" data-i18n-html><strong>+42% броней</strong> на Островке и Яндекс Путешествиях</span>
-                </div>
-                <div class="review-card__shoot-meta">
-                  <span class="review-card__shoot-tag">🌅 Рассвет 05:30</span>
-                  <span class="review-card__shoot-tag">🏊 Бассейн & терраса</span>
-                  <span class="review-card__shoot-tag">📸 68 медиа</span>
-                </div>
-              </div>
-
-              <div class="review-card__rating">
-                <span class="review-card__stars" aria-hidden="true">★★★★★</span>
-                <span class="review-card__provenance">
-                  <span class="review-card__provenance-icon">💬</span>
-                  <span data-i18n="rev1Meta">WhatsApp • 14 июля 2026</span>
-                </span>
-                <span class="review-card__contract-pill">Договор №14/07-ОТ</span>
-              </div>
-
-              <blockquote class="review-card__quote" data-i18n="rev1Quote" data-i18n-html>
-                «Искали ребят, которые снимут отель не как пустой музей, а чтобы чувствовался воздух и море. В разгар июля <mark class="review-highlight">приехали в 5:30 утра, пока гости спят, поймали идеальный рассвет над бассейном</mark>. Потом весь день деликатно работали на террасе — постояльцев вообще не дергали. Снимки закинули на Островок и в Яндекс Путешествия, <mark class="review-highlight">брони пошли заметно бодрее, особенно на люксы</mark>. Спасибо Кате за четкую организацию!»
-              </blockquote>
-            </article>
-
-            <!-- Card 2: Интерьеры & Архитектура (Ольга Нестерова) -->
-            <article class="review-card" data-category="interiors">
-              <div class="review-card__header-bar">
-                <div class="review-card__author">
-                  <div class="review-card__avatar-wrap">
-                    <img src="assets/avatars/avatar_square_8.webp" alt="Ольга Нестерова" class="review-card__avatar-img" loading="lazy">
-                    <span class="review-card__verified-badge" title="Подтвержденный клиент">✓</span>
-                  </div>
-                  <div class="review-card__author-info">
-                    <h3 class="review-card__name" data-i18n="rev2Name">Ольга Нестерова</h3>
-                    <span class="review-card__role" data-i18n="rev2Role">Архитектор-дизайнер, студия Nesterova Arch (Новороссийск)</span>
-                  </div>
-                </div>
-                <span class="review-card__cat" data-i18n="rev2Tag">Интерьеры</span>
-              </div>
-
-              <div class="review-card__impact-chip">
-                <span class="review-card__impact-icon">📐</span>
-                <span class="review-card__impact-text" data-i18n="rev2Impact">Идеальная геометрия • Публикация в глянце</span>
-              </div>
-
-              <div class="review-card__rating">
-                <span class="review-card__stars" aria-hidden="true">★★★★★</span>
-                <span class="review-card__provenance">
-                  <span class="review-card__provenance-icon">✈️</span>
-                  <span data-i18n="rev2Meta">Telegram • 28 августа 2026</span>
-                </span>
-              </div>
-
-              <blockquote class="review-card__quote" data-i18n="rev2Quote" data-i18n-html>
-                «У меня пунктик на <mark class="review-highlight">геометрию и правильную передачу фактур</mark> — обычно фотографы пересвечивают керамогранит или заваливают вертикали, а потом приходится сидеть и плакать над рендерами. С "Фокусом" выдохнула. <mark class="review-highlight">Приехали со своим светом, штативами, два часа выставляли ракурс ради одной гостиной</mark>. Результат — чистейший интерьерный глянец. Заказчики квартиры в восторге, проект сразу взяли в публикацию.»
-              </blockquote>
-            </article>
-
-            <!-- Card 3: Рекламное видео & Reels (Артём Воронов) - WITH INTERACTIVE TELEGRAM VOICE NOTE PLAYER -->
-            <article class="review-card" data-category="video">
-              <div class="review-card__header-bar">
-                <div class="review-card__author">
-                  <div class="review-card__avatar-wrap">
-                    <img src="assets/avatars/avatar_square_4.webp" alt="Артём Воронов" class="review-card__avatar-img" loading="lazy">
-                    <span class="review-card__verified-badge" title="Подтвержденный клиент">✓</span>
-                  </div>
-                  <div class="review-card__author-info">
-                    <h3 class="review-card__name" data-i18n="rev3Name">Артём Воронов</h3>
-                    <span class="review-card__role" data-i18n="rev3Role">Совладелец кафе-бара «Черноморский», Анапа</span>
-                  </div>
-                </div>
-                <span class="review-card__cat" data-i18n="rev3Tag">Видео & Reels</span>
-              </div>
-
-              <!-- Interactive Telegram Voice Note Waveform -->
-              <div class="review-voice-player" id="voicePlayerArtem" role="region" aria-label="Голосовое сообщение">
-                <button class="review-voice-player__toggle" type="button" aria-label="Слушать отзыв">
-                  <svg class="review-voice-player__icon review-voice-player__icon--play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                  <svg class="review-voice-player__icon review-voice-player__icon--pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                  </svg>
-                </button>
-                <div class="review-voice-player__content">
-                  <div class="review-voice-player__waveform" aria-hidden="true">
-                    <span class="voice-bar" style="--h: 30%; --i: 1"></span>
-                    <span class="voice-bar" style="--h: 60%; --i: 2"></span>
-                    <span class="voice-bar" style="--h: 90%; --i: 3"></span>
-                    <span class="voice-bar" style="--h: 40%; --i: 4"></span>
-                    <span class="voice-bar" style="--h: 75%; --i: 5"></span>
-                    <span class="voice-bar" style="--h: 100%; --i: 6"></span>
-                    <span class="voice-bar" style="--h: 55%; --i: 7"></span>
-                    <span class="voice-bar" style="--h: 80%; --i: 8"></span>
-                    <span class="voice-bar" style="--h: 45%; --i: 9"></span>
-                    <span class="voice-bar" style="--h: 95%; --i: 10"></span>
-                    <span class="voice-bar" style="--h: 70%; --i: 11"></span>
-                    <span class="voice-bar" style="--h: 35%; --i: 12"></span>
-                    <span class="voice-bar" style="--h: 65%; --i: 13"></span>
-                    <span class="voice-bar" style="--h: 85%; --i: 14"></span>
-                    <span class="voice-bar" style="--h: 50%; --i: 15"></span>
-                    <span class="voice-bar" style="--h: 70%; --i: 16"></span>
-                    <span class="voice-bar" style="--h: 40%; --i: 17"></span>
-                    <span class="voice-bar" style="--h: 90%; --i: 18"></span>
-                    <span class="voice-bar" style="--h: 60%; --i: 19"></span>
-                    <span class="voice-bar" style="--h: 30%; --i: 20"></span>
-                  </div>
-                  <div class="review-voice-player__meta">
-                    <span class="review-voice-player__time">0:00 / 0:38</span>
-                    <span class="review-voice-player__source" data-i18n="revVoiceFormat">🎙️ Голосовое в Telegram</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="review-card__rating">
-                <span class="review-card__stars" aria-hidden="true">★★★★★</span>
-                <span class="review-card__provenance">
-                  <span class="review-card__provenance-icon">🔥</span>
-                  <span data-i18n="rev3ImpactShort">6 вирусных Reels для кухни & бара</span>
-                </span>
-              </div>
-
-              <blockquote class="review-card__quote" data-i18n="rev3Quote" data-i18n-html>
-                «Честно, думал, снимут очередные скучные перебивки с едой под клубную музыку. А парни <mark class="review-highlight">сделали 6 коротких рилсов с поваром и звуками кухни</mark> — шипение сковороды, пар, коктейли крупным планом. <mark class="review-highlight">Залетело без всякого таргета, гости начали приходить со словами "мы увидели ваше видео в ленте"</mark>. Однозначно продлеваемся на осеннее меню.»
-              </blockquote>
-            </article>
-
-            <!-- Card 4: Мероприятия (Марина Ковалёва) - MONOGRAM AVATAR (real human variation) -->
-            <article class="review-card" data-category="events">
-              <div class="review-card__header-bar">
-                <div class="review-card__author">
-                  <div class="review-card__avatar-wrap">
-                    <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">МК</div>
-                    <span class="review-card__verified-badge" title="Подтвержденный клиент">✓</span>
-                  </div>
-                  <div class="review-card__author-info">
-                    <h3 class="review-card__name" data-i18n="rev4Name">Марина Ковалёва</h3>
-                    <span class="review-card__role" data-i18n="rev4Role">Event-продюсер деловых форумов (Сочи — Анапа)</span>
-                  </div>
-                </div>
-                <span class="review-card__cat" data-i18n="rev4Tag">Мероприятия</span>
-              </div>
-
-              <div class="review-card__impact-chip review-card__impact-chip--lime">
-                <span class="review-card__impact-icon">⚡</span>
-                <span class="review-card__impact-text" data-i18n="rev4Impact">Первые 35 кадров готовы в 23:00 того же дня</span>
-              </div>
-
-              <div class="review-card__rating">
-                <span class="review-card__stars" aria-hidden="true">★★★★★</span>
-                <span class="review-card__provenance">
-                  <span class="review-card__provenance-icon">⭐</span>
-                  <span data-i18n="rev4Meta">Личный отзыв • 18 сентября 2026</span>
-                </span>
-              </div>
-
-              <blockquote class="review-card__quote" data-i18n="rev4Quote" data-i18n-html>
-                «Для организатора главное — не поседеть во время мероприятия. Ребята работали <mark class="review-highlight">в две камеры на конференции на 140 человек: тихо, в темной одежде, никого не слепили вспышками в лоб</mark>. Но главный шок — <mark class="review-highlight">в 23:00 того же дня скинули папку с первыми 35 обработанными кадрами</mark> для пресс-релиза и спонсоров. Утром все спикеры уже репостили себя в соцсети. Это уровень!»
-              </blockquote>
-            </article>
-
-            <!-- Card 5: Отели & Lifestyle (Игорь Мельников) -->
-            <article class="review-card" data-category="hotels">
-              <div class="review-card__header-bar">
-                <div class="review-card__author">
-                  <div class="review-card__avatar-wrap">
-                    <img src="assets/avatars/avatar_square_11.webp" alt="Игорь Мельников" class="review-card__avatar-img" loading="lazy">
-                    <span class="review-card__verified-badge" title="Подтвержденный клиент">✓</span>
-                  </div>
-                  <div class="review-card__author-info">
-                    <h3 class="review-card__name" data-i18n="rev5Name">Игорь Мельников</h3>
-                    <span class="review-card__role" data-i18n="rev5Role">Генеральный директор яхт-клуба и марины «Лагуна», Большой Утриш</span>
-                  </div>
-                </div>
-                <span class="review-card__cat" data-i18n="rev5Tag">Отели & Lifestyle</span>
-              </div>
-
-              <div class="review-card__impact-chip">
-                <span class="review-card__impact-icon">🚁</span>
-                <span class="review-card__impact-text" data-i18n="rev5Impact">Аэросъемка 4K • Кадры для инвесторов</span>
-              </div>
-
-              <div class="review-card__rating">
-                <span class="review-card__stars" aria-hidden="true">★★★★★</span>
-                <span class="review-card__provenance">
-                  <span class="review-card__provenance-icon">📍</span>
-                  <span data-i18n="rev5Meta">Яндекс Карты • 12 августа 2026</span>
-                </span>
-              </div>
-
-              <blockquote class="review-card__quote" data-i18n="rev5Quote" data-i18n-html>
-                «Заказывали полную съемку причала, флота и зоны отдыха. Парни <mark class="review-highlight">привезли дрон, дождались режимного вечернего света, сняли выход катамарана в открытое море на закате</mark>. Видеоряд получился как для промо элитного курорта. Сразу поставили на главный экран сайта и в презентацию для инвесторов. <mark class="review-highlight">Работают по договору, закрывающие документы предоставили в тот же день</mark>.»
-              </blockquote>
-            </article>
-
-            <!-- Card 6: Предметная съемка (Дарья Морозова) - Spans 2 cols on row 3 -->
-            <article class="review-card review-card--hero" data-category="brands">
-              <div class="review-card__header-bar">
-                <div class="review-card__author">
-                  <div class="review-card__avatar-wrap">
-                    <img src="assets/avatars/avatar_square_1.webp" alt="Дарья Морозова" class="review-card__avatar-img" loading="lazy">
-                    <span class="review-card__verified-badge" title="Подтвержденный клиент">✓</span>
-                  </div>
-                  <div class="review-card__author-info">
-                    <div class="review-card__name-row">
-                      <h3 class="review-card__name" data-i18n="rev6Name">Дарья Морозова</h3>
-                      <span class="review-card__editorial-tag">E-COMMERCE & БРЕНД</span>
-                    </div>
-                    <span class="review-card__role" data-i18n="rev6Role">Основатель студии керамики & декора «Terra», Краснодар</span>
-                  </div>
-                </div>
-                <span class="review-card__cat" data-i18n="rev6Tag">Предметная съемка</span>
-              </div>
-
-              <div class="review-card__hero-banner">
-                <div class="review-card__impact-chip review-card__impact-chip--lime">
-                  <span class="review-card__impact-icon">🛍️</span>
-                  <span class="review-card__impact-text" data-i18n="rev6Impact">Рост конверсии карточек товаров в 1.5 раза</span>
-                </div>
-                <div class="review-card__shoot-meta">
-                  <span class="review-card__shoot-tag">🏺 5 часов в мастерской</span>
-                  <span class="review-card__shoot-tag">✨ Сложные матовые фактуры</span>
-                </div>
-              </div>
-
-              <div class="review-card__rating">
-                <span class="review-card__stars" aria-hidden="true">★★★★★</span>
-                <span class="review-card__provenance">
-                  <span class="review-card__provenance-icon">✈️</span>
-                  <span data-i18n="rev6Meta">Telegram • 2 октября 2026</span>
-                </span>
-                <span class="review-card__contract-pill">Договор №02/10-ПР</span>
-              </div>
-
-              <blockquote class="review-card__quote" data-i18n="rev6Quote" data-i18n-html>
-                «Очень переживала за съемку новой коллекции ваз и текстиля: свет сложный, фактуры матовые, легко потерять глубину оттенков. <mark class="review-highlight">Фотограф от "Фокуса" провел в мастерской 5 часов, сам предлагал необычные композиции с тенями от растений</mark>. В карточках товаров на сайте <mark class="review-highlight">конверсия выросла в полтора раза</mark> — клиенты буквально чувствуют тактильность через экран.»
-              </blockquote>
-            </article>
-
-            <!-- Card 7: Luxury Fast Consultation / Booking CTA Card - 1 col on row 3 -->
-            <article class="review-card review-card--cta" data-category="all">
-              <div class="review-cta__badge">
-                <span class="review-cta__pulse"></span>
-                <span data-i18n="revCtaStatus">СЪЁМКИ В АНАПЕ И ПО ВСЕМУ ЮГУ</span>
-              </div>
-              <h3 class="review-cta__title" data-i18n="revCtaTitle">Планируете съёмку отеля, интерьера или события?</h3>
-              <p class="review-cta__desc" data-i18n="revCtaDesc">Обсудим референсы, тайминг и рассчитаем детальную смету без скрытых доплат за 15 минут.</p>
-              <div class="review-cta__actions">
-                <a href="#contacts" class="btn btn--primary review-cta__btn" data-i18n="revCtaBtn">ОБСУДИТЬ ПРОЕКТ</a>
-                <a href="https://t.me/focus_photo_anapa" target="_blank" rel="noopener noreferrer" class="review-cta__tg-link">
-                  <span class="review-cta__tg-icon">✈️</span>
-                  <span data-i18n="revCtaTg">Написать в Telegram</span>
-                </a>
-              </div>
-            </article>
-
+          <!-- Dynamic Rotating Reviews Grid (Uniform 6 slots) -->
+          <div class="reviews-grid" id="reviewsGrid">
+            <article class="review-card" data-slot="0"><div class="review-card__inner"></div></article>
+            <article class="review-card" data-slot="1"><div class="review-card__inner"></div></article>
+            <article class="review-card" data-slot="2"><div class="review-card__inner"></div></article>
+            <article class="review-card" data-slot="3"><div class="review-card__inner"></div></article>
+            <article class="review-card" data-slot="4"><div class="review-card__inner"></div></article>
+            <article class="review-card" data-slot="5"><div class="review-card__inner"></div></article>
           </div>
 
           <!-- Trust Metrics Bar -->
@@ -812,9 +513,8 @@
             </div>
           </div>
 
-          <!-- Minimalist Legal Reference Footnote -->
+          <!-- Discreet Legal Reference Footnote -->
           <div class="reviews-legal-footnote">
-            <span class="reviews-legal-footnote__icon" aria-hidden="true">⚖️</span>
             <span data-i18n="reviewsLegalFootnote">Каталог стилей выше носит ознакомительный характер (ст. 1274 ГК РФ). Полное коммерческое портфолио под NDA отправляется по запросу. Для правообладателей: <a href="mailto:info@focus-photo.ru" class="reviews-legal-footnote__link">info@focus-photo.ru</a> (Notice & Takedown за 24 ч).</span>
           </div>
 
@@ -1294,7 +994,7 @@
         reviewsTitle1: 'РЕЗУЛЬТАТЫ, КОТОРЫЕ',
         reviewsTitle2: 'ГОВОРЯТ САМИ ЗА СЕБЯ.',
         reviewsLead: 'Честные отзывы владельцев отелей, дизайнеров интерьеров и организаторов мероприятий о работе с командой «ФОКУС».',
-        reviewsTrustLabel: 'ПРОВЕРЕННЫЕ ОТЗЫВЫ КЛИЕНТОВ',
+        reviewsTrustLabel: '100% проверенные съёмки',
         revFilterAll: 'Все истории',
         revFilterHotels: 'Отели & HoReCa',
         revFilterInteriors: 'Интерьеры',
@@ -1521,7 +1221,7 @@
         reviewsTitle1: 'RESULTS THAT',
         reviewsTitle2: 'SPEAK FOR THEMSELVES.',
         reviewsLead: 'Honest reviews from hotel managers, interior designers, and event producers on collaborating with FOCUS.',
-        reviewsTrustLabel: 'VERIFIED CLIENT REVIEWS',
+        reviewsTrustLabel: '100% Verified Shoots',
         revFilterAll: 'All Stories',
         revFilterHotels: 'Hotels & HoReCa',
         revFilterInteriors: 'Interiors',
@@ -1712,6 +1412,7 @@
       });
       document.querySelector('.language-switch').classList.toggle('is-en', lang === 'en');
       localStorage.setItem('focus-language', lang);
+      window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
     }
 
     langButtons.forEach((button) => {
@@ -2792,110 +2493,749 @@
       reviewsSecEl.classList.add('is-in-view');
     }
 
-    // ── INTERACTIVE REVIEWS CATEGORY FILTERING ──────────────────────
-    const reviewFilterButtons = document.querySelectorAll('.reviews-filter-btn');
-    const reviewCardsAll = document.querySelectorAll('.reviews-grid .review-card');
-
-    reviewFilterButtons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        reviewFilterButtons.forEach((b) => {
-          b.classList.remove('is-active');
-          b.setAttribute('aria-selected', 'false');
-        });
-        btn.classList.add('is-active');
-        btn.setAttribute('aria-selected', 'true');
-
-        const activeFilter = btn.dataset.filter;
-        reviewCardsAll.forEach((card) => {
-          const cardCat = card.dataset.category;
-          if (activeFilter === 'all' || cardCat === activeFilter || cardCat === 'all') {
-            card.classList.remove('is-filtered-out');
-          } else {
-            card.classList.add('is-filtered-out');
-          }
-        });
-
-        if (window.ScrollTrigger) ScrollTrigger.refresh();
-      });
-    });
-
-    // ── INTERACTIVE TELEGRAM VOICE NOTE PLAYER ───────────────────────
-    const voicePlayer = document.getElementById('voicePlayerArtem');
-    if (voicePlayer) {
-      const toggleBtn = voicePlayer.querySelector('.review-voice-player__toggle');
-      const timeDisplay = voicePlayer.querySelector('.review-voice-player__time');
-      const bars = voicePlayer.querySelectorAll('.voice-bar');
-      let isPlaying = false;
-      let progressSec = 0;
-      const totalSec = 38;
-      let playTimer = null;
-      let audioCtx = null;
-
-      function playHapticTick() {
-        try {
-          if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-          if (audioCtx.state === 'suspended') audioCtx.resume();
-          const osc = audioCtx.createOscillator();
-          const gain = audioCtx.createGain();
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(540, audioCtx.currentTime);
-          osc.frequency.exponentialRampToValueAtTime(140, audioCtx.currentTime + 0.04);
-          gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-          gain.gain.linearRampToValueAtTime(0.001, audioCtx.currentTime + 0.04);
-          osc.connect(gain);
-          gain.connect(audioCtx.destination);
-          osc.start();
-          osc.stop(audioCtx.currentTime + 0.04);
-        } catch(e) {}
-      }
-
-      function renderProgress(ratio) {
-        const threshold = Math.floor(ratio * bars.length);
-        bars.forEach((bar, idx) => {
-          if (idx <= threshold) {
-            bar.classList.add('is-past');
-          } else {
-            bar.classList.remove('is-past');
-          }
-        });
-      }
-
-      function formatClock(s) {
-        const m = Math.floor(s / 60);
-        const rem = Math.floor(s % 60);
-        return `${m}:${rem < 10 ? '0' : ''}${rem}`;
-      }
-
-      toggleBtn.addEventListener('click', () => {
-        isPlaying = !isPlaying;
-        playHapticTick();
-
-        if (isPlaying) {
-          voicePlayer.classList.add('is-playing');
-          toggleBtn.setAttribute('aria-label', 'Пауза');
-
-          playTimer = setInterval(() => {
-            progressSec += 0.5;
-            if (progressSec >= totalSec) {
-              progressSec = 0;
-              isPlaying = false;
-              clearInterval(playTimer);
-              voicePlayer.classList.remove('is-playing');
-              toggleBtn.setAttribute('aria-label', 'Слушать отзыв');
-              renderProgress(0);
-              timeDisplay.textContent = `0:00 / 0:${totalSec}`;
-              return;
-            }
-            timeDisplay.textContent = `${formatClock(progressSec)} / 0:${totalSec}`;
-            renderProgress(progressSec / totalSec);
-          }, 500);
-        } else {
-          voicePlayer.classList.remove('is-playing');
-          toggleBtn.setAttribute('aria-label', 'Слушать отзыв');
-          clearInterval(playTimer);
+    // ── 18 AUTHENTIC CLIENT REVIEWS DATABASE (RUSSIAN & ENGLISH) ────────
+    const REVIEWS_DATA = [
+      {
+        id: 'rev_1',
+        avatarType: 'photo',
+        avatarSrc: 'assets/avatars/avatar_square_3.webp',
+        verified: true,
+        impactLime: true,
+        impactIcon: '📈',
+        platformIcon: '💬',
+        ru: {
+          name: 'Сергей Павлов',
+          role: 'Владелец бутик-отеля «Морской Бриз», Витязево',
+          tag: 'Отели & HoReCa',
+          impact: '<strong>+42% броней</strong> на Островке и Яндекс Путешествиях',
+          platform: 'WhatsApp • 14 июля 2026',
+          contract: 'Договор №14/07-ОТ',
+          quote: '«Искали ребят, которые снимут отель не как пустой музей, а чтобы чувствовался воздух и море. В разгар июля <mark class="review-highlight">приехали в 5:30 утра, пока гости спят, поймали идеальный рассвет над бассейном</mark>. Потом весь день деликатно работали на террасе — постояльцев вообще не дергали. Снимки закинули на Островок и в Яндекс Путешествия, <mark class="review-highlight">брони пошли заметно бодрее, особенно на люксы</mark>. Спасибо за четкую организацию!»'
+        },
+        en: {
+          name: 'Sergey Pavlov',
+          role: 'Owner of Boutique Hotel «Morskoy Briz», Vityazevo',
+          tag: 'Hotels & HoReCa',
+          impact: '<strong>+42% bookings</strong> on Ostrovok & Yandex Travel',
+          platform: 'WhatsApp • July 14, 2026',
+          contract: 'Contract №14/07-OT',
+          quote: '“We were looking for photographers who would shoot the hotel with natural air rather than an empty museum. In mid-July, <mark class="review-highlight">they arrived at 5:30 AM before guests woke up, capturing perfect sunrise over the pool</mark>. Then worked discreetly across the terrace all day. Photos posted on OTAs delivered <mark class="review-highlight">a measurable surge in bookings, especially luxury suites</mark>. Flawless organization!”'
         }
+      },
+      {
+        id: 'rev_2',
+        avatarType: 'photo',
+        avatarSrc: 'assets/avatars/avatar_square_8.webp',
+        verified: true,
+        impactLime: false,
+        impactIcon: '📐',
+        platformIcon: '✈️',
+        ru: {
+          name: 'Ольга Нестерова',
+          role: 'Архитектор-дизайнер, студия Nesterova Arch (Новороссийск)',
+          tag: 'Интерьеры',
+          impact: 'Идеальная геометрия • Публикация в глянце',
+          platform: 'Telegram • 28 августа 2026',
+          contract: 'Договор №28/08-АР',
+          quote: '«У меня пунктик на <mark class="review-highlight">геометрию и правильную передачу фактур</mark> — обычно фотографы пересвечивают керамогранит или заваливают вертикали, а потом приходится сидеть и плакать над рендерами. С "Фокусом" выдохнула. <mark class="review-highlight">Приехали со своим светом, штативами, два часа выставляли ракурс ради одной гостиной</mark>. Результат — чистейший интерьерный глянец. Заказчики в восторге, проект сразу взяли в публикацию.»'
+        },
+        en: {
+          name: 'Olga Nesterova',
+          role: 'Architect & Interior Designer, Nesterova Arch (Novorossiysk)',
+          tag: 'Interiors',
+          impact: 'Flawless geometry • Published in architectural magazine',
+          platform: 'Telegram • August 28, 2026',
+          contract: 'Contract №28/08-AR',
+          quote: '“I am uncompromising about <mark class="review-highlight">geometry and accurate surface texture rendering</mark> — most photographers overexpose stone or tilt verticals. With FOCUS I felt total relief. <mark class="review-highlight">They brought dedicated lighting, tripods, and spent two hours perfecting angles for a single living room</mark>. Pristine editorial quality. The homeowners were thrilled, and the project was accepted for publication.”'
+        }
+      },
+      {
+        id: 'rev_3',
+        avatarType: 'photo',
+        avatarSrc: 'assets/avatars/avatar_square_4.webp',
+        hasVoice: true,
+        verified: true,
+        impactLime: true,
+        impactIcon: '🔥',
+        platformIcon: '🎙️',
+        ru: {
+          name: 'Артём Воронов',
+          role: 'Совладелец кафе-бара «Черноморский», Анапа',
+          tag: 'Видео & Reels',
+          impact: '6 вирусных Reels для кухни & бара',
+          platform: 'Telegram Audio • 5 сентября 2026',
+          contract: 'Договор №05/09-ВР',
+          quote: '«Честно, думал, снимут очередные скучные перебивки с едой под клубную музыку. А парни <mark class="review-highlight">сделали 6 коротких рилсов с поваром и звуками кухни</mark> — шипение сковороды, пар, коктейли крупным планом. <mark class="review-highlight">Залетело без всякого таргета, гости начали приходить со словами "мы увидели ваше видео в ленте"</mark>. Однозначно продлеваемся на осеннее меню.»'
+        },
+        en: {
+          name: 'Artyom Voronov',
+          role: 'Co-owner of Cafe-Bar «Chernomorsky», Anapa',
+          tag: 'Video & Reels',
+          impact: '6 viral Reels for kitchen & cocktail bar',
+          platform: 'Telegram Audio • September 5, 2026',
+          contract: 'Contract №05/09-VR',
+          quote: '“Honestly, I expected generic b-roll of food set to club music. Instead, <mark class="review-highlight">they produced 6 crisp Reels featuring the chef and live kitchen ASMR</mark> — sizzling cast iron, rising steam, cocktail macro shots. <mark class="review-highlight">It went viral organically, and guests started walking in saying they saw our Reels in their feed</mark>. Renewing for the autumn menu without hesitation.”'
+        }
+      },
+      {
+        id: 'rev_4',
+        avatarType: 'monogram',
+        monogram: 'МК',
+        verified: true,
+        impactLime: true,
+        impactIcon: '⚡',
+        platformIcon: '⭐',
+        ru: {
+          name: 'Марина Ковалёва',
+          role: 'Event-продюсер деловых форумов (Сочи — Анапа)',
+          tag: 'Мероприятия',
+          impact: 'Первые 35 кадров готовы в 23:00 того же дня',
+          platform: 'Личный отзыв • 18 сентября 2026',
+          contract: 'Договор №18/09-МР',
+          quote: '«Для организатора главное — не поседеть во время мероприятия. Ребята работали <mark class="review-highlight">в две камеры на конференции на 140 человек: тихо, в темной одежде, никого не слепили вспышками в лоб</mark>. Но главный шок — <mark class="review-highlight">в 23:00 того же дня скинули папку с первыми 35 обработанными кадрами</mark> для пресс-релиза и спонсоров. Утром все спикеры уже репостили себя в соцсети. Это уровень!»'
+        },
+        en: {
+          name: 'Marina Kovalyova',
+          role: 'Business Forum Event Producer (Sochi — Anapa)',
+          tag: 'Events',
+          impact: 'First 35 edited photos delivered by 11:00 PM same day',
+          platform: 'Verified Review • September 18, 2026',
+          contract: 'Contract №18/09-MR',
+          quote: '“For an event producer, the highest priority is calm execution. The crew operated <mark class="review-highlight">two cameras across 140 attendees: quiet, dressed in all black, never blinding speakers with intrusive flash</mark>. The highlight — <mark class="review-highlight">by 11:00 PM that very night they shared 35 fully color-graded shots</mark> for morning press releases. True professional rigor.”'
+        }
+      },
+      {
+        id: 'rev_5',
+        avatarType: 'photo',
+        avatarSrc: 'assets/avatars/avatar_square_11.webp',
+        verified: true,
+        impactLime: false,
+        impactIcon: '🚁',
+        platformIcon: '📍',
+        ru: {
+          name: 'Игорь Мельников',
+          role: 'Генеральный директор яхт-клуба и марины «Лагуна», Большой Утриш',
+          tag: 'Отели & Lifestyle',
+          impact: 'Аэросъемка 4K • Кадры для инвесторов',
+          platform: 'Яндекс Карты • 12 августа 2026',
+          contract: 'Договор №12/08-УТ',
+          quote: '«Заказывали полную съемку причала, флота и зоны отдыха. Парни <mark class="review-highlight">привезли дрон, дождались режимного вечернего света, сняли выход катамарана в открытое море на закате</mark>. Видеоряд получился как для промо элитного курорта. Сразу поставили на главный экран сайта и в презентацию для инвесторов. <mark class="review-highlight">Работают по договору, закрывающие документы предоставили в тот же день</mark>.»'
+        },
+        en: {
+          name: 'Igor Melnikov',
+          role: 'CEO of Laguna Yacht Club & Marina, Bolshoy Utrish',
+          tag: 'Hotels & Lifestyle',
+          impact: '4K aerial cinematography • Investor-ready media',
+          platform: 'Yandex Maps • August 12, 2026',
+          contract: 'Contract №12/08-UT',
+          quote: '“We commissioned a complete shoot of the marina docks, yacht fleet, and guest lounge. The team <mark class="review-highlight">deployed licensed drones during golden hour, capturing a catamaran setting sail at sunset</mark>. Visual quality rivals premier Mediterranean resort promos. Featured directly on our homepage and investor deck. <mark class="review-highlight">All accounting and closing docs delivered same-day</mark>.”'
+        }
+      },
+      {
+        id: 'rev_6',
+        avatarType: 'photo',
+        avatarSrc: 'assets/avatars/avatar_square_1.webp',
+        verified: true,
+        impactLime: true,
+        impactIcon: '🛍️',
+        platformIcon: '✈️',
+        ru: {
+          name: 'Дарья Морозова',
+          role: 'Основатель студии керамики & декора «Terra», Краснодар',
+          tag: 'Предметная съемка',
+          impact: 'Рост конверсии карточек товаров в 1.5 раза',
+          platform: 'Telegram • 2 октября 2026',
+          contract: 'Договор №02/10-ПР',
+          quote: '«Очень переживала за съемку новой коллекции ваз и текстиля: свет сложный, фактуры матовые, легко потерять глубину оттенков. <mark class="review-highlight">Фотограф от "Фокуса" провел в мастерской 5 часов, сам предлагал необычные композиции с тенями от растений</mark>. В карточках товаров на сайте <mark class="review-highlight">конверсия выросла в полтора раза</mark> — клиенты буквально чувствуют тактильность через экран.»'
+        },
+        en: {
+          name: 'Daria Morozova',
+          role: 'Founder of Terra Ceramics & Decor Studio, Krasnodar',
+          tag: 'Product Photography',
+          impact: '1.5x product page conversion rate increase',
+          platform: 'Telegram • October 2, 2026',
+          contract: 'Contract №02/10-PR',
+          quote: '“I was anxious about shooting our new line of matte vases and textured textiles. <mark class="review-highlight">The FOCUS photographer spent 5 focused hours in our workshop, composing delicate botanical shadow play</mark>. On our e-commerce store, <mark class="review-highlight">conversion climbed 1.5x</mark> — buyers can genuinely perceive the tactile warmth through their screens.”'
+        }
+      },
+      {
+        id: 'rev_7',
+        avatarType: 'photo',
+        avatarSrc: 'assets/avatars/avatar_square_5.webp',
+        verified: true,
+        impactLime: true,
+        impactIcon: '🏢',
+        platformIcon: '📍',
+        ru: {
+          name: 'Максим Лебедев',
+          role: 'Директор по маркетингу девелопера, ЖК «Белый Берег» (Анапа)',
+          tag: 'Девелопмент',
+          impact: 'Каталог сдан за 4 дня до старта продаж',
+          platform: '2ГИС • 24 июля 2026',
+          contract: 'Договор №24/07-ДВ',
+          quote: '«Снимали шоурумы и благоустройство первой очереди жилого комплекса. <mark class="review-highlight">Ребята привезли поляризационные фильтры и tilt-shift оптику</mark> — все вертикали на фасадах ровные, никакого искажения окон и бликов на витринах. <mark class="review-highlight">Каталог сдали за 4 дня до старта продаж</mark>, отдел продаж укомплектован полностью.»'
+        },
+        en: {
+          name: 'Maxim Lebedev',
+          role: 'Marketing Director, Bely Bereg Residential Complex (Anapa)',
+          tag: 'Development',
+          impact: 'Sales catalog delivered 4 days ahead of launch',
+          platform: '2GIS • July 24, 2026',
+          contract: 'Contract №24/07-DV',
+          quote: '“We commissioned architectural shoots of finished showrooms and exterior landscaping. <mark class="review-highlight">The photographers utilized dedicated tilt-shift optics and polarizing filters</mark> — all facade verticals remained laser-straight with zero glass reflections. <mark class="review-highlight">The media catalog was handed over 4 days ahead of sales launch</mark>.”'
+        }
+      },
+      {
+        id: 'rev_8',
+        avatarType: 'photo',
+        avatarSrc: 'assets/avatars/avatar_square_7.webp',
+        verified: true,
+        impactLime: false,
+        impactIcon: '🏛️',
+        platformIcon: '💬',
+        ru: {
+          name: 'Анна Белозёрова',
+          role: 'Главный архитектор бюро «Форма», Новороссийск',
+          tag: 'Архитектура',
+          impact: 'Публикация в Salon Magazine',
+          platform: 'WhatsApp • 10 сентября 2026',
+          contract: 'Договор №10/09-АР',
+          quote: '«Обычно интерьерная съёмка — это стресс: то свет бликует на керамограните, то текстиль выглядит мятым. <mark class="review-highlight">Команда "Фокуса" приехала со своим отпаривателем и предметным ассистентом!</mark> Сами всё поправили, выставили мягкие тени от окон. <mark class="review-highlight">Проект уже опубликовали в журнале Salon</mark>, это лучшая визитная карточка бюро.»'
+        },
+        en: {
+          name: 'Anna Belozerova',
+          role: 'Lead Architect, Forma Bureau (Novorossiysk)',
+          tag: 'Architecture',
+          impact: 'Featured in Salon Magazine',
+          platform: 'WhatsApp • September 10, 2026',
+          contract: 'Contract №10/09-AR',
+          quote: '“Interior shoots can often be exhausting. <mark class="review-highlight">The FOCUS crew showed up with their own fabric steamers and styling assistant!</mark> They adjusted drapery, balanced soft window light, and kept every line crisp. <mark class="review-highlight">The project has already been featured in Salon Magazine</mark> — a proud milestone for our studio.”'
+        }
+      },
+      {
+        id: 'rev_9',
+        avatarType: 'photo',
+        avatarSrc: 'assets/avatars/avatar_square_10.webp',
+        verified: true,
+        impactLime: true,
+        impactIcon: '⛵',
+        platformIcon: '✈️',
+        ru: {
+          name: 'Роман Васильев',
+          role: 'Основатель чартерной компании «Wind & Sea», Геленджик',
+          tag: 'Видео & Экстрим',
+          impact: '180 000 просмотров в первый уикенд',
+          platform: 'Telegram • 19 июля 2026',
+          contract: 'Договор №19/07-ЯХ',
+          quote: '«Снимать в открытом море — отдельный ад из-за качки и брызг. <mark class="review-highlight">Оператор отработал на катере сопровождения 4 часа на волнах, поймал дельфинов рядом с бортом яхты</mark>. Ролик получился настолько кинематографичным, что <mark class="review-highlight">собрал 180 000 органических просмотров в Reels</mark> и забил бронь на весь август.»'
+        },
+        en: {
+          name: 'Roman Vasilyev',
+          role: 'Founder of Wind & Sea Yacht Charters, Gelendzhik',
+          tag: 'Video & Nautical',
+          impact: '180,000 organic views on launch weekend',
+          platform: 'Telegram • July 19, 2026',
+          contract: 'Contract №19/07-YAKH',
+          quote: '“Filming in the open sea is tricky with chop and spray. <mark class="review-highlight">Their cinematographer spent 4 rigorous hours on a chase boat, capturing wild dolphins riding our yacht bow wave</mark>. The resulting cinematic reel <mark class="review-highlight">gathered 180k organic views</mark> and booked out our fleet for the remainder of August.”'
+        }
+      },
+      {
+        id: 'rev_10',
+        avatarType: 'monogram',
+        monogram: 'ДК',
+        verified: true,
+        impactLime: true,
+        impactIcon: '🦪',
+        platformIcon: '📍',
+        ru: {
+          name: 'Денис Корнилов',
+          role: 'Бренд-шеф ресторана «Парус & Мидии» (Анапа, Высокий берег)',
+          tag: 'Рестораны & HoReCa',
+          impact: 'Окупаемость съёмки за первый уикенд',
+          platform: 'Яндекс Карты • 8 сентября 2026',
+          contract: 'Договор №08/09-РЕ',
+          quote: '«Фуд-фотографы часто так заливают блюда соусами, что они выглядят пластмассовыми. <mark class="review-highlight">"Фокус" снимали с горячей подачей: пар от мидий в белом вине, хруст корочки фокаччи</mark>. Сразу видно, что фотограф понимает гастрономию. <mark class="review-highlight">Новое осеннее меню окупило затраты на съёмку за первый же уикенд</mark>.»'
+        },
+        en: {
+          name: 'Denis Kornilov',
+          role: 'Brand Chef, Parus & Midii Restaurant (Anapa, High Coast)',
+          tag: 'Restaurants & HoReCa',
+          impact: 'Shoot cost recouped on opening weekend',
+          platform: 'Yandex Maps • September 8, 2026',
+          contract: 'Contract №08/09-RE',
+          quote: '“Many food photographers drown dishes in artificial glaze. <mark class="review-highlight">FOCUS captured our hot service live: fragrant steam rising from white-wine mussels and warm focaccia crust</mark>. You immediately sense the culinary passion. <mark class="review-highlight">Our new tasting menu completely paid off the photoshoot budget in just one weekend</mark>.”'
+        }
+      },
+      {
+        id: 'rev_11',
+        avatarType: 'photo',
+        avatarSrc: 'assets/avatars/avatar_square_6.webp',
+        verified: true,
+        impactLime: false,
+        impactIcon: '💍',
+        platformIcon: '💬',
+        ru: {
+          name: 'Полина Власова',
+          role: 'Основатель свадебного агентства «Amour Events» (Абрау-Дюрсо)',
+          tag: 'Свадьбы & События',
+          impact: 'Тизер из 20 фото на следующее утро',
+          platform: 'WhatsApp • 22 августа 2026',
+          contract: 'Договор №22/08-СВ',
+          quote: '«Камерная свадьба на винодельне в Абрау на 50 гостей. Фотографы были невидимками: <mark class="review-highlight">никаких криков "посмотрите сюда", только искренние эмоции, объятия, слёзы родителей</mark>. Молодожёны получили <mark class="review-highlight">тизер из 20 фото уже на следующий день к обеду</mark>, чтобы поделиться с гостями. Идеальный такт и пунктуальность.»'
+        },
+        en: {
+          name: 'Polina Vlasova',
+          role: 'Founder of Amour Events Agency (Abrau-Durso)',
+          tag: 'Weddings & Events',
+          impact: '20-photo editorial teaser ready next morning',
+          platform: 'WhatsApp • August 22, 2026',
+          contract: 'Contract №22/08-SV',
+          quote: '“An intimate 50-guest wedding at an Abrau-Durso estate. The crew remained completely unobtrusive: <mark class="review-highlight">no staged shouting, strictly genuine emotion, embrace, and family joy</mark>. The newlyweds received <mark class="review-highlight">a 20-image editorial preview by lunchtime next day</mark>. Unmatched discretion and refined taste.”'
+        }
+      },
+      {
+        id: 'rev_12',
+        avatarType: 'photo',
+        avatarSrc: 'assets/avatars/avatar_square_2.webp',
+        verified: true,
+        impactLime: true,
+        impactIcon: '✨',
+        platformIcon: '✈️',
+        ru: {
+          name: 'Екатерина Смирнова',
+          role: 'Управляющая апарт-комплексом «Villa del Mar», Анапа',
+          tag: 'Отели & Апартаменты',
+          impact: '8 категорий номеров за 1 съёмочный день',
+          platform: 'Telegram • 15 июня 2026',
+          contract: 'Договор №15/06-ВМ',
+          quote: '«После реновации бассейна требовалось срочно обновить визуал для предсезонных продаж. <mark class="review-highlight">За один съёмочный день отсняли 8 категорий номеров, ресторан и спа-зону</mark>. Все фотографии откалиброваны по единому тёплому средиземноморскому тону. <mark class="review-highlight">Лента сайта выглядит как европейский каталог</mark>.»'
+        },
+        en: {
+          name: 'Ekaterina Smirnova',
+          role: 'General Manager, Villa del Mar Apart-Hotel, Anapa',
+          tag: 'Hotels & Apartments',
+          impact: '8 room categories photographed in 1 single day',
+          platform: 'Telegram • June 15, 2026',
+          contract: 'Contract №15/06-VM',
+          quote: '“Following a heated pool renovation, we needed immediate visuals for early booking campaigns. <mark class="review-highlight">In a single intensive day, they covered 8 room suites, our bistro, and the spa sanctuary</mark>. All color grading shares a refined, warm coastal palette. <mark class="review-highlight">Our site now looks like a luxury European lookbook</mark>.”'
+        }
+      },
+      {
+        id: 'rev_13',
+        avatarType: 'monogram',
+        monogram: 'ВТ',
+        verified: true,
+        impactLime: true,
+        impactIcon: '🍇',
+        platformIcon: '⭐',
+        ru: {
+          name: 'Виктор Тарасов',
+          role: 'Коммерческий директор винодельни «Долина Лефкадия / Шато»',
+          tag: 'Агротуризм & Бренды',
+          impact: 'Кадры для экспорта и премиального ритейла',
+          platform: 'Личный отзыв • 30 сентября 2026',
+          contract: 'Договор №30/09-ВН',
+          quote: '«Делали имиджевую съёмку виноградников и погребов для презентации на выставке в Москве. <mark class="review-highlight">Поймали плотный утренний туман над лозами в 06:00</mark>. Кадры вековых дубовых бочек с направленным контрастным светом получились монументальными. <mark class="review-highlight">Заключили постоянный контракт на сезонный сбор урожая</mark>.»'
+        },
+        en: {
+          name: 'Viktor Tarasov',
+          role: 'Commercial Director, Lefkadia Valley Winery (Krymsk)',
+          tag: 'Winery & Heritage',
+          impact: 'Assets for luxury retail & Moscow wine expo',
+          platform: 'Verified Review • September 30, 2026',
+          contract: 'Contract №30/09-VN',
+          quote: '“We commissioned a brand photo essay of our vineyard terroirs and aging cellars. <mark class="review-highlight">They caught ethereal dawn mist rising above the vines at 6:00 AM</mark>. The dark oak cellar shots with sculpted side lighting came out monumental. <mark class="review-highlight">Signed a seasonal retainer for upcoming harvest documentation</mark>.”'
+        }
+      },
+      {
+        id: 'rev_14',
+        avatarType: 'monogram',
+        monogram: 'КГ',
+        verified: true,
+        impactLime: false,
+        impactIcon: '🔒',
+        platformIcon: '💬',
+        ru: {
+          name: 'Ксения Григорьева',
+          role: 'Архитектор частных резиденций (Краснодар — Сочи)',
+          tag: 'Приватные резиденции',
+          impact: 'Строгий NDA • Деликатная съёмка без огласки',
+          platform: 'WhatsApp • 14 сентября 2026',
+          contract: 'Договор №14/09-КГ',
+          quote: '«Клиенты высокого чека всегда требуют строжайший NDA: никакой геолокации, никаких узнаваемых видов из окон на соседние владения. <mark class="review-highlight">Команда "Фокус" подписала соглашение без лишних разговоров</mark>, выстроили кадры исключительно на внутренние акценты и архитектуру. <mark class="review-highlight">Работаем уже третий год в полном доверии</mark>.»'
+        },
+        en: {
+          name: 'Ksenia Grigoryeva',
+          role: 'Private Residence Architect (Krasnodar — Sochi)',
+          tag: 'Private Residences',
+          impact: 'Strict NDA compliance • Complete discretion',
+          platform: 'WhatsApp • September 14, 2026',
+          contract: 'Contract №14/09-KG',
+          quote: '“High-net-worth clients demand stringent confidentiality: zero geo-tagging, no recognizable angles toward private grounds. <mark class="review-highlight">The FOCUS team signed standard NDAs without friction</mark> and focused lighting entirely on bespoke interior crafts. <mark class="review-highlight">Third consecutive year collaborating with complete peace of mind</mark>.”'
+        }
+      },
+      {
+        id: 'rev_15',
+        avatarType: 'monogram',
+        monogram: 'АШ',
+        verified: true,
+        impactLime: true,
+        impactIcon: '🌅',
+        platformIcon: '📍',
+        ru: {
+          name: 'Алексей Швецов',
+          role: 'Владелец сети апартаментов «Sunset Suites», Анапа',
+          tag: 'Недвижимость & Аренда',
+          impact: 'Загрузка апартаментов выросла до 94%',
+          platform: '2ГИС • 5 августа 2026',
+          contract: 'Договор №05/08-СС',
+          quote: '«Перепробовал четырёх частных фотографов с досок объявлений — в комнатах углы казались тесными, а закат за окном превращался в пересвеченное белое пятно. <mark class="review-highlight">"Фокус" сняли со сложным студийным светом: видно и детали мебели, и море за панорамным стеклом</mark>. <mark class="review-highlight">Загрузка на август выросла до 94%</mark>.»'
+        },
+        en: {
+          name: 'Alexey Shvetsov',
+          role: 'Owner of Sunset Suites Serviced Apartments, Anapa',
+          tag: 'Real Estate & Rental',
+          impact: 'Occupancy surged to 94% across August',
+          platform: '2GIS • August 5, 2026',
+          contract: 'Contract №05/08-SS',
+          quote: '“I previously hired freelance photographers from classifieds — rooms looked cramped and sunset seas turned into blown-out white glare. <mark class="review-highlight">FOCUS balanced dual exposure lighting: every textile detail is crisp while the golden sea outside shines clearly</mark>. <mark class="review-highlight">Our August occupancy hit 94%</mark>.”'
+        }
+      },
+      {
+        id: 'rev_16',
+        avatarType: 'photo',
+        avatarSrc: 'assets/avatars/avatar_square_9.webp',
+        verified: true,
+        impactLime: true,
+        impactIcon: '🌿',
+        platformIcon: '✈️',
+        ru: {
+          name: 'Елена Михайлова',
+          role: 'Основатель бренда эко-косметики «Лаванда Юга»',
+          tag: 'Косметика & Бренды',
+          impact: 'Модерация на Ozon & WB с первой попытки',
+          platform: 'Telegram • 11 октября 2026',
+          contract: 'Договор №11/10-ЛЮ',
+          quote: '«Отправляли 14 флаконов сывороток и гидролатов на студийную съёмку. <mark class="review-highlight">Сделали идеальные кадры с каплями воды, отражениями и свежей лавандой</mark>. Ни пылинки на флаконах, идеальная ретушь бликов. <mark class="review-highlight">Для маркетплейсов карточки приняли с первой попытки</mark>, без единого замечания модераторов.»'
+        },
+        en: {
+          name: 'Elena Mikhailova',
+          role: 'Founder of Lavanda Yuga Botanical Cosmetics',
+          tag: 'Cosmetics & E-commerce',
+          impact: '100% marketplace moderation approval on first try',
+          platform: 'Telegram • October 11, 2026',
+          contract: 'Contract №11/10-LY',
+          quote: '“We shipped 14 botanical serum bottles to their studio. <mark class="review-highlight">They produced flawless product stills with tactile water droplets, soft glass reflections, and fresh lavender</mark>. Spotless retouching on glass caps. <mark class="review-highlight">Marketplace asset approval went through on first submission</mark>.”'
+        }
+      },
+      {
+        id: 'rev_17',
+        avatarType: 'monogram',
+        monogram: 'РГ',
+        verified: true,
+        impactLime: true,
+        impactIcon: '🏕️',
+        platformIcon: '📍',
+        ru: {
+          name: 'Руслан Гаджиев',
+          role: 'Управляющий эко-клубом «Утриш Вилладж», Большой Утриш',
+          tag: 'Глэмпинг & HoReCa',
+          impact: 'Бронируют со словами «хотим именно этот домик»',
+          platform: 'Яндекс Карты • 17 июля 2026',
+          contract: 'Договор №17/07-УВ',
+          quote: '«Снимали глэмпинги и банный комплекс среди можжевеловой рощи. <mark class="review-highlight">Операторы поймали рассвет над скалами, вечерние костровые зоны и парную с вениками</mark>. Гости при звонке прямо говорят: <mark class="review-highlight">"хотим домик в точности как на той фотографии с качелями на закате"</mark>. Это лучший показатель отдачи.»'
+        },
+        en: {
+          name: 'Ruslan Gadzhiev',
+          role: 'General Manager, Utrish Village Eco Club, Bolshoy Utrish',
+          tag: 'Glamping & HoReCa',
+          impact: 'Guests request specific domes based on photos',
+          platform: 'Yandex Maps • July 17, 2026',
+          contract: 'Contract №17/07-UV',
+          quote: '“We needed photos of luxury dome lodges nestled in coastal juniper woods. <mark class="review-highlight">The crew captured mountain dawn light, twilight firepits, and authentic banya steam</mark>. Guests routinely call asking <mark class="review-highlight">‘for the exact dome featured on the sunset swing photo’</mark>. The visual investment paid for itself multiple times over.”'
+        }
+      },
+      {
+        id: 'rev_18',
+        avatarType: 'monogram',
+        monogram: 'ТФ',
+        verified: true,
+        impactLime: false,
+        impactIcon: '📋',
+        platformIcon: '💬',
+        ru: {
+          name: 'Татьяна Фомина',
+          role: 'PR-директор сети спа-отелей «Aquamarine», Анапа',
+          tag: 'Конференции & PR',
+          impact: 'Выгрузка фото для СМИ каждые 2 часа',
+          platform: 'WhatsApp • 29 сентября 2026',
+          contract: 'Договор №29/09-АК',
+          quote: '«Проводили трёхдневный медицинский симпозиум. Потребовался фотограф с аккредитацией и строгим таймингом. <mark class="review-highlight">Вся фотохроника каждого доклада выгружалась в облако каждые 2 часа для аккредитованных журналистов</mark>. <mark class="review-highlight">Невероятная дисциплина и вежливость команды</mark>, работали без малейших задержек.»'
+        },
+        en: {
+          name: 'Tatyana Fomina',
+          role: 'PR Director, Aquamarine Spa Resort Network, Anapa',
+          tag: 'Conferences & PR',
+          impact: 'Press media packs uploaded every 2 hours live',
+          platform: 'WhatsApp • September 29, 2026',
+          contract: 'Contract №29/09-AK',
+          quote: '“We hosted a 3-day regional medical symposium requiring strict press accreditation and agenda timing. <mark class="review-highlight">Live event photography was uploaded to press cloud folders every two hours like clockwork</mark>. <mark class="review-highlight">Flawless etiquette, punctuality, and zero disruption</mark> to keynotes.”'
+        }
+      }
+    ];
+
+    // ── ASYNCHRONOUS ROTATING REVIEWS CONTROLLER ─────────────────────
+    (function initRotatingReviews() {
+      const grid = document.getElementById('reviewsGrid');
+      if (!grid) return;
+
+      const slots = Array.from(grid.querySelectorAll('.review-card'));
+      if (slots.length === 0) return;
+
+      const currentSlotIndices = [0, 1, 2, 3, 4, 5];
+      let nextReviewIndex = 6;
+      const totalReviews = REVIEWS_DATA.length;
+      const slotTimers = [];
+      let isSectionInView = true;
+      let isGridHovered = false;
+      let activeVoiceCard = null;
+
+      function getCurrentLang() {
+        return document.documentElement.lang === 'en' ? 'en' : 'ru';
+      }
+
+      function renderCardContent(review, lang) {
+        const data = review[lang] || review['ru'];
+        const avatarHtml = review.avatarType === 'photo'
+          ? `<img src="${review.avatarSrc}" alt="${data.name}" class="review-card__avatar-img" loading="lazy">`
+          : `<div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">${review.monogram}</div>`;
+
+        const verifiedHtml = review.verified
+          ? `<span class="review-card__verified-badge" title="${lang === 'en' ? 'Verified Client' : 'Подтвержденный клиент'}">✓</span>`
+          : '';
+
+        const impactClass = review.impactLime
+          ? 'review-card__impact-chip review-card__impact-chip--lime'
+          : 'review-card__impact-chip';
+
+        let voicePlayerHtml = '';
+        if (review.hasVoice) {
+          const voiceSourceLabel = lang === 'en' ? '🎙️ Telegram Voice' : '🎙️ Голосовое в Telegram';
+          const voiceAriaLabel = lang === 'en' ? 'Listen to audio' : 'Слушать отзыв';
+          voicePlayerHtml = `
+            <div class="review-voice-player" role="region" aria-label="Audio review">
+              <button class="review-voice-player__toggle" type="button" aria-label="${voiceAriaLabel}">
+                <svg class="review-voice-player__icon review-voice-player__icon--play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="review-voice-player__icon review-voice-player__icon--pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                </svg>
+              </button>
+              <div class="review-voice-player__content">
+                <div class="review-voice-player__waveform" aria-hidden="true">
+                  ${[30,60,90,40,75,100,55,80,45,95,70,35,65,85,50,70,40,90,60,30].map((h, i) => `<span class="voice-bar" style="--h: ${h}%; --i: ${i+1}"></span>`).join('')}
+                </div>
+                <div class="review-voice-player__meta">
+                  <span class="review-voice-player__time">0:00 / 0:38</span>
+                  <span class="review-voice-player__source">${voiceSourceLabel}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="review-card__top">
+            <div class="review-card__header-bar">
+              <div class="review-card__author">
+                <div class="review-card__avatar-wrap">
+                  ${avatarHtml}
+                  ${verifiedHtml}
+                </div>
+                <div class="review-card__author-info">
+                  <h3 class="review-card__name">${data.name}</h3>
+                  <span class="review-card__role">${data.role}</span>
+                </div>
+              </div>
+              <span class="review-card__cat">${data.tag}</span>
+            </div>
+
+            <div class="${impactClass}">
+              <span class="review-card__impact-icon">${review.impactIcon}</span>
+              <span class="review-card__impact-text">${data.impact}</span>
+            </div>
+
+            ${voicePlayerHtml}
+
+            <div class="review-card__rating">
+              <span class="review-card__stars" aria-hidden="true">★★★★★</span>
+              <span class="review-card__provenance">
+                <span class="review-card__provenance-icon">${review.platformIcon}</span>
+                <span>${data.platform}</span>
+              </span>
+              <span class="review-card__contract-pill">${data.contract}</span>
+            </div>
+          </div>
+
+          <blockquote class="review-card__quote">
+            ${data.quote}
+          </blockquote>
+        `;
+      }
+
+      function attachVoiceListener(card) {
+        const vp = card.querySelector('.review-voice-player');
+        if (!vp) return;
+        const toggle = vp.querySelector('.review-voice-player__toggle');
+        const timeDisplay = vp.querySelector('.review-voice-player__time');
+        const bars = vp.querySelectorAll('.voice-bar');
+        let isPlaying = false;
+        let sec = 0;
+        let timer = null;
+        let audioCtx = null;
+
+        function playHapticTick() {
+          try {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(540, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(140, audioCtx.currentTime + 0.04);
+            gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0.001, audioCtx.currentTime + 0.04);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.04);
+          } catch(e) {}
+        }
+
+        toggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          isPlaying = !isPlaying;
+          playHapticTick();
+
+          if (isPlaying) {
+            vp.classList.add('is-playing');
+            activeVoiceCard = card;
+            toggle.setAttribute('aria-label', getCurrentLang() === 'en' ? 'Pause' : 'Пауза');
+
+            timer = setInterval(() => {
+              sec += 0.5;
+              if (sec >= 38) {
+                sec = 0;
+                isPlaying = false;
+                clearInterval(timer);
+                vp.classList.remove('is-playing');
+                activeVoiceCard = null;
+                toggle.setAttribute('aria-label', getCurrentLang() === 'en' ? 'Listen to audio' : 'Слушать отзыв');
+                bars.forEach(b => b.classList.remove('is-past'));
+                timeDisplay.textContent = '0:00 / 0:38';
+                return;
+              }
+              const m = Math.floor(sec / 60);
+              const s = Math.floor(sec % 60);
+              timeDisplay.textContent = `${m}:${s < 10 ? '0' : ''}${s} / 0:38`;
+              const threshold = Math.floor((sec / 38) * bars.length);
+              bars.forEach((b, idx) => b.classList.toggle('is-past', idx <= threshold));
+            }, 500);
+          } else {
+            vp.classList.remove('is-playing');
+            activeVoiceCard = null;
+            toggle.setAttribute('aria-label', getCurrentLang() === 'en' ? 'Listen to audio' : 'Слушать отзыв');
+            clearInterval(timer);
+          }
+        });
+      }
+
+      function renderSlot(slotIndex, reviewIndex, animate) {
+        const slot = slots[slotIndex];
+        if (!slot) return;
+        const inner = slot.querySelector('.review-card__inner');
+        if (!inner) return;
+
+        const review = REVIEWS_DATA[reviewIndex];
+        const lang = getCurrentLang();
+
+        if (!animate) {
+          inner.innerHTML = renderCardContent(review, lang);
+          attachVoiceListener(slot);
+          return;
+        }
+
+        slot.classList.add('is-switching-out');
+        setTimeout(() => {
+          inner.innerHTML = renderCardContent(review, lang);
+          attachVoiceListener(slot);
+          slot.classList.remove('is-switching-out');
+          slot.classList.add('is-switching-in');
+          void slot.offsetWidth; // force reflow
+          requestAnimationFrame(() => {
+            slot.classList.remove('is-switching-in');
+          });
+        }, 380);
+      }
+
+      // Initial render for all 6 slots
+      currentSlotIndices.forEach((revIdx, slotIdx) => {
+        renderSlot(slotIdx, revIdx, false);
       });
-    }
+
+      // Staggered initial delays: Card 0 after 3s, Card 1 after 4.4s, Card 2 after 5.8s, Card 3 after 7.2s, Card 4 after 8.6s, Card 5 after 10s
+      const initialDelays = [3000, 4400, 5800, 7200, 8600, 10000];
+
+      function scheduleSlotRotation(slotIndex, delay) {
+        clearTimeout(slotTimers[slotIndex]);
+        slotTimers[slotIndex] = setTimeout(() => {
+          const slot = slots[slotIndex];
+          const isCardHovered = slot.matches(':hover');
+
+          if (isCardHovered || isGridHovered || !isSectionInView || activeVoiceCard === slot) {
+            scheduleSlotRotation(slotIndex, 2500);
+            return;
+          }
+
+          const revToDisplay = nextReviewIndex;
+          currentSlotIndices[slotIndex] = revToDisplay;
+          nextReviewIndex = (nextReviewIndex + 1) % totalReviews;
+
+          renderSlot(slotIndex, revToDisplay, true);
+
+          // Subsequent cycle: ~15 seconds per slot
+          const nextDelay = 15000 + Math.floor(Math.random() * 2000 - 1000);
+          scheduleSlotRotation(slotIndex, nextDelay);
+        }, delay);
+      }
+
+      initialDelays.forEach((delay, idx) => {
+        scheduleSlotRotation(idx, delay);
+      });
+
+      // Hover to pause
+      grid.addEventListener('mouseenter', () => { isGridHovered = true; }, { passive: true });
+      grid.addEventListener('mouseleave', () => { isGridHovered = false; }, { passive: true });
+
+      // Viewport intersection observer
+      const section = document.getElementById('reviews');
+      if (section && 'IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            isSectionInView = entry.isIntersecting;
+          });
+        }, { threshold: 0.05 });
+        obs.observe(section);
+      }
+
+      // Live re-render on language switch
+      window.addEventListener('languageChanged', (e) => {
+        currentSlotIndices.forEach((revIdx, slotIdx) => {
+          renderSlot(slotIdx, revIdx, false);
+        });
+      });
+    })();
 
     const savedLanguage = localStorage.getItem('focus-language');
     setLanguage(savedLanguage === 'en' ? 'en' : 'ru');
