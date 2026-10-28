@@ -36,5 +36,8 @@ def test_css_mobile_responsiveness():
     assert '.about-clean {' in css
     assert 'display: none !important;' in css
     
+    # Check reviews badge hidden on mobile
+    assert '.reviews-trust-badge,' in css
+    
     # Check that input font-size is 16px to prevent iOS Safari auto-zoom
     assert 'font-size: 16px !important;' in css

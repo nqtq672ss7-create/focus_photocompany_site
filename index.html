@@ -1986,28 +1986,37 @@
 
           gsap.set(track, { x: 0 });
 
-          if (maxScrollX > 0) {
+          const isMobileViewport = window.innerWidth <= 768;
+
+          if (!isMobileViewport && maxScrollX > 0) {
             worksTrackTween = gsap.to(track, {
               x: -maxScrollX,
               ease: 'none'
             });
 
-            const isMobileViewport = window.innerWidth <= 768;
             worksScrollTrigger = ScrollTrigger.create({
               trigger: "#worksShowcaseStage",
               pin: true,
               start: "top top",
               end: `+=${pinDistance}`,
-              scrub: isMobileViewport ? 0.15 : 0.7,
+              scrub: 0.7,
               anticipatePin: 1,
-              fastScrollEnd: true,
               animation: worksTrackTween,
               invalidateOnRefresh: true,
               onUpdate: updateScrollerUI
             });
+            ScrollTrigger.refresh();
+          } else if (isMobileViewport) {
+            // Mobile: 100% native smooth touch scrolling without any scroll hijacking or pinning lag
+            gsap.set(track, { x: 0 });
+            arena.addEventListener('scroll', () => {
+              const scrollLeft = arena.scrollLeft;
+              const cardWidth = (arena.offsetWidth * 0.8) + 14;
+              const currentIdx = Math.min(cardsData.length, Math.max(1, Math.round(scrollLeft / cardWidth) + 1));
+              if (currEl) currEl.textContent = String(currentIdx).padStart(2, '0');
+              updateActivePill(currentIdx - 1);
+            }, { passive: true });
           }
-
-          ScrollTrigger.refresh();
           if (isTabSwitch && worksScrollTrigger) {
             window.scrollTo(0, worksScrollTrigger.start);
           }
@@ -2018,6 +2027,10 @@
     // Arrow Button Listeners: Prev and Next
     if (prevBtn) {
       prevBtn.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          arena.scrollBy({ left: -Math.round(arena.offsetWidth * 0.82), behavior: 'smooth' });
+          return;
+        }
         if (!worksScrollTrigger) return;
         const st = worksScrollTrigger;
         const step = 0.22;
@@ -2029,6 +2042,10 @@
 
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          arena.scrollBy({ left: Math.round(arena.offsetWidth * 0.82), behavior: 'smooth' });
+          return;
+        }
         if (!worksScrollTrigger) return;
         const st = worksScrollTrigger;
         const step = 0.22;
