@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="dark">
   <meta name="darkreader-lock">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#0c0d11">
+  <style>html,body{background-color:#0c0d11;color-scheme:dark;}</style>
   <meta name="description" content="ФОКУС — современная российская фотокомпания. Интерьеры, мероприятия, съёмка гостей в отелях.">
   <title>ФОКУС — Фотокомпания</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +26,7 @@
       <a class="nav-panel__link is-active" href="#top" data-i18n="home">ГЛАВНАЯ</a>
       <a class="nav-panel__link" href="#about" data-i18n="about">О КОМПАНИИ</a>
       <a class="nav-panel__link" href="#services" data-i18n="services">УСЛУГИ</a>
-      <a class="nav-panel__link" href="#works" data-i18n="works">ПРИМЕРЫ РАБОТ</a>
+      <a class="nav-panel__link" href="#works" data-i18n="works" data-i18n-html><span class="nav-label-desktop">ПРИМЕРЫ РАБОТ</span><span class="nav-label-mobile">РАБОТЫ</span></a>
       <a class="nav-panel__link" href="#reviews" data-i18n="reviewsNav">ОТЗЫВЫ</a>
       <a class="nav-panel__link" href="#contacts" data-i18n="contacts">КОНТАКТЫ</a>
     </nav>
@@ -53,7 +54,7 @@
       <div class="hero__logo-wrap hero__logo-wrap--parallax">
         <picture>
           <source srcset="assets/IMG_8642.webp" type="image/webp">
-          <img class="hero__logo" src="assets/IMG_8642.PNG" alt="ФОКУС — фотокомпания" width="2400" height="1602" fetchpriority="high">
+          <img class="hero__logo" src="assets/IMG_8642.PNG" alt="ФОКУС — фотокомпания" width="2400" height="1602" fetchpriority="high" decoding="sync" loading="eager">
         </picture>
       </div>
       <p class="hero__tagline">
@@ -481,7 +482,6 @@
                   <span class="reviews-trust-badge__score">5.0</span>
                   <span class="reviews-trust-badge__sep">•</span>
                   <span class="reviews-trust-badge__label" data-i18n="reviewsTrustLabel">100% проверенные съёмки</span>
-                  <span class="reviews-trust-badge__live-dot" title="Отзывы обновляются в реальном времени"></span>
                 </div>
               </div>
             </div>
@@ -852,7 +852,7 @@
         home: 'ГЛАВНАЯ',
         about: 'О КОМПАНИИ',
         services: 'УСЛУГИ',
-        works: 'ПРИМЕРЫ РАБОТ',
+        works: '<span class="nav-label-desktop">ПРИМЕРЫ РАБОТ</span><span class="nav-label-mobile">РАБОТЫ</span>',
         contacts: 'КОНТАКТЫ',
         tagline1: 'ВЫДЕЛЯЕМ ГЛАВНОЕ.',
         tagline2: 'СОЗДАЁМ ТО, ЧТО ХОЧЕТСЯ РАССМАТРИВАТЬ.',
@@ -1077,7 +1077,7 @@
         home: 'HOME',
         about: 'ABOUT',
         services: 'SERVICES',
-        works: 'SELECTED WORKS',
+        works: '<span class="nav-label-desktop">SELECTED WORKS</span><span class="nav-label-mobile">WORKS</span>',
         contacts: 'CONTACTS',
         tagline1: 'WE HIGHLIGHT WHAT MATTERS.',
         tagline2: 'WE CREATE IMAGES YOU WANT TO KEEP LOOKING AT.',
@@ -1301,7 +1301,7 @@
 
     let raf = 0;
     hero.addEventListener('pointermove', (event) => {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (event.pointerType === 'touch' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
         const x = event.clientX / window.innerWidth - 0.5;
@@ -1363,9 +1363,12 @@
     let isHeaderLight = false;
 
     function measureSectionBounds() {
-      if (aboutEl) {
+      if (aboutEl && aboutEl.offsetParent !== null) {
         aboutTop = aboutEl.offsetTop;
         aboutBottom = aboutTop + aboutEl.offsetHeight;
+      } else {
+        aboutTop = -99999;
+        aboutBottom = -99999;
       }
       if (worksEl) {
         worksTop = worksEl.offsetTop;
@@ -1378,6 +1381,16 @@
     }
     measureSectionBounds();
     window.addEventListener('resize', measureSectionBounds, { passive: true });
+
+    // Mobile battery & performance optimization: pause background video when about block is hidden
+    if (window.innerWidth <= 768) {
+      const acVideo = document.querySelector('.ac-video');
+      if (acVideo) {
+        acVideo.pause();
+        acVideo.removeAttribute('autoplay');
+        acVideo.preload = 'none';
+      }
+    }
 
     function updateHeaderLightMode() {
       if (!topbarEl) return;
@@ -1479,7 +1492,7 @@
         let hasActiveAnim = false;
 
         // About words animation
-        if (aboutSection && word1 && word2 && word3 && word4) {
+        if (aboutSection && aboutSection.offsetParent !== null && word1 && word2 && word3 && word4) {
           const diff = targetProgress - currentProgress;
           if (Math.abs(diff) > 0.001) {
             currentProgress += diff * 0.20;
@@ -1956,12 +1969,15 @@
               ease: 'none'
             });
 
+            const isMobileViewport = window.innerWidth <= 768;
             worksScrollTrigger = ScrollTrigger.create({
               trigger: "#worksShowcaseStage",
               pin: true,
               start: "top top",
               end: `+=${pinDistance}`,
-              scrub: 0.7,
+              scrub: isMobileViewport ? 0.15 : 0.7,
+              anticipatePin: 1,
+              fastScrollEnd: true,
               animation: worksTrackTween,
               invalidateOnRefresh: true,
               onUpdate: updateScrollerUI
