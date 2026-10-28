@@ -46,7 +46,7 @@
 
   <main class="hero" aria-label="Главный экран сайта фотокомпании ФОКУС">
     <div class="hero__image" aria-hidden="true"></div>
-    <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline preload="metadata" poster="assets/focus-lobby.webp"><source src="assets/focus-hero.mp4" type="video/mp4"></video>
+    <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/focus-lobby.webp"><source src="assets/focus-hero.mp4" type="video/mp4"></video>
     <div class="hero__shade" aria-hidden="true"></div>
     <div class="hero__grain" aria-hidden="true"></div>
 
@@ -844,8 +844,31 @@
 
   <script>
     const hero = document.querySelector('.hero');
+    const heroVideo = document.querySelector('.hero__video');
     const navLinks = [...document.querySelectorAll('.nav-panel__link')];
     const langButtons = [...document.querySelectorAll('.language-switch__button')];
+
+    // ── Guarantee Hero Video Playback across all mobile browsers & Low Power Mode ──
+    if (heroVideo) {
+      heroVideo.muted = true;
+      heroVideo.defaultMuted = true;
+      heroVideo.playsInline = true;
+
+      const triggerHeroVideoPlay = () => {
+        if (heroVideo.paused) {
+          const p = heroVideo.play();
+          if (p !== undefined) {
+            p.catch(() => {});
+          }
+        }
+      };
+
+      triggerHeroVideoPlay();
+      window.addEventListener('load', triggerHeroVideoPlay, { once: true });
+      ['touchstart', 'touchend', 'scroll', 'pointerdown', 'click'].forEach((evt) => {
+        window.addEventListener(evt, triggerHeroVideoPlay, { once: true, passive: true });
+      });
+    }
 
     const dictionary = {
       ru: {
