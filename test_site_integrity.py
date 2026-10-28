@@ -41,3 +41,18 @@ def test_css_mobile_responsiveness():
     
     # Check that input font-size is 16px to prevent iOS Safari auto-zoom
     assert 'font-size: 16px !important;' in css
+
+def test_calculator_structure():
+    html_path = os.path.join(os.path.dirname(__file__), 'index.html')
+    with open(html_path) as f:
+        content = f.read()
+    
+    # Calculator section must exist
+    assert '<section id="calculator"' in content or 'id="calculator"' in content
+    assert 'calc-section' in content
+    assert 'calcTotalPrice' in content
+    assert 'calcFrames' in content
+    
+    # Anti-slop checks for calculator
+    assert '01 ·' not in content
+    assert '///' not in content

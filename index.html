@@ -28,6 +28,7 @@
       <a class="nav-panel__link" href="#services" data-i18n="services">УСЛУГИ</a>
       <a class="nav-panel__link" href="#works" data-i18n="works" data-i18n-html><span class="nav-label-desktop">ПРИМЕРЫ РАБОТ</span><span class="nav-label-mobile">РАБОТЫ</span></a>
       <a class="nav-panel__link" href="#reviews" data-i18n="reviewsNav">ОТЗЫВЫ</a>
+      <a class="nav-panel__link nav-calc-link" href="#calculator" data-i18n="calcNav">КАЛЬКУЛЯТОР</a>
       <a class="nav-panel__link" href="#contacts" data-i18n="contacts">КОНТАКТЫ</a>
     </nav>
 
@@ -541,6 +542,221 @@
       </div>
     </div>
   </div>
+  <!-- ESTIMATE CALCULATOR SECTION (Kinetic Swiss Precision on Dark) -->
+  <section id="calculator" class="calc-section" aria-labelledby="calc-title">
+    <div class="calc-container">
+      
+      <div class="calc-header">
+        <div class="calc-eyebrow">
+          <span class="calc-eyebrow__dash" aria-hidden="true">—</span>
+          <span data-i18n="calcEyebrow">ОНЛАЙН-РАСЧЁТ СМЕТЫ</span>
+        </div>
+        <h2 class="calc-title" id="calc-title">
+          <span data-i18n="calcTitle1">РАССЧИТАЙТЕ СТОИМОСТЬ</span><br>
+          <span class="calc-title__highlight" data-i18n="calcTitle2">СЪЁМКИ ВАШЕГО ОБЪЕКТА</span><span class="calc-title__dot">.</span>
+        </h2>
+        <p class="calc-lead" data-i18n="calcLead">
+          Прозрачное ценообразование без скрытых наценок. Выберите параметры и получите точный предварительный расчёт за 30 секунд.
+        </p>
+      </div>
+
+      <div class="calc-grid">
+        
+        <!-- LEFT: INTERACTIVE CONTROLS -->
+        <div class="calc-controls">
+          
+          <!-- 1. Shoot Type -->
+          <div class="calc-group">
+            <div class="calc-label-header">
+              <span class="calc-label-title" data-i18n="calcTypeLabel">1. Тип объекта съёмки</span>
+              <span class="calc-label-sub" data-i18n="calcTypeHint">Базовая ставка за кадр</span>
+            </div>
+            <div class="calc-type-grid" role="radiogroup" aria-label="Тип объекта">
+              <button type="button" class="calc-pill is-active" data-rate="1700" data-type="interiors" role="radio" aria-checked="true">
+                <span class="calc-pill__name">Интерьеры дизайнеров</span>
+                <span class="calc-pill__rate">от 1 700 ₽ / кадр</span>
+              </button>
+              <button type="button" class="calc-pill" data-rate="1300" data-type="hotels" role="radio" aria-checked="false">
+                <span class="calc-pill__name">Отели и апартаменты</span>
+                <span class="calc-pill__rate">от 1 300 ₽ / кадр</span>
+              </button>
+              <button type="button" class="calc-pill" data-rate="2100" data-type="architecture" role="radio" aria-checked="false">
+                <span class="calc-pill__name">Архитектура и фасады</span>
+                <span class="calc-pill__rate">от 2 100 ₽ / кадр</span>
+              </button>
+              <button type="button" class="calc-pill" data-rate="1400" data-type="malls" role="radio" aria-checked="false">
+                <span class="calc-pill__name">ТЦ и бизнес-центры</span>
+                <span class="calc-pill__rate">от 1 400 ₽ / кадр</span>
+              </button>
+              <button type="button" class="calc-pill" data-rate="1500" data-type="restaurants" role="radio" aria-checked="false">
+                <span class="calc-pill__name">Рестораны и заведения</span>
+                <span class="calc-pill__rate">от 1 500 ₽ / кадр</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. Frames Slider -->
+          <div class="calc-group">
+            <div class="calc-label-header">
+              <label for="calcFrames" class="calc-label-title" data-i18n="calcFramesLabel">2. Количество готовых кадров</label>
+              <div class="calc-frames-indicator">
+                <span id="calcFramesVal" class="calc-frames-val">20</span>
+                <span class="calc-frames-unit">кадров</span>
+              </div>
+            </div>
+            
+            <div class="calc-slider-wrap">
+              <input type="range" id="calcFrames" min="5" max="60" value="20" step="1" class="calc-slider" aria-label="Количество готовых кадров">
+              <div class="calc-slider-ticks" aria-hidden="true">
+                <span>5</span>
+                <span>15</span>
+                <span>30</span>
+                <span>45</span>
+                <span>60+</span>
+              </div>
+            </div>
+            <div class="calc-duration-chip" id="calcDurationChip">
+              <svg class="calc-duration-chip__icon" width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <span id="calcDurationText">≈ 4–5 часов работы на площадке (стандартная смена)</span>
+            </div>
+          </div>
+
+          <!-- 3. Lighting Mode -->
+          <div class="calc-group">
+            <div class="calc-label-header">
+              <span class="calc-label-title" data-i18n="calcLightLabel">3. Световое оборудование и схемы</span>
+            </div>
+            <div class="calc-toggle-grid" role="radiogroup" aria-label="Световое оборудование">
+              <button type="button" class="calc-toggle-btn is-active" data-light-coeff="1" data-light-type="natural" role="radio" aria-checked="true">
+                <span class="calc-toggle-btn__top">
+                  <span class="calc-toggle-btn__radio"></span>
+                  <span class="calc-toggle-btn__name">Естественный свет</span>
+                </span>
+                <span class="calc-toggle-btn__desc">Атмосферный дневной свет с акцентными отражателями</span>
+              </button>
+              <button type="button" class="calc-toggle-btn" data-light-coeff="1.35" data-light-type="studio" role="radio" aria-checked="false">
+                <span class="calc-toggle-btn__top">
+                  <span class="calc-toggle-btn__radio"></span>
+                  <span class="calc-toggle-btn__name">Импульсный свет Profoto / Godox</span>
+                </span>
+                <span class="calc-toggle-btn__desc">+35% · Послойная экспозиция и геометрия теней (уровень AD)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 4. Add-on Chips -->
+          <div class="calc-group">
+            <div class="calc-label-header">
+              <span class="calc-label-title" data-i18n="calcAddonsLabel">4. Дополнительные опции</span>
+            </div>
+            <div class="calc-addons-grid">
+              <label class="calc-addon-chip">
+                <input type="checkbox" id="calcAddonRetouch" class="calc-addon-chip__input" data-cost-per-frame="400">
+                <span class="calc-addon-chip__box" aria-hidden="true"></span>
+                <span class="calc-addon-chip__info">
+                  <span class="calc-addon-chip__name">Журнальная глубокая ретушь</span>
+                  <span class="calc-addon-chip__price">+400 ₽ / кадр</span>
+                </span>
+              </label>
+
+              <label class="calc-addon-chip">
+                <input type="checkbox" id="calcAddonFast" class="calc-addon-chip__input" data-cost-fixed="5000">
+                <span class="calc-addon-chip__box" aria-hidden="true"></span>
+                <span class="calc-addon-chip__info">
+                  <span class="calc-addon-chip__name">Срочная готовность за 48 часов</span>
+                  <span class="calc-addon-chip__price">+5 000 ₽</span>
+                </span>
+              </label>
+
+              <label class="calc-addon-chip">
+                <input type="checkbox" id="calcAddonVideo" class="calc-addon-chip__input" data-cost-fixed="12000">
+                <span class="calc-addon-chip__box" aria-hidden="true"></span>
+                <span class="calc-addon-chip__info">
+                  <span class="calc-addon-chip__name">Вертикальные видео (Reels / 4K)</span>
+                  <span class="calc-addon-chip__price">+12 000 ₽</span>
+                </span>
+              </label>
+
+              <label class="calc-addon-chip is-fixed">
+                <input type="checkbox" id="calcAddonContract" class="calc-addon-chip__input" checked disabled>
+                <span class="calc-addon-chip__box calc-addon-chip__box--checked" aria-hidden="true">✓</span>
+                <span class="calc-addon-chip__info">
+                  <span class="calc-addon-chip__name">Договор и ЭДО (ИП / ООО, безнал)</span>
+                  <span class="calc-addon-chip__price calc-addon-chip__price--free">Включено · 0 ₽</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: LIVE SUMMARY ESTIMATE CARD -->
+        <div class="calc-summary-col">
+          <div class="calc-card" id="calcCard">
+            
+            <div class="calc-card__top">
+              <span class="calc-card__tag" data-i18n="calcCardTag">ПРЕДВАРИТЕЛЬНЫЙ РАСЧЁТ</span>
+              <span class="calc-card__status" data-i18n="calcCardStatus">Онлайн-смета</span>
+            </div>
+
+            <div class="calc-breakdown">
+              <div class="calc-breakdown__item">
+                <span class="calc-breakdown__key" data-i18n="calcRowType">Направление:</span>
+                <span class="calc-breakdown__val" id="calcSummaryType">Интерьеры дизайнеров</span>
+              </div>
+              <div class="calc-breakdown__item">
+                <span class="calc-breakdown__key" data-i18n="calcRowFrames">Объём съёмки:</span>
+                <span class="calc-breakdown__val" id="calcSummaryFrames">20 кадров</span>
+              </div>
+              <div class="calc-breakdown__item">
+                <span class="calc-breakdown__key" data-i18n="calcRowLight">Свет:</span>
+                <span class="calc-breakdown__val" id="calcSummaryLight">Естественный дневной</span>
+              </div>
+              <div class="calc-breakdown__item">
+                <span class="calc-breakdown__key" data-i18n="calcRowTimeline">Срок отдачи:</span>
+                <span class="calc-breakdown__val" id="calcSummaryTimeline">до 5 рабочих дней</span>
+              </div>
+              <div class="calc-breakdown__item calc-breakdown__item--highlight">
+                <span class="calc-breakdown__key" data-i18n="calcRowRights">Права:</span>
+                <span class="calc-breakdown__val">Бессрочная коммерческая лицензия</span>
+              </div>
+            </div>
+
+            <div class="calc-card__sep" aria-hidden="true"></div>
+
+            <!-- Total Price Display -->
+            <div class="calc-price-wrap">
+              <span class="calc-price-caption" data-i18n="calcTotalLabel">ПРЕДВАРИТЕЛЬНАЯ СТОИМОСТЬ</span>
+              <div class="calc-price-digits" aria-live="polite">
+                <span class="calc-price-num" id="calcTotalPrice">34 000</span>
+                <span class="calc-price-cur">₽</span>
+              </div>
+              <span class="calc-price-note" data-i18n="calcPriceNote">Без скрытых комиссий · Фиксация в договоре</span>
+            </div>
+
+            <!-- Actions -->
+            <div class="calc-card__cta-group">
+              <a href="https://wa.me/79123827772" id="calcBtnWa" target="_blank" rel="noopener noreferrer" class="calc-cta-btn calc-cta-btn--lime">
+                <svg class="calc-cta-btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2z"/></svg>
+                <span data-i18n="calcBtnWa">Зафиксировать смету в WhatsApp</span>
+              </a>
+
+              <a href="https://t.me/zakonpudova" id="calcBtnTg" target="_blank" rel="noopener noreferrer" class="calc-cta-btn calc-cta-btn--outline">
+                <svg class="calc-cta-btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                <span data-i18n="calcBtnTg">Обсудить смету в Telegram</span>
+              </a>
+
+              <button type="button" id="calcBtnForm" class="calc-scroll-trigger" data-i18n="calcBtnForm">
+                Или отправить расчёт на email студии ↓
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
   <!-- CONTACTS & ESTIMATE SECTION (Editorial Electric Lime Capsule) -->
   <section id="contacts" class="contacts-section contacts-section--lime">
     <div class="contacts-wrapper">
@@ -1018,6 +1234,28 @@
         contactsSubmitBtn: 'ОТПРАВИТЬ ЗАЯВКУ',
         contactsSuccessTitle: 'Заявка принята!',
         contactsSuccessText: 'Спасибо! Екатерина свяжется с вами в течение 15 минут.',
+        calcNav: 'КАЛЬКУЛЯТОР',
+        calcEyebrow: 'ОНЛАЙН-РАСЧЁТ СМЕТЫ',
+        calcTitle1: 'РАССЧИТАЙТЕ СТОИМОСТЬ',
+        calcTitle2: 'СЪЁМКИ ВАШЕГО ОБЪЕКТА',
+        calcLead: 'Прозрачное ценообразование без скрытых наценок. Выберите параметры и получите точный предварительный расчёт за 30 секунд.',
+        calcTypeLabel: '1. Тип объекта съёмки',
+        calcTypeHint: 'Базовая ставка за кадр',
+        calcFramesLabel: '2. Количество готовых кадров',
+        calcLightLabel: '3. Световое оборудование и схемы',
+        calcAddonsLabel: '4. Дополнительные опции',
+        calcCardTag: 'ПРЕДВАРИТЕЛЬНЫЙ РАСЧЁТ',
+        calcCardStatus: 'Онлайн-смета',
+        calcRowType: 'Направление:',
+        calcRowFrames: 'Объём съёмки:',
+        calcRowLight: 'Свет:',
+        calcRowTimeline: 'Срок отдачи:',
+        calcRowRights: 'Права:',
+        calcTotalLabel: 'ПРЕДВАРИТЕЛЬНАЯ СТОИМОСТЬ',
+        calcPriceNote: 'Без скрытых комиссий · Фиксация в договоре',
+        calcBtnWa: 'Зафиксировать смету в WhatsApp',
+        calcBtnTg: 'Обсудить смету в Telegram',
+        calcBtnForm: 'Или отправить расчёт на email студии ↓',
         reviewsNav: 'ОТЗЫВЫ',
         reviewsEyebrow: 'ДОВЕРИЕ И РЕПУТАЦИЯ',
         reviewsTitle1: 'РЕЗУЛЬТАТЫ, КОТОРЫЕ',
@@ -1244,6 +1482,28 @@
         contactsSubmitBtn: 'SUBMIT INQUIRY',
         contactsSuccessTitle: 'Inquiry received!',
         contactsSuccessText: 'Thank you! Ekaterina will contact you within 15 minutes.',
+        calcNav: 'CALCULATOR',
+        calcEyebrow: 'ONLINE ESTIMATE CALCULATOR',
+        calcTitle1: 'CALCULATE THE COST',
+        calcTitle2: 'OF YOUR COMMERCIAL SHOOT',
+        calcLead: 'Transparent pricing with zero hidden fees. Select project parameters and get an accurate instant estimate in 30 seconds.',
+        calcTypeLabel: '1. Production Focus & Scope',
+        calcTypeHint: 'Base per-frame rate',
+        calcFramesLabel: '2. Curated Final Frames',
+        calcLightLabel: '3. Lighting Equipment & Staging',
+        calcAddonsLabel: '4. Add-on Services',
+        calcCardTag: 'PROJECT ESTIMATE',
+        calcCardStatus: 'Instant Estimate',
+        calcRowType: 'Scope:',
+        calcRowFrames: 'Volume:',
+        calcRowLight: 'Lighting:',
+        calcRowTimeline: 'Delivery:',
+        calcRowRights: 'Rights:',
+        calcTotalLabel: 'ESTIMATED TOTAL',
+        calcPriceNote: 'Zero hidden fees · Fixed contract rate',
+        calcBtnWa: 'Lock Estimate in WhatsApp',
+        calcBtnTg: 'Discuss with Art Director on Telegram',
+        calcBtnForm: 'Or submit project inquiry via email ↓',
         reviewsNav: 'REVIEWS',
         reviewsEyebrow: 'TRUST & REPUTATION',
         reviewsTitle1: 'RESULTS THAT',
@@ -2012,9 +2272,8 @@
             arena.addEventListener('scroll', () => {
               const scrollLeft = arena.scrollLeft;
               const cardWidth = (arena.offsetWidth * 0.8) + 14;
-              const currentIdx = Math.min(cardsData.length, Math.max(1, Math.round(scrollLeft / cardWidth) + 1));
+              const currentIdx = Math.min(items.length, Math.max(1, Math.round(scrollLeft / cardWidth) + 1));
               if (currEl) currEl.textContent = String(currentIdx).padStart(2, '0');
-              updateActivePill(currentIdx - 1);
             }, { passive: true });
           }
           if (isTabSwitch && worksScrollTrigger) {
@@ -3432,6 +3691,196 @@
           renderSlot(slotIdx, revIdx, false);
         });
       });
+    })();
+
+    /* ══════════════════════════════════════════════════════════
+       INTERACTIVE ESTIMATE CALCULATOR MODULE
+       ══════════════════════════════════════════════════════════ */
+    (function initCalculator() {
+      const calcSection = document.getElementById('calculator');
+      if (!calcSection) return;
+
+      const typePills = calcSection.querySelectorAll('.calc-pill');
+      const framesInput = document.getElementById('calcFrames');
+      const framesVal = document.getElementById('calcFramesVal');
+      const durationText = document.getElementById('calcDurationText');
+      const lightBtns = calcSection.querySelectorAll('.calc-toggle-btn');
+      
+      const addonRetouch = document.getElementById('calcAddonRetouch');
+      const addonFast = document.getElementById('calcAddonFast');
+      const addonVideo = document.getElementById('calcAddonVideo');
+
+      const summaryType = document.getElementById('calcSummaryType');
+      const summaryFrames = document.getElementById('calcSummaryFrames');
+      const summaryLight = document.getElementById('calcSummaryLight');
+      const summaryTimeline = document.getElementById('calcSummaryTimeline');
+      const totalPriceEl = document.getElementById('calcTotalPrice');
+
+      const btnWa = document.getElementById('calcBtnWa');
+      const btnTg = document.getElementById('calcBtnTg');
+      const btnForm = document.getElementById('calcBtnForm');
+      const formMessage = document.getElementById('formMessage');
+
+      let currentTypeRate = 1700;
+      let currentTypeName = 'Интерьеры дизайнеров';
+      let currentLightCoeff = 1.0;
+      let currentLightName = 'Естественный дневной';
+      let currentAnimatedPrice = 34000;
+      let animationFrameId = null;
+
+      function updateSliderTrack(val) {
+        if (!framesInput) return;
+        const min = parseInt(framesInput.min, 10) || 5;
+        const max = parseInt(framesInput.max, 10) || 60;
+        const pct = ((val - min) / (max - min)) * 100;
+        framesInput.style.background = `linear-gradient(to right, var(--lime, #CAFF1C) 0%, var(--lime, #CAFF1C) ${pct}%, rgba(255,255,255,0.12) ${pct}%, rgba(255,255,255,0.12) 100%)`;
+      }
+
+      function getDurationHint(frames) {
+        if (frames <= 10) return '≈ 2–3 часа работы на площадке (экспресс-объект)';
+        if (frames <= 20) return '≈ 4–5 часов работы на площадке (стандартная смена)';
+        if (frames <= 35) return '≈ 6–8 часов работы на площадке (полный съёмочный день)';
+        return '≈ 2 съёмочных дня (масштабный комплексный проект)';
+      }
+
+      function animatePrice(targetPrice) {
+        if (!totalPriceEl) return;
+        if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        const startPrice = currentAnimatedPrice;
+        const diff = targetPrice - startPrice;
+        const duration = 260; // ms
+        const startTime = performance.now();
+
+        function step(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const ease = 1 - (1 - progress) * (1 - progress);
+          const current = Math.round(startPrice + diff * ease);
+          currentAnimatedPrice = current;
+          totalPriceEl.textContent = current.toLocaleString('ru-RU');
+
+          if (progress < 1) {
+            animationFrameId = requestAnimationFrame(step);
+          } else {
+            currentAnimatedPrice = targetPrice;
+            totalPriceEl.textContent = targetPrice.toLocaleString('ru-RU');
+          }
+        }
+        animationFrameId = requestAnimationFrame(step);
+      }
+
+      function recalculate() {
+        if (!framesInput) return;
+        const frames = parseInt(framesInput.value, 10) || 20;
+        if (framesVal) framesVal.textContent = frames;
+        if (durationText) durationText.textContent = getDurationHint(frames);
+        updateSliderTrack(frames);
+
+        let baseCost = Math.round(currentTypeRate * frames * currentLightCoeff);
+        let addonsCost = 0;
+        const activeAddons = [];
+
+        if (addonRetouch && addonRetouch.checked) {
+          addonsCost += 400 * frames;
+          activeAddons.push('Журнальная ретушь');
+        }
+        if (addonFast && addonFast.checked) {
+          addonsCost += 5000;
+          activeAddons.push('Срочность 48ч');
+        }
+        if (addonVideo && addonVideo.checked) {
+          addonsCost += 12000;
+          activeAddons.push('Reels / 4K видео');
+        }
+
+        const total = baseCost + addonsCost;
+        animatePrice(total);
+
+        // Update Summary items
+        if (summaryType) summaryType.textContent = currentTypeName;
+        if (summaryFrames) summaryFrames.textContent = `${frames} кадров`;
+        if (summaryLight) summaryLight.textContent = currentLightName;
+        if (summaryTimeline) {
+          summaryTimeline.textContent = (addonFast && addonFast.checked) ? 'Срочно: 48 часов' : 'до 5 рабочих дней';
+        }
+
+        // Generate messenger pre-filled messages
+        const addonsStr = activeAddons.length ? activeAddons.join(', ') : 'Базовый пакет';
+        const formattedTotal = total.toLocaleString('ru-RU') + ' ₽';
+        const msgText = `Здравствуйте! Рассчитал смету на focus-photocompany.ru:\n• Направление: ${currentTypeName}\n• Объём: ${frames} кадров\n• Свет: ${currentLightName}\n• Опции: ${addonsStr}\n• Предварительно: ${formattedTotal}\nХочу забронировать съёмку или уточнить детали.`;
+
+        if (btnWa) {
+          btnWa.href = `https://wa.me/79123827772?text=${encodeURIComponent(msgText)}`;
+        }
+        if (btnTg) {
+          btnTg.href = `https://t.me/zakonpudova?text=${encodeURIComponent(msgText)}`;
+        }
+      }
+
+      // Event listeners for Type pills
+      typePills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          typePills.forEach(p => {
+            p.classList.remove('is-active');
+            p.setAttribute('aria-checked', 'false');
+          });
+          pill.classList.add('is-active');
+          pill.setAttribute('aria-checked', 'true');
+          currentTypeRate = parseInt(pill.getAttribute('data-rate'), 10) || 1700;
+          const titleEl = pill.querySelector('.calc-pill__name');
+          if (titleEl) currentTypeName = titleEl.textContent.trim();
+          recalculate();
+        });
+      });
+
+      // Slider listener
+      if (framesInput) {
+        framesInput.addEventListener('input', recalculate);
+      }
+
+      // Lighting toggles listener
+      lightBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          lightBtns.forEach(b => {
+            b.classList.remove('is-active');
+            b.setAttribute('aria-checked', 'false');
+          });
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-checked', 'true');
+          currentLightCoeff = parseFloat(btn.getAttribute('data-light-coeff')) || 1.0;
+          const nameEl = btn.querySelector('.calc-toggle-btn__name');
+          if (nameEl) currentLightName = nameEl.textContent.trim();
+          recalculate();
+        });
+      });
+
+      // Add-on checkboxes
+      [addonRetouch, addonFast, addonVideo].forEach(chk => {
+        if (chk) chk.addEventListener('change', recalculate);
+      });
+
+      // Scroll to form and prefill message
+      if (btnForm) {
+        btnForm.addEventListener('click', (e) => {
+          e.preventDefault();
+          const frames = parseInt(framesInput.value, 10) || 20;
+          const total = currentAnimatedPrice.toLocaleString('ru-RU') + ' ₽';
+          if (formMessage) {
+            formMessage.value = `[Расчёт сметы] ${currentTypeName}, ${frames} кадров, свет: ${currentLightName}. Оценка: ${total}.`;
+          }
+          const contactsSec = document.getElementById('contacts');
+          if (contactsSec) {
+            contactsSec.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+              const nameInput = document.getElementById('formName');
+              if (nameInput) nameInput.focus();
+            }, 600);
+          }
+        });
+      }
+
+      // Initialize
+      recalculate();
     })();
 
     const savedLanguage = localStorage.getItem('focus-language');
