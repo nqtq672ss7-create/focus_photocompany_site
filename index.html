@@ -542,111 +542,171 @@
       </div>
     </div>
   </div>
-  <!-- MINIMALIST PROJECT CONFIGURATOR (Swiss Architectural Precision) -->
-  <section id="calculator" class="calc-section" aria-labelledby="calc-title">
-    <div class="calc-container calc-container--narrow">
+  <!-- EDITORIAL ARCHITECTURAL ESTIMATE CALCULATOR (Inspiration: arhfotostudio.ru) -->
+  <section id="calculator" class="arh-calc-section" aria-labelledby="arhCalcTitle">
+    <div class="arh-calc-container">
       
-      <div class="calc-header calc-header--center">
-        <div class="calc-eyebrow">
-          <span class="calc-eyebrow__dash" aria-hidden="true">—</span>
-          <span data-i18n="calcEyebrow">ПАРАМЕТРЫ СЪЁМКИ</span>
-        </div>
-        <h2 class="calc-title" id="calc-title">
-          <span data-i18n="calcTitle1">СКОНФИГУРИРУЙТЕ</span>
-          <span class="calc-title__highlight" data-i18n="calcTitle2">ВАШ ПРОЕКТ</span><span class="calc-title__dot">.</span>
+      <!-- Header -->
+      <div class="arh-calc-header">
+        <h2 class="arh-calc-title" id="arhCalcTitle" data-i18n="arhCalcTitle">
+          Цена интерьерных и архитектурных фотосъёмок
         </h2>
-        <p class="calc-lead" data-i18n="calcLead">
-          3 параметра для расчёта. Управляющая Екатерина подготовит персональную смету под ваш объект за 15 минут.
+        <p class="arh-calc-subtitle" data-i18n="arhCalcSubtitle">
+          Воспользуйтесь нашим калькулятором, чтобы узнать предварительную стоимость работ.
         </p>
       </div>
 
-      <div class="calc-box">
+      <!-- Top Cost Callout -->
+      <div class="arh-cost-banner" aria-live="polite">
+        <span class="arh-cost-label" data-i18n="arhCostLabel">Примерная стоимость:</span>
+        <span class="arh-cost-number" id="arhCostTop">17 600 рублей.</span>
+      </div>
+
+      <!-- Form Fields -->
+      <form class="arh-calc-form" id="arhCalcForm" onsubmit="return false;">
         
-        <!-- Step 1: Пространство -->
-        <div class="calc-step">
-          <span class="calc-step__label" data-i18n="calcStepSpace">ТИП ПРОСТРАНСТВА</span>
-          <div class="calc-seg-grid calc-seg-grid--4" role="radiogroup" aria-label="Тип пространства">
-            <button type="button" class="calc-seg-btn is-active" data-group="space" data-value="Интерьер" role="radio" aria-checked="true">
-              <span>Интерьер</span>
-            </button>
-            <button type="button" class="calc-seg-btn" data-group="space" data-value="Архитектура" role="radio" aria-checked="false">
-              <span>Архитектура</span>
-            </button>
-            <button type="button" class="calc-seg-btn" data-group="space" data-value="Отель / HoReCa" role="radio" aria-checked="false">
-              <span>Отель & HoReCa</span>
-            </button>
-            <button type="button" class="calc-seg-btn" data-group="space" data-value="Бизнес-центр / ТЦ" role="radio" aria-checked="false">
-              <span>Бизнес-центр / ТЦ</span>
-            </button>
+        <!-- 1. What to photograph? -->
+        <div class="arh-form-group">
+          <label for="arhShootType" class="arh-form-label">
+            <span data-i18n="arhField1Label">Что будем фотографировать?</span> <span class="arh-req">*</span>
+          </label>
+          <div class="arh-select-wrapper">
+            <select id="arhShootType" class="arh-select" required aria-label="Что будем фотографировать">
+              <option value="interiors" data-rate="1700" selected>Интерьер для дизайнера</option>
+              <option value="hotels" data-rate="1300">Отель / гостиница / апартаменты</option>
+              <option value="architecture" data-rate="2100">Здание для архитектора</option>
+              <option value="malls" data-rate="1400">ТЦ или бизнес-центр</option>
+              <option value="restaurants" data-rate="1500">Ресторан, кафе или бар</option>
+            </select>
+            <div class="arh-select-arrow" aria-hidden="true">
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="#111111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
           </div>
         </div>
 
-        <!-- Step 2: Масштаб -->
-        <div class="calc-step">
-          <span class="calc-step__label" data-i18n="calcStepScale">МАСШТАБ СЪЁМКИ</span>
-          <div class="calc-seg-grid calc-seg-grid--3" role="radiogroup" aria-label="Масштаб съёмки">
-            <button type="button" class="calc-seg-btn" data-group="scale" data-value="Камерный (до 15 кадров)" role="radio" aria-checked="false">
-              <span class="calc-seg-btn__title">Камерный</span>
-              <span class="calc-seg-btn__hint">до 15 кадров</span>
-            </button>
-            <button type="button" class="calc-seg-btn is-active" data-group="scale" data-value="Стандартный (15–30 кадров)" role="radio" aria-checked="true">
-              <span class="calc-seg-btn__title">Стандартный</span>
-              <span class="calc-seg-btn__hint">15–30 кадров</span>
-            </button>
-            <button type="button" class="calc-seg-btn" data-group="scale" data-value="Масштабный (30+ кадров)" role="radio" aria-checked="false">
-              <span class="calc-seg-btn__title">Масштабный</span>
-              <span class="calc-seg-btn__hint">от 30 кадров</span>
-            </button>
+        <!-- 2. Desired number of final photos -->
+        <div class="arh-form-group">
+          <label for="arhFrames" class="arh-form-label" data-i18n="arhField2Label">Желаемое количество итоговых фото</label>
+          <p class="arh-form-hint" data-i18n="arhField2Hint">Имеется в виду конечное количество фото после отбора и обработки.</p>
+          
+          <div class="arh-slider-container">
+            <div class="arh-slider-bubble" id="arhSliderBubble" aria-hidden="true">20</div>
+            <input type="range" id="arhFrames" min="5" max="150" value="20" step="1" class="arh-slider" aria-label="Желаемое количество итоговых фото">
+            <div class="arh-slider-scale" aria-hidden="true">
+              <span>0</span>
+              <span>150</span>
+            </div>
           </div>
         </div>
 
-        <!-- Step 3: Формат -->
-        <div class="calc-step">
-          <span class="calc-step__label" data-i18n="calcStepFormat">ФОРМАТ МАТЕРИАЛОВ</span>
-          <div class="calc-seg-grid calc-seg-grid--3" role="radiogroup" aria-label="Формат материалов">
-            <button type="button" class="calc-seg-btn is-active" data-group="format" data-value="Только фотосъёмка" role="radio" aria-checked="true">
-              <span class="calc-seg-btn__title">Фотосъёмка</span>
-              <span class="calc-seg-btn__hint">Базовая ретушь</span>
-            </button>
-            <button type="button" class="calc-seg-btn" data-group="format" data-value="Фото + Видео (Reels / 4K)" role="radio" aria-checked="false">
-              <span class="calc-seg-btn__title">Фото + Видео</span>
-              <span class="calc-seg-btn__hint">Reels & 4K клипы</span>
-            </button>
-            <button type="button" class="calc-seg-btn" data-group="format" data-value="Журнальная публикация" role="radio" aria-checked="false">
-              <span class="calc-seg-btn__title">Журнальная ретушь</span>
-              <span class="calc-seg-btn__hint">Для прессы и AD</span>
-            </button>
+        <!-- 3. Technical specification (TZ) -->
+        <div class="arh-form-group">
+          <span class="arh-form-label" data-i18n="arhField3Label">У вас есть техническое задание на работы?</span>
+          <div class="arh-radio-group">
+            <label class="arh-radio-item">
+              <input type="radio" name="arhTz" value="yes" checked>
+              <span class="arh-radio-mark"></span>
+              <span class="arh-radio-text" data-i18n="arhTzYes">Да</span>
+            </label>
+            <label class="arh-radio-item">
+              <input type="radio" name="arhTz" value="no">
+              <span class="arh-radio-mark"></span>
+              <span class="arh-radio-text" data-i18n="arhTzNo">Нет</span>
+            </label>
           </div>
         </div>
 
-        <!-- Bottom Action Strip -->
-        <div class="calc-bottom">
-          <div class="calc-summary-line">
-            <span class="calc-summary-label">Ваш бриф:</span>
-            <span class="calc-summary-text" id="calcSummaryInline">Интерьер · Стандартный (15–30 кадров) · Фотосъёмка</span>
+        <!-- 4. Payment form -->
+        <div class="arh-form-group">
+          <span class="arh-form-label" data-i18n="arhField4Label">Желаемая форма оплаты</span>
+          <div class="arh-radio-group">
+            <label class="arh-radio-item">
+              <input type="radio" name="arhPayment" value="cashless" checked>
+              <span class="arh-radio-mark"></span>
+              <span class="arh-radio-text" data-i18n="arhPaymentCashless">Безналичная оплата</span>
+            </label>
+            <label class="arh-radio-item">
+              <input type="radio" name="arhPayment" value="cash">
+              <span class="arh-radio-mark"></span>
+              <span class="arh-radio-text" data-i18n="arhPaymentCash">Оплата наличными</span>
+            </label>
           </div>
+        </div>
 
-          <div class="calc-actions">
-            <a href="https://t.me/zakonpudova" id="calcBtnTg" target="_blank" rel="noopener noreferrer" class="calc-btn calc-btn--lime">
-              <svg class="calc-btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-              <span data-i18n="calcBtnTg">Обсудить смету в Telegram</span>
+        <!-- 5. Contract -->
+        <div class="arh-form-group">
+          <span class="arh-form-label" data-i18n="arhField5Label">Договор потребуется?</span>
+          <div class="arh-radio-group">
+            <label class="arh-radio-item">
+              <input type="radio" name="arhContract" value="performer">
+              <span class="arh-radio-mark"></span>
+              <span class="arh-radio-text" data-i18n="arhContractPerf">Да, рассматриваем договор исполнителя</span>
+            </label>
+            <label class="arh-radio-item">
+              <input type="radio" name="arhContract" value="client">
+              <span class="arh-radio-mark"></span>
+              <span class="arh-radio-text" data-i18n="arhContractClient">Да, предоставим свой договор</span>
+            </label>
+            <label class="arh-radio-item">
+              <input type="radio" name="arhContract" value="none" checked>
+              <span class="arh-radio-mark"></span>
+              <span class="arh-radio-text" data-i18n="arhContractNone">Нет</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 6. Retouching -->
+        <div class="arh-form-group">
+          <span class="arh-form-label" data-i18n="arhField6Label">Потребуется глубокая ретушь?</span>
+          <p class="arh-form-hint" data-i18n="arhField6Hint">Журнальная попиксельная ретушь геометрии, бликов и стыков.</p>
+          <div class="arh-radio-group">
+            <label class="arh-radio-item">
+              <input type="radio" name="arhRetouch" value="all">
+              <span class="arh-radio-mark"></span>
+              <span class="arh-radio-text" data-i18n="arhRetouchAll">Да, для всех фото</span>
+            </label>
+            <label class="arh-radio-item">
+              <input type="radio" name="arhRetouch" value="some">
+              <span class="arh-radio-mark"></span>
+              <span class="arh-radio-text" data-i18n="arhRetouchSome">Да, для выборочных фото</span>
+            </label>
+            <label class="arh-radio-item">
+              <input type="radio" name="arhRetouch" value="none" checked>
+              <span class="arh-radio-mark"></span>
+              <span class="arh-radio-text" data-i18n="arhRetouchNone">Нет</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Bottom Cost Callout -->
+        <div class="arh-cost-banner" aria-live="polite">
+          <span class="arh-cost-label" data-i18n="arhCostLabel">Примерная стоимость:</span>
+          <span class="arh-cost-number" id="arhCostBottom">17 600 рублей.</span>
+        </div>
+
+        <!-- Submit & Direct Actions -->
+        <div class="arh-submit-block">
+          <label for="arhContactInput" class="arh-form-label" data-i18n="arhContactLabel">На какую почту отправить расчёт?</label>
+          <div class="arh-input-row">
+            <input type="text" id="arhContactInput" class="arh-text-input" placeholder="Введите email, телефон или Telegram..." autocomplete="email">
+            <button type="button" id="arhSubmitBtn" class="arh-submit-btn" data-i18n="arhSubmitBtn">Получить расчёт</button>
+          </div>
+          
+          <div class="arh-quick-channels">
+            <a href="https://t.me/zakonpudova" id="arhTgBtn" target="_blank" rel="noopener noreferrer" class="arh-channel-btn">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              <span data-i18n="arhTgBtn">Или сразу обсудить с Екатериной в Telegram</span>
             </a>
-
-            <a href="https://wa.me/79123827772" id="calcBtnWa" target="_blank" rel="noopener noreferrer" class="calc-btn calc-btn--outline">
-              <svg class="calc-btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2z"/></svg>
-              <span data-i18n="calcBtnWa">Написать в WhatsApp</span>
-            </a>
           </div>
 
-          <p class="calc-note">
-            Стоимость рассчитывается индивидуально под объект. Официальный договор и ЭДО включены.
+          <p class="arh-note" data-i18n="arhNote">
+            Итоговая стоимость обговаривается лично с управляющим под особенности и задачи вашего объекта.
           </p>
         </div>
 
-      </div>
+      </form>
 
     </div>
-  </section>
   </section>
   <!-- CONTACTS & ESTIMATE SECTION (Editorial Electric Lime Capsule) -->
   <section id="contacts" class="contacts-section contacts-section--lime">
@@ -1125,16 +1185,32 @@
         contactsSubmitBtn: 'ОТПРАВИТЬ ЗАЯВКУ',
         contactsSuccessTitle: 'Заявка принята!',
         contactsSuccessText: 'Спасибо! Екатерина свяжется с вами в течение 15 минут.',
-        calcNav: 'ПАРАМЕТРЫ',
-        calcEyebrow: 'ПАРАМЕТРЫ СЪЁМКИ',
-        calcTitle1: 'СКОНФИГУРИРУЙТЕ',
-        calcTitle2: 'ВАШ ПРОЕКТ',
-        calcLead: '3 параметра для расчёта. Управляющая Екатерина подготовит персональную смету под ваш объект за 15 минут.',
-        calcStepSpace: 'ТИП ПРОСТРАНСТВА',
-        calcStepScale: 'МАСШТАБ СЪЁМКИ',
-        calcStepFormat: 'ФОРМАТ МАТЕРИАЛОВ',
-        calcBtnTg: 'Обсудить смету в Telegram',
-        calcBtnWa: 'Написать в WhatsApp',
+        calcNav: 'КАЛЬКУЛЯТОР',
+        arhCalcTitle: 'Цена интерьерных и архитектурных фотосъёмок',
+        arhCalcSubtitle: 'Воспользуйтесь нашим калькулятором, чтобы узнать предварительную стоимость работ.',
+        arhCostLabel: 'Примерная стоимость:',
+        arhField1Label: 'Что будем фотографировать?',
+        arhField2Label: 'Желаемое количество итоговых фото',
+        arhField2Hint: 'Имеется в виду конечное количество фото после отбора и обработки.',
+        arhField3Label: 'У вас есть техническое задание на работы?',
+        arhTzYes: 'Да',
+        arhTzNo: 'Нет',
+        arhField4Label: 'Желаемая форма оплаты',
+        arhPaymentCashless: 'Безналичная оплата',
+        arhPaymentCash: 'Оплата наличными',
+        arhField5Label: 'Договор потребуется?',
+        arhContractPerf: 'Да, рассматриваем договор исполнителя',
+        arhContractClient: 'Да, предоставим свой договор',
+        arhContractNone: 'Нет',
+        arhField6Label: 'Потребуется глубокая ретушь?',
+        arhField6Hint: 'Журнальная попиксельная ретушь геометрии, бликов и стыков.',
+        arhRetouchAll: 'Да, для всех фото',
+        arhRetouchSome: 'Да, для выборочных фото',
+        arhRetouchNone: 'Нет',
+        arhContactLabel: 'На какую почту отправить расчёт?',
+        arhSubmitBtn: 'Получить расчёт',
+        arhTgBtn: 'Или сразу обсудить с Екатериной в Telegram',
+        arhNote: 'Итоговая стоимость обговаривается лично с управляющим под особенности и задачи вашего объекта.',
         reviewsNav: 'ОТЗЫВЫ',
         reviewsEyebrow: 'ДОВЕРИЕ И РЕПУТАЦИЯ',
         reviewsTitle1: 'РЕЗУЛЬТАТЫ, КОТОРЫЕ',
@@ -1361,16 +1437,32 @@
         contactsSubmitBtn: 'SUBMIT INQUIRY',
         contactsSuccessTitle: 'Inquiry received!',
         contactsSuccessText: 'Thank you! Ekaterina will contact you within 15 minutes.',
-        calcNav: 'SCOPE',
-        calcEyebrow: 'PROJECT SCOPE',
-        calcTitle1: 'CONFIGURE',
-        calcTitle2: 'YOUR PROJECT',
-        calcLead: '3 parameters to request a quote. Managing director Ekaterina will prepare a tailored proposal in 15 minutes.',
-        calcStepSpace: 'SPACE TYPE',
-        calcStepScale: 'PRODUCTION SCALE',
-        calcStepFormat: 'DELIVERABLE FORMAT',
-        calcBtnTg: 'Discuss Quote in Telegram',
-        calcBtnWa: 'Message on WhatsApp',
+        calcNav: 'CALCULATOR',
+        arhCalcTitle: 'Interior and Architectural Photography Rates',
+        arhCalcSubtitle: 'Use our calculator to estimate the preliminary cost of your shoot.',
+        arhCostLabel: 'Estimated cost:',
+        arhField1Label: 'What space are we shooting?',
+        arhField2Label: 'Desired number of final photos',
+        arhField2Hint: 'Selected and fully retouched final deliverables.',
+        arhField3Label: 'Do you have a creative brief (TZ)?',
+        arhTzYes: 'Yes',
+        arhTzNo: 'No (will develop together)',
+        arhField4Label: 'Preferred payment method',
+        arhPaymentCashless: 'Bank transfer (invoicing & B2B)',
+        arhPaymentCash: 'Direct / card payment',
+        arhField5Label: 'Legal contract required?',
+        arhContractPerf: 'Yes, studio standard agreement',
+        arhContractClient: 'Yes, our company agreement',
+        arhContractNone: 'No contract required',
+        arhField6Label: 'High-end editorial retouching required?',
+        arhField6Hint: 'Per-pixel geometry, specular reflections, and surface cleanup.',
+        arhRetouchAll: 'Yes, for all deliverables',
+        arhRetouchSome: 'Yes, for selected hero shots',
+        arhRetouchNone: 'Standard color correction',
+        arhContactLabel: 'Where should we send your detailed estimate?',
+        arhSubmitBtn: 'Get estimate proposal',
+        arhTgBtn: 'Or discuss directly with Ekaterina on Telegram',
+        arhNote: 'Final rates are agreed personally with managing director Ekaterina based on space geometry and shoot scope.',
         reviewsNav: 'REVIEWS',
         reviewsEyebrow: 'TRUST & REPUTATION',
         reviewsTitle1: 'RESULTS THAT',
@@ -3561,60 +3653,109 @@
     })();
 
     /* ══════════════════════════════════════════════════════════
-       MINIMALIST PROJECT CONFIGURATOR MODULE (3-Step Fast Brief)
+       EDITORIAL ARCHITECTURAL CALCULATOR (Inspiration: arhfotostudio.ru)
        ══════════════════════════════════════════════════════════ */
-    (function initMinimalConfigurator() {
-      const calcSection = document.getElementById('calculator');
-      if (!calcSection) return;
+    (function initArhCalculator() {
+      const section = document.getElementById('calculator');
+      if (!section) return;
 
-      const segBtns = calcSection.querySelectorAll('.calc-seg-btn');
-      const summaryInline = document.getElementById('calcSummaryInline');
-      const btnTg = document.getElementById('calcBtnTg');
-      const btnWa = document.getElementById('calcBtnWa');
+      const shootType = document.getElementById('arhShootType');
+      const framesInput = document.getElementById('arhFrames');
+      const bubble = document.getElementById('arhSliderBubble');
+      const costTop = document.getElementById('arhCostTop');
+      const costBottom = document.getElementById('arhCostBottom');
+      const submitBtn = document.getElementById('arhSubmitBtn');
+      const contactInput = document.getElementById('arhContactInput');
+      const tgBtn = document.getElementById('arhTgBtn');
 
-      let currentSpace = 'Интерьер';
-      let currentScale = 'Стандартный (15–30 кадров)';
-      let currentFormat = 'Только фотосъёмка';
+      const tzRadios = section.querySelectorAll('input[name="arhTz"]');
+      const paymentRadios = section.querySelectorAll('input[name="arhPayment"]');
+      const contractRadios = section.querySelectorAll('input[name="arhContract"]');
+      const retouchRadios = section.querySelectorAll('input[name="arhRetouch"]');
 
-      function updateBrief() {
-        if (summaryInline) {
-          summaryInline.textContent = `${currentSpace} · ${currentScale} · ${currentFormat}`;
+      function updateSliderBubble(val) {
+        if (!bubble || !framesInput) return;
+        bubble.textContent = val;
+        const min = parseInt(framesInput.min, 10) || 5;
+        const max = parseInt(framesInput.max, 10) || 150;
+        const pct = ((val - min) / (max - min)) * 100;
+        bubble.style.left = `calc(${pct}% + (${9 - pct * 0.18}px))`;
+      }
+
+      function getRadioVal(radios) {
+        for (let r of radios) {
+          if (r.checked) return r.value;
         }
+        return '';
+      }
 
-        const msgText = `Здравствуйте, Екатерина! Сконфигурировал параметры съёмки на сайте focus-photocompany.ru:\n\n• Пространство: ${currentSpace}\n• Масштаб: ${currentScale}\n• Формат: ${currentFormat}\n\nХочу обсудить смету и свободные даты съёмки.`;
+      function calculate() {
+        if (!framesInput) return;
+        const frames = parseInt(framesInput.value, 10) || 20;
+        updateSliderBubble(frames);
 
-        if (btnTg) {
-          btnTg.href = `https://t.me/zakonpudova?text=${encodeURIComponent(msgText)}`;
-        }
-        if (btnWa) {
-          btnWa.href = `https://wa.me/79123827772?text=${encodeURIComponent(msgText)}`;
+        const selOption = shootType ? shootType.options[shootType.selectedIndex] : null;
+        const baseRate = selOption ? (parseInt(selOption.getAttribute('data-rate'), 10) || 1700) : 1700;
+        const typeName = selOption ? selOption.text : 'Интерьер';
+
+        let total = baseRate * frames;
+
+        // TZ
+        const tz = getRadioVal(tzRadios);
+        if (tz === 'no') total += 4000;
+
+        // Contract
+        const contract = getRadioVal(contractRadios);
+        if (contract === 'client') total += 4000;
+
+        // Retouch
+        const retouch = getRadioVal(retouchRadios);
+        if (retouch === 'all') total += 400 * frames;
+        if (retouch === 'some') total += 100 * frames;
+
+        const formatted = total.toLocaleString('ru-RU') + ' рублей.';
+        if (costTop) costTop.textContent = formatted;
+        if (costBottom) costBottom.textContent = formatted;
+
+        // Telegram link
+        const msg = `Здравствуйте, Екатерина! Заполнил расчёт на сайте focus-photocompany.ru:\n\n• Объект: ${typeName}\n• Количество фото: ${frames}\n• ТЗ: ${tz === 'yes' ? 'Есть готовое' : 'Нужна разработка'}\n• Ретушь: ${retouch === 'all' ? 'Для всех фото' : (retouch === 'some' ? 'Выборочная' : 'Базовая')}\n• Предварительно: ${formatted}\n\nХочу обсудить детали и забронировать съёмку.`;
+        if (tgBtn) {
+          tgBtn.href = `https://t.me/zakonpudova?text=${encodeURIComponent(msg)}`;
         }
       }
 
-      segBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const group = btn.getAttribute('data-group');
-          const val = btn.getAttribute('data-value');
-
-          // Uncheck siblings in group
-          calcSection.querySelectorAll(`.calc-seg-btn[data-group="${group}"]`).forEach(b => {
-            b.classList.remove('is-active');
-            b.setAttribute('aria-checked', 'false');
-          });
-
-          // Activate clicked button
-          btn.classList.add('is-active');
-          btn.setAttribute('aria-checked', 'true');
-
-          if (group === 'space') currentSpace = val;
-          if (group === 'scale') currentScale = val;
-          if (group === 'format') currentFormat = val;
-
-          updateBrief();
-        });
+      if (shootType) shootType.addEventListener('change', calculate);
+      if (framesInput) framesInput.addEventListener('input', calculate);
+      [...tzRadios, ...paymentRadios, ...contractRadios, ...retouchRadios].forEach(r => {
+        r.addEventListener('change', calculate);
       });
 
-      updateBrief();
+      if (submitBtn) {
+        submitBtn.addEventListener('click', () => {
+          const contactVal = contactInput ? contactInput.value.trim() : '';
+          if (!contactVal) {
+            if (contactInput) {
+              contactInput.focus();
+              contactInput.style.borderColor = '#e11d48';
+              setTimeout(() => { contactInput.style.borderColor = '#111'; }, 1800);
+            }
+            return;
+          }
+          submitBtn.textContent = 'Отправлено!';
+          submitBtn.disabled = true;
+          submitBtn.style.background = '#15803d';
+          submitBtn.style.borderColor = '#15803d';
+          setTimeout(() => {
+            submitBtn.textContent = 'Получить расчёт';
+            submitBtn.disabled = false;
+            submitBtn.style.background = '#111';
+            submitBtn.style.borderColor = '#111';
+            if (contactInput) contactInput.value = '';
+          }, 4000);
+        });
+      }
+
+      calculate();
     })();
 
     const savedLanguage = localStorage.getItem('focus-language');
