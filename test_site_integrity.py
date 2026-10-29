@@ -49,11 +49,15 @@ class SiteIntegrityTest(unittest.TestCase):
         with open(html_path) as f:
             content = f.read()
         
-        # Calculator section must exist
+        # Configurator section must exist
         self.assertTrue('<section id="calculator"' in content or 'id="calculator"' in content)
         self.assertIn('calc-section', content)
-        self.assertIn('calcTotalPrice', content)
         self.assertIn('calcFrames', content)
+        self.assertIn('calcSummaryType', content)
+        self.assertIn('calc-manager-box', content)
+        
+        # Zero price constraint: No ruble prices in calculator markup
+        self.assertNotIn('calcTotalPrice', content)
         
         # Anti-slop checks for calculator
         self.assertNotIn('01 ·', content)

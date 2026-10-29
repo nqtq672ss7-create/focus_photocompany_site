@@ -4318,12 +4318,12 @@ a { color: inherit; text-decoration: none; }
 .calc-section {
   position: relative;
   background: #0c0d11;
-  padding: 110px 0;
+  padding: 125px 0 110px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   color: #fff;
   overflow: hidden;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 110px;
 }
 
 .calc-container {
@@ -4455,14 +4455,14 @@ a { color: inherit; text-decoration: none; }
   color: #fff;
 }
 
-.calc-pill__rate {
+.calc-pill__sub {
   font-size: 11.5px;
-  font-family: 'JetBrains Mono', monospace;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.35;
 }
 
-.calc-pill.is-active .calc-pill__rate {
-  color: var(--lime, #CAFF1C);
+.calc-pill.is-active .calc-pill__sub {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 /* 2. Frames Slider */
@@ -4697,14 +4697,14 @@ a { color: inherit; text-decoration: none; }
   color: #fff;
 }
 
-.calc-addon-chip__price {
+.calc-addon-chip__sub {
   font-size: 11px;
-  font-family: 'JetBrains Mono', monospace;
-  color: var(--lime, #CAFF1C);
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.3;
 }
 
-.calc-addon-chip__price--free {
-  color: rgba(255, 255, 255, 0.45);
+.calc-addon-chip:has(.calc-addon-chip__input:checked) .calc-addon-chip__sub {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* 5. Summary Card */
@@ -4781,47 +4781,60 @@ a { color: inherit; text-decoration: none; }
   margin: 22px 0 20px;
 }
 
-.calc-price-wrap {
-  margin-bottom: 24px;
+.calc-manager-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 22px;
 }
 
-.calc-price-caption {
-  display: block;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
-  margin-bottom: 6px;
-}
-
-.calc-price-digits {
+.calc-manager-header {
   display: flex;
-  align-items: baseline;
-  gap: 6px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
-.calc-price-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 42px;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.02em;
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-}
-
-.calc-price-cur {
-  font-size: 24px;
+.calc-manager-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(202, 255, 28, 0.12);
+  border: 1.5px solid rgba(202, 255, 28, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lime, #CAFF1C);
+  font-size: 13px;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.calc-manager-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.calc-manager-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.calc-manager-role {
+  font-size: 11.5px;
   color: var(--lime, #CAFF1C);
 }
 
-.calc-price-note {
-  display: block;
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.4);
-  margin-top: 8px;
+.calc-manager-quote {
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0;
 }
 
 .calc-card__cta-group {
@@ -4900,7 +4913,8 @@ a { color: inherit; text-decoration: none; }
 /* ── Mobile Breakpoints (< 992px) ── */
 @media (max-width: 991px) {
   .calc-section {
-    padding: 70px 0;
+    padding: 100px 0 70px;
+    scroll-margin-top: 80px;
   }
   .calc-grid {
     grid-template-columns: 1fr;
@@ -4920,9 +4934,6 @@ a { color: inherit; text-decoration: none; }
   .calc-addons-grid {
     grid-template-columns: 1fr;
   }
-  .calc-price-num {
-    font-size: 34px;
-  }
   .nav-calc-link {
     display: none !important;
   }
@@ -4934,6 +4945,11 @@ a { color: inherit; text-decoration: none; }
   }
   .calc-card {
     padding: 18px;
+  }
+  .calc-card__top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
   .calc-cta-btn {
     font-size: 13px;
