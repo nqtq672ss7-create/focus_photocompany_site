@@ -4313,27 +4313,44 @@ a { color: inherit; text-decoration: none; }
 
 
 /* ══════════════════════════════════════════════════════════
-   ARCHITECTURAL ESTIMATE CALCULATOR (Pure Editorial on Light)
+   ARCHITECTURAL ESTIMATE CALCULATOR (Focus Dark Luxury Style)
    ══════════════════════════════════════════════════════════ */
 .arh-calc-section {
   position: relative;
-  background: #ffffff;
-  color: #111111;
-  padding: 110px 0 100px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: #0b0c10;
+  color: #f3f4f6;
+  padding: clamp(80px, 9vw, 120px) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   scroll-margin-top: 90px;
 }
 
 .arh-calc-container {
   max-width: 780px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(20px, 4vw, 32px);
   box-sizing: border-box;
 }
 
 .arh-calc-header {
-  margin-bottom: 34px;
+  margin-bottom: 36px;
+}
+
+.arh-calc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 12px;
+}
+
+.arh-calc-eyebrow__dash {
+  color: var(--lime, #CAFF1C);
+  font-weight: 900;
 }
 
 .arh-calc-title {
@@ -4342,37 +4359,45 @@ a { color: inherit; text-decoration: none; }
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #111111;
-  margin: 0 0 18px 0;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+}
+
+.arh-calc-dot {
+  color: var(--lime, #CAFF1C);
 }
 
 .arh-calc-subtitle {
-  font-size: clamp(16px, 1.8vw, 19px);
-  line-height: 1.55;
-  color: #2b2b2b;
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
   margin: 0;
   max-width: 640px;
 }
 
 .arh-cost-banner {
   font-size: 20px;
-  font-weight: 700;
-  color: #111111;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
   margin: 36px 0 32px;
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .arh-cost-label {
-  font-weight: 700;
-  color: #111111;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .arh-cost-number {
-  font-weight: 700;
-  color: #111111;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: clamp(22px, 2.8vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--lime, #CAFF1C);
+  text-shadow: 0 0 24px rgba(202, 255, 28, 0.25);
 }
 
 .arh-calc-form {
@@ -4387,21 +4412,22 @@ a { color: inherit; text-decoration: none; }
 }
 
 .arh-form-label {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  color: #111111;
+  color: #ffffff;
+  letter-spacing: -0.01em;
   margin-bottom: 8px;
 }
 
 .arh-req {
-  color: #111111;
+  color: var(--lime, #CAFF1C);
 }
 
 .arh-form-hint {
   font-size: 13px;
-  color: #777777;
+  color: rgba(255, 255, 255, 0.45);
   margin: 0 0 16px 0;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 /* Select */
@@ -4413,33 +4439,46 @@ a { color: inherit; text-decoration: none; }
 .arh-select {
   width: 100%;
   height: 52px;
-  background: #ffffff;
-  border: 1px solid #111111;
-  border-radius: 0;
-  padding: 0 44px 0 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 0 44px 0 18px;
   font-size: 15px;
   font-family: inherit;
-  color: #111111;
+  color: #ffffff;
   -webkit-appearance: none;
   appearance: none;
   cursor: pointer;
   outline: none;
   box-sizing: border-box;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.arh-select option {
+  background: #121319;
+  color: #ffffff;
+}
+
+.arh-select:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .arh-select:focus {
-  border-color: #000000;
-  box-shadow: 0 0 0 1px #000000;
+  border-color: var(--lime, #CAFF1C);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 0 3px rgba(202, 255, 28, 0.14);
 }
 
 .arh-select-arrow {
   position: absolute;
-  right: 16px;
+  right: 18px;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
   display: flex;
   align-items: center;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Slider */
@@ -4455,14 +4494,14 @@ a { color: inherit; text-decoration: none; }
   top: 0;
   left: 20%;
   transform: translateX(-50%);
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
+  background: #161720;
+  border: 1px solid rgba(202, 255, 28, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
   padding: 3px 10px;
-  font-size: 13.5px;
-  font-weight: 600;
-  color: #111111;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--lime, #CAFF1C);
   pointer-events: none;
   font-variant-numeric: tabular-nums;
   transition: left 0.05s ease-out;
@@ -4472,8 +4511,9 @@ a { color: inherit; text-decoration: none; }
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 2px;
-  background: #111111;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
   outline: none;
   cursor: pointer;
   margin: 10px 0;
@@ -4482,42 +4522,43 @@ a { color: inherit; text-decoration: none; }
 .arh-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: #111111;
+  background: var(--lime, #CAFF1C);
   cursor: pointer;
-  border: none;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-  transition: transform 0.1s ease;
+  border: 2.5px solid #0b0c10;
+  box-shadow: 0 0 10px rgba(202, 255, 28, 0.5);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .arh-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.15);
+  transform: scale(1.18);
+  box-shadow: 0 0 16px rgba(202, 255, 28, 0.7);
 }
 
 .arh-slider::-moz-range-thumb {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: #111111;
-  border: none;
+  background: var(--lime, #CAFF1C);
+  border: 2.5px solid #0b0c10;
   cursor: pointer;
 }
 
 .arh-slider-scale {
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
-  color: #666666;
-  margin-top: 4px;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.38);
+  margin-top: 6px;
 }
 
 /* Radios */
 .arh-radio-group {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   margin-top: 4px;
 }
 
@@ -4525,9 +4566,19 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
   cursor: pointer;
   user-select: none;
+  transition: all 0.2s ease;
+}
+
+.arh-radio-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .arh-radio-item input[type="radio"] {
@@ -4542,27 +4593,48 @@ a { color: inherit; text-decoration: none; }
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 1.5px solid #111111;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
   flex-shrink: 0;
-  transition: all 0.15s ease;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.arh-radio-item:hover .arh-radio-mark {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.arh-radio-item input[type="radio"]:checked + .arh-radio-mark {
+  border-color: var(--lime, #CAFF1C);
+  background: rgba(202, 255, 28, 0.12);
+  box-shadow: 0 0 10px rgba(202, 255, 28, 0.2);
 }
 
 .arh-radio-item input[type="radio"]:checked + .arh-radio-mark::after {
   content: '';
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: #111111;
+  background: var(--lime, #CAFF1C);
 }
 
 .arh-radio-text {
-  font-size: 15px;
-  color: #111111;
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.arh-radio-item:hover .arh-radio-text {
+  color: #ffffff;
+}
+
+.arh-radio-item input[type="radio"]:checked ~ .arh-radio-text {
+  color: #ffffff;
+  font-weight: 500;
 }
 
 /* Submit Block */
@@ -4570,7 +4642,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 8px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .arh-input-row {
@@ -4582,37 +4654,56 @@ a { color: inherit; text-decoration: none; }
 .arh-text-input {
   flex: 1;
   height: 52px;
-  background: #ffffff;
-  border: 1px solid #111111;
-  border-radius: 0;
-  padding: 0 16px;
-  font-size: 15px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 0 18px;
+  font-size: 14.5px;
   font-family: inherit;
-  color: #111111;
+  color: #ffffff;
   outline: none;
   box-sizing: border-box;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.arh-text-input::placeholder {
+  color: rgba(255, 255, 255, 0.32);
+}
+
+.arh-text-input:hover {
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
 .arh-text-input:focus {
-  box-shadow: 0 0 0 1px #000000;
+  border-color: var(--lime, #CAFF1C);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 3px rgba(202, 255, 28, 0.14);
 }
 
 .arh-submit-btn {
   height: 52px;
   padding: 0 28px;
-  background: #111111;
-  color: #ffffff;
-  border: 1px solid #111111;
-  border-radius: 0;
-  font-size: 14px;
-  font-weight: 600;
+  background: var(--lime, #CAFF1C);
+  color: #0c0d10;
+  border: none;
+  border-radius: 12px;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(202, 255, 28, 0.25);
 }
 
 .arh-submit-btn:hover {
-  background: #2b2b2b;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(202, 255, 28, 0.4);
+}
+
+.arh-submit-btn:active {
+  transform: translateY(0);
 }
 
 .arh-quick-channels {
@@ -4626,20 +4717,20 @@ a { color: inherit; text-decoration: none; }
   gap: 8px;
   font-size: 13.5px;
   font-weight: 600;
-  color: #111111;
+  color: var(--lime, #CAFF1C);
   text-decoration: underline;
   text-underline-offset: 4px;
   transition: opacity 0.2s ease;
 }
 
 .arh-channel-btn:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .arh-note {
   font-size: 12.5px;
   line-height: 1.5;
-  color: #666666;
+  color: rgba(255, 255, 255, 0.45);
   margin: 6px 0 0 0;
 }
 

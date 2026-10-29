@@ -548,8 +548,12 @@
       
       <!-- Header -->
       <div class="arh-calc-header">
-        <h2 class="arh-calc-title" id="arhCalcTitle" data-i18n="arhCalcTitle">
-          Цена интерьерных и архитектурных фотосъёмок
+        <div class="arh-calc-eyebrow">
+          <span class="arh-calc-eyebrow__dash" aria-hidden="true">—</span>
+          <span data-i18n="arhCalcEyebrow">КАЛЬКУЛЯТОР СТОИМОСТИ</span>
+        </div>
+        <h2 class="arh-calc-title" id="arhCalcTitle">
+          <span data-i18n="arhCalcTitle">Цена интерьерных и архитектурных фотосъёмок</span><span class="arh-calc-dot">.</span>
         </h2>
         <p class="arh-calc-subtitle" data-i18n="arhCalcSubtitle">
           Воспользуйтесь нашим калькулятором, чтобы узнать предварительную стоимость работ.
@@ -579,7 +583,7 @@
               <option value="restaurants" data-rate="1500">Ресторан, кафе или бар</option>
             </select>
             <div class="arh-select-arrow" aria-hidden="true">
-              <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="#111111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
           </div>
         </div>
@@ -1186,6 +1190,7 @@
         contactsSuccessTitle: 'Заявка принята!',
         contactsSuccessText: 'Спасибо! Екатерина свяжется с вами в течение 15 минут.',
         calcNav: 'КАЛЬКУЛЯТОР',
+        arhCalcEyebrow: 'КАЛЬКУЛЯТОР СТОИМОСТИ',
         arhCalcTitle: 'Цена интерьерных и архитектурных фотосъёмок',
         arhCalcSubtitle: 'Воспользуйтесь нашим калькулятором, чтобы узнать предварительную стоимость работ.',
         arhCostLabel: 'Примерная стоимость:',
@@ -1438,6 +1443,7 @@
         contactsSuccessTitle: 'Inquiry received!',
         contactsSuccessText: 'Thank you! Ekaterina will contact you within 15 minutes.',
         calcNav: 'CALCULATOR',
+        arhCalcEyebrow: 'COST ESTIMATOR',
         arhCalcTitle: 'Interior and Architectural Photography Rates',
         arhCalcSubtitle: 'Use our calculator to estimate the preliminary cost of your shoot.',
         arhCostLabel: 'Estimated cost:',
@@ -3736,20 +3742,20 @@
           if (!contactVal) {
             if (contactInput) {
               contactInput.focus();
-              contactInput.style.borderColor = '#e11d48';
-              setTimeout(() => { contactInput.style.borderColor = '#111'; }, 1800);
+              contactInput.style.borderColor = '#ef4444';
+              setTimeout(() => { contactInput.style.borderColor = ''; }, 1800);
             }
             return;
           }
           submitBtn.textContent = 'Отправлено!';
           submitBtn.disabled = true;
           submitBtn.style.background = '#15803d';
-          submitBtn.style.borderColor = '#15803d';
+          submitBtn.style.color = '#ffffff';
           setTimeout(() => {
             submitBtn.textContent = 'Получить расчёт';
             submitBtn.disabled = false;
-            submitBtn.style.background = '#111';
-            submitBtn.style.borderColor = '#111';
+            submitBtn.style.background = '';
+            submitBtn.style.color = '';
             if (contactInput) contactInput.value = '';
           }, 4000);
         });
