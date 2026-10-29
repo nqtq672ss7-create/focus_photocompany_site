@@ -4394,10 +4394,11 @@ a { color: inherit; text-decoration: none; }
 /* Blueprint Card */
 .arh-blueprint-card {
   background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(202, 255, 28, 0.22);
   border-radius: 20px;
   padding: 24px;
   box-sizing: border-box;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(202, 255, 28, 0.25);
 }
 
 .arh-blueprint-card__header {
@@ -4477,21 +4478,22 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   padding: 12px 16px;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(202, 255, 28, 0.06);
+  border: 1px solid rgba(202, 255, 28, 0.28);
   border-radius: 12px;
   color: #ffffff;
   text-decoration: none;
   font-size: 13.5px;
   font-weight: 600;
-  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .arh-tg-card-btn:hover {
-  background: rgba(202, 255, 28, 0.08);
+  background: rgba(202, 255, 28, 0.14);
   border-color: var(--lime, #CAFF1C);
   color: #ffffff;
   transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(202, 255, 28, 0.18);
 }
 
 .arh-tg-card-btn:active {
@@ -4605,8 +4607,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .arh-select:focus {
-  border-color: #ffffff;
-  box-shadow: 0 0 0 1px #ffffff;
+  border-color: var(--lime, #CAFF1C);
+  box-shadow: 0 0 0 1px var(--lime, #CAFF1C);
 }
 
 .arh-select-arrow {
@@ -4634,12 +4636,12 @@ a { color: inherit; text-decoration: none; }
   left: 20%;
   transform: translateX(-50%);
   background: #14151b;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(202, 255, 28, 0.45);
   border-radius: 4px;
   padding: 3px 9px;
   font-size: 12px;
-  font-weight: 600;
-  color: #ffffff;
+  font-weight: 700;
+  color: var(--lime, #CAFF1C);
   pointer-events: none;
   font-variant-numeric: tabular-nums;
   transition: left 0.04s ease-out;
@@ -4663,23 +4665,25 @@ a { color: inherit; text-decoration: none; }
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--lime, #CAFF1C);
   cursor: pointer;
   border: 2px solid #0c0d11;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-  transition: transform 0.12s ease;
+  box-shadow: 0 0 10px rgba(202, 255, 28, 0.45);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
 .arh-slider::-webkit-slider-thumb:hover {
   transform: scale(1.25);
+  box-shadow: 0 0 16px rgba(202, 255, 28, 0.7);
 }
 
 .arh-slider::-moz-range-thumb {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--lime, #CAFF1C);
   border: 2px solid #0c0d11;
+  box-shadow: 0 0 10px rgba(202, 255, 28, 0.45);
   cursor: pointer;
 }
 
@@ -4721,9 +4725,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 .arh-preset-btn.is-active {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: #ffffff;
-  color: #ffffff;
+  background: rgba(202, 255, 28, 0.1);
+  border-color: var(--lime, #CAFF1C);
+  color: var(--lime, #CAFF1C);
   font-weight: 600;
 }
 
@@ -4789,19 +4793,19 @@ a { color: inherit; text-decoration: none; }
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--lime, #CAFF1C);
   transform: translate(-50%, -50%) scale(0.5);
   opacity: 0;
   transition: opacity 0.15s ease, transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .arh-radio-item:hover .arh-radio-circle {
-  border-color: rgba(255, 255, 255, 0.55);
+  border-color: rgba(202, 255, 28, 0.55);
 }
 
 .arh-radio-item input[type="radio"]:checked + .arh-radio-circle {
-  border-color: #ffffff;
-  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--lime, #CAFF1C);
+  background: rgba(202, 255, 28, 0.08);
 }
 
 .arh-radio-item input[type="radio"]:checked + .arh-radio-circle::after {
@@ -4815,7 +4819,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .arh-radio-item input[type="radio"]:focus-visible + .arh-radio-circle {
-  outline: 2px solid #ffffff;
+  outline: 2px solid var(--lime, #CAFF1C);
   outline-offset: 2px;
 }
 
@@ -4879,7 +4883,7 @@ a { color: inherit; text-decoration: none; }
   color: #ffffff;
   outline: none;
   box-sizing: border-box;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .arh-text-input::placeholder {
@@ -4891,33 +4895,37 @@ a { color: inherit; text-decoration: none; }
 }
 
 .arh-text-input:focus {
-  border-color: #ffffff;
+  border-color: var(--lime, #CAFF1C);
   background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 1px var(--lime, #CAFF1C);
 }
 
 .arh-submit-btn {
   height: 52px;
   padding: 0 32px;
-  background: #ffffff;
-  color: #0c0d11;
+  background: var(--lime, #CAFF1C);
+  color: #0c0d10;
   border: none;
   border-radius: 12px;
   font-size: 13.5px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  box-shadow: 0 4px 18px rgba(202, 255, 28, 0.24);
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
   white-space: nowrap;
 }
 
 .arh-submit-btn:hover {
-  opacity: 0.9;
+  background: #d4ff3a;
+  box-shadow: 0 8px 26px rgba(202, 255, 28, 0.38);
   transform: translateY(-1px);
 }
 
 .arh-submit-btn:active {
   transform: scale(0.97);
+  box-shadow: 0 2px 10px rgba(202, 255, 28, 0.2);
 }
 
 .arh-submit-badges {
@@ -4930,6 +4938,12 @@ a { color: inherit; text-decoration: none; }
 .arh-sub-badge {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.4);
+}
+
+.arh-sub-badge__check {
+  color: var(--lime, #CAFF1C);
+  font-weight: 800;
+  margin-right: 3px;
 }
 
 /* Responsive: Tablet & Mobile */

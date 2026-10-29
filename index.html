@@ -769,9 +769,9 @@
               </div>
 
               <div class="arh-submit-badges">
-                <span class="arh-sub-badge">✓ Конфиденциально</span>
-                <span class="arh-sub-badge">✓ Без спама</span>
-                <span class="arh-sub-badge">✓ Ответ за 15 минут</span>
+                <span class="arh-sub-badge"><span class="arh-sub-badge__check">✓</span> Конфиденциально</span>
+                <span class="arh-sub-badge"><span class="arh-sub-badge__check">✓</span> Без спама</span>
+                <span class="arh-sub-badge"><span class="arh-sub-badge__check">✓</span> Ответ за 15 минут</span>
               </div>
             </div>
 
@@ -3812,7 +3812,7 @@
         const min = parseInt(framesInput.min, 10) || 5;
         const max = parseInt(framesInput.max, 10) || 150;
         const pct = ((frames - min) / (max - min)) * 100;
-        framesInput.style.background = `linear-gradient(to right, #ffffff 0%, #ffffff ${pct}%, rgba(255, 255, 255, 0.14) ${pct}%, rgba(255, 255, 255, 0.14) 100%)`;
+        framesInput.style.background = `linear-gradient(to right, #CAFF1C 0%, #CAFF1C ${pct}%, rgba(255, 255, 255, 0.14) ${pct}%, rgba(255, 255, 255, 0.14) 100%)`;
 
         // Highlight matching preset button
         const presetBtns = section.querySelectorAll('.arh-preset-btn');
