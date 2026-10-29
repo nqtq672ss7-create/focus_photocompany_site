@@ -4313,7 +4313,7 @@ a { color: inherit; text-decoration: none; }
 
 
 /* ══════════════════════════════════════════════════════════
-   ARCHITECTURAL ESTIMATE CALCULATOR (Focus Dark Luxury Architecture)
+   ARCHITECTURAL ESTIMATE CALCULATOR (Focus Luxury Architecture Split Grid)
    ══════════════════════════════════════════════════════════ */
 .arh-calc-section {
   position: relative;
@@ -4326,25 +4326,30 @@ a { color: inherit; text-decoration: none; }
 }
 
 .arh-calc-container {
-  max-width: 820px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 clamp(16px, 4vw, 32px);
+  padding: 0 clamp(18px, 4vw, 40px);
   box-sizing: border-box;
 }
 
-/* Master Obsidian Glass Card */
-.arh-calc-card {
-  background: #0e0f15;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
-  padding: clamp(28px, 5vw, 54px);
-  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  position: relative;
-  overflow: hidden;
+/* Desktop Split Grid */
+.arh-calc-grid {
+  display: grid;
+  grid-template-columns: minmax(340px, 420px) 1fr;
+  gap: clamp(32px, 4.5vw, 64px);
+  align-items: start;
+}
+
+/* Left Column: Sticky Summary & Editorial Punch */
+.arh-calc-sidebar {
+  position: sticky;
+  top: 110px;
+  display: flex;
+  flex-direction: column;
 }
 
 .arh-calc-header {
-  margin-bottom: 34px;
+  margin-bottom: 26px;
 }
 
 .arh-calc-eyebrow {
@@ -4366,9 +4371,9 @@ a { color: inherit; text-decoration: none; }
 
 .arh-calc-title {
   font-family: 'Space Grotesk', -apple-system, sans-serif;
-  font-size: clamp(26px, 3.8vw, 38px);
+  font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 700;
-  line-height: 1.18;
+  line-height: 1.15;
   letter-spacing: -0.025em;
   color: #ffffff;
   margin: 0 0 14px 0;
@@ -4379,41 +4384,32 @@ a { color: inherit; text-decoration: none; }
 }
 
 .arh-calc-subtitle {
-  font-size: clamp(14.5px, 1.5vw, 16px);
+  font-size: 15px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.62);
   margin: 0;
-  max-width: 620px;
 }
 
-/* Architectural Cost Banner (Top & Bottom) */
-.arh-cost-banner {
-  background: rgba(255, 255, 255, 0.03);
+/* Left Column Sticky Summary Card */
+.arh-summary-card {
+  background: #0e0f15;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
-  padding: 18px 24px;
-  margin: 30px 0;
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-}
-
-.arh-cost-banner--bottom {
-  margin-top: 36px;
-  margin-bottom: 30px;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .arh-cost-meta {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .arh-cost-label {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -4426,23 +4422,71 @@ a { color: inherit; text-decoration: none; }
   font-size: 11.5px;
   font-weight: 600;
   color: var(--lime, #CAFF1C);
-  letter-spacing: 0.02em;
+  background: rgba(202, 255, 28, 0.08);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(202, 255, 28, 0.2);
 }
 
 .arh-cost-number {
   font-family: 'Space Grotesk', -apple-system, sans-serif;
-  font-size: clamp(24px, 3.2vw, 34px);
+  font-size: clamp(28px, 2.8vw, 36px);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--lime, #CAFF1C);
   text-shadow: 0 0 28px rgba(202, 255, 28, 0.28);
+}
+
+/* Specs Breakdown */
+.arh-specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.arh-spec-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13.5px;
+}
+
+.arh-spec-name {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.arh-spec-val {
+  color: #ffffff;
+  font-weight: 600;
+  text-align: right;
+  max-width: 60%;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right Column: Step Controls Master Card */
+.arh-calc-main {
+  width: 100%;
+}
+
+.arh-calc-card {
+  background: #0e0f15;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: clamp(28px, 4vw, 44px);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
 }
 
 .arh-calc-form {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 28px;
 }
 
 .arh-form-group {
@@ -4633,7 +4677,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 700;
 }
 
-/* Interactive Radio Chips (Tactile Luxury Selection) */
+/* Interactive Radio Chips */
 .arh-radio-group {
   display: flex;
   flex-wrap: wrap;
@@ -4717,12 +4761,25 @@ a { color: inherit; text-decoration: none; }
   font-weight: 600;
 }
 
+/* Secondary Bottom Cost Banner for Right Column */
+.arh-cost-banner--bottom {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin: 12px 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 /* Submit Block */
 .arh-submit-block {
-  margin-top: 8px;
+  margin-top: 4px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .arh-input-row {
@@ -4802,7 +4859,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Direct Telegram Action Capsule */
 .arh-direct-telegram {
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .arh-tg-capsule {
@@ -4811,7 +4868,7 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
-  padding: 16px 20px;
+  padding: 14px 18px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
@@ -4823,7 +4880,7 @@ a { color: inherit; text-decoration: none; }
 .arh-tg-capsule__left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .arh-tg-capsule__icon {
@@ -4834,13 +4891,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 .arh-tg-capsule__text {
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
   color: #ffffff;
 }
 
 .arh-tg-capsule__arrow {
-  font-size: 17px;
+  font-size: 16px;
   color: var(--lime, #CAFF1C);
   transition: transform 0.2s ease;
 }
@@ -4861,26 +4918,36 @@ a { color: inherit; text-decoration: none; }
 }
 
 .arh-note {
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.42);
-  margin: 4px 0 0 0;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 2px 0 0 0;
 }
 
-/* Mobile Responsiveness */
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 991px) {
+  .arh-calc-grid {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .arh-calc-sidebar {
+    position: static;
+  }
+  .arh-calc-card {
+    padding: 26px 20px;
+    border-radius: 22px;
+  }
+}
+
 @media (max-width: 640px) {
   .arh-calc-section {
     padding: 60px 0 50px;
   }
   .arh-calc-card {
-    padding: 24px 18px;
-    border-radius: 20px;
-  }
-  .arh-cost-banner {
-    padding: 16px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    padding: 22px 16px;
+    border-radius: 18px;
   }
   .arh-radio-group {
     flex-direction: column;
@@ -4896,12 +4963,6 @@ a { color: inherit; text-decoration: none; }
   }
   .arh-submit-btn {
     width: 100%;
-  }
-  .arh-tg-capsule {
-    padding: 14px 16px;
-  }
-  .arh-tg-capsule__text {
-    font-size: 13px;
   }
   .nav-calc-link {
     display: none !important;
