@@ -542,232 +542,111 @@
       </div>
     </div>
   </div>
-  <!-- BESPOKE PROJECT SCOPE CONFIGURATOR (Pure Architectural Minimalism) -->
+  <!-- MINIMALIST PROJECT CONFIGURATOR (Swiss Architectural Precision) -->
   <section id="calculator" class="calc-section" aria-labelledby="calc-title">
-    <div class="calc-container">
+    <div class="calc-container calc-container--narrow">
       
-      <div class="calc-header">
+      <div class="calc-header calc-header--center">
         <div class="calc-eyebrow">
           <span class="calc-eyebrow__dash" aria-hidden="true">—</span>
           <span data-i18n="calcEyebrow">ПАРАМЕТРЫ СЪЁМКИ</span>
         </div>
         <h2 class="calc-title" id="calc-title">
-          <span data-i18n="calcTitle1">СКОНФИГУРИРУЙТЕ</span><br>
+          <span data-i18n="calcTitle1">СКОНФИГУРИРУЙТЕ</span>
           <span class="calc-title__highlight" data-i18n="calcTitle2">ВАШ ПРОЕКТ</span><span class="calc-title__dot">.</span>
         </h2>
         <p class="calc-lead" data-i18n="calcLead">
-          Выберите ключевые параметры объекта. Управляющая продакшном Екатерина рассчитает смету и согласует тайминг под ваши задачи за 15 минут.
+          3 параметра для расчёта. Управляющая Екатерина подготовит персональную смету под ваш объект за 15 минут.
         </p>
       </div>
 
-      <div class="calc-grid">
+      <div class="calc-box">
         
-        <!-- LEFT: INTERACTIVE PARAMETER CONTROLS -->
-        <div class="calc-controls">
-          
-          <!-- Direction / Type -->
-          <div class="calc-group">
-            <div class="calc-label-header">
-              <span class="calc-label-title" data-i18n="calcTypeLabel">Направление съёмки</span>
-              <span class="calc-label-sub" data-i18n="calcTypeHint">Специфика пространства</span>
-            </div>
-            <div class="calc-type-grid" role="radiogroup" aria-label="Направление съёмки">
-              <button type="button" class="calc-pill is-active" data-type="interiors" role="radio" aria-checked="true">
-                <span class="calc-pill__name">Интерьеры дизайнеров</span>
-                <span class="calc-pill__sub">Жилые пространства, шоурумы, декор</span>
-              </button>
-              <button type="button" class="calc-pill" data-type="hotels" role="radio" aria-checked="false">
-                <span class="calc-pill__name">Отели и апартаменты</span>
-                <span class="calc-pill__sub">Номерной фонд, лобби, сервис</span>
-              </button>
-              <button type="button" class="calc-pill" data-type="architecture" role="radio" aria-checked="false">
-                <span class="calc-pill__name">Архитектура и фасады</span>
-                <span class="calc-pill__sub">Экстерьеры, благоустройство, свет</span>
-              </button>
-              <button type="button" class="calc-pill" data-type="restaurants" role="radio" aria-checked="false">
-                <span class="calc-pill__name">Рестораны и заведения</span>
-                <span class="calc-pill__sub">Залы, посадка, бар, атмосфера</span>
-              </button>
-              <button type="button" class="calc-pill" data-type="malls" role="radio" aria-checked="false">
-                <span class="calc-pill__name">ТЦ и бизнес-центры</span>
-                <span class="calc-pill__sub">Атриумы, общественные зоны, ритейл</span>
-              </button>
-            </div>
+        <!-- Step 1: Пространство -->
+        <div class="calc-step">
+          <span class="calc-step__label" data-i18n="calcStepSpace">ТИП ПРОСТРАНСТВА</span>
+          <div class="calc-seg-grid calc-seg-grid--4" role="radiogroup" aria-label="Тип пространства">
+            <button type="button" class="calc-seg-btn is-active" data-group="space" data-value="Интерьер" role="radio" aria-checked="true">
+              <span>Интерьер</span>
+            </button>
+            <button type="button" class="calc-seg-btn" data-group="space" data-value="Архитектура" role="radio" aria-checked="false">
+              <span>Архитектура</span>
+            </button>
+            <button type="button" class="calc-seg-btn" data-group="space" data-value="Отель / HoReCa" role="radio" aria-checked="false">
+              <span>Отель & HoReCa</span>
+            </button>
+            <button type="button" class="calc-seg-btn" data-group="space" data-value="Бизнес-центр / ТЦ" role="radio" aria-checked="false">
+              <span>Бизнес-центр / ТЦ</span>
+            </button>
           </div>
-
-          <!-- Volume / Frames -->
-          <div class="calc-group">
-            <div class="calc-label-header">
-              <label for="calcFrames" class="calc-label-title" data-i18n="calcFramesLabel">Количество готовых кадров</label>
-              <div class="calc-frames-indicator">
-                <span id="calcFramesVal" class="calc-frames-val">20</span>
-                <span class="calc-frames-unit">ракурсов</span>
-              </div>
-            </div>
-            
-            <div class="calc-slider-wrap">
-              <input type="range" id="calcFrames" min="5" max="60" value="20" step="1" class="calc-slider" aria-label="Количество готовых ракурсов">
-              <div class="calc-slider-ticks" aria-hidden="true">
-                <span>5</span>
-                <span>15</span>
-                <span>30</span>
-                <span>45</span>
-                <span>60+</span>
-              </div>
-            </div>
-            <div class="calc-duration-chip" id="calcDurationChip">
-              <svg class="calc-duration-chip__icon" width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-              <span id="calcDurationText">Стандартное пространство · 1 съёмочная смена (4–5 часов)</span>
-            </div>
-          </div>
-
-          <!-- Lighting Solution -->
-          <div class="calc-group">
-            <div class="calc-label-header">
-              <span class="calc-label-title" data-i18n="calcLightLabel">Световое решение</span>
-              <span class="calc-label-sub">Оборудование и схемы</span>
-            </div>
-            <div class="calc-toggle-grid" role="radiogroup" aria-label="Световое решение">
-              <button type="button" class="calc-toggle-btn is-active" data-light-type="natural" role="radio" aria-checked="true">
-                <span class="calc-toggle-btn__top">
-                  <span class="calc-toggle-btn__radio"></span>
-                  <span class="calc-toggle-btn__name">Естественный дневной свет</span>
-                </span>
-                <span class="calc-toggle-btn__desc">Атмосферный рассеянный свет с акцентными отражателями</span>
-              </button>
-              <button type="button" class="calc-toggle-btn" data-light-type="studio" role="radio" aria-checked="false">
-                <span class="calc-toggle-btn__top">
-                  <span class="calc-toggle-btn__radio"></span>
-                  <span class="calc-toggle-btn__name">Импульсный свет Profoto</span>
-                </span>
-                <span class="calc-toggle-btn__desc">Студийные схемы, послойная экспозиция и геометрия теней</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Additional Options -->
-          <div class="calc-group">
-            <div class="calc-label-header">
-              <span class="calc-label-title" data-i18n="calcAddonsLabel">Форматы и специфика</span>
-              <span class="calc-label-sub">Дополнительные опции</span>
-            </div>
-            <div class="calc-addons-grid">
-              <label class="calc-addon-chip">
-                <input type="checkbox" id="calcAddonRetouch" class="calc-addon-chip__input">
-                <span class="calc-addon-chip__box" aria-hidden="true"></span>
-                <span class="calc-addon-chip__info">
-                  <span class="calc-addon-chip__name">Журнальная глубокая ретушь</span>
-                  <span class="calc-addon-chip__sub">Детальная проработка фактур и бликов</span>
-                </span>
-              </label>
-
-              <label class="calc-addon-chip">
-                <input type="checkbox" id="calcAddonVideo" class="calc-addon-chip__input">
-                <span class="calc-addon-chip__box" aria-hidden="true"></span>
-                <span class="calc-addon-chip__info">
-                  <span class="calc-addon-chip__name">Вертикальные видео (Reels / 4K)</span>
-                  <span class="calc-addon-chip__sub">Динамичные проходки под соцсети</span>
-                </span>
-              </label>
-
-              <label class="calc-addon-chip">
-                <input type="checkbox" id="calcAddonFast" class="calc-addon-chip__input">
-                <span class="calc-addon-chip__box" aria-hidden="true"></span>
-                <span class="calc-addon-chip__info">
-                  <span class="calc-addon-chip__name">Срочная готовность за 48 часов</span>
-                  <span class="calc-addon-chip__sub">Приоритетная пост-обработка</span>
-                </span>
-              </label>
-
-              <label class="calc-addon-chip is-fixed">
-                <input type="checkbox" id="calcAddonContract" class="calc-addon-chip__input" checked disabled>
-                <span class="calc-addon-chip__box calc-addon-chip__box--checked" aria-hidden="true">✓</span>
-                <span class="calc-addon-chip__info">
-                  <span class="calc-addon-chip__name">Договор и ЭДО (ИП / ООО)</span>
-                  <span class="calc-addon-chip__sub">Бессрочная лицензия включена</span>
-                </span>
-              </label>
-            </div>
-          </div>
-
         </div>
 
-        <!-- RIGHT: LIVE SUMMARY & MANAGER CONTACT CARD -->
-        <div class="calc-summary-col">
-          <div class="calc-card" id="calcCard">
-            
-            <div class="calc-card__top">
-              <span class="calc-card__tag" data-i18n="calcCardTag">СПЕЦИФИКАЦИЯ ПРОЕКТА</span>
-              <span class="calc-card__status" data-i18n="calcCardStatus">Индивидуальный расчёт</span>
-            </div>
-
-            <div class="calc-breakdown">
-              <div class="calc-breakdown__item">
-                <span class="calc-breakdown__key" data-i18n="calcRowType">Направление:</span>
-                <span class="calc-breakdown__val" id="calcSummaryType">Интерьеры дизайнеров</span>
-              </div>
-              <div class="calc-breakdown__item">
-                <span class="calc-breakdown__key" data-i18n="calcRowFrames">Объём съёмки:</span>
-                <span class="calc-breakdown__val" id="calcSummaryFrames">20 ракурсов</span>
-              </div>
-              <div class="calc-breakdown__item">
-                <span class="calc-breakdown__key" data-i18n="calcRowLight">Световая схема:</span>
-                <span class="calc-breakdown__val" id="calcSummaryLight">Естественный дневной</span>
-              </div>
-              <div class="calc-breakdown__item">
-                <span class="calc-breakdown__key" data-i18n="calcRowOptions">Специфика:</span>
-                <span class="calc-breakdown__val" id="calcSummaryOptions">Договор и ЭДО</span>
-              </div>
-              <div class="calc-breakdown__item">
-                <span class="calc-breakdown__key" data-i18n="calcRowTimeline">Срок отдачи:</span>
-                <span class="calc-breakdown__val" id="calcSummaryTimeline">до 5 рабочих дней</span>
-              </div>
-              <div class="calc-breakdown__item calc-breakdown__item--highlight">
-                <span class="calc-breakdown__key" data-i18n="calcRowRights">Лицензия:</span>
-                <span class="calc-breakdown__val">Бессрочные коммерческие права</span>
-              </div>
-            </div>
-
-            <div class="calc-card__sep" aria-hidden="true"></div>
-
-            <!-- Manager Direct Presentation Card (No Prices!) -->
-            <div class="calc-manager-box">
-              <div class="calc-manager-header">
-                <div class="calc-manager-avatar" aria-hidden="true">
-                  <span>ЕП</span>
-                </div>
-                <div class="calc-manager-meta">
-                  <div class="calc-manager-name">Екатерина</div>
-                  <div class="calc-manager-role">Управляющая продакшном</div>
-                </div>
-              </div>
-              <p class="calc-manager-quote">
-                «Стоимость и тайминг рассчитываются индивидуально под задачу и архитектуру объекта. Свяжитесь напрямую — подготовлю точную смету за 15 минут.»
-              </p>
-            </div>
-
-            <!-- Actions -->
-            <div class="calc-card__cta-group">
-              <a href="https://t.me/zakonpudova" id="calcBtnTg" target="_blank" rel="noopener noreferrer" class="calc-cta-btn calc-cta-btn--lime">
-                <svg class="calc-cta-btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-                <span data-i18n="calcBtnTg">Обсудить проект в Telegram</span>
-              </a>
-
-              <a href="https://wa.me/79123827772" id="calcBtnWa" target="_blank" rel="noopener noreferrer" class="calc-cta-btn calc-cta-btn--outline">
-                <svg class="calc-cta-btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2z"/></svg>
-                <span data-i18n="calcBtnWa">Написать в WhatsApp</span>
-              </a>
-
-              <button type="button" id="calcBtnForm" class="calc-scroll-trigger" data-i18n="calcBtnForm">
-                Или отправить параметры на email студии ↓
-              </button>
-            </div>
-
+        <!-- Step 2: Масштаб -->
+        <div class="calc-step">
+          <span class="calc-step__label" data-i18n="calcStepScale">МАСШТАБ СЪЁМКИ</span>
+          <div class="calc-seg-grid calc-seg-grid--3" role="radiogroup" aria-label="Масштаб съёмки">
+            <button type="button" class="calc-seg-btn" data-group="scale" data-value="Камерный (до 15 кадров)" role="radio" aria-checked="false">
+              <span class="calc-seg-btn__title">Камерный</span>
+              <span class="calc-seg-btn__hint">до 15 кадров</span>
+            </button>
+            <button type="button" class="calc-seg-btn is-active" data-group="scale" data-value="Стандартный (15–30 кадров)" role="radio" aria-checked="true">
+              <span class="calc-seg-btn__title">Стандартный</span>
+              <span class="calc-seg-btn__hint">15–30 кадров</span>
+            </button>
+            <button type="button" class="calc-seg-btn" data-group="scale" data-value="Масштабный (30+ кадров)" role="radio" aria-checked="false">
+              <span class="calc-seg-btn__title">Масштабный</span>
+              <span class="calc-seg-btn__hint">от 30 кадров</span>
+            </button>
           </div>
+        </div>
+
+        <!-- Step 3: Формат -->
+        <div class="calc-step">
+          <span class="calc-step__label" data-i18n="calcStepFormat">ФОРМАТ МАТЕРИАЛОВ</span>
+          <div class="calc-seg-grid calc-seg-grid--3" role="radiogroup" aria-label="Формат материалов">
+            <button type="button" class="calc-seg-btn is-active" data-group="format" data-value="Только фотосъёмка" role="radio" aria-checked="true">
+              <span class="calc-seg-btn__title">Фотосъёмка</span>
+              <span class="calc-seg-btn__hint">Базовая ретушь</span>
+            </button>
+            <button type="button" class="calc-seg-btn" data-group="format" data-value="Фото + Видео (Reels / 4K)" role="radio" aria-checked="false">
+              <span class="calc-seg-btn__title">Фото + Видео</span>
+              <span class="calc-seg-btn__hint">Reels & 4K клипы</span>
+            </button>
+            <button type="button" class="calc-seg-btn" data-group="format" data-value="Журнальная публикация" role="radio" aria-checked="false">
+              <span class="calc-seg-btn__title">Журнальная ретушь</span>
+              <span class="calc-seg-btn__hint">Для прессы и AD</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bottom Action Strip -->
+        <div class="calc-bottom">
+          <div class="calc-summary-line">
+            <span class="calc-summary-label">Ваш бриф:</span>
+            <span class="calc-summary-text" id="calcSummaryInline">Интерьер · Стандартный (15–30 кадров) · Фотосъёмка</span>
+          </div>
+
+          <div class="calc-actions">
+            <a href="https://t.me/zakonpudova" id="calcBtnTg" target="_blank" rel="noopener noreferrer" class="calc-btn calc-btn--lime">
+              <svg class="calc-btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              <span data-i18n="calcBtnTg">Обсудить смету в Telegram</span>
+            </a>
+
+            <a href="https://wa.me/79123827772" id="calcBtnWa" target="_blank" rel="noopener noreferrer" class="calc-btn calc-btn--outline">
+              <svg class="calc-btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2z"/></svg>
+              <span data-i18n="calcBtnWa">Написать в WhatsApp</span>
+            </a>
+          </div>
+
+          <p class="calc-note">
+            Стоимость рассчитывается индивидуально под объект. Официальный договор и ЭДО включены.
+          </p>
         </div>
 
       </div>
+
     </div>
+  </section>
   </section>
   <!-- CONTACTS & ESTIMATE SECTION (Editorial Electric Lime Capsule) -->
   <section id="contacts" class="contacts-section contacts-section--lime">
@@ -1250,23 +1129,12 @@
         calcEyebrow: 'ПАРАМЕТРЫ СЪЁМКИ',
         calcTitle1: 'СКОНФИГУРИРУЙТЕ',
         calcTitle2: 'ВАШ ПРОЕКТ',
-        calcLead: 'Выберите ключевые параметры объекта. Управляющая продакшном Екатерина рассчитает смету и согласует тайминг под ваши задачи за 15 минут.',
-        calcTypeLabel: 'Направление съёмки',
-        calcTypeHint: 'Специфика пространства',
-        calcFramesLabel: 'Количество готовых кадров',
-        calcLightLabel: 'Световое решение',
-        calcAddonsLabel: 'Форматы и специфика',
-        calcCardTag: 'СПЕЦИФИКАЦИЯ ПРОЕКТА',
-        calcCardStatus: 'Индивидуальный расчёт',
-        calcRowType: 'Направление:',
-        calcRowFrames: 'Объём съёмки:',
-        calcRowLight: 'Световая схема:',
-        calcRowOptions: 'Специфика:',
-        calcRowTimeline: 'Срок отдачи:',
-        calcRowRights: 'Лицензия:',
-        calcBtnTg: 'Обсудить проект в Telegram',
+        calcLead: '3 параметра для расчёта. Управляющая Екатерина подготовит персональную смету под ваш объект за 15 минут.',
+        calcStepSpace: 'ТИП ПРОСТРАНСТВА',
+        calcStepScale: 'МАСШТАБ СЪЁМКИ',
+        calcStepFormat: 'ФОРМАТ МАТЕРИАЛОВ',
+        calcBtnTg: 'Обсудить смету в Telegram',
         calcBtnWa: 'Написать в WhatsApp',
-        calcBtnForm: 'Или отправить параметры на email студии ↓',
         reviewsNav: 'ОТЗЫВЫ',
         reviewsEyebrow: 'ДОВЕРИЕ И РЕПУТАЦИЯ',
         reviewsTitle1: 'РЕЗУЛЬТАТЫ, КОТОРЫЕ',
@@ -1497,23 +1365,12 @@
         calcEyebrow: 'PROJECT SCOPE',
         calcTitle1: 'CONFIGURE',
         calcTitle2: 'YOUR PROJECT',
-        calcLead: 'Select the key parameters of your space. Managing director Ekaterina will prepare a tailored proposal and schedule within 15 minutes.',
-        calcTypeLabel: 'Shoot Direction',
-        calcTypeHint: 'Space specifics',
-        calcFramesLabel: 'Number of Final Frames',
-        calcLightLabel: 'Lighting Setup',
-        calcAddonsLabel: 'Formats & Deliverables',
-        calcCardTag: 'PROJECT SPECIFICATION',
-        calcCardStatus: 'Bespoke Quote',
-        calcRowType: 'Direction:',
-        calcRowFrames: 'Volume:',
-        calcRowLight: 'Lighting:',
-        calcRowOptions: 'Deliverables:',
-        calcRowTimeline: 'Delivery:',
-        calcRowRights: 'License:',
-        calcBtnTg: 'Discuss Project in Telegram',
+        calcLead: '3 parameters to request a quote. Managing director Ekaterina will prepare a tailored proposal in 15 minutes.',
+        calcStepSpace: 'SPACE TYPE',
+        calcStepScale: 'PRODUCTION SCALE',
+        calcStepFormat: 'DELIVERABLE FORMAT',
+        calcBtnTg: 'Discuss Quote in Telegram',
         calcBtnWa: 'Message on WhatsApp',
-        calcBtnForm: 'Or send scope to studio email ↓',
         reviewsNav: 'REVIEWS',
         reviewsEyebrow: 'TRUST & REPUTATION',
         reviewsTitle1: 'RESULTS THAT',
@@ -3704,74 +3561,27 @@
     })();
 
     /* ══════════════════════════════════════════════════════════
-       PROJECT SCOPE CONFIGURATOR MODULE (No Prices / Direct Brief)
+       MINIMALIST PROJECT CONFIGURATOR MODULE (3-Step Fast Brief)
        ══════════════════════════════════════════════════════════ */
-    (function initConfigurator() {
+    (function initMinimalConfigurator() {
       const calcSection = document.getElementById('calculator');
       if (!calcSection) return;
 
-      const typePills = calcSection.querySelectorAll('.calc-pill');
-      const framesInput = document.getElementById('calcFrames');
-      const framesVal = document.getElementById('calcFramesVal');
-      const durationText = document.getElementById('calcDurationText');
-      const lightBtns = calcSection.querySelectorAll('.calc-toggle-btn');
-      
-      const addonRetouch = document.getElementById('calcAddonRetouch');
-      const addonVideo = document.getElementById('calcAddonVideo');
-      const addonFast = document.getElementById('calcAddonFast');
-
-      const summaryType = document.getElementById('calcSummaryType');
-      const summaryFrames = document.getElementById('calcSummaryFrames');
-      const summaryLight = document.getElementById('calcSummaryLight');
-      const summaryOptions = document.getElementById('calcSummaryOptions');
-      const summaryTimeline = document.getElementById('calcSummaryTimeline');
-
+      const segBtns = calcSection.querySelectorAll('.calc-seg-btn');
+      const summaryInline = document.getElementById('calcSummaryInline');
       const btnTg = document.getElementById('calcBtnTg');
       const btnWa = document.getElementById('calcBtnWa');
-      const btnForm = document.getElementById('calcBtnForm');
-      const formMessage = document.getElementById('formMessage');
 
-      let currentTypeName = 'Интерьеры дизайнеров';
-      let currentLightName = 'Естественный дневной свет';
-
-      function updateSliderTrack(val) {
-        if (!framesInput) return;
-        const min = parseInt(framesInput.min, 10) || 5;
-        const max = parseInt(framesInput.max, 10) || 60;
-        const pct = ((val - min) / (max - min)) * 100;
-        framesInput.style.background = `linear-gradient(to right, var(--lime, #CAFF1C) 0%, var(--lime, #CAFF1C) ${pct}%, rgba(255,255,255,0.12) ${pct}%, rgba(255,255,255,0.12) 100%)`;
-      }
-
-      function getDurationHint(frames) {
-        if (frames <= 10) return 'Камерный объект · Экспресс-съёмка (2–3 часа на площадке)';
-        if (frames <= 20) return 'Стандартное пространство · 1 съёмочная смена (4–5 часов)';
-        if (frames <= 35) return 'Масштабный объект · Полный съёмочный день (6–8 часов)';
-        return 'Крупный комплекс · Серийная / многодневная съёмка';
-      }
+      let currentSpace = 'Интерьер';
+      let currentScale = 'Стандартный (15–30 кадров)';
+      let currentFormat = 'Только фотосъёмка';
 
       function updateBrief() {
-        if (!framesInput) return;
-        const frames = parseInt(framesInput.value, 10) || 20;
-        if (framesVal) framesVal.textContent = frames;
-        if (durationText) durationText.textContent = getDurationHint(frames);
-        updateSliderTrack(frames);
+        if (summaryInline) {
+          summaryInline.textContent = `${currentSpace} · ${currentScale} · ${currentFormat}`;
+        }
 
-        const activeOptions = [];
-        if (addonRetouch && addonRetouch.checked) activeOptions.push('Журнальная ретушь');
-        if (addonVideo && addonVideo.checked) activeOptions.push('Reels / 4K видео');
-        if (addonFast && addonFast.checked) activeOptions.push('Срочность 48ч');
-        activeOptions.push('Договор и ЭДО');
-
-        const timelineStr = (addonFast && addonFast.checked) ? 'Срочно (до 48 часов)' : 'до 5 рабочих дней';
-
-        if (summaryType) summaryType.textContent = currentTypeName;
-        if (summaryFrames) summaryFrames.textContent = `${frames} ракурсов`;
-        if (summaryLight) summaryLight.textContent = currentLightName;
-        if (summaryOptions) summaryOptions.textContent = activeOptions.join(', ');
-        if (summaryTimeline) summaryTimeline.textContent = timelineStr;
-
-        const optionsStr = activeOptions.join(', ');
-        const msgText = `Здравствуйте, Екатерина! Сконфигурировал параметры съёмки на сайте focus-photocompany.ru:\n\nНаправление: ${currentTypeName}\nОбъём: ${frames} ракурсов\nСветовая схема: ${currentLightName}\nСпецифика: ${optionsStr}\nСрок готовности: ${timelineStr}\n\nХочу обсудить персональную смету и согласовать съёмочный день.`;
+        const msgText = `Здравствуйте, Екатерина! Сконфигурировал параметры съёмки на сайте focus-photocompany.ru:\n\n• Пространство: ${currentSpace}\n• Масштаб: ${currentScale}\n• Формат: ${currentFormat}\n\nХочу обсудить смету и свободные даты съёмки.`;
 
         if (btnTg) {
           btnTg.href = `https://t.me/zakonpudova?text=${encodeURIComponent(msgText)}`;
@@ -3781,72 +3591,29 @@
         }
       }
 
-      // Type pills listeners
-      typePills.forEach(pill => {
-        pill.addEventListener('click', () => {
-          typePills.forEach(p => {
-            p.classList.remove('is-active');
-            p.setAttribute('aria-checked', 'false');
-          });
-          pill.classList.add('is-active');
-          pill.setAttribute('aria-checked', 'true');
-          const titleEl = pill.querySelector('.calc-pill__name');
-          if (titleEl) currentTypeName = titleEl.textContent.trim();
-          updateBrief();
-        });
-      });
-
-      // Frames slider listener
-      if (framesInput) {
-        framesInput.addEventListener('input', updateBrief);
-      }
-
-      // Lighting buttons listeners
-      lightBtns.forEach(btn => {
+      segBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          lightBtns.forEach(b => {
+          const group = btn.getAttribute('data-group');
+          const val = btn.getAttribute('data-value');
+
+          // Uncheck siblings in group
+          calcSection.querySelectorAll(`.calc-seg-btn[data-group="${group}"]`).forEach(b => {
             b.classList.remove('is-active');
             b.setAttribute('aria-checked', 'false');
           });
+
+          // Activate clicked button
           btn.classList.add('is-active');
           btn.setAttribute('aria-checked', 'true');
-          const nameEl = btn.querySelector('.calc-toggle-btn__name');
-          if (nameEl) currentLightName = nameEl.textContent.trim();
+
+          if (group === 'space') currentSpace = val;
+          if (group === 'scale') currentScale = val;
+          if (group === 'format') currentFormat = val;
+
           updateBrief();
         });
       });
 
-      // Add-on checkboxes
-      [addonRetouch, addonVideo, addonFast].forEach(chk => {
-        if (chk) chk.addEventListener('change', updateBrief);
-      });
-
-      // Email form button trigger
-      if (btnForm) {
-        btnForm.addEventListener('click', (e) => {
-          e.preventDefault();
-          const frames = parseInt(framesInput.value, 10) || 20;
-          const activeOptions = [];
-          if (addonRetouch && addonRetouch.checked) activeOptions.push('Журнальная ретушь');
-          if (addonVideo && addonVideo.checked) activeOptions.push('Reels / 4K');
-          if (addonFast && addonFast.checked) activeOptions.push('Срочность 48ч');
-          activeOptions.push('Договор');
-
-          if (formMessage) {
-            formMessage.value = `[Параметры съёмки] ${currentTypeName}, ${frames} ракурсов, свет: ${currentLightName}, опции: ${activeOptions.join(', ')}. Просим рассчитать точную смету.`;
-          }
-          const contactsSec = document.getElementById('contacts');
-          if (contactsSec) {
-            contactsSec.scrollIntoView({ behavior: 'smooth' });
-            setTimeout(() => {
-              const nameInput = document.getElementById('formName');
-              if (nameInput) nameInput.focus();
-            }, 600);
-          }
-        });
-      }
-
-      // Initialize
       updateBrief();
     })();
 
