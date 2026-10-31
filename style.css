@@ -5521,71 +5521,98 @@ html {
 }
 
 /* ==========================================================================
-   FLOATING QUICK CONTACT SPEED-DIAL PILL
+   FLOATING MESSENGER ACTION BUTTON (Compact Circular FAB with Ripple Animation)
    ========================================================================== */
+.floating-messenger-btn,
 .floating-contact-pill {
   position: fixed;
-  bottom: 26px;
-  right: 26px;
+  bottom: 28px;
+  right: 28px;
   z-index: 850;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(15, 16, 21, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(202, 255, 28, 0.3);
-  border-radius: 999px;
-  padding: 7px 16px 7px 9px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-  text-decoration: none;
-}
-
-.floating-contact-pill:hover {
-  transform: translateY(-2px);
-  border-color: var(--lime, #CAFF1C);
-  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.6), 0 0 20px rgba(202, 255, 28, 0.2);
-}
-
-.floating-contact-pill__avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   background: var(--lime, #CAFF1C);
   color: #0c0d11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 24px rgba(202, 255, 28, 0.35);
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, background-color 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.floating-messenger-btn__pulse {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(202, 255, 28, 0.65);
+  pointer-events: none;
+  animation: messengerHaloPulse 2.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes messengerHaloPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.95;
+  }
+  55% {
+    transform: scale(1.42);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.42);
+    opacity: 0;
+  }
+}
+
+.floating-messenger-btn:hover,
+.floating-contact-pill:hover {
+  transform: scale(1.1) translateY(-2px);
+  background: #d4ff33;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.55), 0 0 34px rgba(202, 255, 28, 0.6);
+}
+
+.floating-messenger-btn:hover .floating-messenger-btn__icon svg,
+.floating-contact-pill:hover .floating-messenger-btn__icon svg {
+  transform: scale(1.08) rotate(-6deg);
+}
+
+.floating-messenger-btn:active,
+.floating-contact-pill:active {
+  transform: scale(0.93);
+}
+
+.floating-messenger-btn__icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
-.floating-contact-pill__body {
-  display: flex;
-  flex-direction: column;
-}
-
-.floating-contact-pill__label {
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--lime, #CAFF1C);
-}
-
-.floating-contact-pill__name {
-  font-family: 'Space Grotesk', -apple-system, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.2;
+.floating-messenger-btn__icon svg {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @media (max-width: 640px) {
+  .floating-messenger-btn,
   .floating-contact-pill {
-    bottom: 82px;
+    bottom: 22px;
     right: 18px;
-    padding: 6px 14px 6px 8px;
+    width: 52px;
+    height: 52px;
+  }
+  .floating-messenger-btn__icon,
+  .floating-messenger-btn__icon svg {
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -6014,21 +6041,36 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 22px;
-  background: rgba(202, 255, 28, 0.1);
-  border: 1px solid rgba(202, 255, 28, 0.35);
+  padding: 10px 20px;
+  background: rgba(12, 13, 17, 0.06);
+  border: 1px solid rgba(12, 13, 17, 0.16);
   border-radius: 999px;
-  color: #ffffff;
+  color: #0c0d11;
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
   transition: all 0.25s ease;
-  margin-top: 24px;
+  margin-top: 18px;
+}
+
+.reviews-yandex-badge__icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FC3F1D;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 11.5px;
+  flex-shrink: 0;
 }
 
 .reviews-yandex-badge:hover {
-  background: var(--lime, #CAFF1C);
-  color: #0c0d11;
+  background: #0c0d11;
+  color: #FFFFFF;
+  border-color: #0c0d11;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(202, 255, 28, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
