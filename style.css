@@ -370,21 +370,9 @@ a { color: inherit; text-decoration: none; }
   will-change: transform;
 }
 
-/* Lenis Smooth Scroll Recommended Foundation */
-html.lenis, html.lenis body {
-  height: auto;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
+/* Native Browser Smooth Scroll */
+html {
+  scroll-behavior: smooth;
 }
 
 /* ==========================================================================
