@@ -90,15 +90,26 @@ class SiteIntegrityTest(unittest.TestCase):
             manifest = json.load(f)
         self.assertEqual(manifest.get('name'), 'ФОКУС — Фотокомпания')
 
-        # 4. index.html SEO, FAQ & Dispatcher
+        # 4. index.html SEO, PillNav, About & Dispatcher
         html_path = os.path.join(root, 'index.html')
         with open(html_path) as f:
             html = f.read()
         self.assertIn('<meta name="keywords"', html)
         self.assertIn('application/ld+json', html)
         self.assertIn('PhotographyBusiness', html)
-        self.assertIn('FAQPage', html)
-        self.assertIn('id="faq"', html)
+        
+        # FAQ section and FAQPage schema removed per user requirements
+        self.assertNotIn('FAQPage', html)
+        self.assertNotIn('id="faq"', html)
+        
+        # Streamlined PillNav: 3 links + green signature CTA pill
+        self.assertIn('nav-panel__cta', html)
+        self.assertIn('ОБСУДИТЬ СЪЁМКУ', html)
+        
+        # Professional wording in About section (not amateur 'Молодая')
+        self.assertIn('Экспертная', html)
+        self.assertNotIn('Молодая', html)
+        
         self.assertIn('id="leadHandoffModal"', html)
         self.assertIn('FocusLeadDispatcher', html)
         self.assertIn('floating-contact-pill', html)
