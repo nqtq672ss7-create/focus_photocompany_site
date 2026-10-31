@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /leads_dashboard.html
+Disallow: /leads.json
+Disallow: /leads.csv
+Disallow: /config.json
+Disallow: /config.example.json
+
+User-agent: Yandex
+Allow: /
+Disallow: /admin
+Disallow: /leads_dashboard.html
+Disallow: /leads.json
+Disallow: /leads.csv
+Disallow: /config.json
+Disallow: /config.example.json
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&gclid&fbclid /
+
+Sitemap: https://focus-photocompany.ru/sitemap.xml
+Host: https://focus-photocompany.ru

@@ -63,5 +63,52 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertNotIn('01 ·', content)
         self.assertNotIn('///', content)
 
+    def test_seo_and_conversion_integrity(self):
+        root = os.path.dirname(__file__)
+        
+        # 1. robots.txt
+        robots_path = os.path.join(root, 'robots.txt')
+        self.assertTrue(os.path.exists(robots_path), 'robots.txt must exist')
+        with open(robots_path) as f:
+            robots = f.read()
+        self.assertIn('User-agent: *', robots)
+        self.assertIn('Sitemap: https://focus-photocompany.ru/sitemap.xml', robots)
+
+        # 2. sitemap.xml
+        sitemap_path = os.path.join(root, 'sitemap.xml')
+        self.assertTrue(os.path.exists(sitemap_path), 'sitemap.xml must exist')
+        with open(sitemap_path) as f:
+            sitemap = f.read()
+        self.assertIn('<loc>https://focus-photocompany.ru/</loc>', sitemap)
+        self.assertIn('urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"', sitemap)
+
+        # 3. site.webmanifest
+        manifest_path = os.path.join(root, 'site.webmanifest')
+        self.assertTrue(os.path.exists(manifest_path), 'site.webmanifest must exist')
+        import json
+        with open(manifest_path) as f:
+            manifest = json.load(f)
+        self.assertEqual(manifest.get('name'), 'ФОКУС — Фотокомпания')
+
+        # 4. index.html SEO, FAQ & Dispatcher
+        html_path = os.path.join(root, 'index.html')
+        with open(html_path) as f:
+            html = f.read()
+        self.assertIn('<meta name="keywords"', html)
+        self.assertIn('application/ld+json', html)
+        self.assertIn('PhotographyBusiness', html)
+        self.assertIn('FAQPage', html)
+        self.assertIn('id="faq"', html)
+        self.assertIn('id="leadHandoffModal"', html)
+        self.assertIn('FocusLeadDispatcher', html)
+        self.assertIn('floating-contact-pill', html)
+        self.assertIn('ИП Закопудова Екатерина Александровна', html)
+
+        # User Design Laws anti-slop checks
+        self.assertNotIn('>01 Интерьеры<', html)
+        self.assertNotIn('>02 Отели<', html)
+        self.assertNotIn('contactsChipInteriors: \'01', html)
+        self.assertNotIn('contactsChipHotels: \'02', html)
+
 if __name__ == '__main__':
     unittest.main()

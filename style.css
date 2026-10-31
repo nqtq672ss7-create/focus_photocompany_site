@@ -4979,3 +4979,472 @@ a { color: inherit; text-decoration: none; }
     display: none !important;
   }
 }
+
+/* ==========================================================================
+   FAQ SECTION (Commercial Conversion & Rich Snippet Visuals)
+   ========================================================================== */
+.faq-clean {
+  position: relative;
+  background: #0c0d11;
+  padding: clamp(70px, 8vw, 110px) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.faq-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+  box-sizing: border-box;
+}
+
+.faq-header {
+  margin-bottom: clamp(36px, 4vw, 56px);
+  max-width: 780px;
+}
+
+.faq-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 14px;
+}
+
+.faq-badge__dash {
+  color: var(--lime, #CAFF1C);
+  font-weight: 900;
+}
+
+.faq-title {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(32px, 3.6vw, 52px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+}
+
+.faq-title__highlight {
+  color: #ffffff;
+}
+
+.faq-title__dot {
+  color: var(--lime, #CAFF1C);
+}
+
+.faq-subtitle {
+  font-size: clamp(14.5px, 1.15vw, 16.5px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.58);
+  margin: 0;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faq-item:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.faq-item[open] {
+  border-color: rgba(202, 255, 28, 0.3);
+  background: rgba(202, 255, 28, 0.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.faq-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(15.5px, 1.15vw, 17.5px);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #ffffff;
+  letter-spacing: -0.015em;
+  transition: color 0.2s ease;
+}
+
+.faq-item[open] .faq-question {
+  color: var(--lime, #CAFF1C);
+}
+
+.faq-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--lime, #CAFF1C);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.faq-item[open] .faq-toggle-icon {
+  transform: rotate(45deg);
+  background: rgba(202, 255, 28, 0.12);
+  border-color: rgba(202, 255, 28, 0.3);
+}
+
+.faq-answer-wrapper {
+  padding: 0 24px 24px 24px;
+}
+
+.faq-answer p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+@media (max-width: 900px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .faq-summary {
+    padding: 20px;
+  }
+  .faq-answer-wrapper {
+    padding: 0 20px 20px 20px;
+  }
+}
+
+/* ==========================================================================
+   CONSENT CHECKBOX (152-FZ Compliance)
+   ========================================================================== */
+.arh-consent {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  cursor: pointer;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.55);
+  user-select: none;
+}
+
+.arh-consent input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.arh-consent__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.arh-consent__box svg {
+  width: 11px;
+  height: 9px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.arh-consent input:checked + .arh-consent__box {
+  background: var(--lime, #CAFF1C);
+  border-color: var(--lime, #CAFF1C);
+}
+
+.arh-consent input:checked + .arh-consent__box svg {
+  opacity: 1;
+}
+
+.arh-consent input:focus-visible + .arh-consent__box {
+  outline: 2px solid var(--lime, #CAFF1C);
+  outline-offset: 2px;
+}
+
+.arh-consent__link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.arh-consent__link:hover {
+  color: var(--lime, #CAFF1C);
+}
+
+/* ==========================================================================
+   LEAD CONFIRMATION & TELEGRAM HANDOFF MODAL
+   ========================================================================== */
+.lead-handoff-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background: rgba(6, 7, 10, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lead-handoff-modal.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lead-handoff-window {
+  position: relative;
+  background: #0f1015;
+  border: 1px solid rgba(202, 255, 28, 0.32);
+  border-radius: 24px;
+  padding: clamp(28px, 4vw, 40px);
+  max-width: 500px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(202, 255, 28, 0.25);
+  transform: scale(0.94);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lead-handoff-modal.is-active .lead-handoff-window {
+  transform: scale(1);
+}
+
+.lead-handoff-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lead-handoff-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.lead-handoff-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(202, 255, 28, 0.12);
+  border: 1px solid rgba(202, 255, 28, 0.35);
+  color: var(--lime, #CAFF1C);
+  margin-bottom: 20px;
+}
+
+.lead-handoff-title {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(22px, 2.5vw, 26px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+}
+
+.lead-handoff-lead {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0 0 24px 0;
+}
+
+.lead-handoff-specs {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 24px;
+}
+
+.lead-handoff-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lead-handoff-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.18s ease, filter 0.18s ease, background 0.18s ease;
+  box-sizing: border-box;
+}
+
+.lead-handoff-btn:active {
+  transform: scale(0.98);
+}
+
+.lead-handoff-btn--tg {
+  background: var(--lime, #CAFF1C);
+  color: #0c0d11;
+  box-shadow: 0 8px 24px rgba(202, 255, 28, 0.28);
+}
+
+.lead-handoff-btn--tg:hover {
+  filter: brightness(1.08);
+}
+
+.lead-handoff-btn--wa {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.lead-handoff-btn--wa:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.lead-handoff-sub {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.42);
+  text-align: center;
+  margin-top: 14px;
+}
+
+/* ==========================================================================
+   FLOATING QUICK CONTACT SPEED-DIAL PILL
+   ========================================================================== */
+.floating-contact-pill {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  z-index: 850;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 16, 21, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(202, 255, 28, 0.3);
+  border-radius: 999px;
+  padding: 7px 16px 7px 9px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.floating-contact-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--lime, #CAFF1C);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.6), 0 0 20px rgba(202, 255, 28, 0.2);
+}
+
+.floating-contact-pill__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--lime, #CAFF1C);
+  color: #0c0d11;
+  flex-shrink: 0;
+}
+
+.floating-contact-pill__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-contact-pill__label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lime, #CAFF1C);
+}
+
+.floating-contact-pill__name {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+@media (max-width: 640px) {
+  .floating-contact-pill {
+    bottom: 82px;
+    right: 18px;
+    padding: 6px 14px 6px 8px;
+  }
+}
