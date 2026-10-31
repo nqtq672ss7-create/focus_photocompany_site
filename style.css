@@ -74,8 +74,7 @@ a { color: inherit; text-decoration: none; }
   height: 105%;
   object-fit: cover;
   object-position: center center;
-  transform: translate3d(var(--pointer-x), var(--pointer-y), 0) scale(1.035);
-  transition: transform 900ms cubic-bezier(.2,.7,.2,1), opacity .6s ease;
+  transition: opacity .6s ease;
   will-change: transform;
   background: url('assets/focus-lobby.webp') center center / cover no-repeat;
 }
@@ -133,8 +132,9 @@ a { color: inherit; text-decoration: none; }
   background: rgba(13, 14, 18, 0.62);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.45), 0 4px 12px -2px rgba(0, 0, 0, 0.20);
-  backdrop-filter: blur(24px) saturate(160%);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  transform: translateZ(0);
   transition: all 0.25s ease;
   user-select: none;
 }
@@ -219,8 +219,9 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(13, 14, 18, 0.62);
   box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.45), 0 4px 12px -2px rgba(0, 0, 0, 0.20);
-  backdrop-filter: blur(24px) saturate(160%);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  transform: translateZ(0);
   transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   animation: nav-in 1s .14s cubic-bezier(.2,.75,.2,1) both;
 }
@@ -463,8 +464,9 @@ html.lenis, html.lenis body {
   padding: 0 28px;
   border: 1px solid rgba(202, 255, 28, 0.45);
   background: rgba(202, 255, 28, 0.12);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateZ(0);
   color: #FFFFFF;
   box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.20);
 }
@@ -495,9 +497,10 @@ html.lenis, html.lenis body {
   gap: 14px;
   padding: 0 26px 0 28px;
   border: 1px solid rgba(244, 241, 233, .35);
-  background: rgba(18, 18, 18, .40);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(18, 18, 18, .55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateZ(0);
   color: var(--ivory);
   position: relative;
 }
@@ -4130,8 +4133,9 @@ html.lenis, html.lenis body {
     background: rgba(13, 14, 18, 0.78);
     border: 1px solid rgba(255, 255, 255, 0.11);
     box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    transform: translateZ(0);
     box-sizing: border-box;
     width: auto;
     max-width: calc(100vw - 20px);
@@ -4281,8 +4285,9 @@ html.lenis, html.lenis body {
     font-weight: 600;
     letter-spacing: 0.07em;
     background: rgba(18, 19, 24, 0.65);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateZ(0);
     border: 1px solid rgba(255, 255, 255, 0.16);
     color: rgba(244, 241, 233, 0.95) !important;
     border-radius: 999px;

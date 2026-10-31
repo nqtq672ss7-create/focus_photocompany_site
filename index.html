@@ -1388,6 +1388,27 @@
       ['touchstart', 'touchend', 'scroll', 'pointerdown', 'click'].forEach((evt) => {
         window.addEventListener(evt, triggerHeroVideoPlay, { once: true, passive: true });
       });
+
+      // Pause 22MB hero video when offscreen to free GPU/decoder and eliminate scroll stutter
+      if ('IntersectionObserver' in window) {
+        const heroSectionEl = document.querySelector('.hero');
+        const heroVideoObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if (heroVideo.paused) {
+                heroVideo.play().catch(() => {});
+              }
+            } else {
+              if (!heroVideo.paused) {
+                heroVideo.pause();
+              }
+            }
+          });
+        }, { threshold: 0.05 });
+        if (heroSectionEl) {
+          heroVideoObserver.observe(heroSectionEl);
+        }
+      }
     }
 
     const dictionary = {
@@ -2025,9 +2046,9 @@
       }
     }
 
-    function updateHeaderLightMode() {
+    function updateHeaderLightMode(optScrollY) {
       if (!topbarEl) return;
-      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollY = typeof optScrollY === 'number' ? optScrollY : (window.pageYOffset || document.documentElement.scrollTop);
       const isOverAbout = (scrollY + 80 >= aboutTop && scrollY + 50 <= aboutBottom);
       const isOverWorks = (scrollY + 80 >= worksTop && scrollY + 50 <= worksBottom);
       const isOverContacts = (scrollY + 80 >= contactsTop && scrollY + 50 <= contactsBottom);
@@ -2037,7 +2058,10 @@
         topbarEl.classList.toggle('is-over-light', shouldBeLight);
       }
     }
-    window.addEventListener('scroll', updateHeaderLightMode, { passive: true });
+    window.updateHeaderLightMode = updateHeaderLightMode;
+    window.addEventListener('scroll', () => {
+      if (!window.lenis) updateHeaderLightMode();
+    }, { passive: true });
     updateHeaderLightMode();
 
     function setLanguage(lang) {
@@ -2088,52 +2112,19 @@
         w.style.opacity = '1';
       });
     } else {
-      let isRafRunning = false;
-      let targetProgress = 0;
-      let currentProgress = 0;
-      let worksTargetProgress = 0;
-      let worksCurrentProgress = 0;
-
       const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
       const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
 
-      const updateProgressTargets = () => {
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const updateProgressTargets = (optScrollY) => {
+        const scrollY = typeof optScrollY === 'number' ? optScrollY : (window.pageYOffset || document.documentElement.scrollTop);
         const vh = window.innerHeight;
-
-        if (aboutSection) {
-          const relTop = aboutTop - scrollY;
-          const start = vh * 0.90;
-          const end = vh * 0.12;
-          targetProgress = clamp((start - relTop) / (start - end), 0, 1);
-        }
-
-        if (worksSection) {
-          const relTop = worksTop - scrollY;
-          const start = vh * 0.88;
-          const end = vh * 0.20;
-          worksTargetProgress = clamp((start - relTop) / (start - end), 0, 1);
-        }
-
-        if (!isRafRunning) {
-          isRafRunning = true;
-          requestAnimationFrame(renderLoop);
-        }
-      };
-
-      const renderLoop = () => {
-        let hasActiveAnim = false;
 
         // About words animation
         if (aboutSection && aboutSection.offsetParent !== null && word1 && word2 && word3 && word4) {
-          const diff = targetProgress - currentProgress;
-          if (Math.abs(diff) > 0.001) {
-            currentProgress += diff * 0.20;
-            hasActiveAnim = true;
-          } else {
-            currentProgress = targetProgress;
-          }
-          const p = currentProgress;
+          const relTop = aboutTop - scrollY;
+          const start = vh * 0.90;
+          const end = vh * 0.12;
+          const p = clamp((start - relTop) / (start - end), 0, 1);
 
           const t1 = clamp((p - 0.00) / 0.44, 0, 1);
           const e1 = easeOutCubic(t1);
@@ -2158,14 +2149,10 @@
 
         // Works headline words animation (snappy, subtle travel)
         if (worksSection && worksWord1 && worksWord2) {
-          const wdiff = worksTargetProgress - worksCurrentProgress;
-          if (Math.abs(wdiff) > 0.001) {
-            worksCurrentProgress += wdiff * 0.22;
-            hasActiveAnim = true;
-          } else {
-            worksCurrentProgress = worksTargetProgress;
-          }
-          const wp = worksCurrentProgress;
+          const relTop = worksTop - scrollY;
+          const start = vh * 0.88;
+          const end = vh * 0.20;
+          const wp = clamp((start - relTop) / (start - end), 0, 1);
 
           // Word 1: РЕАЛИЗОВАННЫЕ
           const wt1 = clamp(wp / 0.65, 0, 1);
@@ -2179,24 +2166,20 @@
           worksWord2.style.transform = `translate3d(${(-60 * (1 - we2)).toFixed(1)}px, 0, 0)`;
           worksWord2.style.opacity = clamp(wt2 * 1.6, 0, 1).toFixed(3);
         }
-
-        if (hasActiveAnim) {
-          requestAnimationFrame(renderLoop);
-        } else {
-          isRafRunning = false;
-        }
       };
 
-      window.addEventListener('scroll', updateProgressTargets, { passive: true });
+      window.updateProgressTargets = updateProgressTargets;
+
+      window.addEventListener('scroll', () => {
+        if (!window.lenis) updateProgressTargets();
+      }, { passive: true });
+
       window.addEventListener('resize', () => {
         measureSectionBounds();
         updateProgressTargets();
       }, { passive: true });
 
       updateProgressTargets();
-      currentProgress = targetProgress;
-      worksCurrentProgress = worksTargetProgress;
-      renderLoop();
     }
 
     // ── Staggered reveal animation ──────────────
@@ -2609,7 +2592,7 @@
               pin: true,
               start: "top top",
               end: `+=${pinDistance}`,
-              scrub: 0.7,
+              scrub: true,
               anticipatePin: 1,
               animation: worksTrackTween,
               invalidateOnRefresh: true,
@@ -4370,13 +4353,13 @@
 
       if (typeof Lenis !== 'undefined') {
         globalLenis = new Lenis({
-          duration: 1.25, // Weighted, high-end momentum
+          duration: 1.05, // Responsive yet weighted, silky luxury momentum
           easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential dampening
           orientation: 'vertical',
           gestureOrientation: 'vertical',
           smoothWheel: true,
-          wheelMultiplier: 0.95, // Analog-grade resistance
-          touchMultiplier: 1.4,
+          wheelMultiplier: 1.0, // Natural 1:1 wheel resistance without dragging
+          touchMultiplier: 1.2,
           infinite: false
         });
         window.lenis = globalLenis;
@@ -4392,13 +4375,19 @@
             const pct = Math.min(100, Math.max(0, e.progress * 100));
             progressBar.style.width = `${pct}%`;
           }
+          if (typeof window.updateHeaderLightMode === 'function') {
+            window.updateHeaderLightMode(e.scroll);
+          }
+          if (typeof window.updateProgressTargets === 'function') {
+            window.updateProgressTargets(e.scroll);
+          }
         });
 
         if (typeof gsap !== 'undefined') {
           gsap.ticker.add((time) => {
             globalLenis.raf(time * 1000);
           });
-          gsap.ticker.lagSmoothing(0);
+          gsap.ticker.lagSmoothing(500, 33);
         } else {
           function raf(time) {
             globalLenis.raf(time);
