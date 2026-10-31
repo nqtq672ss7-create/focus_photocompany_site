@@ -234,7 +234,7 @@
 
       <!-- RIGHT VISUAL — Video only -->
       <div class="ac-visual">
-        <video class="ac-video" muted loop playsinline preload="none">
+        <video class="ac-video" muted loop playsinline preload="metadata">
           <source src="assets/bg-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -338,7 +338,7 @@
           </div>
           <div class="srv-card__media-wrap">
             <div class="srv-card__media">
-              <img src="assets/about-card-1.webp" alt="Интерьерная съёмка ФОКУС" loading="lazy">
+              <img src="assets/about-card-1.webp" alt="Интерьерная съёмка ФОКУС" loading="eager" decoding="async">
             </div>
           </div>
         </article>
@@ -354,7 +354,7 @@
             </div>
             <div class="srv-card__media-wrap srv-card__media-wrap--inline">
               <div class="srv-card__media">
-                <img src="assets/hotel-guest-15.webp" alt="Отели: Гости и Lifestyle съёмка ФОКУС" loading="lazy">
+                <img src="assets/hotel-guest-15.webp" alt="Отели: Гости и Lifestyle съёмка ФОКУС" loading="eager" decoding="async">
               </div>
             </div>
             <div class="srv-card__tags">
@@ -389,7 +389,7 @@
             </div>
             <div class="srv-card__media-wrap srv-card__media-wrap--inline">
               <div class="srv-card__media">
-                <img src="assets/video-rig.webp" alt="Видеопродакшн ФОКУС" loading="lazy">
+                <img src="assets/video-rig.webp" alt="Видеопродакшн ФОКУС" loading="eager" decoding="async">
               </div>
             </div>
             <div class="srv-card__tags">
@@ -443,7 +443,7 @@
           </div>
           <div class="srv-card__media-wrap">
             <div class="srv-card__media">
-              <img src="assets/event-05.webp" alt="Коммерческие пространства ФОКУС" loading="lazy">
+              <img src="assets/event-05.webp" alt="Коммерческие пространства ФОКУС" loading="eager" decoding="async">
             </div>
           </div>
         </article>
@@ -1893,7 +1893,11 @@
         const acObserver = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              if (acVideo.paused) acVideo.play().catch(() => {});
+              if (acVideo.paused) {
+                requestAnimationFrame(() => {
+                  if (acVideo.paused) acVideo.play().catch(() => {});
+                });
+              }
             } else {
               if (!acVideo.paused) acVideo.pause();
             }
@@ -1986,22 +1990,22 @@
             prevAboutP = p;
             const t1 = clamp((p - 0.00) / 0.44, 0, 1);
             const e1 = easeOutCubic(t1);
-            word1.style.transform = `translate3d(${(-140 * (1 - e1)).toFixed(1)}px, 0, 0)`;
+            word1.style.transform = `translate3d(${(-18 * (1 - e1)).toFixed(1)}px, 0, 0)`;
             word1.style.opacity = clamp(t1 * 1.8, 0, 1).toFixed(3);
 
             const t2 = clamp((p - 0.18) / 0.48, 0, 1);
             const e2 = easeOutCubic(t2);
-            word2.style.transform = `translate3d(${(-200 * (1 - e2)).toFixed(1)}px, 0, 0)`;
+            word2.style.transform = `translate3d(${(-28 * (1 - e2)).toFixed(1)}px, 0, 0)`;
             word2.style.opacity = clamp(t2 * 1.8, 0, 1).toFixed(3);
 
             const t3 = clamp((p - 0.38) / 0.46, 0, 1);
             const e3 = easeOutCubic(t3);
-            word3.style.transform = `translate3d(${(-150 * (1 - e3)).toFixed(1)}px, 0, 0)`;
+            word3.style.transform = `translate3d(${(-18 * (1 - e3)).toFixed(1)}px, 0, 0)`;
             word3.style.opacity = clamp(t3 * 1.8, 0, 1).toFixed(3);
 
             const t4 = clamp((p - 0.56) / 0.44, 0, 1);
             const e4 = easeOutCubic(t4);
-            word4.style.transform = `translate3d(${(-250 * (1 - e4)).toFixed(1)}px, 0, 0)`;
+            word4.style.transform = `translate3d(${(-32 * (1 - e4)).toFixed(1)}px, 0, 0)`;
             word4.style.opacity = clamp(t4 * 1.8, 0, 1).toFixed(3);
           }
         }
@@ -2017,12 +2021,12 @@
             prevWorksP = wp;
             const wt1 = clamp(wp / 0.65, 0, 1);
             const we1 = easeOutCubic(wt1);
-            worksWord1.style.transform = `translate3d(${(-44 * (1 - we1)).toFixed(1)}px, 0, 0)`;
+            worksWord1.style.transform = `translate3d(${(-24 * (1 - we1)).toFixed(1)}px, 0, 0)`;
             worksWord1.style.opacity = clamp(wt1 * 1.6, 0, 1).toFixed(3);
 
             const wt2 = clamp((wp - 0.15) / 0.65, 0, 1);
             const we2 = easeOutCubic(wt2);
-            worksWord2.style.transform = `translate3d(${(-60 * (1 - we2)).toFixed(1)}px, 0, 0)`;
+            worksWord2.style.transform = `translate3d(${(-30 * (1 - we2)).toFixed(1)}px, 0, 0)`;
             worksWord2.style.opacity = clamp(wt2 * 1.6, 0, 1).toFixed(3);
           }
         }
@@ -2059,9 +2063,6 @@
     }
 
     if ('IntersectionObserver' in window && !isReduced) {
-      aboutAnims.forEach((el) => el.classList.add('is-ready'));
-      srvAnims.forEach((el) => el.classList.add('is-ready'));
-
       const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
@@ -4203,13 +4204,10 @@
 
       if (typeof Lenis !== 'undefined') {
         globalLenis = new Lenis({
-          duration: 0.92, // Accelerated by 20% for snappier, ultra-fluid response
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential dampening
-          orientation: 'vertical',
-          gestureOrientation: 'vertical',
+          lerp: 0.13, // Frame-rate independent continuous physics (never stalls or resets on rapid wheel events)
+          wheelMultiplier: 1.15, // Immediate response to wheel flicks (+15% distance)
+          touchMultiplier: 1.25,
           smoothWheel: true,
-          wheelMultiplier: 1.2, // +20% distance & velocity per wheel notch
-          touchMultiplier: 1.44,
           infinite: false
         });
         window.lenis = globalLenis;

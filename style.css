@@ -313,6 +313,7 @@ a { color: inherit; text-decoration: none; }
   left: 50%;
   width: min(1080px, 88vw);
   transform: translate(-50%, -52%); /* Lifted slightly higher */
+  will-change: transform, opacity;
   display: grid;
   justify-items: center;
   text-align: center;
@@ -738,10 +739,12 @@ html.lenis, html.lenis body {
 
 /* Cinematic Animations */
 .about-anim {
+  opacity: 1;
+  transform: none;
   transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
-.about-anim.is-ready { opacity: 0; transform: translateY(14px); }
+.about-anim.is-ready { opacity: 1; transform: none; }
 .about-anim.is-visible { opacity: 1; transform: translateY(0); }
 
 /* Mobile */
@@ -1362,8 +1365,8 @@ html.lenis, html.lenis body {
 }
 
 .srv-anim.is-ready {
-  opacity: 0;
-  transform: translateY(14px);
+  opacity: 1;
+  transform: none;
 }
 
 .srv-anim.is-visible {
