@@ -2113,14 +2113,14 @@
         const scrollY = typeof optScrollY === 'number' ? optScrollY : (window.pageYOffset || document.documentElement.scrollTop);
         const vh = window.innerHeight;
 
-        // About words animation (guarded: mutates DOM only during active transition)
+        // About words animation: 60/120fps continuous subpixel glide
         if (aboutSection && aboutSection.offsetParent !== null && word1 && word2 && word3 && word4) {
           const relTop = aboutTop - scrollY;
           const start = vh * 0.90;
           const end = vh * 0.12;
           const p = clamp((start - relTop) / (start - end), 0, 1);
 
-          if (Math.abs(p - prevAboutP) > 0.0008) {
+          if (p !== prevAboutP) {
             prevAboutP = p;
             const t1 = clamp((p - 0.00) / 0.44, 0, 1);
             const e1 = easeOutCubic(t1);
@@ -2144,14 +2144,14 @@
           }
         }
 
-        // Works headline words animation (guarded: mutates DOM only during active transition)
+        // Works headline words animation: 60/120fps continuous subpixel glide
         if (worksSection && worksWord1 && worksWord2) {
           const relTop = worksTop - scrollY;
           const start = vh * 0.88;
           const end = vh * 0.20;
           const wp = clamp((start - relTop) / (start - end), 0, 1);
 
-          if (Math.abs(wp - prevWorksP) > 0.0008) {
+          if (wp !== prevWorksP) {
             prevWorksP = wp;
             const wt1 = clamp(wp / 0.65, 0, 1);
             const we1 = easeOutCubic(wt1);
@@ -2203,19 +2203,10 @@
       const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          const delay = parseInt(entry.target.dataset.delay || '0', 10);
-          setTimeout(() => entry.target.classList.add('is-visible'), delay);
-
-          if (entry.target.classList.contains('about-stats') && !countersStarted) {
-            countersStarted = true;
-            setTimeout(() => {
-              statValues.forEach((el) => animateCounter(el, parseInt(el.dataset.count, 10), 1100));
-            }, delay + 100);
-          }
-
+          entry.target.classList.add('is-visible');
           observer.unobserve(entry.target);
         });
-      }, { threshold: 0.02, rootMargin: '120px 0px 50px 0px' });
+      }, { threshold: 0.01, rootMargin: '260px 0px 50px 0px' });
 
       aboutAnims.forEach((el) => revealObserver.observe(el));
       srvAnims.forEach((el) => revealObserver.observe(el));
@@ -4350,10 +4341,13 @@
 
       if (typeof Lenis !== 'undefined') {
         globalLenis = new Lenis({
-          lerp: 0.1, // Gold standard responsive momentum: instant initiation, silky deceleration
+          duration: 1.15, // Weighted, high-end momentum: silky smooth acceleration and deceleration
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential dampening
+          orientation: 'vertical',
+          gestureOrientation: 'vertical',
           smoothWheel: true,
-          wheelMultiplier: 1.0, // Natural 1:1 wheel sensitivity
-          touchMultiplier: 1.0,
+          wheelMultiplier: 1.0,
+          touchMultiplier: 1.2,
           infinite: false
         });
         window.lenis = globalLenis;
@@ -4380,7 +4374,7 @@
           gsap.ticker.add((time) => {
             globalLenis.raf(time * 1000);
           });
-          gsap.ticker.lagSmoothing(0);
+          gsap.ticker.lagSmoothing(500, 33);
         } else {
           function raf(time) {
             globalLenis.raf(time);

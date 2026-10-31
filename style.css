@@ -737,9 +737,12 @@ html.lenis, html.lenis body {
 }
 
 /* Cinematic Animations */
-.about-anim { transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
-.about-anim.is-ready { opacity: 0; transform: translateY(30px); }
-.about-anim.is-visible { opacity: 1; transform: none; }
+.about-anim {
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.about-anim.is-ready { opacity: 0; transform: translateY(14px); }
+.about-anim.is-visible { opacity: 1; transform: translateY(0); }
 
 /* Mobile */
 @media (max-width: 1024px) {
@@ -921,9 +924,7 @@ html.lenis, html.lenis body {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   overflow: hidden;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.4s ease,
-              box-shadow 0.4s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
   display: flex;
 }
 
@@ -932,6 +933,7 @@ html.lenis, html.lenis body {
   border-color: rgba(157, 255, 0, 0.35);
   box-shadow: 0 24px 56px -12px rgba(0, 0, 0, 0.75),
               0 0 30px -8px rgba(157, 255, 0, 0.1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .srv-card--wide {
@@ -1354,18 +1356,25 @@ html.lenis, html.lenis body {
 .srv-anim {
   opacity: 1;
   transform: none;
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
 .srv-anim.is-ready {
   opacity: 0;
-  transform: translateY(32px);
+  transform: translateY(14px);
 }
 
 .srv-anim.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.works-word--1,
+.works-word--2 {
+  display: inline-block;
+  will-change: transform, opacity;
 }
 
 /* Responsive Breakpoints */
