@@ -33,9 +33,10 @@ class SiteIntegrityTest(unittest.TestCase):
         with open(css_path) as f:
             css = f.read()
         
-        # Check that about section and team grid are properly styled for responsive mobile
-        self.assertIn('.ac-team-grid', css)
-        self.assertIn('.ac-gear-strip', css)
+        # Check that about section is hidden on mobile per user requirements
+        self.assertIn('#about,', css)
+        self.assertIn('.about-clean {', css)
+        self.assertIn('display: none !important;', css)
         
         # Check reviews badge hidden on mobile
         self.assertIn('.reviews-trust-badge,', css)
@@ -104,8 +105,7 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertNotIn('info@focus-photo.ru', html) # Must be info@focus-photocompany.ru
         self.assertNotIn('focus-photo.ru', html)
 
-        # Team & Process standards blocks
-        self.assertIn('Екатерина Закопудова', html)
+        # Process standards & Configurator blocks
         self.assertIn('process-standards-section', html)
         self.assertIn('arhCity', html)
         

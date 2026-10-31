@@ -638,26 +638,9 @@ a { color: inherit; text-decoration: none; }
   .ac-photo { max-width: 420px; margin: 0 auto; }
 }
 @media (max-width: 768px) {
+  #about,
   .about-clean {
-    border-radius: 28px 28px 0 0;
-    padding: 56px 0 36px;
-  }
-  .ac-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    width: calc(100% - 32px);
-  }
-  .ac-copy {
-    max-width: 100%;
-    margin-bottom: 24px;
-  }
-  .ac-visual {
-    height: 380px;
-    margin-top: 10px;
-  }
-  .ac-video {
-    right: -25%;
-    height: 440px;
+    display: none !important;
   }
 }
 
