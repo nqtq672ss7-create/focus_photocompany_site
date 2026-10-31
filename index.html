@@ -164,6 +164,9 @@
     <div class="hero__shade" aria-hidden="true"></div>
     <div class="hero__grain" aria-hidden="true"></div>
 
+    <!-- 3D Tubes Optical Cursor Stream -->
+    <canvas id="heroTubesCanvas" class="hero__tubes" aria-hidden="true"></canvas>
+
     <section class="hero__content" id="top">
       <div class="hero__logo-wrap hero__logo-wrap--parallax">
         <picture>
@@ -183,6 +186,7 @@
         <a href="#works" class="works-button">
           <span data-i18n="worksCta">СМОТРЕТЬ РАБОТЫ</span>
           <span class="works-button__arrow" aria-hidden="true">→</span>
+          <span class="btn-underline" aria-hidden="true"></span>
         </a>
       </div>
     </section>
@@ -3815,9 +3819,10 @@
       const slots = Array.from(grid.querySelectorAll('.review-card'));
       if (slots.length === 0) return;
 
-      const currentSlotIndices = [0, 1, 2, 3, 4, 5];
-      let nextReviewIndex = 6;
       const totalReviews = REVIEWS_DATA.length;
+      const slotCount = Math.min(slots.length, totalReviews);
+      const currentSlotIndices = Array.from({ length: slotCount }, (_, i) => i);
+      let nextReviewIndex = slotCount % totalReviews;
       const slotTimers = [];
       let isSectionInView = true;
       let isGridHovered = false;
@@ -4094,6 +4099,7 @@
         clearTimeout(slotTimers[slotIndex]);
         slotTimers[slotIndex] = setTimeout(() => {
           const slot = slots[slotIndex];
+          if (!slot) return;
           const isCardHovered = slot.matches(':hover');
 
           if (isCardHovered || isGridHovered || !isSectionInView || activeVoiceCard === slot || document.hidden) {
@@ -4113,7 +4119,7 @@
         }, delay);
       }
 
-      initialDelays.forEach((delay, idx) => {
+      initialDelays.slice(0, slotCount).forEach((delay, idx) => {
         scheduleSlotRotation(idx, delay);
       });
 
@@ -4318,6 +4324,107 @@
       }
 
       calculate();
+    })();
+
+    /* ══════════════════════════════════════════════════════════
+       CURSOR-DRIVEN GLOW BUTTONS (Dynamic mouse-move glow & tactile feedback)
+       ══════════════════════════════════════════════════════════ */
+    (function initCursorGlowButtons() {
+      const glowButtons = document.querySelectorAll(
+        '.contact-button, .works-button, .nav-panel__cta, .srv-btn, .srv-consult-btn, .arh-submit-btn, .form-submit-btn, .arh-tg-card-btn'
+      );
+
+      glowButtons.forEach((btn) => {
+        btn.classList.add('btn-cursor-glow');
+
+        btn.addEventListener('pointerenter', () => {
+          btn.style.setProperty('--glow-opacity', '1');
+        });
+
+        btn.addEventListener('pointerleave', () => {
+          btn.style.setProperty('--glow-opacity', '0');
+        });
+
+        btn.addEventListener('pointermove', (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          btn.style.setProperty('--mouse-x', `${x}px`);
+          btn.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+    })();
+
+    /* ══════════════════════════════════════════════════════════
+       HERO 3D OPTICAL TUBES BACKGROUND (Three.js WebGL Cursor Stream)
+       ══════════════════════════════════════════════════════════ */
+    (function initHeroTubes() {
+      const canvas = document.getElementById('heroTubesCanvas');
+      if (!canvas) return;
+
+      // Accessibility: Respect user motion preferences
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
+
+      // Skip heavy 3D cursor on mobile/touch screens
+      if (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) {
+        return;
+      }
+
+      // Studio lighting temperature palettes
+      const palettes = [
+        {
+          name: 'Studio Flash (Godox Electric Lime)',
+          tubes: ["#CAFF1C", "#FFFFFF", "#3A4A58"],
+          lights: ["#CAFF1C", "#E2E8F0", "#83F36E", "#5BC0BE"]
+        },
+        {
+          name: 'Golden Hour Sunset',
+          tubes: ["#FFB703", "#FFFFFF", "#CAFF1C"],
+          lights: ["#FB8500", "#FFD166", "#CAFF1C", "#FFFFFF"]
+        },
+        {
+          name: 'Architectural Monochrome 90°',
+          tubes: ["#FFFFFF", "#94A3B8", "#CAFF1C"],
+          lights: ["#FFFFFF", "#CBD5E1", "#CAFF1C", "#64748B"]
+        }
+      ];
+      let currentPaletteIdx = 0;
+
+      import('./assets/tubes1.min.js')
+        .then((module) => {
+          const TubesCursor = module.default;
+          if (typeof TubesCursor !== 'function') return;
+
+          const app = TubesCursor(canvas, {
+            tubes: {
+              colors: palettes[0].tubes,
+              lights: {
+                intensity: 220,
+                colors: palettes[0].lights
+              }
+            }
+          });
+
+          // Clicking anywhere on hero backdrop cycles studio lighting mood
+          const heroEl = document.querySelector('.hero');
+          if (heroEl) {
+            heroEl.addEventListener('click', (e) => {
+              if (e.target.closest('a, button, input, .hero__logo-wrap')) return;
+              currentPaletteIdx = (currentPaletteIdx + 1) % palettes.length;
+              const p = palettes[currentPaletteIdx];
+              if (app && app.tubes) {
+                app.tubes.setColors(p.tubes);
+                app.tubes.setLightsColors(p.lights);
+              }
+            });
+          }
+        })
+        .catch((err) => {
+          // Graceful fallback to video background if module import is restricted
+          console.warn('Hero TubesCursor initialized with graceful fallback:', err);
+        });
     })();
 
     const savedLanguage = localStorage.getItem('focus-language');

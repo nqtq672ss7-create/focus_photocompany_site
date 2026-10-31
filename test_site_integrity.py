@@ -38,6 +38,10 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertIn('.about-clean {', css)
         self.assertIn('display: none !important;', css)
         
+        # Check cursor glow and 3D tubes canvas styles
+        self.assertIn('.btn-cursor-glow', css)
+        self.assertIn('.hero__tubes', css)
+        
         # Check reviews badge hidden on mobile
         self.assertIn('.reviews-trust-badge,', css)
         
