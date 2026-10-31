@@ -234,7 +234,7 @@
 
       <!-- RIGHT VISUAL — Video only -->
       <div class="ac-visual">
-        <video class="ac-video" autoplay muted loop playsinline preload="metadata">
+        <video class="ac-video" muted loop playsinline preload="none">
           <source src="assets/bg-video.mp4" type="video/mp4">
         </video>
       </div>
@@ -2019,13 +2019,25 @@
     measureSectionBounds();
     window.addEventListener('resize', measureSectionBounds, { passive: true });
 
-    // Mobile battery & performance optimization: pause background video when about block is hidden
-    if (window.innerWidth <= 768) {
-      const acVideo = document.querySelector('.ac-video');
-      if (acVideo) {
+    // Background video optimization: only plays when about block is actively visible in viewport
+    const acVideo = document.querySelector('.ac-video');
+    if (acVideo) {
+      if (window.innerWidth <= 768) {
         acVideo.pause();
         acVideo.removeAttribute('autoplay');
         acVideo.preload = 'none';
+      } else if ('IntersectionObserver' in window) {
+        const aboutSectionEl = document.getElementById('about');
+        const acObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if (acVideo.paused) acVideo.play().catch(() => {});
+            } else {
+              if (!acVideo.paused) acVideo.pause();
+            }
+          });
+        }, { threshold: 0.05 });
+        if (aboutSectionEl) acObserver.observe(aboutSectionEl);
       }
     }
 
@@ -2042,9 +2054,6 @@
       }
     }
     window.updateHeaderLightMode = updateHeaderLightMode;
-    window.addEventListener('scroll', () => {
-      if (!window.lenis) updateHeaderLightMode();
-    }, { passive: true });
     updateHeaderLightMode();
 
     function setLanguage(lang) {
@@ -2158,10 +2167,6 @@
       };
 
       window.updateProgressTargets = updateProgressTargets;
-
-      window.addEventListener('scroll', () => {
-        if (!window.lenis) updateProgressTargets();
-      }, { passive: true });
 
       window.addEventListener('resize', () => {
         measureSectionBounds();
@@ -3798,7 +3803,7 @@
       const currentSlotIndices = Array.from({ length: slotCount }, (_, i) => i);
       let nextReviewIndex = slotCount % totalReviews;
       const slotTimers = [];
-      let isSectionInView = true;
+      let isSectionInView = false;
       let isGridHovered = false;
       let activeVoiceCard = null;
       let globalVoiceAudio = null;
@@ -4054,7 +4059,6 @@
           attachVoiceListener(slot);
           slot.classList.remove('is-switching-out');
           slot.classList.add('is-switching-in');
-          void slot.offsetWidth; // force reflow
           requestAnimationFrame(() => {
             slot.classList.remove('is-switching-in');
           });
@@ -4310,19 +4314,22 @@
 
       glowButtons.forEach((btn) => {
         btn.classList.add('btn-cursor-glow');
+        let btnRect = null;
 
         btn.addEventListener('pointerenter', () => {
+          btnRect = btn.getBoundingClientRect();
           btn.style.setProperty('--glow-opacity', '1');
         });
 
         btn.addEventListener('pointerleave', () => {
           btn.style.setProperty('--glow-opacity', '0');
+          btnRect = null;
         });
 
         btn.addEventListener('pointermove', (e) => {
-          const rect = btn.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
+          if (!btnRect) btnRect = btn.getBoundingClientRect();
+          const x = e.clientX - btnRect.left;
+          const y = e.clientY - btnRect.top;
           btn.style.setProperty('--mouse-x', `${x}px`);
           btn.style.setProperty('--mouse-y', `${y}px`);
         });
@@ -4343,7 +4350,7 @@
 
       if (typeof Lenis !== 'undefined') {
         globalLenis = new Lenis({
-          lerp: 0.088, // Pure analog physics momentum: continuous velocity, zero easing resets
+          lerp: 0.1, // Gold standard responsive momentum: instant initiation, silky deceleration
           smoothWheel: true,
           wheelMultiplier: 1.0, // Natural 1:1 wheel sensitivity
           touchMultiplier: 1.0,
@@ -4397,9 +4404,8 @@
             }
           });
 
-          // Hero video gentle scale expansion & pan down
+          // Hero video gentle vertical glide (no heavy scale-resampling)
           gsap.to('.hero__video', {
-            scale: 1.08,
             y: 45,
             ease: 'none',
             scrollTrigger: {
