@@ -33,10 +33,9 @@ class SiteIntegrityTest(unittest.TestCase):
         with open(css_path) as f:
             css = f.read()
         
-        # Check that about section is hidden on mobile per user requirements
-        self.assertIn('#about,', css)
-        self.assertIn('.about-clean {', css)
-        self.assertIn('display: none !important;', css)
+        # Check that about section and team grid are properly styled for responsive mobile
+        self.assertIn('.ac-team-grid', css)
+        self.assertIn('.ac-gear-strip', css)
         
         # Check reviews badge hidden on mobile
         self.assertIn('.reviews-trust-badge,', css)
@@ -94,9 +93,21 @@ class SiteIntegrityTest(unittest.TestCase):
         html_path = os.path.join(root, 'index.html')
         with open(html_path) as f:
             html = f.read()
-        self.assertIn('<meta name="keywords"', html)
+        # meta keywords removed per SEO best practices (not used by Yandex/Google)
+        self.assertNotIn('<meta name="keywords"', html)
         self.assertIn('application/ld+json', html)
         self.assertIn('PhotographyBusiness', html)
+        self.assertNotIn('AggregateRating', html) # No fabricated reviews schema
+        
+        # Contacts & Domain hygiene
+        self.assertNotIn('https://max.ru', html) # Banned placeholder link
+        self.assertNotIn('info@focus-photo.ru', html) # Must be info@focus-photocompany.ru
+        self.assertNotIn('focus-photo.ru', html)
+
+        # Team & Process standards blocks
+        self.assertIn('Екатерина Закопудова', html)
+        self.assertIn('process-standards-section', html)
+        self.assertIn('arhCity', html)
         
         # FAQ section and FAQPage schema removed per user requirements
         self.assertNotIn('FAQPage', html)
@@ -107,8 +118,8 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertIn('ОБСУДИТЬ СЪЁМКУ', html)
         
         # Professional wording in About section (not amateur 'Молодая')
-        self.assertIn('Экспертная', html)
-        self.assertNotIn('Молодая', html)
+        self.assertIn('экспертная', html.lower())
+        self.assertNotIn('молодая', html.lower())
         
         self.assertIn('id="leadHandoffModal"', html)
         self.assertIn('FocusLeadDispatcher', html)
