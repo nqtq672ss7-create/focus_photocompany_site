@@ -104,6 +104,12 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertIn('floating-contact-pill', html)
         self.assertIn('ИП Закопудова Екатерина Александровна', html)
 
+        # Primary Geo-Targeting: Anapa & Krasnodar Krai
+        self.assertIn('<meta name="geo.region" content="RU-KDA">', html)
+        self.assertIn('<meta name="geo.placename" content="Анапа">', html)
+        self.assertIn('"addressLocality": "Анапа"', html)
+        self.assertIn('"addressRegion": "Краснодарский край"', html)
+
         # User Design Laws anti-slop checks
         self.assertNotIn('>01 Интерьеры<', html)
         self.assertNotIn('>02 Отели<', html)
