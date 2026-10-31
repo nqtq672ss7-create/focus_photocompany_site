@@ -612,14 +612,14 @@
             </div>
           </div>
 
-          <!-- Dynamic Verified Client Reviews Grid (6 slots with interactive Voice Note review) -->
-          <div class="reviews-grid" id="reviewsGrid">
-            <article class="review-card" data-slot="0"><div class="review-card__inner"></div></article>
-            <article class="review-card" data-slot="1"><div class="review-card__inner"></div></article>
-            <article class="review-card review-card--voice" data-slot="2"><div class="review-card__inner"></div></article>
-            <article class="review-card" data-slot="3"><div class="review-card__inner"></div></article>
-            <article class="review-card" data-slot="4"><div class="review-card__inner"></div></article>
-            <article class="review-card" data-slot="5"><div class="review-card__inner"></div></article>
+          <!-- Dynamic Verified Client Reviews Marquee Train (Two Opposing Direction Lines) -->
+          <div class="reviews-marquee-wrap" id="reviewsMarqueeWrap" role="region" aria-label="Отзывы клиентов">
+            <div class="reviews-marquee reviews-marquee--row1">
+              <div class="reviews-marquee__track reviews-marquee__track--left" id="reviewsTrack1"></div>
+            </div>
+            <div class="reviews-marquee reviews-marquee--row2">
+              <div class="reviews-marquee__track reviews-marquee__track--right" id="reviewsTrack2"></div>
+            </div>
           </div>
 
           <!-- Discreet Legal Reference Footnote -->
@@ -3591,21 +3591,13 @@
       }
     ];
 
-    // ── ASYNCHRONOUS ROTATING REVIEWS CONTROLLER ─────────────────────
-    (function initRotatingReviews() {
-      const grid = document.getElementById('reviewsGrid');
-      if (!grid) return;
+    // ── TWO-ROW HORIZONTAL INFINITE MARQUEE TRAIN (Editorial Reviews) ─────
+    (function initReviewsMarqueeTrain() {
+      const marqueeWrap = document.getElementById('reviewsMarqueeWrap');
+      const track1 = document.getElementById('reviewsTrack1');
+      const track2 = document.getElementById('reviewsTrack2');
+      if (!marqueeWrap || !track1 || !track2) return;
 
-      const slots = Array.from(grid.querySelectorAll('.review-card'));
-      if (slots.length === 0) return;
-
-      const totalReviews = REVIEWS_DATA.length;
-      const slotCount = Math.min(slots.length, totalReviews);
-      const currentSlotIndices = Array.from({ length: slotCount }, (_, i) => i);
-      let nextReviewIndex = slotCount % totalReviews;
-      const slotTimers = [];
-      let isSectionInView = false;
-      let isGridHovered = false;
       let activeVoiceCard = null;
       let globalVoiceAudio = null;
 
@@ -3622,10 +3614,6 @@
         const verifiedHtml = review.verified
           ? `<span class="review-card__verified-badge" title="${lang === 'en' ? 'Verified Client' : 'Подтвержденный клиент'}">✓</span>`
           : '';
-
-        const impactClass = review.impactLime
-          ? 'review-card__impact-chip review-card__impact-chip--lime'
-          : 'review-card__impact-chip';
 
         let voicePlayerHtml = '';
         if (review.hasVoice) {
@@ -3671,20 +3659,10 @@
               <span class="review-card__cat">${data.tag}</span>
             </div>
 
-            <div class="${impactClass}">
-              <span class="review-card__impact-icon">${review.impactIcon}</span>
-              <span class="review-card__impact-text">${data.impact}</span>
-            </div>
-
             ${voicePlayerHtml}
 
             <div class="review-card__rating">
               <span class="review-card__stars" aria-hidden="true">★★★★★</span>
-              <span class="review-card__provenance">
-                <span class="review-card__provenance-icon">${review.platformIcon}</span>
-                <span>${data.platform}</span>
-              </span>
-              <span class="review-card__contract-pill">${data.contract}</span>
             </div>
           </div>
 
@@ -3745,6 +3723,7 @@
             }
             activeVoiceCard = null;
           }
+          marqueeWrap.classList.remove('is-audio-playing');
         });
 
         globalVoiceAudio.addEventListener('pause', () => {
@@ -3758,6 +3737,7 @@
               }
             }
           }
+          marqueeWrap.classList.remove('is-audio-playing');
         });
 
         return globalVoiceAudio;
@@ -3786,9 +3766,14 @@
           }
 
           if (audio.paused) {
+            if (activeVoiceCard && activeVoiceCard !== card) {
+              const oldVp = activeVoiceCard.querySelector('.review-voice-player');
+              if (oldVp) oldVp.classList.remove('is-playing');
+            }
             activeVoiceCard = card;
             audio.play().then(() => {
               vp.classList.add('is-playing');
+              marqueeWrap.classList.add('is-audio-playing');
               toggle.setAttribute('aria-label', getCurrentLang() === 'en' ? 'Pause' : 'Пауза');
             }).catch(err => {
               console.warn('Playback error:', err);
@@ -3796,6 +3781,7 @@
           } else {
             audio.pause();
             vp.classList.remove('is-playing');
+            marqueeWrap.classList.remove('is-audio-playing');
             toggle.setAttribute('aria-label', getCurrentLang() === 'en' ? 'Listen to audio' : 'Слушать отзыв');
             activeVoiceCard = null;
           }
@@ -3832,6 +3818,7 @@
             if (audio.paused) {
               audio.play().then(() => {
                 vp.classList.add('is-playing');
+                marqueeWrap.classList.add('is-audio-playing');
                 toggle.setAttribute('aria-label', getCurrentLang() === 'en' ? 'Pause' : 'Пауза');
               }).catch(() => {});
             }
@@ -3839,108 +3826,35 @@
         }
       }
 
-      function renderSlot(slotIndex, reviewIndex, animate) {
-        const slot = slots[slotIndex];
-        if (!slot) return;
-        const inner = slot.querySelector('.review-card__inner');
-        if (!inner) return;
+      const row1Data = REVIEWS_DATA.slice(0, 9);
+      const row2Data = REVIEWS_DATA.slice(9, 18);
 
-        const review = REVIEWS_DATA[reviewIndex];
-        const lang = getCurrentLang();
-
-        if (!animate) {
-          inner.innerHTML = renderCardContent(review, lang);
-          attachVoiceListener(slot);
-          return;
-        }
-
-        slot.classList.add('is-switching-out');
-        setTimeout(() => {
-          inner.innerHTML = renderCardContent(review, lang);
-          attachVoiceListener(slot);
-          slot.classList.remove('is-switching-out');
-          slot.classList.add('is-switching-in');
-          requestAnimationFrame(() => {
-            slot.classList.remove('is-switching-in');
-          });
-        }, 380);
-      }
-
-      // Initial render for all 6 slots (Slot 2 is pinned with Artem Voronov's authentic Telegram voice review)
-      currentSlotIndices.forEach((revIdx, slotIdx) => {
-        renderSlot(slotIdx, revIdx, false);
-      });
-
-      // Staggered initial delays for rotating slots (Slot 2 stays pinned as the featured voice note)
-      const initialDelays = [3200, 5000, 0, 7500, 9500, 11500];
-
-      function getNextReviewIndex() {
-        let idx = nextReviewIndex;
-        nextReviewIndex = (nextReviewIndex + 1) % totalReviews;
-        if (idx === 2) { // Skip index 2 because it is pinned on slot 2
-          idx = nextReviewIndex;
-          nextReviewIndex = (nextReviewIndex + 1) % totalReviews;
-        }
-        return idx;
-      }
-
-      function scheduleSlotRotation(slotIndex, delay) {
-        if (slotIndex === 2) return; // Pin Slot 2 as the permanent interactive Voice Note review
-        clearTimeout(slotTimers[slotIndex]);
-        slotTimers[slotIndex] = setTimeout(() => {
-          const slot = slots[slotIndex];
-          if (!slot) return;
-          const isCardHovered = slot.matches(':hover');
-
-          if (isCardHovered || isGridHovered || !isSectionInView || activeVoiceCard === slot || document.hidden) {
-            scheduleSlotRotation(slotIndex, 2500);
-            return;
+      function buildTrackCards(container, list, lang) {
+        if (!container) return;
+        container.innerHTML = '';
+        const duplicated = [...list, ...list];
+        duplicated.forEach((review) => {
+          const card = document.createElement('article');
+          card.className = 'review-card' + (review.hasVoice ? ' review-card--voice' : '');
+          card.innerHTML = renderCardContent(review, lang);
+          if (review.hasVoice) {
+            attachVoiceListener(card);
           }
-
-          const revToDisplay = getNextReviewIndex();
-          currentSlotIndices[slotIndex] = revToDisplay;
-
-          renderSlot(slotIndex, revToDisplay, true);
-
-          // Subsequent cycle: ~15 seconds per slot
-          const nextDelay = 15000 + Math.floor(Math.random() * 2000 - 1000);
-          scheduleSlotRotation(slotIndex, nextDelay);
-        }, delay);
+          container.appendChild(card);
+        });
       }
 
-      initialDelays.slice(0, slotCount).forEach((delay, idx) => {
-        scheduleSlotRotation(idx, delay);
-      });
-
-      // Hover to pause
-      grid.addEventListener('mouseenter', () => { isGridHovered = true; }, { passive: true });
-      grid.addEventListener('mouseleave', () => { isGridHovered = false; }, { passive: true });
-
-      // Viewport intersection observer
-      const section = document.getElementById('reviews');
-      if (section && 'IntersectionObserver' in window) {
-        const obs = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            isSectionInView = entry.isIntersecting;
-          });
-        }, { threshold: 0.05 });
-        obs.observe(section);
+      function renderAllTracks() {
+        const lang = getCurrentLang();
+        buildTrackCards(track1, row1Data, lang);
+        buildTrackCards(track2, row2Data, lang);
       }
 
-      // Tab visibility awareness: prevent background timer queue accumulation
-      document.addEventListener('visibilitychange', () => {
-        if (!document.hidden && isSectionInView) {
-          slots.forEach((_, idx) => {
-            scheduleSlotRotation(idx, 2000 + idx * 1400);
-          });
-        }
-      }, { passive: true });
+      renderAllTracks();
 
       // Live re-render on language switch
-      window.addEventListener('languageChanged', (e) => {
-        currentSlotIndices.forEach((revIdx, slotIdx) => {
-          renderSlot(slotIdx, revIdx, false);
-        });
+      window.addEventListener('languageChanged', () => {
+        renderAllTracks();
       });
     })();
 

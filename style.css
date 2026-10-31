@@ -2081,53 +2081,88 @@ html {
   display: none !important;
 }
 
-/* Reviews Grid (Uniform 3x2 on desktop, staggered rotation) */
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.review-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  border-radius: 24px;
-  padding: clamp(22px, 2.4vw, 30px);
+/* ==========================================================================
+   TWO-ROW INFINITE HORIZONTAL MARQUEE TRAIN (Editorial Reviews)
+   ========================================================================== */
+.reviews-marquee-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
+  padding: 26px 0 16px;
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.reviews-marquee-wrap:hover .reviews-marquee__track,
+.reviews-marquee-wrap.is-audio-playing .reviews-marquee__track {
+  animation-play-state: paused !important;
+}
+
+.reviews-marquee {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+.reviews-marquee__track {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  width: max-content;
+  will-change: transform;
+}
+
+.reviews-marquee__track:hover {
+  animation-play-state: paused !important;
+}
+
+.reviews-marquee__track--left {
+  animation: reviewsTrainLeft 52s linear infinite;
+}
+
+.reviews-marquee__track--right {
+  animation: reviewsTrainRight 52s linear infinite;
+}
+
+@keyframes reviewsTrainLeft {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes reviewsTrainRight {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* Individual Review Card - Short, Compact, Clean */
+.review-card {
+  width: 380px;
+  min-width: 380px;
+  max-width: 380px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.035);
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.25s ease;
+  flex-shrink: 0;
+  cursor: default;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.025);
-  min-height: 310px;
 }
 
 .review-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(202, 255, 28, 0.45);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.07), 0 0 24px rgba(202, 255, 28, 0.12);
-}
-
-.review-card__inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  flex: 1 1 auto;
-  transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.38s ease, filter 0.38s ease;
-}
-
-.review-card.is-switching-out .review-card__inner {
-  opacity: 0;
-  transform: translateY(-10px) scale(0.98);
-  filter: blur(4px);
-}
-
-.review-card.is-switching-in .review-card__inner {
-  opacity: 0;
-  transform: translateY(12px) scale(0.98);
-  filter: blur(4px);
+  transform: translateY(-4px) scale(1.015);
+  border-color: rgba(202, 255, 28, 0.7);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09), 0 0 20px rgba(202, 255, 28, 0.15);
 }
 
 .review-card__top {
@@ -2238,44 +2273,23 @@ html {
   flex-shrink: 0;
 }
 
-/* Impact Chip */
-.review-card__impact-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.035);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  font-size: 11.5px;
-  font-weight: 600;
-  color: #1F2025;
-  margin-bottom: 14px;
-  align-self: flex-start;
+/* Unnecessary text chips hidden per user request */
+.review-card__impact-chip,
+.review-card__provenance,
+.review-card__contract-pill {
+  display: none !important;
 }
 
-.review-card__impact-chip--lime {
-  background: rgba(202, 255, 28, 0.18);
-  border-color: rgba(202, 255, 28, 0.45);
-  color: #0C0D11;
-  font-weight: 700;
-}
-
-.review-card__impact-icon {
-  font-size: 12px;
-  line-height: 1;
-}
-
-/* Interactive Telegram Voice Note Player */
+/* Interactive Telegram Voice Note Player (Compact & Clean) */
 .review-voice-player {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 11px 14px;
-  border-radius: 14px;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 12px;
   background: #F2F5F8;
   border: 1px solid rgba(42, 171, 238, 0.18);
-  margin-bottom: 14px;
+  margin: 6px 0 8px;
   transition: all 0.25s ease;
 }
 
@@ -2381,48 +2395,18 @@ html {
   letter-spacing: 0.01em;
 }
 
-/* Rating Bar */
+/* Rating Bar - Clean 5 stars */
 .review-card__rating {
   display: flex;
   align-items: center;
-  gap: 9px;
-  margin-bottom: 14px;
-  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 6px;
 }
 
 .review-card__stars {
-  font-size: 12.5px;
+  font-size: 13px;
   letter-spacing: 2px;
   color: #FFB800;
-}
-
-.review-card__provenance {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 10.5px;
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.52);
-  background: rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  padding: 2px 9px;
-  border-radius: 100px;
-  letter-spacing: 0.01em;
-}
-
-.review-card__provenance-icon {
-  font-size: 11px;
-  line-height: 1;
-}
-
-.review-card__contract-pill {
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: rgba(0, 0, 0, 0.42);
-  background: rgba(0, 0, 0, 0.03);
-  padding: 2px 7px;
-  border-radius: 6px;
 }
 
 /* Review Quote & Scannable Highlights */
@@ -4313,31 +4297,37 @@ html {
   .reviews-metrics {
     display: none !important; /* User explicitly requested: remove 5.0 badge/strip */
   }
-  .reviews-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    scroll-snap-type: x mandatory !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: none !important;
-    padding: 12px 16px 20px !important;
-    margin: 0 -16px !important;
+  .reviews-marquee-wrap {
     gap: 14px !important;
-    width: auto !important;
+    padding: 16px 0 10px !important;
+    mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%) !important;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%) !important;
   }
-  .reviews-grid::-webkit-scrollbar {
-    display: none !important;
+  .reviews-marquee__track {
+    gap: 14px !important;
+  }
+  .reviews-marquee__track--left {
+    animation-duration: 42s !important;
+  }
+  .reviews-marquee__track--right {
+    animation-duration: 42s !important;
   }
   .review-card {
-    flex: 0 0 85vw !important;
-    max-width: 320px !important;
-    scroll-snap-align: center !important;
+    width: 310px !important;
+    min-width: 310px !important;
+    max-width: 310px !important;
+    padding: 16px 18px !important;
+    border-radius: 18px !important;
+    gap: 8px !important;
+    min-height: auto !important;
     box-sizing: border-box !important;
-    min-height: 260px !important;
   }
-  .review-card__inner {
-    height: 100% !important;
+  .review-card__name {
+    font-size: 14px !important;
+  }
+  .review-card__quote {
+    font-size: 12.8px !important;
+    line-height: 1.5 !important;
   }
 
   /* ── 5. ARCHITECTURAL COMPACT FOOTER ON MOBILE ── */
