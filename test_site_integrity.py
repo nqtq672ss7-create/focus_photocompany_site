@@ -109,8 +109,9 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertNotIn('info@focus-photo.ru', html) # Must be info@focus-photocompany.ru
         self.assertNotIn('focus-photo.ru', html)
 
-        # Process standards & Configurator blocks
-        self.assertIn('process-standards-section', html)
+        # Process standards block removed per user request
+        self.assertNotIn('process-standards-section', html)
+        self.assertNotIn('КАК МЫ РАБОТАЕМ:', html)
         self.assertIn('arhCity', html)
         
         # FAQ section and FAQPage schema removed per user requirements
