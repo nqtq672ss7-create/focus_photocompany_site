@@ -22,6 +22,8 @@ class SiteIntegrityTest(unittest.TestCase):
         
         # Must not contain banned liveDotPulse or reviews-trust-badge__live-dot in reviews badge
         self.assertNotIn('reviews-trust-badge__live-dot', content)
+        self.assertNotIn('Смотреть профиль на Яндекс Картах', content)
+        self.assertNotIn('reviews-yandex-badge', content)
         
         # HTML must parse without errors
         parser = html.parser.HTMLParser()
