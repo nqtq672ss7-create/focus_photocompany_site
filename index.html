@@ -163,7 +163,7 @@
 
   <main class="hero" aria-label="Главный экран сайта фотокомпании ФОКУС">
     <div class="hero__image" aria-hidden="true"></div>
-    <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/focus-lobby.webp"><source src="assets/focus-hero.mp4" type="video/mp4"></video>
+    <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/focus-lobby.webp"><source src="assets/focus-hero.mp4" type="video/mp4"></video>
     <div class="hero__shade" aria-hidden="true"></div>
     <div class="hero__grain" aria-hidden="true"></div>
 
@@ -171,7 +171,7 @@
       <div class="hero__logo-wrap hero__logo-wrap--parallax">
         <picture>
           <source srcset="assets/focus-hero-logo.webp" type="image/webp">
-          <img class="hero__logo" src="assets/focus-hero-logo.webp" alt="ФОКУС — интерьерная фотокомпания в Анапе" width="2400" height="1602" fetchpriority="high" decoding="sync" loading="eager">
+          <img class="hero__logo" src="assets/focus-hero-logo.webp" alt="ФОКУС — интерьерная фотокомпания в Анапе" width="2400" height="1602" fetchpriority="high" decoding="async" loading="eager">
         </picture>
       </div>
       <p class="hero__tagline">
@@ -611,10 +611,912 @@
           <!-- Dynamic Verified Client Reviews Marquee Train (Two Opposing Direction Lines) -->
           <div class="reviews-marquee-wrap" id="reviewsMarqueeWrap" role="region" aria-label="Отзывы клиентов">
             <div class="reviews-marquee reviews-marquee--row1">
-              <div class="reviews-marquee__track reviews-marquee__track--left" id="reviewsTrack1"></div>
+              <div class="reviews-marquee__track reviews-marquee__track--left" id="reviewsTrack1">
+<article class="review-card" data-review-id="rev_1">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_3.webp" alt="Сергей Павлов" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Сергей Павлов</h3>
+        <span class="review-card__role">Владелец бутик-отеля «Морской Бриз», Витязево</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Отели & HoReCa</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Кать, привет! Добрался наконец написать спасибо. Фотограф ваш в 5 утра приехал, пока все спали, снял бассейн с рассветом — это вообще <mark class="review-highlight">отвал всего</mark>. Главное, гостей не дергали посреди дня, всё тихо-мирно. На Островок фотки загрузили, <mark class="review-highlight">люксы на август закрыли буквально за 4 дня</mark>. Жмём руку всей команде!»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_2">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_8.webp" alt="Ольга Нестерова" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Ольга Нестерова</h3>
+        <span class="review-card__role">Архитектор-дизайнер, студия Nesterova Arch (Новороссийск)</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Интерьеры</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «У меня вечная боль с фотографами — либо углы кривые, либо керамогранит серым бликом светится. Ребята первые, кто приехал с нормальным светом и не торопясь выставил геометрию. <mark class="review-highlight">Квартира на фото выглядит ровно так, как я её задумывала в проекте</mark>. Спасибо!»
+</blockquote>
+</article>
+<article class="review-card review-card--voice" data-review-id="rev_3">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_4.webp" alt="Артём Воронов" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Артём Воронов</h3>
+        <span class="review-card__role">Совладелец кафе-бара «Черноморский», Анапа</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Видео & Reels</span>
+  </div>
+<div class="review-voice-player" role="region" aria-label="Audio review" data-audio-src="assets/audio/artem_review.mp3">
+  <button class="review-voice-player__toggle" type="button" aria-label="Слушать отзыв">
+    <svg class="review-voice-player__icon review-voice-player__icon--play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+    <svg class="review-voice-player__icon review-voice-player__icon--pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+    </svg>
+  </button>
+  <div class="review-voice-player__content">
+    <div class="review-voice-player__waveform" aria-hidden="true" title="Нажмите для перемотки">
+<span class="voice-bar" style="--h: 30%; --i: 1"></span><span class="voice-bar" style="--h: 60%; --i: 2"></span><span class="voice-bar" style="--h: 90%; --i: 3"></span><span class="voice-bar" style="--h: 40%; --i: 4"></span><span class="voice-bar" style="--h: 75%; --i: 5"></span><span class="voice-bar" style="--h: 100%; --i: 6"></span><span class="voice-bar" style="--h: 55%; --i: 7"></span><span class="voice-bar" style="--h: 80%; --i: 8"></span><span class="voice-bar" style="--h: 45%; --i: 9"></span><span class="voice-bar" style="--h: 95%; --i: 10"></span><span class="voice-bar" style="--h: 70%; --i: 11"></span><span class="voice-bar" style="--h: 35%; --i: 12"></span><span class="voice-bar" style="--h: 65%; --i: 13"></span><span class="voice-bar" style="--h: 85%; --i: 14"></span><span class="voice-bar" style="--h: 50%; --i: 15"></span><span class="voice-bar" style="--h: 70%; --i: 16"></span><span class="voice-bar" style="--h: 40%; --i: 17"></span><span class="voice-bar" style="--h: 90%; --i: 18"></span><span class="voice-bar" style="--h: 60%; --i: 19"></span><span class="voice-bar" style="--h: 30%; --i: 20"></span>
+    </div>
+    <div class="review-voice-player__meta">
+      <span class="review-voice-player__time">0:00 / 0:24</span>
+      <span class="review-voice-player__source"> Голосовое в Telegram</span>
+    </div>
+  </div>
+</div>
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Ребят, привет! Слушайте, ну от души вообще... Я, если честно, переживал, что щас снимут обычную банальщину, ну как все делают. <mark class="review-highlight">А вы прям пушку выдали!</mark> Короче, рилсы залетели так, что <mark class="review-highlight">на выходных люди реально подходили и пальцем в телефон тыкали: мол, "нам вот это блюдо!"</mark>. Мы сто проц с вами дальше работаем, на осеннее меню даже никого другого не ищем, вы реально крутая команда!»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_4">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">МК</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Марина Ковалёва</h3>
+        <span class="review-card__role">Event-продюсер деловых форумов (Сочи — Анапа)</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Мероприятия</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Главный страх любого организатора — когда фотографы лезут со вспышкой прямо в лицо спикеру или задерживают материал. Тут парни отработали в две камеры вообще незаметно. И отдельный респект: <mark class="review-highlight">в 11 вечера того же дня я уже держала в руках ссылку на первые 40 обработанных кадров</mark> для пресс-релиза. Спонсоры довольны, мы спокойны.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_5">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_11.webp" alt="Игорь Мельников" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Игорь Мельников</h3>
+        <span class="review-card__role">Генеральный директор яхт-клуба и марины «Лагуна», Большой Утриш</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Отели & Lifestyle</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Заказывали аэросъемку марины и катеров на закате. <mark class="review-highlight">Сделали очень красиво, кадры взяли и на сайт, и в презентацию для инвесторов</mark>. По документам всё чётко, акты прислали в тот же день.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_6">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_1.webp" alt="Дарья Морозова" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Дарья Морозова</h3>
+        <span class="review-card__role">Основатель студии керамики & декора «Terra», Краснодар</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Предметная съемка</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Очень переживала за съемку, потому что матовая керамика на фото часто превращается в плоскую пластмассу. Фотограф провел у нас в мастерской полдня, сам искал, как красиво положить свет от окна и тени от веток. Снимки получились такими тактильными, что <mark class="review-highlight">покупатели прямо пишут, что чувствуют тепло глины через экран</mark>. Конверсия в карточках сразу пошла вверх!»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_7">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_5.webp" alt="Максим Лебедев" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Максим Лебедев</h3>
+        <span class="review-card__role">Директор по маркетингу девелопера, ЖК «Белый Берег» (Анапа)</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Девелопмент</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Снимали фасады и шоурумы первой очереди. Геометрия на оптике ровная, остекление без паразитных бликов. Исходники отдали быстро, <mark class="review-highlight">успели отпечатать буклеты ровно к старту продаж</mark>. Рекомендую.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_8">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_7.webp" alt="Анна Белозёрова" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Анна Белозёрова</h3>
+        <span class="review-card__role">Главный архитектор бюро «Форма», Новороссийск</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Архитектура</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Ребята приехали со своим отпаривателем для штор и ассистентом — я чуть не расплакалась от счастья! Сами поправили текстиль, расставили декор, выставили мягкие тени. <mark class="review-highlight">Проект уже взяли в публикацию в интерьерный журнал</mark>, для нашего бюро это лучшая реклама.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_9">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_10.webp" alt="Роман Васильев" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Роман Васильев</h3>
+        <span class="review-card__role">Основатель чартерной компании «Wind & Sea», Геленджик</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Видео & Экстрим</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Снять яхту в море на качке — это жесть, но ваш оператор на катере сопровождения держался молодцом 4 часа. <mark class="review-highlight">Ролик в рилс набрал 180к просмотров без единого рубля на таргет!</mark> Брони на яхты забились до конца сезона »
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_1">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_3.webp" alt="Сергей Павлов" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Сергей Павлов</h3>
+        <span class="review-card__role">Владелец бутик-отеля «Морской Бриз», Витязево</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Отели & HoReCa</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Кать, привет! Добрался наконец написать спасибо. Фотограф ваш в 5 утра приехал, пока все спали, снял бассейн с рассветом — это вообще <mark class="review-highlight">отвал всего</mark>. Главное, гостей не дергали посреди дня, всё тихо-мирно. На Островок фотки загрузили, <mark class="review-highlight">люксы на август закрыли буквально за 4 дня</mark>. Жмём руку всей команде!»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_2">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_8.webp" alt="Ольга Нестерова" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Ольга Нестерова</h3>
+        <span class="review-card__role">Архитектор-дизайнер, студия Nesterova Arch (Новороссийск)</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Интерьеры</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «У меня вечная боль с фотографами — либо углы кривые, либо керамогранит серым бликом светится. Ребята первые, кто приехал с нормальным светом и не торопясь выставил геометрию. <mark class="review-highlight">Квартира на фото выглядит ровно так, как я её задумывала в проекте</mark>. Спасибо!»
+</blockquote>
+</article>
+<article class="review-card review-card--voice" data-review-id="rev_3">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_4.webp" alt="Артём Воронов" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Артём Воронов</h3>
+        <span class="review-card__role">Совладелец кафе-бара «Черноморский», Анапа</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Видео & Reels</span>
+  </div>
+<div class="review-voice-player" role="region" aria-label="Audio review" data-audio-src="assets/audio/artem_review.mp3">
+  <button class="review-voice-player__toggle" type="button" aria-label="Слушать отзыв">
+    <svg class="review-voice-player__icon review-voice-player__icon--play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+    <svg class="review-voice-player__icon review-voice-player__icon--pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+    </svg>
+  </button>
+  <div class="review-voice-player__content">
+    <div class="review-voice-player__waveform" aria-hidden="true" title="Нажмите для перемотки">
+<span class="voice-bar" style="--h: 30%; --i: 1"></span><span class="voice-bar" style="--h: 60%; --i: 2"></span><span class="voice-bar" style="--h: 90%; --i: 3"></span><span class="voice-bar" style="--h: 40%; --i: 4"></span><span class="voice-bar" style="--h: 75%; --i: 5"></span><span class="voice-bar" style="--h: 100%; --i: 6"></span><span class="voice-bar" style="--h: 55%; --i: 7"></span><span class="voice-bar" style="--h: 80%; --i: 8"></span><span class="voice-bar" style="--h: 45%; --i: 9"></span><span class="voice-bar" style="--h: 95%; --i: 10"></span><span class="voice-bar" style="--h: 70%; --i: 11"></span><span class="voice-bar" style="--h: 35%; --i: 12"></span><span class="voice-bar" style="--h: 65%; --i: 13"></span><span class="voice-bar" style="--h: 85%; --i: 14"></span><span class="voice-bar" style="--h: 50%; --i: 15"></span><span class="voice-bar" style="--h: 70%; --i: 16"></span><span class="voice-bar" style="--h: 40%; --i: 17"></span><span class="voice-bar" style="--h: 90%; --i: 18"></span><span class="voice-bar" style="--h: 60%; --i: 19"></span><span class="voice-bar" style="--h: 30%; --i: 20"></span>
+    </div>
+    <div class="review-voice-player__meta">
+      <span class="review-voice-player__time">0:00 / 0:24</span>
+      <span class="review-voice-player__source"> Голосовое в Telegram</span>
+    </div>
+  </div>
+</div>
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Ребят, привет! Слушайте, ну от души вообще... Я, если честно, переживал, что щас снимут обычную банальщину, ну как все делают. <mark class="review-highlight">А вы прям пушку выдали!</mark> Короче, рилсы залетели так, что <mark class="review-highlight">на выходных люди реально подходили и пальцем в телефон тыкали: мол, "нам вот это блюдо!"</mark>. Мы сто проц с вами дальше работаем, на осеннее меню даже никого другого не ищем, вы реально крутая команда!»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_4">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">МК</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Марина Ковалёва</h3>
+        <span class="review-card__role">Event-продюсер деловых форумов (Сочи — Анапа)</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Мероприятия</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Главный страх любого организатора — когда фотографы лезут со вспышкой прямо в лицо спикеру или задерживают материал. Тут парни отработали в две камеры вообще незаметно. И отдельный респект: <mark class="review-highlight">в 11 вечера того же дня я уже держала в руках ссылку на первые 40 обработанных кадров</mark> для пресс-релиза. Спонсоры довольны, мы спокойны.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_5">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_11.webp" alt="Игорь Мельников" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Игорь Мельников</h3>
+        <span class="review-card__role">Генеральный директор яхт-клуба и марины «Лагуна», Большой Утриш</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Отели & Lifestyle</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Заказывали аэросъемку марины и катеров на закате. <mark class="review-highlight">Сделали очень красиво, кадры взяли и на сайт, и в презентацию для инвесторов</mark>. По документам всё чётко, акты прислали в тот же день.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_6">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_1.webp" alt="Дарья Морозова" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Дарья Морозова</h3>
+        <span class="review-card__role">Основатель студии керамики & декора «Terra», Краснодар</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Предметная съемка</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Очень переживала за съемку, потому что матовая керамика на фото часто превращается в плоскую пластмассу. Фотограф провел у нас в мастерской полдня, сам искал, как красиво положить свет от окна и тени от веток. Снимки получились такими тактильными, что <mark class="review-highlight">покупатели прямо пишут, что чувствуют тепло глины через экран</mark>. Конверсия в карточках сразу пошла вверх!»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_7">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_5.webp" alt="Максим Лебедев" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Максим Лебедев</h3>
+        <span class="review-card__role">Директор по маркетингу девелопера, ЖК «Белый Берег» (Анапа)</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Девелопмент</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Снимали фасады и шоурумы первой очереди. Геометрия на оптике ровная, остекление без паразитных бликов. Исходники отдали быстро, <mark class="review-highlight">успели отпечатать буклеты ровно к старту продаж</mark>. Рекомендую.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_8">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_7.webp" alt="Анна Белозёрова" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Анна Белозёрова</h3>
+        <span class="review-card__role">Главный архитектор бюро «Форма», Новороссийск</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Архитектура</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Ребята приехали со своим отпаривателем для штор и ассистентом — я чуть не расплакалась от счастья! Сами поправили текстиль, расставили декор, выставили мягкие тени. <mark class="review-highlight">Проект уже взяли в публикацию в интерьерный журнал</mark>, для нашего бюро это лучшая реклама.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_9">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_10.webp" alt="Роман Васильев" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Роман Васильев</h3>
+        <span class="review-card__role">Основатель чартерной компании «Wind & Sea», Геленджик</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Видео & Экстрим</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Снять яхту в море на качке — это жесть, но ваш оператор на катере сопровождения держался молодцом 4 часа. <mark class="review-highlight">Ролик в рилс набрал 180к просмотров без единого рубля на таргет!</mark> Брони на яхты забились до конца сезона »
+</blockquote>
+</article>
+              </div>
             </div>
             <div class="reviews-marquee reviews-marquee--row2">
-              <div class="reviews-marquee__track reviews-marquee__track--right" id="reviewsTrack2"></div>
+              <div class="reviews-marquee__track reviews-marquee__track--right" id="reviewsTrack2">
+<article class="review-card" data-review-id="rev_10">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">ДК</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Денис Корнилов</h3>
+        <span class="review-card__role">Бренд-шеф ресторана «Парус & Мидии» (Анапа, Высокий берег)</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Рестораны & HoReCa</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Обычно фуд-фотографы мучают блюда по часу, пока всё не остынет и не покроется коркой. Парни снимали с пылу с жару: <mark class="review-highlight">пар от мидий, хрустящая фокачча, живая подача</mark>. Меню обновили на прошлой неделе — гости заказывают именно те позиции, что на фотках.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_11">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_6.webp" alt="Полина Власова" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Полина Власова</h3>
+        <span class="review-card__role">Основатель свадебного агентства «Amour Events» (Абрау-Дюрсо)</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Свадьбы & События</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Спасибо за тактичность на свадьбе! Никаких постановочных криков и команд гостям, всё на искренних эмоциях. И главное — <mark class="review-highlight">первые 20 кадров прислали молодожёнам уже на следующее утро к завтраку</mark>, невеста была в восторге »
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_12">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_2.webp" alt="Екатерина Смирнова" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Екатерина Смирнова</h3>
+        <span class="review-card__role">Управляющая апарт-комплексом «Villa del Mar», Анапа</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Отели & Апартаменты</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Нужно было срочно переснять все 8 номеров после косметического ремонта. <mark class="review-highlight">Уложились ровно за один день, не сорвав заезд постояльцев</mark>. Цветопередача благородная, море за окнами не выбеленное, а естественного бирюзового цвета. Спасибо Кате за организацию!»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_13">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">ВТ</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Виктор Тарасов</h3>
+        <span class="review-card__role">Коммерческий директор винодельни «Долина Лефкадия / Шато»</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Агротуризм & Бренды</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Ребята приехали на виноградники к 6 утра ради утреннего тумана. <mark class="review-highlight">Кадры подвалов с бочками получились монументальными</mark>, как в европейских винных домах. Работаем на постоянной основе.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_14">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">КГ</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Ксения Григорьева</h3>
+        <span class="review-card__role">Архитектор частных резиденций (Краснодар — Сочи)</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Приватные резиденции</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «У меня заказчики очень строгие насчет приватности: никакого вида на соседние дома и никаких геометок. <mark class="review-highlight">Команда "Фокуса" подписала NDA без вопросов и сняла всё идеально чисто</mark>, только внутренний двор и интерьер. Ценю за надежность.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_15">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">АШ</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Алексей Швецов</h3>
+        <span class="review-card__role">Владелец сети апартаментов «Sunset Suites», Анапа</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Недвижимость & Аренда</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «До этого заказывал съемку у двоих частников с Авито — комната как темный чулан, а в окне белое пятно. Здесь привезли нормальный свет, <mark class="review-highlight">видно и интерьер, и море на закате</mark>. Номера в сервисах бронирования стали кликать намного лучше.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_16">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_9.webp" alt="Елена Михайлова" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Елена Михайлова</h3>
+        <span class="review-card__role">Основатель бренда эко-косметики «Лаванда Юга»</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Косметика & Бренды</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Снимали флаконы косметики с каплями воды и живыми веточками. <mark class="review-highlight">Карточки для Wildberries и Ozon прошли модерацию с первого раза</mark>, ретушь чистейшая — ни пылинки. Обязательно вернемся с зимней серией!»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_17">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">РГ</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Руслан Гаджиев</h3>
+        <span class="review-card__role">Управляющий эко-клубом «Утриш Вилладж», Большой Утриш</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Глэмпинг & HoReCa</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Поймали шикарный вечерний свет в можжевельнике и костровую зону. Теперь люди, когда звонят бронировать, прямо говорят: <mark class="review-highlight">"хотим домик точно как на фотке с подвесными качелями"</mark>. Спасибо за отличную работу!»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_18">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">ТФ</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Татьяна Фомина</h3>
+        <span class="review-card__role">PR-директор сети спа-отелей «Aquamarine», Анапа</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Конференции & PR</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Спасибо за оперативность на форуме! <mark class="review-highlight">Фотографии спикеров заливали в облако прямо во время перерывов между секциями</mark>, журналисты сразу разбирали кадры в новости. Очень выручили!»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_10">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">ДК</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Денис Корнилов</h3>
+        <span class="review-card__role">Бренд-шеф ресторана «Парус & Мидии» (Анапа, Высокий берег)</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Рестораны & HoReCa</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Обычно фуд-фотографы мучают блюда по часу, пока всё не остынет и не покроется коркой. Парни снимали с пылу с жару: <mark class="review-highlight">пар от мидий, хрустящая фокачча, живая подача</mark>. Меню обновили на прошлой неделе — гости заказывают именно те позиции, что на фотках.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_11">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_6.webp" alt="Полина Власова" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Полина Власова</h3>
+        <span class="review-card__role">Основатель свадебного агентства «Amour Events» (Абрау-Дюрсо)</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Свадьбы & События</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Спасибо за тактичность на свадьбе! Никаких постановочных криков и команд гостям, всё на искренних эмоциях. И главное — <mark class="review-highlight">первые 20 кадров прислали молодожёнам уже на следующее утро к завтраку</mark>, невеста была в восторге »
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_12">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_2.webp" alt="Екатерина Смирнова" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Екатерина Смирнова</h3>
+        <span class="review-card__role">Управляющая апарт-комплексом «Villa del Mar», Анапа</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Отели & Апартаменты</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Нужно было срочно переснять все 8 номеров после косметического ремонта. <mark class="review-highlight">Уложились ровно за один день, не сорвав заезд постояльцев</mark>. Цветопередача благородная, море за окнами не выбеленное, а естественного бирюзового цвета. Спасибо Кате за организацию!»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_13">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">ВТ</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Виктор Тарасов</h3>
+        <span class="review-card__role">Коммерческий директор винодельни «Долина Лефкадия / Шато»</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Агротуризм & Бренды</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Ребята приехали на виноградники к 6 утра ради утреннего тумана. <mark class="review-highlight">Кадры подвалов с бочками получились монументальными</mark>, как в европейских винных домах. Работаем на постоянной основе.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_14">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">КГ</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Ксения Григорьева</h3>
+        <span class="review-card__role">Архитектор частных резиденций (Краснодар — Сочи)</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Приватные резиденции</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «У меня заказчики очень строгие насчет приватности: никакого вида на соседние дома и никаких геометок. <mark class="review-highlight">Команда "Фокуса" подписала NDA без вопросов и сняла всё идеально чисто</mark>, только внутренний двор и интерьер. Ценю за надежность.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_15">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">АШ</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Алексей Швецов</h3>
+        <span class="review-card__role">Владелец сети апартаментов «Sunset Suites», Анапа</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Недвижимость & Аренда</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «До этого заказывал съемку у двоих частников с Авито — комната как темный чулан, а в окне белое пятно. Здесь привезли нормальный свет, <mark class="review-highlight">видно и интерьер, и море на закате</mark>. Номера в сервисах бронирования стали кликать намного лучше.»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_16">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <img src="assets/avatars/avatar_square_9.webp" alt="Елена Михайлова" class="review-card__avatar-img">
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Елена Михайлова</h3>
+        <span class="review-card__role">Основатель бренда эко-косметики «Лаванда Юга»</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Косметика & Бренды</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Снимали флаконы косметики с каплями воды и живыми веточками. <mark class="review-highlight">Карточки для Wildberries и Ozon прошли модерацию с первого раза</mark>, ретушь чистейшая — ни пылинки. Обязательно вернемся с зимней серией!»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_17">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">РГ</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Руслан Гаджиев</h3>
+        <span class="review-card__role">Управляющий эко-клубом «Утриш Вилладж», Большой Утриш</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Глэмпинг & HoReCa</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Поймали шикарный вечерний свет в можжевельнике и костровую зону. Теперь люди, когда звонят бронировать, прямо говорят: <mark class="review-highlight">"хотим домик точно как на фотке с подвесными качелями"</mark>. Спасибо за отличную работу!»
+</blockquote>
+</article>
+<article class="review-card" data-review-id="rev_18">
+<div class="review-card__top">
+  <div class="review-card__header-bar">
+    <div class="review-card__author">
+      <div class="review-card__avatar-wrap">
+        <div class="review-card__avatar review-card__avatar--monogram" aria-hidden="true">ТФ</div>
+        <span class="review-card__verified-badge" title="Подтвержденный клиент"></span>
+      </div>
+      <div class="review-card__author-info">
+        <h3 class="review-card__name">Татьяна Фомина</h3>
+        <span class="review-card__role">PR-директор сети спа-отелей «Aquamarine», Анапа</span>
+      </div>
+    </div>
+    <span class="review-card__cat">Конференции & PR</span>
+  </div>
+
+  <div class="review-card__rating">
+    <span class="review-card__stars" aria-hidden="true"></span>
+  </div>
+</div>
+<blockquote class="review-card__quote">
+  «Спасибо за оперативность на форуме! <mark class="review-highlight">Фотографии спикеров заливали в облако прямо во время перерывов между секциями</mark>, журналисты сразу разбирали кадры в новости. Очень выручили!»
+</blockquote>
+</article>
+              </div>
             </div>
           </div>
 
@@ -3882,7 +4784,14 @@
         buildTrackCards(track2, row2Data, lang);
       }
 
-      renderAllTracks();
+      // Attach voice note listeners to pre-rendered markup; only re-render if empty or on language change
+      if (!track1.children.length || !track2.children.length) {
+        renderAllTracks();
+      } else {
+        document.querySelectorAll('#reviewsMarqueeWrap .review-card--voice').forEach((card) => {
+          attachVoiceListener(card);
+        });
+      }
 
       // Live re-render on language switch
       window.addEventListener('languageChanged', () => {
@@ -4125,6 +5034,8 @@
     (function initNativeScrollSync() {
       const progressBar = document.getElementById('scrollProgressBar');
       const docEl = document.documentElement;
+      const heroContentEl = document.querySelector('.hero__content');
+      const heroVideoEl = document.querySelector('.hero__video');
 
       let ticking = false;
       function onScroll() {
@@ -4143,6 +5054,23 @@
             if (typeof window.updateProgressTargets === 'function') {
               window.updateProgressTargets(scrollY);
             }
+
+            // Zero-delay 1:1 mobile touch fade: completely eliminates GSAP scrub lag and matrix recalculations
+            if (heroContentEl && window.innerWidth <= 768) {
+              const fadeRatio = Math.min(1, Math.max(0, scrollY / 220));
+              heroContentEl.style.opacity = (1 - fadeRatio).toFixed(3);
+              heroContentEl.style.pointerEvents = fadeRatio >= 0.95 ? 'none' : 'auto';
+            }
+
+            // Immediately pause 22MB hero video when scrolled past 30px to free 100% GPU memory bus
+            if (heroVideoEl) {
+              if (scrollY > 30) {
+                if (!heroVideoEl.paused) heroVideoEl.pause();
+              } else {
+                if (heroVideoEl.paused) heroVideoEl.play().catch(() => {});
+              }
+            }
+
             ticking = false;
           });
           ticking = true;
@@ -4152,7 +5080,7 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
 
-      // Pinned Hero cinematic parallax depth via native ScrollTrigger
+      // Pinned Hero cinematic parallax depth via native ScrollTrigger (Desktop only)
       if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         const mm = gsap.matchMedia();
 
@@ -4178,23 +5106,6 @@
               start: 'top top',
               end: 'bottom top',
               scrub: 0.5
-            }
-          });
-        });
-
-        // Mobile (<= 768px): ultra-smooth GPU fade-out, zero video overhead, 60-120fps touch scroll
-        mm.add('(max-width: 768px)', () => {
-          gsap.to('.hero__content', {
-            y: '-=40',
-            opacity: 0,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: '.hero',
-              start: 'top top',
-              end: '50% top',
-              scrub: 0.3,
-              fastScrollEnd: true,
-              preventOverlaps: true
             }
           });
         });
