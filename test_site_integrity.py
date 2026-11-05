@@ -24,6 +24,8 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertNotIn('reviews-trust-badge__live-dot', content)
         self.assertNotIn('Смотреть профиль на Яндекс Картах', content)
         self.assertNotIn('reviews-yandex-badge', content)
+        self.assertNotIn('15 минут', content)
+        self.assertIn('в течение дня', content)
         
         # HTML must parse without errors
         parser = html.parser.HTMLParser()
