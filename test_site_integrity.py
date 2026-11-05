@@ -63,6 +63,13 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertIn('arhCostBottom', content)
         self.assertIn('arhTgBtn', content)
         
+        # 200 frames scale & lighting options (natural and artificial x4)
+        self.assertIn('max="200"', content)
+        self.assertIn('200 кадров', content)
+        self.assertIn('arhLightNatural', content)
+        self.assertIn('arhLightArtificial', content)
+        self.assertIn('arhSpecLight', content)
+        
         # Anti-slop checks for calculator
         self.assertNotIn('01 ·', content)
         self.assertNotIn('///', content)

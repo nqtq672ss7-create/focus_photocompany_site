@@ -687,6 +687,10 @@
                 <span class="arh-spec-row__val" id="arhSpecFrames">20 кадров</span>
               </div>
               <div class="arh-spec-row">
+                <span class="arh-spec-row__name">Свет:</span>
+                <span class="arh-spec-row__val" id="arhSpecLight">Естественный свет</span>
+              </div>
+              <div class="arh-spec-row">
                 <span class="arh-spec-row__name">Локация:</span>
                 <span class="arh-spec-row__val" id="arhSpecCity">г. Анапа (базовая)</span>
               </div>
@@ -747,30 +751,62 @@
                 <label for="arhFrames" class="arh-form-label">2. Желаемое количество итоговых кадров</label>
                 <span class="arh-frames-counter" id="arhFramesCounter">20 кадров</span>
               </div>
-              <p class="arh-form-hint">Конечное количество отобранных кадров в чистовой ретуши.</p>
+              <p class="arh-form-hint">Конечное количество отобранных кадров в чистовой журнальной ретуши.</p>
               
               <div class="arh-slider-container">
                 <div class="arh-slider-bubble" id="arhSliderBubble" aria-hidden="true">20</div>
-                <input type="range" id="arhFrames" min="10" max="80" value="20" step="5" class="arh-slider" aria-label="Желаемое количество итоговых фото">
+                <input type="range" id="arhFrames" min="10" max="200" value="20" step="5" class="arh-slider" aria-label="Желаемое количество итоговых фото">
                 <div class="arh-slider-scale" aria-hidden="true">
                   <span>10 кадров</span>
-                  <span>80+ кадров</span>
+                  <span>200 кадров</span>
                 </div>
               </div>
 
               <!-- Quick Presets -->
               <div class="arh-slider-presets" aria-label="Быстрый выбор количества кадров">
-                <button type="button" class="arh-preset-btn" data-frames="15">15 кадров (от 7 500 ₽)</button>
-                <button type="button" class="arh-preset-btn is-active" data-frames="20">20 кадров (от 14 000 ₽)</button>
-                <button type="button" class="arh-preset-btn" data-frames="35">35 кадров (от 22 000 ₽)</button>
-                <button type="button" class="arh-preset-btn" data-frames="50">50+ кадров (от 35 000 ₽)</button>
+                <button type="button" class="arh-preset-btn is-active" data-frames="20">20 кадров</button>
+                <button type="button" class="arh-preset-btn" data-frames="50">50 кадров</button>
+                <button type="button" class="arh-preset-btn" data-frames="100">100 кадров</button>
+                <button type="button" class="arh-preset-btn" data-frames="200">200 кадров</button>
               </div>
             </div>
 
-            <!-- 3. City / Shoot Location -->
+            <!-- 3. Lighting Mode / Освещение -->
+            <div class="arh-form-group">
+              <label class="arh-form-label">
+                <span>3. Освещение на съёмке</span> <span class="arh-req">*</span>
+              </label>
+              <div class="arh-lighting-grid" role="radiogroup" aria-label="Тип освещения на съёмке">
+                <label class="arh-lighting-card is-active" for="arhLightNatural">
+                  <input type="radio" name="arhLighting" id="arhLightNatural" value="natural" checked class="arh-lighting-radio">
+                  <div class="arh-lighting-card__header">
+                    <div class="arh-lighting-card__title-wrap">
+                      <span class="arh-lighting-card__radio-indicator" aria-hidden="true"></span>
+                      <span class="arh-lighting-card__name">Естественный свет</span>
+                    </div>
+                    <span class="arh-lighting-card__badge">Базовый</span>
+                  </div>
+                  <p class="arh-lighting-card__desc">Съёмка при естественном и интерьерном освещении локации без выносного студийного импульса.</p>
+                </label>
+
+                <label class="arh-lighting-card" for="arhLightArtificial">
+                  <input type="radio" name="arhLighting" id="arhLightArtificial" value="artificial" class="arh-lighting-radio">
+                  <div class="arh-lighting-card__header">
+                    <div class="arh-lighting-card__title-wrap">
+                      <span class="arh-lighting-card__radio-indicator" aria-hidden="true"></span>
+                      <span class="arh-lighting-card__name">Наш искусственный свет</span>
+                    </div>
+                    <span class="arh-lighting-card__badge arh-lighting-card__badge--premium">×4 Премиум</span>
+                  </div>
+                  <p class="arh-lighting-card__desc">Профессиональный комплект импульсного студийного света. Послойная проработка объёма, глубины и фактур интерьера.</p>
+                </label>
+              </div>
+            </div>
+
+            <!-- 4. City / Shoot Location -->
             <div class="arh-form-group">
               <label for="arhCity" class="arh-form-label">
-                <span>3. Город / Локация съёмки</span> <span class="arh-req">*</span>
+                <span>4. Город / Локация съёмки</span> <span class="arh-req">*</span>
               </label>
               <div class="arh-select-wrapper">
                 <select id="arhCity" class="arh-select" required aria-label="Город съёмки">
@@ -789,10 +825,10 @@
             <!-- Hairline Divider -->
             <hr class="arh-calc-divider" aria-hidden="true">
 
-            <!-- 4. Contact & Submit Section -->
+            <!-- 5. Contact & Submit Section -->
             <div class="arh-submit-block">
               <div class="arh-submit-header">
-                <h3 class="arh-submit-title">4. Куда отправить точный расчёт сметы?</h3>
+                <h3 class="arh-submit-title">5. Куда отправить точный расчёт сметы?</h3>
                 <p class="arh-submit-desc">Укажите телефон или Telegram. Екатерина свяжется с вами в течение 15 минут с готовой сметой.</p>
               </div>
 
@@ -3859,7 +3895,7 @@
     })();
 
     /* ══════════════════════════════════════════════════════════
-       EDITORIAL ARCHITECTURAL CALCULATOR (4-Step Frictionless Estimator)
+       EDITORIAL ARCHITECTURAL CALCULATOR (5-Step Frictionless Estimator)
        ══════════════════════════════════════════════════════════ */
     (function initArhCalculator() {
       const section = document.getElementById('calculator');
@@ -3877,8 +3913,10 @@
 
       const specType = document.getElementById('arhSpecType');
       const specFrames = document.getElementById('arhSpecFrames');
+      const specLight = document.getElementById('arhSpecLight');
       const specCity = document.getElementById('arhSpecCity');
       const framesCounter = document.getElementById('arhFramesCounter');
+      const lightingRadios = section.querySelectorAll('input[name="arhLighting"]');
 
       const pricingMatrix = {
         interiors: { basePerFrame: 700, minPrice: 7500 },
@@ -3904,7 +3942,7 @@
         if (!bubble || !framesInput) return;
         bubble.textContent = val;
         const min = parseInt(framesInput.min, 10) || 10;
-        const max = parseInt(framesInput.max, 10) || 80;
+        const max = parseInt(framesInput.max, 10) || 200;
         const pct = ((val - min) / (max - min)) * 100;
         bubble.style.left = `calc(${pct}% + (${9 - pct * 0.18}px))`;
       }
@@ -3918,6 +3956,16 @@
         const selOption = shootType ? shootType.options[shootType.selectedIndex] : null;
         let typeName = selOption ? selOption.text.split('(')[0].trim() : 'Интерьер для дизайнера';
 
+        // Lighting check
+        let isArtificial = false;
+        lightingRadios.forEach(r => {
+          if (r.checked && r.value === 'artificial') isArtificial = true;
+          const card = r.closest('.arh-lighting-card');
+          if (card) card.classList.toggle('is-active', r.checked);
+        });
+
+        const lightMultiplier = isArtificial ? 4 : 1;
+
         const cityKey = citySelect ? citySelect.value : 'anapa';
         const cityOption = citySelect ? citySelect.options[citySelect.selectedIndex] : null;
         let cityName = cityOption ? cityOption.text.split('(')[0].trim() : 'г. Анапа';
@@ -3925,7 +3973,9 @@
         const rate = pricingMatrix[typeKey] || pricingMatrix.interiors;
         const transfer = cityTransfers[cityKey] || 0;
 
-        let estimated = Math.max(rate.minPrice, frames * rate.basePerFrame) + transfer;
+        const baseFrameCost = frames * rate.basePerFrame * lightMultiplier;
+        const minCost = rate.minPrice * lightMultiplier;
+        let estimated = Math.max(minCost, baseFrameCost) + transfer;
         // round to nearest 500
         estimated = Math.round(estimated / 500) * 500;
 
@@ -3936,11 +3986,18 @@
         if (framesCounter) framesCounter.textContent = `${frames} кадров`;
         if (specType) specType.textContent = typeName;
         if (specFrames) specFrames.textContent = `${frames} кадров`;
+        if (specLight) specLight.textContent = isArtificial ? 'Искусственный свет (×4)' : 'Естественный свет';
         if (specCity) specCity.textContent = cityName;
+
+        if (costBottom) {
+          costBottom.textContent = isArtificial
+            ? 'Включает: выезд с комплектом студийного импульсного света, световую проработку планов интерьера, оптику tilt-shift 90°, попиксельную журнальную ретушь и коммерческие права по договору.'
+            : 'Включает: выезд, съёмку с оптикой tilt-shift 90°, естественный свет, попиксельную ретушь и коммерческие права по договору.';
+        }
 
         // Dynamic slider fill
         const min = parseInt(framesInput.min, 10) || 10;
-        const max = parseInt(framesInput.max, 10) || 80;
+        const max = parseInt(framesInput.max, 10) || 200;
         const pct = ((frames - min) / (max - min)) * 100;
         framesInput.style.background = `linear-gradient(to right, #CAFF1C 0%, #CAFF1C ${pct}%, rgba(255, 255, 255, 0.14) ${pct}%, rgba(255, 255, 255, 0.14) 100%)`;
 
@@ -3952,7 +4009,8 @@
         });
 
         // Direct Telegram link with structured brief
-        const msg = `Здравствуйте, Екатерина! Сконфигурировал съёмку на focus-photocompany.ru:\n\n• Объект: ${typeName}\n• Объём: ${frames} кадров\n• Локация: ${cityName}\n• Договор: Официальный договор ИП Закопудова Е.А.\n• Права: Бессрочные коммерческие права\n• Ориентир сметы: от ${formatted} ₽\n\nХочу получить точный расчёт сметы и согласовать дату съёмки.`;
+        const lightName = isArtificial ? 'Искусственный свет (проф. студийный импульс, ×4)' : 'Естественный свет (базовый тариф)';
+        const msg = `Здравствуйте, Екатерина! Сконфигурировал съёмку на focus-photocompany.ru:\n\n• Объект: ${typeName}\n• Объём: ${frames} кадров\n• Освещение: ${lightName}\n• Локация: ${cityName}\n• Договор: Официальный договор ИП Закопудова Е.А.\n• Права: Бессрочные коммерческие права\n• Ориентир сметы: от ${formatted} ₽\n\nХочу получить точный расчёт сметы и согласовать дату съёмки.`;
         if (tgBtn) {
           tgBtn.href = `https://t.me/zakonpudova?text=${encodeURIComponent(msg)}`;
         }
@@ -3961,6 +4019,7 @@
       if (shootType) shootType.addEventListener('change', calculate);
       if (framesInput) framesInput.addEventListener('input', calculate);
       if (citySelect) citySelect.addEventListener('change', calculate);
+      lightingRadios.forEach(r => r.addEventListener('change', calculate));
 
       const presetBtns = section.querySelectorAll('.arh-preset-btn');
       presetBtns.forEach(btn => {
@@ -3997,12 +4056,15 @@
           const typeName = selOption ? selOption.text.split('(')[0].trim() : 'Интерьер для дизайнера';
           const cityOption = citySelect ? citySelect.options[citySelect.selectedIndex] : null;
           const cityName = cityOption ? cityOption.text.split('(')[0].trim() : 'г. Анапа';
+          const isArt = Array.from(lightingRadios).some(r => r.checked && r.value === 'artificial');
+          const lightName = isArt ? 'Искусственный свет (проф. студийный импульс, ×4)' : 'Естественный свет (базовый тариф)';
           const costText = costTop ? costTop.textContent : 'от 14 000 ₽';
 
           const payload = {
-            source: 'configurator_4steps',
+            source: 'configurator_5steps',
             objectType: typeName,
             frames: frames,
+            lighting: lightName,
             city: cityName,
             estimate: costText,
             contact: contactVal,

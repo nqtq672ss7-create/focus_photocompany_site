@@ -4756,7 +4756,8 @@ html {
 .arh-slider-container {
   position: relative;
   width: 100%;
-  padding-top: 36px;
+  padding-top: 42px;
+  margin-top: 6px;
   margin-bottom: 6px;
 }
 
@@ -4859,6 +4860,137 @@ html {
   border-color: var(--lime, #CAFF1C);
   color: var(--lime, #CAFF1C);
   font-weight: 600;
+}
+
+/* Lighting Selector Cards (Luxury 2-Option Architecture Selector) */
+.arh-lighting-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.arh-lighting-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.arh-lighting-card:hover {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(255, 255, 255, 0.24);
+  transform: translateY(-1px);
+}
+
+.arh-lighting-card.is-active,
+.arh-lighting-card:has(.arh-lighting-radio:checked) {
+  background: rgba(202, 255, 28, 0.06);
+  border-color: var(--lime, #CAFF1C);
+  box-shadow: 0 0 24px rgba(202, 255, 28, 0.12), inset 0 1px 0 rgba(202, 255, 28, 0.2);
+}
+
+.arh-lighting-radio {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.arh-lighting-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.arh-lighting-card__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arh-lighting-card__radio-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.arh-lighting-card__radio-indicator::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--lime, #CAFF1C);
+  transform: scale(0);
+  transition: transform 0.18s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.arh-lighting-card.is-active .arh-lighting-card__radio-indicator,
+.arh-lighting-card:has(.arh-lighting-radio:checked) .arh-lighting-card__radio-indicator {
+  border-color: var(--lime, #CAFF1C);
+  background: rgba(202, 255, 28, 0.08);
+}
+
+.arh-lighting-card.is-active .arh-lighting-card__radio-indicator::after,
+.arh-lighting-card:has(.arh-lighting-radio:checked) .arh-lighting-card__radio-indicator::after {
+  transform: scale(1);
+}
+
+.arh-lighting-card__name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.arh-lighting-card__badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.arh-lighting-card__badge--premium {
+  color: #0c0d11;
+  background: var(--lime, #CAFF1C);
+  border-color: var(--lime, #CAFF1C);
+  font-weight: 800;
+}
+
+.arh-lighting-card__desc {
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.48);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .arh-lighting-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 }
 
 /* Radio groups */
