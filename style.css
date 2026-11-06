@@ -611,10 +611,12 @@ html {
 }
 
 .ac-title {
-  font-size: clamp(36px, 4.2vw, 68px);
-  line-height: 1.05;
-  font-weight: 850;
-  letter-spacing: -0.035em;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(32px, 3.8vw, 54px);
+  line-height: 1.06;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
   margin: 0;
   color: #000000 !important;
   display: flex;
@@ -825,10 +827,11 @@ html {
 
 .srv-title {
   margin: 0;
-  font-size: clamp(36px, 4.8vw, 66px);
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(32px, 3.8vw, 54px);
   font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -0.035em;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
@@ -1415,7 +1418,9 @@ html {
     margin-bottom: 36px;
   }
   .srv-title {
-    font-size: clamp(30px, 7.5vw, 42px);
+    font-size: clamp(26px, 6.5vw, 36px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
   }
   .srv-badges {
     grid-template-columns: 1fr;
@@ -1559,11 +1564,13 @@ html {
 }
 
 .works-sc-title {
-  font-size: clamp(24px, 2.8vw, 38px);
-  font-weight: 850;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(30px, 3.6vw, 48px);
+  font-weight: 800;
   margin: 0;
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: 1.08;
+  text-transform: uppercase;
   color: #0c0d12;
   display: flex;
   align-items: center;
@@ -2016,10 +2023,12 @@ html {
 
 .reviews-title {
   margin: 0 0 14px;
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 850;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(30px, 3.6vw, 50px);
+  font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: 1.08;
+  text-transform: uppercase;
   color: #0C0D11 !important;
 }
 
@@ -2808,7 +2817,9 @@ html {
     padding-bottom: 12px;
   }
   .works-sc-title {
-    font-size: 24px;
+    font-size: clamp(24px, 6vw, 30px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
   }
   .works-sc-tabs {
     overflow-x: auto;
@@ -2980,10 +2991,11 @@ html {
 }
 
 .contacts-section--lime .contacts-title {
-  font-size: clamp(34px, 4.2vw, 60px);
-  font-weight: 900;
-  line-height: 1.02;
-  letter-spacing: -0.035em;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(32px, 3.8vw, 54px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
   color: #0c0d10;
   margin: 0 0 18px;
@@ -4498,15 +4510,15 @@ html {
 
 .arh-calc-eyebrow__dash {
   color: var(--lime, #CAFF1C);
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .arh-calc-title {
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(34px, 3.8vw, 54px);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.035em;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(32px, 3.8vw, 54px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
   color: #ffffff;
   margin: 0 0 16px 0;
@@ -5286,15 +5298,15 @@ html {
 
 .faq-badge__dash {
   color: var(--lime, #CAFF1C);
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .faq-title {
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(32px, 3.6vw, 52px);
-  font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -0.035em;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(32px, 3.8vw, 54px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
   color: #ffffff;
   margin: 0 0 16px 0;
@@ -5357,7 +5369,7 @@ html {
 }
 
 .faq-question {
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(15.5px, 1.15vw, 17.5px);
   font-weight: 700;
   line-height: 1.35;
@@ -5564,7 +5576,7 @@ html {
 }
 
 .lead-handoff-title {
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(22px, 2.5vw, 26px);
   font-weight: 800;
   line-height: 1.2;
@@ -5605,7 +5617,7 @@ html {
   width: 100%;
   padding: 15px 20px;
   border-radius: 12px;
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 14.5px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -6113,7 +6125,7 @@ html {
 }
 
 .process-deadline-box__val {
-  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-family: 'Manrope', -apple-system, sans-serif;
   font-size: 22px;
   font-weight: 800;
   color: var(--lime, #CAFF1C);
@@ -6150,7 +6162,7 @@ html {
 }
 
 .srv-card__price-badge {
-  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-family: 'Manrope', -apple-system, sans-serif;
   font-size: 18px;
   font-weight: 800;
   color: var(--lime, #CAFF1C);
