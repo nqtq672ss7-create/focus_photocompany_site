@@ -12,6 +12,15 @@
   <title>Интерьерная фотосъёмка в Анапе — отели, виллы, дизайнеры — ФОКУС</title>
   <meta name="description" content="Интерьерная и архитектурная фотосъёмка отелей, вилл и апартаментов в Анапе и по всему побережью. Сдача кадров от 48ч по официальному договору.">
   <link rel="canonical" href="https://focus-photocompany.ru/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="yandex" content="index, follow">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+  <!-- SEARCH ENGINE VERIFICATION SLOTS -->
+  <!-- To activate: replace values with your actual verification tokens from Google Search Console and Yandex Webmaster -->
+  <meta name="yandex-verification" content="INSERT_YANDEX_VERIFICATION_TOKEN_HERE">
+  <meta name="google-site-verification" content="INSERT_GOOGLE_VERIFICATION_TOKEN_HERE">
 
   <!-- GEO-TARGETING (Primary: Anapa & Black Sea Coast / Krasnodar Krai, Nationwide Coverage) -->
   <meta name="geo.region" content="RU-KDA">
@@ -25,9 +34,11 @@
   <meta property="og:title" content="Интерьерная фотосъёмка в Анапе — отели, виллы, дизайнеры — ФОКУС">
   <meta property="og:description" content="Интерьерная и архитектурная фотосъёмка отелей, вилл и апартаментов в Анапе и по всему побережью. Сдача кадров от 48ч по официальному договору.">
   <meta property="og:url" content="https://focus-photocompany.ru/">
-  <meta property="og:image" content="https://focus-photocompany.ru/assets/focus-lobby.webp">
-  <meta property="og:image:width" content="1536">
-  <meta property="og:image:height" content="1024">
+  <meta property="og:image" content="https://focus-photocompany.ru/assets/og-image.jpg">
+  <meta property="og:image:secure_url" content="https://focus-photocompany.ru/assets/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Интерьерная съёмка отеля премиум-класса в Анапе — фотокомпания ФОКУС">
   <meta property="og:locale" content="ru_RU">
 
@@ -35,7 +46,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Интерьерная фотосъёмка в Анапе — отели, виллы, дизайнеры — ФОКУС">
   <meta name="twitter:description" content="Интерьерная и архитектурная фотосъёмка отелей, вилл и апартаментов в Анапе и по всему побережью. Сдача кадров от 48ч по официальному договору.">
-  <meta name="twitter:image" content="https://focus-photocompany.ru/assets/focus-lobby.webp">
+  <meta name="twitter:image" content="https://focus-photocompany.ru/assets/og-image.jpg">
 
   <!-- WEB APP MANIFEST & FAVICONS -->
   <link rel="manifest" href="site.webmanifest">
@@ -62,7 +73,7 @@
         "alternateName": "Focus Photo Company",
         "url": "https://focus-photocompany.ru",
         "logo": "https://focus-photocompany.ru/favicon.svg",
-        "image": "https://focus-photocompany.ru/assets/focus-lobby.webp",
+        "image": "https://focus-photocompany.ru/assets/og-image.jpg",
         "telephone": "+7-929-850-85-03",
         "email": "info@focus-photocompany.ru",
         "priceRange": "₽₽",
@@ -99,6 +110,50 @@
         "sameAs": [
           "https://t.me/zakonpudova",
           "https://wa.me/79298508503"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://focus-photocompany.ru/#website",
+        "url": "https://focus-photocompany.ru/",
+        "name": "ФОКУС — Интерьерная фотокомпания в Анапе",
+        "description": "Профессиональная интерьерная и архитектурная фотосъёмка отелей, вилл и апартаментов в Анапе и по всему побережью",
+        "inLanguage": "ru-RU"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://focus-photocompany.ru/#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "https://focus-photocompany.ru/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Услуги",
+            "item": "https://focus-photocompany.ru/#services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Примеры съёмок",
+            "item": "https://focus-photocompany.ru/#works"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Калькулятор сметы",
+            "item": "https://focus-photocompany.ru/#calculator"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Контакты",
+            "item": "https://focus-photocompany.ru/#contacts"
+          }
         ]
       },
       {
@@ -161,7 +216,7 @@
     </div>
   </header>
 
-  <main class="hero" aria-label="Главный экран сайта фотокомпании ФОКУС">
+  <main class="hero" id="hero" aria-label="Главный экран сайта фотокомпании ФОКУС">
     <div class="hero__image" aria-hidden="true"></div>
     <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/focus-lobby.webp"><source src="assets/focus-hero.mp4" type="video/mp4"></video>
     <div class="hero__shade" aria-hidden="true"></div>
@@ -169,10 +224,13 @@
 
     <section class="hero__content" id="top">
       <div class="hero__logo-wrap hero__logo-wrap--parallax">
-        <picture>
-          <source srcset="assets/focus-hero-logo.webp" type="image/webp">
-          <img class="hero__logo" src="assets/focus-hero-logo.webp" alt="ФОКУС — интерьерная фотокомпания в Анапе" width="2400" height="1602" fetchpriority="high" decoding="async" loading="eager">
-        </picture>
+        <h1 class="hero__heading">
+          <picture>
+            <source srcset="assets/focus-hero-logo.webp" type="image/webp">
+            <img class="hero__logo" src="assets/focus-hero-logo.webp" alt="ФОКУС — интерьерная фотокомпания в Анапе" width="2400" height="1602" fetchpriority="high" decoding="async" loading="eager">
+          </picture>
+          <span class="sr-only">ФОКУС — интерьерная фотокомпания в Анапе: фотосъёмка отелей, вилл и коммерческих пространств</span>
+        </h1>
       </div>
       <p class="hero__tagline">
         <span data-i18n="tagline1">ВЫДЕЛЯЕМ ГЛАВНОЕ.</span><br>
@@ -481,7 +539,7 @@
               <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
             </div>
             <div class="srv-pillar-body">
-              <h4 class="srv-pillar__title" data-i18n="srvPillar1Title">Скаутинг и подготовка</h4>
+              <h3 class="srv-pillar__title" data-i18n="srvPillar1Title">Скаутинг и подготовка</h3>
               <p class="srv-pillar__desc" data-i18n="srvPillar1Desc">Анализируем инсоляцию, углы съёмки и световой режим объекта до выезда на площадку.</p>
             </div>
           </div>
@@ -491,7 +549,7 @@
               <svg viewBox="0 0 20 20" fill="none"><path d="M10 10a4 4 0 100-8 4 4 0 000 8zM3 18a7 7 0 0114 0H3z" stroke="currentColor" stroke-width="1.6"/></svg>
             </div>
             <div class="srv-pillar-body">
-              <h4 class="srv-pillar__title" data-i18n="srvPillar2Title">Команда под масштаб</h4>
+              <h3 class="srv-pillar__title" data-i18n="srvPillar2Title">Команда под масштаб</h3>
               <p class="srv-pillar__desc" data-i18n="srvPillar2Desc">От одного интерьерного фотографа со светом до расширенной группы с видеографом и дроном.</p>
             </div>
           </div>
@@ -501,7 +559,7 @@
               <svg viewBox="0 0 20 20" fill="none"><path d="M4 4h12v12H4zM4 9h12M9 4v12" stroke="currentColor" stroke-width="1.6"/></svg>
             </div>
             <div class="srv-pillar-body">
-              <h4 class="srv-pillar__title" data-i18n="srvPillar3Title">Готовый медиапакет</h4>
+              <h3 class="srv-pillar__title" data-i18n="srvPillar3Title">Готовый медиапакет</h3>
               <p class="srv-pillar__desc" data-i18n="srvPillar3Desc">Цветокоррекция, детальная ретушь и бессрочные коммерческие права без скрытых доплат.</p>
             </div>
           </div>
@@ -1539,7 +1597,7 @@
         <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="works-modal__pure-media">
-        <img src="" alt="ФОКУС Фотосъёмка" class="works-modal__pure-img" id="modalImg">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E" alt="ФОКУС Фотосъёмка" class="works-modal__pure-img" id="modalImg">
         <video src="" class="works-modal__pure-video" id="modalVideo" playsinline controls loop style="display:none;"></video>
       </div>
     </div>
@@ -1912,7 +1970,7 @@
           <!-- Success Overlay Toast -->
           <div class="form-success" id="formSuccess" aria-live="polite">
             <div class="form-success__icon"></div>
-            <h4 class="form-success__title" data-i18n="contactsSuccessTitle">Заявка принята!</h4>
+            <div class="form-success__title" data-i18n="contactsSuccessTitle">Заявка принята!</div>
             <p class="form-success__text" data-i18n="contactsSuccessText">Спасибо! Екатерина свяжется с вами в течение дня.</p>
             <button type="button" class="form-success__reset" id="formSuccessReset">Отправить ещё одну заявку</button>
           </div>
@@ -1944,7 +2002,7 @@
 
         <!-- Column 2: Navigation -->
         <div class="footer-col">
-          <h4 class="footer-col__title" data-i18n="footerNavTitle">НАВИГАЦИЯ</h4>
+          <h3 class="footer-col__title" data-i18n="footerNavTitle">НАВИГАЦИЯ</h3>
           <ul class="footer-col__list">
             <li><a href="#hero" class="footer-col__link" data-i18n="home">Главная</a></li>
             <li><a href="#about" class="footer-col__link" data-i18n="about">О компании</a></li>
@@ -1957,7 +2015,7 @@
 
         <!-- Column 3: Directions & Works Categories -->
         <div class="footer-col">
-          <h4 class="footer-col__title" data-i18n="footerServicesTitle">НАПРАВЛЕНИЯ</h4>
+          <h3 class="footer-col__title" data-i18n="footerServicesTitle">НАПРАВЛЕНИЯ</h3>
           <ul class="footer-col__list">
             <li><a href="#works" class="footer-col__link footer-col__link--cat" data-cat="interiors">Интерьеры & Архитектура</a></li>
             <li><a href="#works" class="footer-col__link footer-col__link--cat" data-cat="hotels">Отели: Гости & Lifestyle</a></li>
@@ -1968,7 +2026,7 @@
 
         <!-- Column 4: Contact & Direct Channels -->
         <div class="footer-col">
-          <h4 class="footer-col__title" data-i18n="footerContactTitle">ПРЯМАЯ СВЯЗЬ</h4>
+          <h3 class="footer-col__title" data-i18n="footerContactTitle">ПРЯМАЯ СВЯЗЬ</h3>
           <div class="footer-col__info">
             <span class="footer-col__info-label" data-i18n="footerOfficeLabel">ОФИС КОМПАНИИ:</span>
             <a href="tel:+79531151199" class="footer-col__info-val">+7 (953) 115-11-99</a>
@@ -3099,7 +3157,7 @@
       if (videoSrc) {
         if (modalImg) {
           modalImg.style.display = 'none';
-          modalImg.removeAttribute('src');
+          modalImg.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1 1\'%3E%3C/svg%3E';
         }
         if (modalVideo) {
           modalVideo.src = videoSrc;
@@ -3136,7 +3194,7 @@
         modalVideo.style.display = 'none';
       }
       if (modalImg) {
-        modalImg.removeAttribute('src');
+        modalImg.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1 1\'%3E%3C/svg%3E';
         modalImg.style.display = 'block';
       }
     }
@@ -3956,7 +4014,7 @@
         const item = data[activeTab] || data.privacy;
         body.innerHTML = `
           <div class="legal-badge" style="display:inline-block;margin-bottom:12px;font-size:10px;font-weight:800;letter-spacing:0.12em;padding:4px 10px;border-radius:100px;background:rgba(202,255,28,0.12);color:var(--lime,#CAFF1C);border:1px solid rgba(202,255,28,0.3);">${item.badge}</div>
-          <h1 style="font-size:clamp(22px, 3.5vw, 28px);font-weight:800;color:#fff;margin:0 0 16px;line-height:1.25;">${item.title}</h1>
+          <h2 style="font-size:clamp(22px, 3.5vw, 28px);font-weight:800;color:#fff;margin:0 0 16px;line-height:1.25;">${item.title}</h2>
           ${item.html}
         `;
         body.scrollTop = 0;

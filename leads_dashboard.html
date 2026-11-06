@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
   <title>ФОКУС — Панель заявок управляющей</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +55,7 @@
       background: var(--lime);
       color: #0c0d10;
       padding: 3px 8px;
-      border-radius: 100px;
+      border-radius: 4px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
@@ -67,7 +68,7 @@
     .stat-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 8px;
       padding: 20px;
     }
     .stat-val {
@@ -95,13 +96,13 @@
       align-items: center;
       gap: 8px;
       padding: 10px 18px;
-      border-radius: 100px;
+      border-radius: 6px;
       font-size: 13px;
       font-weight: 700;
       text-decoration: none;
       cursor: pointer;
       border: none;
-      transition: all 0.2s;
+      transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
     }
     .btn-lime {
       background: var(--lime);
@@ -122,7 +123,7 @@
     .table-wrap {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 20px;
+      border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     }
@@ -160,7 +161,7 @@
     .tag {
       display: inline-block;
       padding: 4px 10px;
-      border-radius: 100px;
+      border-radius: 4px;
       font-size: 11px;
       font-weight: 700;
       background: rgba(202, 255, 28, 0.12);
@@ -176,13 +177,13 @@
       align-items: center;
       gap: 6px;
       padding: 8px 14px;
-      border-radius: 100px;
+      border-radius: 6px;
       font-size: 12px;
       font-weight: 800;
       background: var(--lime);
       color: #0c0d10;
       text-decoration: none;
-      transition: all 0.2s;
+      transition: background-color 0.2s ease, transform 0.2s ease;
     }
     .call-btn:hover {
       transform: scale(1.04);
@@ -193,13 +194,13 @@
       align-items: center;
       gap: 6px;
       padding: 8px 14px;
-      border-radius: 100px;
+      border-radius: 6px;
       font-size: 12px;
       font-weight: 700;
       background: #25D366;
       color: #fff;
       text-decoration: none;
-      transition: all 0.2s;
+      transition: background-color 0.2s ease, transform 0.2s ease;
     }
     .wa-btn:hover {
       transform: scale(1.04);
@@ -221,7 +222,7 @@
       </div>
       <div style="display: flex; gap: 10px;">
         <a href="index.html" class="btn btn-outline">← На сайт</a>
-        <a href="leads.csv" download="leads_focus.csv" class="btn btn-lime">📥 Скачать Excel (CSV)</a>
+        <a href="leads.csv" download="leads_focus.csv" class="btn btn-lime">Скачать Excel (CSV)</a>
       </div>
     </header>
 
@@ -243,7 +244,7 @@
     <div class="actions-bar">
       <h2 style="font-size: 18px; font-weight: 800;">Журнал входящих лидов</h2>
       <div style="font-size: 12px; color: var(--text-muted);">
-        Автообновление каждые 10 секунд • <span id="lastUpdated">...</span>
+        Автообновление каждые 10 секунд <span style="opacity:0.4;">/</span> <span id="lastUpdated">...</span>
       </div>
     </div>
 
@@ -292,11 +293,11 @@
       fetch('/api/leads')
         .then(res => {
           if (res.status === 401) {
-            document.getElementById('leadsTableBody').innerHTML = '<tr><td colspan="5" class="empty-state" style="color: #ff6b6b;">🔒 Доступ закрыт. Требуется авторизация администратора. <br><button onclick="location.reload()" class="btn btn-outline" style="margin-top: 12px;">Войти в систему</button></td></tr>';
+            document.getElementById('leadsTableBody').innerHTML = '<tr><td colspan="5" class="empty-state" style="color: #ff6b6b;">Доступ закрыт. Требуется авторизация администратора. <br><button onclick="location.reload()" class="btn btn-outline" style="margin-top: 12px;">Войти в систему</button></td></tr>';
             throw new Error('401 Unauthorized');
           }
           if (res.status === 429) {
-            document.getElementById('leadsTableBody').innerHTML = '<tr><td colspan="5" class="empty-state" style="color: #f59e0b;">⏳ Превышено число попыток входа. Защита от подбора пароля активна. Попробуйте через 5 минут.</td></tr>';
+            document.getElementById('leadsTableBody').innerHTML = '<tr><td colspan="5" class="empty-state" style="color: #f59e0b;">Превышено число попыток входа. Защита от подбора пароля активна. Попробуйте через 5 минут.</td></tr>';
             throw new Error('429 Too Many Requests');
           }
           return res.json();
@@ -343,7 +344,7 @@
                 </td>
                 <td>
                   <div class="quick-actions">
-                    ${phoneDigits ? `<a href="tel:+${phoneDigits}" class="call-btn" title="Позвонить">📞 Набрать</a>` : ''}
+                    ${phoneDigits ? `<a href="tel:+${phoneDigits}" class="call-btn" title="Позвонить">Набрать</a>` : ''}
                     ${phoneDigits ? `<a href="https://wa.me/${phoneDigits}" target="_blank" rel="noopener noreferrer" class="wa-btn" title="Написать в WhatsApp">WhatsApp</a>` : ''}
                     ${tgHandle ? `<a href="https://t.me/${tgHandle}" target="_blank" rel="noopener noreferrer" class="call-btn" style="background:#2AABEE;color:#fff;">Telegram</a>` : ''}
                   </div>

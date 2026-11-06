@@ -154,5 +154,75 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertNotIn('contactsChipInteriors: \'01', html)
         self.assertNotIn('contactsChipHotels: \'02', html)
 
+    def test_advanced_seo_and_crawler_integrity(self):
+        root = os.path.dirname(__file__)
+
+        # 1. robots.txt crawler directives
+        with open(os.path.join(root, 'robots.txt'), 'r', encoding='utf-8') as f:
+            robots = f.read()
+        self.assertIn('User-agent: Googlebot', robots)
+        self.assertIn('User-agent: Yandex', robots)
+        self.assertIn('User-agent: Googlebot-Image', robots)
+        self.assertIn('User-agent: YandexImages', robots)
+        self.assertIn('Allow: /assets/', robots)
+        self.assertIn('Clean-param: utm_source', robots)
+        self.assertIn('Host: https://focus-photocompany.ru', robots)
+
+        # 2. sitemap.xml freshness and schema
+        with open(os.path.join(root, 'sitemap.xml'), 'r', encoding='utf-8') as f:
+            sitemap = f.read()
+        self.assertIn('<lastmod>2026-11-06</lastmod>', sitemap)
+        self.assertIn('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"', sitemap)
+        self.assertIn('og-image.jpg', sitemap)
+
+        # 3. 404.html existence and noindex
+        f404_path = os.path.join(root, '404.html')
+        self.assertTrue(os.path.exists(f404_path), '404.html must exist to prevent soft 404')
+        with open(f404_path, 'r', encoding='utf-8') as f:
+            f404 = f.read()
+        self.assertIn('<meta name="robots" content="noindex, follow">', f404)
+
+        # 4. Social OpenGraph 1200x630 assets
+        og_jpg = os.path.join(root, 'assets', 'og-image.jpg')
+        self.assertTrue(os.path.exists(og_jpg), 'assets/og-image.jpg must exist')
+
+        # 5. Exact H1 count in index.html (Strictly ONE H1)
+        with open(os.path.join(root, 'index.html'), 'r', encoding='utf-8') as f:
+            index_html = f.read()
+        import re
+        h1_matches = re.findall(r'<h1[^>]*>(.*?)</h1>', index_html, re.DOTALL | re.IGNORECASE)
+        self.assertEqual(len(h1_matches), 1, f'Expected strictly 1 H1 tag, found {len(h1_matches)}')
+        self.assertIn('ФОКУС', h1_matches[0])
+
+        # 6. Crawler directives & HTTPS upgrades in index.html
+        self.assertIn('<meta name="robots" content="index, follow', index_html)
+        self.assertIn('<meta name="googlebot" content="index, follow', index_html)
+        self.assertIn('<meta name="yandex" content="index, follow">', index_html)
+        self.assertIn('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">', index_html)
+        self.assertIn('og:image:width" content="1200"', index_html)
+        self.assertIn('og:image:height" content="630"', index_html)
+        self.assertIn('og-image.jpg', index_html)
+        self.assertIn('BreadcrumbList', index_html)
+        self.assertIn('WebSite', index_html)
+
+        # 7. Legal pages canonical and robots
+        for doc in ['privacy.html', 'terms.html', 'cookies.html']:
+            with open(os.path.join(root, doc), 'r', encoding='utf-8') as f:
+                c = f.read()
+            self.assertIn(f'<link rel="canonical" href="https://focus-photocompany.ru/{doc}">', c)
+            self.assertIn('<meta name="robots" content="index, follow">', c)
+            self.assertIn('<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">', c)
+
+        # 8. Requisites anchor in privacy.html
+        with open(os.path.join(root, 'privacy.html'), 'r', encoding='utf-8') as f:
+            privacy_c = f.read()
+        self.assertIn('id="requisites"', privacy_c)
+
+        # 9. Server security and HSTS
+        with open(os.path.join(root, 'serve.py'), 'r', encoding='utf-8') as f:
+            serve_c = f.read()
+        self.assertIn('Strict-Transport-Security', serve_c)
+        self.assertIn('404.html', serve_c)
+
 if __name__ == '__main__':
     unittest.main()

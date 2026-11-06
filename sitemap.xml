@@ -1,29 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://focus-photocompany.ru/</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://focus-photocompany.ru/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://focus-photocompany.ru/?lang=en" />
+    <image:image>
+      <image:loc>https://focus-photocompany.ru/assets/og-image.jpg</image:loc>
+      <image:title>Интерьерная фотосъёмка в Анапе — фотокомпания ФОКУС</image:title>
+      <image:caption>Премиальная архитектурная и интерьерная фотосъёмка отелей и вилл в Анапе и на Юге России</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://focus-photocompany.ru/assets/focus-lobby.webp</image:loc>
+      <image:title>Интерьер отеля премиум-класса</image:title>
+      <image:caption>Световой дизайн и интерьерная фотосъёмка лобби бутик-отеля в Анапе</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://focus-photocompany.ru/assets/about-card-1.webp</image:loc>
+      <image:title>Интерьерная съёмка жилых и коммерческих пространств</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://focus-photocompany.ru/assets/hotel-guest-15.webp</image:loc>
+      <image:title>Отельная фотосъёмка и Lifestyle гостей</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://focus-photocompany.ru/privacy.html</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://focus-photocompany.ru/terms.html</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://focus-photocompany.ru/cookies.html</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

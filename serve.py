@@ -167,6 +167,7 @@ class HardenedHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             "form-action 'self';"
         )
         self.send_header('Content-Security-Policy', csp)
+        self.send_header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload')
         self.send_header('X-Content-Type-Options', 'nosniff')
         self.send_header('X-Frame-Options', 'DENY')
         self.send_header('X-XSS-Protection', '1; mode=block')
@@ -175,13 +176,37 @@ class HardenedHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         self.send_header('Cross-Origin-Opener-Policy', 'same-origin')
         self.send_header('Cross-Origin-Resource-Policy', 'same-origin')
         self.send_header('Accept-Ranges', 'bytes')
-        self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
-        self.send_header('Pragma', 'no-cache')
-        self.send_header('Expires', '0')
+
+        # Differentiated caching: aggressive cache for immutable media/fonts, fresh cache for HTML
+        req_path = self.path.lower()
+        if any(req_path.endswith(ext) for ext in ('.webp', '.jpg', '.png', '.svg', '.mp4', '.woff2', '.ico')):
+            self.send_header('Cache-Control', 'public, max-age=2592000, immutable')
+        elif any(req_path.endswith(ext) for ext in ('.css', '.js')):
+            self.send_header('Cache-Control', 'public, max-age=86400, stale-while-revalidate=604800')
+        else:
+            self.send_header('Cache-Control', 'public, max-age=0, must-revalidate')
 
     def end_headers(self):
         self.send_security_headers()
         super().end_headers()
+
+    def send_error(self, code, message=None, explain=None):
+        """Custom error handler preventing Soft 404 and rendering branded 404 page."""
+        if code == 404:
+            f404_path = os.path.join(DOC_ROOT, '404.html')
+            if os.path.exists(f404_path):
+                try:
+                    with open(f404_path, 'rb') as f:
+                        body = f.read()
+                    self.send_response(404, "Not Found")
+                    self.send_header('Content-Type', 'text/html; charset=utf-8')
+                    self.send_header('Content-Length', str(len(body)))
+                    self.end_headers()
+                    self.wfile.write(body)
+                    return
+                except OSError:
+                    pass
+        super().send_error(code, message, explain)
 
     def copyfile(self, source, outputfile):
         try:
