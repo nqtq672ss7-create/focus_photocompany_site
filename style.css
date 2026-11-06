@@ -4536,7 +4536,7 @@ html {
   font-size: clamp(14.5px, 1.2vw, 16.5px);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.58);
-  margin: 0 0 28px 0;
+  margin: 0 0 16px 0;
   max-width: 480px;
 }
 
@@ -4545,7 +4545,7 @@ html {
   background: rgba(255, 255, 255, 0.025);
   border: 1px solid rgba(202, 255, 28, 0.22);
   border-radius: 12px;
-  padding: 24px;
+  padding: 20px;
   box-sizing: border-box;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(202, 255, 28, 0.25);
 }
@@ -4554,9 +4554,9 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 16px;
+  padding-bottom: 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .arh-blueprint-card__label {
@@ -4582,8 +4582,8 @@ html {
 .arh-specs-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin-bottom: 14px;
 }
 
 .arh-spec-row {
@@ -4606,11 +4606,11 @@ html {
 }
 
 .arh-blueprint-card__footer {
-  padding-top: 18px;
+  padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .arh-blueprint-note {
@@ -4661,6 +4661,42 @@ html {
 
 .arh-tg-card-btn:hover .arh-tg-card-btn__arrow {
   transform: translateX(4px);
+}
+
+/* Trust perks under blueprint card */
+.arh-calc-perks {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.arh-calc-perk {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.arh-calc-perk__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+}
+
+.arh-calc-perk__title {
+  color: #ffffff;
+  font-weight: 700;
 }
 
 /* RIGHT COLUMN: Main Form */
@@ -5231,10 +5267,13 @@ html {
 @media (max-width: 991px) {
   .arh-calc-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 24px;
   }
   .arh-calc-sidebar {
     position: static;
+  }
+  .arh-calc-perks {
+    margin-top: 14px;
   }
   .arh-form-row-2col {
     grid-template-columns: 1fr;
