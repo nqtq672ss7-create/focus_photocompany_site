@@ -5263,6 +5263,146 @@ html {
   margin-right: 3px;
 }
 
+/* B2B Addons & Duration Options */
+.arh-duration-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .arh-duration-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.arh-duration-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.arh-duration-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.arh-duration-btn.is-active {
+  background: rgba(202, 255, 28, 0.1);
+  border-color: var(--lime, #CAFF1C);
+  color: var(--lime, #CAFF1C);
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(202, 255, 28, 0.12);
+}
+
+.arh-addons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .arh-addons-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.arh-addon-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+  box-sizing: border-box;
+}
+
+.arh-addon-card:hover {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.arh-addon-card.is-active,
+.arh-addon-card:has(.arh-addon-check:checked) {
+  background: rgba(202, 255, 28, 0.06);
+  border-color: var(--lime, #CAFF1C);
+  box-shadow: 0 0 20px rgba(202, 255, 28, 0.1);
+}
+
+.arh-addon-check {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.arh-addon-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 11px;
+  font-weight: 800;
+  color: transparent;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.arh-addon-card.is-active .arh-addon-indicator,
+.arh-addon-card:has(.arh-addon-check:checked) .arh-addon-indicator {
+  border-color: var(--lime, #CAFF1C);
+  background: var(--lime, #CAFF1C);
+  color: #0c0d10;
+}
+
+.arh-addon-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.arh-addon-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.arh-addon-price {
+  font-size: 12px;
+  color: var(--lime, #CAFF1C);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.arh-addon-desc {
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 /* Responsive: Tablet & Mobile */
 @media (max-width: 991px) {
   .arh-calc-grid {

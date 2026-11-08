@@ -57,22 +57,22 @@ class SiteIntegrityTest(unittest.TestCase):
         with open(html_path) as f:
             content = f.read()
         
-        # Minimalist Configurator / Editorial Calculator section must exist
+        # Minimalist B2B Configurator / Editorial Calculator section must exist
         self.assertTrue('<section id="calculator"' in content or 'id="calculator"' in content)
         self.assertIn('arh-calc-section', content)
         self.assertIn('arh-calc-container', content)
         self.assertIn('arhShootType', content)
-        self.assertIn('arhFrames', content)
+        self.assertIn('arhDurationCounter', content)
+        self.assertIn('arh-duration-btn', content)
+        self.assertIn('arh-addon-card', content)
         self.assertIn('arhCostTop', content)
         self.assertIn('arhCostBottom', content)
         self.assertIn('arhTgBtn', content)
+        self.assertIn('arhCity', content)
         
-        # 200 frames scale & lighting options (natural and artificial x4)
-        self.assertIn('max="200"', content)
-        self.assertIn('200 кадров', content)
-        self.assertIn('arhLightNatural', content)
-        self.assertIn('arhLightArtificial', content)
-        self.assertIn('arhSpecLight', content)
+        # B2B pricing checks (Shubskiy benchmark: 25 000 ₽ minimum order)
+        self.assertIn('25 000 ₽', content)
+        self.assertIn('ИП Авалян Р.А.', content)
         
         # Anti-slop checks for calculator
         self.assertNotIn('01 ·', content)
