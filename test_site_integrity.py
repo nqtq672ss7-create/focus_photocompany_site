@@ -140,7 +140,7 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertIn('id="leadHandoffModal"', html)
         self.assertIn('FocusLeadDispatcher', html)
         self.assertIn('floating-contact-pill', html)
-        self.assertIn('ИП Закопудова Екатерина Александровна', html)
+        self.assertIn('ИП Авалян Руслан Артурович', html)
 
         # Primary Geo-Targeting: Anapa & Krasnodar Krai
         self.assertIn('<meta name="geo.region" content="RU-KDA">', html)
