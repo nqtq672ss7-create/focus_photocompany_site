@@ -78,6 +78,16 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertNotIn('х4 Премиум', content)
         self.assertIn('<span class="arh-lighting-card__badge arh-lighting-card__badge--premium">Премиум</span>', content)
         
+        # Pricing benchmark: minimum photo price 1100 ₽
+        self.assertIn('basePerFrame: 1100', content)
+        self.assertIn('от 22 000 ₽', content)
+        self.assertNotIn('basePerFrame: 700', content)
+        
+        # Professional wording in Contacts section
+        self.assertIn('ОБСУДИМ ВАШ', content)
+        self.assertIn('ПРОЕКТ', content)
+        self.assertNotIn('contactsTitle2: \'КРАСИВЫЙ ВИЗУАЛ\'', content)
+        
         # Legal requisites
         self.assertIn('ИП Авалян Р.А.', content)
         

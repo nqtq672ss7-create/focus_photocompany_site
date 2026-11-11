@@ -1616,7 +1616,7 @@
           <div class="arh-blueprint-card" aria-live="polite">
             <div class="arh-blueprint-card__header">
               <span class="arh-blueprint-card__label" data-i18n="arhBlueprintLabel">ОРИЕНТИР СМЕТЫ</span>
-              <span class="arh-status-pill arh-status-pill--lime" id="arhCostTop">от 14 000 ₽</span>
+              <span class="arh-status-pill arh-status-pill--lime" id="arhCostTop">от 22 000 ₽</span>
             </div>
 
             <!-- Dynamic Live Specs Breakdown -->
@@ -1704,10 +1704,10 @@
               </label>
               <div class="arh-select-wrapper">
                 <select id="arhShootType" class="arh-select" required aria-label="Что будем фотографировать">
-                  <option value="interiors" selected>Интерьер для дизайнера (от 7 000 ₽)</option>
+                  <option value="interiors" selected>Интерьер для дизайнера (от 11 000 ₽)</option>
                   <option value="hotels">Отель / гостевой дом / апартаменты (от 18 000 ₽)</option>
                   <option value="villas">Вилла / коттедж / загородный дом (от 14 000 ₽)</option>
-                  <option value="restaurants">Ресторан, кафе или бар (от 8 000 ₽)</option>
+                  <option value="restaurants">Ресторан, кафе или бар (от 11 000 ₽)</option>
                   <option value="commerce">Бизнес-центр или коммерческий объект (от 12 000 ₽)</option>
                 </select>
                 <div class="arh-select-arrow" aria-hidden="true">
@@ -1845,8 +1845,8 @@
         <!-- LEFT COLUMN: DIRECT CONTACTS & EDITORIAL PUNCH -->
         <div class="contacts-info">
           <h2 class="contacts-title">
-            <span data-i18n="contactsTitle1">ДАВАЙТЕ ДЕЛАТЬ</span><br>
-            <span class="contacts-title__highlight" data-i18n="contactsTitle2">КРАСИВЫЙ ВИЗУАЛ</span><span class="contacts-title__dot">.</span>
+            <span data-i18n="contactsTitle1">ОБСУДИМ ВАШ</span><br>
+            <span class="contacts-title__highlight" data-i18n="contactsTitle2">ПРОЕКТ</span><span class="contacts-title__dot">.</span>
           </h2>
 
           <p class="contacts-lead" data-i18n="contactsLead">
@@ -2341,8 +2341,8 @@
         legalCopyright: 'Правообладателям (Notice & Takedown)',
         modalScopeTitle: 'Что было сделано:',
         contactsEyebrow: 'ОБСУДИТЬ СЪЁМКУ',
-        contactsTitle1: 'ДАВАЙТЕ ДЕЛАТЬ',
-        contactsTitle2: 'КРАСИВЫЙ ВИЗУАЛ',
+        contactsTitle1: 'ОБСУДИМ ВАШ',
+        contactsTitle2: 'ПРОЕКТ',
         contactsLead: 'Ответим в течение дня. Подготовим персональную смету под ваш объект и пришлём референсы.',
         contactsCard1Label: 'ОФИС ФОКУС',
         contactsCard2Label: 'УПРАВЛЯЮЩИЙ',
@@ -2612,8 +2612,8 @@
         modalScopeTitle: 'Scope of deliverables:',
         modalCtaText: 'Book a similar shoot',
         contactsEyebrow: 'CONTACT US',
-        contactsTitle1: 'LET’S CREATE',
-        contactsTitle2: 'EXCEPTIONAL VISUALS',
+        contactsTitle1: 'LET’S DISCUSS YOUR',
+        contactsTitle2: 'PROJECT',
         contactsLead: 'Reply within the day. We prepare custom estimates and visual references for your property.',
         contactsCard1Label: 'FOCUS OFFICE',
         contactsCard2Label: 'DIRECTOR',
@@ -4899,11 +4899,11 @@
       const lightingRadios = section.querySelectorAll('input[name="arhLighting"]');
 
       const pricingMatrix = {
-        interiors: { basePerFrame: 700, minPrice: 7500 },
-        hotels: { basePerFrame: 1100, minPrice: 18000 },
-        villas: { basePerFrame: 850, minPrice: 14000 },
-        restaurants: { basePerFrame: 650, minPrice: 8000 },
-        commerce: { basePerFrame: 800, minPrice: 12000 }
+        interiors: { basePerFrame: 1100, minPrice: 11000 },
+        hotels: { basePerFrame: 1400, minPrice: 18000 },
+        villas: { basePerFrame: 1250, minPrice: 14000 },
+        restaurants: { basePerFrame: 1100, minPrice: 11000 },
+        commerce: { basePerFrame: 1200, minPrice: 12000 }
       };
 
       const cityTransfers = {
@@ -5038,7 +5038,7 @@
           const cityName = cityOption ? cityOption.text.split('(')[0].trim() : 'г. Анапа';
           const isArt = Array.from(lightingRadios).some(r => r.checked && r.value === 'artificial');
           const lightName = isArt ? 'Премиум пакет (проф. студийный импульс)' : 'Базовый пакет (естественный свет)';
-          const costText = costTop ? costTop.textContent : 'от 14 000 ₽';
+          const costText = costTop ? costTop.textContent : 'от 22 000 ₽';
 
           const payload = {
             source: 'configurator_2packages',
