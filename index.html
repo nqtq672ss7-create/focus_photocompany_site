@@ -1591,6 +1591,9 @@
     </div>
   </div>
   <!-- EDITORIAL ARCHITECTURAL ESTIMATE CONFIGURATOR (Split Grid 1320px) -->
+    <!-- ══════════════════════════════════════════════════════════
+       ARCHITECTURAL ESTIMATE CONFIGURATOR (2 PACKAGES: BASIC & PREMIUM)
+       ══════════════════════════════════════════════════════════ -->
   <section id="calculator" class="arh-calc-section" aria-labelledby="arhCalcTitle">
     <div class="arh-calc-container">
       
@@ -1613,22 +1616,22 @@
           <div class="arh-blueprint-card" aria-live="polite">
             <div class="arh-blueprint-card__header">
               <span class="arh-blueprint-card__label" data-i18n="arhBlueprintLabel">ОРИЕНТИР СМЕТЫ</span>
-              <span class="arh-status-pill arh-status-pill--lime" id="arhCostTop">от 25 000 ₽</span>
+              <span class="arh-status-pill arh-status-pill--lime" id="arhCostTop">от 14 000 ₽</span>
             </div>
 
             <!-- Dynamic Live Specs Breakdown -->
             <div class="arh-specs-list" id="arhLiveSpecs" aria-label="Выбранные параметры съёмки">
               <div class="arh-spec-row">
-                <span class="arh-spec-row__name">Направление:</span>
-                <span class="arh-spec-row__val" id="arhSpecType">Интерьеры и недвижимость</span>
+                <span class="arh-spec-row__name">Объект:</span>
+                <span class="arh-spec-row__val" id="arhSpecType">Интерьер для дизайнера</span>
               </div>
               <div class="arh-spec-row">
-                <span class="arh-spec-row__name">Масштаб:</span>
-                <span class="arh-spec-row__val" id="arhSpecDuration">Сет до 2 часов (до 20 кадров)</span>
+                <span class="arh-spec-row__name">Объём:</span>
+                <span class="arh-spec-row__val" id="arhSpecFrames">20 кадров</span>
               </div>
               <div class="arh-spec-row">
-                <span class="arh-spec-row__name">Опции:</span>
-                <span class="arh-spec-row__val" id="arhSpecAddons">Студийный свет Profoto (включён)</span>
+                <span class="arh-spec-row__name">Пакет:</span>
+                <span class="arh-spec-row__val" id="arhSpecLight">Базовый пакет</span>
               </div>
               <div class="arh-spec-row">
                 <span class="arh-spec-row__name">Локация:</span>
@@ -1636,7 +1639,7 @@
               </div>
               <div class="arh-spec-row">
                 <span class="arh-spec-row__name">Договор:</span>
-                <span class="arh-spec-row__val">ИП Авалян Р.А., ЭДО Диадок</span>
+                <span class="arh-spec-row__val">Официальный договор ИП Авалян Р.А.</span>
               </div>
               <div class="arh-spec-row">
                 <span class="arh-spec-row__name">Права:</span>
@@ -1646,7 +1649,7 @@
 
             <div class="arh-blueprint-card__footer">
               <p class="arh-blueprint-note" id="arhCostBottom">
-                Включает: выезд с оптикой Tilt-Shift 90°, импульсный свет Profoto, попиксельную журнальную ретушь и бессрочные права по официальному договору.
+                Включает: выезд, съёмку с оптикой tilt-shift 90°, естественный свет локации, попиксельную журнальную ретушь и коммерческие права по договору.
               </p>
               
               <!-- Fast Direct Telegram Action -->
@@ -1690,22 +1693,22 @@
 
         </aside>
 
-        <!-- RIGHT COLUMN: Interactive Form Controls (Strictly 4 Focused Steps) -->
+        <!-- RIGHT COLUMN: Interactive Form Controls (Strictly 4 Focused Steps + Contacts) -->
         <main class="arh-calc-main">
           <form class="arh-calc-form" id="arhCalcForm" onsubmit="return false;">
             
             <!-- 1. What to photograph? -->
             <div class="arh-form-group">
               <label for="arhShootType" class="arh-form-label">
-                <span>1. Направление съёмки</span> <span class="arh-req">*</span>
+                <span>1. Что будем фотографировать?</span> <span class="arh-req">*</span>
               </label>
               <div class="arh-select-wrapper">
-                <select id="arhShootType" class="arh-select" required aria-label="Направление съёмки">
-                  <option value="interiors" selected>Интерьеры, виллы и коммерция (сет до 2ч от 25 000 ₽)</option>
-                  <option value="hotels">Отели, курорты и бутик-виллы (съёмочный день от 50 000 ₽)</option>
-                  <option value="food">Рестораны, гастрономия и фуд-съёмка (от 24 000 ₽ / 12 000 ₽/ч)</option>
-                  <option value="events">Бизнес-форумы, конференции и события (от 25 000 ₽ / 10 000 ₽/ч)</option>
-                  <option value="portraits">Корпоративные портреты и команда (от 20 000 ₽ / 4 000 ₽/чел)</option>
+                <select id="arhShootType" class="arh-select" required aria-label="Что будем фотографировать">
+                  <option value="interiors" selected>Интерьер для дизайнера (от 7 000 ₽)</option>
+                  <option value="hotels">Отель / гостевой дом / апартаменты (от 18 000 ₽)</option>
+                  <option value="villas">Вилла / коттедж / загородный дом (от 14 000 ₽)</option>
+                  <option value="restaurants">Ресторан, кафе или бар (от 8 000 ₽)</option>
+                  <option value="commerce">Бизнес-центр или коммерческий объект (от 12 000 ₽)</option>
                 </select>
                 <div class="arh-select-arrow" aria-hidden="true">
                   <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1713,62 +1716,60 @@
               </div>
             </div>
 
-            <!-- 2. Shoot Scale & Duration -->
+            <!-- 2. Desired number of final photos -->
             <div class="arh-form-group">
               <div class="arh-label-row">
-                <label class="arh-form-label">2. Длительность и масштаб съёмки</label>
-                <span class="arh-frames-counter" id="arhDurationCounter">2 часа (сет)</span>
+                <label for="arhFrames" class="arh-form-label">2. Желаемое количество итоговых кадров</label>
+                <span class="arh-frames-counter" id="arhFramesCounter">20 кадров</span>
               </div>
-              <p class="arh-form-hint" id="arhDurationHint">Стартовый сет до 2 часов: до 20 отобранных кадров в чистовой журнальной ретуши.</p>
+              <p class="arh-form-hint">Конечное количество отобранных кадров в чистовой журнальной ретуши.</p>
               
-              <div class="arh-duration-grid" role="group" aria-label="Длительность съёмки">
-                <button type="button" class="arh-duration-btn is-active" data-duration="2h">2 часа (мин.)</button>
-                <button type="button" class="arh-duration-btn" data-duration="4h">4 часа (полдня)</button>
-                <button type="button" class="arh-duration-btn" data-duration="8h">8 часов (-15%)</button>
-                <button type="button" class="arh-duration-btn" data-duration="custom">Смена / Проект</button>
+              <div class="arh-slider-container">
+                <div class="arh-slider-bubble" id="arhSliderBubble" aria-hidden="true">20</div>
+                <input type="range" id="arhFrames" min="10" max="200" value="20" step="5" class="arh-slider" aria-label="Желаемое количество итоговых фото">
+                <div class="arh-slider-scale" aria-hidden="true">
+                  <span>10 кадров</span>
+                  <span>200 кадров</span>
+                </div>
+              </div>
+
+              <!-- Quick Presets -->
+              <div class="arh-slider-presets" aria-label="Быстрый выбор количества кадров">
+                <button type="button" class="arh-preset-btn is-active" data-frames="20">20 кадров</button>
+                <button type="button" class="arh-preset-btn" data-frames="50">50 кадров</button>
+                <button type="button" class="arh-preset-btn" data-frames="100">100 кадров</button>
+                <button type="button" class="arh-preset-btn" data-frames="200">200 кадров</button>
               </div>
             </div>
 
-            <!-- 3. Add-on Production Services -->
+            <!-- 3. Shooting Package / Lighting -->
             <div class="arh-form-group">
               <label class="arh-form-label">
-                <span>3. Дополнительные опции продакшна</span>
+                <span>3. Пакет съёмки</span> <span class="arh-req">*</span>
               </label>
-              <div class="arh-addons-grid" role="group" aria-label="Дополнительные опции">
-                <label class="arh-addon-card" for="addonDrone">
-                  <input type="checkbox" id="addonDrone" value="drone_aerial" class="arh-addon-check">
-                  <span class="arh-addon-indicator" aria-hidden="true">✓</span>
-                  <div class="arh-addon-text">
-                    <span class="arh-addon-title">Аэросъёмка 4K <span class="arh-addon-price">+15 000 ₽</span></span>
-                    <span class="arh-addon-desc">DJI Mavic 3 Cine. Фото высокого разрешения и 4K ProRes видеооблёты</span>
+              <div class="arh-lighting-grid" role="radiogroup" aria-label="Пакет съёмки и тип освещения">
+                <label class="arh-lighting-card is-active" for="arhLightNatural">
+                  <input type="radio" name="arhLighting" id="arhLightNatural" value="natural" checked class="arh-lighting-radio">
+                  <div class="arh-lighting-card__header">
+                    <div class="arh-lighting-card__title-wrap">
+                      <span class="arh-lighting-card__radio-indicator" aria-hidden="true"></span>
+                      <span class="arh-lighting-card__name">Базовый пакет</span>
+                    </div>
+                    <span class="arh-lighting-card__badge">Базовый</span>
                   </div>
+                  <p class="arh-lighting-card__desc">Съёмка при естественном и интерьерном освещении локации без выносного студийного импульса.</p>
                 </label>
 
-                <label class="arh-addon-card" for="addonReels">
-                  <input type="checkbox" id="addonReels" value="reels_pack" class="arh-addon-check">
-                  <span class="arh-addon-indicator" aria-hidden="true">✓</span>
-                  <div class="arh-addon-text">
-                    <span class="arh-addon-title">Пакет Reels 4K <span class="arh-addon-price">+18 000 ₽</span></span>
-                    <span class="arh-addon-desc">3 динамичных вертикальных ролика 9:16 с монтажом и саунд-дизайном</span>
+                <label class="arh-lighting-card" for="arhLightArtificial">
+                  <input type="radio" name="arhLighting" id="arhLightArtificial" value="artificial" class="arh-lighting-radio">
+                  <div class="arh-lighting-card__header">
+                    <div class="arh-lighting-card__title-wrap">
+                      <span class="arh-lighting-card__radio-indicator" aria-hidden="true"></span>
+                      <span class="arh-lighting-card__name">Премиум пакет</span>
+                    </div>
+                    <span class="arh-lighting-card__badge arh-lighting-card__badge--premium">Премиум</span>
                   </div>
-                </label>
-
-                <label class="arh-addon-card" for="addonSecondPhotographer">
-                  <input type="checkbox" id="addonSecondPhotographer" value="second_photographer" class="arh-addon-check">
-                  <span class="arh-addon-indicator" aria-hidden="true">✓</span>
-                  <div class="arh-addon-text">
-                    <span class="arh-addon-title">Второй фотограф <span class="arh-addon-price">+35 000 ₽</span></span>
-                    <span class="arh-addon-desc">Параллельный охват спикеров и гостей для крупных событий от 150 человек</span>
-                  </div>
-                </label>
-
-                <label class="arh-addon-card" for="addonFastTrack">
-                  <input type="checkbox" id="addonFastTrack" value="fast_track" class="arh-addon-check">
-                  <span class="arh-addon-indicator" aria-hidden="true">✓</span>
-                  <div class="arh-addon-text">
-                    <span class="arh-addon-title">Срочно за 24ч <span class="arh-addon-price">+30%</span></span>
-                    <span class="arh-addon-desc">Fast-Track с ночной приоритетной обработкой и сдачей на следующий день</span>
-                  </div>
+                  <p class="arh-lighting-card__desc">Профессиональный комплект импульсного студийного света. Послойная проработка объёма, глубины и фактур интерьера.</p>
                 </label>
               </div>
             </div>
@@ -1776,16 +1777,15 @@
             <!-- 4. City / Shoot Location -->
             <div class="arh-form-group">
               <label for="arhCity" class="arh-form-label">
-                <span>4. Локация съёмки</span> <span class="arh-req">*</span>
+                <span>4. Город / Локация съёмки</span> <span class="arh-req">*</span>
               </label>
               <div class="arh-select-wrapper">
                 <select id="arhCity" class="arh-select" required aria-label="Город съёмки">
-                  <option value="anapa" selected>г. Анапа (базовая локация, 0 ₽)</option>
-                  <option value="novorossiysk">г. Новороссийск (+ 3 000 ₽ трансфер)</option>
-                  <option value="gelendzhik">г. Геленджик (+ 5 000 ₽ трансфер)</option>
-                  <option value="krasnodar">г. Краснодар (+ 7 000 ₽ трансфер)</option>
-                  <option value="sochi">г. Сочи / Красная Поляна (+ 15 000 ₽ трансфер)</option>
-                  <option value="other">Москва, Санкт-Петербург и выезд по РФ (по согласованию)</option>
+                  <option value="anapa" selected>г. Анапа (базовая локация, без наценок)</option>
+                  <option value="novorossiysk">г. Новороссийск (+ 2 000 ₽ трансфер)</option>
+                  <option value="gelendzhik">г. Геленджик (+ 3 500 ₽ трансфер)</option>
+                  <option value="sochi">г. Сочи / Сириус (+ трансфер по смете)</option>
+                  <option value="other">Другой город (выездная съёмка по РФ)</option>
                 </select>
                 <div class="arh-select-arrow" aria-hidden="true">
                   <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -4873,17 +4873,18 @@
     /* ══════════════════════════════════════════════════════════
        EDITORIAL ARCHITECTURAL CALCULATOR (5-Step Frictionless Estimator)
        ══════════════════════════════════════════════════════════ */
+
+    /* ══════════════════════════════════════════════════════════
+       ARCHITECTURAL ESTIMATE CALCULATOR (2 PACKAGES: BASIC & PREMIUM)
+       ══════════════════════════════════════════════════════════ */
     (function initArhCalculator() {
       const section = document.getElementById('calculator');
       if (!section) return;
 
       const shootType = document.getElementById('arhShootType');
-      const durationCounter = document.getElementById('arhDurationCounter');
-      const durationHint = document.getElementById('arhDurationHint');
-      const durationBtns = section.querySelectorAll('.arh-duration-btn');
-      const addonCheckboxes = section.querySelectorAll('.arh-addon-check');
+      const framesInput = document.getElementById('arhFrames');
       const citySelect = document.getElementById('arhCity');
-
+      const bubble = document.getElementById('arhSliderBubble');
       const costTop = document.getElementById('arhCostTop');
       const costBottom = document.getElementById('arhCostBottom');
       const submitBtn = document.getElementById('arhSubmitBtn');
@@ -4891,56 +4892,25 @@
       const tgBtn = document.getElementById('arhTgBtn');
 
       const specType = document.getElementById('arhSpecType');
-      const specDuration = document.getElementById('arhSpecDuration');
-      const specAddons = document.getElementById('arhSpecAddons');
+      const specFrames = document.getElementById('arhSpecFrames');
+      const specLight = document.getElementById('arhSpecLight');
       const specCity = document.getElementById('arhSpecCity');
+      const framesCounter = document.getElementById('arhFramesCounter');
+      const lightingRadios = section.querySelectorAll('input[name="arhLighting"]');
 
-      let currentDuration = '2h';
-
-      const B2B_RATES = {
-        hotels: {
-          name: 'Отели и курорты',
-          '2h': { price: 25000, label: 'Экспресс-сет (2ч)', hint: 'Срочная досъёмка номеров или экстерьера на закате (до 2 часов).' },
-          '4h': { price: 35000, label: 'Полдня (4ч)', hint: 'Номерной фонд, лобби, территория, ресторан и ключевые локации.' },
-          '8h': { price: 50000, label: 'Съёмочный день (8ч)', hint: 'Полный день: все категории номеров, SPA, бассейн, фасад в режимный час, файлы для OTA.' },
-          'custom': { price: 140000, label: 'Курортный комплекс (3 дня)', hint: 'Комплексный проект 5 звезд: весь номерной фонд, ночная съемка, территория, инфраструктура.' }
-        },
-        interiors: {
-          name: 'Интерьеры и недвижимость',
-          '2h': { price: 25000, label: 'Сет до 2 часов (до 20 кадров)', hint: 'Стартовый сет до 2 часов: до 20 отобранных кадров в чистовой журнальной ретуши с оптикой Tilt-Shift.' },
-          '4h': { price: 45000, label: 'Полдня (4ч)', hint: 'Объект площадью до 250 м²: общие планы, акценты интерьера, детальный стайлинг.' },
-          '8h': { price: 75000, label: 'Съёмочный день (8ч)', hint: 'Крупный объект или несколько апартаментов. Послойный импульсный свет, журнальный глянец.' },
-          'custom': { price: 120000, label: 'Проектный выезд / ЖК', hint: 'Масштабная съёмка девелоперского проекта, шоурумов или виллового посёлка.' }
-        },
-        food: {
-          name: 'Рестораны и гастрономия',
-          '2h': { price: 24000, label: '2 часа (мин. заказ)', hint: '12 000 ₽/ч, минимальный выезд. До 12–15 ключевых блюд или обновлений меню.' },
-          '4h': { price: 48000, label: 'Полдня (4ч)', hint: 'До 25–30 позиций меню, барная карта, детали подачи, съёмка по кабелю на монитор.' },
-          '8h': { price: 80000, label: 'Смена шеф-повара (8ч)', hint: 'Полное меню ресторана (до 50 блюд), динамика кухни, портрет бренд-шефа, интерьер залов.' },
-          'custom': { price: 150000, label: 'Ресторанная сеть / Бренд', hint: 'Многодневная съёмка меню для холдинга или сети заведений.' }
-        },
-        events: {
-          name: 'Бизнес-форумы и события',
-          '2h': { price: 25000, label: '2 часа (мин. заказ)', hint: '10 000 ₽/ч. Презентации, камерные бизнес-завтраки, VIP-встречи. SMM-кадры в день съёмки.' },
-          '4h': { price: 40000, label: 'Полдня (4ч)', hint: 'Корпоративные конференции, отраслевые саммиты, вечерние приёмы.' },
-          '8h': { price: 68000, label: 'Полный день 8ч (-15%)', hint: '68 000 ₽ вместо 80 000 ₽ (скидка 15%). Пул экспресс-фото для СМИ в день события.' },
-          'custom': { price: 120000, label: 'Многодневный форум', hint: 'Масштабные выставочные и деловые программы на 2–3 дня.' }
-        },
-        portraits: {
-          name: 'Портреты и команда',
-          '2h': { price: 20000, label: 'Серия 5 сотрудников', hint: '4 000 ₽/чел. (мин. заказ). Мобильная студия Profoto в вашем офисе, деликатная ретушь.' },
-          '4h': { price: 38000, label: 'Команда 10 человек', hint: '3 800 ₽/чел. Портреты сотрудников + офисный lifestyle руководителей.' },
-          '8h': { price: 85000, label: 'Команда 25 человек', hint: '3 400 ₽/чел. Спеццена для корпоративного штата, единый фирменный стиль.' },
-          'custom': { price: 150000, label: 'Корпорация 50+ человек', hint: '3 000 ₽/чел. Поточная съёмка большого коллектива с мобильной студией.' }
-        }
+      const pricingMatrix = {
+        interiors: { basePerFrame: 700, minPrice: 7500 },
+        hotels: { basePerFrame: 1100, minPrice: 18000 },
+        villas: { basePerFrame: 850, minPrice: 14000 },
+        restaurants: { basePerFrame: 650, minPrice: 8000 },
+        commerce: { basePerFrame: 800, minPrice: 12000 }
       };
 
       const cityTransfers = {
         anapa: 0,
-        novorossiysk: 3000,
-        gelendzhik: 5000,
-        krasnodar: 7000,
-        sochi: 15000,
+        novorossiysk: 2000,
+        gelendzhik: 3500,
+        sochi: 8000,
         other: 0
       };
 
@@ -4948,86 +4918,97 @@
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
       }
 
+      function updateSliderBubble(val) {
+        if (!bubble || !framesInput) return;
+        bubble.textContent = val;
+        const min = parseInt(framesInput.min, 10) || 10;
+        const max = parseInt(framesInput.max, 10) || 200;
+        const pct = ((val - min) / (max - min)) * 100;
+        bubble.style.left = `calc(${pct}% + (${9 - pct * 0.18}px))`;
+      }
+
       function calculate() {
+        if (!framesInput) return;
+        const frames = parseInt(framesInput.value, 10) || 20;
+        updateSliderBubble(frames);
+
         const typeKey = shootType ? shootType.value : 'interiors';
-        const category = B2B_RATES[typeKey] || B2B_RATES.interiors;
-        const durationData = category[currentDuration] || category['2h'];
+        const selOption = shootType ? shootType.options[shootType.selectedIndex] : null;
+        let typeName = selOption ? selOption.text.split('(')[0].trim() : 'Интерьер для дизайнера';
 
-        let basePrice = durationData.price;
-
-        // Addons
-        let addonsCost = 0;
-        const selectedAddonNames = [];
-
-        addonCheckboxes.forEach(cb => {
-          const card = cb.closest('.arh-addon-card');
-          if (card) card.classList.toggle('is-active', cb.checked);
-
-          if (cb.checked) {
-            if (cb.value === 'drone_aerial') {
-              addonsCost += 15000;
-              selectedAddonNames.push('Аэросъёмка 4K');
-            } else if (cb.value === 'reels_pack') {
-              addonsCost += 18000;
-              selectedAddonNames.push('Пакет Reels 4K');
-            } else if (cb.value === 'second_photographer') {
-              const secPrice = (currentDuration === '8h' || currentDuration === 'custom') ? 35000 : 15000;
-              addonsCost += secPrice;
-              selectedAddonNames.push('Второй фотограф');
-            } else if (cb.value === 'fast_track') {
-              addonsCost += Math.round(basePrice * 0.3);
-              selectedAddonNames.push('Срочно за 24ч');
-            }
-          }
+        // Package / Lighting check (Basic vs Premium)
+        let isArtificial = false;
+        lightingRadios.forEach(r => {
+          if (r.checked && r.value === 'artificial') isArtificial = true;
+          const card = r.closest('.arh-lighting-card');
+          if (card) card.classList.toggle('is-active', r.checked);
         });
 
-        // City transfer
+        const lightMultiplier = isArtificial ? 4 : 1;
+
         const cityKey = citySelect ? citySelect.value : 'anapa';
         const cityOption = citySelect ? citySelect.options[citySelect.selectedIndex] : null;
         let cityName = cityOption ? cityOption.text.split('(')[0].trim() : 'г. Анапа';
+
+        const rate = pricingMatrix[typeKey] || pricingMatrix.interiors;
         const transfer = cityTransfers[cityKey] || 0;
 
-        let total = basePrice + addonsCost + transfer;
-        total = Math.round(total / 500) * 500;
-        const formatted = formatMoney(total);
+        const baseFrameCost = frames * rate.basePerFrame * lightMultiplier;
+        const minCost = rate.minPrice * lightMultiplier;
+        let estimated = Math.max(minCost, baseFrameCost) + transfer;
+        // round to nearest 500
+        estimated = Math.round(estimated / 500) * 500;
 
-        // Update DOM
+        const formatted = formatMoney(estimated);
+
+        // Update live blueprint UI
         if (costTop) costTop.textContent = `от ${formatted} ₽`;
-        if (durationCounter) durationCounter.textContent = durationData.label;
-        if (durationHint) durationHint.textContent = durationData.hint;
-
-        if (specType) specType.textContent = category.name;
-        if (specDuration) specDuration.textContent = durationData.label;
-        if (specAddons) {
-          specAddons.textContent = selectedAddonNames.length > 0 
-            ? selectedAddonNames.join(', ') 
-            : 'Студийный свет Profoto (включён)';
-        }
+        if (framesCounter) framesCounter.textContent = `${frames} кадров`;
+        if (specType) specType.textContent = typeName;
+        if (specFrames) specFrames.textContent = `${frames} кадров`;
+        if (specLight) specLight.textContent = isArtificial ? 'Премиум пакет (студийный свет)' : 'Базовый пакет (естественный свет)';
         if (specCity) specCity.textContent = cityName;
 
         if (costBottom) {
-          costBottom.textContent = `Включает: выезд на объект, профессиональную съёмку, авторскую цветокоррекцию 100% кадров, журнальную ретушь, онлайн-галерею и закрывающие документы ЭДО (ИП Авалян Р.А.).`;
+          costBottom.textContent = isArtificial
+            ? 'Включает: выезд с комплектом студийного импульсного света, световую проработку планов интерьера, оптику tilt-shift 90°, попиксельную журнальную ретушь и коммерческие права по договору.'
+            : 'Включает: выезд, съёмку с оптикой tilt-shift 90°, естественный свет, попиксельную ретушь и коммерческие права по договору.';
         }
 
-        // Direct Telegram link
-        const addonsText = selectedAddonNames.length > 0 ? selectedAddonNames.join(', ') : 'Базовый комплект (свет включён)';
-        const msg = `Здравствуйте, Екатерина! Сконфигурировал съёмку на focus-photocompany.ru:\n\n• Направление: ${category.name}\n• Масштаб: ${durationData.label}\n• Опции: ${addonsText}\n• Локация: ${cityName}\n• Договор: Официальный договор ИП Авалян Р.А.\n• Закрывающие: Счёт и акт в ЭДО Диадок / СБИС\n• Права: Бессрочные коммерческие права\n• Ориентир сметы: от ${formatted} ₽\n\nХочу получить точный расчёт сметы и согласовать дату съёмки.`;
+        // Dynamic slider fill
+        const min = parseInt(framesInput.min, 10) || 10;
+        const max = parseInt(framesInput.max, 10) || 200;
+        const pct = ((frames - min) / (max - min)) * 100;
+        framesInput.style.background = /* mask-image */ `linear-gradient(to right, #CAFF1C 0%, #CAFF1C ${pct}%, rgba(255, 255, 255, 0.14) ${pct}%, rgba(255, 255, 255, 0.14) 100%)`;
+
+        // Highlight matching preset button
+        const presetBtns = section.querySelectorAll('.arh-preset-btn');
+        presetBtns.forEach(btn => {
+          const f = parseInt(btn.getAttribute('data-frames'), 10);
+          btn.classList.toggle('is-active', f === frames);
+        });
+
+        // Direct Telegram link with structured brief
+        const lightName = isArtificial ? 'Премиум пакет (проф. студийный импульс)' : 'Базовый пакет (естественный свет)';
+        const msg = `Здравствуйте, Екатерина! Сконфигурировал съёмку на focus-photocompany.ru:\n\n• Объект: ${typeName}\n• Объём: ${frames} кадров\n• Пакет: ${lightName}\n• Локация: ${cityName}\n• Договор: Официальный договор ИП Авалян Р.А.\n• Закрывающие: Счёт и акт в ЭДО Диадок / СБИС\n• Права: Бессрочные коммерческие права\n• Ориентир сметы: от ${formatted} ₽\n\nХочу получить точный расчёт сметы и согласовать дату съёмки.`;
         if (tgBtn) {
           tgBtn.href = `https://t.me/zakonpudova?text=${encodeURIComponent(msg)}`;
         }
       }
 
-      // Event listeners
       if (shootType) shootType.addEventListener('change', calculate);
+      if (framesInput) framesInput.addEventListener('input', calculate);
       if (citySelect) citySelect.addEventListener('change', calculate);
-      addonCheckboxes.forEach(cb => cb.addEventListener('change', calculate));
+      lightingRadios.forEach(r => r.addEventListener('change', calculate));
 
-      durationBtns.forEach(btn => {
+      const presetBtns = section.querySelectorAll('.arh-preset-btn');
+      presetBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          durationBtns.forEach(b => b.classList.remove('is-active'));
-          btn.classList.add('is-active');
-          currentDuration = btn.getAttribute('data-duration') || '2h';
-          calculate();
+          const val = parseInt(btn.getAttribute('data-frames'), 10);
+          if (framesInput && val) {
+            framesInput.value = val;
+            calculate();
+          }
         });
       });
 
@@ -5050,21 +5031,20 @@
             return;
           }
 
-          const typeKey = shootType ? shootType.value : 'interiors';
-          const category = B2B_RATES[typeKey] || B2B_RATES.interiors;
-          const durationData = category[currentDuration] || category['2h'];
+          const frames = parseInt(framesInput ? framesInput.value : '20', 10) || 20;
+          const selOption = shootType ? shootType.options[shootType.selectedIndex] : null;
+          const typeName = selOption ? selOption.text.split('(')[0].trim() : 'Интерьер для дизайнера';
           const cityOption = citySelect ? citySelect.options[citySelect.selectedIndex] : null;
           const cityName = cityOption ? cityOption.text.split('(')[0].trim() : 'г. Анапа';
-          const costText = costTop ? costTop.textContent : 'от 25 000 ₽';
-
-          const selectedAddons = [];
-          addonCheckboxes.forEach(cb => { if (cb.checked) selectedAddons.push(cb.value); });
+          const isArt = Array.from(lightingRadios).some(r => r.checked && r.value === 'artificial');
+          const lightName = isArt ? 'Премиум пакет (проф. студийный импульс)' : 'Базовый пакет (естественный свет)';
+          const costText = costTop ? costTop.textContent : 'от 14 000 ₽';
 
           const payload = {
-            source: 'configurator_b2b_5steps',
-            category: category.name,
-            duration: durationData.label,
-            addons: selectedAddons.join(', ') || 'Базовый комплект',
+            source: 'configurator_2packages',
+            objectType: typeName,
+            frames: frames,
+            package: lightName,
             city: cityName,
             estimate: costText,
             contact: contactVal,

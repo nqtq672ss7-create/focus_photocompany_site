@@ -57,21 +57,28 @@ class SiteIntegrityTest(unittest.TestCase):
         with open(html_path) as f:
             content = f.read()
         
-        # Minimalist B2B Configurator / Editorial Calculator section must exist
+        # 2-package Interactive Estimate Calculator section must exist
         self.assertTrue('<section id="calculator"' in content or 'id="calculator"' in content)
         self.assertIn('arh-calc-section', content)
         self.assertIn('arh-calc-container', content)
         self.assertIn('arhShootType', content)
-        self.assertIn('arhDurationCounter', content)
-        self.assertIn('arh-duration-btn', content)
-        self.assertIn('arh-addon-card', content)
+        self.assertIn('arhFrames', content)
+        self.assertIn('max="200"', content)
+        self.assertIn('arhLightNatural', content)
+        self.assertIn('arhLightArtificial', content)
+        self.assertIn('arhSpecLight', content)
         self.assertIn('arhCostTop', content)
         self.assertIn('arhCostBottom', content)
         self.assertIn('arhTgBtn', content)
         self.assertIn('arhCity', content)
         
-        # B2B pricing checks (Shubskiy benchmark: 25 000 ₽ minimum order)
-        self.assertIn('25 000 ₽', content)
+        # Strict user requirement: No 'x4' or '×4' on premium badge
+        self.assertNotIn('×4 Премиум', content)
+        self.assertNotIn('x4 Премиум', content)
+        self.assertNotIn('х4 Премиум', content)
+        self.assertIn('<span class="arh-lighting-card__badge arh-lighting-card__badge--premium">Премиум</span>', content)
+        
+        # Legal requisites
         self.assertIn('ИП Авалян Р.А.', content)
         
         # Anti-slop checks for calculator
