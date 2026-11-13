@@ -72,11 +72,15 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertIn('arhTgBtn', content)
         self.assertIn('arhCity', content)
         
-        # User requirement: x3 multiplier and aesthetic card design with Profoto badge
+        # User requirement: x3 multiplier, remove duplicate labels, lime accent card
         self.assertNotIn('×4 Премиум', content)
         self.assertNotIn('x4 Премиум', content)
         self.assertNotIn('х4 Премиум', content)
-        self.assertIn('<span class="arh-lighting-card__badge arh-lighting-card__badge--premium">×3 Премиум</span>', content)
+        self.assertNotIn('×3 Премиум', content)
+        self.assertNotIn('>Базовый</span>', content)
+        self.assertIn('arh-lighting-card__badge--lime', content)
+        self.assertIn('>×3<', content)
+        self.assertIn('arh-lighting-card--premium', content)
         self.assertIn('lightMultiplier = isArtificial ? 3 : 1', content)
         self.assertIn('arh-feature-pill', content)
         self.assertIn('Profoto', content)
