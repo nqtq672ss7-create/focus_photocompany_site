@@ -261,7 +261,10 @@
 
   <main class="hero" id="hero" aria-label="Главный экран сайта фотокомпании ФОКУС">
     <div class="hero__image" aria-hidden="true"></div>
-    <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/focus-lobby.webp"><source src="assets/focus-hero.mp4" type="video/mp4"></video>
+    <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/focus-lobby.webp">
+      <source media="(max-width: 768px)" src="assets/focus-hero-mobile.mp4" type="video/mp4">
+      <source src="assets/focus-hero.mp4" type="video/mp4">
+    </video>
     <div class="hero__shade" aria-hidden="true"></div>
     <div class="hero__grain" aria-hidden="true"></div>
 
@@ -393,7 +396,7 @@
           </div>
           <div class="srv-card__media-wrap">
             <div class="srv-card__media">
-              <img src="assets/about-card-1.webp" alt="Интерьерная съёмка ФОКУС" loading="eager" decoding="async">
+              <img src="assets/about-card-1.webp" alt="Интерьерная съёмка ФОКУС" loading="lazy" decoding="async">
             </div>
           </div>
         </article>
@@ -409,7 +412,7 @@
             </div>
             <div class="srv-card__media-wrap srv-card__media-wrap--inline">
               <div class="srv-card__media">
-                <img src="assets/hotel-guest-15.webp" alt="Отели: Гости и Lifestyle съёмка ФОКУС" loading="eager" decoding="async">
+                <img src="assets/hotel-guest-15.webp" alt="Отели: Гости и Lifestyle съёмка ФОКУС" loading="lazy" decoding="async">
               </div>
             </div>
             <div class="srv-card__tags">
@@ -444,7 +447,7 @@
             </div>
             <div class="srv-card__media-wrap srv-card__media-wrap--inline">
               <div class="srv-card__media">
-                <img src="assets/video-rig.webp" alt="Видеопродакшн ФОКУС" loading="eager" decoding="async">
+                <img src="assets/video-rig.webp" alt="Видеопродакшн ФОКУС" loading="lazy" decoding="async">
               </div>
             </div>
             <div class="srv-card__tags">
@@ -498,7 +501,7 @@
           </div>
           <div class="srv-card__media-wrap">
             <div class="srv-card__media">
-              <img src="assets/event-05.webp" alt="Коммерческие пространства ФОКУС" loading="eager" decoding="async">
+              <img src="assets/event-05.webp" alt="Коммерческие пространства ФОКУС" loading="lazy" decoding="async">
             </div>
           </div>
         </article>
@@ -606,7 +609,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_3.webp" alt="Сергей Павлов" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_3.webp" alt="Сергей Павлов" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Сергей Павлов</h3>
@@ -629,7 +632,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_8.webp" alt="Ольга Нестерова" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_8.webp" alt="Ольга Нестерова" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Ольга Нестерова</h3>
@@ -652,7 +655,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_4.webp" alt="Артём Воронов" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_4.webp" alt="Артём Воронов" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Артём Воронов</h3>
@@ -716,7 +719,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_11.webp" alt="Игорь Мельников" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_11.webp" alt="Игорь Мельников" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Игорь Мельников</h3>
@@ -739,7 +742,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_1.webp" alt="Дарья Морозова" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_1.webp" alt="Дарья Морозова" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Дарья Морозова</h3>
@@ -762,7 +765,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_5.webp" alt="Максим Лебедев" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_5.webp" alt="Максим Лебедев" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Максим Лебедев</h3>
@@ -785,7 +788,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_7.webp" alt="Анна Белозёрова" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_7.webp" alt="Анна Белозёрова" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Анна Белозёрова</h3>
@@ -808,7 +811,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_10.webp" alt="Роман Васильев" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_10.webp" alt="Роман Васильев" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Роман Васильев</h3>
@@ -831,7 +834,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_3.webp" alt="Сергей Павлов" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_3.webp" alt="Сергей Павлов" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Сергей Павлов</h3>
@@ -854,7 +857,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_8.webp" alt="Ольга Нестерова" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_8.webp" alt="Ольга Нестерова" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Ольга Нестерова</h3>
@@ -877,7 +880,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_4.webp" alt="Артём Воронов" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_4.webp" alt="Артём Воронов" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Артём Воронов</h3>
@@ -941,7 +944,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_11.webp" alt="Игорь Мельников" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_11.webp" alt="Игорь Мельников" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Игорь Мельников</h3>
@@ -964,7 +967,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_1.webp" alt="Дарья Морозова" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_1.webp" alt="Дарья Морозова" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Дарья Морозова</h3>
@@ -987,7 +990,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_5.webp" alt="Максим Лебедев" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_5.webp" alt="Максим Лебедев" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Максим Лебедев</h3>
@@ -1010,7 +1013,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_7.webp" alt="Анна Белозёрова" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_7.webp" alt="Анна Белозёрова" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Анна Белозёрова</h3>
@@ -1033,7 +1036,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_10.webp" alt="Роман Васильев" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_10.webp" alt="Роман Васильев" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Роман Васильев</h3>
@@ -1083,7 +1086,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_6.webp" alt="Полина Власова" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_6.webp" alt="Полина Власова" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Полина Власова</h3>
@@ -1106,7 +1109,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_2.webp" alt="Екатерина Смирнова" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_2.webp" alt="Екатерина Смирнова" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Екатерина Смирнова</h3>
@@ -1198,7 +1201,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_9.webp" alt="Елена Михайлова" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_9.webp" alt="Елена Михайлова" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Елена Михайлова</h3>
@@ -1290,7 +1293,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_6.webp" alt="Полина Власова" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_6.webp" alt="Полина Власова" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Полина Власова</h3>
@@ -1313,7 +1316,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_2.webp" alt="Екатерина Смирнова" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_2.webp" alt="Екатерина Смирнова" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Екатерина Смирнова</h3>
@@ -1405,7 +1408,7 @@
   <div class="review-card__header-bar">
     <div class="review-card__author">
       <div class="review-card__avatar-wrap">
-        <img src="assets/avatars/avatar_square_9.webp" alt="Елена Михайлова" class="review-card__avatar-img">
+        <img src="assets/avatars/avatar_square_9.webp" alt="Елена Михайлова" class="review-card__avatar-img" loading="lazy" decoding="async">
       </div>
       <div class="review-card__author-info">
         <h3 class="review-card__name">Елена Михайлова</h3>
@@ -2132,6 +2135,16 @@
       heroVideo.muted = true;
       heroVideo.defaultMuted = true;
       heroVideo.playsInline = true;
+      heroVideo.setAttribute('playsinline', '');
+      heroVideo.setAttribute('webkit-playsinline', '');
+
+      // On mobile viewports, guarantee that lightweight mobile stream is active
+      if (window.innerWidth <= 768) {
+        if (!heroVideo.currentSrc || !heroVideo.currentSrc.includes('focus-hero-mobile.mp4')) {
+          heroVideo.src = 'assets/focus-hero-mobile.mp4';
+          heroVideo.load();
+        }
+      }
 
       const triggerHeroVideoPlay = () => {
         if (heroVideo.paused) {
@@ -2143,7 +2156,10 @@
       };
 
       triggerHeroVideoPlay();
+      heroVideo.addEventListener('loadeddata', triggerHeroVideoPlay);
+      heroVideo.addEventListener('canplay', triggerHeroVideoPlay);
       window.addEventListener('load', triggerHeroVideoPlay, { once: true });
+      window.addEventListener('pageshow', triggerHeroVideoPlay);
       ['touchstart', 'touchend', 'scroll', 'pointerdown', 'click'].forEach((evt) => {
         window.addEventListener(evt, triggerHeroVideoPlay, { once: true, passive: true });
       });
@@ -2296,7 +2312,7 @@
         contactsCard2Label: 'УПРАВЛЯЮЩИЙ',
         contactsCard2Val: 'Екатерина: +7 (929) 850-85-03',
         contactsCard3Label: 'ЛОКАЦИЯ',
-        contactsCard3Address: 'г. Анапа, Пионерский пр-т, 47 / ул. Набережная, 2',
+        contactsCard3Address: 'г. Анапа, Пионерский проспект, 47',
         contactsMessengerTitle: 'БЫСТРЫЙ ЧАТ:',
         contactsFormTitle: 'Заявка на расчёт сметы',
         contactsFormDesc: 'Выберите формат и оставьте контакт:',
@@ -2567,7 +2583,7 @@
         contactsCard2Label: 'DIRECTOR',
         contactsCard2Val: 'Ekaterina: +7 (929) 850-85-03',
         contactsCard3Label: 'LOCATION',
-        contactsCard3Address: 'Anapa, Pionerskiy Prospekt 47 / Naberezhnaya 2',
+        contactsCard3Address: 'Anapa, Pionerskiy Prospekt 47',
         contactsMessengerTitle: 'INSTANT CHAT:',
         contactsFormTitle: 'Request a Project Estimate',
         contactsFormDesc: 'Select service category and leave your contact:',
@@ -3246,7 +3262,7 @@
         let mediaHtml = '';
         if (isVideo) {
           mediaHtml = `
-            <video src="${item.videoSrc}" poster="${item.src}" class="works-sc-card__img works-sc-card__video" autoplay loop muted playsinline preload="metadata"></video>
+            <video src="${item.videoSrc}" poster="${item.src}" class="works-sc-card__img works-sc-card__video" loop muted playsinline preload="none"></video>
             <div class="works-sc-card__badge">
               <span class="works-sc-play-icon"></span>
               <span>Референс Reels</span>
@@ -3256,7 +3272,7 @@
           `;
         } else {
           mediaHtml = `
-            <img src="${item.src}" alt="${item.alt || ''}" class="works-sc-card__img" loading="${idx < 6 ? 'eager' : 'lazy'}" decoding="async">
+            <img src="${item.src}" alt="${item.alt || ''}" class="works-sc-card__img" loading="${idx < 2 ? 'eager' : 'lazy'}" decoding="async">
             <div class="works-sc-card__badge">
               <span>Референс 0${idx + 1}</span>
               <span style="opacity: 0.4;">•</span>

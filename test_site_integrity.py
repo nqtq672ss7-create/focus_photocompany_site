@@ -51,6 +51,10 @@ class SiteIntegrityTest(unittest.TestCase):
         
         # Check that input font-size is 16px to prevent iOS Safari auto-zoom
         self.assertIn('font-size: 16px !important;', css)
+        
+        # Check review card mobile wrapping and location pill unwrapped styling
+        self.assertIn('.contact-pill__val--sm {', css)
+        self.assertIn('white-space: normal !important;', css)
 
     def test_calculator_structure(self):
         html_path = os.path.join(os.path.dirname(__file__), 'index.html')
@@ -160,6 +164,17 @@ class SiteIntegrityTest(unittest.TestCase):
         # User requirement: streamlined services (no srv-badges, no srv-consult box)
         self.assertNotIn('class="srv-badges"', html)
         self.assertNotIn('class="srv-consult ', html)
+        
+        # User requirement: lightweight mobile hero video stream
+        self.assertIn('assets/focus-hero-mobile.mp4', html)
+        self.assertIn('media="(max-width: 768px)"', html)
+        
+        # User requirement: clean contacts studio address without overflowing suffix
+        self.assertIn('contactsCard3Address: \'г. Анапа, Пионерский проспект, 47\'', html)
+        self.assertIn('contactsCard3Address: \'Anapa, Pionerskiy Prospekt 47\'', html)
+        
+        # User requirement: non-blocking showcase media
+        self.assertIn('preload="none"', html)
         
         # User requirement: format dropdown instead of bulky chips
         self.assertIn('formatDropdown', html)

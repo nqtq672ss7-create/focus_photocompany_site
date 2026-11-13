@@ -2284,12 +2284,7 @@ html {
   background: rgba(202, 255, 28, 0.22);
   border: 1px solid rgba(202, 255, 28, 0.45);
   padding: 3px 8px;
-  border-radius: 100px;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-  padding: 4px 10px;
-  border-radius: 100px;
+  border-radius: 100px; /* pill */
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -4213,6 +4208,12 @@ html {
     font-size: clamp(13px, 3.8vw, 15px);
     white-space: nowrap;
   }
+  .contact-pill__val--sm {
+    white-space: normal !important;
+    word-break: normal;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+  }
   .footer-top {
     flex-direction: column;
     align-items: flex-start;
@@ -4486,8 +4487,34 @@ html {
     min-height: auto !important;
     box-sizing: border-box !important;
   }
+  .review-card__header-bar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    margin-bottom: 12px !important;
+  }
+  .review-card__author {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    gap: 12px !important;
+  }
   .review-card__name {
-    font-size: 14px !important;
+    font-size: 14.5px !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    line-height: 1.25 !important;
+  }
+  .review-card__role {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+  }
+  .review-card__cat {
+    margin-left: 60px !important;
+    font-size: 9px !important;
+    padding: 3px 8px !important;
+    border-radius: 100px !important; /* pill */
   }
   .review-card__quote {
     font-size: 12.8px !important;
