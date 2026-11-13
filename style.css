@@ -4963,21 +4963,26 @@ html {
   transform: translateY(-2px);
 }
 
+/* Base card: Clean monochrome & neutral, NO signature lime */
 .arh-lighting-card.is-active,
 .arh-lighting-card:has(.arh-lighting-radio:checked) {
-  background: rgba(202, 255, 28, 0.035);
-  border-color: var(--lime, #CAFF1C);
-  box-shadow: 0 0 0 1px rgba(202, 255, 28, 0.25), 0 10px 28px -8px rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.38);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 8px 24px -6px rgba(0, 0, 0, 0.65);
 }
 
-/* Premium Package Highlighted in Lime */
+.arh-lighting-card.is-active .arh-lighting-card__sub {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Premium Package Highlighted in Signature Lime ONLY */
 .arh-lighting-card--premium {
   background: rgba(202, 255, 28, 0.03);
   border-color: rgba(202, 255, 28, 0.38);
 }
 
 .arh-lighting-card--premium .arh-lighting-card__sub {
-  color: rgba(202, 255, 28, 0.8);
+  color: rgba(202, 255, 28, 0.85);
 }
 
 .arh-lighting-card--premium .arh-lighting-card__radio-indicator {
@@ -4995,6 +5000,10 @@ html {
   background: rgba(202, 255, 28, 0.065);
   border-color: var(--lime, #CAFF1C);
   box-shadow: 0 0 0 1px rgba(202, 255, 28, 0.35), 0 12px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.arh-lighting-card--premium.is-active .arh-lighting-card__sub {
+  color: var(--lime, #CAFF1C);
 }
 
 .arh-lighting-radio {
@@ -5042,20 +5051,35 @@ html {
   width: 8px;
   height: 8px;
   border-radius: 50%; /* pill */
-  background: var(--lime, #CAFF1C);
+  background: #ffffff;
   transform: scale(0);
   transition: transform 0.18s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+/* Base radio active: White dot */
 .arh-lighting-card.is-active .arh-lighting-card__radio-indicator,
 .arh-lighting-card:has(.arh-lighting-radio:checked) .arh-lighting-card__radio-indicator {
-  border-color: var(--lime, #CAFF1C);
-  background: rgba(202, 255, 28, 0.08);
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .arh-lighting-card.is-active .arh-lighting-card__radio-indicator::after,
 .arh-lighting-card:has(.arh-lighting-radio:checked) .arh-lighting-card__radio-indicator::after {
   transform: scale(1);
+  background: #ffffff;
+}
+
+/* Premium radio active: Lime dot */
+.arh-lighting-card--premium.is-active .arh-lighting-card__radio-indicator,
+.arh-lighting-card--premium:has(.arh-lighting-radio:checked) .arh-lighting-card__radio-indicator {
+  border-color: var(--lime, #CAFF1C);
+  background: rgba(202, 255, 28, 0.1);
+}
+
+.arh-lighting-card--premium.is-active .arh-lighting-card__radio-indicator::after,
+.arh-lighting-card--premium:has(.arh-lighting-radio:checked) .arh-lighting-card__radio-indicator::after {
+  transform: scale(1);
+  background: var(--lime, #CAFF1C);
 }
 
 .arh-lighting-card__name {
