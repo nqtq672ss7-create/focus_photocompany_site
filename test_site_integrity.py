@@ -155,7 +155,19 @@ class SiteIntegrityTest(unittest.TestCase):
         
         # Streamlined PillNav: 3 links + green signature CTA pill
         self.assertIn('nav-panel__cta', html)
-        self.assertIn('ОБСУДИТЬ СЪЁМКУ', html)
+        self.assertIn('ОБСУДИТЬ', html)
+        
+        # User requirement: streamlined services (no srv-badges, no srv-consult box)
+        self.assertNotIn('class="srv-badges"', html)
+        self.assertNotIn('class="srv-consult ', html)
+        
+        # User requirement: format dropdown instead of bulky chips
+        self.assertIn('formatDropdown', html)
+        self.assertIn('format-dropdown', html)
+        
+        # User requirement: non-wrapping phone digits for Ekaterina
+        self.assertIn('u-nowrap', html)
+        self.assertIn('+7 (929) 850-85-03', html)
         
         # Professional wording in About section (not amateur 'Молодая')
         self.assertIn('экспертная', html.lower())
