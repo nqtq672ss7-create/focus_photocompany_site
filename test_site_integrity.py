@@ -72,11 +72,14 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertIn('arhTgBtn', content)
         self.assertIn('arhCity', content)
         
-        # Strict user requirement: No 'x4' or '×4' on premium badge
+        # User requirement: x3 multiplier and aesthetic card design with Profoto badge
         self.assertNotIn('×4 Премиум', content)
         self.assertNotIn('x4 Премиум', content)
         self.assertNotIn('х4 Премиум', content)
-        self.assertIn('<span class="arh-lighting-card__badge arh-lighting-card__badge--premium">Премиум</span>', content)
+        self.assertIn('<span class="arh-lighting-card__badge arh-lighting-card__badge--premium">×3 Премиум</span>', content)
+        self.assertIn('lightMultiplier = isArtificial ? 3 : 1', content)
+        self.assertIn('arh-feature-pill', content)
+        self.assertIn('Profoto', content)
         
         # Pricing benchmark: minimum photo price 1100 ₽
         self.assertIn('basePerFrame: 1100', content)

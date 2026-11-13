@@ -1744,32 +1744,57 @@
 
             <!-- 3. Shooting Package / Lighting -->
             <div class="arh-form-group">
-              <label class="arh-form-label">
-                <span>3. Пакет съёмки</span> <span class="arh-req">*</span>
-              </label>
+              <div class="arh-label-row">
+                <label class="arh-form-label">
+                  <span>3. Пакет съёмки</span> <span class="arh-req">*</span>
+                </label>
+                <span class="arh-package-hint">Студийный свет или естественное освещение</span>
+              </div>
               <div class="arh-lighting-grid" role="radiogroup" aria-label="Пакет съёмки и тип освещения">
                 <label class="arh-lighting-card is-active" for="arhLightNatural">
                   <input type="radio" name="arhLighting" id="arhLightNatural" value="natural" checked class="arh-lighting-radio">
                   <div class="arh-lighting-card__header">
                     <div class="arh-lighting-card__title-wrap">
                       <span class="arh-lighting-card__radio-indicator" aria-hidden="true"></span>
-                      <span class="arh-lighting-card__name">Базовый пакет</span>
+                      <div class="arh-lighting-card__meta">
+                        <span class="arh-lighting-card__name">Базовый пакет</span>
+                        <span class="arh-lighting-card__sub">Естественный свет</span>
+                      </div>
                     </div>
                     <span class="arh-lighting-card__badge">Базовый</span>
                   </div>
                   <p class="arh-lighting-card__desc">Съёмка при естественном и интерьерном освещении локации без выносного студийного импульса.</p>
+                  <div class="arh-lighting-card__features" aria-label="Характеристики тарифа">
+                    <span class="arh-feature-pill">
+                      <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="currentColor"/><path d="M8 1v2m0 10v2M1 8h2m10 0h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                      Естественный свет
+                    </span>
+                    <span class="arh-feature-pill">Tilt-Shift 90°</span>
+                    <span class="arh-feature-pill">Чистая ретушь</span>
+                  </div>
                 </label>
 
-                <label class="arh-lighting-card" for="arhLightArtificial">
+                <label class="arh-lighting-card arh-lighting-card--premium" for="arhLightArtificial">
                   <input type="radio" name="arhLighting" id="arhLightArtificial" value="artificial" class="arh-lighting-radio">
                   <div class="arh-lighting-card__header">
                     <div class="arh-lighting-card__title-wrap">
                       <span class="arh-lighting-card__radio-indicator" aria-hidden="true"></span>
-                      <span class="arh-lighting-card__name">Премиум пакет</span>
+                      <div class="arh-lighting-card__meta">
+                        <span class="arh-lighting-card__name">Премиум пакет</span>
+                        <span class="arh-lighting-card__sub">Студийный импульс Profoto</span>
+                      </div>
                     </div>
-                    <span class="arh-lighting-card__badge arh-lighting-card__badge--premium">Премиум</span>
+                    <span class="arh-lighting-card__badge arh-lighting-card__badge--premium">×3 Премиум</span>
                   </div>
                   <p class="arh-lighting-card__desc">Профессиональный комплект импульсного студийного света. Послойная проработка объёма, глубины и фактур интерьера.</p>
+                  <div class="arh-lighting-card__features" aria-label="Характеристики тарифа">
+                    <span class="arh-feature-pill arh-feature-pill--accent">
+                      <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M9 1L3 9h5l-1 6 6-8H8l1-6z" fill="currentColor"/></svg>
+                      Свет Profoto
+                    </span>
+                    <span class="arh-feature-pill">Послойный объём</span>
+                    <span class="arh-feature-pill">Глянцевая ретушь</span>
+                  </div>
                 </label>
               </div>
             </div>
@@ -4944,7 +4969,7 @@
           if (card) card.classList.toggle('is-active', r.checked);
         });
 
-        const lightMultiplier = isArtificial ? 4 : 1;
+        const lightMultiplier = isArtificial ? 3 : 1;
 
         const cityKey = citySelect ? citySelect.value : 'anapa';
         const cityOption = citySelect ? citySelect.options[citySelect.selectedIndex] : null;
@@ -4966,12 +4991,12 @@
         if (framesCounter) framesCounter.textContent = `${frames} кадров`;
         if (specType) specType.textContent = typeName;
         if (specFrames) specFrames.textContent = `${frames} кадров`;
-        if (specLight) specLight.textContent = isArtificial ? 'Премиум пакет (студийный свет)' : 'Базовый пакет (естественный свет)';
+        if (specLight) specLight.textContent = isArtificial ? 'Премиум пакет (студийный свет, ×3)' : 'Базовый пакет (естественный свет)';
         if (specCity) specCity.textContent = cityName;
 
         if (costBottom) {
           costBottom.textContent = isArtificial
-            ? 'Включает: выезд с комплектом студийного импульсного света, световую проработку планов интерьера, оптику tilt-shift 90°, попиксельную журнальную ретушь и коммерческие права по договору.'
+            ? 'Включает: выезд с комплектом студийного импульсного света Profoto, световую проработку планов интерьера, оптику tilt-shift 90°, попиксельную журнальную ретушь и коммерческие права по договору.'
             : 'Включает: выезд, съёмку с оптикой tilt-shift 90°, естественный свет, попиксельную ретушь и коммерческие права по договору.';
         }
 
@@ -4989,7 +5014,7 @@
         });
 
         // Direct Telegram link with structured brief
-        const lightName = isArtificial ? 'Премиум пакет (проф. студийный импульс)' : 'Базовый пакет (естественный свет)';
+        const lightName = isArtificial ? 'Премиум пакет (студийный свет Profoto, ×3)' : 'Базовый пакет (естественный свет)';
         const msg = `Здравствуйте, Екатерина! Сконфигурировал съёмку на focus-photocompany.ru:\n\n• Объект: ${typeName}\n• Объём: ${frames} кадров\n• Пакет: ${lightName}\n• Локация: ${cityName}\n• Договор: Официальный договор ИП Авалян Р.А.\n• Закрывающие: Счёт и акт в ЭДО Диадок / СБИС\n• Права: Бессрочные коммерческие права\n• Ориентир сметы: от ${formatted} ₽\n\nХочу получить точный расчёт сметы и согласовать дату съёмки.`;
         if (tgBtn) {
           tgBtn.href = `https://t.me/zakonpudova?text=${encodeURIComponent(msg)}`;
@@ -5037,7 +5062,7 @@
           const cityOption = citySelect ? citySelect.options[citySelect.selectedIndex] : null;
           const cityName = cityOption ? cityOption.text.split('(')[0].trim() : 'г. Анапа';
           const isArt = Array.from(lightingRadios).some(r => r.checked && r.value === 'artificial');
-          const lightName = isArt ? 'Премиум пакет (проф. студийный импульс)' : 'Базовый пакет (естественный свет)';
+          const lightName = isArt ? 'Премиум пакет (студийный свет Profoto, ×3)' : 'Базовый пакет (естественный свет)';
           const costText = costTop ? costTop.textContent : 'от 22 000 ₽';
 
           const payload = {
