@@ -86,7 +86,9 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertIn('>×3<', content)
         self.assertIn('arh-lighting-card--premium', content)
         self.assertIn('lightMultiplier = isArtificial ? 3 : 1', content)
-        self.assertIn('arh-feature-pill', content)
+        self.assertIn('arh-package-list', content)
+        self.assertIn('Выезд 2-х фотографов', content)
+        self.assertIn('1 фотограф', content)
         self.assertIn('Profoto', content)
         
         # Pricing benchmark: minimum photo price 1100 ₽
