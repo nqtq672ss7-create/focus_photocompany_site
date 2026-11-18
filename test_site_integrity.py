@@ -166,6 +166,11 @@ class SiteIntegrityTest(unittest.TestCase):
         # User requirement: streamlined services (no srv-badges, no srv-consult box)
         self.assertNotIn('class="srv-badges"', html)
         self.assertNotIn('class="srv-consult ', html)
+
+        # User requirement: Hotels service starting price updated to 15000
+        self.assertIn('от 15 000 ₽', html)
+        self.assertNotIn('от 50 000 ₽', html)
+        self.assertIn('"price": "15000"', html)
         
         # User requirement: lightweight mobile hero video stream
         self.assertIn('assets/focus-hero-mobile.mp4', html)
