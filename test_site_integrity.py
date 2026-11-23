@@ -288,13 +288,19 @@ class SiteIntegrityTest(unittest.TestCase):
             index_html = f.read()
         self.assertIn('href="projects.html"', index_html)
         self.assertIn('ПРОЕКТЫ', index_html)
+        nav_block = index_html.split('<nav class="nav-panel"')[1].split('</nav>')[0]
+        self.assertNotIn('ПРИМЕРЫ', nav_block)
 
         projects_path = os.path.join(root, 'projects.html')
         self.assertTrue(os.path.exists(projects_path), 'projects.html must exist')
         with open(projects_path, 'r', encoding='utf-8') as f:
             projects_html = f.read()
-        self.assertLess(projects_html.index('projects/shato.html'), projects_html.index('projects/more.html'))
-        expected_counts = {'shato': 1, 'more': 109, 'brynza': 90, 'starinnaya': 157}
+        self.assertNotIn('shato.html', projects_html)
+        self.assertNotIn('Отель «Шато»', projects_html)
+        self.assertIn('Отель «Старинная Анапа»', projects_html)
+        self.assertFalse(os.path.exists(os.path.join(root, 'projects', 'shato.html')))
+
+        expected_counts = {'more': 109, 'brynza': 90, 'starinnaya': 157}
         for slug, expected_count in expected_counts.items():
             self.assertIn(f'projects/{slug}.html', projects_html)
             page_path = os.path.join(root, 'projects', f'{slug}.html')
@@ -303,6 +309,7 @@ class SiteIntegrityTest(unittest.TestCase):
             self.assertTrue(os.path.exists(cover_path), f'{cover_path} must exist')
             with open(page_path, 'r', encoding='utf-8') as pf:
                 p_html = pf.read()
+            self.assertNotIn('shato.html', p_html)
             self.assertIn('case-lightbox', p_html)
             self.assertEqual(p_html.count('class="case-photo-item"'), expected_count)
 
