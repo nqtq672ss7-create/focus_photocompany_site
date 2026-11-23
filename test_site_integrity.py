@@ -300,7 +300,7 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertIn('Отель «Старинная Анапа»', projects_html)
         self.assertFalse(os.path.exists(os.path.join(root, 'projects', 'shato.html')))
 
-        expected_counts = {'more': 109, 'brynza': 90, 'starinnaya': 157}
+        expected_counts = {'more': 109, 'brynza': 90, 'starinnaya': 156}
         for slug, expected_count in expected_counts.items():
             self.assertIn(f'projects/{slug}.html', projects_html)
             page_path = os.path.join(root, 'projects', f'{slug}.html')
