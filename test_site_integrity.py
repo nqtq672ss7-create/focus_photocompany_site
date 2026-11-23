@@ -294,7 +294,7 @@ class SiteIntegrityTest(unittest.TestCase):
         with open(projects_path, 'r', encoding='utf-8') as f:
             projects_html = f.read()
         self.assertLess(projects_html.index('projects/shato.html'), projects_html.index('projects/more.html'))
-        expected_counts = {'shato': 1, 'more': 24, 'brynza': 24, 'starinnaya': 24}
+        expected_counts = {'shato': 1, 'more': 109, 'brynza': 90, 'starinnaya': 157}
         for slug, expected_count in expected_counts.items():
             self.assertIn(f'projects/{slug}.html', projects_html)
             page_path = os.path.join(root, 'projects', f'{slug}.html')
