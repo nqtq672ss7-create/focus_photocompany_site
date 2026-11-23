@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="darkreader-lock">
+  <meta name="theme-color" content="#0c0d11">
+  <style>html,body{background-color:#0c0d11;color-scheme:dark;}</style>
+
+  <title>Отель «Шато» — Проекты фотокомпании «ФОКУС»</title>
+  <meta name="description" content="Интерьерная и архитектурная фотосъёмка отеля «Шато» от фотокомпании ФОКУС.">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../projects.css">
+</head>
+<body class="projects-page">
+
+  <header class="topbar">
+    <nav class="nav-panel" aria-label="Основная навигация">
+      <a class="nav-panel__link" href="../index.html">ГЛАВНАЯ</a>
+      <a class="nav-panel__link" href="../index.html#services">УСЛУГИ</a>
+      <a class="nav-panel__link" href="../index.html#works">ПРИМЕРЫ</a>
+      <a class="nav-panel__link is-active" href="../projects.html">ПРОЕКТЫ</a>
+      <a class="nav-panel__cta" href="../index.html#contacts">ОБСУДИТЬ</a>
+    </nav>
+  </header>
+
+  <section class="case-hero">
+    <div class="case-hero__bg">
+      <img src="../assets/projects/shato/cover.webp" alt="Отель «Шато» — главное фото" fetchpriority="high" decoding="async">
+    </div>
+    <div class="case-hero__scrim" aria-hidden="true"></div>
+    <div class="projects-container">
+      <a href="../projects.html" class="case-back-link">← Все проекты</a>
+      <div class="case-hero__meta">
+        <span class="case-hero__tag">Отель</span>
+        <span class="case-hero__count">1 фотография</span>
+      </div>
+      <h1 class="case-hero__title">Отель «Шато»</h1>
+      <p class="case-hero__desc">Экстерьер и лавандовые поля (основной ракурс; галерея обновится после реконструкции)</p>
+    </div>
+  </section>
+
+  <main class="case-gallery-section">
+    <div class="projects-container">
+
+      <div class="case-gallery-grid case-gallery-grid--single" id="caseGallery">
+        <button type="button" class="case-photo-item" data-index="0" aria-label="Открыть фото 1 на весь экран">
+          <img src="../assets/projects/shato/cover.webp" alt="Отель «Шато» — главное фото" loading="eager" decoding="async">
+          <span class="case-photo-item__num">1 / 1</span>
+        </button>
+      </div>
+
+      <section class="case-next-section" aria-label="Другие проекты">
+        <h2 class="case-next-title">Другие проекты</h2>
+        <div class="case-next-grid">
+          <a href="more.html" class="case-next-card">
+            <img src="../assets/projects/more/cover.webp" alt="Ресторан «Море»" class="case-next-card__img" loading="lazy" decoding="async">
+            <div class="case-next-card__body">
+              <span class="case-next-card__cat">Ресторан</span>
+              <span class="case-next-card__name">Ресторан «Море»</span>
+            </div>
+          </a>
+          <a href="brynza.html" class="case-next-card">
+            <img src="../assets/projects/brynza/cover.webp" alt="Ресторан «Брынза»" class="case-next-card__img" loading="lazy" decoding="async">
+            <div class="case-next-card__body">
+              <span class="case-next-card__cat">Ресторан</span>
+              <span class="case-next-card__name">Ресторан «Брынза»</span>
+            </div>
+          </a>
+          <a href="starinnaya.html" class="case-next-card">
+            <img src="../assets/projects/starinnaya/cover.webp" alt="Отель «Старинная»" class="case-next-card__img" loading="lazy" decoding="async">
+            <div class="case-next-card__body">
+              <span class="case-next-card__cat">Отель</span>
+              <span class="case-next-card__name">Отель «Старинная»</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <div class="projects-cta-banner">
+        <div>
+          <h2 class="projects-cta-banner__title">Хотите такую же съёмку для своего объекта?</h2>
+          <p class="projects-cta-banner__desc">Посчитайте ориентировочную стоимость в калькуляторе или напишите управляющему.</p>
+        </div>
+        <a href="../index.html#calculator" class="projects-cta-banner__btn">Рассчитать смету →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="case-lightbox" id="caseLightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+    <button type="button" class="case-lightbox__close" id="lbClose" aria-label="Закрыть">×</button>
+    <button type="button" class="case-lightbox__nav case-lightbox__prev" id="lbPrev" aria-label="Предыдущее фото">‹</button>
+    <img src="" alt="" class="case-lightbox__img" id="lbImg">
+    <button type="button" class="case-lightbox__nav case-lightbox__next" id="lbNext" aria-label="Следующее фото">›</button>
+    <div class="case-lightbox__counter" id="lbCounter">1 / 1</div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-legal-strip" style="border-top:none;padding-top:0;">
+        <div class="footer-legal-links">
+          <a href="../index.html" class="footer-legal-link">На главную</a>
+          <a href="../projects.html" class="footer-legal-link">Все проекты</a>
+          <a href="../privacy.html" class="footer-legal-link">Политика конфиденциальности (152-ФЗ)</a>
+        </div>
+        <span class="footer-copy">© 2026 Фотокомпания «ФОКУС»</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function initLightbox() {
+      const items = [...document.querySelectorAll('.case-photo-item')];
+      const lb = document.getElementById('caseLightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbCounter = document.getElementById('lbCounter');
+      const btnClose = document.getElementById('lbClose');
+      const btnPrev = document.getElementById('lbPrev');
+      const btnNext = document.getElementById('lbNext');
+      if (!items.length || !lb) return;
+
+      let current = 0;
+      let touchStartX = 0;
+
+      function show(idx) {
+        current = (idx + items.length) % items.length;
+        const img = items[current].querySelector('img');
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCounter.textContent = `${current + 1} / ${items.length}`;
+      }
+
+      function open(idx) {
+        show(idx);
+        lb.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        lb.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      items.forEach((btn, idx) => btn.addEventListener('click', () => open(idx)));
+      btnClose.addEventListener('click', close);
+      btnPrev.addEventListener('click', (e) => { e.stopPropagation(); show(current - 1); });
+      btnNext.addEventListener('click', (e) => { e.stopPropagation(); show(current + 1); });
+      lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+
+      lb.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+      lb.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) show(dx < 0 ? current + 1 : current - 1);
+      }, { passive: true });
+
+      window.addEventListener('keydown', (e) => {
+        if (!lb.classList.contains('is-open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(current - 1);
+        if (e.key === 'ArrowRight') show(current + 1);
+      });
+    })();
+  </script>
+</body>
+</html>

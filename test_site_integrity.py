@@ -282,5 +282,29 @@ class SiteIntegrityTest(unittest.TestCase):
         self.assertIn('Strict-Transport-Security', serve_c)
         self.assertIn('404.html', serve_c)
 
+    def test_projects_pages_integrity(self):
+        root = os.path.dirname(__file__)
+        with open(os.path.join(root, 'index.html'), 'r', encoding='utf-8') as f:
+            index_html = f.read()
+        self.assertIn('href="projects.html"', index_html)
+        self.assertIn('ПРОЕКТЫ', index_html)
+
+        projects_path = os.path.join(root, 'projects.html')
+        self.assertTrue(os.path.exists(projects_path), 'projects.html must exist')
+        with open(projects_path, 'r', encoding='utf-8') as f:
+            projects_html = f.read()
+        self.assertLess(projects_html.index('projects/shato.html'), projects_html.index('projects/more.html'))
+        expected_counts = {'shato': 1, 'more': 24, 'brynza': 24, 'starinnaya': 24}
+        for slug, expected_count in expected_counts.items():
+            self.assertIn(f'projects/{slug}.html', projects_html)
+            page_path = os.path.join(root, 'projects', f'{slug}.html')
+            self.assertTrue(os.path.exists(page_path), f'{page_path} must exist')
+            cover_path = os.path.join(root, 'assets', 'projects', slug, 'cover.webp')
+            self.assertTrue(os.path.exists(cover_path), f'{cover_path} must exist')
+            with open(page_path, 'r', encoding='utf-8') as pf:
+                p_html = pf.read()
+            self.assertIn('case-lightbox', p_html)
+            self.assertEqual(p_html.count('class="case-photo-item"'), expected_count)
+
 if __name__ == '__main__':
     unittest.main()
