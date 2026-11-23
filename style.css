@@ -6933,9 +6933,13 @@ html {
 }
 
 .arh-calc-grid--hybrid {
-  grid-template-columns: 1.35fr 0.85fr;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
   gap: clamp(24px, 3vw, 40px);
   align-items: start;
+}
+
+.arh-calc-grid--hybrid > * {
+  min-width: 0;
 }
 
 .arh-calc-sidebar--receipt {
@@ -7057,8 +7061,11 @@ html {
 }
 
 .arh-sidebar-brand__logo {
-  height: 34px;
   width: auto;
+  height: auto;
+  max-width: 140px;
+  max-height: 72px;
+  object-fit: contain;
   display: block;
   opacity: 0.92;
 }
