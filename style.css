@@ -7100,3 +7100,94 @@ html {
     padding: 18px;
   }
 }
+
+/* ==========================================================================
+   OUR CLIENTS (2 Horizontal Rows of 4 Logos)
+   ========================================================================== */
+.clients-section {
+  width: 100%;
+  padding: clamp(28px, 4vw, 48px) 0 clamp(56px, 7vw, 96px);
+  position: relative;
+  background: transparent;
+}
+
+.clients-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+  box-sizing: border-box;
+}
+
+.clients-header {
+  text-align: center;
+  margin-bottom: clamp(24px, 3.2vw, 38px);
+}
+
+.clients-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(12, 13, 17, 0.56);
+  margin-bottom: 8px;
+}
+
+.clients-title {
+  margin: 0;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  text-transform: uppercase;
+  color: #0c0d11;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.client-logo-card {
+  background: #ffffff;
+  border: 1px solid rgba(12, 13, 17, 0.1);
+  border-radius: 14px;
+  height: 120px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(12, 13, 17, 0.04);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.client-logo-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(12, 13, 17, 0.26);
+  box-shadow: 0 14px 32px rgba(12, 13, 17, 0.08);
+}
+
+.client-logo-card img {
+  max-width: 100%;
+  max-height: 76px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .clients-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .client-logo-card {
+    height: 98px;
+    padding: 14px 16px;
+  }
+  .client-logo-card img {
+    max-height: 62px;
+  }
+}
