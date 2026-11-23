@@ -311,6 +311,8 @@ class SiteIntegrityTest(unittest.TestCase):
                 p_html = pf.read()
             self.assertNotIn('shato.html', p_html)
             self.assertIn('case-lightbox', p_html)
+            self.assertIn('aspect-ratio:', p_html)
+            self.assertIn('thumb-', p_html)
             self.assertEqual(p_html.count('class="case-photo-item"'), expected_count)
 
 if __name__ == '__main__':

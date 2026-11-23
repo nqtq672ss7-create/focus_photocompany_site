@@ -398,24 +398,19 @@
   color: rgba(244, 241, 233, 0.82);
 }
 
-/* ── Gallery Grid (Masonry-like Columns) ───────────────── */
+/* ── Gallery Grid (Reliable CSS Grid with Explicit Aspect Ratios) ── */
 .case-gallery-section {
   padding: clamp(32px, 4vw, 56px) 0 clamp(60px, 8vw, 96px);
 }
 
 .case-gallery-grid {
-  columns: 3 340px;
-  column-gap: 16px;
-}
-
-.case-gallery-grid--single {
-  columns: 1;
-  max-width: 960px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
 }
 
 .case-photo-item {
-  break-inside: avoid;
-  margin-bottom: 16px;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
@@ -435,7 +430,8 @@
 
 .case-photo-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
@@ -601,6 +597,12 @@
 }
 
 /* ── Mobile Responsive ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .case-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .projects-container {
     width: calc(100vw - 28px);
@@ -619,11 +621,8 @@
     width: 100%;
   }
   .case-gallery-grid {
-    columns: 1;
-    column-gap: 0;
-  }
-  .case-photo-item {
-    margin-bottom: 12px;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   .case-next-grid {
     grid-template-columns: 1fr;
