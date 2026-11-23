@@ -919,9 +919,151 @@ html {
 /* Bento Grid */
 .srv-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: clamp(18px, 2vw, 24px);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 20px);
   margin-bottom: clamp(28px, 3.2vw, 44px);
+}
+
+/* Variant 8: Asymmetric Editorial Bento (60/40 Full-Bleed Photo Cards) */
+.srv8-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #111114;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.srv8-card--wide {
+  grid-column: span 7;
+}
+
+.srv8-card--tall {
+  grid-column: span 5;
+}
+
+.srv8-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(202, 255, 28, 0.5);
+}
+
+.srv8-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.srv8-card:hover .srv8-card__img {
+  transform: scale(1.04);
+}
+
+.srv8-card__scrim {
+  position: absolute;
+  inset: 0;
+  background: /* mask-image */ linear-gradient(to top, rgba(10, 11, 15, 0.95) 0%, rgba(10, 11, 15, 0.58) 48%, rgba(10, 11, 15, 0.12) 100%);
+  pointer-events: none;
+}
+
+.srv8-card__body {
+  position: relative;
+  z-index: 2;
+  padding: clamp(20px, 2.5vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.srv8-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.srv8-card__title {
+  margin: 0;
+  font-size: clamp(20px, 2vw, 25px);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.srv8-card__price {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--lime, #CAFF1C);
+  white-space: nowrap;
+}
+
+.srv8-card__desc {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(244, 241, 233, 0.82);
+  max-width: 520px;
+}
+
+.srv8-card__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.srv8-card__hint {
+  font-size: 12px;
+  color: rgba(244, 241, 233, 0.62);
+}
+
+.srv8-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px; /* pill */
+  background: var(--lime, #CAFF1C);
+  color: #0C0D11;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.srv8-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(202, 255, 28, 0.24);
+}
+
+@media (max-width: 1024px) {
+  .srv8-card--wide,
+  .srv8-card--tall {
+    grid-column: span 12;
+    min-height: 330px;
+  }
+}
+
+@media (max-width: 640px) {
+  .srv8-card--wide,
+  .srv8-card--tall {
+    min-height: 300px;
+  }
+  .srv8-cta {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* Monolithic Card Shell (Single Border, No Double Bezel) */

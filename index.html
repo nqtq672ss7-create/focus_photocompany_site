@@ -363,145 +363,93 @@
         </div>
       </div>
 
-      <!-- Bento Grid (Monolithic Cards - Single Clean Border, Larger Text, Big CTA) -->
+      <!-- Asymmetric Bento Grid 60/40 (Photo-First Full-Bleed Cards) -->
       <div class="srv-grid">
-        
-        <!-- CARD 01: Interiors (Col 7 - Horizontal Split) -->
-        <article class="srv-card srv-card--wide srv-anim" data-delay="120">
-          <div class="srv-card__body">
-            <div>
-              <h3 class="srv-card__title" data-i18n="srv1Title">Интерьеры & Архитектура</h3>
-              <p class="srv-card__desc" data-i18n="srv1Desc">
-                Премиальная съёмка для дизайнеров, девелоперов, ресторанов и глянцевых изданий. Идеальная геометрия, естественный свет и внимание к фактурам материалов.
-              </p>
-            </div>
-            <div class="srv-card__tags">
-              <span class="srv-tag" data-i18n="srv1Tag1">HDR-мультиэкспозиция</span>
-              <span class="srv-tag" data-i18n="srv1Tag2">Идеальная геометрия</span>
-              <span class="srv-tag" data-i18n="srv1Tag3">Интерьерный стайлинг</span>
-              <span class="srv-tag" data-i18n="srv1Tag4">Глянцевая ретушь</span>
-            </div>
-            <div class="srv-card__footer">
-              <div class="srv-card__price-wrap">
-                <span class="srv-card__price-badge">от 25 000 ₽</span>
-                <span class="srv-card__hint">Сет до 2 часов (до 20 кадров), далее 12 000 ₽/ч</span>
-              </div>
-              <a href="#calculator" class="srv-btn" aria-label="Рассчитать смету интерьерной съёмки">
-                <span class="srv-btn__text" data-i18n="srvOrderCta">Рассчитать смету</span>
-                <span class="srv-btn__circle" aria-hidden="true">
-                  <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="srv-card__media-wrap">
-            <div class="srv-card__media">
-              <img src="assets/about-card-1.webp" alt="Интерьерная съёмка ФОКУС" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </article>
 
-        <!-- CARD 02: Hotels & HoReCa (Col 5 - Stack) -->
-        <article class="srv-card srv-card--stack srv-anim" data-delay="180">
-          <div class="srv-card__body">
-            <div>
-              <h3 class="srv-card__title" data-i18n="srv2Title">Отели: Гости & Lifestyle</h3>
-              <p class="srv-card__desc" data-i18n="srv2Desc">
-                Профессиональная съёмка гостей и курортный lifestyle. Живые эмоции отдыха у бассейна, в ресторанах и на территории отеля. Создаём тёплый визуальный контент, который продаёт атмосферу и сервис вашего курорта.
-              </p>
+        <!-- CARD 01: Interiors (Col 7) -->
+        <article class="srv8-card srv8-card--wide">
+          <img class="srv8-card__img" src="assets/about-card-1.webp" alt="Интерьерная съёмка ФОКУС" loading="lazy" decoding="async">
+          <div class="srv8-card__scrim" aria-hidden="true"></div>
+          <div class="srv8-card__body">
+            <div class="srv8-card__head">
+              <h3 class="srv8-card__title" data-i18n="srv1Title">Интерьеры & Архитектура</h3>
+              <span class="srv8-card__price">от 25 000 ₽</span>
             </div>
-            <div class="srv-card__media-wrap srv-card__media-wrap--inline">
-              <div class="srv-card__media">
-                <img src="assets/hotel-guest-15.webp" alt="Отели: Гости и Lifestyle съёмка ФОКУС" loading="lazy" decoding="async">
-              </div>
-            </div>
-            <div class="srv-card__tags">
-              <span class="srv-tag" data-i18n="srv2Tag1">Гости и семьи</span>
-              <span class="srv-tag" data-i18n="srv2Tag2">Lifestyle у бассейна</span>
-              <span class="srv-tag" data-i18n="srv2Tag3">Эмоции и атмосфера</span>
-              <span class="srv-tag" data-i18n="srv2Tag4">Рекламные сюжеты</span>
-            </div>
-            <div class="srv-card__footer">
-              <div class="srv-card__price-wrap">
-                <span class="srv-card__price-badge">от 15 000 ₽</span>
-                <span class="srv-card__hint">Съёмочный день: номера, территория, SPA</span>
-              </div>
-              <a href="#calculator" class="srv-btn" aria-label="Рассчитать смету для отеля">
-                <span class="srv-btn__text" data-i18n="srvOrderCta">Рассчитать смету</span>
-                <span class="srv-btn__circle" aria-hidden="true">
-                  <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
+            <p class="srv8-card__desc" data-i18n="srv1Desc">
+              Премиальная съёмка для дизайнеров, девелоперов, ресторанов и глянцевых изданий. Идеальная геометрия, естественный свет и внимание к фактурам материалов.
+            </p>
+            <div class="srv8-card__foot">
+              <span class="srv8-card__hint">Сет до 2 часов (до 20 кадров), далее 12 000 ₽/ч</span>
+              <a href="#calculator" class="srv8-cta" aria-label="Рассчитать смету интерьерной съёмки">
+                <span data-i18n="srvOrderCta">Рассчитать смету</span>
+                <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
         </article>
 
-        <!-- CARD 03: Video Production (Col 5 - Stack) -->
-        <article class="srv-card srv-card--stack srv-anim" data-delay="120">
-          <div class="srv-card__body">
-            <div>
-              <h3 class="srv-card__title" data-i18n="srv3Title">Рекламное видео & Reels</h3>
-              <p class="srv-card__desc" data-i18n="srv3Desc">
-                Имиджевые промо-ролики в 4K, динамичные трендовые Reels/Shorts и аэросъёмка. Полный цикл: раскадровка, съёмка, авторский монтаж, саунд-дизайн и цветокоррекция.
-              </p>
+        <!-- CARD 02: Hotels & HoReCa (Col 5) -->
+        <article class="srv8-card srv8-card--tall">
+          <img class="srv8-card__img" src="assets/hotel-guest-15.webp" alt="Отели: Гости и Lifestyle съёмка ФОКУС" loading="lazy" decoding="async">
+          <div class="srv8-card__scrim" aria-hidden="true"></div>
+          <div class="srv8-card__body">
+            <div class="srv8-card__head">
+              <h3 class="srv8-card__title" data-i18n="srv2Title">Отели: Гости & Lifestyle</h3>
+              <span class="srv8-card__price">от 15 000 ₽</span>
             </div>
-            <div class="srv-card__media-wrap srv-card__media-wrap--inline">
-              <div class="srv-card__media">
-                <img src="assets/video-rig.webp" alt="Видеопродакшн ФОКУС" loading="lazy" decoding="async">
-              </div>
-            </div>
-            <div class="srv-card__tags">
-              <span class="srv-tag" data-i18n="srv3Tag1">4K HDR (16:9 / 9:16)</span>
-              <span class="srv-tag" data-i18n="srv3Tag2">Reels & Shorts</span>
-              <span class="srv-tag" data-i18n="srv3Tag3">Аэросъёмка с дрона</span>
-              <span class="srv-tag" data-i18n="srv3Tag4">Киноцвет & саунд</span>
-            </div>
-            <div class="srv-card__footer">
-              <div class="srv-card__price-wrap">
-                <span class="srv-card__price-badge">от 18 000 ₽</span>
-                <span class="srv-card__hint">Пакет Reels 4K, аэросъёмка территории</span>
-              </div>
-              <a href="#calculator" class="srv-btn" aria-label="Рассчитать смету видеопроизводства">
-                <span class="srv-btn__text" data-i18n="srvOrderCta">Рассчитать смету</span>
-                <span class="srv-btn__circle" aria-hidden="true">
-                  <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
+            <p class="srv8-card__desc" data-i18n="srv2Desc">
+              Профессиональная съёмка гостей и курортный lifestyle. Живые эмоции отдыха у бассейна, в ресторанах и на территории отеля, продающие атмосферу курорта.
+            </p>
+            <div class="srv8-card__foot">
+              <span class="srv8-card__hint">Номера, территория, SPA</span>
+              <a href="#calculator" class="srv8-cta" aria-label="Рассчитать смету для отеля">
+                <span data-i18n="srvOrderCta">Рассчитать смету</span>
+                <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
         </article>
 
-        <!-- CARD 04: Events & Corporate (Col 7 - Horizontal Split) -->
-        <article class="srv-card srv-card--wide srv-anim" data-delay="180">
-          <div class="srv-card__body">
-            <div>
-              <h3 class="srv-card__title" data-i18n="srv4Title">Бизнес-пространства & Коммерция</h3>
-              <p class="srv-card__desc" data-i18n="srv4Desc">
-                Рестораны, клиники, бутики и коворкинги. Живая атмосфера сервиса, геометрия залов и экспресс-выдача первых кадров в течение 24 часов.
-              </p>
+        <!-- CARD 03: Video Production (Col 5) -->
+        <article class="srv8-card srv8-card--tall">
+          <img class="srv8-card__img" src="assets/video-rig.webp" alt="Видеопродакшн ФОКУС" loading="lazy" decoding="async">
+          <div class="srv8-card__scrim" aria-hidden="true"></div>
+          <div class="srv8-card__body">
+            <div class="srv8-card__head">
+              <h3 class="srv8-card__title" data-i18n="srv3Title">Рекламное видео & Reels</h3>
+              <span class="srv8-card__price">от 18 000 ₽</span>
             </div>
-            <div class="srv-card__tags">
-              <span class="srv-tag" data-i18n="srv4Tag1">Превью за 24 часа</span>
-              <span class="srv-tag" data-i18n="srv4Tag2">Онлайн-галерея</span>
-              <span class="srv-tag" data-i18n="srv4Tag3">Многокамерный сет</span>
-              <span class="srv-tag" data-i18n="srv4Tag4">Коммерческие права</span>
-            </div>
-            <div class="srv-card__footer">
-              <div class="srv-card__price-wrap">
-                <span class="srv-card__price-badge">от 24 000 ₽</span>
-                <span class="srv-card__hint">Фуд 12 000 ₽/ч, события 10 000 ₽/ч, мин. 2ч</span>
-              </div>
-              <a href="#calculator" class="srv-btn" aria-label="Рассчитать смету для бизнеса">
-                <span class="srv-btn__text" data-i18n="srvOrderCta">Рассчитать смету</span>
-                <span class="srv-btn__circle" aria-hidden="true">
-                  <svg viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
+            <p class="srv8-card__desc" data-i18n="srv3Desc">
+              Имиджевые промо-ролики в 4K, динамичные трендовые Reels/Shorts и аэросъёмка. Раскадровка, авторский монтаж, саунд-дизайн и цветокоррекция.
+            </p>
+            <div class="srv8-card__foot">
+              <span class="srv8-card__hint">Пакет Reels 4K, дрон</span>
+              <a href="#calculator" class="srv8-cta" aria-label="Рассчитать смету видеопроизводства">
+                <span data-i18n="srvOrderCta">Рассчитать смету</span>
+                <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
-          <div class="srv-card__media-wrap">
-            <div class="srv-card__media">
-              <img src="assets/event-05.webp" alt="Коммерческие пространства ФОКУС" loading="lazy" decoding="async">
+        </article>
+
+        <!-- CARD 04: Events & Corporate (Col 7) -->
+        <article class="srv8-card srv8-card--wide">
+          <img class="srv8-card__img" src="assets/event-05.webp" alt="Коммерческие пространства ФОКУС" loading="lazy" decoding="async">
+          <div class="srv8-card__scrim" aria-hidden="true"></div>
+          <div class="srv8-card__body">
+            <div class="srv8-card__head">
+              <h3 class="srv8-card__title" data-i18n="srv4Title">Бизнес-пространства & Коммерция</h3>
+              <span class="srv8-card__price">от 24 000 ₽</span>
+            </div>
+            <p class="srv8-card__desc" data-i18n="srv4Desc">
+              Рестораны, клиники, бутики и коворкинги. Живая атмосфера сервиса, геометрия залов и экспресс-выдача первых кадров в течение 24 часов.
+            </p>
+            <div class="srv8-card__foot">
+              <span class="srv8-card__hint">Фуд 12 000 ₽/ч, события 10 000 ₽/ч</span>
+              <a href="#calculator" class="srv8-cta" aria-label="Рассчитать смету для бизнеса">
+                <span data-i18n="srvOrderCta">Рассчитать смету</span>
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
         </article>
