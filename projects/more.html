@@ -544,7 +544,8 @@
   </footer>
 
   <script>
-    (function initLightbox() {
+    (function initGalleryAndLightbox() {
+      const gallery = document.getElementById('caseGallery');
       const items = [...document.querySelectorAll('.case-photo-item')];
       const lb = document.getElementById('caseLightbox');
       const lbImg = document.getElementById('lbImg');
@@ -552,7 +553,47 @@
       const btnClose = document.getElementById('lbClose');
       const btnPrev = document.getElementById('lbPrev');
       const btnNext = document.getElementById('lbNext');
-      if (!items.length || !lb) return;
+      if (!items.length || !gallery) return;
+
+      // Shortest-column masonry distribution so there are zero empty gaps
+      let lastCols = 0;
+      function layoutMasonry() {
+        const w = window.innerWidth;
+        const cols = w <= 768 ? 1 : (w <= 1024 ? 2 : 3);
+        if (cols === lastCols) return;
+        lastCols = cols;
+
+        gallery.innerHTML = '';
+        if (cols === 1) {
+          items.forEach(el => gallery.appendChild(el));
+          return;
+        }
+
+        const colEls = [];
+        const heights = [];
+        for (let c = 0; c < cols; c++) {
+          const div = document.createElement('div');
+          div.className = 'case-gallery-col';
+          gallery.appendChild(div);
+          colEls.push(div);
+          heights.push(0);
+        }
+
+        items.forEach(el => {
+          const ar = parseFloat(el.style.aspectRatio) || 1.5;
+          let minIdx = 0;
+          for (let c = 1; c < cols; c++) {
+            if (heights[c] < heights[minIdx]) minIdx = c;
+          }
+          colEls[minIdx].appendChild(el);
+          heights[minIdx] += (1 / ar) + 0.04;
+        });
+      }
+
+      layoutMasonry();
+      window.addEventListener('resize', layoutMasonry, { passive: true });
+
+      if (!lb) return;
 
       let current = 0;
       let touchStartX = 0;
