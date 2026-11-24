@@ -7106,9 +7106,10 @@ html {
    ========================================================================== */
 .clients-section {
   width: 100%;
-  padding: clamp(28px, 4vw, 48px) 0 clamp(56px, 7vw, 96px);
+  padding: clamp(44px, 5vw, 72px) 0 clamp(64px, 7vw, 100px);
   position: relative;
-  background: transparent;
+  background: #000000;
+  color: #ffffff;
 }
 
 .clients-container {
@@ -7129,7 +7130,7 @@ html {
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(12, 13, 17, 0.56);
+  color: var(--lime, #CAFF1C);
   margin-bottom: 8px;
 }
 
@@ -7141,7 +7142,7 @@ html {
   letter-spacing: -0.025em;
   line-height: 1.08;
   text-transform: uppercase;
-  color: #0c0d11;
+  color: #ffffff;
 }
 
 .clients-grid {
@@ -7149,7 +7150,7 @@ html {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   background: #ffffff;
-  border: 1px solid rgba(12, 13, 17, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 14px;
   overflow: hidden;
 }
