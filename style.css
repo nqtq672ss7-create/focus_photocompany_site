@@ -7221,12 +7221,34 @@ html {
 /* ==========================================================================
    HYBRID 2+3 REVIEWS (SPOTLIGHT + 3D TILT GRID)
    ========================================================================== */
-.rev23-stage {
-  background: #070707;
+#reviews.reviews-section {
+  background: #000000;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 14px;
-  padding: clamp(20px, 3vw, 32px);
+  padding: clamp(72px, 8vw, 120px) 0 clamp(64px, 7vw, 100px);
+}
+
+#reviews .reviews-title {
+  color: #ffffff !important;
+}
+
+#reviews .reviews-lead {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+#reviews .reviews-legal-footnote {
+  color: rgba(255, 255, 255, 0.48) !important;
+}
+
+#reviews .reviews-legal-footnote__link {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.rev23-stage {
+  background: transparent;
+  color: #ffffff;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
   margin-bottom: 18px;
 }
 
